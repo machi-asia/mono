@@ -19,6 +19,7 @@ Rules for AI agents working on this monorepo.
     - declare a `render(values)` function that renders the **actual component** (not just a description), and
     - declare a `propControls` dropdown for **every choice/enum prop** of that component.
     When you add or update a component in a package, add/update its entry on that package's showcase page accordingly. This applies to current and future component exports. Components that depend on shared context (e.g. auth) are demoed against a mock provider (`@mono/auth/mock`).
+13. **Follow the design system** (see `DESIGN.md`): colors are token-based CSS custom properties, never hardcoded hex; theme switching uses `ThemeProvider`/`next-themes` with **dark mode primary and gold accents**; use the shared easing/duration and spacing tokens; keep whitespace generous and clutter minimal; and build layout + functional primitives (`Row`, `Col`, `Card`, date/time pickers, etc.) **strictly from `/packages/components`** — apps must not hand-roll them. Pages should be **high-image, low-text**.
 
 ## File Ownership
 

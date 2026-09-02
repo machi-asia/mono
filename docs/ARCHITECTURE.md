@@ -56,7 +56,10 @@ Centralized data and store layer. All database queries, schemas, models, and sta
 
 Shared UI component library. Exports React components only (`<>`). No server functions, no business logic, no API routes. Components are documented in the `docs` app.
 
-This package also provides `ComponentShowcase` — the shared **list-view layout** that every package's component showcase page uses (see "Component Showcases" below).
+This package is also the **single source of truth for the design system** (see `DESIGN.md` and `ADR-005`):
+- design tokens (CSS custom properties, dark-primary/gold) and `ThemeProvider` (next-themes) for theme switching;
+- layout primitives — `Row`, `Col`, `Card` — and any functional elements (date/time pickers, etc.) that apps must consume rather than hand-roll;
+- `ComponentShowcase` — the shared **list-view layout** that every package's component showcase page uses (see "Component Showcases" below).
 
 ## Component Showcases
 
@@ -108,6 +111,7 @@ See `docs/adr/` for all Architecture Decision Records. Key decisions:
 - [ADR-002: Monorepo Structure](./adr/002-monorepo-structure.md)
 - [ADR-003: Centralized Auth and Database](./adr/003-centralized-auth-and-database.md)
 - [ADR-004: Component Showcase Pages](./adr/004-component-showcase-pages.md)
+- [ADR-005: Design System, Theming, and Shared Layout Primitives](./adr/005-design-system-theming.md)
 
 ## Documentation Requirements
 

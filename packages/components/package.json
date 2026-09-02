@@ -22,7 +22,9 @@
     "test:watch": "vitest",
     "clean": "rm -rf dist"
   },
-  "dependencies": {},
+  "dependencies": {
+    "next-themes": "^0.4.6"
+  },
   "peerDependencies": {
     "react": "^19.0.0"
   },

@@ -1,2 +1,4 @@
-{"timestamp":"00:00:04.706","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:16.158","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:05.359","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:21.592","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:28.852","source":"Browser","level":"ERROR","message":"Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). "}
+{"timestamp":"00:00:28.852","source":"Server","level":"ERROR","message":"[browser] \"Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template).\" \"\""}

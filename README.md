@@ -16,7 +16,7 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 |---------|-------------|
 | `auth` | Centralized authentication via Supabase — auth provider, session management, middleware |
 | `database` | Centralized data/store via Supabase — client creation, types, queries |
-| `components` | Shared UI components — packages export React components (`<>`) and functions |
+| `components` | Shared UI components + design system — tokens, theme, layout primitives (`Row`/`Col`/`Card`), and functional elements |
 
 ## Conventions
 
@@ -31,6 +31,7 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 - **`/docs` app** must document every component exported from `/packages/components`.
 - **Every package's exported components** must be rendered live on that package's showcase page (`/components/<package>` in the docs app) using the shared `ComponentShowcase` list-view layout from `@mono/components`. Each component renders the actual component via `render(values)` and declares a `propControls` dropdown for every choice/enum prop.
 - **`/docs/adr`** must be updated with an Architecture Decision Record for every significant technical decision.
+- **Follow the design system** (`DESIGN.md`): token-based colors, dark-primary/gold theming via `next-themes`, generous whitespace, subtle motion, and layout/functional primitives used strictly from `@mono/components`.
 - **All `.md` files** in the repo must be kept up to date as the project evolves.
 - **Any code change** must also update the relevant documentation files.
 

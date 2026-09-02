@@ -10,7 +10,40 @@ Every app and package in this monorepo is built on Next.js. This is a non-negoti
 
 - **`/packages/auth`** — Single source of truth for authentication. Login, logout, sessions, tokens, middleware — all here.
 - **`/packages/database`** — Single source of truth for data access and state. Queries, models, schemas, store logic — all here.
-- **`/packages/components`** — Single source of truth for shared UI. Only exports React components (`<>`). No business logic, no server functions.
+- **`/packages/components`** — Single source of truth for shared UI: the design-token theme system, layout primitives (`Row`, `Col`, `Card`), and every functional element (date/time pickers, etc.). Only exports React components (`<>`). No business logic, no server functions.
+
+## Design System
+
+The visual language of every Machi Asia app lives here. These conventions apply to every app, page, and component.
+
+### Color & Theme
+
+- Colors are defined as **design tokens** — CSS custom properties (`--color-*`) — never hardcoded hex in components or apps.
+- Theme switching uses **`next-themes`** (via the `ThemeProvider` from `@mono/components`), which is SSR-safe, persists the choice, and supports the system preference.
+- The **primary theme is dark mode with gold accents**. A light theme is derived from the same token set.
+- Use the token surface/text/border/overlay scales; do not invent new palette values inline.
+
+### Motion
+
+- Smooth, subtle animations are a core value. Use the shared easing/duration tokens (`--duration-*`, `--ease-*`).
+- Transitions should be purposeful and restrained — no jarring or arbitrary animation.
+- Always respect `prefers-reduced-motion`.
+
+### Spacing & Minimal Clutter
+
+- Generous whitespace between every component is required; whitespace is a first-class layout tool.
+- Keep visual clutter minimal: restrained borders, shadows, and decoration.
+- Use the shared spacing scale (`--space-*`) rather than ad-hoc pixel values.
+
+### Component Rules
+
+- Layout primitives (`<Row>`, `<Col>`, `<Card>`) and functional elements (date/time pickers, etc.) are **built and consumed strictly from `@mono/components`**.
+- Apps and pages must **not** hand-roll their own layout or functional primitives.
+
+### Content Density
+
+- Pages are **high-image, low-text**: emphasize visuals and minimize prose.
+- Prefer imagery, cards, and compact visual statements over long paragraphs whenever possible.
 
 ## Package Exports
 
@@ -18,7 +51,7 @@ Packages export React components, functions, hooks, and types. They do not conta
 
 - **`/packages/auth`** exports: `AuthProvider`, `useAuth`, `createClient` (browser/server), `updateSession` (middleware).
 - **`/packages/database`** exports: `createClient` (browser/server), database types.
-- **`/packages/components`** exports: React components (`<>`).
+- **`/packages/components`** exports: `ThemeProvider`, `Row`, `Col`, `Card`, `ComponentShowcase` — plus the design-token CSS and any functional elements (date/time pickers, etc.).
 
 ## Documentation Required
 

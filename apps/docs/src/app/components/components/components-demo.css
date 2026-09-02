@@ -1,0 +1,38 @@
+.components-demo-theme {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.components-demo-theme p {
+  margin: 0;
+}
+
+.components-demo-theme button {
+  align-self: flex-start;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+.components-demo-theme button:hover {
+  border-color: var(--color-primary);
+}
+
+.components-demo-box {
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.components-demo-card-wrap {
+  max-width: 24rem;
+}

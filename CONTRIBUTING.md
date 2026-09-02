@@ -27,6 +27,8 @@ These are run in parallel via `npm run test` at the repo root.
 - All authentication belongs in `/packages/auth` (Supabase Auth).
 - All data/store logic belongs in `/packages/database` (Supabase Database/Storage).
 - Every app must use the `AuthProvider` from `/packages/auth`.
+- All layout and functional primitives (`Row`, `Col`, `Card`, date/time pickers, etc.) must be built in and consumed from `/packages/components` — never hand-rolled in an app.
+- Follow the design system in `DESIGN.md`: token-based colors (no hardcoded hex), `next-themes` theming (dark-primary/gold), shared spacing/easing tokens, generous whitespace, subtle motion, high-image/low-text pages.
 
 ### Documentation
 

@@ -1,0 +1,20 @@
+.m-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.m-card-bordered {
+  border: 1px solid var(--color-border);
+}
+
+.m-card-padded {
+  padding: var(--space-5);
+}
+
+.m-card-elevated {
+  box-shadow: var(--shadow-2);
+}

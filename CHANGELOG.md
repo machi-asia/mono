@@ -4,6 +4,18 @@ All notable changes to this monorepo will be documented in this file.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.6.0] - 2026-09-02
+
+### Added
+
+- `@mono/components` design system: token-based colors and spacing/easing as CSS custom properties (`src/tokens.css`), with **dark mode primary and gold accents** and a light variant derived from the same tokens.
+- `@mono/components` `ThemeProvider` (wraps `next-themes`) for SSR-safe theme switching with `class` attribute, system-preference support, and dark default.
+- `@mono/components` layout primitives: `Row`, `Col`, `Card` (`src/layout.tsx` + `layout.css`), consumed strictly from the package.
+- New exports in `@mono/components` index (`ThemeProvider`, `Row`, `Col`, `Card` + props types) and `next-themes` dependency.
+- Tests for `Row`/`Col`/`Card` (grid math, variants) and `ThemeProvider` (defaults, children).
+- Live interactive showcase entries for `ThemeProvider`, `Row`, `Col`, `Card` (with prop dropdowns) in `apps/docs/src/app/components/components/`; docs app now depends on `next-themes`.
+- Design-system conventions documented: `DESIGN.md` (Color & Theme, Motion, Spacing & Minimal Clutter, Component Rules, Content Density), `AGENTS.md` (rule 13), `CONTRIBUTING.md`, `README.md`, `docs/ARCHITECTURE.md`, and `docs/adr/005-design-system-theming.md`.
+
 ## [0.5.0] - 2026-09-02
 
 ### Added

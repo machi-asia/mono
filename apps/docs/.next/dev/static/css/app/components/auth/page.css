@@ -102,6 +102,86 @@
   margin-bottom: 0;
 }
 
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[15].oneOf[10].use[2]!../../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[15].oneOf[10].use[3]!../../packages/components/src/tokens.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+:root {
+  color-scheme: dark;
+
+  --color-bg: #0d0c0a;
+  --color-surface: #16140f;
+  --color-surface-2: #1d1a14;
+  --color-text: #f6f1e6;
+  --color-text-muted: #a8a29e;
+  --color-primary: #d4af37;
+  --color-primary-soft: #e6c96a;
+  --color-primary-contrast: #14110a;
+  --color-border: #2a271f;
+  --color-border-soft: #1f1d16;
+  --color-overlay: rgb(0 0 0 / 60%);
+  --shadow-1: 0 1px 3px rgb(0 0 0 / 45%);
+  --shadow-2: 0 8px 24px rgb(0 0 0 / 50%);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-12: 4.5rem;
+  --duration-fast: 150ms;
+  --duration-base: 260ms;
+  --duration-slow: 420ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.light {
+  color-scheme: light;
+
+  --color-bg: #f7f5ef;
+  --color-surface: #fff;
+  --color-surface-2: #f2eee4;
+  --color-text: #1c1917;
+  --color-text-muted: #6f6a63;
+  --color-primary: #a8842c;
+  --color-primary-soft: #c9a24a;
+  --color-primary-contrast: #fff;
+  --color-border: #e8e2d4;
+  --color-border-soft: #efe9dc;
+  --color-overlay: rgb(0 0 0 / 35%);
+  --shadow-1: 0 1px 3px rgb(0 0 0 / 10%);
+  --shadow-2: 0 8px 24px rgb(0 0 0 / 12%);
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[15].oneOf[10].use[2]!../../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[15].oneOf[10].use[3]!../../packages/components/src/layout.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+.m-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.m-card-bordered {
+  border: 1px solid var(--color-border);
+}
+
+.m-card-padded {
+  padding: var(--space-5);
+}
+
+.m-card-elevated {
+  box-shadow: var(--shadow-2);
+}
+
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ../../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[15].oneOf[10].use[2]!../../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[15].oneOf[10].use[3]!../../packages/auth/src/sign-in-modal.css ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************/
