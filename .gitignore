@@ -1,3 +1,44 @@
-node_modules
-dist
-.turbo
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+.next/
+.turbo/
+coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment & secrets
+# .env.sample IS committed (it holds key declarations with placeholders).
+# All real-environment value files must be ignored.
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.test
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / OS
+.DS_Store
+.idea/
+*.swp
+*.swo
+Thumbs.db
+Desktop.ini
+
+# Cache / misc
+.eslintcache
+.cache/
+.vercel/
+.next-env.d.ts.local
