@@ -7,6 +7,14 @@ const commitFile = path.join(root, "latest.commit.txt");
 
 const TITLE_RE = /^(feature|fix|refactor|chore|docs|style|test|ci|build)\s*\([a-z0-9]+(-[a-z0-9]+)*\):\s*.+$/;
 
+function previousCommitSubject() {
+  const result = spawnSync("git", ["log", "-1", "--pretty=%s"], { cwd: root, encoding: "utf8" });
+  if (result.status !== 0 || !result.stdout) {
+    return "";
+  }
+  return result.stdout.trim();
+}
+
 function validateTitle() {
   if (!fs.existsSync(commitFile)) {
     console.error("[deploy] Missing latest.commit.txt at repository root.");
@@ -18,6 +26,15 @@ function validateTitle() {
     console.error("[deploy] latest.commit.txt title does not match the required format.");
     console.error(`  Expected: ^(feature|fix|refactor|chore|docs|style|test|ci|build)\\s*\\(scope\\):\\s*message$`);
     console.error(`  Got:      ${title || "(empty)"}`);
+    process.exit(1);
+  }
+
+  const previous = previousCommitSubject();
+  if (previous && title === previous) {
+    console.error("[deploy] latest.commit.txt title matches the previous commit's subject.");
+    console.error(`  Previous: ${previous}`);
+    console.error(`  Got:      ${title}`);
+    console.error("  Update the title (e.g. use a different type/scope, or append area-specific wording) before deploying.");
     process.exit(1);
   }
 }

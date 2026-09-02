@@ -1,4 +1,4 @@
-feature(components): live interactive component showcases with per-prop dropdowns
+chore(scripts): harden deploy commit-message validation
 
 - components: `ComponentShowcase` now renders each component live via a `render(values)` function and a `propControls` dropdown for every choice/enum prop (replaces the static `demo` node), backed by stateful per-item selects that re-invoke `render` on change.
 - auth: added `MockAuthProvider` (`@mono/auth/mock`) so context-dependent auth components render live without a backend; exported `AuthContext` for reuse.
@@ -7,6 +7,7 @@ feature(components): live interactive component showcases with per-prop dropdown
 - components: `packageName`/`description` are now the only top-level props; per-component interactive controls moved into `propControls`.
 - test: added `ComponentShowcase` dropdown render/re-render tests and `MockAuthProvider`-driven `AuthGate`/`SignInModal` tests; full suite green (lint, stylelint, typecheck, vitest).
 - chore: added `npm run deploy` (`scripts/deploy.js`) running `git add .` → `git commit -F latest.commit.txt` → `git push`, aborting if any step fails; validates that `latest.commit.txt`'s first line matches the Conventional-Commits title regex before committing.
+- chore: `deploy` now also refuses when `latest.commit.txt`'s title equals the previous commit's subject, preventing duplicate commit titles.
 - docs: `AGENTS.md` documents the `latest.commit.txt` title format and bullet-per-change convention.
 
 ## Component Showcase Convention (previous session)
