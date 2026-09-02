@@ -1,0 +1,42 @@
+.auth-demo-status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+}
+
+.auth-demo-status-row {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.auth-demo-status-key {
+  color: #6b7280;
+  min-width: 7rem;
+}
+
+.auth-demo-status-value {
+  color: #111827;
+}
+
+.auth-demo-gated {
+  margin: 0;
+  padding: 0.75rem;
+  border-left: 3px solid #4f46e5;
+  background: #eef2ff;
+  border-radius: 4px;
+  color: #312e81;
+}
+
+.auth-demo-modal-embed {
+  position: relative;
+  max-height: 30rem;
+  overflow: auto;
+}
+
+.auth-demo-modal-embed .auth-modal-overlay {
+  position: static;
+  padding: 0;
+}

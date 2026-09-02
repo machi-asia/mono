@@ -1,0 +1,23 @@
+{
+  "name": "mono",
+  "private": true,
+  "packageManager": "npm@11.12.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "lint:style": "turbo lint:style",
+    "typecheck": "turbo typecheck",
+    "test": "turbo lint lint:style typecheck test",
+    "env": "node scripts/check-env.js",
+    "deploy": "node scripts/deploy.js",
+    "clean": "turbo clean"
+  },
+  "devDependencies": {
+    "turbo": "^2.10.12"
+  }
+}

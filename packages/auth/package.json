@@ -1,0 +1,64 @@
+{
+  "name": "@mono/auth",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./server": {
+      "types": "./src/server.ts",
+      "import": "./src/server.ts",
+      "default": "./src/server.ts"
+    },
+    "./provider": {
+      "types": "./src/provider.tsx",
+      "import": "./src/provider.tsx",
+      "default": "./src/provider.tsx"
+    },
+    "./mock": {
+      "types": "./src/mock.tsx",
+      "import": "./src/mock.tsx",
+      "default": "./src/mock.tsx"
+    },
+    "./middleware": {
+      "types": "./src/middleware.ts",
+      "import": "./src/middleware.ts",
+      "default": "./src/middleware.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "tsc --noEmit",
+    "lint:style": "stylelint --allow-empty-input \"src/**/*.css\"",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.5",
+    "@supabase/supabase-js": "^2.113.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/react": "^19.2.18",
+    "@vitejs/plugin-react": "^6.1.1",
+    "jsdom": "^30.0.1",
+    "react": "^19.2.8",
+    "stylelint": "^17.14.1",
+    "stylelint-config-standard": "^40.0.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  }
+}

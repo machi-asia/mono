@@ -1,0 +1,6 @@
+{
+  "/page": "app/page.js",
+  "/components/auth/page": "app/components/auth/page.js",
+  "/components/database/page": "app/components/database/page.js",
+  "/components/components/page": "app/components/components/page.js"
+}
