@@ -1,4 +1,5 @@
-feature(branding): add shared logo and set it as favicon on all apps
+docs(workflow): enforce checking all uncommitted changes across repo for latest.commit.txt
 
-- assets/branding/: new shared location with the primary logo (logo.svg + logo.png) so all packages/apps can reuse it from one source of truth
-- apps (docs/rose/machi-asia): added src/app/icon.png so each Next.js site serves the brand logo as its favicon automatically (App Router icon convention -> /icon.png); verified via builds
+- AGENTS.md: clarified that before session end, the agent must check git status and git diff across the entire repository to comprehensively summarize all uncommitted files, not just the most recent edit
+- CONTRIBUTING.md: added explicit deployment workflow step to inspect git status/diff and update latest.commit.txt accordingly
+- CHANGELOG.md: logged version 0.11.1 documentation update

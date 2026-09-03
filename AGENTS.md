@@ -48,9 +48,9 @@ Rules for AI agents working on this monorepo.
 - If you add or rename an env key in code, update the corresponding `.env.sample` (never commit values in `.env.local`).
 - Always update `CHANGELOG.md` with a new entry.
 - Always run `npm run env` after any env-related change to verify `.env.local` vs `.env.sample`.
-- Always update `latest.commit.txt` with a summary of all uncommitted changes before the agent session ends. `latest.commit.txt` is read verbatim as the commit message by `npm run deploy` (see `scripts/deploy.js`). Its first line (a Conventional-Commits-style title) **must** match:
+- Always update `latest.commit.txt` before the agent session ends with a comprehensive summary of **all** uncommitted changes across the entire repository. Run `git status` (and `git diff` / `git diff --staged` / untracked file checks) to inspect the complete set of uncommitted/modified/added/deleted files across all apps and packages, and ensure every notable change is captured in the bullets. Never describe only the most recent edit if other uncommitted changes exist. `latest.commit.txt` is read verbatim as the commit message by `npm run deploy` (see `scripts/deploy.js`). Its first line (a Conventional-Commits-style title) **must** match:
   `^(feature|fix|refactor|chore|docs|style|test|ci|build)\s*\([a-z0-9]+(-[a-z0-9]+)*\):\s*.+$`
-  Choose the type closest to the dominant nature of the pending changes and a kebab-case scope naming the affected area. Below the title, add one bullet per notable change (`- <area>: what changed and why`).
+  Choose the type closest to the dominant nature of the pending changes and a kebab-case scope naming the primary affected area. Below the title, add one bullet per notable change (`- <area>: what changed and why`), covering all uncommitted changes across the repo.
 
 ## Code Style
 
