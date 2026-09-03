@@ -29,6 +29,8 @@ Authentication and data/store logic are centralized into two shared packages, bo
 
 No app or other package may implement auth or data logic independently. Every app must wrap its root layout with `AuthProvider` **and** `AuthGate` — no signed-out user may access any page, and the only way in is to sign in (email/password, Google, or as a Guest via Supabase anonymous).
 
+The canonical Supabase project is `https://zyatzdkapdqngwyhiqqn.supabase.co`. All auth/database schema changes, migrations, and data edits must target this project only; `NEXT_PUBLIC_SUPABASE_URL` must resolve here, and a mismatched target must be corrected before applying changes.
+
 ## Alternatives Considered
 
 - **Per-app auth** — Each app implements its own auth. Leads to duplication and security inconsistencies.

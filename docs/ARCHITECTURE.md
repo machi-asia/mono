@@ -103,6 +103,10 @@ NEXT_PUBLIC_SUPABASE_URL=...
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=...
 ```
 
+### Canonical Supabase Project
+
+All Supabase-backed edits must target the **canonical project** at `https://zyatzdkapdqngwyhiqqn.supabase.co`. Migrations, DDL, edge functions, and data changes are applied to this project only. `NEXT_PUBLIC_SUPABASE_URL` must resolve to this canonical URL. Before applying any schema or data change, verify the connected target matches; if a tool/agent points to a different project, correct it first and do not proceed with edits until it matches.
+
 ## Key Decisions
 
 See `docs/adr/` for all Architecture Decision Records. Key decisions:

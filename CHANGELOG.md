@@ -4,6 +4,96 @@ All notable changes to this monorepo will be documented in this file.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.11.0] - 2026-09-03
+
+### Added
+
+- Added the primary brand logo for all sites to a shared `assets/branding/` folder (`logo.svg` + `logo.png`), the single reusable source of truth for the monorepo.
+- Set the logo as the browser favicon on every app by placing `src/app/icon.png` in `apps/docs`, `apps/rose`, and `apps/machi-asia` (Next.js App Router icon file convention serves it automatically as `/icon.png`).
+
+## [0.10.0] - 2026-09-03
+
+### Added
+
+- `@mono/components` **TimePicker** was rebuilt as three aligned editable comboboxes (hour, minute, and AM/PM) with matching labels and control heights. Each field is a click-to-open dropdown *and* a typeable input: pick a value from the list (hours 0-23 or 1-12, minutes in 5-min steps, AM/PM) or type one directly; invalid typed input is ignored and reverts on blur. AM/PM is a compact two-button toggle. No separate monolithic input remains, and the label/box/separator are vertically aligned.
+- `@mono/components` **DatePicker** now includes a text input so the date can be typed directly (`YYYY-MM-DD`). Valid typed dates update the calendar view and fire `onChange`; invalid input is ignored and resets to the current value on blur.
+
+## [0.9.5] - 2026-09-03
+
+### Added
+
+- Set `outputFileTracingRoot` to the workspace root in `apps/docs`, `apps/rose`, and `apps/machi-asia` Next configs to silence Next.js's warning that the workspace directory is outside the Git repository during `next dev`/`next build`.
+
+## [0.9.4] - 2026-09-03
+
+### Changed
+
+- `@mono/components` **ThemeProvider** now defaults `enableSystem` to `false` so the app always loads in **dark mode** per the design system, instead of being overridden by the OS light preference. System/dark/light switching remains available via explicit props.
+- `@mono/components` **Accordion**: content no longer snaps into existence — the panel stays mounted and expands via a CSS grid `0fr → 1fr` transition (real content height, no hardcoded cap), so the box and contents grow together smoothly at `--duration-base` (260ms).
+
+## [0.9.2] - 2026-09-03
+
+### Fixed
+
+- `@mono/components` **Dropdown**, **Popup**, and **Navbar** auth menu were snapping open instead of animating: their enter animation (CSS keyframes on a freshly-mounted element) did not reliably replay. Reworked `useMotionMount` so it mounts the element and flips an `entered` class on the next double `requestAnimationFrame`, driving a GPU-composited `opacity`/`transform` transition that replays smoothly on every open and exit.
+
+## [0.9.1] - 2026-09-03
+
+### Fixed
+
+- `@mono/components` **Dropdown**: menu enter animation now uses `--duration-base` (260ms) instead of the snappier 150ms, and the menu is keyed by an open-count so the enter animation reliably restarts on every reopen (previously the second open appeared instant/non-smooth because the finished animation didn't replay).
+- `@mono/components` **Popup** and **Navbar** auth menu: keyed by an open-count so the enter animation restarts on each open.
+
+## [0.9.0] - 2026-09-03
+
+### Added
+
+- `@mono/components` internal `useMotionMount` hook (`src/motion/motion.ts`) that keeps an element mounted briefly during its exit animation, enabling smooth enter + exit transitions for conditionally-rendered overlays.
+
+### Changed
+
+- `@mono/components` **Dropdown**: menu now animates in and out with a fade + vertical scale (transform-origin top), using the design duration/easing tokens.
+- `@mono/components` **Popup**: content animates in/out with fade + slide + scale, per-position variants (top/bottom/left/right) for both enter and exit.
+- `@mono/components` **Accordion**: content animates in with fade + slide + expand; icon now animates a 45° rotation when open instead of swapping `+`/`−` glyphs.
+- `@mono/components` **Navbar**: auth dropdown menu now animates in/out with fade + scale (transform-origin top right).
+
+## [0.8.1] - 2026-09-03
+
+### Changed
+
+- Docs app navbar link labels no longer carry the `@mono/` package prefix (`Auth`, `Components`, `Database`).
+
+### Added
+
+- `@mono/auth` new `GoogleIcon` and `GithubIcon` React components (feature folder `src/icons/`), derived from the `public/icons/*.svg` assets and exported from `@mono/auth`.
+- `@mono/auth` GitHub OAuth sign-in: new `signInWithGithub` on `AuthContextValue`/`AuthProvider`/mock, plus a "Continue with GitHub" button in the sign-in modal.
+
+### Changed
+
+- Sign-in modal provider buttons now render their provider logo (Google/GitHub) with a flex icon+label layout.
+- Account Settings "Linked Providers" section now shows the Google/GitHub logo next to each provider name.
+
+## [0.8.0] - 2026-09-03
+
+### Added
+
+- `@mono/auth` **Account Settings modal** (`src/account-settings/`): sidebar with a Security tab (future tabs reserved), and four security subsections — **Change Password** (new password + confirm, via `supabase.auth.updateUser`), **Passkeys** (experimental, WebAuthn detection, `signInWithPasskey`), **Linked Providers** (list/link/unlink OAuth identities via `linkIdentity`/`unlinkIdentity` with redirect flow), and **Multi-Factor Authentication** (list TOTP/WebAuthn factors, enroll TOTP with QR code + manual key + 6-digit verify, unenroll).
+- `@mono/auth` package: new `./account-settings` sub-path export; exported `AccountSettings` from `@mono/auth`.
+- `@mono/components` Navbar: new `NavbarAuthMenuItem` interface and `menuItems` prop on `NavbarAuth` for generic dropdown items before Sign out.
+- Docs app: "Account settings" menu item wired into the Navbar auth dropdown, rendering the new `AccountSettings` modal.
+
+## [0.7.0] - 2026-09-03
+
+### Changed
+
+- Enforced the **canonical Supabase project** (`https://zyatzdkapdqngwyhiqqn.supabase.co`) as the single target for all database edits. Documented and enforced in `AGENTS.md` (rule 15), `CONTRIBUTING.md`, `docs/ARCHITECTURE.md`, `docs/adr/003-centralized-auth-and-database.md`, and `README.md`. All migrations, DDL, edge functions, and data changes must target this project; `NEXT_PUBLIC_SUPABASE_URL` must resolve here and any mismatched target must be corrected before applying changes.
+
+## [0.6.1] - 2026-09-03
+
+### Added
+
+- New package convention (AGENTS.md rule 14): every exported component is organized by a feature folder within each package's `src/` — its `.tsx`, `.css`, subcomponents, hooks, helper types, and tests all live together under a feature-named folder (e.g. `src/showcase/showcase.tsx`, `src/showcase/showcase.css`). `src/index.ts` only re-exports from these feature folders.
+
 ## [0.6.0] - 2026-09-02
 
 ### Added

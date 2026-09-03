@@ -1,0 +1,70 @@
+.m-tooltip-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.m-tooltip {
+  position: absolute;
+  z-index: 1000;
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: var(--shadow-1);
+  animation: m-tooltip-in var(--duration-fast) var(--ease-out);
+}
+
+.m-tooltip--top {
+  bottom: calc(100% + var(--space-1));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.m-tooltip--bottom {
+  top: calc(100% + var(--space-1));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.m-tooltip--left {
+  right: calc(100% + var(--space-1));
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.m-tooltip--right {
+  left: calc(100% + var(--space-1));
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes m-tooltip-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.m-tooltip--left,
+.m-tooltip--right {
+  animation-name: m-tooltip-in-side;
+}
+
+@keyframes m-tooltip-in-side {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

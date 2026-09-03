@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { AuthProvider, AuthGate } from "@mono/auth";
+import { ThemeProvider } from "@mono/components";
+import { DocsNavbar } from "./docs-navbar";
+import "./global.css";
 
 export const metadata: Metadata = {
   title: "Machi Asia Docs",
@@ -14,9 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AuthProvider>
-          <AuthGate>{children}</AuthGate>
-        </AuthProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            <DocsNavbar />
+            <AuthGate>{children}</AuthGate>
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

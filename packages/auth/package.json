@@ -17,14 +17,19 @@
       "default": "./src/server.ts"
     },
     "./provider": {
-      "types": "./src/provider.tsx",
-      "import": "./src/provider.tsx",
-      "default": "./src/provider.tsx"
+      "types": "./src/provider/provider.tsx",
+      "import": "./src/provider/provider.tsx",
+      "default": "./src/provider/provider.tsx"
     },
     "./mock": {
-      "types": "./src/mock.tsx",
-      "import": "./src/mock.tsx",
-      "default": "./src/mock.tsx"
+      "types": "./src/mock/mock.tsx",
+      "import": "./src/mock/mock.tsx",
+      "default": "./src/mock/mock.tsx"
+    },
+    "./account-settings": {
+      "types": "./src/account-settings/account-settings.tsx",
+      "import": "./src/account-settings/account-settings.tsx",
+      "default": "./src/account-settings/account-settings.tsx"
     },
     "./middleware": {
       "types": "./src/middleware.ts",

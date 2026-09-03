@@ -26,6 +26,14 @@
   --space-6: 2rem;
   --space-8: 3rem;
   --space-12: 4.5rem;
+  --color-error: #ef4444;
+  --color-error-soft: #fca5a5;
+  --color-success: #22c55e;
+  --color-success-soft: #86efac;
+  --color-warning: #f59e0b;
+  --color-warning-soft: #fcd34d;
+  --color-info: #3b82f6;
+  --color-info-soft: #93c5fd;
   --duration-fast: 150ms;
   --duration-base: 260ms;
   --duration-slow: 420ms;
@@ -47,6 +55,14 @@
   --color-border: #e8e2d4;
   --color-border-soft: #efe9dc;
   --color-overlay: rgb(0 0 0 / 35%);
+  --color-error: #dc2626;
+  --color-error-soft: #fecaca;
+  --color-success: #16a34a;
+  --color-success-soft: #bbf7d0;
+  --color-warning: #d97706;
+  --color-warning-soft: #fde68a;
+  --color-info: #2563eb;
+  --color-info-soft: #bfdbfe;
   --shadow-1: 0 1px 3px rgb(0 0 0 / 10%);
   --shadow-2: 0 8px 24px rgb(0 0 0 / 12%);
 }

@@ -1,0 +1,114 @@
+.m-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out);
+}
+
+.m-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.m-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.m-btn--sm {
+  padding: var(--space-1) var(--space-3);
+  font-size: 0.8rem;
+}
+
+.m-btn--md {
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.9rem;
+}
+
+.m-btn--lg {
+  padding: var(--space-3) var(--space-6);
+  font-size: 1rem;
+}
+
+.m-btn--primary {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  border-color: var(--color-primary);
+}
+
+.m-btn--primary:hover:not(:disabled) {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary-soft);
+}
+
+.m-btn--secondary {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.m-btn--secondary:hover:not(:disabled) {
+  background: var(--color-surface-2);
+  border-color: var(--color-text-muted);
+}
+
+.m-btn--ghost {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.m-btn--ghost:hover:not(:disabled) {
+  background: var(--color-surface-2);
+}
+
+.m-btn--danger {
+  background: var(--color-error);
+  color: #fff;
+  border-color: var(--color-error);
+}
+
+.m-btn--danger:hover:not(:disabled) {
+  background: var(--color-error-soft);
+  border-color: var(--color-error-soft);
+  color: var(--color-primary-contrast);
+}
+
+.m-btn--loading {
+  pointer-events: none;
+}
+
+.m-btn-spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: m-btn-spin 0.6s linear infinite;
+}
+
+@keyframes m-btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.m-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.1em;
+}
+
+.m-btn-label {
+  line-height: 1;
+}

@@ -1,0 +1,110 @@
+.m-datepicker {
+  display: inline-block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  min-width: 260px;
+}
+
+.m-datepicker-input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.m-datepicker-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.m-datepicker-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.m-datepicker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.m-datepicker-nav {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.m-datepicker-nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.m-datepicker-nav:hover:not(:disabled) {
+  background: var(--color-surface-2);
+}
+
+.m-datepicker-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.m-datepicker-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  text-align: center;
+}
+
+.m-datepicker-weekday {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  padding: var(--space-1) 0;
+}
+
+.m-datepicker-day {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 0.85rem;
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.m-datepicker-day:hover:not(:disabled) {
+  background: var(--color-surface-2);
+}
+
+.m-datepicker-day--selected {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  font-weight: 600;
+}
+
+.m-datepicker-day--disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

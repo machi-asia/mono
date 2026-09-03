@@ -1,6 +1,24 @@
 "use client";
 
-import { ComponentShowcase, Card, Col, Row, ThemeProvider } from "@mono/components";
+import {
+  ComponentShowcase,
+  Card,
+  Col,
+  Row,
+  ThemeProvider,
+  Button,
+  Link,
+  Tooltip,
+  Dropdown,
+  Accordion,
+  Popup,
+  DatePicker,
+  TimePicker,
+  Navbar,
+  Footer,
+  TextEditor,
+  MediaLibrary,
+} from "@mono/components";
 import { useTheme } from "next-themes";
 import "./components-demo.css";
 
@@ -27,17 +45,35 @@ function ThemeToggleDemo() {
 const alignOptions = ["flex-start", "center", "flex-end"];
 const justifyOptions = ["flex-start", "center", "space-between"];
 
+const dropdownItems = [
+  { label: "Apple", value: "apple" },
+  { label: "Banana", value: "banana" },
+  { label: "Cherry", value: "cherry" },
+];
+
+const accordionItems = [
+  { title: "What is Machi Asia?", content: "Machi Asia is a platform for building and deploying AI-powered products." },
+  { title: "How do I get started?", content: "Sign in as a guest or create an account, then explore the documentation." },
+  { title: "Is it free?", content: "The core platform is free to use. Premium features may require a subscription." },
+];
+
+const mediaItems = [
+  { id: "1", url: "https://placehold.co/120x120/16140f/f6f1e6?text=1", name: "photo-01.jpg", type: "image" as const },
+  { id: "2", url: "https://placehold.co/120x120/16140f/f6f1e6?text=2", name: "banner.png", type: "image" as const },
+  { id: "3", url: "", name: "demo.mp4", type: "video" as const },
+  { id: "4", url: "", name: "podcast.mp3", type: "audio" as const },
+];
+
 export function ComponentsShowcase() {
   return (
     <ComponentShowcase
       packageName="mono/components"
-      description="Shared UI component library: the design-token theme system and the layout primitives (Row, Col, Card) that every page must build on. Each component below is rendered live with a dropdown per choice/enum prop."
+      description="Shared UI component library: the design-token theme system, layout primitives, and functional elements that every page must build on."
       components={[
         {
           name: "ComponentShowcase",
           uses: 'import { ComponentShowcase } from "@mono/components"',
-          description:
-            "The reusable list-view layout that every package showcase page uses. Takes a packageName, an optional description, and a list of components. Each item can declare propControls (one dropdown per prop) and a render(values) function that returns the live component demo.",
+          description: "The reusable list-view layout that every package showcase page uses.",
           propControls: [
             {
               prop: "packageName",
@@ -63,8 +99,7 @@ export function ComponentsShowcase() {
         {
           name: "ThemeProvider",
           uses: 'import { ThemeProvider } from "@mono/components"',
-          description:
-            "Wraps next-themes to enable theme switching. Uses dark mode as the default with gold accents; a light variant is derived from the same design tokens. Uses the class attribute and supports the system preference.",
+          description: "Wraps next-themes to enable theme switching with dark mode as default and gold accents.",
           propControls: [
             {
               prop: "defaultTheme",
@@ -82,20 +117,14 @@ export function ComponentsShowcase() {
         {
           name: "Row",
           uses: 'import { Row, Col } from "@mono/components"',
-          description:
-            "Flex row layout primitive from the shared package. Controls the horizontal arrangement, wrap, alignment, and gutter of its children (typically Col).",
+          description: "Flex row layout primitive. Controls horizontal arrangement, wrap, alignment, and gutter.",
           propControls: [
             { prop: "align", label: "align", options: alignOptions, defaultValue: "center" },
             { prop: "justify", label: "justify", options: justifyOptions, defaultValue: "space-between" },
             { prop: "wrap", label: "wrap", options: boolOptions, defaultValue: "true" },
           ],
           render: ({ align, justify, wrap }) => (
-            <Row
-              align={align as never}
-              justify={justify as never}
-              wrap={wrap === "true"}
-              data-testid="row-demo"
-            >
+            <Row align={align as never} justify={justify as never} wrap={wrap === "true"}>
               <Card padded={false} className="components-demo-box" as="div">A</Card>
               <Card padded={false} className="components-demo-box" as="div">B</Card>
               <Card padded={false} className="components-demo-box" as="div">C</Card>
@@ -105,14 +134,13 @@ export function ComponentsShowcase() {
         {
           name: "Col",
           uses: 'import { Col } from "@mono/components"',
-          description:
-            "Grid column primitive from the shared package. Takes a span (1-12) and optional offset to size it as a fraction of a 12-column row.",
+          description: "Grid column primitive. Takes a span (1-12) and optional offset for 12-column layouts.",
           propControls: [
             { prop: "span", label: "span", options: ["4", "6", "8", "12"], defaultValue: "6" },
           ],
           render: ({ span }) => (
             <Row>
-              <Col span={Number(span)} data-testid="col-demo">
+              <Col span={Number(span)}>
                 <Card className="components-demo-box" as="div">span {span}</Card>
               </Col>
               <Col span={12 - Number(span)}>
@@ -124,8 +152,7 @@ export function ComponentsShowcase() {
         {
           name: "Card",
           uses: 'import { Card } from "@mono/components"',
-          description:
-            "Surface container from the shared package. Renders a token-styled panel with a border and padding by default; can be elevated or have its border/padding removed.",
+          description: "Surface container with token-styled border, padding, and elevation variants.",
           propControls: [
             { prop: "elevated", label: "elevated", options: boolOptions, defaultValue: "false" },
             { prop: "bordered", label: "bordered", options: boolOptions, defaultValue: "true" },
@@ -137,12 +164,166 @@ export function ComponentsShowcase() {
                 elevated={elevated === "true"}
                 bordered={bordered === "true"}
                 padded={padded === "true"}
-                data-testid="card-demo"
               >
                 A token-styled card surface.
               </Card>
             </div>
           ),
+        },
+        {
+          name: "Button",
+          uses: 'import { Button } from "@mono/components"',
+          description: "Action button with variant, size, and loading state support.",
+          propControls: [
+            { prop: "variant", label: "variant", options: ["primary", "secondary", "ghost", "danger"], defaultValue: "primary" },
+            { prop: "size", label: "size", options: ["sm", "md", "lg"], defaultValue: "md" },
+            { prop: "disabled", label: "disabled", options: boolOptions, defaultValue: "false" },
+          ],
+          render: ({ variant, size, disabled }) => (
+            <Button variant={variant as never} size={size as never} disabled={disabled === "true"}>
+              Click me
+            </Button>
+          ),
+        },
+        {
+          name: "Link",
+          uses: 'import { Link } from "@mono/components"',
+          description: "Styled anchor with variant and external link support.",
+          propControls: [
+            { prop: "variant", label: "variant", options: ["default", "underline", "ghost"], defaultValue: "default" },
+            { prop: "external", label: "external", options: boolOptions, defaultValue: "false" },
+          ],
+          render: ({ variant, external }) => (
+            <Link href="#" variant={variant as never} external={external === "true"}>
+              Navigate somewhere
+            </Link>
+          ),
+        },
+        {
+          name: "Tooltip",
+          uses: 'import { Tooltip } from "@mono/components"',
+          description: "Hover/focus tooltip that appears near the trigger element.",
+          propControls: [
+            { prop: "position", label: "position", options: ["top", "bottom", "left", "right"], defaultValue: "top" },
+          ],
+          render: ({ position }) => (
+            <Tooltip content="Helpful hint" position={position as never}>
+              <Button variant="secondary" size="sm">Hover me</Button>
+            </Tooltip>
+          ),
+        },
+        {
+          name: "Dropdown",
+          uses: 'import { Dropdown } from "@mono/components"',
+          description: "Custom select dropdown with keyboard support and disabled items.",
+          propControls: [
+            { prop: "disabled", label: "disabled", options: boolOptions, defaultValue: "false" },
+          ],
+          render: ({ disabled }) => (
+            <Dropdown
+              items={dropdownItems}
+              placeholder="Pick a fruit..."
+              disabled={disabled === "true"}
+            />
+          ),
+        },
+        {
+          name: "Accordion",
+          uses: 'import { Accordion } from "@mono/components"',
+          description: "Collapsible content sections supporting single or multiple open panels.",
+          propControls: [
+            { prop: "multiple", label: "multiple", options: boolOptions, defaultValue: "false" },
+          ],
+          render: ({ multiple }) => (
+            <Accordion items={accordionItems} multiple={multiple === "true"} defaultOpen={[0]} />
+          ),
+        },
+        {
+          name: "Popup",
+          uses: 'import { Popup } from "@mono/components"',
+          description: "Floating content panel that appears when clicking a trigger element.",
+          propControls: [
+            { prop: "position", label: "position", options: ["top", "bottom", "left", "right"], defaultValue: "bottom" },
+          ],
+          render: ({ position }) => (
+            <Popup
+              trigger={<Button variant="secondary" size="sm">Open popup</Button>}
+              position={position as never}
+            >
+              <div style={{ padding: "0.5rem" }}>
+                <strong>Popup content</strong>
+                <p style={{ margin: "0.5rem 0 0", fontSize: "0.85rem" }}>Click outside to close.</p>
+              </div>
+            </Popup>
+          ),
+        },
+        {
+          name: "DatePicker",
+          uses: 'import { DatePicker } from "@mono/components"',
+          description: "Calendar date picker with month navigation and min/max range support.",
+          render: () => <DatePicker value="2026-09-03" onChange={() => {}} />,
+        },
+        {
+          name: "TimePicker",
+          uses: 'import { TimePicker } from "@mono/components"',
+          description: "Increment/decrement time picker with 12h/24h mode support.",
+          propControls: [
+            { prop: "use24Hour", label: "use24Hour", options: boolOptions, defaultValue: "false" },
+          ],
+          render: ({ use24Hour }) => (
+            <TimePicker value="14:30" use24Hour={use24Hour === "true"} />
+          ),
+        },
+        {
+          name: "Navbar",
+          uses: 'import { Navbar } from "@mono/components"',
+          description: "Top navigation bar with brand, links, action slots, and an optional auth menu showing avatar, name, and sign-out.",
+          propControls: [
+            { prop: "showAuth", label: "auth", options: boolOptions, defaultValue: "true" },
+          ],
+          render: ({ showAuth }) => (
+            <Navbar
+              brand={<span>Machi Asia</span>}
+              links={[
+                { label: "Home", href: "/", active: true },
+                { label: "Docs", href: "/docs" },
+                { label: "Blog", href: "/blog" },
+              ]}
+              actions={<Button variant="primary" size="sm">Sign in</Button>}
+              auth={
+                showAuth === "true"
+                  ? { name: "Jane Doe", onSignOut: () => {} }
+                  : undefined
+              }
+            />
+          ),
+        },
+        {
+          name: "Footer",
+          uses: 'import { Footer } from "@mono/components"',
+          description: "Site footer with links and copyright.",
+          render: () => (
+            <Footer
+              links={[
+                { label: "Privacy", href: "/privacy" },
+                { label: "Terms", href: "/terms" },
+                { label: "Contact", href: "/contact" },
+              ]}
+              copyright="2026 Machi Asia. All rights reserved."
+            />
+          ),
+        },
+        {
+          name: "TextEditor",
+          uses: 'import { TextEditor } from "@mono/components"',
+          description: "Basic rich text editor with bold, italic, underline, and list formatting.",
+          render: () => <TextEditor placeholder="Write something..." />,
+        },
+        {
+          name: "MediaLibrary",
+          uses: 'import { MediaLibrary } from "@mono/components"',
+          description: "Grid-based media browser with upload support and selection.",
+          render: () => <MediaLibrary items={mediaItems} onSelect={() => {}} />,
         },
       ]}
     />

@@ -1,0 +1,59 @@
+.m-texteditor {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.m-texteditor:focus-within {
+  border-color: var(--color-primary);
+}
+
+.m-texteditor-toolbar {
+  display: flex;
+  gap: 2px;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.m-texteditor-btn {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--color-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  min-width: 28px;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.m-texteditor-btn:hover {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.m-texteditor-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -1px;
+}
+
+.m-texteditor-content {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  outline: none;
+  overflow-y: auto;
+}
+
+.m-texteditor-content:empty::before {
+  content: attr(aria-label);
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}

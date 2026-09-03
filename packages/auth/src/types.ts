@@ -11,6 +11,7 @@ export interface AuthContextValue extends AuthState {
   signInWithEmail: (email: string, password: string) => Promise<{ error?: string }>;
   signUpWithEmail: (email: string, password: string) => Promise<{ error?: string }>;
   signInWithGoogle: () => Promise<{ error?: string }>;
+  signInWithGithub: () => Promise<{ error?: string }>;
   signInAsGuest: () => Promise<{ error?: string }>;
   signOut: () => Promise<void>;
 }

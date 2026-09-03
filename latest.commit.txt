@@ -1,3 +1,4 @@
-chore(repo): expand gitignore for nextjs builds, env files, and artifacts
+feature(branding): add shared logo and set it as favicon on all apps
 
-- repo: updated `.gitignore` with standard rules for build output (`.next`, `dist`, `build`, `out`, `coverage`), TypeScript cache, environment files (`.env*`), logs, and editor artifacts.
+- assets/branding/: new shared location with the primary logo (logo.svg + logo.png) so all packages/apps can reuse it from one source of truth
+- apps (docs/rose/machi-asia): added src/app/icon.png so each Next.js site serves the brand logo as its favicon automatically (App Router icon convention -> /icon.png); verified via builds

@@ -1,0 +1,174 @@
+.m-timepicker {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: var(--space-1);
+}
+
+.m-timepicker-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  position: relative;
+}
+
+.m-timepicker-field-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  white-space: nowrap;
+}
+
+.m-timepicker-combo {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  height: var(--timepicker-control-height, 2.5rem);
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.m-timepicker-combo:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.m-timepicker-combo-input {
+  box-sizing: border-box;
+  height: 100%;
+  width: 4.5ch;
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-3);
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  outline: none;
+}
+
+.m-timepicker-combo-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.m-timepicker-combo-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  cursor: pointer;
+  padding: 0 var(--space-2);
+  height: 100%;
+  align-self: stretch;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.m-timepicker-combo-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.m-timepicker-combo-btn:hover:not(:disabled) {
+  color: var(--color-primary);
+}
+
+.m-timepicker-sep {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  line-height: var(--timepicker-control-height, 2.5rem);
+  align-self: flex-end;
+}
+
+.m-timepicker-combo-list {
+  position: absolute;
+  top: calc(100% + var(--space-1));
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  max-height: 180px;
+  overflow-y: auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-2);
+  min-width: var(--space-6);
+}
+
+.m-timepicker-combo-item {
+  background: none;
+  border: none;
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.m-timepicker-combo-item:hover {
+  background: var(--color-surface-2);
+}
+
+.m-timepicker-combo-item--selected {
+  background: var(--color-surface-2);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.m-timepicker-field--period {
+  margin-left: var(--space-1);
+}
+
+.m-timepicker-period {
+  display: inline-flex;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  height: var(--timepicker-control-height, 2.5rem);
+}
+
+.m-timepicker-period-btn {
+  background: none;
+  border: none;
+  padding: 0 var(--space-3);
+  color: var(--color-text-muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.m-timepicker-period-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.m-timepicker-period-btn:hover:not(:disabled) {
+  color: var(--color-text);
+}
+
+.m-timepicker-period-btn--active {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+.m-timepicker-period-btn--active:hover:not(:disabled) {
+  color: var(--color-primary-contrast);
+}

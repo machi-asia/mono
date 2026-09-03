@@ -44,6 +44,7 @@ These are run in parallel via `npm run test` at the repo root.
 - Never hardcode secrets or commit values; real values live in `.env.local` (gitignored).
 - After adding, renaming, or removing an env key in code, update `.env.sample` accordingly.
 - Always run `npm run env` after env-related changes to verify `.env.local` vs `.env.sample` (checks missing keys and missing/placeholder values). `npm run env` is script-based and does not expose real values.
+- **The canonical Supabase project is `https://zyatzdkapdqngwyhiqqn.supabase.co`.** All database edits — migrations, DDL, edge functions, and data changes — must target this project only. `NEXT_PUBLIC_SUPABASE_URL` must resolve to this URL. Never run migrations against a mismatched/different project; verify the target before applying any change.
 
 ### Code Style
 
