@@ -18,6 +18,8 @@ import {
   Footer,
   TextEditor,
   MediaLibrary,
+  MarkdownRenderer,
+  Usage,
 } from "@mono/components";
 import { useTheme } from "next-themes";
 import "./components-demo.css";
@@ -58,11 +60,96 @@ const accordionItems = [
 ];
 
 const mediaItems = [
-  { id: "1", url: "https://placehold.co/120x120/16140f/f6f1e6?text=1", name: "photo-01.jpg", type: "image" as const },
-  { id: "2", url: "https://placehold.co/120x120/16140f/f6f1e6?text=2", name: "banner.png", type: "image" as const },
-  { id: "3", url: "", name: "demo.mp4", type: "video" as const },
-  { id: "4", url: "", name: "podcast.mp3", type: "audio" as const },
+  { id: "1", url: "https://zyatzdkapdqngwyhiqqn.supabase.co/storage/v1/object/public/media/users/guest/hero-banner.png", name: "hero-banner.png", type: "image" as const, size: 245000, createdAt: "2026-09-02T10:00:00Z" },
+  { id: "2", url: "https://zyatzdkapdqngwyhiqqn.supabase.co/storage/v1/object/public/media/users/guest/project-spec.pdf", name: "project-spec.pdf", type: "pdf" as const, size: 1420000, createdAt: "2026-09-03T08:30:00Z" },
+  { id: "3", url: "https://zyatzdkapdqngwyhiqqn.supabase.co/storage/v1/object/public/media/users/guest/contract-v2.docx", name: "contract-v2.docx", type: "docx" as const, size: 84000, createdAt: "2026-09-03T09:15:00Z" },
+  { id: "4", url: "https://zyatzdkapdqngwyhiqqn.supabase.co/storage/v1/object/public/media/users/guest/brand-assets.png", name: "brand-assets.png", type: "image" as const, size: 520000, createdAt: "2026-09-03T11:45:00Z" },
+  { id: "5", url: "https://zyatzdkapdqngwyhiqqn.supabase.co/storage/v1/object/public/media/users/guest/annual-report.pdf", name: "annual-report.pdf", type: "pdf" as const, size: 3120000, createdAt: "2026-09-03T12:00:00Z" },
 ];
+
+const sampleObsidianDocs: Record<string, string> = {
+  full: `# Obsidian Knowledge Note
+
+This is an authentic Obsidian-flavored markdown document. Check out the [[Design System]] or visit [[Architecture|System Architecture]] for more.
+
+Categorized under #knowledge/obsidian and #frontend/components.
+
+> [!tip] Quick Pro Tip
+> Obsidian callouts support custom titles and automatic icon selection based on callout types!
+
+> [!warning]- Foldable Callout (Click to Expand)
+> This warning is collapsed by default using the \`> [!warning]-\` syntax.
+> It can contain nested details, code blocks, or links!
+
+### Project Goals
+- [x] Integrate Obsidian callouts with Lucide icons
+- [x] Support [[Wikilinks]] and #tags
+- [x] Add ==highlighted text== and ~~strikethrough~~
+- [ ] Connect bi-directional graph view
+
+Here is a code sample with language badge and one-click copy:
+\`\`\`typescript
+interface Note {
+  title: string;
+  tags: string[];
+}
+\`\`\`
+
+| Feature | Supported | Notes |
+| --- | --- | --- |
+| Callouts | Yes | Note, Tip, Warning, Danger, Info |
+| Wikilinks | Yes | Both [[Link]] and [[Link\\|Alias]] |
+| Task List | Yes | Interactive checkboxes |
+`,
+  callouts: `# Callouts Gallery
+
+> [!note] Standard Note
+> Useful background information and notes.
+
+> [!tip] Helpful Tip
+> Pro-tips and best practices for writing clean markdown.
+
+> [!info] Information
+> General announcements and informational messages.
+
+> [!warning] Caution Required
+> Warning regarding non-backward compatible modifications.
+
+> [!danger] Destructive Action
+> Irreversible changes or data loss hazards.
+
+> [!example] Code Example
+> Walkthrough of a practical code snippet.
+
+> [!todo] Action Item
+> Tasks that require immediate follow-up.
+
+> [!success] Verified Done
+> All automated tests and quality checks passed!
+`,
+  tasks: `# Task List & Tags
+
+Track items with interactive checkboxes and tag taxonomy.
+
+- [x] Set up Next.js monorepo architecture
+- [x] Add Supabase authentication with guest access
+- [x] Build shared component library
+- [ ] Implement Obsidian markdown renderer
+- [ ] Launch production app
+
+Tagged under: #roadmap/2026 #sprint/active #release/ready
+`,
+  wikilinks: `# Obsidian Interlinking
+
+Connect notes seamlessly using Obsidian's double bracket syntax:
+
+- Read the overview at [[Project Overview]]
+- Deep dive into [[Architecture|Monorepo Architecture Documentation]]
+- Component showcase: [[Components/Showcase|Component Library Showcase]]
+
+Also highlights ==crucial terms== and ~~outdated procedures~~!
+`,
+};
 
 export function ComponentsShowcase() {
   return (
@@ -322,8 +409,92 @@ export function ComponentsShowcase() {
         {
           name: "MediaLibrary",
           uses: 'import { MediaLibrary } from "@mono/components"',
-          description: "Grid-based media browser with upload support and selection.",
-          render: () => <MediaLibrary items={mediaItems} onSelect={() => {}} />,
+          description: "Database-connected media browser with user-scoped private library, image/pdf/docx filtering, pagination, inspection modal with quick-copy public link, and delete capabilities.",
+          propControls: [
+            {
+              prop: "initialFilter",
+              label: "filter",
+              options: ["all", "image", "pdf", "docx"],
+              defaultValue: "all",
+            },
+            {
+              prop: "pageSize",
+              label: "pageSize",
+              options: ["2", "4", "6", "12"],
+              defaultValue: "4",
+            },
+          ],
+          render: ({ initialFilter, pageSize }) => (
+            <MediaLibrary
+              items={mediaItems}
+              initialFilter={initialFilter as never}
+              pageSize={Number(pageSize) || 4}
+              onSelect={() => {}}
+            />
+          ),
+        },
+        {
+          name: "MarkdownRenderer",
+          uses: 'import { MarkdownRenderer } from "@mono/components"',
+          description: "Obsidian-flavored Markdown renderer supporting callouts/admonitions with icons, wikilinks, tags, task lists, code blocks with copy, highlights, tables, and footnotes.",
+          propControls: [
+            {
+              prop: "preset",
+              label: "sample note",
+              options: ["full", "callouts", "tasks", "wikilinks"],
+              defaultValue: "full",
+            },
+          ],
+          render: ({ preset }) => (
+            <div style={{ padding: "1rem", background: "var(--color-surface)", borderRadius: "var(--radius-sm)", border: "1px solid var(--color-border)" }}>
+              <MarkdownRenderer
+                content={sampleObsidianDocs[preset || "full"] || sampleObsidianDocs.full}
+                onWikilinkClick={(target, alias) => alert(`Wikilink clicked: ${target} (${alias})`)}
+                onTagClick={(tag) => alert(`Tag clicked: #${tag}`)}
+                onTaskToggle={(text, checked) => alert(`Task toggled: "${text}" => ${checked ? "checked" : "unchecked"}`)}
+              />
+            </div>
+          ),
+        },
+        {
+          name: "Usage",
+          uses: 'import { Usage } from "@mono/components"',
+          description: "Resource usage tracker with color-coded status thresholds (normal, warning, danger, exceeded), formatted numbers, and progress bar.",
+          propControls: [
+            {
+              prop: "level",
+              label: "usage level",
+              options: ["normal (45%)", "warning (80%)", "danger (95%)", "exceeded (115%)"],
+              defaultValue: "normal (45%)",
+            },
+            {
+              prop: "size",
+              label: "size",
+              options: ["sm", "md", "lg"],
+              defaultValue: "md",
+            },
+          ],
+          render: ({ level, size }) => {
+            const usedMap: Record<string, number> = {
+              "normal (45%)": 45,
+              "warning (80%)": 80,
+              "danger (95%)": 95,
+              "exceeded (115%)": 115,
+            };
+            const usedVal = usedMap[level || "normal (45%)"] ?? 45;
+            return (
+              <div style={{ maxWidth: 460, width: "100%" }}>
+                <Usage
+                  label="Monthly Bandwidth"
+                  used={usedVal}
+                  total={100}
+                  unit="GB"
+                  size={(size as "sm" | "md" | "lg") || "md"}
+                  description="Resets at the start of next billing period."
+                />
+              </div>
+            );
+          },
         },
       ]}
     />

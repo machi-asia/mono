@@ -1,0 +1,433 @@
+.m-markdown {
+  color: var(--color-text);
+  line-height: 1.65;
+  font-size: 0.95rem;
+  overflow-wrap: break-word;
+}
+
+/* Headings */
+.m-md-heading {
+  color: var(--color-text);
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.25;
+}
+
+.m-md-h1 {
+  font-size: 1.75rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-2);
+}
+
+.m-md-h2 {
+  font-size: 1.45rem;
+  border-bottom: 1px solid var(--color-border-soft);
+  padding-bottom: var(--space-1);
+}
+
+.m-md-h3 {
+  font-size: 1.2rem;
+}
+
+.m-md-h4 {
+  font-size: 1.05rem;
+}
+
+.m-md-h5 {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.m-md-h6 {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.m-md-p {
+  margin: 0 0 1em;
+}
+
+/* Obsidian Wikilinks: [[Target|Alias]] */
+.m-md-wikilink {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.m-md-wikilink:hover {
+  opacity: 0.85;
+}
+
+/* Standard Links */
+.m-md-link {
+  color: var(--color-info);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  transition: text-decoration-color var(--duration-fast) var(--ease-out);
+}
+
+.m-md-link:hover {
+  text-decoration: underline;
+}
+
+.m-md-external-icon {
+  opacity: 0.7;
+}
+
+/* Obsidian Tags: #tag/subtag */
+.m-md-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--color-surface-2);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 1px 7px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  vertical-align: middle;
+  margin: 0 2px;
+  user-select: none;
+  cursor: pointer;
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.m-md-tag:hover {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  border-color: var(--color-primary);
+}
+
+.m-md-tag-icon {
+  opacity: 0.75;
+}
+
+/* Obsidian Highlights: ==highlight== */
+.m-md-highlight {
+  background: rgb(212 175 55 / 28%);
+  color: var(--color-text);
+  border-radius: 3px;
+  padding: 1px 4px;
+}
+
+/* Strikethrough: ~~text~~ */
+.m-md-strikethrough {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+
+/* Inline Code: `code` */
+.m-md-inline-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85em;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  padding: 2px 5px;
+  border-radius: var(--radius-sm);
+}
+
+/* Code Block: ```language */
+.m-md-code-block {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  margin: 1.25em 0;
+  overflow: hidden;
+}
+
+.m-md-code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 12px;
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.75rem;
+}
+
+.m-md-code-lang {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.m-md-code-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.m-md-code-copy:hover {
+  color: var(--color-text);
+  border-color: var(--color-primary);
+}
+
+.m-md-code-copy--copied {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.m-md-code-content {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+/* Obsidian Callouts / Admonitions */
+.m-callout {
+  margin: 1.25em 0;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--callout-color, var(--color-primary));
+  background: var(--callout-bg, var(--color-surface-2));
+  overflow: hidden;
+}
+
+.m-callout-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--callout-color, var(--color-text));
+  user-select: none;
+}
+
+.m-callout--foldable .m-callout-header {
+  cursor: pointer;
+}
+
+.m-callout--foldable .m-callout-header:hover {
+  background: rgb(255 255 255 / 3%);
+}
+
+.m-callout-icon {
+  display: flex;
+  align-items: center;
+  color: var(--callout-color, var(--color-primary));
+}
+
+.m-callout-title {
+  flex: 1;
+}
+
+.m-callout-fold {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-muted);
+}
+
+.m-callout-content {
+  padding: 0 var(--space-3) var(--space-3);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.m-callout-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* Obsidian Callout Themes */
+.m-callout--note {
+  --callout-color: #3b82f6;
+  --callout-bg: rgb(59 130 246 / 8%);
+}
+
+.m-callout--info {
+  --callout-color: #06b6d4;
+  --callout-bg: rgb(6 182 212 / 8%);
+}
+
+.m-callout--tip {
+  --callout-color: #10b981;
+  --callout-bg: rgb(16 185 129 / 8%);
+}
+
+.m-callout--warning,
+.m-callout--caution {
+  --callout-color: #f59e0b;
+  --callout-bg: rgb(245 158 11 / 8%);
+}
+
+.m-callout--danger {
+  --callout-color: #ef4444;
+  --callout-bg: rgb(239 68 68 / 8%);
+}
+
+.m-callout--bug {
+  --callout-color: #f43f5e;
+  --callout-bg: rgb(244 63 94 / 8%);
+}
+
+.m-callout--example {
+  --callout-color: #8b5cf6;
+  --callout-bg: rgb(139 92 246 / 8%);
+}
+
+.m-callout--quote {
+  --callout-color: var(--color-text-muted);
+  --callout-bg: var(--color-surface);
+}
+
+.m-callout--todo {
+  --callout-color: #0284c7;
+  --callout-bg: rgb(2 132 199 / 8%);
+}
+
+.m-callout--success {
+  --callout-color: #22c55e;
+  --callout-bg: rgb(34 197 94 / 8%);
+}
+
+.m-callout--abstract {
+  --callout-color: #14b8a6;
+  --callout-bg: rgb(20 184 166 / 8%);
+}
+
+.m-callout--question {
+  --callout-color: #eab308;
+  --callout-bg: rgb(234 179 8 / 8%);
+}
+
+/* Blockquote */
+.m-md-blockquote {
+  margin: 1.25em 0;
+  padding: 0 var(--space-3);
+  border-left: 3px solid var(--color-primary);
+  color: var(--color-text-muted);
+}
+
+/* Horizontal Rule */
+.m-md-hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 2em 0;
+}
+
+/* Lists & Tasks */
+.m-md-list,
+.m-md-ordered-list {
+  margin: 0.75em 0;
+  padding-left: var(--space-5);
+}
+
+.m-md-list-item {
+  margin-bottom: 0.25em;
+}
+
+.m-md-task-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.m-md-task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-bottom: 0.35em;
+}
+
+.m-md-task-item--checked .m-md-item-content {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+
+.m-md-task-checkbox {
+  margin-top: 4px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+/* Tables */
+.m-md-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.25em 0;
+}
+
+.m-md-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.m-md-table th,
+.m-md-table td {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.m-md-table th {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.m-md-table tr:nth-child(even) {
+  background: rgb(255 255 255 / 1.5%);
+}
+
+/* Footnotes */
+.m-md-footnote-ref {
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: super;
+  padding-left: 2px;
+}
+
+.m-md-footnote-ref a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.m-md-footnote-def {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.m-md-footnote-id {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.m-md-footnote-back {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: bold;
+}

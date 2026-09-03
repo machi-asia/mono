@@ -1,0 +1,141 @@
+.m-usage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.m-usage-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.m-usage-label {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.m-usage-numbers {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+}
+
+.m-usage-used {
+  font-weight: 700;
+  color: var(--usage-accent, var(--color-primary));
+}
+
+.m-usage-divider {
+  color: var(--color-text-muted);
+}
+
+.m-usage-total {
+  color: var(--color-text-muted);
+}
+
+.m-usage-percent {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-left: 2px;
+}
+
+/* Track & Bar Fill */
+.m-usage-track {
+  width: 100%;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+}
+
+.m-usage-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--usage-accent, var(--color-primary));
+  transition:
+    width var(--duration-base) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out);
+}
+
+/* Size Variants */
+.m-usage--sm .m-usage-track {
+  height: 6px;
+}
+
+.m-usage--sm .m-usage-label {
+  font-size: 0.8rem;
+}
+
+.m-usage--sm .m-usage-numbers {
+  font-size: 0.75rem;
+}
+
+.m-usage--md .m-usage-track {
+  height: 10px;
+}
+
+.m-usage--lg .m-usage-track {
+  height: 16px;
+}
+
+.m-usage--lg .m-usage-label {
+  font-size: 1rem;
+}
+
+.m-usage--lg .m-usage-numbers {
+  font-size: 0.95rem;
+}
+
+/* Status Color Coding */
+.m-usage--normal {
+  --usage-accent: var(--color-primary);
+}
+
+.m-usage--warning {
+  --usage-accent: var(--color-warning);
+}
+
+.m-usage--warning .m-usage-used {
+  color: var(--color-warning);
+}
+
+.m-usage--danger {
+  --usage-accent: var(--color-error);
+}
+
+.m-usage--danger .m-usage-used {
+  color: var(--color-error);
+}
+
+.m-usage--exceeded {
+  --usage-accent: var(--color-error);
+}
+
+.m-usage--exceeded .m-usage-used {
+  color: var(--color-error);
+  animation: pulse-usage 1s infinite alternate;
+}
+
+@keyframes pulse-usage {
+  from {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.m-usage-description {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}

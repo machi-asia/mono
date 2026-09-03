@@ -4,6 +4,42 @@ All notable changes to this monorepo will be documented in this file.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.14.0] - 2026-09-03
+
+### Added
+
+- Added new `@mono/components` **Usage** component for tracking resource usage and quota metrics with color-coded progress bar thresholds (normal gold, warning amber, danger red, exceeded animated pulse), formatted numbers, percentage display, and multiple sizes (`sm`, `md`, `lg`).
+- Added 7 unit tests in `packages/components/src/usage/usage.test.tsx` verifying thresholds, formatting, and aria progressbar accessibility.
+- Added live interactive showcase entry in `apps/docs` with `level` and `size` prop controls.
+
+## [0.13.0] - 2026-09-03
+
+### Added
+
+- Added new `@mono/components` **MarkdownRenderer** component with authentic Obsidian-flavored markdown rendering and styling.
+- Supported Obsidian callouts / admonitions (`> [!note]`, `> [!tip]`, `> [!warning]`, `> [!danger]`, `> [!example]`, `> [!todo]`, `> [!success]`, `> [!abstract]`, `> [!question]`) with foldable syntax (`+` / `-`), custom titles, Lucide icons, and theme colors.
+- Supported Obsidian wikilinks (`[[Note]]` and `[[Note|Alias]]`) with `onWikilinkClick` callback.
+- Supported Obsidian taxonomy tags (`#tag` and `#tag/subtag`) with pill badges and `onTagClick` callback.
+- Supported interactive task checkboxes (`- [ ]` and `- [x]`) with `onTaskToggle` event.
+- Supported Obsidian highlight marks (`==highlight==`) and strikethrough (`~~deleted~~`).
+- Supported fenced code blocks with language labels and one-click copy to clipboard.
+- Supported GFM tables and footnotes (`[^1]`).
+- Added `ADR-007: Obsidian-Flavored Markdown Renderer`.
+- Added interactive demo with sample note presets on the docs showcase page.
+
+## [0.12.0] - 2026-09-03
+
+### Added
+
+- Connected `@mono/components` **MediaLibrary** to database and storage with private user isolation (`media/users/{userId}/...` paths and `media_files` table support).
+- Added multi-format file uploads supporting images (`image/*`), PDF (`.pdf`), and Microsoft Word (`.docx`) with dedicated file-type filters (`All`, `Images`, `PDFs`, `DOCX`).
+- Added an item inspection modal showing file preview (image preview or document type card), metadata (file name, type, size, upload date), and the public bucket URL with a quick-copy button.
+- Added file deletion capability with confirmation step in the inspection modal.
+- Added pagination controls with current item count, current page indicators, and Prev/Next page navigation.
+- Installed and integrated `lucide-react` in `@mono/components` for modern UI icons (`ImageIcon`, `FileText`, `FileSpreadsheet`, `Upload`, `Copy`, `Check`, `Trash2`, `ChevronLeft`, `ChevronRight`, `X`, `ExternalLink`).
+- Added `ADR-006: Database-Connected Media Library with User Isolation`.
+- Updated docs showcase demo with choice/enum prop controls (`initialFilter`, `pageSize`) and live interactive preview.
+
 ## [0.11.1] - 2026-09-03
 
 ### Changed

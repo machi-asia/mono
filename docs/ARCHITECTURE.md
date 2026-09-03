@@ -116,6 +116,8 @@ See `docs/adr/` for all Architecture Decision Records. Key decisions:
 - [ADR-003: Centralized Auth and Database](./adr/003-centralized-auth-and-database.md)
 - [ADR-004: Component Showcase Pages](./adr/004-component-showcase-pages.md)
 - [ADR-005: Design System, Theming, and Shared Layout Primitives](./adr/005-design-system-theming.md)
+- [ADR-006: Database-Connected Media Library](./adr/006-database-connected-media-library.md)
+- [ADR-007: Obsidian-Flavored Markdown Renderer](./adr/007-obsidian-markdown-renderer.md)
 
 ## Documentation Requirements
 
