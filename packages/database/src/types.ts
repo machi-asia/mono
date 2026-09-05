@@ -18,6 +18,25 @@ export interface MediaFileRecord {
   created_at: string;
 }
 
+export interface RoseMemoryRecord {
+  id: number;
+  user_id: string;
+  content: string;
+  category?: string | null;
+  importance?: "low" | "medium" | "high" | null;
+  created_at: string;
+  updated_at?: string | null;
+}
+
+export interface RosePersonalizationRecord {
+  user_id: string;
+  custom_instructions: string;
+  nickname?: string | null;
+  tone?: string | null;
+  created_at?: string;
+  updated_at?: string;
+}
+
 export interface Database {
   public: {
     Tables: {
@@ -28,6 +47,19 @@ export interface Database {
           created_at?: string;
         };
         Update: Partial<Omit<MediaFileRecord, "id">>;
+      };
+      rose_memories: {
+        Row: RoseMemoryRecord;
+        Insert: Omit<RoseMemoryRecord, "id" | "created_at"> & {
+          id?: number;
+          created_at?: string;
+        };
+        Update: Partial<Omit<RoseMemoryRecord, "id">>;
+      };
+      rose_personalization: {
+        Row: RosePersonalizationRecord;
+        Insert: RosePersonalizationRecord;
+        Update: Partial<RosePersonalizationRecord>;
       };
     };
     Views: Record<string, never>;

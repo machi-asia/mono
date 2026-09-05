@@ -1,8 +1,15 @@
+import { RoseChat, RoseChatModalProvider } from "@mono/rose";
+
 export default function Home() {
   return (
-    <main>
-      <h1>Rose</h1>
-      <p>Custom AI agent application.</p>
+    <main style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
+      <RoseChatModalProvider>
+        <RoseChat
+          title="Rose"
+          subtitle="Custom AI agent application"
+          showUsage={true}
+        />
+      </RoseChatModalProvider>
     </main>
   );
 }

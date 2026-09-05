@@ -1,0 +1,100 @@
+.m-rose-usage-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  background: var(--color-surface, #141416);
+  border: 1px solid var(--color-border, #26262a);
+  border-radius: var(--radius-md, 8px);
+  font-family: inherit;
+}
+
+.m-rose-usage-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2, 8px);
+}
+
+.m-rose-usage-role-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgb(255 255 255 / 6%);
+  color: var(--color-text-muted, #9ca3af);
+  border: 1px solid var(--color-border, #26262a);
+}
+
+.m-rose-usage-role-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary, #d4af37);
+}
+
+.m-rose-usage-role-pill[data-role="admin"] {
+  background: rgb(212 175 55 / 15%);
+  color: var(--color-primary, #d4af37);
+  border-color: rgb(212 175 55 / 40%);
+}
+
+.m-rose-usage-role-pill[data-role="admin"] .m-rose-usage-role-dot {
+  background: var(--color-primary, #d4af37);
+  box-shadow: 0 0 6px var(--color-primary, #d4af37);
+}
+
+.m-rose-usage-role-pill[data-role="guest"] {
+  background: rgb(148 163 184 / 10%);
+  color: #cbd5e1;
+}
+
+.m-rose-usage-role-pill[data-role="guest"] .m-rose-usage-role-dot {
+  background: #94a3b8;
+}
+
+.m-rose-usage-quota-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-muted, #9ca3af);
+}
+
+.m-rose-usage-role-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.m-rose-tier-tooltip {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.75rem;
+}
+
+.m-rose-tier-tooltip-title {
+  font-weight: 700;
+  color: var(--color-primary, #d4af37);
+  margin-bottom: 2px;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+  padding-bottom: 2px;
+}
+
+.m-rose-tier-tooltip-list {
+  margin: 0;
+  padding-left: 14px;
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: var(--color-text, #f3f4f6);
+}
+
+.m-rose-tier-tooltip-list li strong {
+  color: var(--color-text, #f3f4f6);
+}

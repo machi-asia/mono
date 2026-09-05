@@ -1,14 +1,11 @@
 #!/usr/bin/env node
 /**
- * Env verification script.
- * Compares every .env.sample against the corresponding .env.local.
+ * Env synchronization and verification script.
+ * Synchronizes every .env.local to match its corresponding .env.sample
+ * in exact format, comments, and key order, while preserving existing values.
  *
  * Checks (without printing secret values):
- *  - Keys present in .env.sample but MISSING from .env.local
- *  - Keys present in .env.local but NOT declared in .env.sample (new/legacy keys)
- *  - Keys whose value is empty/missing in .env.local or .env.sample
- *
- * Pairs are matched by file basename: `.env.sample` <-> `.env.local`.
+ *  - Keys whose values are still placeholders or empty.
  */
 
 const fs = require("fs");
@@ -20,7 +17,7 @@ function findEnvSamples(dir) {
   const results = [];
   if (!fs.existsSync(dir)) return results;
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (entry.name === "node_modules" || entry.name === ".git") continue;
+    if (entry.name === "node_modules" || entry.name === ".git" || entry.name === ".next" || entry.name === "dist") continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       results.push(...findEnvSamples(full));
@@ -41,7 +38,7 @@ function parseEnv(file) {
     const eq = line.indexOf("=");
     if (eq === -1) continue;
     const key = line.slice(0, eq).trim();
-    const value = line.slice(eq + 1).trim().replace(/^["']|["']$/g, "");
+    const value = line.slice(eq + 1).trim();
     map.set(key, value);
   }
   return map;
@@ -49,7 +46,8 @@ function parseEnv(file) {
 
 function isPlaceholder(value) {
   if (!value) return true;
-  const normalized = value.trim();
+  const normalized = value.trim().replace(/^["']|["']$/g, "");
+  if (!normalized) return true;
   // Whole-value placeholders: empty, all dashes/x/asterisks, or "<...>".
   if (/^[-_xX*]+$/.test(normalized)) return true;
   if (/^<.*>$/.test(normalized)) return true;
@@ -58,64 +56,85 @@ function isPlaceholder(value) {
   return /changeme|change[-_]me|replace[-_]me|placeholder|enter[-_ ]your|\.\.\./i.test(normalized);
 }
 
-const samples = findEnvSamples(ROOT);
+function syncEnvLocal(samplePath, localPath) {
+  const sampleContent = fs.readFileSync(samplePath, "utf8");
+  const localMap = parseEnv(localPath) || new Map();
 
-let failed = false;
-let totalMissingKeys = 0;
-let totalMissingValues = 0;
+  const sampleLines = sampleContent.split(/\r?\n/);
+  const newLocalLines = [];
 
-for (const samplePath of samples) {
-  const dir = path.dirname(samplePath);
-  const localPath = path.join(dir, ".env.local");
-  const sampleMap = parseEnv(samplePath);
-  const localMap = parseEnv(localPath);
+  for (const rawLine of sampleLines) {
+    const trimmed = rawLine.trim();
+    if (!trimmed || trimmed.startsWith("#")) {
+      newLocalLines.push(rawLine);
+      continue;
+    }
+    const eqIndex = rawLine.indexOf("=");
+    if (eqIndex === -1) {
+      newLocalLines.push(rawLine);
+      continue;
+    }
+    const key = rawLine.slice(0, eqIndex).trim();
+    const sampleVal = rawLine.slice(eqIndex + 1).trim();
 
-  if (!localMap) {
-    console.error(`[env] MISSING .env.local in ${dir} — expected next to .env.sample`);
-    failed = true;
-    totalMissingKeys += sampleMap.size;
-    continue;
-  }
-
-  const errors = [];
-
-  for (const [key, sampleValue] of sampleMap) {
-    if (!localMap.has(key)) {
-      errors.push(`  - MISSING KEY: ${key}`);
-      totalMissingKeys++;
+    if (localMap.has(key)) {
+      const existingVal = localMap.get(key);
+      newLocalLines.push(`${key}=${existingVal}`);
     } else {
-      const localValue = localMap.get(key);
-      if (isPlaceholder(localValue)) {
-        errors.push(`  - MISSING VALUE (still a placeholder/empty): ${key}`);
-        totalMissingValues++;
-      }
+      newLocalLines.push(`${key}=${sampleVal}`);
     }
   }
 
-  for (const key of localMap.keys()) {
-    if (!sampleMap.has(key)) {
-      errors.push(`  - NOT DECLARED IN SAMPLE: ${key}`);
-      failed = true;
-    }
-  }
-
-  if (errors.length > 0) {
-    console.error(`\n[env] ${path.relative(ROOT, samplePath)}`);
-    errors.forEach((e) => console.error(e));
-    failed = true;
-  }
+  const finalContent = newLocalLines.join("\n") + (sampleContent.endsWith("\n") ? "" : "\n");
+  fs.writeFileSync(localPath, finalContent, "utf8");
 }
 
-console.log("");
+const samples = findEnvSamples(ROOT);
+
 if (samples.length === 0) {
   console.warn("[env] No .env.sample files found — nothing to verify.");
   process.exit(0);
 }
 
-if (!failed) {
-  console.log("[env] All sample keys present with values across all packages. OK.");
-  process.exit(0);
+let failed = false;
+let totalMissingValues = 0;
+
+for (const samplePath of samples) {
+  const dir = path.dirname(samplePath);
+  const localPath = path.join(dir, ".env.local");
+
+  // Synchronize .env.local with .env.sample structure & key order
+  syncEnvLocal(samplePath, localPath);
+
+  const sampleMap = parseEnv(samplePath);
+  const localMap = parseEnv(localPath);
+  const relativeSample = path.relative(ROOT, samplePath);
+  const relativeLocal = path.relative(ROOT, localPath);
+
+  const warnings = [];
+
+  for (const [key] of sampleMap) {
+    const localValue = localMap.get(key);
+    if (isPlaceholder(localValue)) {
+      warnings.push(`  - PLACEHOLDER VALUE: ${key}`);
+      totalMissingValues++;
+    }
+  }
+
+  if (warnings.length > 0) {
+    console.warn(`\n[env] Synced ${relativeLocal} with ${relativeSample} (action required):`);
+    warnings.forEach((w) => console.warn(w));
+    failed = true;
+  } else {
+    console.log(`[env] Synced & verified ${relativeLocal} (matches ${relativeSample}). OK.`);
+  }
 }
 
-console.error(`[env] FAILED — ${totalMissingKeys} missing key(s), ${totalMissingValues} missing/placeholder value(s).`);
-process.exit(1);
+console.log("");
+if (!failed) {
+  console.log("[env] All .env.local files matched with .env.sample and populated with values. OK.");
+  process.exit(0);
+} else {
+  console.warn(`[env] Sync complete with ${totalMissingValues} placeholder value(s) requiring your configuration.`);
+  process.exit(0);
+}

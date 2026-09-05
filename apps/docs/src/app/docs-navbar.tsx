@@ -9,6 +9,7 @@ const links = [
   { label: "Auth", href: "/components/auth" },
   { label: "Components", href: "/components/components" },
   { label: "Database", href: "/components/database" },
+  { label: "Rose", href: "/components/rose" },
 ];
 
 function getDisplayName(user: { email?: string | null; is_anonymous?: boolean; user_metadata?: Record<string, unknown> }): string {

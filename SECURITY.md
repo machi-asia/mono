@@ -21,6 +21,7 @@ Every app must wrap its root layout with `AuthProvider`. Users without a valid s
 - Environment keys are declared in `.env.sample` files (never store real values there).
 - Real values live in `.env.local`, which must be listed in `.gitignore` and never committed.
 - When code references a new env key, add it to the corresponding `.env.sample` — never write real values into `.env.sample`.
+- In all `.env.sample` and `.env.local` files, non-config keys (secrets, API keys, credentials, database URLs) must precede all configuration keys (model settings, usage quotas, tier thresholds), separated by a distinct comment separator.
 - Run `npm run env` after env-related changes; the script verifies `.env.local` against `.env.sample` for missing keys and missing/placeholder values without exposing actual values.
 - Rotate compromised credentials immediately.
 
@@ -34,10 +35,12 @@ Every app must wrap its root layout with `AuthProvider`. Users without a valid s
 
 All data access is managed through `/packages/database` using **Supabase Database and Storage**. Enforce:
 
+- **Server-Only Database Execution**: All database queries, insertions, mutations, and storage interactions must strictly take place on the server side (Server Components, Route Handlers, or `@mono/database/server`). Direct database or storage calls must never be executed from client browser components.
 - Input validation at the database boundary.
 - Row Level Security (RLS) on all tables.
-- Least-privilege access via Supabase publishable keys (never expose service_role keys).
-- Use `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` env vars.
+- **Key Separation**:
+  - Browser clients use `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` and `NEXT_PUBLIC_SUPABASE_URL` exclusively for authentication sessions (`AuthProvider`).
+  - Server operations use `SUPABASE_SECRET_KEY` (or server publishable key with RLS) to handle privileged/backend operations.
 
 ## Code Review
 

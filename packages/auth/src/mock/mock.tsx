@@ -4,6 +4,7 @@ import { useMemo, type ReactNode } from "react";
 import type { User, Session } from "@supabase/supabase-js";
 import { AuthContext } from "../provider/provider";
 import type { AuthContextValue } from "../types";
+import { ToastProvider } from "@mono/components";
 
 export type MockAuthState = "loading" | "signed-out" | "guest" | "signed-in";
 
@@ -73,5 +74,5 @@ export function MockAuthProvider({
     [state]
   );
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return <ToastProvider><AuthContext.Provider value={value}>{children}</AuthContext.Provider></ToastProvider>;
 }

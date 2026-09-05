@@ -22,6 +22,10 @@ export default function Home() {
             <Link href="/components/database" variant="underline">@mono/database</Link>
             <span className="docs-home-desc">— data/store exports</span>
           </li>
+          <li>
+            <Link href="/components/rose" variant="underline">@mono/rose</Link>
+            <span className="docs-home-desc">— AI companion and chat modal components</span>
+          </li>
         </ul>
       </section>
     </main>

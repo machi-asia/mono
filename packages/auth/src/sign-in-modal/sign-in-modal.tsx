@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { useAuth } from "../provider/provider";
+import { useToast } from "@mono/components";
 import { GoogleIcon } from "../icons/google";
 import { GithubIcon } from "../icons/github";
 import "./sign-in-modal.css";
@@ -10,16 +11,15 @@ type Mode = "signin" | "signup";
 
 export function SignInModal() {
   const { signInWithEmail, signUpWithEmail, signInWithGoogle, signInWithGithub, signInAsGuest } = useAuth();
+  const { toast } = useToast();
   const [mode, setMode] = useState<Mode>("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
   async function handleEmailSubmit(e: FormEvent) {
     e.preventDefault();
     e.stopPropagation();
-    setError(null);
     setSubmitting(true);
     const result =
       mode === "signin"
@@ -27,31 +27,28 @@ export function SignInModal() {
         : await signUpWithEmail(email, password);
     setSubmitting(false);
     if (result.error) {
-      setError(result.error);
+      toast("error", result.error);
     }
   }
 
   async function handleGoogle() {
-    setError(null);
     const result = await signInWithGoogle();
     if (result.error) {
-      setError(result.error);
+      toast("error", result.error);
     }
   }
 
   async function handleGithub() {
-    setError(null);
     const result = await signInWithGithub();
     if (result.error) {
-      setError(result.error);
+      toast("error", result.error);
     }
   }
 
   async function handleGuest() {
-    setError(null);
     const result = await signInAsGuest();
     if (result.error) {
-      setError(result.error);
+      toast("error", result.error);
     }
   }
 
@@ -121,7 +118,6 @@ export function SignInModal() {
             className="auth-modal-toggle"
             onClick={() => {
               setMode(mode === "signin" ? "signup" : "signin");
-              setError(null);
             }}
           >
             {mode === "signin"
@@ -138,8 +134,6 @@ export function SignInModal() {
             Continue as Guest
           </button>
         </div>
-
-        {error && <p className="auth-modal-error">{error}</p>}
       </div>
     </div>
   );

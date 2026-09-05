@@ -7,10 +7,10 @@ Rules for AI agents working on this monorepo.
 1. **All apps and packages are Next.js-based.** Never scaffold or suggest non-Next.js code.
 2. **Packages export components, functions, hooks, and types.** No page routes, no business logic outside packages.
 3. **Auth lives in `/packages/auth`.** Uses Supabase Auth. Do not create auth logic elsewhere.
-4. **Store/data lives in `/packages/database`.** Uses Supabase Database/Storage. Do not create data access logic elsewhere.
+4. **Store/data lives in `/packages/database`.** Uses Supabase Database/Storage. All database operations must be executed strictly on the server side (server components, server actions, route handlers, or `@mono/database/server`). Never perform database queries or direct storage mutations from client components.
 5. **Every app must use `AuthProvider` + `AuthGate`** from `/packages/auth`. No signed-out user may access any page; the sign-in modal offers email/password, Google, or Guest (Supabase anonymous) sign-in and has no exit/cancel controls.
 6. **Every app must include linting and testing tooling** — `eslint`, `stylelint`, `typecheck`, `vitest`.
-7. **Any env key referenced in code must be added to the corresponding `.env.sample`.** Never hardcode secrets. When you reference a new env key, update `.env.sample`, not `.env.local` (do not read or write secret values in `.env.local` unless setting up local dev).
+7. **Any env key referenced in code must be added to the corresponding `.env.sample`.** Never hardcode secrets. When you reference a new env key, update `.env.sample`, not `.env.local` (do not read or write secret values in `.env.local` unless setting up local dev). In every `.env.sample` and `.env.local`, **all configuration keys (settings, feature flags, quotas, tiers, model selectors) must come after the non-config keys (credentials, secrets, URLs, and API tokens), separated by a clear comment separator** (e.g. `# ==========================================\n# Configuration Keys\n# ==========================================`).
 8. **Run `npm run env` after env-related changes.** It compares `.env.sample` against `.env.local` for missing keys and missing/placeholder values. Never read the actual values in `.env.local` — rely on the script.
 9. **Components must be documented in `/docs` app.** Every new component gets a doc page.
 10. **Architecture decisions go in `/docs/adr/`.** Create an ADR before implementing significant changes.
@@ -19,9 +19,12 @@ Rules for AI agents working on this monorepo.
     - declare a `render(values)` function that renders the **actual component** (not just a description), and
     - declare a `propControls` dropdown for **every choice/enum prop** of that component.
     When you add or update a component in a package, add/update its entry on that package's showcase page accordingly. This applies to current and future component exports. Components that depend on shared context (e.g. auth) are demoed against a mock provider (`@mono/auth/mock`).
-13. **Follow the design system** (see `DESIGN.md`): colors are token-based CSS custom properties, never hardcoded hex; theme switching uses `ThemeProvider`/`next-themes` with **dark mode primary and gold accents**; use the shared easing/duration and spacing tokens; keep whitespace generous and clutter minimal; and build layout + functional primitives (`Row`, `Col`, `Card`, date/time pickers, etc.) **strictly from `/packages/components`** — apps must not hand-roll them. Pages should be **high-image, low-text**.
+13. **Follow the design system** (see `DESIGN.md`): colors are token-based CSS custom properties, never hardcoded hex; theme switching uses `ThemeProvider`/`next-themes` with **dark mode primary and gold accents**; use the shared easing/duration and spacing tokens; keep whitespace generous and clutter minimal; and **strictly build UI using components from `/packages/components`** (`Button`, `Card`, `Row`, `Col`, `Tooltip`, `Dropdown`, `MarkdownRenderer`, etc.) — apps and packages must **never** hand-roll raw buttons (`<button>`), custom card divs (`<div className="...card...">`), or ad-hoc primitives when an equivalent component exists in `@mono/components`. Pages should be **high-image, low-text**.
 14. **Organize exported components by feature folders within each package.** Every exported component's `.tsx`, `.css`, and all related files (subcomponents, hooks, helper types, and tests for that component) live together in a feature-named folder under `src/` — e.g. a `showcase` feature is `src/showcase/showcase.tsx`, `src/showcase/showcase.css`, etc. Do not scatter a single component's files across a flat `src/` root or separate sibling folders. The package `src/index.ts` should only re-export from these feature folders.
 15. **All database edits must target the canonical Supabase project** at `https://zyatzdkapdqngwyhiqqn.supabase.co`. Migrations, DDL, edge functions, and data changes must be applied to this project only — never to a mismatched/different project URL. `NEXT_PUBLIC_SUPABASE_URL` must resolve to this canonical URL. Before applying any schema or data change, verify the target project matches; if a connected tool/agent points elsewhere, do not proceed with edits until it is corrected.
+16. **Always add the Tooltip help variant (`<Tooltip variant="help">`) to UI features that are complex or otherwise vague.** Any UI element whose purpose, status, quota, tier, formula, or configuration could be ambiguous or non-obvious to users must be accompanied by the circular `?` help tooltip (`<Tooltip variant="help" triggerAriaLabel="...">...</Tooltip>`) from `@mono/components` explaining what the feature does, how it works, and its relevant details or tier limits.
+17. **Strictly isolate client auth keys from server database keys, and enforce server-only database operations.** Browser clients use `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` exclusively for client auth sessions (`AuthProvider`). Database operations and mutations must run only on the server, using `SUPABASE_SECRET_KEY` (or the server publishable key with RLS). No client component may query or mutate the database directly.
+18. **Keep all files below 500 lines for cleanliness.** No single code, style, or test file should exceed 500 lines. When a file approaches or exceeds this limit, decompose it into modular subcomponents, dedicated helper utilities, sub-styles, or focused test files co-located within the same feature folder.
 
 ## File Ownership
 
@@ -33,6 +36,7 @@ Rules for AI agents working on this monorepo.
 | `packages/auth/` | All teams | Shared authentication |
 | `packages/database/` | All teams | Shared data/store |
 | `packages/components/` | All teams | Shared UI components |
+| `packages/rose/` | All teams | Shared AI companion & chat modals |
 | `docs/adr/` | All teams | Architecture Decision Records |
 | `docs/ARCHITECTURE.md` | All teams | Architecture overview |
 | `docs/API.md` | All teams | API conventions |
@@ -54,6 +58,7 @@ Rules for AI agents working on this monorepo.
 
 ## Code Style
 
+- Keep all files below 500 lines for cleanliness; decompose into co-located submodules when exceeding.
 - Match the existing code style in the file you are editing.
 - No comments unless explicitly requested.
 - No secrets, keys, or credentials in code or docs.

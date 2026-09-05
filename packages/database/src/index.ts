@@ -1,5 +1,10 @@
 export { createClient } from "./client";
-export type { Database, MediaFileRecord } from "./types";
+export type {
+  Database,
+  MediaFileRecord,
+  RoseMemoryRecord,
+  RosePersonalizationRecord,
+} from "./types";
 export {
   listUserMedia,
   uploadUserMedia,
@@ -11,4 +16,17 @@ export type {
   ListUserMediaResult,
   UploadUserMediaOptions,
 } from "./media";
+export {
+  saveMemory,
+  listMemories,
+  updateMemory,
+  deleteMemory,
+  getPersonalization,
+  savePersonalization,
+} from "./memory";
+export type {
+  SaveMemoryOptions,
+  ListMemoriesOptions,
+  SavePersonalizationOptions,
+} from "./memory";
 

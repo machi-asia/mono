@@ -18,6 +18,8 @@ export interface DropdownProps {
   placeholder?: string;
   onChange?: (value: string) => void;
   disabled?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 export function Dropdown({
@@ -26,6 +28,8 @@ export function Dropdown({
   placeholder = "Select...",
   onChange,
   disabled = false,
+  className,
+  style,
 }: DropdownProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -52,7 +56,12 @@ export function Dropdown({
   }
 
   return (
-    <div ref={ref} className="m-dropdown" data-mono="dropdown">
+    <div
+      ref={ref}
+      className={`m-dropdown ${className || ""}`.trim()}
+      style={style}
+      data-mono="dropdown"
+    >
       <button
         type="button"
         className={`m-dropdown-trigger ${open ? "m-dropdown-trigger--open" : ""}`}

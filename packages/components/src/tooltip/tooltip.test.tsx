@@ -37,4 +37,15 @@ describe("Tooltip", () => {
     fireEvent.mouseEnter(screen.getByRole("button"));
     expect(screen.getByRole("tooltip")).toHaveClass("m-tooltip--bottom");
   });
+
+  it("renders help variant with circular ? button trigger", () => {
+    render(<Tooltip content="Helpful information" variant="help" triggerAriaLabel="Usage tier details" />);
+    const button = screen.getByRole("button", { name: "Usage tier details" });
+    expect(button).toBeInTheDocument();
+    expect(button).toHaveTextContent("?");
+
+    fireEvent.mouseEnter(button);
+    expect(screen.getByRole("tooltip")).toHaveTextContent("Helpful information");
+    expect(screen.getByRole("tooltip")).toHaveClass("m-tooltip--help");
+  });
 });

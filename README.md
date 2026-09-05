@@ -89,7 +89,7 @@ Each app requires a `.env.local` with Supabase credentials (copy from `.env.samp
 
 ```
 NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-supabase-publishable-key
+SUPABASE_PUBLISHABLE_KEY=your-supabase-publishable-key
 ```
 
 > **Canonical Supabase project:** `https://zyatzdkapdqngwyhiqqn.supabase.co`. All migrations, DDL, edge functions, and data changes must target this project only. `NEXT_PUBLIC_SUPABASE_URL` must resolve to this URL; if a connected tool or agent points to a different project, correct it before applying any schema or data change.

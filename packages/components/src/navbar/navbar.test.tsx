@@ -65,4 +65,26 @@ describe("Navbar", () => {
     fireEvent.click(screen.getByText("Sign out"));
     expect(handleSignOut).toHaveBeenCalledTimes(1);
   });
+
+  it("renders tabs variant with button links and handles tab switching", () => {
+    const handleTabClick = vi.fn();
+    render(
+      <Navbar
+        variant="tabs"
+        links={[
+          { label: "Tab 1", active: true, onClick: handleTabClick },
+          { label: "Tab 2", onClick: handleTabClick },
+        ]}
+      />
+    );
+
+    expect(screen.getByRole("tablist")).toBeInTheDocument();
+    const tabs = screen.getAllByRole("tab");
+    expect(tabs).toHaveLength(2);
+    expect(tabs[0]).toHaveAttribute("aria-selected", "true");
+    expect(tabs[0]).toHaveClass("m-navbar-link--active");
+
+    fireEvent.click(tabs[1]);
+    expect(handleTabClick).toHaveBeenCalledTimes(1);
+  });
 });

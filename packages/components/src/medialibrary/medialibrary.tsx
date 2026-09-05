@@ -7,24 +7,15 @@ import {
   useCallback,
   useMemo,
   type ChangeEvent,
-  type MouseEvent,
 } from "react";
 import {
   Image as ImageIcon,
   FileText,
   FileSpreadsheet,
-  FileCode,
-  FileAudio,
-  FileVideo,
   File as FileIcon,
   Upload,
-  Copy,
-  Check,
-  Trash2,
   ChevronLeft,
   ChevronRight,
-  X,
-  ExternalLink,
   Loader2,
   FolderOpen,
 } from "lucide-react";
@@ -38,55 +29,16 @@ import {
   type MediaFileRecord,
 } from "@mono/database";
 import "./medialibrary.css";
+import {
+  type MediaFilterType,
+  type MediaItem,
+  type MediaLibraryProps,
+  DEFAULT_ACCEPT,
+} from "./media-types";
+import { formatBytes, renderMediaIcon } from "./media-utils";
+import { MediaModal } from "./media-modal";
 
-export type MediaFilterType = "all" | "image" | "pdf" | "docx";
-
-export interface MediaItem {
-  id: string;
-  url: string;
-  name: string;
-  type: "image" | "pdf" | "docx" | "video" | "audio" | "file";
-  size?: number;
-  path?: string;
-  createdAt?: string;
-}
-
-export interface MediaLibraryProps {
-  items?: MediaItem[];
-  userId?: string;
-  connected?: boolean;
-  onSelect?: (item: MediaItem) => void;
-  onUpload?: (files: FileList) => void | Promise<void>;
-  onDelete?: (item: MediaItem) => void | Promise<void>;
-  accept?: string;
-  multiple?: boolean;
-  pageSize?: number;
-  initialFilter?: MediaFilterType;
-}
-
-const DEFAULT_ACCEPT = "image/*,.pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document";
-
-function formatBytes(bytes?: number): string {
-  if (!bytes || bytes <= 0) return "--";
-  const k = 1024;
-  const sizes = ["B", "KB", "MB", "GB"];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
-  return `${parseFloat((bytes / Math.pow(k, i)).toFixed(1))} ${sizes[i]}`;
-}
-
-function formatDate(isoString?: string): string {
-  if (!isoString) return "--";
-  try {
-    const d = new Date(isoString);
-    return d.toLocaleDateString(undefined, {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-  } catch {
-    return isoString;
-  }
-}
+export type { MediaFilterType, MediaItem, MediaLibraryProps };
 
 export function MediaLibrary({
   items: controlledItems,
@@ -115,12 +67,9 @@ export function MediaLibrary({
   const [activeFilter, setActiveFilter] = useState<MediaFilterType>(initialFilter);
   const [currentPage, setCurrentPage] = useState(1);
   const [activeModalItem, setActiveModalItem] = useState<MediaItem | null>(null);
-  const [isCopied, setIsCopied] = useState(false);
-  const [isDeleting, setIsDeleting] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [deleteConfirm, setDeleteConfirm] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -252,30 +201,11 @@ export function MediaLibrary({
 
   function handleItemClick(item: MediaItem) {
     setActiveModalItem(item);
-    setIsCopied(false);
-    setDeleteConfirm(false);
     onSelect?.(item);
   }
 
-  async function handleCopyUrl(url: string) {
-    try {
-      await navigator.clipboard.writeText(url);
-      setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 2000);
-    } catch {
-      setIsCopied(false);
-    }
-  }
-
   async function handleDeleteItem(item: MediaItem) {
-    if (!deleteConfirm) {
-      setDeleteConfirm(true);
-      return;
-    }
-
-    setIsDeleting(true);
     setErrorMessage(null);
-
     try {
       if (onDelete) {
         await onDelete(item);
@@ -291,27 +221,9 @@ export function MediaLibrary({
       setLocalItems((prev) => prev.filter((it) => it.id !== item.id));
       setActiveModalItem(null);
     } catch (err: unknown) {
-      setErrorMessage(err instanceof Error ? err.message : "Failed to delete item");
-    } finally {
-      setIsDeleting(false);
-      setDeleteConfirm(false);
-    }
-  }
-
-  function renderMediaIcon(type: MediaItem["type"], size = 32) {
-    switch (type) {
-      case "image":
-        return <ImageIcon size={size} className="m-media-type-icon m-media-type-icon--image" aria-hidden="true" />;
-      case "pdf":
-        return <FileText size={size} className="m-media-type-icon m-media-type-icon--pdf" aria-hidden="true" />;
-      case "docx":
-        return <FileSpreadsheet size={size} className="m-media-type-icon m-media-type-icon--docx" aria-hidden="true" />;
-      case "video":
-        return <FileVideo size={size} className="m-media-type-icon m-media-type-icon--video" aria-hidden="true" />;
-      case "audio":
-        return <FileAudio size={size} className="m-media-type-icon m-media-type-icon--audio" aria-hidden="true" />;
-      default:
-        return <FileCode size={size} className="m-media-type-icon m-media-type-icon--file" aria-hidden="true" />;
+      const msg = err instanceof Error ? err.message : "Failed to delete item";
+      setErrorMessage(msg);
+      throw err;
     }
   }
 
@@ -503,151 +415,11 @@ export function MediaLibrary({
 
       {/* Item Inspection & Details Modal */}
       {activeModalItem ? (
-        <div
-          className="m-media-modal-backdrop"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="media-modal-title"
-          onClick={() => setActiveModalItem(null)}
-        >
-          <div
-            className="m-media-modal"
-            onClick={(e: MouseEvent) => e.stopPropagation()}
-          >
-            <div className="m-media-modal-header">
-              <div className="m-media-modal-title-wrap">
-                {renderMediaIcon(activeModalItem.type, 20)}
-                <h4 id="media-modal-title" className="m-media-modal-title" title={activeModalItem.name}>
-                  {activeModalItem.name}
-                </h4>
-              </div>
-              <button
-                type="button"
-                className="m-media-modal-close"
-                onClick={() => setActiveModalItem(null)}
-                aria-label="Close modal"
-              >
-                <X size={18} aria-hidden="true" />
-              </button>
-            </div>
-
-            <div className="m-media-modal-body">
-              {/* Preview Area */}
-              <div className="m-media-modal-preview">
-                {activeModalItem.type === "image" ? (
-                  <img
-                    src={activeModalItem.url}
-                    alt={activeModalItem.name}
-                    className="m-media-modal-img"
-                  />
-                ) : (
-                  <div className="m-media-modal-file-icon">
-                    {renderMediaIcon(activeModalItem.type, 64)}
-                    <span className="m-media-modal-doc-name">{activeModalItem.name}</span>
-                    <span className="m-media-badge-type m-media-badge-type--large">
-                      {activeModalItem.type.toUpperCase()} Document
-                    </span>
-                  </div>
-                )}
-              </div>
-
-              {/* Details & Public Bucket Link */}
-              <div className="m-media-modal-details">
-                <div className="m-media-detail-row">
-                  <span className="m-media-detail-label">File Type</span>
-                  <span className="m-media-detail-value">{activeModalItem.type.toUpperCase()}</span>
-                </div>
-                <div className="m-media-detail-row">
-                  <span className="m-media-detail-label">File Size</span>
-                  <span className="m-media-detail-value">{formatBytes(activeModalItem.size)}</span>
-                </div>
-                {activeModalItem.createdAt ? (
-                  <div className="m-media-detail-row">
-                    <span className="m-media-detail-label">Uploaded</span>
-                    <span className="m-media-detail-value">{formatDate(activeModalItem.createdAt)}</span>
-                  </div>
-                ) : null}
-
-                {/* Public Bucket URL Box */}
-                <div className="m-media-url-section">
-                  <label htmlFor="media-public-url" className="m-media-detail-label">
-                    Public Bucket URL
-                  </label>
-                  <div className="m-media-url-box">
-                    <input
-                      id="media-public-url"
-                      type="text"
-                      readOnly
-                      value={activeModalItem.url}
-                      className="m-media-url-input"
-                    />
-                    <button
-                      type="button"
-                      className={`m-media-copy-btn ${isCopied ? "m-media-copy-btn--copied" : ""}`}
-                      onClick={() => handleCopyUrl(activeModalItem.url)}
-                      aria-label="Copy public link"
-                      title="Quick Copy Link"
-                    >
-                      {isCopied ? (
-                        <>
-                          <Check size={14} aria-hidden="true" />
-                          <span>Copied!</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy size={14} aria-hidden="true" />
-                          <span>Copy</span>
-                        </>
-                      )}
-                    </button>
-                    <a
-                      href={activeModalItem.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="m-media-open-btn"
-                      title="Open in new tab"
-                      aria-label="Open in new tab"
-                    >
-                      <ExternalLink size={14} aria-hidden="true" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Modal Actions */}
-            <div className="m-media-modal-footer">
-              <button
-                type="button"
-                className={`m-media-delete-btn ${deleteConfirm ? "m-media-delete-btn--confirm" : ""}`}
-                onClick={() => handleDeleteItem(activeModalItem)}
-                disabled={isDeleting}
-                aria-label="Delete media"
-              >
-                {isDeleting ? (
-                  <Loader2 size={16} className="m-media-spin" aria-hidden="true" />
-                ) : (
-                  <Trash2 size={16} aria-hidden="true" />
-                )}
-                <span>
-                  {isDeleting
-                    ? "Deleting..."
-                    : deleteConfirm
-                    ? "Click to Confirm Delete"
-                    : "Delete Media"}
-                </span>
-              </button>
-
-              <button
-                type="button"
-                className="m-media-close-action-btn"
-                onClick={() => setActiveModalItem(null)}
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
+        <MediaModal
+          item={activeModalItem}
+          onClose={() => setActiveModalItem(null)}
+          onDelete={handleDeleteItem}
+        />
       ) : null}
     </div>
   );

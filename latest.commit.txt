@@ -1,11 +1,13 @@
-feature(components): add usage component with color-coded progress bar and numbers
-
-- packages/components/src/usage: new Usage component that tracks resource consumption with color-coded status thresholds (normal gold, warning amber, danger red, exceeded animated pulse), formatted numbers, percentage display, multiple sizes (sm, md, lg), and progressbar accessibility
-- packages/components/src/markdown: new MarkdownRenderer component supporting Obsidian callouts/admonitions with Lucide icons and foldable toggles, [[wikilinks]], #tags, interactive task lists, ==highlights==, ~~strikethrough~~, code blocks with language headers and quick copy, tables, and footnotes
-- packages/components/src/medialibrary: connected MediaLibrary to Supabase Database & Storage with private user isolation, image/pdf/docx filtering, pagination, item inspection modal with public bucket URL quick copy, and deletion
-- packages/components: added lucide-react dependency, workspace links to @mono/database and @mono/auth, and 27 comprehensive unit tests across media library, markdown, and usage features
-- packages/database: added MediaFileRecord, media_files table typing, and media helper utilities (listUserMedia, uploadUserMedia, deleteUserMedia, detectMediaType)
-- apps/docs: added live interactive demos with prop controls for MediaLibrary, MarkdownRenderer, and Usage on the components showcase page
-- docs/adr: added ADR-006 (Database-Connected Media Library) and ADR-007 (Obsidian-Flavored Markdown Renderer)
-- docs/ARCHITECTURE.md: added ADR-006 and ADR-007 to Key Decisions
-- CHANGELOG.md: logged versions 0.12.0, 0.13.0, and 0.14.0
+refactor(repo): enforce 500-line file limit and decompose oversized modules
+- docs: enforce Rule 18 in AGENTS.md, DESIGN.md, and CONTRIBUTING.md mandating all files stay under 500 lines for cleanliness
+- packages/auth: decompose account-settings.tsx into mfa-section.tsx and providers-section.tsx co-located submodules
+- packages/components: decompose markdown.tsx into markdown-inline.tsx, markdown-callout.tsx, and markdown-code-block.tsx
+- packages/components: decompose medialibrary.tsx into media-modal.tsx, media-utils.tsx, and media-types.ts
+- packages/components: decompose medialibrary.css into media-modal.css and medialibrary.css
+- packages/rose: add real-time streaming speech recognition, interim live transcription, and audio loudness wave aura visualization
+- packages/rose: add settings modal, personalization, and long-term memories management
+- packages/database: add rose_personalization and memories schema, migrations, and server data store operations
+- packages/auth: integrate ToastProvider into AuthProvider and route authentication errors to dismissible toasts
+- apps/machi-asia, apps/rose, apps/docs: add ToastProvider and suppressHydrationWarning to root layouts
+- apps/docs: add component showcase and interactive live demos for @mono/rose and new components
+- docs: record ADRs 008-011 and update CHANGELOG.md for 0.17.2

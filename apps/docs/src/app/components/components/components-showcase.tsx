@@ -24,7 +24,7 @@ import {
 import { useTheme } from "next-themes";
 import "./components-demo.css";
 
-const packageOptions = ["mono/components", "mono/auth", "mono/database"];
+const packageOptions = ["mono/components", "mono/auth", "mono/database", "mono/rose"];
 const boolOptions = [
   { label: "true", value: "true" },
   { label: "false", value: "false" },
@@ -289,15 +289,27 @@ export function ComponentsShowcase() {
         {
           name: "Tooltip",
           uses: 'import { Tooltip } from "@mono/components"',
-          description: "Hover/focus tooltip that appears near the trigger element.",
+          description: "Hover/focus tooltip that appears near the trigger element or circular help button.",
           propControls: [
+            { prop: "variant", label: "variant", options: ["default", "help"], defaultValue: "default" },
             { prop: "position", label: "position", options: ["top", "bottom", "left", "right"], defaultValue: "top" },
           ],
-          render: ({ position }) => (
-            <Tooltip content="Helpful hint" position={position as never}>
-              <Button variant="secondary" size="sm">Hover me</Button>
-            </Tooltip>
-          ),
+          render: ({ variant, position }) =>
+            variant === "help" ? (
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
+                <span style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>Usage Tier: Authenticated</span>
+                <Tooltip
+                  variant="help"
+                  content="Tier limits: 20 msgs/day, 200/week"
+                  position={position as never}
+                  triggerAriaLabel="View tier details"
+                />
+              </div>
+            ) : (
+              <Tooltip content="Helpful hint" position={position as never}>
+                <Button variant="secondary" size="sm">Hover me</Button>
+              </Tooltip>
+            ),
         },
         {
           name: "Dropdown",
@@ -366,10 +378,12 @@ export function ComponentsShowcase() {
           uses: 'import { Navbar } from "@mono/components"',
           description: "Top navigation bar with brand, links, action slots, and an optional auth menu showing avatar, name, and sign-out.",
           propControls: [
+            { prop: "variant", label: "variant", options: ["default", "tabs", "compact"], defaultValue: "default" },
             { prop: "showAuth", label: "auth", options: boolOptions, defaultValue: "true" },
           ],
-          render: ({ showAuth }) => (
+          render: ({ variant, showAuth }) => (
             <Navbar
+              variant={variant as "default" | "tabs" | "compact"}
               brand={<span>Machi Asia</span>}
               links={[
                 { label: "Home", href: "/", active: true },

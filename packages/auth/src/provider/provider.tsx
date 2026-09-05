@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useState, useCallback, type ReactNode } from "react";
 import { createClient } from "../client";
 import type { AuthContextValue, AuthState } from "../types";
+import { ToastProvider } from "@mono/components";
 
 export const AuthContext = createContext<AuthContextValue | null>(null);
 
@@ -65,9 +66,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [supabase]);
 
   return (
-    <AuthContext.Provider value={{ ...state, signInWithEmail, signUpWithEmail, signInWithGoogle, signInWithGithub, signInAsGuest, signOut }}>
-      {children}
-    </AuthContext.Provider>
+    <ToastProvider>
+      <AuthContext.Provider value={{ ...state, signInWithEmail, signUpWithEmail, signInWithGoogle, signInWithGithub, signInAsGuest, signOut }}>
+        {children}
+      </AuthContext.Provider>
+    </ToastProvider>
   );
 }
 

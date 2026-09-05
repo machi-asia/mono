@@ -4,6 +4,103 @@ All notable changes to this monorepo will be documented in this file.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.17.2] - 2026-09-05
+
+### Changed
+
+- Enforced a 500-line limit across all codebase files for cleanliness and maintainability:
+  - Added Rule 18 in `AGENTS.md` and updated `DESIGN.md` and `CONTRIBUTING.md` requiring all single code, style, and test files to remain strictly under 500 lines.
+  - Decomposed `packages/auth/src/account-settings/account-settings.tsx` (557 lines -> 198 lines) by extracting `mfa-section.tsx` (222 lines) and `providers-section.tsx` (110 lines).
+  - Decomposed `packages/components/src/markdown/markdown.tsx` (690 lines -> 304 lines) by extracting `markdown-inline.tsx` (189 lines), `markdown-callout.tsx` (124 lines), and `markdown-code-block.tsx` (44 lines).
+  - Decomposed `packages/components/src/medialibrary/medialibrary.tsx` (655 lines -> 395 lines) by extracting `media-modal.tsx` (196 lines), `media-utils.tsx` (82 lines), and `media-types.ts` (24 lines).
+  - Decomposed `packages/components/src/medialibrary/medialibrary.css` (647 lines -> 312 lines) by extracting `media-modal.css` (254 lines) and importing it at the top of `medialibrary.css`.
+
+## [0.17.1] - 2026-09-05
+
+### Changed
+
+- Aligned voice recognition with `smarter-home` architecture:
+  - Uses native browser `SpeechRecognition` with `interimResults: true` by default for real-time live subtitle transcription as words are spoken.
+  - Added periodic live interim transcription to `createClientWhisperRecorder` so partial subtitles display live on screen while speaking before natural silence auto-submits.
+  - Added live pulsating streaming dot indicator and active "Listening to you speak…" placeholder during speech detection.
+  - Automatically finalizes and sends the prompt upon natural silence/pause without needing manual button taps.
+  - Removed the pause button and keep the microphone continuously unpaused and listening while Voice Mode is open.
+- Added real-time microphone loudness wave visualization to `<RoseVoiceOverlay />` in `@mono/rose`:
+  - Utilizes Web Audio API `AudioContext` + `AnalyserNode` to compute live RMS amplitude from user's mic stream.
+  - Dynamically scales multiple concentric glowing wave rings around Rose's avatar and drives equalizer bars in sync with speaking volume.
+  - Updates overlay status title to "Hearing you speak…" upon voice detection to give clear visual feedback that microphone is active and catching speech.
+- Auth sign-in errors (email/password, Google, GitHub, guest) now surface as dismissable toasts instead of an inline red paragraph in the sign-in modal.
+- `AuthProvider` mounts `ToastProvider` internally so all auth components have toast access without extra wiring.
+- `MockAuthProvider` also wraps with `ToastProvider` so docs showcase demos continue working.
+- Added `@mono/components` as a dependency of `@mono/auth`.
+- Added `ToastProvider` to all three app root layouts (`machi-asia`, `rose`, `docs`) so page-level code can call `useToast()` directly.
+- Added `suppressHydrationWarning` to `<html>` in `machi-asia` and `rose` layouts (mirrors the fix applied to `docs` in 0.17.0).
+
+## [0.17.0] - 2026-09-04
+
+### Changed
+
+- Added hands-free Voice Mode to Rose AI companion (`@mono/rose`):
+  - Placed Voice Mode toggle button directly next to the Submit button in the chat input bar with active pulse states and tooltips.
+  - Built `<RoseVoiceOverlay />` with dimmed screen backdrop blur, large picture of Rose reflecting her active emotion, glowing aura pulses, dynamic audio wave equalizer bars, and live subtitle transcription.
+  - Integrated zero-token Web Speech API service (`cleanTextForSpeech`, `speakText`, `createSpeechRecognition`) and custom hook `useVoiceChat`.
+  - Added speech-to-text integration with `faster-whisper-ts`:
+    - Created Next.js server route `/api/rose/transcribe` calling `handleRoseTranscribe()` in `@mono/rose/server` with dynamic `WhisperModel` loading and configurable model paths.
+    - Implemented `createFasterWhisperRecorder()` and `transcribeAudioBlob()` to record user microphone audio and submit multipart/form-data for transcription.
+    - Added transparent client fallback to browser `SpeechRecognition` if CTranslate2 native binaries or model weights are missing in the runtime.
+  - Automatically cleans markdown formatting, Obsidian callouts, code blocks, wikilinks, and emotion tags prior to spoken playback.
+  - Prioritizes gentle female English voices for Rose with warm pitch/rate tuning.
+  - Supports continuous conversational dialogue loop: speech recognition automatically resumes after Rose finishes speaking her response.
+  - Added ADR-011 and live interactive showcase demo in `apps/docs`.
+- Enforced strict use of `@mono/components` across all apps and packages in system documentation (`AGENTS.md`, `DESIGN.md`, `CONTRIBUTING.md`):
+  - Updated `AGENTS.md` Rule 13, `DESIGN.md` Component Rules, and `CONTRIBUTING.md` Package Rules to mandate building UI with `@mono/components` (`Button`, `Card`, `Row`, `Col`, `Tooltip`, etc.) and explicitly forbid hand-rolling raw buttons or custom card divs.
+  - Refactored `RoseSettingsModal` and `RoseChat` in `@mono/rose` to replace raw `<button>`, form cards, and container elements with `<Button>` and `<Card>` from `@mono/components`.
+- Added Settings modal, Personalization, and Memories management for Rose AI agent:
+  - Added Settings trigger button under the conversations list in Rose's sidebar.
+  - Built `<RoseSettingsModal />` with Personalization tab (nickname, tone selection, persistent custom instructions, and help tooltips) and Memories tab (view, add, edit, delete memories with tags and importance badges).
+  - Created `rose_personalization` table in `@mono/database` and migration `20260904000001_rose_personalization.sql` with user-isolated RLS policies.
+  - Added `updateMemory`, `deleteMemory`, `getPersonalization`, `savePersonalization` helpers in `@mono/database`.
+  - Injected both user personalization and active memories into system prompt context across all conversations and prompts.
+  - Added `ADR-010: Rose Settings - Personalization and Memories Management`.
+- Added long-term memory system for Rose AI agent (`rememberTool` in `@mono/rose` and persistence in `@mono/database`):
+  - Created `rose_memories` Supabase database table following Postgres best practices (64-bit identity primary key, `timestamptz`, cached `(select auth.uid())` RLS policies, and composite `(user_id, created_at desc)` index).
+  - Added server-side data access helpers `saveMemory` and `listMemories` in `@mono/database`.
+  - Added `rememberTool` to `@mono/rose` supporting structured recording of facts, preferences, and instructions with scoped user context and guest/test in-memory fallback.
+    - Automatically loads and injects the 10 most recent user memories into Rose's conversation context on chat turn startup.
+    - Fixed `rememberTool` server database persistence by passing the active server database client into `setRememberToolContext` and prioritizing `SUPABASE_SECRET_KEY` on the backend for reliable server execution.
+    - Integrated `rememberTool` executions with Langfuse server-side span tracing.
+  - Added migration `packages/database/migrations/20260904000000_rose_memories.sql` and `docs/adr/009-long-term-memory-system.md`.
+- Reintroduced `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` specifically for browser client initialization (`AuthProvider` and browser Supabase client via `@supabase/ssr`).
+- Added `SUPABASE_SECRET_KEY` on the server to handle privileged backend and database operations securely.
+- Enforced strict server-only execution for all database operations: direct database querying and mutations from client components are forbidden. All database and storage operations occur via server components, route handlers, or server utilities (`@mono/database/server`).
+- Updated `AGENTS.md` (Rules 4, 7, and 17), `SECURITY.md`, `DESIGN.md`, and `docs/ARCHITECTURE.md` to establish the clear separation between browser authentication keys, server database secret keys, and server-only database operations.
+- Integrated Groq for tool output processing in `@mono/rose`: Google Gemini acts as the main conversational agent and tool caller; after tools execute, their output is structured as JSON and processed via Groq (`callGroq` / `callGroqStream`) to synthesize the final response into rich Obsidian Markdown.
+- Added Langfuse observability and tracing to `@mono/rose`: server-side tracing with `RoseLangfuseTrace` captures user sessions, turns, Gemini orchestrator generations, tool spans with structured JSON outputs, Groq synthesis generations, latency, and emotion tags. Runs gracefully and non-blockingly when keys are absent.
+- Hardened agent response pipeline with defensive tool call extraction (`extractToolCallsFromText`): catches tool calls emitted in output text (such as `webSearch`, `askQuestion`, or custom actions in JSON format or code fences), automatically executes them on the server, feeds the results back into the agent pipeline for synthesis, cleanly strips raw JSON blocks from the chat output, and parses interactive option buttons into `optionsPayload`.
+- Added `GROQ_API_KEY`, `LANGFUSE_SECRET_KEY`, `LANGFUSE_PUBLIC_KEY` (Non-Config) and `GROQ_MODEL`, `LANGFUSE_BASEURL` (Config) to `.env.sample` and `.env.local` files with automatic fallback to Gemini synthesis when Groq keys are not present.
+
+## [0.16.0] - 2026-09-03
+
+### Added
+
+- Added `variant="help"` to `@mono/components` `Tooltip` component featuring a built-in accessible circular `?` button trigger and styled multi-line help box.
+- Added Rule 16 to `AGENTS.md` and updated `DESIGN.md` requiring the use of `<Tooltip variant="help">` on any complex or otherwise vague UI features, metrics, or settings.
+- Integrated the circular `?` help Tooltip beside Rose's Usage Tier pill displaying all tiers (Guest, User, Admin) and daily/weekly quotas.
+- Expanded the Rose chat modal to 90% screen width/height and fixed details accordion scrolling and clipping.
+
+## [0.15.0] - 2026-09-03
+
+### Added
+
+- Added new package **`@mono/rose`** (`packages/rose`) providing a generalized AI companion and assistant with Google Gemini integration.
+- General AI agent runner with comprehensive Obsidian Markdown formatting instructions (callouts, tables, code blocks, wikilinks, tags, task lists, and footnotes).
+- General-purpose agent tools: `webSearch` (live real-time web query engine) and `askQuestion` (interactive option picker).
+- Chat modal features: `RoseChatModalProvider`, `useRoseChatModal`, `RoseChatModal`, `RoseChatModalActionButton`, `RoseChatModalFloatingButton`, and `RoseChat` with `@mono/components` `MarkdownRenderer` and interactive choice buttons.
+- Tiered usage quotas integration with `UsageBar` component leveraging `@mono/components` `Usage` progress bars (`sm`, `md`, `lg` sizes, tier badges).
+- Added `ADR-008: Rose AI Agent Package and Chat Modal Integration`.
+- Added live interactive showcase page at `apps/docs/src/app/components/rose/page.tsx`.
+- Added comprehensive unit test suites in `packages/rose` across agent runner, emotion extraction, tools, command registry, usage, and chat modal UI.
+
 ## [0.14.0] - 2026-09-03
 
 ### Added

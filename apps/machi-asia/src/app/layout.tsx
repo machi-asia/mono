@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AuthProvider, AuthGate } from "@mono/auth";
+import { ToastProvider } from "@mono/components";
 
 export const metadata: Metadata = {
   title: "Machi Asia",
@@ -12,11 +13,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <AuthProvider>
-          <AuthGate>{children}</AuthGate>
-        </AuthProvider>
+        <ToastProvider>
+          <AuthProvider>
+            <AuthGate>{children}</AuthGate>
+          </AuthProvider>
+        </ToastProvider>
       </body>
     </html>
   );

@@ -27,7 +27,7 @@ These are run in parallel via `npm run test` at the repo root.
 - All authentication belongs in `/packages/auth` (Supabase Auth).
 - All data/store logic belongs in `/packages/database` (Supabase Database/Storage).
 - Every app must use the `AuthProvider` from `/packages/auth`.
-- All layout and functional primitives (`Row`, `Col`, `Card`, date/time pickers, etc.) must be built in and consumed from `/packages/components` — never hand-rolled in an app.
+- All layout, button, and functional primitives (`Button`, `Row`, `Col`, `Card`, `Tooltip`, `Dropdown`, date/time pickers, etc.) must be built in and consumed strictly from `/packages/components` — never hand-roll raw `<button>` elements, card divs, or layout containers in apps or packages.
 - Follow the design system in `DESIGN.md`: token-based colors (no hardcoded hex), `next-themes` theming (dark-primary/gold), shared spacing/easing tokens, generous whitespace, subtle motion, high-image/low-text pages.
 
 ### Documentation
@@ -45,9 +45,11 @@ These are run in parallel via `npm run test` at the repo root.
 - After adding, renaming, or removing an env key in code, update `.env.sample` accordingly.
 - Always run `npm run env` after env-related changes to verify `.env.local` vs `.env.sample` (checks missing keys and missing/placeholder values). `npm run env` is script-based and does not expose real values.
 - **The canonical Supabase project is `https://zyatzdkapdqngwyhiqqn.supabase.co`.** All database edits — migrations, DDL, edge functions, and data changes — must target this project only. `NEXT_PUBLIC_SUPABASE_URL` must resolve to this URL. Never run migrations against a mismatched/different project; verify the target before applying any change.
+- **Strictly use the Publishable Key (`SUPABASE_PUBLISHABLE_KEY`) for all database access.** Never use or expose service role keys, secret admin keys, or redundant client-exposed keys (`NEXT_PUBLIC_*_KEY`). All access must go through the publishable key protected by Row Level Security (RLS).
 
 ### Code Style
 
+- Keep all files below 500 lines for cleanliness; decompose into co-located submodules when exceeding.
 - Follow the existing code style in the file you are editing.
 - Match naming conventions used in the same package.
 - Do not add comments unless explicitly requested.

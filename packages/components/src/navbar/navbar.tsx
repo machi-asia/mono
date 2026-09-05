@@ -6,8 +6,10 @@ import "./navbar.css";
 
 export interface NavbarLink {
   label: string;
-  href: string;
+  href?: string;
   active?: boolean;
+  icon?: ReactNode;
+  onClick?: () => void;
 }
 
 const NAVBAR_DURATION = 160;
@@ -24,11 +26,16 @@ export interface NavbarAuth {
   onSignOut?: () => void;
 }
 
+export type NavbarVariant = "default" | "tabs" | "compact";
+
 export interface NavbarProps {
   brand?: ReactNode;
   links?: NavbarLink[];
   actions?: ReactNode;
   auth?: NavbarAuth;
+  variant?: NavbarVariant;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 function AvatarFallback({ name }: { name: string }) {
@@ -43,7 +50,15 @@ function AvatarFallback({ name }: { name: string }) {
   return <span className="m-navbar-avatar-fallback">{initials}</span>;
 }
 
-export function Navbar({ brand, links = [], actions, auth }: NavbarProps) {
+export function Navbar({
+  brand,
+  links = [],
+  actions,
+  auth,
+  variant = "default",
+  className = "",
+  style,
+}: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { mounted, entered } = useMotionMount(menuOpen, NAVBAR_DURATION);
@@ -58,21 +73,51 @@ export function Navbar({ brand, links = [], actions, auth }: NavbarProps) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
+  const navClasses = [
+    "m-navbar",
+    `m-navbar--${variant}`,
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <nav className="m-navbar" data-mono="navbar">
+    <nav className={navClasses} style={style} data-mono="navbar">
       <div className="m-navbar-inner">
         {brand ? <div className="m-navbar-brand">{brand}</div> : null}
-        <ul className="m-navbar-links">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className={`m-navbar-link ${link.active ? "m-navbar-link--active" : ""}`}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+        <ul className="m-navbar-links" role={variant === "tabs" ? "tablist" : undefined}>
+          {links.map((link, idx) => {
+            const isButton = Boolean(link.onClick && !link.href);
+            const activeClass = link.active ? "m-navbar-link--active" : "";
+            const linkClass = `m-navbar-link ${activeClass}`.trim();
+            const itemKey = link.href || `${link.label}-${idx}`;
+
+            return (
+              <li key={itemKey} role={variant === "tabs" ? "presentation" : undefined}>
+                {isButton ? (
+                  <button
+                    type="button"
+                    className={linkClass}
+                    onClick={link.onClick}
+                    role={variant === "tabs" ? "tab" : "button"}
+                    aria-selected={variant === "tabs" ? Boolean(link.active) : undefined}
+                  >
+                    {link.icon ? <span className="m-navbar-link-icon">{link.icon}</span> : null}
+                    <span>{link.label}</span>
+                  </button>
+                ) : (
+                  <a
+                    href={link.href}
+                    className={linkClass}
+                    onClick={link.onClick}
+                  >
+                    {link.icon ? <span className="m-navbar-link-icon">{link.icon}</span> : null}
+                    <span>{link.label}</span>
+                  </a>
+                )}
+              </li>
+            );
+          })}
         </ul>
         <div className="m-navbar-actions">
           {actions}

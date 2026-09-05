@@ -37,8 +37,9 @@ The visual language of every Machi Asia app lives here. These conventions apply 
 
 ### Component Rules
 
-- Layout primitives (`<Row>`, `<Col>`, `<Card>`) and functional elements (date/time pickers, etc.) are **built and consumed strictly from `@mono/components`**.
-- Apps and pages must **not** hand-roll their own layout or functional primitives.
+- **Strictly build UI using `@mono/components`**: Core primitives (`<Button>`, `<Card>`, `<Row>`, `<Col>`, `<Tooltip>`, `<Dropdown>`, `<Link>`, `<MarkdownRenderer>`, date/time pickers, etc.) must be consumed strictly from `@mono/components`.
+- Apps, packages, and modals must **never hand-roll** raw buttons (`<button>`), custom card wrappers (`<div className="...card...">`), or ad-hoc primitives when an equivalent component exists in `@mono/components`.
+- **Clarify vague or complex UI features with `<Tooltip variant="help">`**: Any UI metrics, settings, tiers, badges, or controls that might otherwise be ambiguous or vague to end users must include the circular `?` help tooltip (`<Tooltip variant="help">`) from `@mono/components` with concise, clear explanations and limits.
 
 ### Content Density
 
@@ -49,8 +50,8 @@ The visual language of every Machi Asia app lives here. These conventions apply 
 
 Packages export React components, functions, hooks, and types. They do not contain page routes or business logic outside their scope.
 
-- **`/packages/auth`** exports: `AuthProvider`, `useAuth`, `createClient` (browser/server), `updateSession` (middleware).
-- **`/packages/database`** exports: `createClient` (browser/server), database types.
+- **`/packages/auth`** exports: `AuthProvider`, `useAuth`, `createClient` (browser client with `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`), server `createClient`, `updateSession` (middleware).
+- **`/packages/database`** exports: server `createClient` (with `SUPABASE_SECRET_KEY` / publishable key with RLS), database types, and server media storage operations. Database operations are strictly server-only.
 - **`/packages/components`** exports: `ThemeProvider`, `Row`, `Col`, `Card`, `ComponentShowcase` — plus the design-token CSS and any functional elements (date/time pickers, etc.).
 
 ## Documentation Required
@@ -64,11 +65,13 @@ Packages export React components, functions, hooks, and types. They do not conta
 
 - Every env key an app or package references is declared in its `.env.sample`.
 - Real values live in gitignored `.env.local` files only — never in `.env.sample`.
+- In all `.env.sample` and `.env.local` files, **all configuration keys (settings, feature flags, quotas, tiers, model options) must come after the non-config keys (credentials, secrets, URLs, tokens), separated by a comment separator**.
 - `npm run env` verifies that `.env.local` matches `.env.sample` (missing keys, missing/placeholder values) via a script, so no tool or agent needs to read actual secret values.
 
 ## Simplicity
 
-Prefer the simplest solution that meets the requirement. Avoid premature abstraction. Keep file structures shallow. Name things clearly.
+- Prefer the simplest solution that meets the requirement. Avoid premature abstraction. Keep file structures shallow. Name things clearly.
+- Keep all files strictly below 500 lines for cleanliness and maintainability. When a component, style, or module grows beyond 500 lines, decompose it into focused subcomponents, sub-styles, or dedicated utilities co-located within that feature's directory.
 
 ## Consistency
 
