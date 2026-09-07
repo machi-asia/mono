@@ -1,64 +1,37 @@
-# AI Agent Instructions
+# Agent Instructions
 
-Rules for AI agents working on this monorepo.
+This is the organization-level `.github` repository for **machi-asia**. It owns the shared
+issue/PR templates, label manifest, reusable CI/CD workflows, composite actions, and the
+canonical `AGENTS.md` that every repository in the org must carry.
 
-## Repository Rules
+## Mandatory Duties
 
-1. **All apps and packages are Next.js-based.** Never scaffold or suggest non-Next.js code.
-2. **Packages export components, functions, hooks, and types.** No page routes, no business logic outside packages.
-3. **Auth lives in `/packages/auth`.** Uses Supabase Auth. Do not create auth logic elsewhere.
-4. **Store/data lives in `/packages/database`.** Uses Supabase Database/Storage. All database operations must be executed strictly on the server side (server components, server actions, route handlers, or `@mono/database/server`). Never perform database queries or direct storage mutations from client components.
-5. **Every app must use `AuthProvider` + `AuthGate`** from `/packages/auth`. No signed-out user may access any page; the sign-in modal offers email/password, Google, or Guest (Supabase anonymous) sign-in and has no exit/cancel controls.
-6. **Every app must include linting and testing tooling** — `eslint`, `stylelint`, `typecheck`, `vitest`.
-7. **Any env key referenced in code must be added to the corresponding `.env.sample`.** Never hardcode secrets. When you reference a new env key, update `.env.sample`, not `.env.local` (do not read or write secret values in `.env.local` unless setting up local dev). In every `.env.sample` and `.env.local`, **all configuration keys (settings, feature flags, quotas, tiers, model selectors) must come after the non-config keys (credentials, secrets, URLs, and API tokens), separated by a clear comment separator** (e.g. `# ==========================================\n# Configuration Keys\n# ==========================================`).
-8. **Run `npm run env` after env-related changes.** It compares `.env.sample` against `.env.local` for missing keys and missing/placeholder values. Never read the actual values in `.env.local` — rely on the script.
-9. **Components must be documented in `/docs` app.** Every new component gets a doc page.
-10. **Architecture decisions go in `/docs/adr/`.** Create an ADR before implementing significant changes.
-11. **All `.md` files must stay current.** When you change code, update the relevant docs.
-12. **Every package's exported components get a showcase page with a live interactive demo.** Every package that exports components must have a corresponding `page.tsx` in the `apps/docs` app (e.g. `apps/docs/src/app/components/<package>/page.tsx`) that renders each exported component **live** using the shared `ComponentShowcase` layout from `@mono/components`. Each listed component must:
-    - declare a `render(values)` function that renders the **actual component** (not just a description), and
-    - declare a `propControls` dropdown for **every choice/enum prop** of that component.
-    When you add or update a component in a package, add/update its entry on that package's showcase page accordingly. This applies to current and future component exports. Components that depend on shared context (e.g. auth) are demoed against a mock provider (`@mono/auth/mock`).
-13. **Follow the design system** (see `DESIGN.md`): colors are token-based CSS custom properties, never hardcoded hex; theme switching uses `ThemeProvider`/`next-themes` with **dark mode primary and gold accents**; use the shared easing/duration and spacing tokens; keep whitespace generous and clutter minimal; and **strictly build UI using components from `/packages/components`** (`Button`, `Card`, `Row`, `Col`, `Tooltip`, `Dropdown`, `MarkdownRenderer`, etc.) — apps and packages must **never** hand-roll raw buttons (`<button>`), custom card divs (`<div className="...card...">`), or ad-hoc primitives when an equivalent component exists in `@mono/components`. Pages should be **high-image, low-text**.
-14. **Organize exported components by feature folders within each package.** Every exported component's `.tsx`, `.css`, and all related files (subcomponents, hooks, helper types, and tests for that component) live together in a feature-named folder under `src/` — e.g. a `showcase` feature is `src/showcase/showcase.tsx`, `src/showcase/showcase.css`, etc. Do not scatter a single component's files across a flat `src/` root or separate sibling folders. The package `src/index.ts` should only re-export from these feature folders.
-15. **All database edits must target the canonical Supabase project** at `https://zyatzdkapdqngwyhiqqn.supabase.co`. Migrations, DDL, edge functions, and data changes must be applied to this project only — never to a mismatched/different project URL. `NEXT_PUBLIC_SUPABASE_URL` must resolve to this canonical URL. Before applying any schema or data change, verify the target project matches; if a connected tool/agent points elsewhere, do not proceed with edits until it is corrected.
-16. **Always add the Tooltip help variant (`<Tooltip variant="help">`) to UI features that are complex or otherwise vague.** Any UI element whose purpose, status, quota, tier, formula, or configuration could be ambiguous or non-obvious to users must be accompanied by the circular `?` help tooltip (`<Tooltip variant="help" triggerAriaLabel="...">...</Tooltip>`) from `@mono/components` explaining what the feature does, how it works, and its relevant details or tier limits.
-17. **Strictly isolate client auth keys from server database keys, and enforce server-only database operations.** Browser clients use `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` exclusively for client auth sessions (`AuthProvider`). Database operations and mutations must run only on the server, using `SUPABASE_SECRET_KEY` (or the server publishable key with RLS). No client component may query or mutate the database directly.
-18. **Keep all files below 500 lines for cleanliness.** No single code, style, or test file should exceed 500 lines. When a file approaches or exceeds this limit, decompose it into modular subcomponents, dedicated helper utilities, sub-styles, or focused test files co-located within the same feature folder.
+### 1. Keep `latest.commit.txt` in sync with uncommitted work
 
-## File Ownership
+Whenever this working tree contains uncommitted changes, `latest.commit.txt` MUST be updated
+to describe ALL of them before a task or session ends.
 
-| Path | Owner | Purpose |
-|------|-------|---------|
-| `apps/machi-asia/` | `machi-asia` team | Showcase + billing hub |
-| `apps/rose/` | `rose` team | Custom AI agent |
-| `apps/docs/` | `docs` team | Component + user documentation |
-| `packages/auth/` | All teams | Shared authentication |
-| `packages/database/` | All teams | Shared data/store |
-| `packages/components/` | All teams | Shared UI components |
-| `packages/rose/` | All teams | Shared AI companion & chat modals |
-| `docs/adr/` | All teams | Architecture Decision Records |
-| `docs/ARCHITECTURE.md` | All teams | Architecture overview |
-| `docs/API.md` | All teams | API conventions |
-
-## When Making Changes
-
-- Edit the relevant `.md` files to reflect your changes.
-- If the change is architectural, create an ADR in `docs/adr/` with the next sequential number.
-- If you add a component to `packages/components`, document it in the `apps/docs` app.
-- If you add an exported component to any package, add it to that package's showcase page under `apps/docs/src/app/components/<package>/page.tsx` using the shared `ComponentShowcase` list-view layout, with a live `render(values)` demo and a `propControls` dropdown for every choice/enum prop.
-- If you modify auth behavior, update `packages/auth` and `docs/ARCHITECTURE.md`.
-- If you modify data/store behavior, update `packages/database` and `docs/ARCHITECTURE.md`.
-- If you add or rename an env key in code, update the corresponding `.env.sample` (never commit values in `.env.local`).
-- Always update `CHANGELOG.md` with a new entry.
-- Always run `npm run env` after any env-related change to verify `.env.local` vs `.env.sample`.
-- Always update `latest.commit.txt` before the agent session ends with a comprehensive summary of **all** uncommitted changes across the entire repository. Run `git status` (and `git diff` / `git diff --staged` / untracked file checks) to inspect the complete set of uncommitted/modified/added/deleted files across all apps and packages, and ensure every notable change is captured in the bullets. Never describe only the most recent edit if other uncommitted changes exist. `latest.commit.txt` is read verbatim as the commit message by `npm run deploy` (see `scripts/deploy.js`). Its first line (a Conventional-Commits-style title) **must** match:
+- Base it strictly on the current uncommitted diff (`git status` + `git diff`) against HEAD.
+- Format: the first line (title) MUST match
   `^(feature|fix|refactor|chore|docs|style|test|ci|build)\s*\([a-z0-9]+(-[a-z0-9]+)*\):\s*.+$`
-  Choose the type closest to the dominant nature of the pending changes and a kebab-case scope naming the primary affected area. Below the title, add one bullet per notable change (`- <area>: what changed and why`), covering all uncommitted changes across the repo.
+  — choose the type closest to the dominant nature of the pending changes and a kebab-case
+  scope naming the affected area. Below it, add one bullet per notable change
+  (`- <area>: what changed and why`).
+- Regenerate it from scratch every time; never append stale entries.
+- Once everything is committed and the tree is clean, empty the file.
 
-## Code Style
+### 2. Update `README.md` for every major feature change
 
-- Keep all files below 500 lines for cleanliness; decompose into co-located submodules when exceeding.
-- Match the existing code style in the file you are editing.
-- No comments unless explicitly requested.
-- No secrets, keys, or credentials in code or docs.
+Any change that adds, removes, or alters user-facing behavior or developer-facing
+infrastructure (new workflows, new templates, new mandated toolchain, changed pipeline
+stages, new sync mechanisms) requires a matching `README.md` update in the same change.
+
+Excluded: pure styling tweaks and internal refactors with no behavioral surface.
+
+### 3. Propagate canonical files to all repositories
+
+Every repository in the org must carry this `AGENTS.md`, synced verbatim from this repo.
+The scheduled/dispatch workflow `.github/workflows/sync-canonical-files.yml` also propagates
+`templates/dependabot.yml` (as root `dependabot.yml`) and `.github/labels.yml` in the same run;
+these three files are centrally managed — do not fork its logic into consumer repos, and do not
+edit any of them outside this repo.
