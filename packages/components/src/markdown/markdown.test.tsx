@@ -3,6 +3,13 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { MarkdownRenderer } from "./markdown";
 
 describe("MarkdownRenderer", () => {
+  it("keeps safe link schemes and neutralizes dangerous ones (file://, javascript:) when clicked", () => {
+    const md = "[Local](file:///D:/Repositories/secret) [Danger](javascript:alert(1)) [Web](https://example.com)";
+    render(<MarkdownRenderer content={md} />);
+    expect(screen.getByText("Web")).toHaveAttribute("href", "https://example.com");
+    expect(screen.getByText("Local")).toHaveAttribute("href", "#");
+    expect(screen.getByText("Danger")).toHaveAttribute("href", "#");
+  });
   it("renders standard markdown text, headings, and bold/italic", () => {
     const md = "# Title 1\n\n## Title 2\n\nThis is **bold** and *italic* text.";
     render(<MarkdownRenderer content={md} />);

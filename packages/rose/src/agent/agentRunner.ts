@@ -1,5 +1,13 @@
 import { callGemini, callGeminiStream, type GeminiContent, type GeminiPart, type GeminiToolDeclaration } from "./geminiClient";
 import { callGroq, callGroqStream, callGroqWithUsage, buildGroqToolPrompt } from "./groqClient";
+import {
+  callOllamaChat,
+  callOllamaStream,
+  callOllamaMessagesChat,
+  callOllamaMessagesStream,
+  getOllamaModelLabel,
+  shouldUseOllamaProvider,
+} from "./ollamaClient";
 import { TOOLS, getToolByName } from "./tools";
 import { ROSE_EMOTIONS, extractEmotion } from "./roseEmotions";
 import { RoseLangfuseTrace } from "./langfuse";
@@ -130,8 +138,11 @@ export function formatErrorCallout(
 const TOOL_LABEL_MAP: Record<string, string> = {
   webSearch: "searching the web",
   askQuestion: "prompting choices",
-  remember: "saving to memory",
-  rememberTool: "saving to memory",
+  learn: "learning a new memory",
+  recall: "recalling from memory",
+  remember: "updating memory",
+  forget: "forgetting memory",
+  rememberTool: "updating memory",
 };
 
 export interface ExtractedToolCall {
@@ -458,9 +469,11 @@ export async function* runAgentChatStream(
   let accumulatedText = "";
   let optionsPayload: RunAgentResult["optionsPayload"] = undefined;
   let lastErrorMessage = "";
+  const useOllamaProvider = shouldUseOllamaProvider();
+  const executedToolKeys = new Set<string>();
 
   const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
-  if (!apiKey) {
+  if (!apiKey && !useOllamaProvider) {
     const fallbackText = formatErrorCallout(
       "Configuration Error",
       "Missing `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) in server environment variables. Please configure this key in `.env.local`.",
@@ -491,10 +504,15 @@ export async function* runAgentChatStream(
       })),
     ];
 
-    const geminiModel = process.env.GEMINI_MODEL || "gemini-3.1-flash-lite";
+    const activeModel = useOllamaProvider
+      ? `ollama:${await getOllamaModelLabel()}`
+      : process.env.GEMINI_MODEL || "gemini-3.1-flash-lite";
+    const genName = useOllamaProvider
+      ? `ollama-orchestrator-turn-${loopCount}`
+      : `gemini-orchestrator-turn-${loopCount}`;
     const geminiGenId = trace?.startGeneration(
-      `gemini-orchestrator-turn-${loopCount}`,
-      geminiModel,
+      genName,
+      activeModel,
       geminiInputPrompt,
       { systemInstruction: ROSE_SYSTEM_INSTRUCTION }
     );
@@ -503,11 +521,14 @@ export async function* runAgentChatStream(
 
     try {
       const sanitizedContents = sanitizeHistory(activeHistory);
-      for await (const chunk of callGeminiStream(
-        ROSE_SYSTEM_INSTRUCTION,
-        sanitizedContents,
-        toolDeclarations
-      )) {
+      const stream = useOllamaProvider
+        ? callOllamaStream(ROSE_SYSTEM_INSTRUCTION, sanitizedContents)
+        : callGeminiStream(
+            ROSE_SYSTEM_INSTRUCTION,
+            sanitizedContents,
+            toolDeclarations
+          );
+      for await (const chunk of stream) {
         if (chunk.usageMetadata) {
           geminiUsage = {
             input: chunk.usageMetadata.promptTokenCount,
@@ -576,6 +597,22 @@ export async function* runAgentChatStream(
       const functionResponseParts: any[] = [];
 
       for (const fc of currentTurnFunctionCalls) {
+        const fnKey = `${fc.name}|${JSON.stringify(fc.args || {})}`;
+        if (executedToolKeys.has(fnKey)) {
+          functionResponseParts.push({
+            functionResponse: {
+              name: fc.name,
+              response: {
+                content: JSON.stringify({
+                  notice: "This tool has already been executed once in this turn. Do not call it again — provide your final answer now.",
+                }),
+              },
+            },
+          });
+          continue;
+        }
+        executedToolKeys.add(fnKey);
+
         const fnName = fc.name;
         const fnArgs = fc.args || {};
         let toolDescription = "Searching the web";
@@ -588,10 +625,22 @@ export async function* runAgentChatStream(
         } else if (fnName === "askQuestion") {
           toolDescription = "Formulating options";
           toolEmotion = "thinking";
-        } else if (fnName === "remember" || fnName === "rememberTool") {
-          const c = (fnArgs as any)?.content;
-          toolDescription = c ? `Remembering: "${c.slice(0, 40)}${c.length > 40 ? "..." : ""}"` : "Saving to long-term memory";
+        } else if (fnName === "recall") {
+          const i = (fnArgs as any)?.index;
+          toolDescription = i ? `Recalling memory index "${i}"` : "Recalling from memory";
+          toolEmotion = "thinking";
+        } else if (fnName === "learn") {
+          const i = (fnArgs as any)?.index;
+          toolDescription = i ? `Learning memory index "${i}"` : "Learning a new memory";
           toolEmotion = "bright";
+        } else if (fnName === "remember" || fnName === "rememberTool") {
+          const c = (fnArgs as any)?.description || (fnArgs as any)?.content;
+          toolDescription = c ? `Updating memory: "${c.slice(0, 40)}${c.length > 40 ? "..." : ""}"` : "Updating long-term memory";
+          toolEmotion = "bright";
+        } else if (fnName === "forget") {
+          const i = (fnArgs as any)?.index;
+          toolDescription = i ? `Forgetting memory index "${i}"` : "Forgetting a memory";
+          toolEmotion = "thinking";
         } else {
           toolDescription = `Executing ${fnName}`;
           toolEmotion = "thinking";
@@ -653,31 +702,36 @@ export async function* runAgentChatStream(
         outputJson: (functionResponseParts[idx]?.functionResponse?.response?.content as string) || "{}",
       }));
 
-      // If tools were called, Groq processes the structured JSON output
+      // If tools were called, Groq (or local Ollama in dev) processes the structured JSON output
       const groqApiKey = process.env.GROQ_API_KEY;
       let synthesizedText = "";
 
-      if (groqApiKey && executedToolResults.length > 0) {
-        addTrace("processing with Groq");
+      if (executedToolResults.length > 0 && (groqApiKey || useOllamaProvider)) {
+        addTrace(useOllamaProvider ? "processing with local Ollama" : "processing with Groq");
         yield {
           type: "trace",
-          trace: "processing with Groq",
-          description: "Processing tool data with Groq",
+          trace: useOllamaProvider ? "processing with local Ollama" : "processing with Groq",
+          description: useOllamaProvider ? "Processing tool data with local Ollama" : "Processing tool data with Groq",
           emotion: "thinking",
         };
 
-        const groqModel = process.env.GROQ_MODEL || "qwen/qwen3.8-27b";
+        const synthModel = useOllamaProvider
+          ? `ollama:${await getOllamaModelLabel()}`
+          : process.env.GROQ_MODEL || "qwen/qwen3.8-27b";
         const groqMessages = buildGroqToolPrompt(executedToolResults, newMessageText || "Analyze tool results");
         const groqGenId = trace?.startGeneration(
-          "groq-tool-synthesis",
-          groqModel,
+          useOllamaProvider ? "ollama-tool-synthesis" : "groq-tool-synthesis",
+          synthModel,
           groqMessages,
           { toolCallCount: executedToolResults.length }
         );
         let groqUsage: { input?: number; output?: number; total?: number } | undefined = undefined;
 
         try {
-          for await (const chunk of callGroqStream(groqMessages)) {
+          const synthStream = useOllamaProvider
+            ? callOllamaMessagesStream(groqMessages)
+            : callGroqStream(groqMessages);
+          for await (const chunk of synthStream) {
             if (chunk.usage) {
               groqUsage = {
                 input: chunk.usage.prompt_tokens,
@@ -693,7 +747,7 @@ export async function* runAgentChatStream(
           }
           if (groqGenId) trace?.endGeneration(groqGenId, synthesizedText, undefined, false, groqUsage);
         } catch (groqErr: any) {
-          console.error("[AgentRunner] Groq stream error:", groqErr);
+          console.error("[AgentRunner] Synthesis stream error:", groqErr);
           if (groqGenId) trace?.endGeneration(groqGenId, null, groqErr?.message, true);
         }
       }
@@ -745,10 +799,13 @@ Carefully analyze and understand these search findings. Provide a brief, well-st
 
           const sanitized = sanitizeHistory(activeHistory);
           try {
-            for await (const chunk of callGeminiStream(
-              ROSE_SYSTEM_INSTRUCTION,
-              sanitized
-            )) {
+            const synthStream = useOllamaProvider
+              ? callOllamaStream(ROSE_SYSTEM_INSTRUCTION, sanitized)
+              : callGeminiStream(
+                  ROSE_SYSTEM_INSTRUCTION,
+                  sanitized
+                );
+            for await (const chunk of synthStream) {
               if (chunk.textChunk) {
                 synthesizedText += chunk.textChunk;
                 accumulatedText += chunk.textChunk;
@@ -872,7 +929,10 @@ Your Objectives:
 3. Use your tools when appropriate:
    - 'webSearch': Use to look up real-time information, latest news, live documentation, or verified facts.
    - 'askQuestion': MANDATORY — use whenever you want to offer the user a list of choices, follow-up topics, or clarifying options. ALWAYS call 'askQuestion' instead of listing choices in plain markdown, so that interactive clickable buttons render directly in the chat UI.
-   - 'remember': MANDATORY — use whenever the user shares key personal preferences, instructions to recall later, project background, or facts they want you to remember. Calling 'remember' commits the information into persistent long-term storage so you recall it across sessions.
+   - 'learn': MANDATORY — use to WRITE a brand-new long-term memory under a unique index (e.g. 'portfolio', 'preferences', 'projects'). Each index stores ONE full description. Call when the user shares new personal preferences, instructions to recall later, project background, or facts with no existing index yet.
+   - 'recall': MANDATORY — use to READ the full description behind any memory index listed in the injected Memory Index context. Before you reference details about the user (portfolio, goals, allergies, preferences, projects), FIRST call 'recall' with the matching index and use its returned description. Never guess index contents from the excerpt alone.
+   - 'remember': Use to EDIT/update an existing memory index's description when the user corrects or expands previously saved information. Do not use for brand-new facts — those go through 'learn'.
+   - 'forget': Use to DELETE an existing memory index when the user asks that something no longer be remembered.
 
 Formatting Rules (CRITICAL — Always Use Rich Markdown):
 The chat interface is powered by an Obsidian-flavored MarkdownRenderer from @mono/components. ALWAYS structure your responses with rich, expressive Markdown using the formatting options below:
@@ -1009,6 +1069,8 @@ export async function runAgentChat(
   addTrace("thinking", "thinking");
 
   let optionsPayload: RunAgentResult["optionsPayload"] = undefined;
+  let lastOrchestratorErrorMessage = "";
+  const executedToolKeys = new Set<string>();
 
   const activeHistory: ChatMessage[] = [...history];
 
@@ -1020,6 +1082,7 @@ export async function runAgentChat(
   }
 
   const toolDeclarations: GeminiToolDeclaration[] = TOOLS.map((t) => t.declaration as GeminiToolDeclaration);
+  const useOllamaProvider = shouldUseOllamaProvider();
 
   let loopCount = 0;
   const maxLoops = 8;
@@ -1036,19 +1099,37 @@ export async function runAgentChat(
       })),
     ];
 
-    const geminiModel = process.env.GEMINI_MODEL || "gemini-3.1-flash-lite";
+    const activeModel = useOllamaProvider
+      ? `ollama:${await getOllamaModelLabel()}`
+      : process.env.GEMINI_MODEL || "gemini-3.1-flash-lite";
+    const genName = useOllamaProvider
+      ? `ollama-orchestrator-turn-${loopCount}`
+      : `gemini-orchestrator-turn-${loopCount}`;
     const geminiGenId = trace?.startGeneration(
-      `gemini-orchestrator-turn-${loopCount}`,
-      geminiModel,
+      genName,
+      activeModel,
       geminiInputPrompt,
       { systemInstruction: ROSE_SYSTEM_INSTRUCTION }
     );
 
-    const responseJson = await callGemini(
-      ROSE_SYSTEM_INSTRUCTION,
-      sanitizedContents,
-      toolDeclarations
-    );
+    let responseJson: any;
+    try {
+      if (useOllamaProvider) {
+        responseJson = await callOllamaChat(ROSE_SYSTEM_INSTRUCTION, sanitizedContents);
+      } else {
+        responseJson = await callGemini(
+          ROSE_SYSTEM_INSTRUCTION,
+          sanitizedContents,
+          toolDeclarations
+        );
+      }
+    } catch (orchestratorErr: any) {
+      lastOrchestratorErrorMessage = orchestratorErr?.message || String(orchestratorErr);
+      if (useOllamaProvider && geminiGenId) {
+        trace?.endGeneration(geminiGenId, null, lastOrchestratorErrorMessage, true);
+      }
+      responseJson = null;
+    }
 
     if (geminiGenId) {
       const candidate = responseJson?.candidates?.[0];
@@ -1086,9 +1167,12 @@ export async function runAgentChat(
 
     if (!responseJson) {
       addTrace("researching");
+      const errorDetails =
+        lastOrchestratorErrorMessage ||
+        "Missing `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) in server environment variables. Please configure this key in `.env.local`.";
       const fallbackText = formatErrorCallout(
         "Configuration Error",
-        "Missing `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) in server environment variables. Please configure this key in `.env.local`.",
+        errorDetails,
         "Error has been sent to admin for logging, we apologies for the issue"
       );
       const { cleanText, emotion } = extractEmotion(fallbackText);
@@ -1164,6 +1248,22 @@ export async function runAgentChat(
       const functionResponseParts: any[] = [];
 
       for (const part of toolCallParts) {
+        const fnKey = `${part.functionCall.name}|${JSON.stringify(part.functionCall.args || {})}`;
+        if (executedToolKeys.has(fnKey)) {
+          functionResponseParts.push({
+            functionResponse: {
+              name: part.functionCall.name,
+              response: {
+                content: JSON.stringify({
+                  notice: "This tool has already been executed once in this turn. Do not call it again — provide your final answer now.",
+                }),
+              },
+            },
+          });
+          continue;
+        }
+        executedToolKeys.add(fnKey);
+
         const fnName = part.functionCall.name;
         const fnArgs = part.functionCall.args || {};
 
@@ -1177,10 +1277,22 @@ export async function runAgentChat(
         } else if (fnName === "askQuestion") {
           toolDescription = "Formulating options";
           toolEmotion = "thinking";
-        } else if (fnName === "remember" || fnName === "rememberTool") {
-          const c = (fnArgs as any)?.content;
-          toolDescription = c ? `Remembering: "${c.slice(0, 40)}${c.length > 40 ? "..." : ""}"` : "Saving to long-term memory";
+        } else if (fnName === "recall") {
+          const i = (fnArgs as any)?.index;
+          toolDescription = i ? `Recalling memory index "${i}"` : "Recalling from memory";
+          toolEmotion = "thinking";
+        } else if (fnName === "learn") {
+          const i = (fnArgs as any)?.index;
+          toolDescription = i ? `Learning memory index "${i}"` : "Learning a new memory";
           toolEmotion = "bright";
+        } else if (fnName === "remember" || fnName === "rememberTool") {
+          const c = (fnArgs as any)?.description || (fnArgs as any)?.content;
+          toolDescription = c ? `Updating memory: "${c.slice(0, 40)}${c.length > 40 ? "..." : ""}"` : "Updating long-term memory";
+          toolEmotion = "bright";
+        } else if (fnName === "forget") {
+          const i = (fnArgs as any)?.index;
+          toolDescription = i ? `Forgetting memory index "${i}"` : "Forgetting a memory";
+          toolEmotion = "thinking";
         } else {
           toolDescription = `Executing ${fnName}`;
           toolEmotion = "thinking";
@@ -1238,22 +1350,26 @@ export async function runAgentChat(
       const groqApiKey = process.env.GROQ_API_KEY;
       let synthText = "";
 
-      if (groqApiKey && executedToolResults.length > 0) {
-        addTrace("processing with Groq", "thinking");
-        const groqModel = process.env.GROQ_MODEL || "qwen/qwen3.8-27b";
+      if (executedToolResults.length > 0 && (groqApiKey || useOllamaProvider)) {
+        addTrace(useOllamaProvider ? "processing with local Ollama" : "processing with Groq", "thinking");
+        const synthModel = useOllamaProvider
+          ? `ollama:${await getOllamaModelLabel()}`
+          : process.env.GROQ_MODEL || "qwen/qwen3.8-27b";
         const groqMessages = buildGroqToolPrompt(executedToolResults, newMessageText || "Analyze tool results");
         const groqGenId = trace?.startGeneration(
-          "groq-tool-synthesis",
-          groqModel,
+          useOllamaProvider ? "ollama-tool-synthesis" : "groq-tool-synthesis",
+          synthModel,
           groqMessages,
           { toolCallCount: executedToolResults.length }
         );
         try {
-          const groqRes = await callGroqWithUsage(groqMessages);
-          synthText = groqRes.content;
-          if (groqGenId) trace?.endGeneration(groqGenId, synthText, undefined, false, groqRes.usage);
+          const synthRes = useOllamaProvider
+            ? await callOllamaMessagesChat(groqMessages)
+            : await callGroqWithUsage(groqMessages);
+          synthText = synthRes.content;
+          if (groqGenId) trace?.endGeneration(groqGenId, synthText, undefined, false, synthRes.usage);
         } catch (groqErr: any) {
-          console.error("[AgentRunner] Groq call error:", groqErr);
+          console.error("[AgentRunner] Synthesis call error:", groqErr);
           if (groqGenId) trace?.endGeneration(groqGenId, null, groqErr?.message, true);
         }
       }
@@ -1298,7 +1414,9 @@ Carefully analyze and understand these search findings. Provide a brief, well-st
           addTrace("synthesizing findings", "thinking");
           const sanitized = sanitizeHistory(activeHistory);
           try {
-            const synthResponse = await callGemini(ROSE_SYSTEM_INSTRUCTION, sanitized);
+            const synthResponse = useOllamaProvider
+              ? await callOllamaChat(ROSE_SYSTEM_INSTRUCTION, sanitized)
+              : await callGemini(ROSE_SYSTEM_INSTRUCTION, sanitized);
             const synthCandidate = synthResponse?.candidates?.[0];
             const synthPart = synthCandidate?.content?.parts?.find((p: any) => p.text);
             synthText = synthPart?.text || "";

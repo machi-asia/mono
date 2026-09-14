@@ -119,12 +119,14 @@ All Supabase-backed edits must target the **canonical project** at `https://zyat
 ## Rose AI Agent Architecture & Observability
 
 `@mono/rose` provides a conversational AI companion:
-- **Dual-Model Processing Pipeline**: Google Gemini operates as the main conversational agent and tool caller. Tool executions output structured JSON, which Groq then synthesizes into rich Obsidian Markdown.
-- **Long-Term Memory & Personalization**:
-  - Automatically records user preferences, facts, and instructions to Supabase table `rose_memories`.
-  - Database schema follows Postgres best practices: `bigint identity` primary key, `timestamptz`, `(select auth.uid())` cached RLS checks, and composite `(user_id, created_at desc)` index.
+- **Dual-Model Processing Pipeline**: Google Gemini operates as the main conversational agent and tool caller. Tool executions output structured JSON, which Groq then synthesizes into rich Obsidian Markdown. In local development (no `VERCEL_URL`), a local **Ollama qwen** model replaces both Gemini and Groq so dev runs are token-free; production on Vercel keeps the cloud pipeline. See ADR-013.
+- **Long-Term Memory & Personalization (index-based)**:
+  - Long-term memory is an index-based key-value map in Supabase table `rose_memories`: **1 index = 1 description**, unique per `(user_id, category)`.
+  - The agent uses exactly four tools: `learn` (write a new index), `recall` (read a full description), `remember` (edit/replace or rename an index), `forget` (delete an index). Tool execution lives in `packages/rose/src/agent/tools/*` behind a shared server-side store (`memory-store.ts`) with an in-memory fallback for guest/test sessions.
+  - Per chat turn, `handleRoseChat` injects a compact index list (index + short excerpt) built by `memoryContext.ts`; the agent recalls full details on demand via `recall`. No client component ever queries or mutates the database.
+  - `importance` is `'low' | 'medium' | 'high'` (text, default `'medium'`); enforced by migration `20260912000000_rose_memory_index_map.sql` (converts legacy integers, adds a unique `(user_id, category)` index and a CHECK constraint).
   - Personalization settings stored in `rose_personalization` (preferred nickname, tone style, and persistent custom instructions).
-  - Users can view, add, edit, and delete memories as well as adjust personalization from the Settings modal accessible under the conversations sidebar.
+  - Users can view, add, edit (including rename), and delete memory indexes as well as adjust personalization from the Settings modal (Memories tab) accessible under the conversations sidebar.
 - **Rose Voice Mode**: An interactive hands-free companion experience utilizing the browser's native Web Speech API (STT & TTS) with zero external API fees. Dims the screen with an ambient backdrop and displays a large, expressive picture of Rose reflecting her active emotion, accompanied by glowing auras, audio waveforms, live speech-to-text transcripts, and an automatic continuous dialogue turn-taking cycle.
 - **Langfuse Observability**: Server-side tracing with `RoseLangfuseTrace` captures full execution sessions:
   - Parent turn trace (`rose-turn`) tagged with session ID, user ID, emotions, and latency.
@@ -147,6 +149,8 @@ See `docs/adr/` for all Architecture Decision Records. Key decisions:
 - [ADR-009: Long-Term Memory System](./adr/009-long-term-memory-system.md)
 - [ADR-010: Personalization and Memory Management](./adr/010-personalization-and-memory-management.md)
 - [ADR-011: Rose Voice Mode (Speech-to-Text and Text-to-Speech)](./adr/011-rose-voice-mode.md)
+- [ADR-012: Index-Based Long-Term Memory for Rose](./adr/012-index-based-long-term-memory.md)
+- [ADR-013: Local Ollama Fallback for Rose in Development](./adr/013-local-ollama-dev-fallback.md)
 
 ## Documentation Requirements
 

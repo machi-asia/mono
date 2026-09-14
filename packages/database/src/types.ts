@@ -19,11 +19,11 @@ export interface MediaFileRecord {
 }
 
 export interface RoseMemoryRecord {
-  id: number;
+  id: string;
   user_id: string;
+  category: string;
   content: string;
-  category?: string | null;
-  importance?: "low" | "medium" | "high" | null;
+  importance: "low" | "medium" | "high";
   created_at: string;
   updated_at?: string | null;
 }
@@ -51,7 +51,6 @@ export interface Database {
       rose_memories: {
         Row: RoseMemoryRecord;
         Insert: Omit<RoseMemoryRecord, "id" | "created_at"> & {
-          id?: number;
           created_at?: string;
         };
         Update: Partial<Omit<RoseMemoryRecord, "id">>;

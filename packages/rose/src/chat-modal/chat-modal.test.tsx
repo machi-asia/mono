@@ -146,8 +146,8 @@ describe("Rose Chat Modal & Interface", () => {
     // Switch to Memories tab
     const memoriesTab = screen.getByRole("tab", { name: /Memories/i });
     fireEvent.click(memoriesTab);
-    expect(screen.getByText(/Memories automatically gathered by Rose or added by you/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /Add Memory/i })).toBeInTheDocument();
+    expect(screen.getByText(/Long-term memory is stored as unique indexes/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Add Memory Index/i })).toBeInTheDocument();
 
     // Close settings dialog
     const closeSettingsBtn = screen.getByRole("button", { name: /Close Settings/i });

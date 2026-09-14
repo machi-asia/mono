@@ -659,6 +659,14 @@ async function getWhisperPipeline(
       env.allowLocalModels = false;
       env.useBrowserCache = true;
 
+      // Fix for Firefox / non-COOP/COEP environments:
+      // Firefox disables SharedArrayBuffer unless cross-origin isolation headers are active.
+      // Default multithreaded WASM / worker proxies hang indefinitely in Firefox.
+      if (env.backends?.onnx?.wasm) {
+        env.backends.onnx.wasm.numThreads = 1;
+        env.backends.onnx.wasm.proxy = false;
+      }
+
       const p = await pipeline(
         "automatic-speech-recognition",
         "onnx-community/whisper-tiny",

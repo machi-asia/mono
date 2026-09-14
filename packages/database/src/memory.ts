@@ -1,147 +1,192 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database, RoseMemoryRecord, RosePersonalizationRecord } from "./types";
 
-export interface SaveMemoryOptions {
+export type MemoryImportance = "low" | "medium" | "high";
+
+export interface CreateMemoryOptions {
   userId: string;
+  category: string;
   content: string;
-  category?: string;
-  importance?: "low" | "medium" | "high";
+  importance?: MemoryImportance;
 }
 
-export interface ListMemoriesOptions {
+export interface ListMemoryIndexesOptions {
   userId: string;
-  category?: string;
-  limit?: number;
 }
 
-export async function saveMemory(
+const IMPORTANCE_VALUES: MemoryImportance[] = ["low", "medium", "high"];
+
+export function normalizeCategory(category: string | null | undefined): string {
+  return (category || "general").trim().toLowerCase();
+}
+
+export function normalizeImportance(
+  importance: string | null | undefined
+): MemoryImportance {
+  const value = (importance || "medium").trim().toLowerCase();
+  return IMPORTANCE_VALUES.includes(value as MemoryImportance)
+    ? (value as MemoryImportance)
+    : "medium";
+}
+
+export async function createMemory(
   supabase: SupabaseClient<Database>,
-  options: SaveMemoryOptions
+  options: CreateMemoryOptions
 ): Promise<RoseMemoryRecord> {
-  const { userId, content, category, importance = "medium" } = options;
+  const { userId } = options;
+  const category = normalizeCategory(options.category);
+  const content = (options.content || "").trim();
+  const importance = normalizeImportance(options.importance);
 
   if (!userId) {
-    throw new Error("userId is required to save memory");
+    throw new Error("userId is required to create a memory index");
   }
-  if (!content || !content.trim()) {
-    throw new Error("content is required to save memory");
+  if (!content) {
+    throw new Error("content is required to create a memory index");
   }
 
   const { data, error } = await supabase
     .from("rose_memories")
-    .insert({
-      user_id: userId,
-      content: content.trim(),
-      category: category ? category.trim().toLowerCase() : null,
-      importance: importance || "medium",
-    } as never)
+    .insert({ user_id: userId, content, category, importance } as never)
     .select("*")
     .single();
 
   if (error) {
-    console.error("[Database] saveMemory error:", error.message);
-    throw new Error(`Failed to save memory: ${error.message}`);
+    if (/duplicate key/i.test(error.message)) {
+      throw new Error(
+        `Memory index '${category}' already exists. Use an edit operation instead.`
+      );
+    }
+    console.error("[Database] createMemory error:", error.message);
+    throw new Error(`Failed to create memory index: ${error.message}`);
   }
 
   return data as RoseMemoryRecord;
 }
 
-export async function listMemories(
+export async function getMemoryByIndex(
   supabase: SupabaseClient<Database>,
-  options: ListMemoriesOptions
-): Promise<RoseMemoryRecord[]> {
-  const { userId, category, limit = 20 } = options;
+  userId: string,
+  categoryInput: string
+): Promise<RoseMemoryRecord | null> {
+  const category = normalizeCategory(categoryInput);
+  if (!userId || !category) return null;
 
-  if (!userId) {
-    return [];
-  }
-
-  let query = supabase
+  const { data, error } = await supabase
     .from("rose_memories")
     .select("*")
     .eq("user_id", userId)
-    .order("created_at", { ascending: false })
-    .limit(limit);
-
-  if (category && category.trim()) {
-    query = query.eq("category", category.trim().toLowerCase());
-  }
-
-  const { data, error } = await query;
+    .eq("category", category)
+    .maybeSingle();
 
   if (error) {
-    console.error("[Database] listMemories error:", error.message);
-    return [];
+    console.error("[Database] getMemoryByIndex error:", error.message);
+    return null;
   }
 
-  return (data as RoseMemoryRecord[]) || [];
+  return (data as unknown as RoseMemoryRecord) || null;
 }
 
-export async function updateMemory(
-  supabase: SupabaseClient<Database>,
-  options: {
-    id: number;
-    userId: string;
-    content: string;
-    category?: string | null;
-    importance?: "low" | "medium" | "high" | null;
-  }
-): Promise<RoseMemoryRecord> {
-  const { id, userId, content, category, importance } = options;
+export interface UpdateMemoryByIndexOptions {
+  userId: string;
+  category: string;
+  content?: string;
+  importance?: MemoryImportance;
+  newCategory?: string;
+}
 
-  if (!id || !userId) {
-    throw new Error("id and userId are required to update memory");
+export async function updateMemoryByIndex(
+  supabase: SupabaseClient<Database>,
+  options: UpdateMemoryByIndexOptions
+): Promise<RoseMemoryRecord> {
+  const { userId, content, importance } = options;
+  const category = normalizeCategory(options.category);
+  const newCategory = options.newCategory
+    ? normalizeCategory(options.newCategory)
+    : category;
+
+  if (!userId || !category) {
+    throw new Error("userId and category are required to edit a memory index");
   }
-  if (!content || !content.trim()) {
-    throw new Error("content is required to update memory");
+  if (content !== undefined && !content.trim()) {
+    throw new Error("content cannot be empty when editing a memory index");
   }
+
+  const payload: any = {
+    category: newCategory,
+    updated_at: new Date().toISOString(),
+  };
+  if (content !== undefined) payload.content = content.trim();
+  if (importance !== undefined) payload.importance = normalizeImportance(importance);
 
   const { data, error } = await (supabase
     .from("rose_memories") as any)
-    .update({
-      content: content.trim(),
-      category: category ? category.trim().toLowerCase() : null,
-      importance: importance || "medium",
-      updated_at: new Date().toISOString(),
-    })
-    .eq("id", id)
+    .update(payload)
     .eq("user_id", userId)
+    .eq("category", category)
     .select("*")
-    .single();
+    .maybeSingle();
 
   if (error) {
-    console.error("[Database] updateMemory error:", error.message);
-    throw new Error(`Failed to update memory: ${error.message}`);
+    if (/duplicate key/i.test(error.message)) {
+      throw new Error(
+        `Memory index '${newCategory}' already exists. Choose a different index.`
+      );
+    }
+    console.error("[Database] updateMemoryByIndex error:", error.message);
+    throw new Error(`Failed to update memory index: ${error.message}`);
+  }
+
+  if (!data) {
+    throw new Error(
+      `Memory index '${category}' was not found. Create it first.`
+    );
   }
 
   return data as RoseMemoryRecord;
 }
 
-export async function deleteMemory(
+export async function deleteMemoryByIndex(
   supabase: SupabaseClient<Database>,
-  options: {
-    id: number;
-    userId: string;
-  }
+  userId: string,
+  categoryInput: string
 ): Promise<boolean> {
-  const { id, userId } = options;
-
-  if (!id || !userId) {
-    throw new Error("id and userId are required to delete memory");
-  }
+  const category = normalizeCategory(categoryInput);
+  if (!userId || !category) return false;
 
   const { error } = await (supabase
     .from("rose_memories") as any)
     .delete()
-    .eq("id", id)
-    .eq("user_id", userId);
+    .eq("user_id", userId)
+    .eq("category", category);
 
   if (error) {
-    console.error("[Database] deleteMemory error:", error.message);
-    throw new Error(`Failed to delete memory: ${error.message}`);
+    console.error("[Database] deleteMemoryByIndex error:", error.message);
+    throw new Error(`Failed to delete memory index: ${error.message}`);
   }
 
   return true;
+}
+
+export async function listMemoryIndexes(
+  supabase: SupabaseClient<Database>,
+  options: ListMemoryIndexesOptions
+): Promise<RoseMemoryRecord[]> {
+  const { userId } = options;
+  if (!userId) return [];
+
+  const { data, error } = await supabase
+    .from("rose_memories")
+    .select("*")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("[Database] listMemoryIndexes error:", error.message);
+    return [];
+  }
+
+  return (data as RoseMemoryRecord[]) || [];
 }
 
 export interface SavePersonalizationOptions {
@@ -202,4 +247,3 @@ export async function savePersonalization(
 
   return data as RosePersonalizationRecord;
 }
-

@@ -1,13 +1,19 @@
-refactor(repo): enforce 500-line file limit and decompose oversized modules
-- docs: enforce Rule 18 in AGENTS.md, DESIGN.md, and CONTRIBUTING.md mandating all files stay under 500 lines for cleanliness
-- packages/auth: decompose account-settings.tsx into mfa-section.tsx and providers-section.tsx co-located submodules
-- packages/components: decompose markdown.tsx into markdown-inline.tsx, markdown-callout.tsx, and markdown-code-block.tsx
-- packages/components: decompose medialibrary.tsx into media-modal.tsx, media-utils.tsx, and media-types.ts
-- packages/components: decompose medialibrary.css into media-modal.css and medialibrary.css
-- packages/rose: add real-time streaming speech recognition, interim live transcription, and audio loudness wave aura visualization
-- packages/rose: add settings modal, personalization, and long-term memories management
-- packages/database: add rose_personalization and memories schema, migrations, and server data store operations
-- packages/auth: integrate ToastProvider into AuthProvider and route authentication errors to dismissible toasts
-- apps/machi-asia, apps/rose, apps/docs: add ToastProvider and suppressHydrationWarning to root layouts
-- apps/docs: add component showcase and interactive live demos for @mono/rose and new components
-- docs: record ADRs 008-011 and update CHANGELOG.md for 0.17.2
+feature(rose): local Ollama qwen dev fallback plus index-based long-term memory
+- packages/rose: add local Ollama qwen fallback so local dev is token-free while Vercel production keeps Gemini+Groq (ADR 013) - new agent/ollamaClient.ts with shouldUseOllamaProvider (auto = !VERCEL_URL, OLLAMA_ENABLED override), resolveOllamaBaseUrl (OLLAMA_BASE_URL or http://localhost:11434), getOllamaModelLabel (auto-detect first qwen* tag, fallback OLLAMA_MODEL/qwen2.5:3b), toOllamaMessages (flattens Gemini parts incl. tool calls into chat text + JSON tool-call hint), and callOllamaChat/Stream + callOllamaMessagesChat/Stream
+- packages/rose: branch agentRunner.ts stream and non-stream paths (orchestration, Groq-style tool synthesis, webSearch-fallback synthesis) to Ollama in dev; skip Gemini key guard in Ollama mode; Langfuse labels ollama:<model>; non-stream orchestrator errors now surfaced gracefully
+- packages/rose: webSearch tool falls back to local-model synthetic JSON results when no SERPAPI_KEY and Ollama mode is active
+- packages/rose: add agent/ollamaClient.test.ts (provider-detection env matrix, base-URL resolution, message flattening, history trimming) - 66 rose tests pass; fix model label resolution so the auto-detected qwen tag wins over OLLAMA_MODEL/qwen2.5:3b fallbacks (was: OLLAMA_MODEL=qwen2.5:3b in .env.local skipped detection and failed against locally installed qwen3.5:9b)
+- packages/rose: add Ollama request timeouts (10s connect, 60s stream-idle, 180s overall), pin num_ctx 4096, keep_alive 10m so a stalled local model degrades to a graceful error instead of hanging on "thinking" or freezing the site; add tool-loop dedup (identical tool calls skipped per turn with a "finalize now" notice) in stream and non-stream agent paths plus a strengthened Ollama tool-call hint and trimmed Ollama history (system + first user + recent, <=24k chars) so repeated tool calls no longer loop and balloon per-turn prefill
+- packages/components: sanitize MarkdownRenderer link hrefs to safe schemes (http/https/mailto/tel/#/relative), neutralizing file:// and javascript: URLs - fixes browser "may not load or link to file:///" security error and an XSS vector (109 component tests pass)
+- packages/rose: batch chat-modal SSE delta renders (~80ms flush) so long qwen outputs no longer re-render the full message per token (was O(n^2) allocations that could OOM the browser tab "out of memory 2"); keep streaming deltas on the wire, cancel/flush timers correctly on done/error
+- env: add OLLAMA_BASE_URL, OLLAMA_MODEL, OLLAMA_ENABLED to apps/rose/.env.sample and apps/docs/.env.sample Configuration Keys section; set project-scoped opencode.json MCP override pointing Supabase at canonical project zyatzdkapdqngwyhiqqn.supabase.co
+- packages/rose: switch to index-based long-term memory (1 index = 1 description per user) with learn/recall/remember/forget tools alongside webSearch/askQuestion (6 total); inject compact memory index list per turn via agent/memoryContext.ts instead of up to 10 full rows
+- packages/rose: add shared server-side memory store agent/tools/memory-store.ts (Supabase secret/client resolution + in-memory fallback) and rewrite learn/recall/remember/forget tool executers
+- packages/database: replace memory helpers with index-based API - createMemory, getMemoryByIndex, updateMemoryByIndex (newCategory rename), deleteMemoryByIndex, listMemoryIndexes, normalizeCategory/normalizeImportance; remove legacy saveMemory/listMemories/updateMemory/deleteMemory; RoseMemoryRecord uses string id and text importance
+- packages/rose: decompose server.ts (539 -> 12 lines) into server/chat.ts, server/settings.ts, server/usage.ts, server/transcribe.ts; public @mono/rose/server API unchanged
+- packages/rose: rewrite Settings modal Memories tab around memory indexes (add/edit/rename/delete with importance dropdowns, duplicate detection, help tooltips); extract co-located settings-memories.tsx to keep settings-modal.tsx under 500 lines
+- packages/rose: update agent.test.ts (6 tools, memory tool semantics) and chat-modal.test.tsx for the new Memories tab copy
+- packages/database: add migration 20260912000000_rose_memory_index_map.sql converting rose_memories.importance integer->text with 'medium' default, creating unique (user_id, category) index, and adding an importance CHECK constraint; applied to canonical project zyatzdkapdqngwyhiqqn.supabase.co after re-pointing the Supabase MCP server via project-scoped opencode.json (global MCP previously pointed at a different project); also applied the earlier unapplied 20260904000001_rose_personalization.sql so the Rose Settings personalization tab works against canonical data
+- packages/rose: configure @huggingface/transformers ONNX WASM backend with numThreads=1 and proxy=false in speechService.ts to fix Firefox hanging on SharedArrayBuffer without COOP/COEP
+- docs: add ADR 012 (Index-Based Long-Term Memory) and ADR 013 (Local Ollama Dev Fallback), update ARCHITECTURE.md pipeline/memory sections and ADR list, add CHANGELOG 0.18.0 and 0.18.1 entries
+- repo: add .npmrc with ignore-scripts=true to prevent native build steps during Vercel install

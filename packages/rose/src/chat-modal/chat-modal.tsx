@@ -447,6 +447,26 @@ export function RoseChat({
         let buffer = "";
         let accumulatedStreamText = "";
         const accumulatedTraces: string[] = ["thinking"];
+        let streamFinished = false;
+        let streamFlushTimer: ReturnType<typeof setTimeout> | null = null;
+        const flushStreamText = () => {
+          streamFlushTimer = null;
+          setMessages((prev) =>
+            prev.map((msg) =>
+              msg.id === modelMsgId ? { ...msg, text: accumulatedStreamText } : msg
+            )
+          );
+        };
+        const scheduleStreamFlush = () => {
+          if (streamFlushTimer) return;
+          streamFlushTimer = setTimeout(flushStreamText, 80);
+        };
+        const cancelStreamFlush = () => {
+          if (streamFlushTimer) {
+            clearTimeout(streamFlushTimer);
+            streamFlushTimer = null;
+          }
+        };
 
         while (true) {
           const { done, value } = await reader.read();
@@ -487,14 +507,10 @@ export function RoseChat({
                 );
               } else if (event.type === "delta" && typeof event.text === "string") {
                 accumulatedStreamText += event.text;
-                setMessages((prev) =>
-                  prev.map((msg) =>
-                    msg.id === modelMsgId
-                      ? { ...msg, text: accumulatedStreamText }
-                      : msg
-                  )
-                );
+                scheduleStreamFlush();
               } else if (event.type === "done") {
+                streamFinished = true;
+                cancelStreamFlush();
                 const nextHistory = event.history || [];
                 setHistory(nextHistory);
                 const finalEmotion = event.emotion || "happy";
@@ -546,6 +562,8 @@ export function RoseChat({
                   refreshUsageRef.current?.();
                 }
               } else if (event.type === "error") {
+                streamFinished = true;
+                cancelStreamFlush();
                 const errorMsg = event.message || event.text || "An unexpected error occurred.";
                 const { cleanText, emotion } = extractEmotion(
                   event.text || formatErrorCallout("System Error", errorMsg)
@@ -572,6 +590,10 @@ export function RoseChat({
             } catch {
               // ignore malformed SSE line
             }
+          }
+          if (!streamFinished) {
+            cancelStreamFlush();
+            flushStreamText();
           }
         }
       } else {

@@ -81,6 +81,17 @@ export type {
   GroqStreamChunk,
 } from "./agent/groqClient";
 
+export {
+  callOllamaChat,
+  callOllamaStream,
+  callOllamaMessagesChat,
+  callOllamaMessagesStream,
+  shouldUseOllamaProvider,
+  getOllamaModelLabel,
+  toOllamaMessages,
+} from "./agent/ollamaClient";
+export type { OllamaChatMessage } from "./agent/ollamaClient";
+
 export { RoseLangfuseTrace, createLangfuseTrace } from "./agent/langfuse";
 export type {
   LangfuseConfig,
@@ -97,7 +108,10 @@ export {
   getToolByName,
   webSearchTool,
   askQuestionTool,
+  learnTool,
+  recallTool,
   rememberTool,
+  forgetTool,
   setRememberToolContext,
   clearRememberToolContext,
 } from "./agent/tools/index";

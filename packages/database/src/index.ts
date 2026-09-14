@@ -17,16 +17,21 @@ export type {
   UploadUserMediaOptions,
 } from "./media";
 export {
-  saveMemory,
-  listMemories,
-  updateMemory,
-  deleteMemory,
+  createMemory,
+  getMemoryByIndex,
+  updateMemoryByIndex,
+  deleteMemoryByIndex,
+  listMemoryIndexes,
+  normalizeCategory,
+  normalizeImportance,
   getPersonalization,
   savePersonalization,
 } from "./memory";
 export type {
-  SaveMemoryOptions,
-  ListMemoriesOptions,
+  CreateMemoryOptions,
+  ListMemoryIndexesOptions,
+  UpdateMemoryByIndexOptions,
   SavePersonalizationOptions,
+  MemoryImportance,
 } from "./memory";
 

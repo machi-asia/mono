@@ -8,6 +8,12 @@ interface RenderInlineOptions {
   onTagClick?: (tag: string) => void;
 }
 
+function safeHref(href: string): string {
+  const normalized = href.trim();
+  if (/^(https?:|mailto:|tel:|#|\/|\.)/i.test(normalized)) return normalized;
+  return /^[a-z][a-z0-9+.-]*:/i.test(normalized) ? "#" : normalized;
+}
+
 export function renderInline(
   text: string,
   keyPrefix = "",
@@ -150,7 +156,8 @@ export function renderInline(
     if (linkMatch) {
       const fullMatch = linkMatch[0];
       const textLabel = linkMatch[1];
-      const href = linkMatch[2];
+      const rawHref = linkMatch[2].trim();
+      const href = safeHref(rawHref);
       const isExternal = /^https?:\/\//i.test(href);
       nodes.push(
         <a

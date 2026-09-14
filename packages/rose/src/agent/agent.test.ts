@@ -1,11 +1,17 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { extractEmotion, ROSE_EMOTIONS } from "./roseEmotions";
 import { getToolByName, TOOLS } from "./tools";
 import { askQuestionTool } from "./tools/askQuestion";
 import { webSearchTool } from "./tools/webSearch";
 import { getAgentCommandCategories } from "./commandRegistry";
+import { memoryDbResetForTests, setMemoryToolContext } from "./tools/memory-store";
 
 describe("Rose Agent Core", () => {
+  beforeEach(() => {
+    memoryDbResetForTests();
+    setMemoryToolContext("test-user-memory-store");
+  });
+
   describe("Emotion Extraction", () => {
     it("extracts valid emotion and strips emotion tags", () => {
       const input = "Here is the answer you requested!\n\n<emotion>bright</emotion>";
@@ -32,35 +38,129 @@ describe("Rose Agent Core", () => {
   });
 
   describe("Tools", () => {
-    it("registers webSearch, askQuestion, and remember tools", () => {
-      expect(TOOLS.length).toBe(3);
+    it("registers webSearch, askQuestion, and the learn/recall/remember/forget memory tools", () => {
+      expect(TOOLS.length).toBe(6);
       expect(getToolByName("webSearch")).toBeDefined();
       expect(getToolByName("askQuestion")).toBeDefined();
+      expect(getToolByName("learn")).toBeDefined();
+      expect(getToolByName("recall")).toBeDefined();
       expect(getToolByName("remember")).toBeDefined();
+      expect(getToolByName("forget")).toBeDefined();
       expect(getToolByName("rememberTool")).toBeDefined();
       expect(getToolByName("nonExistentTool")).toBeUndefined();
     });
 
-    it("remember executes and returns structured success json", async () => {
-      const { rememberTool } = await import("./tools/remember");
-      const res = await rememberTool.execute({
-        content: "User prefers Next.js with TypeScript",
-        category: "preference",
+    it("learn creates a new memory index with a full description", async () => {
+      const { learnTool } = await import("./tools/learn");
+      const res = await learnTool.execute({
+        index: "portfolio",
+        description: "Modern growth portfolio: 60% equity ETFs, 40% bonds, rebalanced quarterly.",
         importance: "high",
       });
       const parsed = JSON.parse(res);
       expect(parsed.success).toBe(true);
-      expect(parsed.memory).toBeDefined();
-      expect(parsed.memory.content).toBe("User prefers Next.js with TypeScript");
-      expect(parsed.memory.category).toBe("preference");
+      expect(parsed.memory.category).toBe("portfolio");
+      expect(parsed.memory.content).toContain("equity ETFs");
       expect(parsed.memory.importance).toBe("high");
     });
 
-    it("remember validates missing content parameter", async () => {
-      const { rememberTool } = await import("./tools/remember");
-      const res = await rememberTool.execute({});
+    it("learn rejects a duplicate memory index", async () => {
+      const { learnTool } = await import("./tools/learn");
+      await learnTool.execute({ index: "goals", description: "Run a marathon by 2027." });
+      const res = await learnTool.execute({ index: "goals", description: "Duplicate attempt." });
       const parsed = JSON.parse(res);
       expect(parsed.error).toBeDefined();
+      expect(parsed.error).toMatch(/already exists/i);
+    });
+
+    it("recall reads the full description of an existing index", async () => {
+      const { learnTool } = await import("./tools/learn");
+      const { recallTool } = await import("./tools/recall");
+      await learnTool.execute({ index: "portfolio", description: "Stock portfolio breakdown." });
+      const res = await recallTool.execute({ index: "portfolio" });
+      const parsed = JSON.parse(res);
+      expect(parsed.success).toBe(true);
+      expect(parsed.index).toBe("portfolio");
+      expect(parsed.description).toBe("Stock portfolio breakdown.");
+    });
+
+    it("recall reports a missing index for recall", async () => {
+      const { recallTool } = await import("./tools/recall");
+      const res = await recallTool.execute({ index: "portfolio" });
+      const parsed = JSON.parse(res);
+      expect(parsed.notFound).toBe(true);
+    });
+
+    it("remember edits an existing memory index", async () => {
+      const { learnTool } = await import("./tools/learn");
+      const { rememberTool } = await import("./tools/remember");
+      const { recallTool } = await import("./tools/recall");
+      await learnTool.execute({ index: "portfolio", description: "Original allocation." });
+      const editRes = await rememberTool.execute({
+        index: "portfolio",
+        description: "Updated allocation: 70% equities, 30% cash.",
+      });
+      const editParsed = JSON.parse(editRes);
+      expect(editParsed.success).toBe(true);
+      expect(editParsed.memory.content).toContain("70% equities");
+
+      const recallRes = await recallTool.execute({ index: "portfolio" });
+      const recallParsed = JSON.parse(recallRes);
+      expect(recallParsed.description).toBe("Updated allocation: 70% equities, 30% cash.");
+    });
+
+    it("remember renames an existing memory index", async () => {
+      const { learnTool } = await import("./tools/learn");
+      const { rememberTool } = await import("./tools/remember");
+      await learnTool.execute({ index: "invest", description: "Holdings." });
+      const res = await rememberTool.execute({
+        index: "invest",
+        newIndex: "portfolio",
+        description: "Holdings, renamed.",
+      });
+      const parsed = JSON.parse(res);
+      expect(parsed.success).toBe(true);
+      expect(parsed.memory.category).toBe("portfolio");
+    });
+
+    it("remember reports missing index for edit", async () => {
+      const { rememberTool } = await import("./tools/remember");
+      const res = await rememberTool.execute({ index: "nope", description: "Nothing here yet." });
+      const parsed = JSON.parse(res);
+      expect(parsed.error).toBeDefined();
+      expect(parsed.error).toMatch(/was not found/i);
+    });
+
+    it("forget deletes a memory index", async () => {
+      const { learnTool } = await import("./tools/learn");
+      const { forgetTool } = await import("./tools/forget");
+      const { recallTool } = await import("./tools/recall");
+      await learnTool.execute({ index: "portfolio", description: "Temporary." });
+      const res = await forgetTool.execute({ index: "portfolio" });
+      const parsed = JSON.parse(res);
+      expect(parsed.success).toBe(true);
+      expect(parsed.deleted).toBe(true);
+      const after = JSON.parse(await recallTool.execute({ index: "portfolio" }));
+      expect(after.notFound).toBe(true);
+    });
+
+    it("forget is idempotent for missing indexes", async () => {
+      const { forgetTool } = await import("./tools/forget");
+      const res = await forgetTool.execute({ index: "never-existed" });
+      const parsed = JSON.parse(res);
+      expect(parsed.success).toBe(true);
+      expect(parsed.deleted).toBe(false);
+    });
+
+    it("learn and remember validate required parameters", async () => {
+      const { learnTool } = await import("./tools/learn");
+      const { rememberTool } = await import("./tools/remember");
+      const { recallTool } = await import("./tools/recall");
+      const { forgetTool } = await import("./tools/forget");
+      for (const tool of [learnTool, rememberTool, recallTool, forgetTool]) {
+        const res = JSON.parse(await tool.execute({}));
+        expect(res.error).toBeDefined();
+      }
     });
 
     it("askQuestion executes and produces interactive payload", async () => {
@@ -151,16 +251,16 @@ describe("Rose Agent Core", () => {
       expect(result.toolCalls[0].args).toEqual({ query: "Next.js 15 features" });
     });
 
-    it("catches and extracts remember JSON tool call and strips from text", async () => {
+    it("catches and extracts learn JSON tool call and strips from text", async () => {
       const { extractToolCallsFromText } = await import("./agentRunner");
-      const rawText = `I will keep that in mind for future conversations.\n\n\`\`\`json\n{\n  "action": "remember",\n  "action_input": {\n    "content": "User prefers dark mode and gold accents",\n    "category": "preference",\n    "importance": "high"\n  }\n}\n\`\`\``;
+      const rawText = `I will keep that in mind for future conversations.\n\n\`\`\`json\n{\n  "action": "learn",\n  "action_input": {\n    "index": "preference",\n    "description": "User prefers dark mode and gold accents",\n    "importance": "high"\n  }\n}\n\`\`\``;
       const result = extractToolCallsFromText(rawText);
       expect(result.cleanText).toBe("I will keep that in mind for future conversations.");
       expect(result.toolCalls.length).toBe(1);
-      expect(result.toolCalls[0].name).toBe("remember");
+      expect(result.toolCalls[0].name).toBe("learn");
       expect(result.toolCalls[0].args).toEqual({
-        content: "User prefers dark mode and gold accents",
-        category: "preference",
+        index: "preference",
+        description: "User prefers dark mode and gold accents",
         importance: "high",
       });
     });

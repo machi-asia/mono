@@ -1,6 +1,13 @@
 import { askQuestionTool } from "./askQuestion";
-import { rememberTool, setRememberToolContext, clearRememberToolContext } from "./remember";
+import { learnTool } from "./learn";
+import { recallTool } from "./recall";
+import { rememberTool } from "./remember";
+import { forgetTool } from "./forget";
 import { webSearchTool } from "./webSearch";
+import {
+  setMemoryToolContext,
+  clearMemoryToolContext,
+} from "./memory-store";
 
 export interface ToolDeclaration {
   name: string;
@@ -20,7 +27,10 @@ export interface Tool {
 export const TOOLS: Tool[] = [
   webSearchTool,
   askQuestionTool,
+  learnTool,
+  recallTool,
   rememberTool,
+  forgetTool,
 ];
 
 export function getToolByName(name: string): Tool | undefined {
@@ -28,4 +38,14 @@ export function getToolByName(name: string): Tool | undefined {
   return TOOLS.find((t) => t.declaration.name === name);
 }
 
-export { askQuestionTool, rememberTool, setRememberToolContext, clearRememberToolContext, webSearchTool };
+export const setRememberToolContext = setMemoryToolContext;
+export const clearRememberToolContext = clearMemoryToolContext;
+
+export {
+  askQuestionTool,
+  learnTool,
+  recallTool,
+  rememberTool,
+  forgetTool,
+  webSearchTool,
+};

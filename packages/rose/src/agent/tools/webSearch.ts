@@ -1,4 +1,5 @@
 import type { Tool } from "./index";
+import { callOllamaMessagesChat, shouldUseOllamaProvider } from "../ollamaClient";
 
 interface SearchResult {
   title: string;
@@ -55,6 +56,30 @@ export const webSearchTool: Tool = {
             snippet: r.snippet || "",
           }));
         return JSON.stringify({ query, results });
+      }
+
+      if (shouldUseOllamaProvider()) {
+        try {
+          const res = await callOllamaMessagesChat([
+            {
+              role: "system",
+              content:
+                "You generate realistic, accurate, and concise web search results as strict JSON arrays. Never output markdown wrapping.",
+            },
+            {
+              role: "user",
+              content: `Search query: "${query}"\n\nReturn up to ${numResults} realistic, accurate, and concise search results as a JSON array where each object has "title", "url", and "snippet" fields. Output valid JSON array only.`,
+            },
+          ]);
+          const text = res.content || "[]";
+          const jsonMatch = text.match(/\[[\s\S]*\]/);
+          const results: SearchResult[] = jsonMatch
+            ? (JSON.parse(jsonMatch[0]) as SearchResult[]).slice(0, numResults)
+            : [];
+          return JSON.stringify({ query, results });
+        } catch (err: any) {
+          console.warn("[WebSearch] Local Ollama search unavailable:", err?.message || err);
+        }
       }
 
       const geminiKey =

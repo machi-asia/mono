@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted
+Accepted — memories management portion superseded by [ADR 012: Index-Based Long-Term Memory](./012-index-based-long-term-memory.md)
 
 ## Context
 
