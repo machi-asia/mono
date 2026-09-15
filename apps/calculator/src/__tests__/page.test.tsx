@@ -1,22 +1,22 @@
 import { describe, it, expect, afterEach } from "vitest";
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
-import CalculatorPage from "../app/page";
+import { GameCalculatorView } from "../components/calculator-view/game-calculator-view";
 import { MockAuthProvider } from "@mono/auth/mock";
 
 afterEach(() => {
   cleanup();
 });
 
-describe("CalculatorPage", () => {
+describe("GameCalculatorView", () => {
   it("renders the calculator header and default game items", () => {
     render(
       <MockAuthProvider state="signed-in">
-        <CalculatorPage />
+        <GameCalculatorView gameId="lrl" />
       </MockAuthProvider>
     );
 
     expect(
-      screen.getByRole("heading", { level: 1, name: /Game Production Calculator/i })
+      screen.getByRole("heading", { level: 1, name: "Little Rocket Lab" })
     ).toBeInTheDocument();
     expect(screen.getByText("Boardwalk Plank")).toBeInTheDocument();
     expect(screen.getByText("Roof Tile")).toBeInTheDocument();
@@ -25,7 +25,7 @@ describe("CalculatorPage", () => {
   it("filters items using the search input", () => {
     render(
       <MockAuthProvider state="signed-in">
-        <CalculatorPage />
+        <GameCalculatorView gameId="lrl" />
       </MockAuthProvider>
     );
 
@@ -39,7 +39,7 @@ describe("CalculatorPage", () => {
   it("opens item recipe popup when clicking View Recipe", () => {
     render(
       <MockAuthProvider state="signed-in">
-        <CalculatorPage />
+        <GameCalculatorView gameId="lrl" />
       </MockAuthProvider>
     );
 
@@ -54,7 +54,7 @@ describe("CalculatorPage", () => {
   it("switches to recipe tree graph view and shows production targets panel", () => {
     render(
       <MockAuthProvider state="signed-in">
-        <CalculatorPage />
+        <GameCalculatorView gameId="lrl" />
       </MockAuthProvider>
     );
 
@@ -74,7 +74,7 @@ describe("CalculatorPage", () => {
 it("navigates to graph view when clicking Graph button on an item card", () => {
     render(
       <MockAuthProvider state="signed-in">
-        <CalculatorPage />
+        <GameCalculatorView gameId="lrl" />
       </MockAuthProvider>
     );
 
@@ -87,7 +87,7 @@ it("navigates to graph view when clicking Graph button on an item card", () => {
   it("sorts items by name and category using caret controls", () => {
     render(
       <MockAuthProvider state="signed-in">
-        <CalculatorPage />
+        <GameCalculatorView gameId="lrl" />
       </MockAuthProvider>
     );
 
@@ -118,7 +118,7 @@ it("navigates to graph view when clicking Graph button on an item card", () => {
   it("shows the last updated date on item cards", () => {
     render(
       <MockAuthProvider state="signed-in">
-        <CalculatorPage />
+        <GameCalculatorView gameId="lrl" />
       </MockAuthProvider>
     );
 
@@ -128,7 +128,7 @@ it("navigates to graph view when clicking Graph button on an item card", () => {
   it("swaps between gallery and list view", () => {
     render(
       <MockAuthProvider state="signed-in">
-        <CalculatorPage />
+        <GameCalculatorView gameId="lrl" />
       </MockAuthProvider>
     );
 
@@ -157,7 +157,7 @@ it("navigates to graph view when clicking Graph button on an item card", () => {
   it("auto-colors item cards by category", () => {
     render(
       <MockAuthProvider state="signed-in">
-        <CalculatorPage />
+        <GameCalculatorView gameId="lrl" />
       </MockAuthProvider>
     );
 
@@ -174,4 +174,17 @@ it("navigates to graph view when clicking Graph button on an item card", () => {
     expect(screen.getAllByText("Boardwalk Plank")[0].closest(".calc-item-card"))
       .toHaveStyle("--cat-color: hsl(270 55% 52%)");
   });
+
+  it("renders specific game items when gameId is provided", () => {
+    render(
+      <MockAuthProvider state="signed-in">
+        <GameCalculatorView gameId="vfe-factory" />
+      </MockAuthProvider>
+    );
+
+    expect(screen.getByRole("heading", { level: 1, name: "Vanilla Furniture Expanded - Factory" })).toBeInTheDocument();
+    expect(screen.getByText("Mass-Produced Meal")).toBeInTheDocument();
+    expect(screen.queryByText("Boardwalk Plank")).not.toBeInTheDocument();
+  });
 });
+

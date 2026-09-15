@@ -1,4 +1,4 @@
-/* ─── App Shell ───────────────────────────────────── */
+﻿/* 笏笏笏 App Shell 笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏 */
 .calc-app-shell {
   display: flex;
   min-height: 100vh;
@@ -10,7 +10,7 @@
   min-width: 0;
 }
 
-/* ─── Ad Rail (right side) ────────────────────────── */
+/* 笏笏笏 Ad Rail (right side) 笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏 */
 .ad-rail {
   width: 180px;
   flex-shrink: 0;
@@ -32,7 +32,7 @@
   display: block;
 }
 
-/* ─── Placeholder (dev / unconfigured) ────────────── */
+/* 笏笏笏 Placeholder (dev / unconfigured) 笏笏笏笏笏笏笏笏笏笏笏笏笏笏 */
 .adsense-placeholder {
   display: flex;
   align-items: center;
@@ -811,21 +811,25 @@
 
 /* Custom Node Styling */
 .recipe-graph-node {
-  width: 220px;
-  min-width: 220px;
-  min-height: 90px;
-  padding: 8px 12px;
+  width: 260px;
+  min-width: 260px;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
   position: relative;
-  transition: all var(--duration-fast) var(--ease-out);
+  transition: box-shadow var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
   color: var(--color-text);
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+.recipe-graph-node:hover {
+  box-shadow: 0 6px 24px rgb(0 0 0 / 32%);
+  border-color: var(--color-border-soft);
 }
 
 .react-flow__node-recipeProcess {
@@ -835,82 +839,108 @@
 
 .recipe-graph-node-requested {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px var(--color-primary), 0 8px 24px rgb(0 0 0 / 20%);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 40%, transparent),
+              0 6px 24px rgb(0 0 0 / 24%);
 }
 
 .recipe-node-handle {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background: var(--color-primary);
   border: 2px solid var(--color-surface);
 }
 
-.recipe-node-header {
+/* 笏笏 Two-column body 笏笏 */
+.recipe-node-body {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: stretch;
+  min-height: 80px;
 }
 
-.recipe-node-icon-box {
-  width: 32px;
-  height: 32px;
+/* Left column: icon */
+.recipe-node-icon-col {
+  width: 72px;
+  min-width: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  font-size: 1.2rem;
+  border-right: 1px solid var(--color-border);
+  padding: 12px 8px;
   flex-shrink: 0;
 }
 
 .recipe-node-icon-img {
-  width: 24px;
-  height: 24px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
+  image-rendering: pixelated;
 }
 
-.recipe-node-title-group {
+.recipe-node-icon-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* Right column: name / rate / building */
+.recipe-node-content {
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 10px 12px;
 }
 
 .recipe-node-name {
   margin: 0;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
   color: var(--color-text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.2;
 }
 
 .recipe-node-rate {
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 800;
   color: var(--color-primary);
+  line-height: 1.2;
 }
 
-.recipe-node-building-badge {
+.recipe-node-rate-unit {
+  font-size: 0.72rem;
+  font-weight: 600;
+  opacity: 0.8;
+  margin-left: 1px;
+}
+
+/* Building row */
+.recipe-node-building-row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
+  margin-top: 4px;
   padding: 3px 6px;
   background: var(--color-surface-2);
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-sm);
-  font-size: 0.72rem;
+  cursor: default;
+  max-width: 100%;
 }
 
 .recipe-node-building-img {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .recipe-node-building-text {
+  font-size: 0.7rem;
   color: var(--color-text-muted);
   white-space: nowrap;
   overflow: hidden;
@@ -918,12 +948,15 @@
 }
 
 .recipe-node-requested-pill {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: var(--color-primary);
-  text-align: right;
+  text-align: center;
+  padding: 3px 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
 }
 
 .recipe-flow-controls {
@@ -968,4 +1001,242 @@
   color: var(--color-text);
   white-space: nowrap;
   box-shadow: 0 2px 8px rgb(0 0 0 / 25%);
+}
+
+/* ─── Hub / Game Directory Overview (Home Page) ──── */
+.calc-hub-header {
+  padding: var(--space-8) var(--space-4) var(--space-4);
+  background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--color-primary) 12%, transparent), transparent 70%),
+              var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.calc-hub-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+}
+
+.calc-hub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px 12px;
+  border-radius: var(--radius-full, 9999px);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.calc-hub-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+.calc-hub-subtitle {
+  margin: 0;
+  max-width: 680px;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.calc-hub-main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4) var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.calc-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-6);
+}
+
+.calc-game-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg, var(--radius-md));
+  overflow: hidden;
+  transition: transform var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+  position: relative;
+}
+
+.calc-game-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: 0 12px 28px rgb(0 0 0 / 24%), 0 0 0 1px var(--color-primary);
+}
+
+.calc-game-card-preview {
+  height: 140px;
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--space-4);
+}
+
+.calc-game-card-icon-mosaic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  width: 100%;
+  height: 100%;
+}
+
+.calc-game-mosaic-item {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+  flex-shrink: 0;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.calc-game-card:hover .calc-game-mosaic-item:nth-child(2) {
+  transform: scale(1.1);
+}
+
+.calc-game-mosaic-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.calc-game-mosaic-emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.calc-game-card-body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--space-3);
+}
+
+.calc-game-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.calc-game-card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.calc-game-card-count {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-soft);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.calc-game-card-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.calc-game-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border-soft);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.calc-game-card-arrow {
+  display: inline-flex;
+  align-items: center;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.calc-game-card:hover .calc-game-card-arrow {
+  transform: translateX(4px);
+}
+
+.calc-header-brand-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.calc-header-brand-link:hover {
+  opacity: 0.88;
+}
+
+.calc-back-hub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.calc-back-hub-btn:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-primary);
 }

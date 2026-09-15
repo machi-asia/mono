@@ -1,328 +1,103 @@
-"use client";
-
-import { useState, useMemo, useCallback, type CSSProperties } from "react";
+import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
-import { ChevronUp, ChevronDown, ChevronsUpDown, LayoutGrid, List } from "lucide-react";
-import { Button, Card, Dropdown } from "@mono/components";
+import { ArrowRight, Layers } from "lucide-react";
 import { GAMES_DATA } from "../data/games";
-import type { GameItem, Recipe } from "../data/types";
-import { ItemDetailPopup } from "../components/item-detail-popup";
-import { RecipeGraphView } from "../components/graph/recipe-graph";
-import type { ProductionRequest } from "../types/graph";
 import "./calculator.css";
 
-type SortKey = "name" | "category";
-type SortState = { key: SortKey; direction: "asc" | "desc" } | null;
-type CatalogLayout = "gallery" | "list";
+export const metadata: Metadata = {
+  title: "Game Directory",
+  description:
+    "Explore crafting and production calculators across supported factory and sandbox games including Little Rocket Lab, Vanilla Furniture Expanded, Satisfactory, Factorio, Minecraft, and Dyson Sphere Program.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
-const SORT_OPTIONS: { key: SortKey; label: string }[] = [
-  { key: "name", label: "Name" },
-  { key: "category", label: "Category" },
-];
+// Curated preview item IDs/names to display for each game card
+const GAME_PREVIEW_ITEMS: Record<string, string[]> = {
+  lrl: ["Boardwalk Plank", "Radio Antenna", "Roof Tile"],
+  satisfactory: ["Iron Ingot", "Iron Plate", "Reinforced Iron Plate"],
+  factorio: ["Iron Gear Wheel", "Electronic Circuit", "Transport Belt"],
+  minecraft: ["Iron Ingot", "Wooden Plank", "Chest"],
+  "dyson-sphere-program": ["Iron Ingot", "Magnetic Coil", "Circuit Board"],
+  "vfe-factory": ["Mass-Produced Meal", "Processed Mince", "Canned Soup"],
+};
 
-function formatDate(iso?: string): string {
-  if (!iso) return "";
-  const date = new Date(iso);
-  if (Number.isNaN(date.getTime())) return iso;
-  return date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
-}
-
-function categoryColor(category: string): string {
-  let hash = 2166136261;
-  for (let i = 0; i < category.length; i += 1) {
-    hash ^= category.charCodeAt(i);
-    hash = Math.imul(hash, 16777619);
-  }
-  const hue = ((hash >>> 0) % 12) * 30;
-  return `hsl(${hue} 55% 52%)`;
-}
-
-function ItemThumb({ item, eager }: { item: GameItem; eager: boolean }) {
-  return (
-    <div className="calc-item-icon" aria-hidden="true">
-      {item.icon.startsWith("/") ? (
-        <Image
-          src={item.icon}
-          alt={item.name}
-          width={32}
-          height={32}
-          className="calc-item-icon-img"
-          loading={eager ? "eager" : "lazy"}
-          priority={eager}
-        />
-      ) : (
-        item.icon
-      )}
-    </div>
-  );
-}
-
-function ItemMeta({ item }: { item: GameItem }) {
-  return (
-    <div className="calc-item-title-wrap">
-      <h3 className="calc-item-name">{item.name}</h3>
-      <span className="calc-item-category">{item.category}</span>
-      {item.lastUpdated && (
-        <span className="calc-item-updated">Updated {formatDate(item.lastUpdated)}</span>
-      )}
-    </div>
-  );
-}
-
-function ItemActions({
-  item,
-  activeRecipe,
-  onRecipeSelect,
-  onGraph,
-}: {
-  item: GameItem;
-  activeRecipe?: Recipe;
-  onRecipeSelect?: (recipeId: string) => void;
-  onGraph: (itemId: string) => void;
-}) {
-  const recipeOptions = useMemo(() => {
-    if (!item.recipes || item.recipes.length <= 1) return null;
-    return item.recipes.map((r) => ({
-      label: `${r.buildingRequired} (${r.processingTimeSeconds}s)`,
-      value: r.id,
-    }));
-  }, [item.recipes]);
-
-  return (
-    <div className="calc-item-actions">
-      {recipeOptions && recipeOptions.length > 0 ? (
-        <div className="calc-recipe-select">
-          <Dropdown
-            items={recipeOptions}
-            value={activeRecipe?.id || recipeOptions[0]?.value}
-            placeholder="Recipe..."
-            onChange={(val) => onRecipeSelect?.(val)}
-          />
-        </div>
-      ) : (
-        <span className="calc-rate-badge">{item.recipe?.buildingRequired || "Manual"}</span>
-      )}
-      <div className="calc-item-actions-group">
-        <ItemDetailPopup item={item} recipe={activeRecipe} />
-        <Button size="sm" variant="secondary" onClick={() => onGraph(item.id)}>
-          Graph
-        </Button>
-      </div>
-    </div>
-  );
-}
-
-export default function CalculatorPage() {
-  const [selectedGameId, setSelectedGameId] = useState<string>(GAMES_DATA[0].id);
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [sortState, setSortState] = useState<SortState>(null);
-  const [catalogLayout, setCatalogLayout] = useState<CatalogLayout>("gallery");
-  const [activeView, setActiveView] = useState<"catalog" | "graph">("catalog");
-  const [initialGraphRequests, setInitialGraphRequests] = useState<ProductionRequest[]>([]);
-  const [recipeSelections, setRecipeSelections] = useState<Record<string, string>>({});
-
-  const currentGame = useMemo(() => {
-    return GAMES_DATA.find((g) => g.id === selectedGameId) || GAMES_DATA[0];
-  }, [selectedGameId]);
-
-  const gameOptions = useMemo(() => {
-    return GAMES_DATA.map((g) => ({
-      label: g.name,
-      value: g.id,
-    }));
-  }, []);
-
-  const filteredItems = useMemo(() => {
-    const q = searchQuery.toLowerCase().trim();
-    const filtered = q
-      ? currentGame.items.filter(
-          (item) =>
-            item.name.toLowerCase().includes(q) ||
-            item.category.toLowerCase().includes(q) ||
-            item.description.toLowerCase().includes(q)
-        )
-      : currentGame.items;
-
-    if (!sortState) return filtered;
-
-    const direction = sortState.direction === "asc" ? 1 : -1;
-    return [...filtered].sort((a, b) => {
-      const cmp = a[sortState.key].toLowerCase().localeCompare(b[sortState.key].toLowerCase());
-      return cmp === 0 ? a.id.localeCompare(b.id) : cmp * direction;
-    });
-  }, [currentGame, searchQuery, sortState]);
-
-  function handleSortKey(key: SortKey) {
-    setSortState((prev) => {
-      if (!prev || prev.key !== key) return { key, direction: "asc" };
-      if (prev.direction === "asc") return { key, direction: "desc" };
-      return null;
-    });
-  }
-
-  function handleCalculateItem(itemId: string) {
-    const recipeId = recipeSelections[itemId];
-    setInitialGraphRequests([{ itemId, targetQuantityPerMinute: 60, ...(recipeId ? { recipeId } : {}) }]);
-    setActiveView("graph");
-  }
-
-  function handleRecipeSelect(itemId: string, recipeId: string) {
-    setRecipeSelections((prev) => ({ ...prev, [itemId]: recipeId }));
-  }
-
-  function getActiveRecipe(item: GameItem): Recipe | undefined {
-    if (!item.recipes || item.recipes.length === 0) return item.recipe;
-    const selectedId = recipeSelections[item.id];
-    if (selectedId) {
-      return item.recipes.find((r) => r.id === selectedId) ?? item.recipes[0];
-    }
-    return item.recipes[0];
-  }
-
+export default function HomePage() {
   return (
     <div className="calc-page">
-      <header className="calc-header">
-        <div className="calc-header-inner">
-          <div className="calc-title-row">
-            <div className="calc-brand">
-              <div className="calc-icon-badge" aria-hidden="true">
-                ⚙️
-              </div>
-              <div>
-                <h1 className="calc-title">Game Production Calculator</h1>
-                <p className="calc-tagline">{currentGame.tagline}</p>
-              </div>
-            </div>
-
-            <div className="calc-controls">
-              <div className="calc-view-toggle" role="group" aria-label="View Switcher">
-                <button
-                  type="button"
-                  className={`calc-view-toggle-btn ${activeView === "catalog" ? "active" : ""}`}
-                  onClick={() => setActiveView("catalog")}
-                >
-                  Catalog View
-                </button>
-                <button
-                  type="button"
-                  className={`calc-view-toggle-btn ${activeView === "graph" ? "active" : ""}`}
-                  onClick={() => setActiveView("graph")}
-                >
-                  Recipe Tree Graph
-                </button>
-              </div>
-
-              <span className="calc-controls-label">Select Game:</span>
-              <Dropdown
-                items={gameOptions}
-                value={selectedGameId}
-                onChange={(val: string) => {
-                  setSelectedGameId(val);
-                  setSearchQuery("");
-                  setSortState(null);
-                  setInitialGraphRequests([]);
-                  setRecipeSelections({});
-                }}
-              />
-            </div>
+      <header className="calc-hub-header">
+        <div className="calc-hub-hero">
+          <div className="calc-hub-badge">
+            <Layers size={14} aria-hidden="true" />
+            <span>Multi-Game Production Suite</span>
           </div>
+          <h1 className="calc-hub-title">Game Production Calculator</h1>
+          <p className="calc-hub-subtitle">
+            Select a game below to plan factory lines, optimize throughput ratios, calculate required building counts, and visualize full interactive recipe dependency trees.
+          </p>
         </div>
       </header>
 
-      <main className={`calc-main ${activeView === "graph" ? "calc-main-graph" : ""}`}>
-        {activeView === "graph" ? (
-          <RecipeGraphView
-            items={currentGame.items}
-            gameName={currentGame.name}
-            initialRequests={initialGraphRequests}
-            recipeOverrides={recipeSelections}
-            onBackToCatalog={() => setActiveView("catalog")}
-          />
-        ) : (
-          <>
-            <div className="calc-filter-bar">
-              <input
-                type="text"
-                className="calc-search-input"
-                placeholder={`Search ${currentGame.name} items...`}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                aria-label="Filter items"
-              />
-              <span className="calc-count">
-                Showing {filteredItems.length} of {currentGame.items.length} items
-              </span>
+      <main className="calc-hub-main">
+        <div className="calc-hub-grid">
+          {GAMES_DATA.map((game) => {
+            const preferredNames = GAME_PREVIEW_ITEMS[game.id] || [];
+            const previewItems = (
+              preferredNames.length > 0
+                ? preferredNames.map((n) => game.items.find((i) => i.name === n || i.id === n)).filter(Boolean)
+                : game.items.slice(0, 3)
+            ) as typeof game.items;
 
-              <div className="calc-sort-group" role="group" aria-label="Sort items">
-                {SORT_OPTIONS.map((opt) => {
-                  const active = sortState?.key === opt.key;
-                  const SortIcon =
-                    active && sortState.direction === "asc"
-                      ? ChevronUp
-                      : active && sortState.direction === "desc"
-                        ? ChevronDown
-                        : ChevronsUpDown;
-                  return (
-                    <button
-                      key={opt.key}
-                      type="button"
-                      className={`calc-sort-btn${active ? " active" : ""}`}
-                      onClick={() => handleSortKey(opt.key)}
-                      aria-pressed={active}
-                    >
-                      <span>{opt.label}</span>
-                      <SortIcon size={14} aria-hidden="true" />
-                    </button>
-                  );
-                })}
-              </div>
-
-              <div className="calc-layout-toggle" role="group" aria-label="Catalog layout">
-                <button
-                  type="button"
-                  className={`calc-layout-btn${catalogLayout === "gallery" ? " active" : ""}`}
-                  onClick={() => setCatalogLayout("gallery")}
-                  aria-pressed={catalogLayout === "gallery"}
-                >
-                  <LayoutGrid size={14} aria-hidden="true" />
-                  <span>Gallery</span>
-                </button>
-                <button
-                  type="button"
-                  className={`calc-layout-btn${catalogLayout === "list" ? " active" : ""}`}
-                  onClick={() => setCatalogLayout("list")}
-                  aria-pressed={catalogLayout === "list"}
-                >
-                  <List size={14} aria-hidden="true" />
-                  <span>List</span>
-                </button>
-              </div>
-            </div>
-
-            <div className={catalogLayout === "gallery" ? "calc-grid" : "calc-list"}>
-              {filteredItems.map((item, idx) => (
-                <Card
-                  key={item.id}
-                  className={catalogLayout === "gallery" ? "calc-item-card" : "calc-item-row"}
-                  elevated={catalogLayout === "gallery"}
-                  style={{ "--cat-color": categoryColor(item.category) } as CSSProperties}
-                >
-                  <div className="calc-item-header">
-                    <ItemThumb item={item} eager={idx === 0} />
-                    <ItemMeta item={item} />
+            return (
+              <Link
+                key={game.id}
+                href={`/${game.id}`}
+                className="calc-game-card"
+                aria-label={`Open calculator for ${game.name}`}
+              >
+                <div className="calc-game-card-preview">
+                  <div className="calc-game-card-icon-mosaic">
+                    {previewItems.map((item, idx) => (
+                      <div key={item.id || idx} className="calc-game-mosaic-item">
+                        {item.icon && item.icon.startsWith("/") ? (
+                          <Image
+                            src={item.icon}
+                            alt={item.name}
+                            width={36}
+                            height={36}
+                            className="calc-game-mosaic-img"
+                          />
+                        ) : (
+                          <span className="calc-game-mosaic-emoji">{item.icon || "📦"}</span>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                  <p className="calc-item-desc">{item.description}</p>
-                  <ItemActions
-                    item={item}
-                    activeRecipe={getActiveRecipe(item)}
-                    onRecipeSelect={(recipeId) => handleRecipeSelect(item.id, recipeId)}
-                    onGraph={handleCalculateItem}
-                  />
-                </Card>
-              ))}
-            </div>
-          </>
-        )}
+                </div>
+
+                <div className="calc-game-card-body">
+                  <div className="calc-game-card-header">
+                    <h2 className="calc-game-card-title">{game.name}</h2>
+                    <span className="calc-game-card-count">
+                      {game.items.length} {game.items.length === 1 ? "Item" : "Items"}
+                    </span>
+                  </div>
+
+                  <p className="calc-game-card-desc">{game.tagline}</p>
+
+                  <div className="calc-game-card-footer">
+                    <span>Open Calculator</span>
+                    <span className="calc-game-card-arrow" aria-hidden="true">
+                      <ArrowRight size={16} />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </main>
     </div>
   );

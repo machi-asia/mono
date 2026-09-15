@@ -4,11 +4,13 @@
     <item lastUpdated="2026-09-15">
         <name>Blue Gel</name>
         <type>Special</type>
+        <icon>/vfe-factory/items/BlueGel_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Hexagel</name>
         <type>Special</type>
+        <icon>/vfe-factory/items/Hexagel_icon.png</icon>
         <recipe id="recipe-aa_hexagel-0" name="Automated Assembler recipe">
             <building item="Automated Assembler" throughput="9" icon="/vfe-factory/buildings/AutomatedAssembler.png" />
             <input item="Blue Gel" quantity="100" />
@@ -19,6 +21,7 @@
     <item lastUpdated="2026-09-15">
         <name>Hexagel Core</name>
         <type>Special</type>
+        <icon>/vfe-factory/items/HexagelCore_icon.png</icon>
         <recipe id="recipe-aa_hexagelcore-0" name="Automated Assembler recipe">
             <building item="Automated Assembler" throughput="4.5" icon="/vfe-factory/buildings/AutomatedAssembler.png" />
             <input item="Hexagel" quantity="15" />
@@ -30,6 +33,7 @@
     <item lastUpdated="2026-09-15">
         <name>Sky Steel</name>
         <type>Metals</type>
+        <icon>/vfe-factory/items/SkySteel_icon.png</icon>
         <recipe id="recipe-aa_skysteel-0" name="Automated Alloy Forge recipe">
             <building item="Automated Alloy Forge" throughput="4.5" icon="/vfe-factory/buildings/AutomatedAlloyForge.png" />
             <input item="Steel" quantity="15" />
@@ -41,16 +45,19 @@
     <item lastUpdated="2026-09-15">
         <name>Uranium Crystals</name>
         <type>Metals</type>
+        <icon>/vfe-factory/items/UraniumCrystals_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Asphalt Bucket</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/AsphaltBucket_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Cragstone Chunk</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/CragstoneChunk_icon.png</icon>
         <recipe id="recipe-ab_chunkcragstone-0" name="Automated Drill Platform recipe">
             <building item="Automated Drill Platform" throughput="0.3" icon="/vfe-factory/buildings/AutomatedDrillPlatform.png" />
             <output item="Cragstone Chunk" quantity="1" />
@@ -60,6 +67,7 @@
     <item lastUpdated="2026-09-15">
         <name>Mudstone Chunk</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/MudstoneChunk_icon.png</icon>
         <recipe id="recipe-ab_chunkmudstone-0" name="Automated Drill Platform recipe">
             <building item="Automated Drill Platform" throughput="0.3" icon="/vfe-factory/buildings/AutomatedDrillPlatform.png" />
             <output item="Mudstone Chunk" quantity="1" />
@@ -69,6 +77,7 @@
     <item lastUpdated="2026-09-15">
         <name>Obsidian Chunk</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/ObsidianChunk_icon.png</icon>
         <recipe id="recipe-ab_chunkobsidian-0" name="Automated Drill Platform recipe">
             <building item="Automated Drill Platform" throughput="0.3" icon="/vfe-factory/buildings/AutomatedDrillPlatform.png" />
             <output item="Obsidian Chunk" quantity="1" />
@@ -78,6 +87,7 @@
     <item lastUpdated="2026-09-15">
         <name>Slimestone Chunk</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/SlimestoneChunk_icon.png</icon>
         <recipe id="recipe-ab_chunkslimestone-0" name="Automated Drill Platform recipe">
             <building item="Automated Drill Platform" throughput="0.3" icon="/vfe-factory/buildings/AutomatedDrillPlatform.png" />
             <output item="Slimestone Chunk" quantity="1" />
@@ -87,11 +97,13 @@
     <item lastUpdated="2026-09-15">
         <name>Mushroom Wood Log</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/MushroomWoodLog_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Tar Shell</name>
         <type>Ammo</type>
+        <icon>/vfe-factory/items/TarShell_icon.png</icon>
         <recipe id="recipe-ab_shell_tar-0" name="Automated Ammunition Press recipe">
             <building item="Automated Ammunition Press" throughput="1.1" icon="/vfe-factory/buildings/AutomatedAmmunitionPress.png" />
             <input item="Steel" quantity="25" />
@@ -103,6 +115,7 @@
     <item lastUpdated="2026-09-15">
         <name>Stainless Steel</name>
         <type>Metals</type>
+        <icon>/vfe-factory/items/StainlessSteel_icon.png</icon>
         <recipe id="recipe-abooks_stainlesssteel-0" name="Automated Alloy Forge recipe">
             <building item="Automated Alloy Forge" throughput="2.2" icon="/vfe-factory/buildings/AutomatedAlloyForge.png" />
             <input item="Steel" quantity="15" />
@@ -114,6 +127,7 @@
     <item lastUpdated="2026-09-15">
         <name>Chocolate Liquor</name>
         <type>Drinks</type>
+        <icon>/vfe-factory/items/ChocolateLiquor_icon.png</icon>
         <recipe id="recipe-ac_chocolateliquor-0" name="Automated Distillery recipe">
             <building item="Automated Distillery" throughput="0.1" icon="/vfe-factory/buildings/AutomatedDistillery.png" />
             <input item="Chocolate" quantity="20" />
@@ -124,6 +138,7 @@
     <item lastUpdated="2026-09-15">
         <name>Coffee Liquor</name>
         <type>Drinks</type>
+        <icon>/vfe-factory/items/CoffeeLiquor_icon.png</icon>
         <recipe id="recipe-ac_coffeeliquor-0" name="Automated Distillery recipe">
             <building item="Automated Distillery" throughput="0.2" icon="/vfe-factory/buildings/AutomatedDistillery.png" />
             <input item="Raw Coffee" quantity="16" />
@@ -134,6 +149,7 @@
     <item lastUpdated="2026-09-15">
         <name>Sake</name>
         <type>Drinks</type>
+        <icon>/vfe-factory/items/Sake_icon.png</icon>
         <recipe id="recipe-ac_sake-0" name="Automated Distillery recipe">
             <building item="Automated Distillery" throughput="0" icon="/vfe-factory/buildings/AutomatedDistillery.png" />
             <input item="Raw Rice" quantity="48" />
@@ -144,6 +160,7 @@
     <item lastUpdated="2026-09-15">
         <name>Baby Food</name>
         <type>Food</type>
+        <icon>/vfe-factory/items/BabyFood_icon.png</icon>
         <recipe id="recipe-babyfood-0" name="Conveyor Oven recipe">
             <building item="Conveyor Oven" throughput="20" icon="/vfe-factory/buildings/ConveyorOven.png" />
             <input item="Plant Food" quantity="5" />
@@ -154,6 +171,7 @@
     <item lastUpdated="2026-09-15">
         <name>Beer</name>
         <type>Drinks</type>
+        <icon>/vfe-factory/items/Beer_icon.png</icon>
         <recipe id="recipe-beer-0" name="Automated Distillery recipe">
             <building item="Automated Distillery" throughput="0.2" icon="/vfe-factory/buildings/AutomatedDistillery.png" />
             <input item="Raw Hops" quantity="20" />
@@ -164,11 +182,13 @@
     <item lastUpdated="2026-09-15">
         <name>Bioferrite</name>
         <type>Special</type>
+        <icon>/vfe-factory/items/Bioferrite_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Sandstone Blocks</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/SandstoneBlocks_icon.png</icon>
         <recipe id="recipe-blockssandstone-0" name="Automated Masonry Saw recipe">
             <building item="Automated Masonry Saw" throughput="11.2" icon="/vfe-factory/buildings/AutomatedMasonrySaw.png" />
             <input item="Stone Chunks" quantity="1" />
@@ -179,11 +199,13 @@
     <item lastUpdated="2026-09-15">
         <name>Vacstone Blocks</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/VacstoneBlocks_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Chemfuel</name>
         <type>Chemicals</type>
+        <icon>/vfe-factory/items/Chemfuel_icon.png</icon>
         <recipe id="recipe-chemfuel-0" name="Automated Biofuel Refinery recipe">
             <building item="Automated Biofuel Refinery" throughput="18" icon="/vfe-factory/buildings/AutomatedBiofuelRefinery.png" />
             <input item="Wood Log" quantity="50" />
@@ -214,11 +236,13 @@
     <item lastUpdated="2026-09-15">
         <name>Chocolate</name>
         <type>Food</type>
+        <icon>/vfe-factory/items/Chocolate_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Granite Chunk</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/GraniteChunk_icon.png</icon>
         <recipe id="recipe-chunkgranite-0" name="Automated Drill Platform recipe">
             <building item="Automated Drill Platform" throughput="0.3" icon="/vfe-factory/buildings/AutomatedDrillPlatform.png" />
             <output item="Granite Chunk" quantity="1" />
@@ -228,6 +252,7 @@
     <item lastUpdated="2026-09-15">
         <name>Limestone Chunk</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/LimestoneChunk_icon.png</icon>
         <recipe id="recipe-chunklimestone-0" name="Automated Drill Platform recipe">
             <building item="Automated Drill Platform" throughput="0.3" icon="/vfe-factory/buildings/AutomatedDrillPlatform.png" />
             <output item="Limestone Chunk" quantity="1" />
@@ -237,6 +262,7 @@
     <item lastUpdated="2026-09-15">
         <name>Marble Chunk</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/MarbleChunk_icon.png</icon>
         <recipe id="recipe-chunkmarble-0" name="Automated Drill Platform recipe">
             <building item="Automated Drill Platform" throughput="0.3" icon="/vfe-factory/buildings/AutomatedDrillPlatform.png" />
             <output item="Marble Chunk" quantity="1" />
@@ -246,11 +272,13 @@
     <item lastUpdated="2026-09-15">
         <name>Mechanoid Slag</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/MechanoidSlag_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Sandstone Chunk</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/SandstoneChunk_icon.png</icon>
         <recipe id="recipe-chunksandstone-0" name="Automated Drill Platform recipe">
             <building item="Automated Drill Platform" throughput="0.3" icon="/vfe-factory/buildings/AutomatedDrillPlatform.png" />
             <output item="Sandstone Chunk" quantity="1" />
@@ -260,11 +288,13 @@
     <item lastUpdated="2026-09-15">
         <name>Slag Steel Chunks</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/SlagSteelChunks_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Slate Chunk</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/SlateChunk_icon.png</icon>
         <recipe id="recipe-chunkslate-0" name="Automated Drill Platform recipe">
             <building item="Automated Drill Platform" throughput="0.3" icon="/vfe-factory/buildings/AutomatedDrillPlatform.png" />
             <output item="Slate Chunk" quantity="1" />
@@ -274,11 +304,13 @@
     <item lastUpdated="2026-09-15">
         <name>Cloth</name>
         <type>Textiles</type>
+        <icon>/vfe-factory/items/Cloth_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Industrial Component</name>
         <type>Components</type>
+        <icon>/vfe-factory/items/IndustrialComponent_icon.png</icon>
         <recipe id="recipe-componentindustrial-0" name="Automated Assembler recipe">
             <building item="Automated Assembler" throughput="0.2" icon="/vfe-factory/buildings/AutomatedAssembler.png" />
             <input item="Steel" quantity="12" />
@@ -289,6 +321,7 @@
     <item lastUpdated="2026-09-15">
         <name>Spacer Component</name>
         <type>Components</type>
+        <icon>/vfe-factory/items/SpacerComponent_icon.png</icon>
         <recipe id="recipe-componentspacer-0" name="Automated Assembler recipe">
             <building item="Automated Assembler" throughput="0.1" icon="/vfe-factory/buildings/AutomatedAssembler.png" />
             <input item="Steel" quantity="20" />
@@ -302,6 +335,7 @@
     <item lastUpdated="2026-09-15">
         <name>Flake</name>
         <type>Drugs</type>
+        <icon>/vfe-factory/items/Flake_icon.png</icon>
         <recipe id="recipe-flake-0" name="Medicine Granulator recipe">
             <building item="Medicine Granulator" throughput="3.6" icon="/vfe-factory/buildings/MedicineGranulator.png" />
             <input item="Psychoid Leaves" quantity="16" />
@@ -312,6 +346,7 @@
     <item lastUpdated="2026-09-15">
         <name>Go-Juice</name>
         <type>Drugs</type>
+        <icon>/vfe-factory/items/GoJuice_icon.png</icon>
         <recipe id="recipe-gojuice-0" name="Medicine Granulator recipe">
             <building item="Medicine Granulator" throughput="1.5" icon="/vfe-factory/buildings/MedicineGranulator.png" />
             <input item="Yayo" quantity="4" />
@@ -323,11 +358,13 @@
     <item lastUpdated="2026-09-15">
         <name>Gold</name>
         <type>Metals</type>
+        <icon>/vfe-factory/items/Gold_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Age Pills</name>
         <type>Drugs</type>
+        <icon>/vfe-factory/items/AgePills_icon.png</icon>
         <recipe id="recipe-gr_agepills-0" name="Medicine Granulator recipe">
             <building item="Medicine Granulator" throughput="1.4" icon="/vfe-factory/buildings/MedicineGranulator.png" />
             <input item="Psychoid Leaves" quantity="24" />
@@ -339,6 +376,7 @@
     <item lastUpdated="2026-09-15">
         <name>Gravlite Panel</name>
         <type>Metals</type>
+        <icon>/vfe-factory/items/GravlitePanel_icon.png</icon>
         <recipe id="recipe-gravlitepanel-0" name="Automated Alloy Forge recipe">
             <building item="Automated Alloy Forge" throughput="0.5" icon="/vfe-factory/buildings/AutomatedAlloyForge.png" />
             <input item="Plasteel" quantity="5" />
@@ -350,6 +388,7 @@
     <item lastUpdated="2026-09-15">
         <name>Rose Quartz Chunk</name>
         <type>Stone</type>
+        <icon>/vfe-factory/items/RoseQuartzChunk_icon.png</icon>
         <recipe id="recipe-gu_chunkrosequartz-0" name="Automated Drill Platform recipe">
             <building item="Automated Drill Platform" throughput="0.3" icon="/vfe-factory/buildings/AutomatedDrillPlatform.png" />
             <output item="Rose Quartz Chunk" quantity="1" />
@@ -359,16 +398,19 @@
     <item lastUpdated="2026-09-15">
         <name>Red Wood Log</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/RedWoodLog_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Hay</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/Hay_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Kibble</name>
         <type>Food</type>
+        <icon>/vfe-factory/items/Kibble_icon.png</icon>
         <recipe id="recipe-kibble-0" name="Conveyor Oven recipe">
             <building item="Conveyor Oven" throughput="96" icon="/vfe-factory/buildings/ConveyorOven.png" />
             <input item="Raw Meat" quantity="15" />
@@ -386,6 +428,7 @@
     <item lastUpdated="2026-09-15">
         <name>Patch Leather</name>
         <type>Textiles</type>
+        <icon>/vfe-factory/items/PatchLeather_icon.png</icon>
         <recipe id="recipe-leather_patch-0" name="Autoloom recipe">
             <building item="Autoloom" throughput="50" icon="/vfe-factory/buildings/Autoloom.png" />
             <input item="Leathers" quantity="50" />
@@ -401,6 +444,7 @@
     <item lastUpdated="2026-09-15">
         <name>Survival Meal</name>
         <type>Food</type>
+        <icon>/vfe-factory/items/SurvivalMeal_icon.png</icon>
         <recipe id="recipe-mealsurvivalpack-0" name="Conveyor Oven recipe">
             <building item="Conveyor Oven" throughput="2" icon="/vfe-factory/buildings/ConveyorOven.png" />
             <input item="Raw Meat" quantity="24" />
@@ -412,6 +456,7 @@
     <item lastUpdated="2026-09-15">
         <name>Human Meat</name>
         <type>Food</type>
+        <icon>/vfe-factory/items/HumanMeat_icon.png</icon>
         <recipe id="recipe-meat_human-0" name="Automated Mincer recipe">
             <building item="Automated Mincer" throughput="2" icon="/vfe-factory/buildings/AutomatedMincer.png" />
             <input item="Humanlike Corpses" quantity="1" />
@@ -427,6 +472,7 @@
     <item lastUpdated="2026-09-15">
         <name>Megaspider Meat</name>
         <type>Food</type>
+        <icon>/vfe-factory/items/MegaspiderMeat_icon.png</icon>
         <recipe id="recipe-meat_megaspider-0" name="Automated Mincer recipe">
             <building item="Automated Mincer" throughput="2" icon="/vfe-factory/buildings/AutomatedMincer.png" />
             <input item="Insectoid Corpses" quantity="1" />
@@ -437,6 +483,7 @@
     <item lastUpdated="2026-09-15">
         <name>Twisted Meat</name>
         <type>Food</type>
+        <icon>/vfe-factory/items/TwistedMeat_icon.png</icon>
         <recipe id="recipe-meat_twisted-0" name="Automated Mincer recipe">
             <building item="Automated Mincer" throughput="2" icon="/vfe-factory/buildings/AutomatedMincer.png" />
             <input item="Entity Corpses" quantity="1" />
@@ -447,11 +494,13 @@
     <item lastUpdated="2026-09-15">
         <name>Herbal Medicine</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/HerbalMedicine_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Industrial Medicine</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/IndustrialMedicine_icon.png</icon>
         <recipe id="recipe-medicineindustrial-0" name="Medicine Granulator recipe">
             <building item="Medicine Granulator" throughput="1.3" icon="/vfe-factory/buildings/MedicineGranulator.png" />
             <input item="Cloth" quantity="12" />
@@ -464,6 +513,7 @@
     <item lastUpdated="2026-09-15">
         <name>Neutroamine</name>
         <type>Chemicals</type>
+        <icon>/vfe-factory/items/Neutroamine_icon.png</icon>
         <recipe id="recipe-neutroamine-0" name="Neutroamine Synthesizer recipe">
             <building item="Neutroamine Synthesizer" throughput="3.8" icon="/vfe-factory/buildings/NeutroamineSynthesizer.png" />
             <input item="Chemfuel" quantity="3" />
@@ -475,6 +525,7 @@
     <item lastUpdated="2026-09-15">
         <name>Obsidian</name>
         <type>Metals</type>
+        <icon>/vfe-factory/items/Obsidian_icon.png</icon>
         <recipe id="recipe-obsidian-0" name="Automated Alloy Forge recipe">
             <building item="Automated Alloy Forge" throughput="0.6" icon="/vfe-factory/buildings/AutomatedAlloyForge.png" />
             <input item="Stone Chunks" quantity="1" />
@@ -485,6 +536,7 @@
     <item lastUpdated="2026-09-15">
         <name>Pemmican</name>
         <type>Food</type>
+        <icon>/vfe-factory/items/Pemmican_icon.png</icon>
         <recipe id="recipe-pemmican-0" name="Conveyor Oven recipe">
             <building item="Conveyor Oven" throughput="20.6" icon="/vfe-factory/buildings/ConveyorOven.png" />
             <input item="Raw Meat" quantity="5" />
@@ -496,6 +548,7 @@
     <item lastUpdated="2026-09-15">
         <name>Penoxycyline</name>
         <type>Drugs</type>
+        <icon>/vfe-factory/items/Penoxycyline_icon.png</icon>
         <recipe id="recipe-penoxycyline-0" name="Medicine Granulator recipe">
             <building item="Medicine Granulator" throughput="1.5" icon="/vfe-factory/buildings/MedicineGranulator.png" />
             <input item="Neutroamine" quantity="2" />
@@ -506,6 +559,7 @@
     <item lastUpdated="2026-09-15">
         <name>Plasteel</name>
         <type>Metals</type>
+        <icon>/vfe-factory/items/Plasteel_icon.png</icon>
         <recipe id="recipe-plasteel-0" name="Automated Alloy Forge recipe">
             <building item="Automated Alloy Forge" throughput="0.9" icon="/vfe-factory/buildings/AutomatedAlloyForge.png" />
             <input item="Steel" quantity="10" />
@@ -518,6 +572,7 @@
     <item lastUpdated="2026-09-15">
         <name>Psychite Tea</name>
         <type>Drugs</type>
+        <icon>/vfe-factory/items/PsychiteTea_icon.png</icon>
         <recipe id="recipe-psychitetea-0" name="Medicine Granulator recipe">
             <building item="Medicine Granulator" throughput="2.2" icon="/vfe-factory/buildings/MedicineGranulator.png" />
             <input item="Psychoid Leaves" quantity="16" />
@@ -528,41 +583,49 @@
     <item lastUpdated="2026-09-15">
         <name>Psychoid Leaves</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/PsychoidLeaves_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Raw Agave</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/RawAgave_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Raw Berries</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/RawBerries_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Raw Corn</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/RawCorn_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Raw Hops</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/RawHops_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Raw Potatoes</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/RawPotatoes_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Raw Rice</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/RawRice_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Deadlife Shell</name>
         <type>Ammo</type>
+        <icon>/vfe-factory/items/DeadlifeShell_icon.png</icon>
         <recipe id="recipe-shell_deadlife-0" name="Automated Ammunition Press recipe">
             <building item="Automated Ammunition Press" throughput="1.1" icon="/vfe-factory/buildings/AutomatedAmmunitionPress.png" />
             <input item="Bioferrite" quantity="25" />
@@ -573,6 +636,7 @@
     <item lastUpdated="2026-09-15">
         <name>EMP Shell</name>
         <type>Ammo</type>
+        <icon>/vfe-factory/items/EMPShell_icon.png</icon>
         <recipe id="recipe-shell_emp-0" name="Automated Ammunition Press recipe">
             <building item="Automated Ammunition Press" throughput="1.1" icon="/vfe-factory/buildings/AutomatedAmmunitionPress.png" />
             <input item="Steel" quantity="15" />
@@ -584,6 +648,7 @@
     <item lastUpdated="2026-09-15">
         <name>Firefoam Shell</name>
         <type>Ammo</type>
+        <icon>/vfe-factory/items/FirefoamShell_icon.png</icon>
         <recipe id="recipe-shell_firefoam-0" name="Automated Ammunition Press recipe">
             <building item="Automated Ammunition Press" throughput="1.1" icon="/vfe-factory/buildings/AutomatedAmmunitionPress.png" />
             <input item="Steel" quantity="20" />
@@ -594,6 +659,7 @@
     <item lastUpdated="2026-09-15">
         <name>HE Shell</name>
         <type>Ammo</type>
+        <icon>/vfe-factory/items/HEShell_icon.png</icon>
         <recipe id="recipe-shell_highexplosive-0" name="Automated Ammunition Press recipe">
             <building item="Automated Ammunition Press" throughput="1.1" icon="/vfe-factory/buildings/AutomatedAmmunitionPress.png" />
             <input item="Steel" quantity="15" />
@@ -605,6 +671,7 @@
     <item lastUpdated="2026-09-15">
         <name>Incendiary Shell</name>
         <type>Ammo</type>
+        <icon>/vfe-factory/items/IncendiaryShell_icon.png</icon>
         <recipe id="recipe-shell_incendiary-0" name="Automated Ammunition Press recipe">
             <building item="Automated Ammunition Press" throughput="1.1" icon="/vfe-factory/buildings/AutomatedAmmunitionPress.png" />
             <input item="Steel" quantity="10" />
@@ -616,6 +683,7 @@
     <item lastUpdated="2026-09-15">
         <name>Smoke Shell</name>
         <type>Ammo</type>
+        <icon>/vfe-factory/items/SmokeShell_icon.png</icon>
         <recipe id="recipe-shell_smoke-0" name="Automated Ammunition Press recipe">
             <building item="Automated Ammunition Press" throughput="1.1" icon="/vfe-factory/buildings/AutomatedAmmunitionPress.png" />
             <input item="Steel" quantity="25" />
@@ -626,6 +694,7 @@
     <item lastUpdated="2026-09-15">
         <name>Toxic Shell</name>
         <type>Ammo</type>
+        <icon>/vfe-factory/items/ToxicShell_icon.png</icon>
         <recipe id="recipe-shell_toxic-0" name="Automated Ammunition Press recipe">
             <building item="Automated Ammunition Press" throughput="1.1" icon="/vfe-factory/buildings/AutomatedAmmunitionPress.png" />
             <input item="Steel" quantity="10" />
@@ -637,6 +706,7 @@
     <item lastUpdated="2026-09-15">
         <name>Smokeleaf Joint</name>
         <type>Drugs</type>
+        <icon>/vfe-factory/items/SmokeleafJoint_icon.png</icon>
         <recipe id="recipe-smokeleafjoint-0" name="Medicine Granulator recipe">
             <building item="Medicine Granulator" throughput="2" icon="/vfe-factory/buildings/MedicineGranulator.png" />
             <input item="Smokeleaf Leaves" quantity="4" />
@@ -647,11 +717,13 @@
     <item lastUpdated="2026-09-15">
         <name>Smokeleaf Leaves</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/SmokeleafLeaves_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Steel</name>
         <type>Metals</type>
+        <icon>/vfe-factory/items/Steel_icon.png</icon>
         <recipe id="recipe-steel-0" name="Automated Drill Platform recipe">
             <building item="Automated Drill Platform" throughput="0.1" icon="/vfe-factory/buildings/AutomatedDrillPlatform.png" />
             <output item="Steel" quantity="1" />
@@ -696,6 +768,7 @@
     <item lastUpdated="2026-09-15">
         <name>Synthread</name>
         <type>Textiles</type>
+        <icon>/vfe-factory/items/Synthread_icon.png</icon>
         <recipe id="recipe-synthread-0" name="Autoloom recipe">
             <building item="Autoloom" throughput="4.5" icon="/vfe-factory/buildings/Autoloom.png" />
             <input item="Cloth" quantity="25" />
@@ -707,6 +780,7 @@
     <item lastUpdated="2026-09-15">
         <name>Uranium</name>
         <type>Metals</type>
+        <icon>/vfe-factory/items/Uranium_icon.png</icon>
         <recipe id="recipe-uranium-0" name="Automated Assembler recipe">
             <building item="Automated Assembler" throughput="6.8" icon="/vfe-factory/buildings/AutomatedAssembler.png" />
             <input item="Uranium Crystals" quantity="1" />
@@ -717,6 +791,7 @@
     <item lastUpdated="2026-09-15">
         <name>Cigarettes</name>
         <type>Drugs</type>
+        <icon>/vfe-factory/items/Cigarettes_icon.png</icon>
         <recipe id="recipe-vbe_cigarettes-0" name="Medicine Granulator recipe">
             <building item="Medicine Granulator" throughput="3.6" icon="/vfe-factory/buildings/MedicineGranulator.png" />
             <input item="Raw Tobacco" quantity="10" />
@@ -727,6 +802,7 @@
     <item lastUpdated="2026-09-15">
         <name>Cigars</name>
         <type>Drugs</type>
+        <icon>/vfe-factory/items/Cigars_icon.png</icon>
         <recipe id="recipe-vbe_cigars-0" name="Medicine Granulator recipe">
             <building item="Medicine Granulator" throughput="1.5" icon="/vfe-factory/buildings/MedicineGranulator.png" />
             <input item="Raw Tobacco" quantity="5" />
@@ -738,6 +814,7 @@
     <item lastUpdated="2026-09-15">
         <name>Gin</name>
         <type>Drinks</type>
+        <icon>/vfe-factory/items/Gin_icon.png</icon>
         <recipe id="recipe-vbe_gin-0" name="Automated Distillery recipe">
             <building item="Automated Distillery" throughput="0.1" icon="/vfe-factory/buildings/AutomatedDistillery.png" />
             <input item="Raw Berries" quantity="20" />
@@ -748,11 +825,13 @@
     <item lastUpdated="2026-09-15">
         <name>Juice</name>
         <type>Drinks</type>
+        <icon>/vfe-factory/items/Juice_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Pumpkin Spice Coffee</name>
         <type>Drinks</type>
+        <icon>/vfe-factory/items/PumpkinSpiceCoffee_icon.png</icon>
         <recipe id="recipe-vbe_pumpkincoffee-0" name="Conveyor Oven recipe">
             <building item="Conveyor Oven" throughput="4.5" icon="/vfe-factory/buildings/ConveyorOven.png" />
             <input item="Raw Coffee" quantity="25" />
@@ -763,16 +842,19 @@
     <item lastUpdated="2026-09-15">
         <name>Raw Coffee</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/RawCoffee_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Raw Tobacco</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/RawTobacco_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Soda</name>
         <type>Drinks</type>
+        <icon>/vfe-factory/items/Soda_icon.png</icon>
         <recipe id="recipe-vbe_soda-0" name="Automated Distillery recipe">
             <building item="Automated Distillery" throughput="0.6" icon="/vfe-factory/buildings/AutomatedDistillery.png" />
             <input item="Juice" quantity="35" />
@@ -783,6 +865,7 @@
     <item lastUpdated="2026-09-15">
         <name>Tequila</name>
         <type>Drinks</type>
+        <icon>/vfe-factory/items/Tequila_icon.png</icon>
         <recipe id="recipe-vbe_tequila-0" name="Automated Distillery recipe">
             <building item="Automated Distillery" throughput="0.2" icon="/vfe-factory/buildings/AutomatedDistillery.png" />
             <input item="Raw Agave" quantity="20" />
@@ -793,6 +876,7 @@
     <item lastUpdated="2026-09-15">
         <name>Vodka</name>
         <type>Drinks</type>
+        <icon>/vfe-factory/items/Vodka_icon.png</icon>
         <recipe id="recipe-vbe_vodka-0" name="Automated Distillery recipe">
             <building item="Automated Distillery" throughput="0.3" icon="/vfe-factory/buildings/AutomatedDistillery.png" />
             <input item="Raw Potatoes" quantity="20" />
@@ -803,6 +887,7 @@
     <item lastUpdated="2026-09-15">
         <name>Whiskey</name>
         <type>Drinks</type>
+        <icon>/vfe-factory/items/Whiskey_icon.png</icon>
         <recipe id="recipe-vbe_whiskey-0" name="Automated Distillery recipe">
             <building item="Automated Distillery" throughput="0.1" icon="/vfe-factory/buildings/AutomatedDistillery.png" />
             <input item="Raw Corn" quantity="20" />
@@ -813,11 +898,13 @@
     <item lastUpdated="2026-09-15">
         <name>Raw Canola</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/RawCanola_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Uncooked Soup</name>
         <type>Food</type>
+        <icon>/vfe-factory/items/UncookedSoup_icon.png</icon>
         <recipe id="recipe-vce_uncookedsoupsimple-0" name="Conveyor Oven recipe">
             <building item="Conveyor Oven" throughput="3" icon="/vfe-factory/buildings/ConveyorOven.png" />
             <input item="Raw Meat" quantity="40" />
@@ -829,6 +916,7 @@
     <item lastUpdated="2026-09-15">
         <name>Bronze</name>
         <type>Metals</type>
+        <icon>/vfe-factory/items/Bronze_icon.png</icon>
         <recipe id="recipe-vfec_bronze-0" name="Automated Alloy Forge recipe">
             <building item="Automated Alloy Forge" throughput="7.5" icon="/vfe-factory/buildings/AutomatedAlloyForge.png" />
             <input item="Stone Chunks" quantity="1" />
@@ -840,6 +928,7 @@
     <item lastUpdated="2026-09-15">
         <name>AP Shell</name>
         <type>Ammo</type>
+        <icon>/vfe-factory/items/APShell_icon.png</icon>
         <recipe id="recipe-vfed_shell_armorpiercing-0" name="Automated Ammunition Press recipe">
             <building item="Automated Ammunition Press" throughput="1.1" icon="/vfe-factory/buildings/AutomatedAmmunitionPress.png" />
             <input item="Steel" quantity="20" />
@@ -851,6 +940,7 @@
     <item lastUpdated="2026-09-15">
         <name>Cluster Shell</name>
         <type>Ammo</type>
+        <icon>/vfe-factory/items/ClusterShell_icon.png</icon>
         <recipe id="recipe-vfed_shell_cluster-0" name="Automated Ammunition Press recipe">
             <building item="Automated Ammunition Press" throughput="1.1" icon="/vfe-factory/buildings/AutomatedAmmunitionPress.png" />
             <input item="Steel" quantity="45" />
@@ -862,6 +952,7 @@
     <item lastUpdated="2026-09-15">
         <name>Shrapnel Shell</name>
         <type>Ammo</type>
+        <icon>/vfe-factory/items/ShrapnelShell_icon.png</icon>
         <recipe id="recipe-vfed_shell_shrapnel-0" name="Automated Ammunition Press recipe">
             <building item="Automated Ammunition Press" throughput="1.1" icon="/vfe-factory/buildings/AutomatedAmmunitionPress.png" />
             <input item="Steel" quantity="30" />
@@ -900,6 +991,7 @@
     <item lastUpdated="2026-09-15">
         <name>Astrofuel</name>
         <type>Chemicals</type>
+        <icon>/vfe-factory/items/Astrofuel_icon.png</icon>
         <recipe id="recipe-vge_astrofuel-0" name="Automated Biofuel Refinery recipe">
             <building item="Automated Biofuel Refinery" throughput="6.3" icon="/vfe-factory/buildings/AutomatedBiofuelRefinery.png" />
             <input item="Chemfuel" quantity="70" />
@@ -910,6 +1002,7 @@
     <item lastUpdated="2026-09-15">
         <name>Antibiotics</name>
         <type>Drugs</type>
+        <icon>/vfe-factory/items/Antibiotics_icon.png</icon>
         <recipe id="recipe-vre_antibiotics-0" name="Medicine Granulator recipe">
             <building item="Medicine Granulator" throughput="1.5" icon="/vfe-factory/buildings/MedicineGranulator.png" />
             <input item="Psychoid Leaves" quantity="4" />
@@ -921,6 +1014,7 @@
     <item lastUpdated="2026-09-15">
         <name>Wake-Up</name>
         <type>Drugs</type>
+        <icon>/vfe-factory/items/WakeUp_icon.png</icon>
         <recipe id="recipe-wakeup-0" name="Medicine Granulator recipe">
             <building item="Medicine Granulator" throughput="1" icon="/vfe-factory/buildings/MedicineGranulator.png" />
             <input item="Neutroamine" quantity="8" />
@@ -931,11 +1025,13 @@
     <item lastUpdated="2026-09-15">
         <name>Wood Log</name>
         <type>Raw Resources</type>
+        <icon>/vfe-factory/items/WoodLog_icon.png</icon>
     </item>
 
     <item lastUpdated="2026-09-15">
         <name>Yayo</name>
         <type>Drugs</type>
+        <icon>/vfe-factory/items/Yayo_icon.png</icon>
         <recipe id="recipe-yayo-0" name="Medicine Granulator recipe">
             <building item="Medicine Granulator" throughput="2.6" icon="/vfe-factory/buildings/MedicineGranulator.png" />
             <input item="Psychoid Leaves" quantity="32" />
@@ -956,3 +1052,6 @@
     </item>
 
 </items>
+
+
+

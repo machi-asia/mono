@@ -8,7 +8,7 @@ import type {
   GraphCalculationResult,
 } from "../types/graph";
 
-const DEFAULT_NODE_WIDTH = 220;
+const DEFAULT_NODE_WIDTH = 260;
 const DEFAULT_NODE_HEIGHT = 110;
 const CONVEYOR_CAPACITY = 90; // Standard 90/min belt throughput base
 
