@@ -34,6 +34,12 @@ The documentation site. Houses component documentation for `/packages/components
 
 **Stack:** Next.js, React, TypeScript
 
+### calculator
+
+A multi-game production and crafting recipe calculator. Allows users to select from various factory/crafting games (Satisfactory, Factorio, Minecraft, Dyson Sphere Program), search items, and inspect item recipes, ingredients, outputs, processing times, and required buildings.
+
+**Stack:** Next.js, React, TypeScript, `@mono/components`
+
 ## Packages
 
 ### auth (`/packages/auth`)
@@ -151,6 +157,7 @@ See `docs/adr/` for all Architecture Decision Records. Key decisions:
 - [ADR-011: Rose Voice Mode (Speech-to-Text and Text-to-Speech)](./adr/011-rose-voice-mode.md)
 - [ADR-012: Index-Based Long-Term Memory for Rose](./adr/012-index-based-long-term-memory.md)
 - [ADR-013: Local Ollama Fallback for Rose in Development](./adr/013-local-ollama-dev-fallback.md)
+- [ADR-014: Multi-Game Production Calculator App](./adr/014-multi-game-calculator-app.md)
 
 ## Documentation Requirements
 

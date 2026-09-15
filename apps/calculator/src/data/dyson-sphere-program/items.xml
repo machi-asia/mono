@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game id="dyson-sphere-program" name="Dyson Sphere Program">
+  <tagline>Harness star clusters, manufacture dyson swarms, and master interplanetary logistics.</tagline>
+  <items>
+    <item id="magnetic-coil">
+      <name>Magnetic Coil</name>
+      <category>Intermediates</category>
+      <icon>??</icon>
+      <description>Inductive coil made of copper wires wound around magnets for motors and matrices.</description>
+      <recipe id="recipe-magnetic-coil" name="Magnetic Coil" buildingRequired="Assembling Machine" processingTimeSeconds="1">
+        <ingredients>
+          <ingredient itemId="magnet" itemName="Magnet" amount="2" />
+          <ingredient itemId="copper-ingot" itemName="Copper Ingot" amount="1" />
+        </ingredients>
+        <outputs>
+          <output itemId="magnetic-coil" itemName="Magnetic Coil" amount="2" />
+        </outputs>
+      </recipe>
+    </item>
+    <item id="circuit-board">
+      <name>Circuit Board</name>
+      <category>Intermediates</category>
+      <icon>??</icon>
+      <description>Standard silicon-printed motherboard for assembling computational matrices.</description>
+      <recipe id="recipe-circuit-board" name="Circuit Board" buildingRequired="Assembling Machine" processingTimeSeconds="1">
+        <ingredients>
+          <ingredient itemId="iron-ingot" itemName="Iron Ingot" amount="2" />
+          <ingredient itemId="copper-ingot" itemName="Copper Ingot" amount="1" />
+        </ingredients>
+        <outputs>
+          <output itemId="circuit-board" itemName="Circuit Board" amount="2" />
+        </outputs>
+      </recipe>
+    </item>
+    <item id="electromagnetic-matrix">
+      <name>Electromagnetic Matrix</name>
+      <category>Science</category>
+      <icon>??</icon>
+      <description>Blue science cube researched inside Matrix Labs to propel civilizational upgrades.</description>
+      <recipe id="recipe-electromagnetic-matrix" name="Electromagnetic Matrix" buildingRequired="Matrix Lab" processingTimeSeconds="3">
+        <ingredients>
+          <ingredient itemId="magnetic-coil" itemName="Magnetic Coil" amount="1" />
+          <ingredient itemId="circuit-board" itemName="Circuit Board" amount="1" />
+        </ingredients>
+        <outputs>
+          <output itemId="electromagnetic-matrix" itemName="Electromagnetic Matrix" amount="1" />
+        </outputs>
+      </recipe>
+    </item>
+  </items>
+</game>

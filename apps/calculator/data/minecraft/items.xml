@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game id="minecraft" name="Minecraft">
+  <tagline>Gather raw voxel materials, craft tools, and engineer redstone contraptions.</tagline>
+  <items>
+    <item id="iron-pickaxe">
+      <name>Iron Pickaxe</name>
+      <category>Tools</category>
+      <icon>??</icon>
+      <description>Sturdy mining tool capable of extracting redstone, gold, and diamond ore blocks.</description>
+      <recipe id="recipe-iron-pickaxe" name="Iron Pickaxe" buildingRequired="Crafting Table" processingTimeSeconds="1">
+        <ingredients>
+          <ingredient itemId="iron-ingot" itemName="Iron Ingot" amount="3" />
+          <ingredient itemId="stick" itemName="Stick" amount="2" />
+        </ingredients>
+        <outputs>
+          <output itemId="iron-pickaxe" itemName="Iron Pickaxe" amount="1" />
+        </outputs>
+      </recipe>
+    </item>
+    <item id="furnace">
+      <name>Furnace</name>
+      <category>Utility</category>
+      <icon>??</icon>
+      <description>Heats and smelts ores, food, and raw materials using fuel such as coal.</description>
+      <recipe id="recipe-furnace" name="Furnace" buildingRequired="Crafting Table" processingTimeSeconds="1">
+        <ingredients>
+          <ingredient itemId="cobblestone" itemName="Cobblestone" amount="8" />
+        </ingredients>
+        <outputs>
+          <output itemId="furnace" itemName="Furnace" amount="1" />
+        </outputs>
+      </recipe>
+    </item>
+    <item id="piston">
+      <name>Piston</name>
+      <category>Redstone</category>
+      <icon>??</icon>
+      <description>Pushes blocks up to 12 spaces when powered by a redstone pulse.</description>
+      <recipe id="recipe-piston" name="Piston" buildingRequired="Crafting Table" processingTimeSeconds="1">
+        <ingredients>
+          <ingredient itemId="oak-planks" itemName="Wood Planks" amount="3" />
+          <ingredient itemId="cobblestone" itemName="Cobblestone" amount="4" />
+          <ingredient itemId="iron-ingot" itemName="Iron Ingot" amount="1" />
+          <ingredient itemId="redstone-dust" itemName="Redstone Dust" amount="1" />
+        </ingredients>
+        <outputs>
+          <output itemId="piston" itemName="Piston" amount="1" />
+        </outputs>
+      </recipe>
+    </item>
+    <item id="observer">
+      <name>Observer</name>
+      <category>Redstone</category>
+      <icon>???</icon>
+      <description>Emits a momentary 1-tick redstone pulse whenever an adjacent block update is detected.</description>
+      <recipe id="recipe-observer" name="Observer" buildingRequired="Crafting Table" processingTimeSeconds="1">
+        <ingredients>
+          <ingredient itemId="cobblestone" itemName="Cobblestone" amount="6" />
+          <ingredient itemId="redstone-dust" itemName="Redstone Dust" amount="2" />
+          <ingredient itemId="nether-quartz" itemName="Nether Quartz" amount="1" />
+        </ingredients>
+        <outputs>
+          <output itemId="observer" itemName="Observer" amount="1" />
+        </outputs>
+      </recipe>
+    </item>
+  </items>
+</game>

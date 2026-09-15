@@ -8,6 +8,7 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 |-----|-------------|
 | `machi-asia` | Home site — showcase and subscription billing hub for all Machi Asia products |
 | `rose` | Custom AI agent application |
+| `calculator` | Multi-game production calculator with interactive recipe tree graph and factory rate planner |
 | `docs` | Documentation site — component library docs and user manuals |
 
 ## Packages
@@ -76,6 +77,7 @@ npm install
 # Run a specific app in dev mode
 npm run dev -w @mono/machi-asia
 npm run dev -w @mono/rose
+npm run dev -w @mono/calculator-app
 npm run dev -w @mono/docs
 
 # Build all apps and packages
@@ -99,6 +101,7 @@ SUPABASE_PUBLISHABLE_KEY=your-supabase-publishable-key
 ```
 mono/
 ├── apps/
+│   ├── calculator/     # Multi-game production calculator (Next.js)
 │   ├── docs/           # Documentation site (Next.js)
 │   ├── machi-asia/     # Showcase + billing hub (Next.js)
 │   └── rose/           # Custom AI agent (Next.js)

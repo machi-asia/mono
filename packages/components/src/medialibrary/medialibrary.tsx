@@ -19,7 +19,6 @@ import {
   Loader2,
   FolderOpen,
 } from "lucide-react";
-import { useAuth } from "@mono/auth";
 import {
   createClient,
   listUserMedia,
@@ -52,15 +51,7 @@ export function MediaLibrary({
   pageSize = 12,
   initialFilter = "all",
 }: MediaLibraryProps) {
-  let authContext: ReturnType<typeof useAuth> | null = null;
-  try {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    authContext = useAuth();
-  } catch {
-    authContext = null;
-  }
-
-  const effectiveUserId = propUserId || authContext?.user?.id;
+  const effectiveUserId = propUserId;
   const isConnectedMode = connected || (!controlledItems && Boolean(effectiveUserId));
 
   const [localItems, setLocalItems] = useState<MediaItem[]>(controlledItems || []);

@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { AuthGate } from "./auth-gate";
+import { ToastProvider } from "@mono/components";
 
 const mockUseAuth = vi.fn();
 
@@ -41,9 +42,11 @@ describe("AuthGate", () => {
       isGuest: false,
     });
     render(
-      <AuthGate>
-        <MockChild />
-      </AuthGate>
+      <ToastProvider>
+        <AuthGate>
+          <MockChild />
+        </AuthGate>
+      </ToastProvider>
     );
     expect(screen.getByRole("dialog", { name: "Sign in" })).toBeInTheDocument();
     expect(screen.queryByText("protected content")).not.toBeInTheDocument();

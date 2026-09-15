@@ -26,6 +26,7 @@ export function ThemeProvider({
       defaultTheme={defaultTheme}
       enableSystem={enableSystem}
       disableTransitionOnChange={disableTransitionOnChange}
+      scriptProps={{ suppressHydrationWarning: true }}
     >
       {children}
     </NextThemesProvider>

@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <!--Repairs-->
+    <item>
+        <name>Boardwalk Plank</name>
+        <type>Repairs</type>
+        <recipe>
+            <building item="Assembler (level 2)" throughput="10" />
+            <input item="Wood" quantity="2" />
+            <input item="Iron Plate" quantity="1" />
+            <output item="Boardwalk Plank" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Radio Antenna</name>
+        <type>Repairs</type>
+        <recipe>
+            <building item="By Hand" throughput="0" />
+            <input item="Steel Beam" quantity="30" />
+            <input item="Copper Wire" quantity="60" />
+            <output item="Concrete Patch" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Roof Tile</name>
+        <type>Repairs</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="90" />
+            <input item="Stone" quantity="3" />
+            <input item="Steel Beam" quantity="1" />
+            <output item="Roof Tile" quantity="1" />
+        </recipe>
+    </item>
+    <!--Gems-->
+    <item>
+        <name>Amethyst</name>
+        <type>Gems</type>
+    </item>
+    <item>
+        <name>Diamond</name>
+        <type>Gems</type>
+    </item>
+    <item>
+        <name>Emerald</name>
+        <type>Gems</type>
+    </item>
+    <item>
+        <name>Quartz</name>
+        <type>Gems</type>
+    </item>
+    <item>
+        <name>Ruby</name>
+        <type>Gems</type>
+    </item>
+    <!--Recyclables-->
+    <item>
+        <name>Computer Monitor</name>
+        <type>Recyclables</type>
+    </item>
+    <item>
+        <name>Computer Tower</name>
+        <type>Recyclables</type>
+    </item>
+    <!--Ore-->
+    <item>
+        <name>Coal</name>
+        <type>Ore</type>
+        <recipe>
+            <building item="Drill (Level 1)" throughput="30" />
+            <output item="Coal" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Copper Ore</name>
+        <type>Ore</type>
+        <recipe>
+            <building item="Drill (Level 1)" throughput="30" />
+            <output item="Copper Ore" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Iron Ore</name>
+        <type>Ore</type>
+        <recipe>
+            <building item="Drill (Level 1)" throughput="30" />
+            <output item="Iron Ore" quantity="1" />
+        </recipe>
+    </item>
+    <!--Materials-->
+    <item>
+        <name>Copper Bar</name>
+        <type>Materials</type>
+        <recipe>
+            <building item="Furnace (Level 1)" throughput="45" />
+            <input item="Copper Ore" quantity="1" />
+            <output item="Copper Bar" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Iron Bar</name>
+        <type>Materials</type>
+        <recipe>
+            <building item="Furnace (Level 1)" throughput="45" />
+            <input item="Iron Ore" quantity="1" />
+            <output item="Iron Bar" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Plastic Bar</name>
+        <type>Materials</type>
+        <recipe>
+            <building item="Chemical Plant" throughput="30" />
+            <input item="Plastic Scraps" quantity="2" />
+            <input item="Coal" quantity="1" />
+            <output item="Plastic Bar" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Stone</name>
+        <type>Materials</type>
+        <recipe>
+            <building item="Drill (Level 1)" throughput="30" />
+            <output item="Stone" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Wood</name>
+        <type>Materials</type>
+        <recipe>
+            <building item="Drill (Level 1)" throughput="30" />
+            <output item="Wood" quantity="1" />
+        </recipe>
+    </item>
+    <!--Components-->
+    <item>
+        <name>Battery</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 3)" throughput="90" />
+            <input item="Iron Plate" quantity="1" />
+            <input item="Copper Wire" quantity="1" />
+            <input item="Plastic Bar" quantity="1" />
+            <output item="Battery" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Bearing</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="30" />
+            <input item="Iron Plate" quantity="2" />
+            <output item="Bearing" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Ceramic Plate</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="90" />
+            <input item="Stone" quantity="3" />
+            <input item="Quartz" quantity="1" />
+            <output item="Ceramic Plate" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Circuit Board</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="15" />
+            <input item="Logic Chip" quantity="1" />
+            <input item="Copper Wire" quantity="2" />
+            <output item="Circuit Board" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Copper Wire</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 1)" throughput="30" />
+            <input item="Copper Bar" quantity="2" />
+            <output item="Copper Wire" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Fiberglass</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="15" />
+            <input item="Quartz" quantity="2" />
+            <input item="Plastic Bar" quantity="1" />
+            <output item="Fiberglass" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Flow Meter</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="10" />
+            <input item="Circuit Board" quantity="1" />
+            <input item="Gear" quantity="3" />
+            <output item="Flow Meter" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Gear</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 1)" throughput="45" />
+            <input item="Iron Plate" quantity="1" />
+            <output item="Gear" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Glass Lens</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="2" />
+            <input item="Quartz" quantity="1" />
+            <input item="Copper Bar" quantity="1" />
+            <output item="Glass Lens" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Heatsink</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 1)" throughput="45" />
+            <input item="Copper Bar" quantity="1" />
+            <output item="Heatsink" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Heavy Duty Motor</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="15" />
+            <input item="Small Motor" quantity="1" />
+            <input item="Heatsink" quantity="2" />
+            <output item="Heavy Duty Motor" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Iron Plate</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 1)" throughput="90" />
+            <input item="Iron Bar" quantity="1" />
+            <output item="Iron Plate" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Lightweight Frame</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Chemical Plant" throughput="15" />
+            <input item="Steel Beam" quantity="1" />
+            <input item="Plastic Bar" quantity="2" />
+            <output item="Lightweight Frame" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Logic Chip</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Recycler" throughput="10" />
+            <input item="Computer Tower" quantity="1" />
+            <input item="Computer Monitor" quantity="1" />
+            <output item="Logic Chip" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Oxygen Tank</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Chemical Plant" throughput="15" />
+            <input item="Iron Plate" quantity="2" />
+            <input item="Copper Bar" quantity="1" />
+            <output item="Oxygen Tank" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Rocket Fuel</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Chemical Plant" throughput="6" />
+            <input item="Coal" quantity="15" />
+            <input item="Iron Plate" quantity="3" />
+            <output item="Rocket Fuel" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Servo</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="15" />
+            <input item="Circuit Board" quantity="1" />
+            <input item="Small Motor" quantity="1" />
+            <output item="Servo" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Small Motor</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="30" />
+            <input item="Bearing" quantity="2" />
+            <input item="Stator" quantity="1" />
+            <output item="Small Motor" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Stator</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="30" />
+            <input item="Gear" quantity="1" />
+            <input item="Copper Wire" quantity="1" />
+            <output item="Stator" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Steel Beam</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="30" />
+            <input item="Iron Plate" quantity="3" />
+            <input item="Coal" quantity="1" />
+            <output item="Steel Beam" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Steel Cable</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 1)" throughput="30" />
+            <input item="Iron Bar" quantity="3" />
+            <output item="Steel Cable" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Supercomputer</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 3)" throughput="90" />
+            <input item="Circuit Board" quantity="3" />
+            <input item="Lightweight Frame" quantity="1" />
+            <input item="Battery" quantity="1" />
+            <output item="Supercomputer" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Winch</name>
+        <type>Components</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="60" />
+            <input item="Heavy Duty Motor" quantity="1" />
+            <input item="Steel Cable" quantity="2" />
+            <output item="Winch" quantity="1" />
+        </recipe>
+    </item>
+    <!--Buildings-->
+    <item>
+        <name>Assembler (Level 1)</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 1)" throughput="10" />
+            <input item="Iron Plate" quantity="9" />
+            <output item="Assembler (Level 1)" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Assembler (Level 2)</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="3" />
+            <input item="Iron Plate" quantity="30" />
+            <input item="Heatsink" quantity="10" />
+            <output item="Assembler (Level 2)" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Bumper</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="10" />
+            <input item="Winch" quantity="1" />
+            <input item="Iron Plate" quantity="2" />
+            <output item="Bumper" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Cable Crane</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="3" />
+            <input item="Steel Beam" quantity="15" />
+            <input item="Winch" quantity="2" />
+            <output item="Cable Crane" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Chemical Plant</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="2" />
+            <input item="Flow Meter" quantity="1" />
+            <input item="Servo" quantity="3" />
+            <output item="Chemical Plant" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Conveyor Belt</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 1)" throughput="45" />
+            <input item="Iron Plate" quantity="2" />
+            <output item="Conveyor Belt" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Drill (Level 1)</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="10" />
+            <input item="Iron Plate" quantity="9" />
+            <input item="Gear" quantity="6" />
+            <output item="Drill (Level 1)" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Drill (Level 2)</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="90" />
+            <input item="Fiberglass" quantity="3" />
+            <input item="Heavy Duty Motor" quantity="1" />
+            <output item="Drill (Level 2)" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Filtering Splitter</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="2" />
+            <input item="Servo" quantity="3" />
+            <input item="Gear" quantity="15" />
+            <output item="Filtering Splitter" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Furnace (Level 1)</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 1)" throughput="10" />
+            <input item="Stone" quantity="9" />
+            <output item="Furnace (Level 1)" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Furnace (Level 2)</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="3" />
+            <input item="Stone" quantity="30" />
+            <input item="Small Motor" quantity="3" />
+            <output item="Furnace (Level 2)" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Item Dispenser</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="10" />
+            <input item="Iron Plate" quantity="6" />
+            <input item="Gear" quantity="6" />
+            <output item="Item Dispenser" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Item Receiver</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="15" />
+            <input item="Iron Plate" quantity="6" />
+            <input item="Gear" quantity="3" />
+            <output item="Item Receiver" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Loader</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="2" />
+            <input item="Steel Beam" quantity="9" />
+            <input item="Heavy Duty Motor" quantity="2" />
+            <output item="Loader" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Pipe</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="10" />
+            <input item="Iron Plate" quantity="3" />
+            <input item="Copper Bar" quantity="1" />
+            <output item="Pipe" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Power Pole (Level 1)</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="30" />
+            <input item="Iron Plate" quantity="3" />
+            <input item="Copper Wire" quantity="2" />
+            <output item="Power Pole (Level 1)" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Power Pole (Level 2)</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="6" />
+            <input item="Iron Plate" quantity="9" />
+            <input item="Heatsink" quantity="15" />
+            <output item="Power Pole (Level 2)" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Power Pole (with Light)</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="15" />
+            <input item="Iron Plate" quantity="6" />
+            <input item="Copper Wire" quantity="9" />
+            <output item="Power Pole (with Light)" quantity="1" />
+        </recipe>   
+    </item>
+    <item>
+        <name>Recycler</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="2" />
+            <input item="Heavy Duty Motor" quantity="2" />
+            <input item="Steel Beam" quantity="6" />
+            <output item="Recycler" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Wind Turbine (Level 1)</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="6" />
+            <input item="Gear" quantity="15" />
+            <input item="Copper Wire" quantity="10" />
+            <output item="Wind Turbine (Level 1)" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Wind Turbine (Level 2)</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="90" />
+            <input item="Lightweight Frame" quantity="6" />
+            <input item="Heavy Duty Motor" quantity="2" />
+            <output item="Wind Turbine (Level 2)" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Sorter</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="1" />
+            <input item="Steel Beam" quantity="15" />
+            <input item="Logic Chip" quantity="9" />
+            <output item="Sorter" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Splitter</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="15" />
+            <input item="Gear" quantity="6" />
+            <input item="Copper Wire" quantity="3" />
+            <output item="Splitter" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Synthesizer</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="90" />
+            <input item="Lightweight Frame" quantity="2" />
+            <input item="Fiberglass" quantity="3" />
+            <output item="Synthesizer" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Underground Pipe</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="3" />
+            <input item="Iron Plate" quantity="6" />
+            <input item="Stone" quantity="6" />
+            <output item="Underground Pipe" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Underpass</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="10" />
+            <input item="Iron Plate" quantity="9" />
+            <input item="Stone" quantity="9" />
+            <output item="Underpass" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Unloader</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="2" />
+            <input item="Steel Beam" quantity="9" />
+            <input item="Heavy Duty Motor" quantity="2" />
+            <output item="Unloader" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Utility Light</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="6" />
+            <input item="Iron Plate" quantity="2" />
+            <input item="Copper Wire" quantity="6" />
+            <output item="Utility Light" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Water Pump</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 2)" throughput="3" />
+            <input item="Flow Meter" quantity="1" />
+            <input item="Heavy Duty Motor" quantity="1" />
+            <output item="Water Pump" quantity="1" />
+        </recipe>
+    </item>
+    <item>
+        <name>Wooden Chest</name>
+        <type>Buildings</type>
+        <recipe>
+            <building item="Assembler (Level 1)" throughput="15" />
+            <input item="Wood" quantity="4" />
+            <output item="Wooden Chest" quantity="1" />
+        </recipe>
+    </item>
+</items>

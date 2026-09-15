@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game id="satisfactory" name="Satisfactory">
+  <tagline>Construct sprawling multi-story automated factories across an alien world.</tagline>
+  <items>
+    <item id="iron-ingot">
+      <name>Iron Ingot</name>
+      <category>Ingots</category>
+      <icon>??</icon>
+      <description>Smelted from raw iron ore. The foundational building block of basic components.</description>
+      <recipe id="recipe-iron-ingot" name="Iron Ingot" buildingRequired="Smelter" processingTimeSeconds="2">
+        <ingredients>
+          <ingredient itemId="iron-ore" itemName="Iron Ore" amount="1" />
+        </ingredients>
+        <outputs>
+          <output itemId="iron-ingot" itemName="Iron Ingot" amount="1" />
+        </outputs>
+      </recipe>
+    </item>
+    <item id="iron-plate">
+      <name>Iron Plate</name>
+      <category>Standard Parts</category>
+      <icon>???</icon>
+      <description>Flat metal sheet pressed from iron ingots. Used for belts, foundations, and modular frames.</description>
+      <recipe id="recipe-iron-plate" name="Iron Plate" buildingRequired="Constructor" processingTimeSeconds="6">
+        <ingredients>
+          <ingredient itemId="iron-ingot" itemName="Iron Ingot" amount="3" />
+        </ingredients>
+        <outputs>
+          <output itemId="iron-plate" itemName="Iron Plate" amount="2" />
+        </outputs>
+      </recipe>
+    </item>
+    <item id="reinforced-iron-plate">
+      <name>Reinforced Iron Plate</name>
+      <category>Standard Parts</category>
+      <icon>??</icon>
+      <description>Heavy-duty plates joined together with high-tensile screws for structural durability.</description>
+      <recipe id="recipe-reinforced-iron-plate" name="Reinforced Iron Plate" buildingRequired="Assembler" processingTimeSeconds="12">
+        <ingredients>
+          <ingredient itemId="iron-plate" itemName="Iron Plate" amount="6" />
+          <ingredient itemId="screws" itemName="Screw" amount="60" />
+        </ingredients>
+        <outputs>
+          <output itemId="reinforced-iron-plate" itemName="Reinforced Iron Plate" amount="1" />
+        </outputs>
+      </recipe>
+    </item>
+    <item id="rotor">
+      <name>Rotor</name>
+      <category>Industrial Parts</category>
+      <icon>??</icon>
+      <description>A precision balanced mechanical component used in motors, pumps, and smart splitters.</description>
+      <recipe id="recipe-rotor" name="Rotor" buildingRequired="Assembler" processingTimeSeconds="15">
+        <ingredients>
+          <ingredient itemId="iron-rod" itemName="Iron Rod" amount="5" />
+          <ingredient itemId="screws" itemName="Screw" amount="25" />
+        </ingredients>
+        <outputs>
+          <output itemId="rotor" itemName="Rotor" amount="1" />
+        </outputs>
+      </recipe>
+    </item>
+    <item id="modular-frame">
+      <name>Modular Frame</name>
+      <category>Industrial Parts</category>
+      <icon>??</icon>
+      <description>A rigid multipurpose structural cage for mid-tier machinery and elevators.</description>
+      <recipe id="recipe-modular-frame" name="Modular Frame" buildingRequired="Assembler" processingTimeSeconds="60">
+        <ingredients>
+          <ingredient itemId="reinforced-iron-plate" itemName="Reinforced Iron Plate" amount="3" />
+          <ingredient itemId="iron-rod" itemName="Iron Rod" amount="12" />
+        </ingredients>
+        <outputs>
+          <output itemId="modular-frame" itemName="Modular Frame" amount="2" />
+        </outputs>
+      </recipe>
+    </item>
+  </items>
+</game>

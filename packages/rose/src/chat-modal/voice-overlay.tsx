@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState, useRef } from "react";
 import { Button } from "@mono/components";
 import { X, Mic, MicOff, Volume2, VolumeX } from "lucide-react";

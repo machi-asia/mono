@@ -4,6 +4,18 @@ All notable changes to this monorepo will be documented in this file.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.19.0] - 2026-09-14
+
+### Added
+
+- Multi-game production calculator app in `apps/calculator` (`@mono/calculator-app`):
+  - Interactive game selection dropdown supporting Satisfactory, Factorio, Minecraft, and Dyson Sphere Program.
+  - Search filter across items, categories, and descriptions.
+  - Item catalog cards built with `@mono/components` layout primitives (`Card`, `Row`, `Col`, `Button`).
+  - Item inspection popups (`Popup` from `@mono/components`) displaying recipe details, required crafting buildings, processing cycle duration, input ingredients, output yields, and help tooltips (`<Tooltip variant="help">`).
+  - Unit tests covering header rendering, item filtering, and popup interaction.
+  - Architecture documentation in `docs/ARCHITECTURE.md` and `docs/adr/014-multi-game-calculator-app.md`.
+
 ## [0.18.1] - 2026-09-12
 
 ### Added

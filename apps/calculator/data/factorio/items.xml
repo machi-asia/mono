@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game id="factorio" name="Factorio">
+  <tagline>Build, automate, and optimize relentless planetary logistics networks.</tagline>
+  <items>
+    <item id="iron-gear-wheel">
+      <name>Iron Gear Wheel</name>
+      <category>Intermediates</category>
+      <icon>??</icon>
+      <description>A toothed wheel crafted from iron plates, driving motors and inserters.</description>
+      <recipe id="recipe-iron-gear-wheel" name="Iron Gear Wheel" buildingRequired="Assembling Machine 1" processingTimeSeconds="0.5">
+        <ingredients>
+          <ingredient itemId="iron-plate" itemName="Iron Plate" amount="2" />
+        </ingredients>
+        <outputs>
+          <output itemId="iron-gear-wheel" itemName="Iron Gear Wheel" amount="1" />
+        </outputs>
+      </recipe>
+    </item>
+    <item id="electronic-circuit">
+      <name>Electronic Circuit</name>
+      <category>Intermediates</category>
+      <icon>??</icon>
+      <description>Basic green logic board soldered with copper cables for automated computing.</description>
+      <recipe id="recipe-electronic-circuit" name="Electronic Circuit" buildingRequired="Assembling Machine 1" processingTimeSeconds="0.5">
+        <ingredients>
+          <ingredient itemId="iron-plate" itemName="Iron Plate" amount="1" />
+          <ingredient itemId="copper-cable" itemName="Copper Cable" amount="3" />
+        </ingredients>
+        <outputs>
+          <output itemId="electronic-circuit" itemName="Electronic Circuit" amount="1" />
+        </outputs>
+      </recipe>
+    </item>
+    <item id="automation-science-pack">
+      <name>Automation Science Pack</name>
+      <category>Science</category>
+      <icon>??</icon>
+      <description>Red beaker consumed by research labs to unlock early automation technologies.</description>
+      <recipe id="recipe-automation-science-pack" name="Automation Science Pack" buildingRequired="Assembling Machine 1" processingTimeSeconds="5">
+        <ingredients>
+          <ingredient itemId="copper-plate" itemName="Copper Plate" amount="1" />
+          <ingredient itemId="iron-gear-wheel" itemName="Iron Gear Wheel" amount="1" />
+        </ingredients>
+        <outputs>
+          <output itemId="automation-science-pack" itemName="Automation Science Pack" amount="1" />
+        </outputs>
+      </recipe>
+    </item>
+    <item id="transport-belt">
+      <name>Transport Belt</name>
+      <category>Logistics</category>
+      <icon>??</icon>
+      <description>Moves items at 15 items/second along factory assembly lines.</description>
+      <recipe id="recipe-transport-belt" name="Transport Belt" buildingRequired="Assembling Machine 1" processingTimeSeconds="0.5">
+        <ingredients>
+          <ingredient itemId="iron-plate" itemName="Iron Plate" amount="1" />
+          <ingredient itemId="iron-gear-wheel" itemName="Iron Gear Wheel" amount="1" />
+        </ingredients>
+        <outputs>
+          <output itemId="transport-belt" itemName="Transport Belt" amount="2" />
+        </outputs>
+      </recipe>
+    </item>
+  </items>
+</game>
