@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { ComponentShowcase } from "@mono/components";
 
 export const metadata: Metadata = {
-  title: "@mono/database Exports | Machi Asia Docs",
-  description: "Exports from @mono/database, listed via the shared showcase layout",
+  title: "@mono/database Exports",
+  description: "Exports from @mono/database — the centralized Supabase-backed data and store layer for Machi Asia apps.",
 };
 
 export default function DatabaseShowcasePage() {

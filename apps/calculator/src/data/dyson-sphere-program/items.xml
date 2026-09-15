@@ -2,7 +2,7 @@
 <game id="dyson-sphere-program" name="Dyson Sphere Program">
   <tagline>Harness star clusters, manufacture dyson swarms, and master interplanetary logistics.</tagline>
   <items>
-    <item id="magnetic-coil">
+    <item lastUpdated="2026-09-15" id="magnetic-coil">
       <name>Magnetic Coil</name>
       <category>Intermediates</category>
       <icon>??</icon>
@@ -17,7 +17,7 @@
         </outputs>
       </recipe>
     </item>
-    <item id="circuit-board">
+    <item lastUpdated="2026-09-15" id="circuit-board">
       <name>Circuit Board</name>
       <category>Intermediates</category>
       <icon>??</icon>
@@ -32,7 +32,7 @@
         </outputs>
       </recipe>
     </item>
-    <item id="electromagnetic-matrix">
+    <item lastUpdated="2026-09-15" id="electromagnetic-matrix">
       <name>Electromagnetic Matrix</name>
       <category>Science</category>
       <icon>??</icon>

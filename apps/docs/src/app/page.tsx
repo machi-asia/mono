@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { Link } from "@mono/components";
+
+export const metadata: Metadata = {
+  title: "Component Library & Product Documentation",
+  description:
+    "Browse live showcase demos of Machi Asia packages — auth components, shared UI library, database layer, and the Rose AI agent. Developer documentation and user manuals in one place.",
+};
 
 export default function Home() {
   return (

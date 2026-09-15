@@ -2,7 +2,7 @@
 <game id="satisfactory" name="Satisfactory">
   <tagline>Construct sprawling multi-story automated factories across an alien world.</tagline>
   <items>
-    <item id="iron-ingot">
+    <item lastUpdated="2026-09-15" id="iron-ingot">
       <name>Iron Ingot</name>
       <category>Ingots</category>
       <icon>??</icon>
@@ -16,7 +16,7 @@
         </outputs>
       </recipe>
     </item>
-    <item id="iron-plate">
+    <item lastUpdated="2026-09-15" id="iron-plate">
       <name>Iron Plate</name>
       <category>Standard Parts</category>
       <icon>???</icon>
@@ -30,7 +30,7 @@
         </outputs>
       </recipe>
     </item>
-    <item id="reinforced-iron-plate">
+    <item lastUpdated="2026-09-15" id="reinforced-iron-plate">
       <name>Reinforced Iron Plate</name>
       <category>Standard Parts</category>
       <icon>??</icon>
@@ -45,7 +45,7 @@
         </outputs>
       </recipe>
     </item>
-    <item id="rotor">
+    <item lastUpdated="2026-09-15" id="rotor">
       <name>Rotor</name>
       <category>Industrial Parts</category>
       <icon>??</icon>
@@ -60,7 +60,7 @@
         </outputs>
       </recipe>
     </item>
-    <item id="modular-frame">
+    <item lastUpdated="2026-09-15" id="modular-frame">
       <name>Modular Frame</name>
       <category>Industrial Parts</category>
       <icon>??</icon>

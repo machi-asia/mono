@@ -41,10 +41,12 @@ export function parseGameDatasetXml(xml: string): GameDataset {
     const tagline = getTag(xml, "tagline");
 
     const items: GameItem[] = [];
-    const itemMatches = xml.matchAll(/<item\s+id="([^"]*)">([\s\S]*?)<\/item>/g);
+    const itemMatches = xml.matchAll(/<item\s+([^>]*)>([\s\S]*?)<\/item>/g);
     for (const match of itemMatches) {
-      const itemId = unescapeXml(match[1]);
+      const itemAttrs = match[1];
       const itemInner = match[2];
+      const itemId = getAttr(itemAttrs, "id");
+      const lastUpdated = getAttr(itemAttrs, "lastUpdated") || undefined;
       const itemName = getTag(itemInner, "name");
       const category = getTag(itemInner, "category");
       const icon = getTag(itemInner, "icon");
@@ -96,39 +98,60 @@ export function parseGameDatasetXml(xml: string): GameDataset {
         category,
         icon,
         description,
-        ...(recipe ? { recipe } : {}),
+        ...(lastUpdated ? { lastUpdated } : {}),
+        ...(recipe ? { recipes: [recipe], recipe } : {}),
       });
     }
 
     return { id, name, tagline, items };
   }
 
-  // Fallback / LRL <items> schema
+  // Fallback / LRL <items> schema — supports per-game id/name/tagline on root
+  const itemsOpen = xml.match(/<items\s+([^>]*)>/)?.[1] || "";
+  const gameId = getAttr(itemsOpen, "id") || "lrl";
+  const gameName = getAttr(itemsOpen, "name") || "Little Rocket Lab";
+  const gameTagline = getAttr(itemsOpen, "tagline") || "Engineer automated assembly lines and build rockets in Little Rocket Lab.";
+  const isLrl = gameId === "lrl";
+
   const items: GameItem[] = [];
-  const itemMatches = xml.matchAll(/<item>([\s\S]*?)<\/item>/g);
+  const itemMatches = xml.matchAll(/<item(\s+[^>]*)?>([\s\S]*?)<\/item>/g);
   for (const match of itemMatches) {
-    const itemInner = match[1];
+    const itemAttrs = match[1];
+    const itemInner = match[2];
     const itemName = getTag(itemInner, "name");
     const category = getTag(itemInner, "type") || "General";
     const itemId = slugify(itemName);
-    const photoFilename = `${itemName.replaceAll(" ", "_")}.png`;
-    const icon = `/lrl/items/${photoFilename}`;
-    const description = `${itemName} (${category}) in Little Rocket Lab.`;
+    const lastUpdated = getAttr(itemAttrs, "lastUpdated") || undefined;
 
-    let recipe: Recipe | undefined = undefined;
-    const recipeMatch = itemInner.match(/<recipe>([\s\S]*?)<\/recipe>/);
-    if (recipeMatch) {
-      const recipeInner = recipeMatch[1];
-      const buildingMatch = recipeInner.match(/<building\s+([^/>]+)\/>/);
+    const iconTag = getTag(itemInner, "icon");
+    const photoFilename = `${itemName.replaceAll(" ", "_")}.png`;
+    const icon = iconTag || (isLrl ? `/lrl/items/${photoFilename}` : "");
+    const description = isLrl
+      ? `${itemName} (${category}) in Little Rocket Lab.`
+      : `${itemName} (${category}) in ${gameName}.`;
+
+    const recipes: Recipe[] = [];
+    const recipeMatches = itemInner.matchAll(/<recipe\s*([^>]*)>([\s\S]*?)<\/recipe>/g);
+    let ri = 0;
+    for (const recipeMatch of recipeMatches) {
+      const recipeAttrs = recipeMatch[1];
+      const recipeInner = recipeMatch[2];
+      const recipeId = getAttr(recipeAttrs, "id") || `recipe-${itemId}-${ri}`;
+      const recipeName = getAttr(recipeAttrs, "name") || `${itemName} Recipe`;
+
+      const buildingMatch = recipeInner.match(/<building\s+([^\>]+)\/>/);
       let buildingRequired = "Assembler";
       let throughput = 0;
+      let buildingIcon: string | undefined;
       if (buildingMatch) {
         buildingRequired = getAttr(buildingMatch[1], "item") || "Assembler";
         throughput = parseFloat(getAttr(buildingMatch[1], "throughput")) || 0;
+        const bi = getAttr(buildingMatch[1], "icon");
+        if (bi) buildingIcon = bi;
       }
 
       const ingredients: Ingredient[] = [];
-      const inputMatches = recipeInner.matchAll(/<input\s+([^/>]+)\/>/g);
+      const inputMatches = recipeInner.matchAll(/<input\s+([^\>]+)\/>/g);
       for (const inp of inputMatches) {
         const inpName = getAttr(inp[1], "item");
         ingredients.push({
@@ -139,7 +162,7 @@ export function parseGameDatasetXml(xml: string): GameDataset {
       }
 
       const outputs: OutputItem[] = [];
-      const outputMatches = recipeInner.matchAll(/<output\s+([^/>]+)\/>/g);
+      const outputMatches = recipeInner.matchAll(/<output\s+([^\>]+)\/>/g);
       for (const outp of outputMatches) {
         const outpName = getAttr(outp[1], "item");
         outputs.push({
@@ -151,14 +174,16 @@ export function parseGameDatasetXml(xml: string): GameDataset {
 
       const processingTimeSeconds = throughput > 0 ? Number((60 / throughput).toFixed(2)) : 1;
 
-      recipe = {
-        id: `recipe-${itemId}`,
-        name: `${itemName} Recipe`,
+      recipes.push({
+        id: recipeId,
+        name: recipeName,
         buildingRequired,
         processingTimeSeconds,
         ingredients,
         outputs,
-      };
+        ...(buildingIcon ? { buildingIcon } : {}),
+      });
+      ri += 1;
     }
 
     items.push({
@@ -167,14 +192,15 @@ export function parseGameDatasetXml(xml: string): GameDataset {
       category,
       icon,
       description,
-      ...(recipe ? { recipe } : {}),
+      ...(lastUpdated ? { lastUpdated } : {}),
+      ...(recipes.length > 0 ? { recipes, recipe: recipes[0] } : {}),
     });
   }
 
   return {
-    id: "lrl",
-    name: "Little Rocket Lab",
-    tagline: "Engineer automated assembly lines and build rockets in Little Rocket Lab.",
+    id: gameId,
+    name: gameName,
+    tagline: gameTagline,
     items,
   };
 }

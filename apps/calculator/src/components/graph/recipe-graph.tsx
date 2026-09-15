@@ -8,7 +8,11 @@ import ReactFlow, {
   MiniMap,
   ReactFlowProvider,
   useReactFlow,
+  BaseEdge,
+  EdgeLabelRenderer,
+  getSmoothStepPath,
   type NodeChange,
+  type EdgeProps,
 } from "reactflow";
 import "reactflow/dist/style.css";
 
@@ -22,11 +26,58 @@ const nodeTypes = {
   recipeProcess: RecipeProcessNode,
 };
 
+function RecipeFlowEdge({
+  id,
+  sourceX,
+  sourceY,
+  targetX,
+  targetY,
+  sourcePosition,
+  targetPosition,
+  label,
+  style,
+  markerEnd,
+}: EdgeProps) {
+  const [edgePath, labelX, labelY] = getSmoothStepPath({
+    sourceX,
+    sourceY,
+    targetX,
+    targetY,
+    sourcePosition,
+    targetPosition,
+  });
+
+  return (
+    <>
+      <BaseEdge id={id} path={edgePath} markerEnd={markerEnd} style={style} />
+      {label ? (
+        <EdgeLabelRenderer>
+          <div
+            className="recipe-edge-label"
+            style={{
+              position: "absolute",
+              transform: `translate(-50%, -50%) translate(${labelX}px, ${labelY}px)`,
+              pointerEvents: "all",
+            }}
+          >
+            {label}
+          </div>
+        </EdgeLabelRenderer>
+      ) : null}
+    </>
+  );
+}
+
+const edgeTypes = {
+  recipeEdge: RecipeFlowEdge,
+};
+
 export interface RecipeGraphViewProps {
   items: GameItem[];
   gameName: string;
   onBackToCatalog?: () => void;
   initialRequests?: ProductionRequest[];
+  recipeOverrides?: Record<string, string>;
 }
 
 function GraphCanvas({
@@ -58,8 +109,9 @@ function GraphCanvas({
       fitViewOptions={{ padding: 0.25 }}
       minZoom={0.2}
       maxZoom={2}
+edgeTypes={edgeTypes}
       defaultEdgeOptions={{
-        type: "smoothstep",
+        type: "recipeEdge",
         animated: true,
       }}
       style={{ width: "100%", height: "100%" }}
@@ -80,6 +132,7 @@ export function RecipeGraphView({
   gameName,
   onBackToCatalog,
   initialRequests = [],
+  recipeOverrides,
 }: RecipeGraphViewProps) {
   const [requests, setRequests] = useState<ProductionRequest[]>(() => {
     if (initialRequests.length > 0) return initialRequests;
@@ -97,8 +150,8 @@ export function RecipeGraphView({
   }, [items]);
 
   const calculationResult = useMemo(() => {
-    return calculateRecipeGraph(items, requests);
-  }, [items, requests]);
+    return calculateRecipeGraph(items, requests, recipeOverrides);
+  }, [items, requests, recipeOverrides]);
 
   const [nodePositionOverrides, setNodePositionOverrides] = useState<Record<string, { x: number; y: number }>>({});
 

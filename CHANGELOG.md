@@ -4,6 +4,19 @@ All notable changes to this monorepo will be documented in this file.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.20.0] - 2026-09-15
+
+### Added
+
+- Canonical SEO skill at `.agents/skills/seo/SKILL.md` with the mandatory SEO checklist, per-app function-derived keyword maps, JSON-LD guidance, and `.md` enforcement rules — loadable by any agent runtime.
+- Full SEO metadata layer on every public app (`calculator`, `docs`, `machi-asia`, `rose`):
+  - Root `layout.tsx` now exports `Metadata` with `metadataBase`, `title.default` + `title.template` (`%s | <Brand>`), keyword-rich `description`, `keywords`, `authors`/`creator`, `openGraph`, `twitter`, and `alternates.canonical`, plus a `viewport` export with `themeColor: #121212`.
+  - `robots.ts` and `sitemap.ts` added at `src/app/` in every public app; the docs sitemap lists all four showcase routes.
+  - Per-page metadata added/updated on the rose, machi-asia, docs home and all docs showcase pages (titles now use the layout `%s` template).
+  - `og.png` (1200x630) Open Graph images added to `public/` in every app.
+  - `NEXT_PUBLIC_SITE_URL` declared in every app's `.env.sample` and used as the single source of truth for `metadataBase`, canonical URLs, and sitemap URLs.
+- SEO conventions documented and enforced in `AGENTS.md` (duty #4 — SEO standards, #5 — skill registration) and `CONTRIBUTING.md` (SEO section).
+
 ## [0.19.0] - 2026-09-14
 
 ### Added

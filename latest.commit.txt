@@ -1,20 +1,21 @@
-feature(calculator): add multi-game calculator app and recipe tree calculation graph
-- apps/calculator: implement interactive recipe tree calculation graph with React Flow and Dagre layout, calculating required machines, rates per minute, conveyor belt saturation, and raw ingredient demands
-- apps/calculator: fix ReactFlow graph nodes not rendering -- replace Card (section element) as RecipeProcessNode root with a plain div; supply explicit width/height on node data to bypass ResizeObserver measurement pass that left all nodes visibility:hidden
-- apps/calculator: fix height chain for graph view -- add flex:1 and flex-direction:column to calc-main-graph so the calc(100vh-140px) recipe-graph-container has a real parent height
-- apps/calculator: add Google AdSense right-side ad rail -- fixed 180px sticky sidebar with 160x600 skyscraper unit; placeholder striped panel shown when unconfigured; hidden below 1280px
-- apps/calculator: gate AdSense to production only and fix rail ad sizing -- loader script, google-adsense-account meta, and adsbygoogle <ins> are rendered only when NODE_ENV=production (dev console no longer floods with doubleclick/recaptcha partitioned-cookie + OpaqueResponseBlocking warnings); rail unit now uses fixed 160x600 dimensions with data-full-width-responsive=false so AdSense auto-size stops writing empty width/height inline styles (the "Declaration dropped" CSS errors and 0x0 no-fill requests with negative coordinates); drop stale biome/eslint eslint-disable directives in adsense-script.tsx
-- apps/calculator: AdSenseScript server component placed as sibling of <body> inside <html> -- outside React client hydration tree entirely, so no 'script tag in component' warning and no data-nscript attribute; google-adsense-account meta tag emitted via Next.js metadata pipeline for account verification
-- apps/calculator: env vars NEXT_PUBLIC_ADSENSE_PUBLISHER_ID and NEXT_PUBLIC_ADSENSE_SLOT_RAIL with .env.sample and .env.local; Supabase keys copied from shared project
-- apps/calculator: LCP optimization -- first catalog item image uses loading=eager and priority=true
-- apps/calculator: fix AdSenseUnit ins element width/height using px string values instead of bare numbers to avoid CSS parse errors
-- apps/calculator: wrap React Flow in ReactFlowProvider with responsive grid container sizing and automatic fitView centering upon target updates
-- apps/calculator: add dual view switcher between Catalog View and Recipe Tree Graph View with direct Graph actions from item cards
-- apps/calculator: pure calculation engine in graph-builder.ts with cycle-detection safeguards for complex recipe loops
-- apps/calculator: integrate Little Rocket Lab as first game from kamachi-dev/lrl_calculator, organizing items in data/lrl/items.xml and item photos in /public/lrl/items/
-- apps/calculator: modularize game item datasets into folders by file (data/<game>/items.xml) with XML parsing utility; Vitest test suite (11 passing tests)
-- packages/components: fix next-themes React 19 script tag warning by adding scriptProps={{ suppressHydrationWarning: true }} to NextThemesProvider
-- packages/components: break cyclic build dependency between @mono/components and @mono/auth; configure Vitest pool: threads
-- packages/auth, packages/components, packages/database, packages/rose: align TypeScript to ^6.0.3 to eliminate TypeScript v7 Go native concurrent watch deadlock (-1073741523)
-- packages/rose: fix voice overlay stylelint issues; add 'use client' directive for Turbopack compatibility
-- docs: add ADR 014, update ARCHITECTURE.md, README.md, CHANGELOG.md for release 0.19.0
+﻿feature(seo): add discoverability metadata, robots, sitemaps, and JSON-LD to every public app
+- skills: add canonical `.agents/skills/seo/SKILL.md` — mandatory SEO checklist (metadataBase, title template, OG/Twitter, canonical, viewport, robots, sitemap, JSON-LD), per-app function-derived keyword maps, and .md enforcement rules loadable by any agent runtime
+- apps/*: root layout.tsx now exports Metadata with metadataBase, title.default + title.template, keyword-rich description, keywords, authors/creator, openGraph, twitter, and alternates.canonical plus a viewport export with themeColor #121212 — in calculator, rose, machi-asia, and docs
+- apps/*: add robots.ts and sitemap.ts at src/app/ in every public app; docs sitemap lists all four package showcase routes
+- apps/*: add per-page metadata to rose, machi-asia, and docs home pages and update the four docs showcase pages to use the title template
+- apps/*: add /og.png (1200x630) Open Graph images to every public app's public/ plus a calculator app icon (icon.png)
+- apps/*: inject JSON-LD structured data — WebApplication for calculator and rose, Organization for machi-asia, WebSite for docs
+- apps/*: declare NEXT_PUBLIC_SITE_URL in every app's .env.sample used as the single source of truth for metadataBase, canonical URLs, and sitemap URLs
+- env: move all NEXT_PUBLIC_* keys into the Configuration Keys section in every app .env.sample; re-synced all .env.local via npm run env
+- repo: add npm run global-env (scripts/global-env.js) — compile every app's env keys into a single gitignored root .env grouped into CONFIG vs SECRET sections
+- docs: enforce SEO conventions in AGENTS.md and CONTRIBUTING.md, document the seo skill in README.md, and add CHANGELOG entry 0.20.0
+- calculator: add Name/Category sort controls with direction carets to the catalog grid, surface a per-item lastUpdated date on each item card, and normalize card/grid spacing
+- calculator: add a filter-bar Gallery/List layout toggle so the catalog can render as an icon card grid or as compact single-line list rows
+- calculator: fix gallery cards overlapping adjacent rows
+- calculator: auto-color item cards by category with zero config using FNV-1a hash of the category name
+- calculator: style recipe graph edge labels with themed text color/size/weight and surface background chip
+- calculator: replace React Flow's estimated-size SVG edge labels with a custom RecipeFlowEdge component using EdgeLabelRenderer
+- calculator: fix VFE-Factory item icons — all 71 item-level icon tags incorrectly pointing to building images removed; Mass-Produced Meal and Processed Mince now use their actual mod item textures; added missing Canned Soup item entry with its mod texture and Automated Cannery recipe
+- calculator: fix building name overflow in graph nodes — strip `Automated ` prefix from building display text when a building image is available (full name still shown in tooltip), and wrap the building badge in a Tooltip so the complete name is always accessible on hover
+- calculator: fix xml-parser regex bug causing all VFE-Factory buildings to resolve as Assembler -- the character class [^/\>] in the building, input, and output tag matchers excluded forward slashes, so any tag with an icon path attribute failed to match and fell back to default; changed to [^\>] so slashes in attribute values are allowed
+- calculator: fix xml-parser recipe tag regex breaking LRL graph processing -- changed recipe matchAll from \s+ to \s* so bare <recipe> tags (LRL format) match alongside <recipe id="..." name="..."> tags (VFE-Factory format)

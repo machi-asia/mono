@@ -4,6 +4,7 @@ import type { GameItem } from "../data/types";
 export interface ProductionRequest {
   itemId: string;
   targetQuantityPerMinute: number;
+  recipeId?: string;
 }
 
 export interface RecipeNodeData {

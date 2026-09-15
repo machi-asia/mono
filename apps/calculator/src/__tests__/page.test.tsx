@@ -71,7 +71,7 @@ describe("CalculatorPage", () => {
     expect(screen.getByText("Boardwalk Plank")).toBeInTheDocument();
   });
 
-  it("navigates to graph view when clicking Graph button on an item card", () => {
+it("navigates to graph view when clicking Graph button on an item card", () => {
     render(
       <MockAuthProvider state="signed-in">
         <CalculatorPage />
@@ -82,5 +82,96 @@ describe("CalculatorPage", () => {
     fireEvent.click(graphButtons[0]);
 
     expect(screen.getByText("Production Targets")).toBeInTheDocument();
+  });
+
+  it("sorts items by name and category using caret controls", () => {
+    render(
+      <MockAuthProvider state="signed-in">
+        <CalculatorPage />
+      </MockAuthProvider>
+    );
+
+    const firstItem = () =>
+      screen.getAllByRole("heading", { level: 3 })[0].textContent;
+
+    expect(firstItem()).toBe("Boardwalk Plank");
+
+    const nameBtn = screen.getByRole("button", { name: /^Name$/i });
+    const categoryBtn = screen.getByRole("button", { name: /^Category$/i });
+
+    fireEvent.click(nameBtn); // Name asc
+    expect(firstItem()).toBe("Amethyst");
+
+    fireEvent.click(nameBtn); // Name desc
+    expect(firstItem()).toBe("Wooden Chest");
+
+    fireEvent.click(nameBtn); // off
+    expect(firstItem()).toBe("Boardwalk Plank");
+
+    fireEvent.click(categoryBtn); // Category asc
+    expect(firstItem()).toBe("Assembler (Level 1)");
+
+    fireEvent.click(categoryBtn); // Category desc
+    expect(firstItem()).toBe("Boardwalk Plank");
+  });
+
+  it("shows the last updated date on item cards", () => {
+    render(
+      <MockAuthProvider state="signed-in">
+        <CalculatorPage />
+      </MockAuthProvider>
+    );
+
+    expect(screen.getAllByText(/Updated Sep 15, 2026/i).length).toBeGreaterThan(0);
+  });
+
+  it("swaps between gallery and list view", () => {
+    render(
+      <MockAuthProvider state="signed-in">
+        <CalculatorPage />
+      </MockAuthProvider>
+    );
+
+    const galleryBtn = screen.getByRole("button", { name: /^Gallery$/i });
+    const listBtn = screen.getByRole("button", { name: /^List$/i });
+
+    expect(galleryBtn).toHaveAttribute("aria-pressed", "true");
+    expect(document.querySelector(".calc-list")).toBeNull();
+    expect(document.querySelectorAll(".calc-item-card").length).toBe(71);
+    expect(document.querySelectorAll(".calc-item-row").length).toBe(0);
+
+    fireEvent.click(listBtn);
+
+    expect(listBtn).toHaveAttribute("aria-pressed", "true");
+    expect(document.querySelector(".calc-list")).not.toBeNull();
+    expect(document.querySelectorAll(".calc-item-row").length).toBe(71);
+    expect(document.querySelectorAll(".calc-item-card").length).toBe(0);
+
+    fireEvent.click(galleryBtn);
+
+    expect(galleryBtn).toHaveAttribute("aria-pressed", "true");
+    expect(document.querySelectorAll(".calc-item-card").length).toBe(71);
+    expect(document.querySelector(".calc-list")).toBeNull();
+  });
+
+  it("auto-colors item cards by category", () => {
+    render(
+      <MockAuthProvider state="signed-in">
+        <CalculatorPage />
+      </MockAuthProvider>
+    );
+
+    const colors = Array.from(
+      document.querySelectorAll<HTMLElement>(".calc-item-card")
+    ).map((card) => card.style.getPropertyValue("--cat-color"));
+
+    expect(colors.length).toBe(71);
+    expect(new Set(colors).size).toBeGreaterThan(1);
+    for (const color of colors) {
+      expect(color).toMatch(/^hsl\(\d+ 55% 52%\)$/);
+    }
+
+    expect(screen.getAllByText("Boardwalk Plank")[0].closest(".calc-item-card"))
+      .toHaveStyle("--cat-color: hsl(270 55% 52%)");
   });
 });

@@ -1,5 +1,5 @@
 import dagre from "dagre";
-import type { GameItem } from "../data/types";
+import type { GameItem, Recipe } from "../data/types";
 import type {
   ProductionRequest,
   RecipeNodeData,
@@ -14,6 +14,7 @@ const CONVEYOR_CAPACITY = 90; // Standard 90/min belt throughput base
 
 interface InternalNodeAccumulator {
   item: GameItem;
+  recipe?: Recipe;
   demandedOutputPerMinute: number;
   requestedDirectly: number;
   buildingName?: string;
@@ -24,12 +25,18 @@ interface InternalNodeAccumulator {
 
 export function calculateRecipeGraph(
   items: GameItem[],
-  requests: ProductionRequest[]
+  requests: ProductionRequest[],
+  recipeOverrides?: Record<string, string>
 ): GraphCalculationResult {
   const itemMap = new Map<string, GameItem>();
   for (const item of items) {
     itemMap.set(item.id, item);
     itemMap.set(item.name.toLowerCase(), item);
+  }
+
+  const requestRecipeIds = new Map<string, string>();
+  for (const req of requests) {
+    if (req.recipeId) requestRecipeIds.set(req.itemId, req.recipeId);
   }
 
   const nodeAccumulators = new Map<string, InternalNodeAccumulator>();
@@ -38,6 +45,15 @@ export function calculateRecipeGraph(
 
   function resolveItem(identifier: string): GameItem | undefined {
     return itemMap.get(identifier) || itemMap.get(identifier.toLowerCase());
+  }
+
+  function pickRecipe(item: GameItem, overrideRecipeId?: string): Recipe | undefined {
+    if (!item.recipes || item.recipes.length === 0) return item.recipe;
+    if (overrideRecipeId) {
+      const match = item.recipes.find((r) => r.id === overrideRecipeId);
+      if (match) return match;
+    }
+    return item.recipes[0] ?? item.recipe;
   }
 
   function addRequirement(item: GameItem, requiredPerMin: number, parentItem?: GameItem) {
@@ -58,7 +74,6 @@ export function calculateRecipeGraph(
     }
 
     if (visitedPath.has(key)) {
-      // Prevent cyclic recursion
       return;
     }
 
@@ -66,29 +81,36 @@ export function calculateRecipeGraph(
     if (existing) {
       existing.demandedOutputPerMinute += requiredPerMin;
     } else {
+      const overrideId = requestRecipeIds.get(key) ?? recipeOverrides?.[key];
+      const recipe = pickRecipe(item, overrideId);
       const nodeAcc: InternalNodeAccumulator = {
         item,
+        recipe,
         demandedOutputPerMinute: requiredPerMin,
         requestedDirectly: 0,
       };
 
-      if (item.recipe) {
-        nodeAcc.buildingName = item.recipe.buildingRequired;
-        nodeAcc.cycleTimeSeconds = item.recipe.processingTimeSeconds;
-        const buildingSlug = item.recipe.buildingRequired.replaceAll(" ", "_");
-        nodeAcc.buildingIcon = `/lrl/items/${buildingSlug}.png`;
+      if (recipe) {
+        nodeAcc.buildingName = recipe.buildingRequired;
+        nodeAcc.cycleTimeSeconds = recipe.processingTimeSeconds;
+        nodeAcc.buildingIcon = recipe.buildingIcon;
+        if (!nodeAcc.buildingIcon) {
+          const buildingSlug = recipe.buildingRequired.replaceAll(" ", "_");
+          nodeAcc.buildingIcon = `/lrl/items/${buildingSlug}.png`;
+        }
       }
       nodeAccumulators.set(key, nodeAcc);
     }
 
-    if (item.recipe && item.recipe.ingredients.length > 0) {
+    const accRecipe = nodeAccumulators.get(key)?.recipe;
+    if (accRecipe && accRecipe.ingredients.length > 0) {
       visitedPath.add(key);
 
-      const primaryOutput = item.recipe.outputs.find((o) => o.itemId === item.id) ||
-        item.recipe.outputs[0] || { amount: 1 };
+      const primaryOutput = accRecipe.outputs.find((o) => o.itemId === item.id) ||
+        accRecipe.outputs[0] || { amount: 1 };
       const outputBatch = Math.max(0.001, primaryOutput.amount);
 
-      for (const ingredient of item.recipe.ingredients) {
+      for (const ingredient of accRecipe.ingredients) {
         const subItem = resolveItem(ingredient.itemId) || resolveItem(ingredient.itemName);
         if (!subItem) continue;
 
@@ -118,18 +140,18 @@ export function calculateRecipeGraph(
 
   for (const acc of nodeAccumulators.values()) {
     const item = acc.item;
-    if (item.recipe && acc.demandedOutputPerMinute > 0) {
-      const primaryOutput = item.recipe.outputs.find((o) => o.itemId === item.id) ||
-        item.recipe.outputs[0] || { amount: 1 };
+    if (acc.recipe && acc.demandedOutputPerMinute > 0) {
+      const primaryOutput = acc.recipe.outputs.find((o) => o.itemId === item.id) ||
+        acc.recipe.outputs[0] || { amount: 1 };
       const outputBatch = Math.max(0.001, primaryOutput.amount);
-      const cycleSeconds = Math.max(0.1, item.recipe.processingTimeSeconds);
+      const cycleSeconds = Math.max(0.1, acc.recipe.processingTimeSeconds);
       const outputPerMachinePerMinute = (outputBatch / cycleSeconds) * 60;
       const count = acc.demandedOutputPerMinute / outputPerMachinePerMinute;
       acc.buildingCount = Number(count.toFixed(2));
 
       const bName = acc.buildingName || "Assembler";
       totalBuildings[bName] = (totalBuildings[bName] || 0) + Number(count.toFixed(2));
-    } else if (!item.recipe || item.recipe.ingredients.length === 0) {
+    } else if (!acc.recipe || acc.recipe.ingredients.length === 0) {
       rawIngredients.push({
         itemId: item.id,
         itemName: item.name,
@@ -197,11 +219,11 @@ export function calculateRecipeGraph(
   for (const [id, edge] of edgeMap.entries()) {
     const roundedRate = Number(edge.ratePerMinute.toFixed(1));
     const belts = Math.ceil(roundedRate / CONVEYOR_CAPACITY);
-    finalEdges.push({
+finalEdges.push({
       id,
       source: edge.source,
       target: edge.target,
-      type: "smoothstep",
+      type: "recipeEdge",
       animated: true,
       label: `${belts} Belts • ${roundedRate}/m`,
       style: { stroke: "var(--color-primary, #d4af37)", strokeWidth: 2 },

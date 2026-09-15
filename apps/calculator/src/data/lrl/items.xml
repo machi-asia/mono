@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
     <!--Repairs-->
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Boardwalk Plank</name>
         <type>Repairs</type>
         <recipe>
@@ -11,7 +11,7 @@
             <output item="Boardwalk Plank" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Radio Antenna</name>
         <type>Repairs</type>
         <recipe>
@@ -21,7 +21,7 @@
             <output item="Concrete Patch" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Roof Tile</name>
         <type>Repairs</type>
         <recipe>
@@ -32,37 +32,37 @@
         </recipe>
     </item>
     <!--Gems-->
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Amethyst</name>
         <type>Gems</type>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Diamond</name>
         <type>Gems</type>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Emerald</name>
         <type>Gems</type>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Quartz</name>
         <type>Gems</type>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Ruby</name>
         <type>Gems</type>
     </item>
     <!--Recyclables-->
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Computer Monitor</name>
         <type>Recyclables</type>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Computer Tower</name>
         <type>Recyclables</type>
     </item>
     <!--Ore-->
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Coal</name>
         <type>Ore</type>
         <recipe>
@@ -70,7 +70,7 @@
             <output item="Coal" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Copper Ore</name>
         <type>Ore</type>
         <recipe>
@@ -78,7 +78,7 @@
             <output item="Copper Ore" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Iron Ore</name>
         <type>Ore</type>
         <recipe>
@@ -87,7 +87,7 @@
         </recipe>
     </item>
     <!--Materials-->
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Copper Bar</name>
         <type>Materials</type>
         <recipe>
@@ -96,7 +96,7 @@
             <output item="Copper Bar" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Iron Bar</name>
         <type>Materials</type>
         <recipe>
@@ -105,7 +105,7 @@
             <output item="Iron Bar" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Plastic Bar</name>
         <type>Materials</type>
         <recipe>
@@ -115,7 +115,7 @@
             <output item="Plastic Bar" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Stone</name>
         <type>Materials</type>
         <recipe>
@@ -123,7 +123,7 @@
             <output item="Stone" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Wood</name>
         <type>Materials</type>
         <recipe>
@@ -132,7 +132,7 @@
         </recipe>
     </item>
     <!--Components-->
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Battery</name>
         <type>Components</type>
         <recipe>
@@ -143,7 +143,7 @@
             <output item="Battery" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Bearing</name>
         <type>Components</type>
         <recipe>
@@ -152,7 +152,7 @@
             <output item="Bearing" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Ceramic Plate</name>
         <type>Components</type>
         <recipe>
@@ -162,7 +162,7 @@
             <output item="Ceramic Plate" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Circuit Board</name>
         <type>Components</type>
         <recipe>
@@ -172,7 +172,7 @@
             <output item="Circuit Board" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Copper Wire</name>
         <type>Components</type>
         <recipe>
@@ -181,7 +181,7 @@
             <output item="Copper Wire" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Fiberglass</name>
         <type>Components</type>
         <recipe>
@@ -191,7 +191,7 @@
             <output item="Fiberglass" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Flow Meter</name>
         <type>Components</type>
         <recipe>
@@ -201,7 +201,7 @@
             <output item="Flow Meter" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Gear</name>
         <type>Components</type>
         <recipe>
@@ -210,7 +210,7 @@
             <output item="Gear" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Glass Lens</name>
         <type>Components</type>
         <recipe>
@@ -220,7 +220,7 @@
             <output item="Glass Lens" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Heatsink</name>
         <type>Components</type>
         <recipe>
@@ -229,7 +229,7 @@
             <output item="Heatsink" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Heavy Duty Motor</name>
         <type>Components</type>
         <recipe>
@@ -239,7 +239,7 @@
             <output item="Heavy Duty Motor" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Iron Plate</name>
         <type>Components</type>
         <recipe>
@@ -248,7 +248,7 @@
             <output item="Iron Plate" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Lightweight Frame</name>
         <type>Components</type>
         <recipe>
@@ -258,7 +258,7 @@
             <output item="Lightweight Frame" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Logic Chip</name>
         <type>Components</type>
         <recipe>
@@ -268,7 +268,7 @@
             <output item="Logic Chip" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Oxygen Tank</name>
         <type>Components</type>
         <recipe>
@@ -278,7 +278,7 @@
             <output item="Oxygen Tank" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Rocket Fuel</name>
         <type>Components</type>
         <recipe>
@@ -288,7 +288,7 @@
             <output item="Rocket Fuel" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Servo</name>
         <type>Components</type>
         <recipe>
@@ -298,7 +298,7 @@
             <output item="Servo" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Small Motor</name>
         <type>Components</type>
         <recipe>
@@ -308,7 +308,7 @@
             <output item="Small Motor" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Stator</name>
         <type>Components</type>
         <recipe>
@@ -318,7 +318,7 @@
             <output item="Stator" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Steel Beam</name>
         <type>Components</type>
         <recipe>
@@ -328,7 +328,7 @@
             <output item="Steel Beam" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Steel Cable</name>
         <type>Components</type>
         <recipe>
@@ -337,7 +337,7 @@
             <output item="Steel Cable" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Supercomputer</name>
         <type>Components</type>
         <recipe>
@@ -348,7 +348,7 @@
             <output item="Supercomputer" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Winch</name>
         <type>Components</type>
         <recipe>
@@ -359,7 +359,7 @@
         </recipe>
     </item>
     <!--Buildings-->
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Assembler (Level 1)</name>
         <type>Buildings</type>
         <recipe>
@@ -368,7 +368,7 @@
             <output item="Assembler (Level 1)" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Assembler (Level 2)</name>
         <type>Buildings</type>
         <recipe>
@@ -378,7 +378,7 @@
             <output item="Assembler (Level 2)" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Bumper</name>
         <type>Buildings</type>
         <recipe>
@@ -388,7 +388,7 @@
             <output item="Bumper" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Cable Crane</name>
         <type>Buildings</type>
         <recipe>
@@ -398,7 +398,7 @@
             <output item="Cable Crane" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Chemical Plant</name>
         <type>Buildings</type>
         <recipe>
@@ -408,7 +408,7 @@
             <output item="Chemical Plant" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Conveyor Belt</name>
         <type>Buildings</type>
         <recipe>
@@ -417,7 +417,7 @@
             <output item="Conveyor Belt" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Drill (Level 1)</name>
         <type>Buildings</type>
         <recipe>
@@ -427,7 +427,7 @@
             <output item="Drill (Level 1)" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Drill (Level 2)</name>
         <type>Buildings</type>
         <recipe>
@@ -437,7 +437,7 @@
             <output item="Drill (Level 2)" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Filtering Splitter</name>
         <type>Buildings</type>
         <recipe>
@@ -447,7 +447,7 @@
             <output item="Filtering Splitter" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Furnace (Level 1)</name>
         <type>Buildings</type>
         <recipe>
@@ -456,7 +456,7 @@
             <output item="Furnace (Level 1)" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Furnace (Level 2)</name>
         <type>Buildings</type>
         <recipe>
@@ -466,7 +466,7 @@
             <output item="Furnace (Level 2)" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Item Dispenser</name>
         <type>Buildings</type>
         <recipe>
@@ -476,7 +476,7 @@
             <output item="Item Dispenser" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Item Receiver</name>
         <type>Buildings</type>
         <recipe>
@@ -486,7 +486,7 @@
             <output item="Item Receiver" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Loader</name>
         <type>Buildings</type>
         <recipe>
@@ -496,7 +496,7 @@
             <output item="Loader" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Pipe</name>
         <type>Buildings</type>
         <recipe>
@@ -506,7 +506,7 @@
             <output item="Pipe" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Power Pole (Level 1)</name>
         <type>Buildings</type>
         <recipe>
@@ -516,7 +516,7 @@
             <output item="Power Pole (Level 1)" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Power Pole (Level 2)</name>
         <type>Buildings</type>
         <recipe>
@@ -526,7 +526,7 @@
             <output item="Power Pole (Level 2)" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Power Pole (with Light)</name>
         <type>Buildings</type>
         <recipe>
@@ -536,7 +536,7 @@
             <output item="Power Pole (with Light)" quantity="1" />
         </recipe>   
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Recycler</name>
         <type>Buildings</type>
         <recipe>
@@ -546,7 +546,7 @@
             <output item="Recycler" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Wind Turbine (Level 1)</name>
         <type>Buildings</type>
         <recipe>
@@ -556,7 +556,7 @@
             <output item="Wind Turbine (Level 1)" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Wind Turbine (Level 2)</name>
         <type>Buildings</type>
         <recipe>
@@ -566,7 +566,7 @@
             <output item="Wind Turbine (Level 2)" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Sorter</name>
         <type>Buildings</type>
         <recipe>
@@ -576,7 +576,7 @@
             <output item="Sorter" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Splitter</name>
         <type>Buildings</type>
         <recipe>
@@ -586,7 +586,7 @@
             <output item="Splitter" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Synthesizer</name>
         <type>Buildings</type>
         <recipe>
@@ -596,7 +596,7 @@
             <output item="Synthesizer" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Underground Pipe</name>
         <type>Buildings</type>
         <recipe>
@@ -606,7 +606,7 @@
             <output item="Underground Pipe" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Underpass</name>
         <type>Buildings</type>
         <recipe>
@@ -616,7 +616,7 @@
             <output item="Underpass" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Unloader</name>
         <type>Buildings</type>
         <recipe>
@@ -626,7 +626,7 @@
             <output item="Unloader" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Utility Light</name>
         <type>Buildings</type>
         <recipe>
@@ -636,7 +636,7 @@
             <output item="Utility Light" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Water Pump</name>
         <type>Buildings</type>
         <recipe>
@@ -646,7 +646,7 @@
             <output item="Water Pump" quantity="1" />
         </recipe>
     </item>
-    <item>
+    <item lastUpdated="2026-09-15">
         <name>Wooden Chest</name>
         <type>Buildings</type>
         <recipe>

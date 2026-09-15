@@ -2,7 +2,7 @@
 <game id="factorio" name="Factorio">
   <tagline>Build, automate, and optimize relentless planetary logistics networks.</tagline>
   <items>
-    <item id="iron-gear-wheel">
+    <item lastUpdated="2026-09-15" id="iron-gear-wheel">
       <name>Iron Gear Wheel</name>
       <category>Intermediates</category>
       <icon>??</icon>
@@ -16,7 +16,7 @@
         </outputs>
       </recipe>
     </item>
-    <item id="electronic-circuit">
+    <item lastUpdated="2026-09-15" id="electronic-circuit">
       <name>Electronic Circuit</name>
       <category>Intermediates</category>
       <icon>??</icon>
@@ -31,7 +31,7 @@
         </outputs>
       </recipe>
     </item>
-    <item id="automation-science-pack">
+    <item lastUpdated="2026-09-15" id="automation-science-pack">
       <name>Automation Science Pack</name>
       <category>Science</category>
       <icon>??</icon>
@@ -46,7 +46,7 @@
         </outputs>
       </recipe>
     </item>
-    <item id="transport-belt">
+    <item lastUpdated="2026-09-15" id="transport-belt">
       <name>Transport Belt</name>
       <category>Logistics</category>
       <icon>??</icon>

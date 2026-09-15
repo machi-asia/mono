@@ -2,7 +2,7 @@
 <game id="minecraft" name="Minecraft">
   <tagline>Gather raw voxel materials, craft tools, and engineer redstone contraptions.</tagline>
   <items>
-    <item id="iron-pickaxe">
+    <item lastUpdated="2026-09-15" id="iron-pickaxe">
       <name>Iron Pickaxe</name>
       <category>Tools</category>
       <icon>??</icon>
@@ -17,7 +17,7 @@
         </outputs>
       </recipe>
     </item>
-    <item id="furnace">
+    <item lastUpdated="2026-09-15" id="furnace">
       <name>Furnace</name>
       <category>Utility</category>
       <icon>??</icon>
@@ -31,7 +31,7 @@
         </outputs>
       </recipe>
     </item>
-    <item id="piston">
+    <item lastUpdated="2026-09-15" id="piston">
       <name>Piston</name>
       <category>Redstone</category>
       <icon>??</icon>
@@ -48,7 +48,7 @@
         </outputs>
       </recipe>
     </item>
-    <item id="observer">
+    <item lastUpdated="2026-09-15" id="observer">
       <name>Observer</name>
       <category>Redstone</category>
       <icon>???</icon>

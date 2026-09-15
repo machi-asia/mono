@@ -38,6 +38,15 @@ These are run in parallel via `npm run test` at the repo root.
 - All `.md` files in the repo must be updated when relevant code changes.
 - Keep `CHANGELOG.md` updated with version entries.
 
+### SEO
+
+- Every public app must follow the mandatory SEO checklist in `.agents/skills/seo/SKILL.md` — this is non-negotiable and applies to every app, page, and consumer repo.
+- Root `layout.tsx` must export `Metadata` (`metadataBase`, `title.default` + `title.template`, `description`, `keywords`, `openGraph`, `twitter`, `alternates.canonical`) and `viewport` (`themeColor`) in every app.
+- `robots.ts` and `sitemap.ts` are required at `src/app/` in every public app; every indexable route is listed in the sitemap.
+- SEO copy (title/description/keywords) is derived from each app's function and purpose per `.agents/skills/seo/SKILL.md`. Never use placeholder or generic copy.
+- `NEXT_PUBLIC_SITE_URL` must be declared in each app's `.env.sample` and used for `metadataBase`, OG URLs, canonical URLs, and sitemap URLs.
+- Adding or renaming a page changes its SEO surface — update metadata and the sitemap in the same change.
+
 ### Environment Variables
 
 - Every env key referenced in code must be added to the corresponding `.env.sample`.

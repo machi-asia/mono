@@ -1,14 +1,15 @@
 ﻿"use client";
 
 import { Popup, Button, Tooltip } from "@mono/components";
-import type { GameItem } from "../data/types";
+import type { GameItem, Recipe } from "../data/types";
 
 interface ItemDetailPopupProps {
   item: GameItem;
+  recipe?: Recipe;
 }
 
-export function ItemDetailPopup({ item }: ItemDetailPopupProps) {
-  const recipe = item.recipe;
+export function ItemDetailPopup({ item, recipe: recipeOverride }: ItemDetailPopupProps) {
+  const recipe = recipeOverride || item.recipe;
 
   return (
     <Popup

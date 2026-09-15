@@ -19,6 +19,7 @@ describe("xml-parser", () => {
     expect(plank?.icon).toBe("/lrl/items/Boardwalk_Plank.png");
     expect(plank?.recipe?.buildingRequired).toBe("Assembler (level 2)");
     expect(plank?.recipe?.processingTimeSeconds).toBe(6);
+    expect(plank?.lastUpdated).toBe("2026-09-15");
   });
 
   it("parses minecraft items.xml with recipes and items", () => {
@@ -31,6 +32,7 @@ describe("xml-parser", () => {
     expect(pickaxe).toBeDefined();
     expect(pickaxe?.name).toBe("Iron Pickaxe");
     expect(pickaxe?.category).toBe("Tools");
+    expect(pickaxe?.lastUpdated).toBe("2026-09-15");
     expect(pickaxe?.recipe).toBeDefined();
     expect(pickaxe?.recipe?.buildingRequired).toBe("Crafting Table");
     expect(pickaxe?.recipe?.ingredients).toHaveLength(2);
@@ -59,6 +61,7 @@ describe("xml-parser", () => {
       for (const item of d.items) {
         expect(item.id.length).toBeGreaterThan(0);
         expect(item.name.length).toBeGreaterThan(0);
+        expect(item.lastUpdated?.length).toBeGreaterThan(0);
       }
     }
   });

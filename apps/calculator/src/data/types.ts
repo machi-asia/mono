@@ -14,6 +14,7 @@ export interface Recipe {
   id: string;
   name: string;
   buildingRequired: string;
+  buildingIcon?: string;
   processingTimeSeconds: number;
   ingredients: Ingredient[];
   outputs: OutputItem[];
@@ -25,6 +26,8 @@ export interface GameItem {
   category: string;
   icon: string;
   description: string;
+  lastUpdated?: string;
+  recipes?: Recipe[];
   recipe?: Recipe;
 }
 

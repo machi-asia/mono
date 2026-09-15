@@ -1,19 +1,125 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback, type CSSProperties } from "react";
 import Image from "next/image";
+import { ChevronUp, ChevronDown, ChevronsUpDown, LayoutGrid, List } from "lucide-react";
 import { Button, Card, Dropdown } from "@mono/components";
 import { GAMES_DATA } from "../data/games";
+import type { GameItem, Recipe } from "../data/types";
 import { ItemDetailPopup } from "../components/item-detail-popup";
 import { RecipeGraphView } from "../components/graph/recipe-graph";
 import type { ProductionRequest } from "../types/graph";
 import "./calculator.css";
 
+type SortKey = "name" | "category";
+type SortState = { key: SortKey; direction: "asc" | "desc" } | null;
+type CatalogLayout = "gallery" | "list";
+
+const SORT_OPTIONS: { key: SortKey; label: string }[] = [
+  { key: "name", label: "Name" },
+  { key: "category", label: "Category" },
+];
+
+function formatDate(iso?: string): string {
+  if (!iso) return "";
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return iso;
+  return date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+}
+
+function categoryColor(category: string): string {
+  let hash = 2166136261;
+  for (let i = 0; i < category.length; i += 1) {
+    hash ^= category.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  const hue = ((hash >>> 0) % 12) * 30;
+  return `hsl(${hue} 55% 52%)`;
+}
+
+function ItemThumb({ item, eager }: { item: GameItem; eager: boolean }) {
+  return (
+    <div className="calc-item-icon" aria-hidden="true">
+      {item.icon.startsWith("/") ? (
+        <Image
+          src={item.icon}
+          alt={item.name}
+          width={32}
+          height={32}
+          className="calc-item-icon-img"
+          loading={eager ? "eager" : "lazy"}
+          priority={eager}
+        />
+      ) : (
+        item.icon
+      )}
+    </div>
+  );
+}
+
+function ItemMeta({ item }: { item: GameItem }) {
+  return (
+    <div className="calc-item-title-wrap">
+      <h3 className="calc-item-name">{item.name}</h3>
+      <span className="calc-item-category">{item.category}</span>
+      {item.lastUpdated && (
+        <span className="calc-item-updated">Updated {formatDate(item.lastUpdated)}</span>
+      )}
+    </div>
+  );
+}
+
+function ItemActions({
+  item,
+  activeRecipe,
+  onRecipeSelect,
+  onGraph,
+}: {
+  item: GameItem;
+  activeRecipe?: Recipe;
+  onRecipeSelect?: (recipeId: string) => void;
+  onGraph: (itemId: string) => void;
+}) {
+  const recipeOptions = useMemo(() => {
+    if (!item.recipes || item.recipes.length <= 1) return null;
+    return item.recipes.map((r) => ({
+      label: `${r.buildingRequired} (${r.processingTimeSeconds}s)`,
+      value: r.id,
+    }));
+  }, [item.recipes]);
+
+  return (
+    <div className="calc-item-actions">
+      {recipeOptions && recipeOptions.length > 0 ? (
+        <div className="calc-recipe-select">
+          <Dropdown
+            items={recipeOptions}
+            value={activeRecipe?.id || recipeOptions[0]?.value}
+            placeholder="Recipe..."
+            onChange={(val) => onRecipeSelect?.(val)}
+          />
+        </div>
+      ) : (
+        <span className="calc-rate-badge">{item.recipe?.buildingRequired || "Manual"}</span>
+      )}
+      <div className="calc-item-actions-group">
+        <ItemDetailPopup item={item} recipe={activeRecipe} />
+        <Button size="sm" variant="secondary" onClick={() => onGraph(item.id)}>
+          Graph
+        </Button>
+      </div>
+    </div>
+  );
+}
+
 export default function CalculatorPage() {
   const [selectedGameId, setSelectedGameId] = useState<string>(GAMES_DATA[0].id);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [sortState, setSortState] = useState<SortState>(null);
+  const [catalogLayout, setCatalogLayout] = useState<CatalogLayout>("gallery");
   const [activeView, setActiveView] = useState<"catalog" | "graph">("catalog");
   const [initialGraphRequests, setInitialGraphRequests] = useState<ProductionRequest[]>([]);
+  const [recipeSelections, setRecipeSelections] = useState<Record<string, string>>({});
 
   const currentGame = useMemo(() => {
     return GAMES_DATA.find((g) => g.id === selectedGameId) || GAMES_DATA[0];
@@ -28,18 +134,49 @@ export default function CalculatorPage() {
 
   const filteredItems = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
-    if (!q) return currentGame.items;
-    return currentGame.items.filter(
-      (item) =>
-        item.name.toLowerCase().includes(q) ||
-        item.category.toLowerCase().includes(q) ||
-        item.description.toLowerCase().includes(q)
-    );
-  }, [currentGame, searchQuery]);
+    const filtered = q
+      ? currentGame.items.filter(
+          (item) =>
+            item.name.toLowerCase().includes(q) ||
+            item.category.toLowerCase().includes(q) ||
+            item.description.toLowerCase().includes(q)
+        )
+      : currentGame.items;
+
+    if (!sortState) return filtered;
+
+    const direction = sortState.direction === "asc" ? 1 : -1;
+    return [...filtered].sort((a, b) => {
+      const cmp = a[sortState.key].toLowerCase().localeCompare(b[sortState.key].toLowerCase());
+      return cmp === 0 ? a.id.localeCompare(b.id) : cmp * direction;
+    });
+  }, [currentGame, searchQuery, sortState]);
+
+  function handleSortKey(key: SortKey) {
+    setSortState((prev) => {
+      if (!prev || prev.key !== key) return { key, direction: "asc" };
+      if (prev.direction === "asc") return { key, direction: "desc" };
+      return null;
+    });
+  }
 
   function handleCalculateItem(itemId: string) {
-    setInitialGraphRequests([{ itemId, targetQuantityPerMinute: 60 }]);
+    const recipeId = recipeSelections[itemId];
+    setInitialGraphRequests([{ itemId, targetQuantityPerMinute: 60, ...(recipeId ? { recipeId } : {}) }]);
     setActiveView("graph");
+  }
+
+  function handleRecipeSelect(itemId: string, recipeId: string) {
+    setRecipeSelections((prev) => ({ ...prev, [itemId]: recipeId }));
+  }
+
+  function getActiveRecipe(item: GameItem): Recipe | undefined {
+    if (!item.recipes || item.recipes.length === 0) return item.recipe;
+    const selectedId = recipeSelections[item.id];
+    if (selectedId) {
+      return item.recipes.find((r) => r.id === selectedId) ?? item.recipes[0];
+    }
+    return item.recipes[0];
   }
 
   return (
@@ -82,7 +219,9 @@ export default function CalculatorPage() {
                 onChange={(val: string) => {
                   setSelectedGameId(val);
                   setSearchQuery("");
+                  setSortState(null);
                   setInitialGraphRequests([]);
+                  setRecipeSelections({});
                 }}
               />
             </div>
@@ -96,6 +235,7 @@ export default function CalculatorPage() {
             items={currentGame.items}
             gameName={currentGame.name}
             initialRequests={initialGraphRequests}
+            recipeOverrides={recipeSelections}
             onBackToCatalog={() => setActiveView("catalog")}
           />
         ) : (
@@ -112,50 +252,72 @@ export default function CalculatorPage() {
               <span className="calc-count">
                 Showing {filteredItems.length} of {currentGame.items.length} items
               </span>
+
+              <div className="calc-sort-group" role="group" aria-label="Sort items">
+                {SORT_OPTIONS.map((opt) => {
+                  const active = sortState?.key === opt.key;
+                  const SortIcon =
+                    active && sortState.direction === "asc"
+                      ? ChevronUp
+                      : active && sortState.direction === "desc"
+                        ? ChevronDown
+                        : ChevronsUpDown;
+                  return (
+                    <button
+                      key={opt.key}
+                      type="button"
+                      className={`calc-sort-btn${active ? " active" : ""}`}
+                      onClick={() => handleSortKey(opt.key)}
+                      aria-pressed={active}
+                    >
+                      <span>{opt.label}</span>
+                      <SortIcon size={14} aria-hidden="true" />
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="calc-layout-toggle" role="group" aria-label="Catalog layout">
+                <button
+                  type="button"
+                  className={`calc-layout-btn${catalogLayout === "gallery" ? " active" : ""}`}
+                  onClick={() => setCatalogLayout("gallery")}
+                  aria-pressed={catalogLayout === "gallery"}
+                >
+                  <LayoutGrid size={14} aria-hidden="true" />
+                  <span>Gallery</span>
+                </button>
+                <button
+                  type="button"
+                  className={`calc-layout-btn${catalogLayout === "list" ? " active" : ""}`}
+                  onClick={() => setCatalogLayout("list")}
+                  aria-pressed={catalogLayout === "list"}
+                >
+                  <List size={14} aria-hidden="true" />
+                  <span>List</span>
+                </button>
+              </div>
             </div>
 
-            <div className="calc-grid">
+            <div className={catalogLayout === "gallery" ? "calc-grid" : "calc-list"}>
               {filteredItems.map((item, idx) => (
-                <Card key={item.id} className="calc-item-card" elevated>
+                <Card
+                  key={item.id}
+                  className={catalogLayout === "gallery" ? "calc-item-card" : "calc-item-row"}
+                  elevated={catalogLayout === "gallery"}
+                  style={{ "--cat-color": categoryColor(item.category) } as CSSProperties}
+                >
                   <div className="calc-item-header">
-                    <div className="calc-item-icon" aria-hidden="true">
-                      {item.icon.startsWith("/") ? (
-                        <Image
-                          src={item.icon}
-                          alt={item.name}
-                          width={32}
-                          height={32}
-                          className="calc-item-icon-img"
-                          loading={idx === 0 ? "eager" : "lazy"}
-                          priority={idx === 0}
-                        />
-                      ) : (
-                        item.icon
-                      )}
-                    </div>
-                    <div className="calc-item-title-wrap">
-                      <h3 className="calc-item-name">{item.name}</h3>
-                      <span className="calc-item-category">{item.category}</span>
-                    </div>
+                    <ItemThumb item={item} eager={idx === 0} />
+                    <ItemMeta item={item} />
                   </div>
-
                   <p className="calc-item-desc">{item.description}</p>
-
-                  <div className="calc-item-actions">
-                    <span className="calc-rate-badge">
-                      {item.recipe?.buildingRequired || "Manual"}
-                    </span>
-                    <div className="calc-item-actions-group">
-                      <ItemDetailPopup item={item} />
-                      <Button
-                        size="sm"
-                        variant="secondary"
-                        onClick={() => handleCalculateItem(item.id)}
-                      >
-                        Graph
-                      </Button>
-                    </div>
-                  </div>
+                  <ItemActions
+                    item={item}
+                    activeRecipe={getActiveRecipe(item)}
+                    onRecipeSelect={(recipeId) => handleRecipeSelect(item.id, recipeId)}
+                    onGraph={handleCalculateItem}
+                  />
                 </Card>
               ))}
             </div>

@@ -41,20 +41,23 @@ export function RecipeProcessNode(props: NodeProps<RecipeNodeData>) {
       </div>
 
       {data.building && (
-        <div className="recipe-node-building-badge">
-          {isBuildingImage ? (
-            <Image
-              src={data.buildingIcon || ""}
-              alt=""
-              width={16}
-              height={16}
-              className="recipe-node-building-img"
-            />
-          ) : null}
-          <span className="recipe-node-building-text">
-            <strong>{data.buildingCount ?? 1}x</strong> {data.building}
-          </span>
-        </div>
+        <Tooltip content={`${data.buildingCount ?? 1}× ${data.building}`} position="bottom">
+          <div className="recipe-node-building-badge">
+            {isBuildingImage ? (
+              <Image
+                src={data.buildingIcon || ""}
+                alt={data.building}
+                width={18}
+                height={18}
+                className="recipe-node-building-img"
+              />
+            ) : null}
+            <span className="recipe-node-building-text">
+              <strong>{data.buildingCount ?? 1}x</strong>{" "}
+              {isBuildingImage ? data.building.replace(/^Automated\s+/, "") : data.building}
+            </span>
+          </div>
+        </Tooltip>
       )}
 
       {data.isRequested && (

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { AuthShowcase } from "./auth-showcase";
 
 export const metadata: Metadata = {
-  title: "@mono/auth Components | Machi Asia Docs",
-  description: "Exported components from @mono/auth, listed via the shared showcase layout with live interactive demos",
+  title: "@mono/auth Components",
+  description: "Live interactive demos of the exported components from @mono/auth — AuthProvider, AuthGate, SignInModal. Explore authentication UI for Machi Asia apps.",
 };
 
 export default function AuthComponentsPage() {
