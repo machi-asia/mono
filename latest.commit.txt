@@ -1,25 +1,8 @@
-﻿feature(seo): add discoverability metadata, robots, sitemaps, and JSON-LD to every public app
-- skills: add canonical `.agents/skills/seo/SKILL.md` — mandatory SEO checklist (metadataBase, title template, OG/Twitter, canonical, viewport, robots, sitemap, JSON-LD), per-app function-derived keyword maps, and .md enforcement rules loadable by any agent runtime
-- apps/*: root layout.tsx now exports Metadata with metadataBase, title.default + title.template, keyword-rich description, keywords, authors/creator, openGraph, twitter, and alternates.canonical plus a viewport export with themeColor #121212 — in calculator, rose, machi-asia, and docs
-- apps/*: add robots.ts and sitemap.ts at src/app/ in every public app; docs sitemap lists all four package showcase routes
-- apps/*: add per-page metadata to rose, machi-asia, and docs home pages and update the four docs showcase pages to use the title template
-- apps/*: add /og.png (1200x630) Open Graph images to every public app's public/ plus a calculator app icon (icon.png)
-- apps/*: inject JSON-LD structured data — WebApplication for calculator and rose, Organization for machi-asia, WebSite for docs
-- apps/*: declare NEXT_PUBLIC_SITE_URL in every app's .env.sample used as the single source of truth for metadataBase, canonical URLs, and sitemap URLs
-- env: move all NEXT_PUBLIC_* keys into the Configuration Keys section in every app .env.sample; re-synced all .env.local via npm run env
-- repo: add npm run global-env (scripts/global-env.js) — compile every app's env keys into a single gitignored root .env grouped into CONFIG vs SECRET sections
-- docs: enforce SEO conventions in AGENTS.md and CONTRIBUTING.md, document the seo skill in README.md, and add CHANGELOG entry 0.20.0
-- calculator: add Name/Category sort controls with direction carets to the catalog grid, surface a per-item lastUpdated date on each item card, and normalize card/grid spacing
-- calculator: add a filter-bar Gallery/List layout toggle so the catalog can render as an icon card grid or as compact single-line list rows
-- calculator: fix gallery cards overlapping adjacent rows
-- calculator: auto-color item cards by category with zero config using FNV-1a hash of the category name
-- calculator: style recipe graph edge labels with themed text color/size/weight and surface background chip
-- calculator: replace React Flow's estimated-size SVG edge labels with a custom RecipeFlowEdge component using EdgeLabelRenderer
-- calculator: fix VFE-Factory item icons — all 71 item-level icon tags incorrectly pointing to building images removed; Mass-Produced Meal and Processed Mince now use their actual mod item textures; added missing Canned Soup item entry with its mod texture and Automated Cannery recipe
-- calculator: fix building name overflow in graph nodes — strip `Automated ` prefix from building display text when a building image is available (full name still shown in tooltip), and wrap the building badge in a Tooltip so the complete name is always accessible on hover
-- calculator: fix xml-parser regex bug causing all VFE-Factory buildings to resolve as Assembler -- the character class [^/\>] in the building, input, and output tag matchers excluded forward slashes, so any tag with an icon path attribute failed to match and fell back to default; changed to [^\>] so slashes in attribute values are allowed
-- calculator: fix xml-parser recipe tag regex breaking LRL graph processing -- changed recipe matchAll from \s+ to \s* so bare <recipe> tags (LRL format) match alongside <recipe id="..." name="..."> tags (VFE-Factory format)
-- calculator: redesign recipe process graph node card layout -- two-column card with 72px icon column and 48px item thumbnail, bold typography for rate and title, and compact building badge; adjusted DEFAULT_NODE_WIDTH to 260 in graph-builder
-- calculator: support game slugs in URL (/vfe-factory, /lrl, etc.) with dynamic route src/app/[gameId]/page.tsx, generateMetadata per game, sitemap game entries, and synchronized Dropdown switching to preserve active game across page refresh
-- calculator: transform home page into a Game Directory Hub overview -- displays all supported games in responsive cards with item image preview mosaics (Little Rocket Lab, Vanilla Furniture Expanded, Satisfactory, Factorio, Minecraft, Dyson Sphere Program), item count badges, and taglines; Little Rocket Lab is now accessible at /lrl like all other games; each game page includes an All Games back button and quick game switcher dropdown
-- calculator: source and extract all missing VFE-Factory item images from local Steam workshop mods (Vanilla Textures Expanded 2016436324, Vanilla Brewing Expanded 2186560858, VBE Coffees and Teas 2275449762, Vanilla Cooking Expanded 2134308519, Vanilla Plants Expanded 2134308522, VFE Classical 2787850474, VAE 2288125657); updated items.xml with 100% icon coverage across all 99 VFE-Factory items
+feature(calculator): add Create mod game with recipes and item textures
+- calculator: add new game dataset for Create (`create`) with 1,200+ items and 1,400+ recipes extracted from mod jar
+- calculator: extract 1,250+ item and block textures to `apps/calculator/public/create/items/`
+- calculator: register Create dataset in `src/data/games.ts` using items.xml schema
+- calculator: fix `.calc-recipe-select` CSS class targeting from legacy `.dropdown-*` to design system `.m-dropdown*`, constraining max width and ensuring text truncation
+- calculator: add `flex-shrink: 0` and `white-space: nowrap` to `.calc-item-actions-group` so action buttons do not overlap
+- calculator: add `max-width`, `white-space: nowrap`, and `text-overflow: ellipsis` to `.calc-rate-badge`
+

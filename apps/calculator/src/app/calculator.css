@@ -1,4 +1,4 @@
-﻿/* 笏笏笏 App Shell 笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏 */
+/* 笏笏笏 App Shell 笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏笏 */
 .calc-app-shell {
   display: flex;
   min-height: 100vh;
@@ -512,6 +512,12 @@
   border: 1px solid var(--color-border);
   padding: 2px 6px;
   border-radius: var(--radius-sm);
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .calc-view-toggle {
@@ -550,23 +556,36 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .calc-recipe-select {
   min-width: 0;
-  flex: 0 1 auto;
+  max-width: 140px;
+  flex: 1 1 auto;
 }
 
-.calc-recipe-select .dropdown-root {
-  max-width: 190px;
+.calc-recipe-select .m-dropdown {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 
-.calc-recipe-select .dropdown-trigger {
+.calc-recipe-select .m-dropdown-trigger {
   font-size: 0.75rem;
-  padding: 2px 10px;
+  padding: 3px 8px;
+  min-height: 28px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.calc-recipe-select .m-dropdown-value {
+  font-size: 0.75rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
 }
 
 /* Recipe Graph Container */
