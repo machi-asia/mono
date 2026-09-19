@@ -28,7 +28,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@huggingface/transformers": "^4.2.0",
+    "@huggingface/transformers": "^4.3.0",
     "@mono/auth": "^0.1.0",
     "@mono/components": "^0.1.0",
     "@mono/database": "^0.1.0",
