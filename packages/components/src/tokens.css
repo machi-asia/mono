@@ -11,6 +11,7 @@
   --color-primary-contrast: #14110a;
   --color-border: #2a271f;
   --color-border-soft: #1f1d16;
+  --color-surface-glass: rgb(22 20 15 / 80%);
   --color-overlay: rgb(0 0 0 / 60%);
   --shadow-1: 0 1px 3px rgb(0 0 0 / 45%);
   --shadow-2: 0 8px 24px rgb(0 0 0 / 50%);
@@ -54,6 +55,7 @@
   --color-primary-contrast: #fff;
   --color-border: #e8e2d4;
   --color-border-soft: #efe9dc;
+  --color-surface-glass: rgb(255 255 255 / 80%);
   --color-overlay: rgb(0 0 0 / 35%);
   --color-error: #dc2626;
   --color-error-soft: #fecaca;

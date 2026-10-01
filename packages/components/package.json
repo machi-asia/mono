@@ -10,7 +10,8 @@
       "types": "./src/index.ts",
       "import": "./src/index.ts",
       "default": "./src/index.ts"
-    }
+    },
+    "./tokens.css": "./src/tokens.css"
   },
   "scripts": {
     "build": "tsc",

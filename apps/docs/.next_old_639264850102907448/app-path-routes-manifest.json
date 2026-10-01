@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/rose/chat/route": "/api/rose/chat",
+  "/api/rose/settings/route": "/api/rose/settings",
+  "/api/rose/transcribe/route": "/api/rose/transcribe",
+  "/api/rose/usage/route": "/api/rose/usage",
+  "/components/auth/page": "/components/auth",
+  "/components/components/page": "/components/components",
+  "/components/database/page": "/components/database",
+  "/components/rose/page": "/components/rose",
+  "/icon.png/route": "/icon.png",
+  "/page": "/"
+}

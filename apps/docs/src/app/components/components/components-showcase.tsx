@@ -378,26 +378,35 @@ export function ComponentsShowcase() {
           uses: 'import { Navbar } from "@mono/components"',
           description: "Top navigation bar with brand, links, action slots, and an optional auth menu showing avatar, name, and sign-out.",
           propControls: [
-            { prop: "variant", label: "variant", options: ["default", "tabs", "compact"], defaultValue: "default" },
+            { prop: "variant", label: "variant", options: ["default", "tabs", "compact", "floating"], defaultValue: "default" },
             { prop: "showAuth", label: "auth", options: boolOptions, defaultValue: "true" },
           ],
-          render: ({ variant, showAuth }) => (
-            <Navbar
-              variant={variant as "default" | "tabs" | "compact"}
-              brand={<span>Machi Asia</span>}
-              links={[
-                { label: "Home", href: "/", active: true },
-                { label: "Docs", href: "/docs" },
-                { label: "Blog", href: "/blog" },
-              ]}
-              actions={<Button variant="primary" size="sm">Sign in</Button>}
-              auth={
-                showAuth === "true"
-                  ? { name: "Jane Doe", onSignOut: () => {} }
-                  : undefined
-              }
-            />
-          ),
+          render: ({ variant, showAuth }) => {
+            const hasAuth = showAuth === "true";
+            return (
+              <Navbar
+                variant={variant as "default" | "tabs" | "compact" | "floating"}
+                brand={<span>Machi Asia</span>}
+                links={[
+                  { label: "Home", href: "/", active: true },
+                  { label: "Docs", href: "/docs" },
+                  { label: "Blog", href: "/blog" },
+                ]}
+                actions={
+                  !hasAuth ? (
+                    <Button variant="primary" size="sm">
+                      Sign in
+                    </Button>
+                  ) : undefined
+                }
+                auth={
+                  hasAuth
+                    ? { name: "Jane Doe", onSignOut: () => {} }
+                    : undefined
+                }
+              />
+            );
+          },
         },
         {
           name: "Footer",

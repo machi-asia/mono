@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Navbar } from "@mono/components";
-import { useAuth, AccountSettings } from "@mono/auth";
+import { useAuth, AccountSettings, SignInModal } from "@mono/auth";
 
 const links = [
   { label: "Home", href: "/" },
@@ -10,6 +10,7 @@ const links = [
   { label: "Components", href: "/components/components" },
   { label: "Database", href: "/components/database" },
   { label: "Rose", href: "/components/rose" },
+  { label: "Sync", href: "/components/sync" },
 ];
 
 function getDisplayName(user: { email?: string | null; is_anonymous?: boolean; user_metadata?: Record<string, unknown> }): string {
@@ -35,8 +36,9 @@ function getAvatarUrl(user: { user_metadata?: Record<string, unknown> }): string
 }
 
 export function DocsNavbar() {
-  const { user, signOut } = useAuth();
+  const { user, accounts, switchAccount, signOut } = useAuth();
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [addAccountOpen, setAddAccountOpen] = useState(false);
 
   return (
     <>
@@ -47,7 +49,17 @@ export function DocsNavbar() {
           user
             ? {
                 name: getDisplayName(user),
+                email: user.email ?? undefined,
                 avatar: getAvatarUrl(user),
+                accounts: (accounts ?? []).map((acc) => ({
+                  id: acc.id,
+                  name: acc.name || "User",
+                  email: acc.email,
+                  avatar: acc.avatar,
+                  active: acc.id === user.id,
+                })),
+                onSwitchAccount: (id) => switchAccount?.(id),
+                onAddAccount: () => setAddAccountOpen(true),
                 menuItems: [
                   {
                     label: "Account settings",
@@ -60,6 +72,13 @@ export function DocsNavbar() {
         }
       />
       <AccountSettings open={settingsOpen} onClose={() => setSettingsOpen(false)} />
+      {addAccountOpen ? (
+        <SignInModal
+          onClose={() => setAddAccountOpen(false)}
+          title="Add another account"
+          subtitle="Sign in with your other credentials to switch seamlessly."
+        />
+      ) : null}
     </>
   );
 }

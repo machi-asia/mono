@@ -1,0 +1,117 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/api/rose/chat",
+      "regex": "^/api/rose/chat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/rose/chat(?:/)?$"
+    },
+    {
+      "page": "/api/rose/settings",
+      "regex": "^/api/rose/settings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/rose/settings(?:/)?$"
+    },
+    {
+      "page": "/api/rose/transcribe",
+      "regex": "^/api/rose/transcribe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/rose/transcribe(?:/)?$"
+    },
+    {
+      "page": "/api/rose/usage",
+      "regex": "^/api/rose/usage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/rose/usage(?:/)?$"
+    },
+    {
+      "page": "/components/auth",
+      "regex": "^/components/auth(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/components/auth(?:/)?$"
+    },
+    {
+      "page": "/components/components",
+      "regex": "^/components/components(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/components/components(?:/)?$"
+    },
+    {
+      "page": "/components/database",
+      "regex": "^/components/database(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/components/database(?:/)?$"
+    },
+    {
+      "page": "/components/rose",
+      "regex": "^/components/rose(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/components/rose(?:/)?$"
+    },
+    {
+      "page": "/icon.png",
+      "regex": "^/icon\\.png(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/icon\\.png(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

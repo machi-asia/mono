@@ -2,13 +2,62 @@
 
 import { createContext, useContext, useEffect, useState, useCallback, type ReactNode } from "react";
 import { createClient } from "../client";
-import type { AuthContextValue, AuthState } from "../types";
+import type { AuthContextValue, AuthState, SavedAccount } from "../types";
 import { ToastProvider } from "@mono/components";
 
 export const AuthContext = createContext<AuthContextValue | null>(null);
 
+const ACCOUNTS_STORAGE_KEY = "mono_auth_saved_accounts";
+
+function getSavedAccounts(): SavedAccount[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = localStorage.getItem(ACCOUNTS_STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function persistAccounts(accounts: SavedAccount[]) {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(ACCOUNTS_STORAGE_KEY, JSON.stringify(accounts));
+  } catch {
+    // Ignore storage write errors
+  }
+}
+
+function extractAccountInfo(session: any): SavedAccount | null {
+  if (!session?.user || !session.access_token || !session.refresh_token) return null;
+  const user = session.user;
+  const meta = user.user_metadata ?? {};
+  const name =
+    meta.name ||
+    meta.full_name ||
+    meta.user_name ||
+    meta.username ||
+    meta.preferred_username ||
+    (user.is_anonymous ? "Guest" : user.email?.split("@")[0] || "User");
+  const avatar = meta.avatar_url || meta.picture || meta.avatar || meta.photo_url;
+
+  return {
+    id: user.id,
+    email: user.email ?? undefined,
+    name,
+    avatar,
+    isAnonymous: user.is_anonymous,
+    refreshToken: session.refresh_token,
+    accessToken: session.access_token,
+    lastActive: Date.now(),
+  };
+}
+
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [state, setState] = useState<AuthState>({
+  const [accounts, setAccounts] = useState<SavedAccount[]>([]);
+  const [state, setState] = useState<Omit<AuthState, "accounts">>({
     user: null,
     session: null,
     isLoading: true,
@@ -16,6 +65,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   });
 
   const supabase = createClient();
+
+  // Load saved accounts on mount
+  useEffect(() => {
+    setAccounts(getSavedAccounts());
+  }, []);
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -25,10 +79,66 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         isLoading: false,
         isGuest: session?.user?.is_anonymous ?? false,
       });
+
+      if (session) {
+        const account = extractAccountInfo(session);
+        if (account) {
+          setAccounts((prev) => {
+            const filtered = prev.filter((a) => a.id !== account.id);
+            const updated = [account, ...filtered];
+            persistAccounts(updated);
+            return updated;
+          });
+        }
+      }
     });
 
     return () => subscription.unsubscribe();
   }, [supabase]);
+
+  const switchAccount = useCallback(async (userId: string) => {
+    const target = accounts.find((a) => a.id === userId);
+    if (!target) {
+      return { error: "Account not found in saved accounts" };
+    }
+
+    const { data, error } = await supabase.auth.setSession({
+      access_token: target.accessToken,
+      refresh_token: target.refreshToken,
+    });
+
+    if (error) {
+      // If refresh token expired or failed, remove stale account
+      setAccounts((prev) => {
+        const updated = prev.filter((a) => a.id !== userId);
+        persistAccounts(updated);
+        return updated;
+      });
+      return { error: error.message };
+    }
+
+    if (data.session) {
+      const updatedAccount = extractAccountInfo(data.session);
+      if (updatedAccount) {
+        setAccounts((prev) => {
+          const filtered = prev.filter((a) => a.id !== updatedAccount.id);
+          const updated = [updatedAccount, ...filtered];
+          persistAccounts(updated);
+          return updated;
+        });
+      }
+    }
+
+    return { error: undefined };
+  }, [accounts, supabase]);
+
+  const removeAccount = useCallback((userId: string) => {
+    setAccounts((prev) => {
+      const updated = prev.filter((a) => a.id !== userId);
+      persistAccounts(updated);
+      return updated;
+    });
+  }, []);
 
   const signInWithEmail = useCallback(async (email: string, password: string) => {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
@@ -62,12 +172,34 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [supabase]);
 
   const signOut = useCallback(async () => {
+    const currentId = state.user?.id;
     await supabase.auth.signOut();
-  }, [supabase]);
+    if (currentId) {
+      // Keep other saved accounts intact so the user can easily switch or sign back in
+      setAccounts((prev) => {
+        const updated = prev.filter((a) => a.id !== currentId);
+        persistAccounts(updated);
+        return updated;
+      });
+    }
+  }, [state.user, supabase]);
 
   return (
     <ToastProvider>
-      <AuthContext.Provider value={{ ...state, signInWithEmail, signUpWithEmail, signInWithGoogle, signInWithGithub, signInAsGuest, signOut }}>
+      <AuthContext.Provider
+        value={{
+          ...state,
+          accounts,
+          switchAccount,
+          removeAccount,
+          signInWithEmail,
+          signUpWithEmail,
+          signInWithGoogle,
+          signInWithGithub,
+          signInAsGuest,
+          signOut,
+        }}
+      >
         {children}
       </AuthContext.Provider>
     </ToastProvider>

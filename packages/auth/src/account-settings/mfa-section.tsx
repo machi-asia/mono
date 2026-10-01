@@ -175,11 +175,19 @@ export function MFASection() {
             Scan this QR code with your authenticator app, then enter the
             6-digit code below.
           </p>
-          <img
-            src={`data:image/png;base64,${enrollData.qrCode}`}
-            alt="QR code for MFA enrollment"
-            className="auth-mfa-qr"
-          />
+          {enrollData.qrCode ? (
+            <img
+              src={
+                enrollData.qrCode.startsWith("data:")
+                  ? enrollData.qrCode
+                  : enrollData.qrCode.startsWith("<svg")
+                    ? `data:image/svg+xml;utf-8,${encodeURIComponent(enrollData.qrCode)}`
+                    : `data:image/svg+xml;base64,${enrollData.qrCode}`
+              }
+              alt="QR code for MFA enrollment"
+              className="auth-mfa-qr"
+            />
+          ) : null}
           <p className="auth-mfa-secret">
             <span>Manual entry key:</span>
             <code>{enrollData.secret}</code>

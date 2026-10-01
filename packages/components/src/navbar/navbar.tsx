@@ -19,14 +19,26 @@ export interface NavbarAuthMenuItem {
   onClick?: () => void;
 }
 
+export interface NavbarAccount {
+  id: string;
+  name: string;
+  email?: string;
+  avatar?: string;
+  active?: boolean;
+}
+
 export interface NavbarAuth {
   name: string;
+  email?: string;
   avatar?: string;
+  accounts?: NavbarAccount[];
+  onSwitchAccount?: (accountId: string) => void;
+  onAddAccount?: () => void;
   menuItems?: NavbarAuthMenuItem[];
   onSignOut?: () => void;
 }
 
-export type NavbarVariant = "default" | "tabs" | "compact";
+export type NavbarVariant = "default" | "tabs" | "compact" | "floating";
 
 export interface NavbarProps {
   brand?: ReactNode;
@@ -38,7 +50,7 @@ export interface NavbarProps {
   style?: React.CSSProperties;
 }
 
-function AvatarFallback({ name }: { name: string }) {
+function AvatarFallback({ name, className = "" }: { name: string; className?: string }) {
   const normalized = (name ?? "").trim();
   const initials = normalized
     .split(/\s+/)
@@ -47,7 +59,7 @@ function AvatarFallback({ name }: { name: string }) {
     .join("")
     .toUpperCase()
     .slice(0, 2) || "U";
-  return <span className="m-navbar-avatar-fallback">{initials}</span>;
+  return <span className={`m-navbar-avatar-fallback ${className}`.trim()}>{initials}</span>;
 }
 
 export function Navbar({
@@ -81,11 +93,70 @@ export function Navbar({
     .filter(Boolean)
     .join(" ");
 
+  const [indicatorStyle, setIndicatorStyle] = useState<{
+    left: number;
+    width: number;
+    opacity: number;
+  }>({ left: 0, width: 0, opacity: 0 });
+  const linksListRef = useRef<HTMLUListElement>(null);
+
+  // Position indicator to hovered item, or fallback to active item if present
+  const updateIndicatorToElement = (el: HTMLElement | null) => {
+    if (!el || !linksListRef.current) {
+      // Check if there is an active item to fallback to
+      const activeEl = linksListRef.current?.querySelector<HTMLElement>(".m-navbar-link--active");
+      if (activeEl && linksListRef.current) {
+        setIndicatorStyle({
+          left: activeEl.offsetLeft,
+          width: activeEl.offsetWidth,
+          opacity: 1,
+        });
+      } else {
+        setIndicatorStyle((prev) => ({ ...prev, opacity: 0 }));
+      }
+      return;
+    }
+
+    setIndicatorStyle({
+      left: el.offsetLeft,
+      width: el.offsetWidth,
+      opacity: 1,
+    });
+  };
+
+  useEffect(() => {
+    // Initial sync with active link
+    if (linksListRef.current) {
+      const activeEl = linksListRef.current.querySelector<HTMLElement>(".m-navbar-link--active");
+      if (activeEl) {
+        setIndicatorStyle({
+          left: activeEl.offsetLeft,
+          width: activeEl.offsetWidth,
+          opacity: 1,
+        });
+      }
+    }
+  }, [links]);
+
   return (
     <nav className={navClasses} style={style} data-mono="navbar">
       <div className="m-navbar-inner">
         {brand ? <div className="m-navbar-brand">{brand}</div> : null}
-        <ul className="m-navbar-links" role={variant === "tabs" ? "tablist" : undefined}>
+        <ul
+          ref={linksListRef}
+          className="m-navbar-links"
+          role={variant === "tabs" ? "tablist" : undefined}
+          onMouseLeave={() => updateIndicatorToElement(null)}
+        >
+          <li
+            className="m-navbar-indicator"
+            style={{
+              transform: `translateX(${indicatorStyle.left}px)`,
+              width: `${indicatorStyle.width}px`,
+              opacity: indicatorStyle.opacity,
+            }}
+            aria-hidden="true"
+          />
           {links.map((link, idx) => {
             const isButton = Boolean(link.onClick && !link.href);
             const activeClass = link.active ? "m-navbar-link--active" : "";
@@ -99,6 +170,7 @@ export function Navbar({
                     type="button"
                     className={linkClass}
                     onClick={link.onClick}
+                    onMouseEnter={(e) => updateIndicatorToElement(e.currentTarget)}
                     role={variant === "tabs" ? "tab" : "button"}
                     aria-selected={variant === "tabs" ? Boolean(link.active) : undefined}
                   >
@@ -110,6 +182,7 @@ export function Navbar({
                     href={link.href}
                     className={linkClass}
                     onClick={link.onClick}
+                    onMouseEnter={(e) => updateIndicatorToElement(e.currentTarget)}
                   >
                     {link.icon ? <span className="m-navbar-link-icon">{link.icon}</span> : null}
                     <span>{link.label}</span>
@@ -146,8 +219,80 @@ export function Navbar({
                     ) : (
                       <AvatarFallback name={auth.name} />
                     )}
-                    <span className="m-navbar-auth-menu-name">{auth.name}</span>
+                    <div className="m-navbar-auth-menu-userinfo">
+                      <span className="m-navbar-auth-menu-name">{auth.name}</span>
+                      {auth.email ? <span className="m-navbar-auth-menu-email">{auth.email}</span> : null}
+                    </div>
                   </div>
+                  {auth.accounts && auth.accounts.length > 0 ? (
+                    <>
+                      <div className="m-navbar-auth-menu-divider" />
+                      <div className="m-navbar-auth-section-title">Switch Account</div>
+                      <div className="m-navbar-auth-accounts" role="group" aria-label="Switch account">
+                        {auth.accounts.map((acc) => {
+                          const isCurrent = Boolean(acc.active);
+                          return (
+                            <button
+                              key={acc.id}
+                              type="button"
+                              className={`m-navbar-auth-account-item ${isCurrent ? "m-navbar-auth-account-item--active" : ""}`}
+                              role="menuitem"
+                              disabled={isCurrent}
+                              onClick={() => {
+                                setMenuOpen(false);
+                                auth.onSwitchAccount?.(acc.id);
+                              }}
+                            >
+                              {acc.avatar ? (
+                                <img src={acc.avatar} alt="" className="m-navbar-auth-account-avatar" />
+                              ) : (
+                                <AvatarFallback name={acc.name} className="m-navbar-auth-account-avatar" />
+                              )}
+                              <div className="m-navbar-auth-account-meta">
+                                <span className="m-navbar-auth-account-name">{acc.name}</span>
+                                {acc.email ? (
+                                  <span className="m-navbar-auth-account-email">{acc.email}</span>
+                                ) : null}
+                              </div>
+                              {isCurrent ? (
+                                <span className="m-navbar-auth-account-badge" aria-label="Current account">✓</span>
+                              ) : null}
+                            </button>
+                          );
+                        })}
+                        {auth.onAddAccount ? (
+                          <button
+                            type="button"
+                            className="m-navbar-auth-add-btn"
+                            role="menuitem"
+                            onClick={() => {
+                              setMenuOpen(false);
+                              auth.onAddAccount?.();
+                            }}
+                          >
+                            <span className="m-navbar-auth-add-icon" aria-hidden="true">+</span>
+                            <span>Add another account</span>
+                          </button>
+                        ) : null}
+                      </div>
+                    </>
+                  ) : auth.onAddAccount ? (
+                    <>
+                      <div className="m-navbar-auth-menu-divider" />
+                      <button
+                        type="button"
+                        className="m-navbar-auth-add-btn"
+                        role="menuitem"
+                        onClick={() => {
+                          setMenuOpen(false);
+                          auth.onAddAccount?.();
+                        }}
+                      >
+                        <span className="m-navbar-auth-add-icon" aria-hidden="true">+</span>
+                        <span>Add another account</span>
+                      </button>
+                    </>
+                  ) : null}
                   <div className="m-navbar-auth-menu-divider" />
                   {auth.menuItems?.map((item, i) => (
                     <button

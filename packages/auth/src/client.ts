@@ -6,6 +6,13 @@ export function createClient() {
     process.env.SUPABASE_PUBLISHABLE_KEY!;
   return createSupabaseBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    supabaseKey
+    supabaseKey,
+    {
+      auth: {
+        experimental: {
+          passkey: true,
+        },
+      },
+    }
   );
 }

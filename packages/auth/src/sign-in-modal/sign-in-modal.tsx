@@ -9,7 +9,17 @@ import "./sign-in-modal.css";
 
 type Mode = "signin" | "signup";
 
-export function SignInModal() {
+interface SignInModalProps {
+  onClose?: () => void;
+  title?: string;
+  subtitle?: string;
+}
+
+export function SignInModal({
+  onClose,
+  title = "Welcome to Machi Asia",
+  subtitle = "Sign in or continue as a guest to access the app.",
+}: SignInModalProps = {}) {
   const { signInWithEmail, signUpWithEmail, signInWithGoogle, signInWithGithub, signInAsGuest } = useAuth();
   const { toast } = useToast();
   const [mode, setMode] = useState<Mode>("signin");
@@ -28,6 +38,8 @@ export function SignInModal() {
     setSubmitting(false);
     if (result.error) {
       toast("error", result.error);
+    } else {
+      onClose?.();
     }
   }
 
@@ -49,16 +61,42 @@ export function SignInModal() {
     const result = await signInAsGuest();
     if (result.error) {
       toast("error", result.error);
+    } else {
+      onClose?.();
     }
   }
 
   return (
-    <div className="auth-modal-overlay" role="dialog" aria-modal="true" aria-label="Sign in">
-      <div className="auth-modal">
-        <h1 className="auth-modal-title">Welcome to Machi Asia</h1>
-        <p className="auth-modal-subtitle">
-          Sign in or continue as a guest to access the app.
-        </p>
+    <div
+      className="auth-modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Sign in"
+      onClick={onClose}
+    >
+      <div className="auth-modal" onClick={(e) => e.stopPropagation()}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "var(--space-2)" }}>
+          <h1 className="auth-modal-title">{title}</h1>
+          {onClose ? (
+            <button
+              type="button"
+              className="auth-settings-close"
+              onClick={onClose}
+              aria-label="Close"
+              style={{
+                background: "none",
+                border: "none",
+                color: "var(--color-text-muted)",
+                fontSize: "1.2rem",
+                cursor: "pointer",
+                padding: "var(--space-1)",
+              }}
+            >
+              ✕
+            </button>
+          ) : null}
+        </div>
+        <p className="auth-modal-subtitle">{subtitle}</p>
 
         <div className="auth-modal-options">
           <button

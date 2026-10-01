@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { AuthProvider, AuthGate } from "@mono/auth";
-import { ToastProvider } from "@mono/components";
+import { ThemeProvider, ToastProvider } from "@mono/components";
+import "./globals.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://machi-asia.com";
 
@@ -60,11 +61,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ToastProvider>
-          <AuthProvider>
-            <AuthGate>{children}</AuthGate>
-          </AuthProvider>
-        </ToastProvider>
+        <ThemeProvider>
+          <ToastProvider>
+            <AuthProvider>
+              <AuthGate>{children}</AuthGate>
+            </AuthProvider>
+          </ToastProvider>
+        </ThemeProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

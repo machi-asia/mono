@@ -1,0 +1,7 @@
+var R=require("../../../../chunks/[turbopack]_runtime.js")("server/app/api/rose/usage/route.js")
+R.c("server/chunks/[root-of-the-server]__16qw1tn._.js")
+R.c("server/chunks/mono_0pj2a0j._.js")
+R.c("server/chunks/[root-of-the-server]__0g3xxwj._.js")
+R.c("server/chunks/mono_apps_docs__next-internal_server_app_api_rose_usage_route_actions_1a6-keg.js")
+R.m(66244)
+module.exports=R.m(66244).exports

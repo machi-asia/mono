@@ -15,6 +15,8 @@ const signInStubs: Pick<
   | "signInWithGoogle"
   | "signInWithGithub"
   | "signInAsGuest"
+  | "switchAccount"
+  | "removeAccount"
   | "signOut"
 > = {
   signInWithEmail: async () => ({ error: undefined }),
@@ -22,6 +24,8 @@ const signInStubs: Pick<
   signInWithGoogle: async () => ({ error: undefined }),
   signInWithGithub: async () => ({ error: undefined }),
   signInAsGuest: async () => ({ error: undefined }),
+  switchAccount: async () => ({ error: undefined }),
+  removeAccount: () => {},
   signOut: async () => {},
 };
 
@@ -63,15 +67,33 @@ export function MockAuthProvider({
   state?: MockAuthState;
   children?: ReactNode;
 }) {
+  const user = mockUser(state);
+  const session = mockSession(state);
+  const accounts = useMemo(() => {
+    if (!user) return [];
+    return [
+      {
+        id: user.id,
+        email: user.email ?? undefined,
+        name: user.is_anonymous ? "Guest" : "Demo User",
+        isAnonymous: user.is_anonymous,
+        refreshToken: "mock-refresh-token",
+        accessToken: "mock-access-token",
+        lastActive: Date.now(),
+      },
+    ];
+  }, [user]);
+
   const value = useMemo<AuthContextValue>(
     () => ({
-      user: mockUser(state),
-      session: mockSession(state),
+      user,
+      session,
       isLoading: state === "loading",
       isGuest: state === "guest",
+      accounts,
       ...signInStubs,
     }),
-    [state]
+    [state, user, session, accounts]
   );
 
   return <ToastProvider><AuthContext.Provider value={value}>{children}</AuthContext.Provider></ToastProvider>;

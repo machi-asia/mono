@@ -10,6 +10,7 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 | `rose` | Custom AI agent application |
 | `calculator` | Multi-game production calculator with interactive recipe tree graph (styled throughput edge labels) and factory rate planner, a sortable item catalog (name/category carets) in gallery or list view, and per-item last-updated tracking |
 | `docs` | Documentation site — component library docs and user manuals |
+| `hells-forge` | High-performance 2D multiplayer exploration space powered by Pixi.js, spatial circle collisions, WASD movement, and `@mono/sync` |
 
 ## Packages
 
@@ -18,6 +19,7 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 | `auth` | Centralized authentication via Supabase — auth provider, session management, middleware |
 | `database` | Centralized data/store via Supabase — client creation, types, queries |
 | `components` | Shared UI components + design system — tokens, theme, layout primitives (`Row`/`Col`/`Card`), and functional elements |
+| `sync` | Realtime input dressing (`dressSyncFunction`), action registry, and Redis-backed room event synchronization (`userOnPress` / `userOnRelease`) |
 
 ## Conventions
 

@@ -87,4 +87,43 @@ describe("Navbar", () => {
     fireEvent.click(tabs[1]);
     expect(handleTabClick).toHaveBeenCalledTimes(1);
   });
+
+  it("renders floating variant with appropriate classes", () => {
+    const { container } = render(
+      <Navbar variant="floating" brand={<span>Floating Brand</span>} links={links} />
+    );
+    expect(container.querySelector(".m-navbar--floating")).toBeInTheDocument();
+  });
+
+  it("renders account switcher and triggers switch and add account callbacks", () => {
+    const handleSwitch = vi.fn();
+    const handleAdd = vi.fn();
+    render(
+      <Navbar
+        auth={{
+          name: "Alice",
+          email: "alice@example.com",
+          accounts: [
+            { id: "1", name: "Alice", email: "alice@example.com", active: true },
+            { id: "2", name: "Bob", email: "bob@example.com" },
+          ],
+          onSwitchAccount: handleSwitch,
+          onAddAccount: handleAdd,
+        }}
+      />
+    );
+
+    // Open dropdown
+    fireEvent.click(screen.getByRole("button"));
+    expect(screen.getByText("Switch Account")).toBeInTheDocument();
+    expect(screen.getByText("bob@example.com")).toBeInTheDocument();
+
+    // Click Bob's account
+    fireEvent.click(screen.getByText("Bob"));
+    expect(handleSwitch).toHaveBeenCalledWith("2");
+
+    // Click add another account
+    fireEvent.click(screen.getByText("Add another account"));
+    expect(handleAdd).toHaveBeenCalledTimes(1);
+  });
 });

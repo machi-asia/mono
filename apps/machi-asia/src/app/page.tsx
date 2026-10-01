@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { AppNavbar, AppFooter } from "../components/app-nav";
+import { HomeClient } from "./home-client";
 
 export const metadata: Metadata = {
   title: "Product Showcase & Subscription Hub",
@@ -8,9 +10,10 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main>
-      <h1>Machi Asia</h1>
-      <p>Showcase and subscription billing hub for Machi Asia products.</p>
-    </main>
+    <div className="machi-page">
+      <AppNavbar currentPath="/" />
+      <HomeClient />
+      <AppFooter />
+    </div>
   );
 }

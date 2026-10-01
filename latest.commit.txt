@@ -1,8 +1,24 @@
-feature(calculator): add Create mod game with recipes and item textures
-- calculator: add new game dataset for Create (`create`) with 1,200+ items and 1,400+ recipes extracted from mod jar
-- calculator: extract 1,250+ item and block textures to `apps/calculator/public/create/items/`
-- calculator: register Create dataset in `src/data/games.ts` using items.xml schema
-- calculator: fix `.calc-recipe-select` CSS class targeting from legacy `.dropdown-*` to design system `.m-dropdown*`, constraining max width and ensuring text truncation
-- calculator: add `flex-shrink: 0` and `white-space: nowrap` to `.calc-item-actions-group` so action buttons do not overlap
-- calculator: add `max-width`, `white-space: nowrap`, and `text-overflow: ellipsis` to `.calc-rate-badge`
+feature(auth): add multi-account switching and align account item sizes and spacing
 
+- packages/components: align avatar, icon, and text sizing and spacing in the navbar auth account switcher (`.m-navbar-auth-account-item` and `.m-navbar-auth-add-btn`) to use unified 28px circles, identical 12px gap (`var(--space-3)`), vertical centering, and consistent 0.85rem label typography
+- packages/components: add `NavbarAccount` interface and extend `NavbarAuth` with `accounts`, `onSwitchAccount`, and `onAddAccount` properties
+- packages/components: render interactive "Switch Account" section in the auth dropdown menu showing user avatars, names, emails, active checkmark badges, and an "Add another account" action button
+- packages/components: add styling for account switcher list, account items, active states, and add-account trigger button in `navbar.css`
+- packages/components: add unit tests for account switching and add-account triggering in `navbar.test.tsx`
+- packages/components: add animated sliding indicator (`.m-navbar-indicator`) that tracks hovered links with smooth CSS transitions (`transform: translateX(...)`, `width`, `opacity`), resetting to active link on mouse leave
+- packages/components: add `--color-surface-glass` to design tokens (`tokens.css`) for both dark (`rgb(22 20 15 / 80%)`) and light (`rgb(255 255 255 / 80%)`) modes, ensuring floating navbar seamlessly swaps themes
+- packages/components: update floating navbar pill cards (`.m-navbar--floating .m-navbar-brand`, `.m-navbar-links`, `.m-navbar-actions`) to use `var(--color-surface-glass)` with equal 48px height, blur backdrops, pill borders, and elevation
+- packages/auth: introduce `SavedAccount` and multi-session registry in `AuthProvider` with `accounts`, `switchAccount(userId)` calling `supabase.auth.setSession(...)`, and `removeAccount(userId)`
+- packages/auth: update `MockAuthProvider` to supply mock saved accounts and switching stubs
+- packages/auth: add `onClose`, custom `title`, and custom `subtitle` support to `SignInModal` for "Add another account" flows
+- packages/auth: enable experimental passkey support (`auth: { experimental: { passkey: true } }`) in Supabase client and server configuration
+- packages/auth: fix SVG QR code decoding and render with a high-contrast white card in `mfa-section.tsx`
+- apps/machi-asia: wire `accounts`, `switchAccount`, and `onAddAccount` into `AppNavbar` using `SignInModal`
+- apps/docs: wire `accounts`, `switchAccount`, and `onAddAccount` into `DocsNavbar` using `SignInModal`
+- apps/docs: ignore old build output (`.next*/**`) in `eslint.config.mjs`
+- apps/machi-asia: add home page (`/`) showcasing apps with features, architecture highlights, and subscription tiers
+- apps/machi-asia: add `/portfolio` landing page showcasing engineering works, architecture case studies, competencies, and GitHub/contact links
+- apps/machi-asia: build UI strictly using `@mono/components` primitives (`Row`, `Col`, `Card`, `Button`, `Tooltip`, `Accordion`, `Usage`, `Navbar`, `Footer`, `Link`)
+- apps/machi-asia: configure `sitemap.ts` with both `/` and `/portfolio` routes meeting SEO guidelines
+- packages/sync: new AuthoritativeRoomSimulation class with server-side physics, stale input skipping, instant-stop on control release, and dash impulse system
+- apps/hells-forge: server-authoritative multiplayer exploration space with Pixi.js, spatial collisions, dash ability, and camera fix

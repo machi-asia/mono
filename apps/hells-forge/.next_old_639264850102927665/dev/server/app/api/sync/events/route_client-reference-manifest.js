@@ -1,0 +1,1 @@
+globalThis.__RSC_MANIFEST=(globalThis.__RSC_MANIFEST||{});globalThis.__RSC_MANIFEST["/api/sync/events/route"]={"moduleLoading":{"prefix":"/_next/"},"ssrModuleMapping":{},"edgeSSRModuleMapping":{},"clientModules":{},"entryCSSFiles":{"D:\\Repositories\\mono\\apps\\hells-forge\\src\\app\\api\\sync\\events\\route":[]},"rscModuleMapping":{},"edgeRscModuleMapping":{}};

@@ -1,0 +1,671 @@
+@import url("@mono/components/tokens.css");
+
+/* Reset & Root Variables */
+:root {
+  --game-bg: #09090b;
+  --game-surface: rgb(18 18 24 / 88%);
+  --game-border: rgb(255 255 255 / 12%);
+  --game-accent: #ff4433;
+  --game-glow: rgb(255 68 51 / 40%);
+  --blood-red: #dc2626;
+  --blood-dark: #7f1d1d;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--game-bg);
+  color: #fff;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  user-select: none;
+}
+
+/* Fullscreen Viewport */
+.game-viewport {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #12121c 0%, #08080a 100%);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Critical Blood Red Vignette */
+.game-viewport.critical-vignette {
+  box-shadow: inset 0 0 100px 30px rgb(185 28 28 / 65%);
+  animation: critical-pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes critical-pulse {
+  0%,
+  100% {
+    box-shadow: inset 0 0 80px 20px rgb(185 28 28 / 50%);
+  }
+
+  50% {
+    box-shadow: inset 0 0 140px 45px rgb(185 28 28 / 80%);
+  }
+}
+
+.game-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+/* HUD Top Header */
+.game-hud-top {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hud-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--game-surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--game-border);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #f1f5f9;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 40%);
+}
+
+.hud-room-code {
+  color: var(--game-accent);
+  margin-left: 4px;
+  padding-left: 8px;
+  border-left: 1px solid var(--game-border);
+}
+
+.status-pulse {
+  color: #22c55e;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+}
+
+.hud-stats-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hud-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--game-surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--game-border);
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 600;
+  color: #cbd5e1;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 40%);
+}
+
+/* Tactical Left Medical HUD */
+.medical-hud-left {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+  z-index: 10;
+  width: 280px;
+}
+
+/* Blood Reservoir Gauge Card */
+.blood-gauge-card {
+  background: var(--game-surface);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--game-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 60%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.blood-gauge-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blood-gauge-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #f87171;
+}
+
+.pulse-heart {
+  color: #ef4444;
+  animation: pulse-heartbeat 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse-heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.25);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.18);
+  }
+}
+
+.blood-volume-number {
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.blood-volume-number.critical-text {
+  color: #ef4444;
+  animation: pulse-dot 1s infinite;
+}
+
+.blood-reservoir-bar {
+  width: 100%;
+  height: 12px;
+  background: rgb(24 24 32 / 90%);
+  border: 1px solid rgb(255 255 255 / 15%);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blood-liquid-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #991b1b 0%, #dc2626 70%, #ef4444 100%);
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgb(220 38 38 / 80%);
+  transition: width 0.15s ease-out;
+}
+
+.blood-liquid-fill.is-bleeding {
+  animation: bleeding-drain-stripe 1.5s infinite linear;
+}
+
+.hemorrhage-banner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #f87171;
+  background: rgb(220 38 38 / 15%);
+  border: 1px solid rgb(239 68 68 / 30%);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.bleed-icon {
+  color: #ef4444;
+  animation: pulse-dot 0.8s infinite;
+}
+
+.unconscious-banner {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #fca5a5;
+  background: rgb(153 27 27 / 60%);
+  padding: 4px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.06em;
+}
+
+/* Anatomical Body Doll Card */
+.body-doll-card {
+  background: var(--game-surface);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--game-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 60%);
+}
+
+.body-doll-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.body-doll-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.body-doll-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+}
+
+.doll-armor-overlay {
+  transition:
+    stroke 0.25s ease,
+    stroke-width 0.25s ease;
+}
+
+.doll-part-armor {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 0.62rem;
+  margin-left: 2px;
+}
+
+.body-doll-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgb(0 0 0 / 35%);
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.doll-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.doll-tab-btn:hover {
+  color: #e2e8f0;
+}
+
+.doll-tab-btn.active {
+  background: rgb(255 255 255 / 12%);
+  color: #f8fafc;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 40%);
+}
+
+.part-deflect-tag {
+  color: #38bdf8;
+  display: inline-flex;
+  align-items: center;
+}
+
+.bleed-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #ef4444;
+  background: rgb(239 68 68 / 15%);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.pulse-drop {
+  animation: pulse-dot 0.9s infinite;
+}
+
+.body-doll-content {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.doll-svg-container {
+  width: 110px;
+  height: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doll-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 6px rgb(0 0 0 / 60%));
+}
+
+.doll-part {
+  transition:
+    fill 0.25s ease,
+    stroke 0.25s ease;
+}
+
+.doll-part.pulsing-bleed {
+  animation: part-bleed-pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes part-bleed-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.doll-parts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 175px;
+  overflow-y: auto;
+}
+
+.doll-part-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.66rem;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: rgb(255 255 255 / 3%);
+}
+
+.doll-part-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.doll-part-indicators {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.part-bleed-tag {
+  color: #ef4444;
+  display: inline-flex;
+}
+
+.part-severed-tag {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #f87171;
+  background: rgb(220 38 38 / 25%);
+  border: 1px solid rgb(239 68 68 / 40%);
+  border-radius: 3px;
+  padding: 1px 4px;
+}
+
+.doll-part-hp {
+  font-family: ui-monospace, monospace;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+/* Spatial Radar (Minimap) */
+.game-minimap-container {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: var(--game-surface);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--game-border);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 60%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.game-minimap-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.game-minimap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  background: rgb(10 10 14 / 80%);
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.minimap-player {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition:
+    left 0.05s linear,
+    top 0.05s linear;
+}
+
+.minimap-player.local {
+  background: #ff4433;
+  box-shadow: 0 0 8px #ff4433;
+}
+
+.minimap-player.remote {
+  background: #3b82f6;
+  box-shadow: 0 0 6px #3b82f6;
+}
+
+/* Controls Hint Footer */
+.game-controls-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--game-surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--game-border);
+  padding: 8px 18px;
+  border-radius: 9999px;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 50%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.key-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: rgb(255 255 255 / 10%);
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: #fff;
+  font-family: ui-monospace, monospace;
+}
+
+.key-badge.mouse-badge {
+  background: rgb(239 68 68 / 20%);
+  border-color: rgb(239 68 68 / 40%);
+  color: #fca5a5;
+  width: 28px;
+  height: 28px;
+}
+
+.controls-separator {
+  width: 1px;
+  height: 18px;
+  background: var(--game-border);
+  margin: 0 4px;
+}
+
+.hint-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.key-badge.space-badge {
+  width: auto;
+  padding: 0 8px;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  background: rgb(255 255 255 / 12%);
+}
+
+.weapon-active-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.weapon-active-pill.sword {
+  background: rgb(56 189 248 / 15%);
+  border: 1px solid rgb(56 189 248 / 40%);
+  color: #7dd3fc;
+  box-shadow: 0 0 8px rgb(56 189 248 / 25%);
+}
+
+.weapon-active-pill.mace {
+  background: rgb(245 158 11 / 18%);
+  border: 1px solid rgb(245 158 11 / 45%);
+  color: #fcd34d;
+  box-shadow: 0 0 8px rgb(245 158 11 / 30%);
+}
+
+.auto-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgb(255 255 255 / 8%);
+  border: 1px solid rgb(255 255 255 / 18%);
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.auto-mode-btn:hover {
+  background: rgb(255 255 255 / 16%);
+  color: #fff;
+  border-color: rgb(255 255 255 / 35%);
+}
+
+.auto-mode-btn.active {
+  background: rgb(239 68 68 / 25%);
+  border-color: rgb(239 68 68 / 60%);
+  color: #fca5a5;
+  box-shadow: 0 0 12px rgb(239 68 68 / 40%);
+}
+
+.auto-ai-icon {
+  color: #94a3b8;
+  transition: color 0.2s ease;
+}
+
+.auto-mode-btn.active .auto-ai-icon {
+  color: #f87171;
+  animation: pulse-dot 1s infinite;
+}
+
