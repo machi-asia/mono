@@ -401,7 +401,17 @@ export function ComponentsShowcase() {
                 }
                 auth={
                   hasAuth
-                    ? { name: "Jane Doe", onSignOut: () => {} }
+                    ? {
+                        name: "Jane Doe",
+                        email: "jane@machi-asia.com",
+                        accounts: [
+                          { id: "1", name: "Jane Doe", email: "jane@machi-asia.com", active: true },
+                          { id: "2", name: "Alex Chen", email: "alex@machi-asia.com" },
+                        ],
+                        onSwitchAccount: (id) => console.log("Switched to", id),
+                        onAddAccount: () => alert("Add another account clicked"),
+                        onSignOut: () => {},
+                      }
                     : undefined
                 }
               />

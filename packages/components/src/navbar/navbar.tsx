@@ -138,6 +138,21 @@ export function Navbar({
     }
   }, [links]);
 
+  const effectiveAccounts: NavbarAccount[] =
+    auth?.accounts && auth.accounts.length > 0
+      ? auth.accounts
+      : auth
+        ? [
+            {
+              id: "current",
+              name: auth.name,
+              email: auth.email,
+              avatar: auth.avatar,
+              active: true,
+            },
+          ]
+        : [];
+
   return (
     <nav className={navClasses} style={style} data-mono="navbar">
       <div className="m-navbar-inner">
@@ -224,12 +239,12 @@ export function Navbar({
                       {auth.email ? <span className="m-navbar-auth-menu-email">{auth.email}</span> : null}
                     </div>
                   </div>
-                  {auth.accounts && auth.accounts.length > 0 ? (
+                  {effectiveAccounts.length > 0 ? (
                     <>
                       <div className="m-navbar-auth-menu-divider" />
                       <div className="m-navbar-auth-section-title">Switch Account</div>
                       <div className="m-navbar-auth-accounts" role="group" aria-label="Switch account">
-                        {auth.accounts.map((acc) => {
+                        {effectiveAccounts.map((acc) => {
                           const isCurrent = Boolean(acc.active);
                           return (
                             <button

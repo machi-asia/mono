@@ -1,5 +1,6 @@
-feature(auth): add multi-account switching and align account item sizes and spacing
+feature(auth): ensure account switcher is globally present across all navbar consumers
 
+- packages/components: make the "Switch Account" section in `Navbar` render automatically whenever `auth` is supplied, defaulting to the current user as the active account if no explicit `accounts` list is passed
 - packages/components: align avatar, icon, and text sizing and spacing in the navbar auth account switcher (`.m-navbar-auth-account-item` and `.m-navbar-auth-add-btn`) to use unified 28px circles, identical 12px gap (`var(--space-3)`), vertical centering, and consistent 0.85rem label typography
 - packages/components: add `NavbarAccount` interface and extend `NavbarAuth` with `accounts`, `onSwitchAccount`, and `onAddAccount` properties
 - packages/components: render interactive "Switch Account" section in the auth dropdown menu showing user avatars, names, emails, active checkmark badges, and an "Add another account" action button
@@ -13,6 +14,7 @@ feature(auth): add multi-account switching and align account item sizes and spac
 - packages/auth: add `onClose`, custom `title`, and custom `subtitle` support to `SignInModal` for "Add another account" flows
 - packages/auth: enable experimental passkey support (`auth: { experimental: { passkey: true } }`) in Supabase client and server configuration
 - packages/auth: fix SVG QR code decoding and render with a high-contrast white card in `mfa-section.tsx`
+- apps/docs: update `ComponentShowcase` Navbar demo to display sample multi-account switching and "Add another account" flow
 - apps/machi-asia: wire `accounts`, `switchAccount`, and `onAddAccount` into `AppNavbar` using `SignInModal`
 - apps/docs: wire `accounts`, `switchAccount`, and `onAddAccount` into `DocsNavbar` using `SignInModal`
 - apps/docs: ignore old build output (`.next*/**`) in `eslint.config.mjs`
