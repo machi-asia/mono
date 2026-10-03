@@ -41,7 +41,7 @@ export function AppNavbar({ currentPath = "/" }: AppNavbarProps) {
     { label: "Portfolio", href: "/portfolio", active: currentPath === "/portfolio" },
     { label: "Calculator", href: "https://calculator.machi-asia.com" },
     { label: "Rose AI", href: "https://rose.machi-asia.com" },
-    { label: "Docs", href: "https://docs.machi-asia.com" },
+    { label: "Docs", href: process.env.NEXT_PUBLIC_DOCS_URL || "/docs" },
   ];
 
   return (
@@ -99,7 +99,7 @@ export function AppFooter() {
       links={[
         { label: "Home", href: "/" },
         { label: "Portfolio", href: "/portfolio" },
-        { label: "Documentation", href: "https://docs.machi-asia.com" },
+        { label: "Documentation", href: process.env.NEXT_PUBLIC_DOCS_URL || "/docs" },
         { label: "Calculator", href: "https://calculator.machi-asia.com" },
         { label: "Rose AI", href: "https://rose.machi-asia.com" },
       ]}

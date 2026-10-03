@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback, type MutableRefObject } from "react";
 import { useAuth } from "@mono/auth";
-import { Usage, Tooltip } from "@mono/components";
+import { Usage, Tooltip, Skeleton } from "@mono/components";
 import { getRoseUsage, currentDay, type RoseUsage } from "./usage";
 import "./usage.css";
 
@@ -140,6 +140,26 @@ export function UsageBar({
   useEffect(() => {
     fetchUsage();
   }, [fetchUsage]);
+
+  if (loading) {
+    return (
+      <div className={`m-rose-usage-bar ${className}`} data-mono="rose-usage-bar" role="status" aria-label="Loading usage data" aria-busy="true">
+        <div className="m-rose-usage-meta">
+          <div className="m-rose-usage-role-row">
+            <Skeleton variant="rounded" width={84} height={24} />
+          </div>
+          <Skeleton variant="text" width={120} height="0.9rem" />
+        </div>
+        <div style={{ marginTop: "0.5rem" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.35rem" }}>
+            <Skeleton variant="text" width={90} height="0.85rem" />
+            <Skeleton variant="text" width={40} height="0.85rem" />
+          </div>
+          <Skeleton variant="rounded" width="100%" height={8} />
+        </div>
+      </div>
+    );
+  }
 
   const isAdmin = usage.role === "admin" || usage.limit === Infinity;
   const roleLabel = isAdmin ? "Admin" : usage.role === "guest" ? "Guest" : "User";

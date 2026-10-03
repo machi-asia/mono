@@ -20,6 +20,11 @@ import {
   MediaLibrary,
   MarkdownRenderer,
   Usage,
+  Skeleton,
+  SkeletonText,
+  SkeletonCircle,
+  SkeletonButton,
+  SkeletonCard,
 } from "@mono/components";
 import { useTheme } from "next-themes";
 import "./components-demo.css";
@@ -380,12 +385,15 @@ export function ComponentsShowcase() {
           propControls: [
             { prop: "variant", label: "variant", options: ["default", "tabs", "compact", "floating"], defaultValue: "default" },
             { prop: "showAuth", label: "auth", options: boolOptions, defaultValue: "true" },
+            { prop: "mobileView", label: "mobile view", options: ["auto", "collapsed"], defaultValue: "auto" },
           ],
-          render: ({ variant, showAuth }) => {
+          render: ({ variant, showAuth, mobileView }) => {
             const hasAuth = showAuth === "true";
+            const isForceMobile = mobileView === "collapsed";
             return (
               <Navbar
                 variant={variant as "default" | "tabs" | "compact" | "floating"}
+                forceMobile={isForceMobile}
                 brand={<span>Machi Asia</span>}
                 links={[
                   { label: "Home", href: "/", active: true },
@@ -525,6 +533,66 @@ export function ComponentsShowcase() {
                   size={(size as "sm" | "md" | "lg") || "md"}
                   description="Resets at the start of next billing period."
                 />
+              </div>
+            );
+          },
+        },
+        {
+          name: "Skeleton",
+          uses: 'import { Skeleton, SkeletonText, SkeletonCircle, SkeletonButton, SkeletonCard } from "@mono/components"',
+          description: "Loading placeholder primitives and compound components used to replace components that load data before fetch completes.",
+          propControls: [
+            {
+              prop: "variant",
+              label: "variant",
+              options: ["text", "circular", "rectangular", "rounded", "compound-card"],
+              defaultValue: "text",
+            },
+            {
+              prop: "animation",
+              label: "animation",
+              options: ["pulse", "wave", "none"],
+              defaultValue: "pulse",
+            },
+          ],
+          render: ({ variant, animation }) => {
+            const anim = (animation as "pulse" | "wave" | "none") || "pulse";
+            if (variant === "compound-card") {
+              return (
+                <div style={{ maxWidth: 360, width: "100%" }}>
+                  <SkeletonCard hasImage hasHeader hasAvatar lines={3} hasActions animation={anim} />
+                </div>
+              );
+            }
+            if (variant === "circular") {
+              return (
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                  <SkeletonCircle size={48} animation={anim} />
+                  <div style={{ flex: 1 }}>
+                    <Skeleton variant="text" width="60%" animation={anim} />
+                    <Skeleton variant="text" width="40%" animation={anim} />
+                  </div>
+                </div>
+              );
+            }
+            if (variant === "rounded") {
+              return (
+                <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+                  <SkeletonButton size="md" animation={anim} />
+                  <Skeleton variant="rounded" width={180} height={40} animation={anim} />
+                </div>
+              );
+            }
+            if (variant === "rectangular") {
+              return (
+                <div style={{ maxWidth: 400, width: "100%" }}>
+                  <Skeleton variant="rectangular" width="100%" height={120} animation={anim} />
+                </div>
+              );
+            }
+            return (
+              <div style={{ maxWidth: 400, width: "100%" }}>
+                <SkeletonText lines={3} animation={anim} />
               </div>
             );
           },

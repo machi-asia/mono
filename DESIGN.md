@@ -37,9 +37,10 @@ The visual language of every Machi Asia app lives here. These conventions apply 
 
 ### Component Rules
 
-- **Strictly build UI using `@mono/components`**: Core primitives (`<Button>`, `<Card>`, `<Row>`, `<Col>`, `<Tooltip>`, `<Dropdown>`, `<Link>`, `<MarkdownRenderer>`, date/time pickers, etc.) must be consumed strictly from `@mono/components`.
+- **Strictly build UI using `@mono/components`**: Core primitives (`<Button>`, `<Card>`, `<Row>`, `<Col>`, `<Tooltip>`, `<Dropdown>`, `<Link>`, `<MarkdownRenderer>`, `<Skeleton>`, `<SkeletonText>`, `<SkeletonCircle>`, `<SkeletonButton>`, `<SkeletonCard>`, date/time pickers, etc.) must be consumed strictly from `@mono/components`.
 - Apps, packages, and modals must **never hand-roll** raw buttons (`<button>`), custom card wrappers (`<div className="...card...">`), or ad-hoc primitives when an equivalent component exists in `@mono/components`.
 - **Clarify vague or complex UI features with `<Tooltip variant="help">`**: Any UI metrics, settings, tiers, badges, or controls that might otherwise be ambiguous or vague to end users must include the circular `?` help tooltip (`<Tooltip variant="help">`) from `@mono/components` with concise, clear explanations and limits.
+- **Mandatory Skeleton Loading for Asynchronous Data**: All components, views, lists, cards, and widgets that load data from an asynchronous `fetch` or database query MUST be replaced with a corresponding Skeleton component (`<Skeleton>`, `<SkeletonText>`, `<SkeletonCard>`, `<SkeletonCircle>`, `<SkeletonButton>`) from `@mono/components` before the load completes. Raw spinners, blank containers, or plain text ("Loading...") must not be rendered as full component placeholders when skeleton primitives can represent the incoming layout structure.
 
 ### Content Density
 

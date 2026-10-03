@@ -83,14 +83,6 @@ export function SignInModal({
               className="auth-settings-close"
               onClick={onClose}
               aria-label="Close"
-              style={{
-                background: "none",
-                border: "none",
-                color: "var(--color-text-muted)",
-                fontSize: "1.2rem",
-                cursor: "pointer",
-                padding: "var(--space-1)",
-              }}
             >
               ✕
             </button>
@@ -130,6 +122,7 @@ export function SignInModal({
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
                 required
                 autoComplete="email"
               />
@@ -140,6 +133,7 @@ export function SignInModal({
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
                 required
                 minLength={6}
                 autoComplete={mode === "signin" ? "current-password" : "new-password"}

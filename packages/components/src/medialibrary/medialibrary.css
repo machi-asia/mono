@@ -203,6 +203,11 @@
   box-shadow: var(--shadow-2);
 }
 
+.m-media-card--skeleton {
+  cursor: default;
+  pointer-events: none;
+}
+
 .m-media-preview-box {
   position: relative;
   width: 100%;

@@ -27,6 +27,7 @@ import {
   detectMediaType,
   type MediaFileRecord,
 } from "@mono/database";
+import { Skeleton } from "../skeleton/skeleton";
 import "./medialibrary.css";
 import {
   type MediaFilterType,
@@ -308,9 +309,18 @@ export function MediaLibrary({
 
       {/* Grid or Empty / Loading state */}
       {isLoading ? (
-        <div className="m-media-loading">
-          <Loader2 size={28} className="m-media-spin" aria-hidden="true" />
-          <span>Loading media files...</span>
+        <div className="m-media-grid" role="status" aria-label="Loading media files" aria-busy="true">
+          {Array.from({ length: pageSize }).map((_, i) => (
+            <div key={i} className="m-media-card m-media-card--skeleton">
+              <div className="m-media-preview-box">
+                <Skeleton variant="rounded" width="100%" height={120} />
+              </div>
+              <div className="m-media-card-info" style={{ width: "100%" }}>
+                <Skeleton variant="text" width="80%" height="0.9rem" />
+                <Skeleton variant="text" width="40%" height="0.75rem" />
+              </div>
+            </div>
+          ))}
         </div>
       ) : filteredItems.length === 0 ? (
         <div className="m-media-empty">

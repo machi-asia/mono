@@ -30,6 +30,8 @@
 }
 
 .showcase-item {
+  position: relative;
+  overflow: visible;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-5);
@@ -85,6 +87,8 @@
 }
 
 .showcase-item-live {
+  position: relative;
+  overflow: visible;
   margin-top: var(--space-3);
   padding: var(--space-4);
   border: 1px dashed var(--color-border);

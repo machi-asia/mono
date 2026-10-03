@@ -2,7 +2,7 @@
 
 import { useState, useEffect, type FormEvent } from "react";
 import { X, Sliders, Brain, Check, AlertCircle, Sparkles } from "lucide-react";
-import { Tooltip, Button, Navbar, Dropdown } from "@mono/components";
+import { Tooltip, Button, Navbar, Dropdown, Skeleton, SkeletonButton } from "@mono/components";
 import { RoseMemoriesTab, type RoseMemoryItem } from "./settings-memories";
 
 export type { RoseMemoryItem };
@@ -194,6 +194,25 @@ export function RoseSettingsModal({
         {/* Tab Content */}
         <div className="m-rose-settings-content">
           {activeTab === "personalization" ? (
+            isLoading ? (
+              <div role="status" aria-label="Loading personalization settings" aria-busy="true" style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-2)" }}>
+                  <Skeleton variant="text" width={180} height={16} />
+                  <Skeleton variant="rounded" width="100%" height={38} />
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-2)" }}>
+                  <Skeleton variant="text" width={160} height={16} />
+                  <Skeleton variant="rounded" width="100%" height={38} />
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-2)" }}>
+                  <Skeleton variant="text" width={140} height={16} />
+                  <Skeleton variant="rounded" width="100%" height={100} />
+                </div>
+                <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                  <SkeletonButton size="md" width={160} />
+                </div>
+              </div>
+            ) : (
             <form onSubmit={handleSavePersonalization} className="m-rose-personalization-form">
               <div className="m-rose-settings-field">
                 <div className="m-rose-settings-label-row">
@@ -262,6 +281,7 @@ export function RoseSettingsModal({
                 </Button>
               </div>
             </form>
+            )
           ) : (
             <RoseMemoriesTab
               isOpen={isOpen}

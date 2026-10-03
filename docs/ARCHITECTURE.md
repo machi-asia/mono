@@ -64,8 +64,9 @@ Shared UI component library. Exports React components only (`<>`). No server fun
 
 This package is also the **single source of truth for the design system** (see `DESIGN.md` and `ADR-005`):
 - design tokens (CSS custom properties, dark-primary/gold) and `ThemeProvider` (next-themes) for theme switching;
-- layout primitives — `Row`, `Col`, `Card` — and any functional elements (date/time pickers, etc.) that apps must consume rather than hand-roll;
-- `ComponentShowcase` — the shared **list-view layout** that every package's component showcase page uses (see "Component Showcases" below).
+- layout primitives — `Row`, `Col`, `Card` — and functional elements (date/time pickers, `Skeleton`, `SkeletonText`, `SkeletonCircle`, `SkeletonButton`, `SkeletonCard`, etc.) that apps must consume rather than hand-roll;
+- `ComponentShowcase` — the shared **list-view layout** that every package's component showcase page uses (see "Component Showcases" below);
+- **Skeleton loading convention** (see `ADR-015`): every component or view that loads data from an asynchronous fetch or database query must render a skeleton component before the fetch resolves.
 
 ### rose (`/packages/rose`)
 
@@ -158,6 +159,7 @@ See `docs/adr/` for all Architecture Decision Records. Key decisions:
 - [ADR-012: Index-Based Long-Term Memory for Rose](./adr/012-index-based-long-term-memory.md)
 - [ADR-013: Local Ollama Fallback for Rose in Development](./adr/013-local-ollama-dev-fallback.md)
 - [ADR-014: Multi-Game Production Calculator App](./adr/014-multi-game-calculator-app.md)
+- [ADR-015: Skeleton Loading State Enforcement](./adr/015-skeleton-loading-state-enforcement.md)
 
 ## Documentation Requirements
 

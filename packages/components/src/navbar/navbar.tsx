@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, type ReactNode } from "react";
+import { LogOut } from "lucide-react";
 import { useMotionMount } from "../motion/motion";
 import "./navbar.css";
 
@@ -9,7 +10,7 @@ export interface NavbarLink {
   href?: string;
   active?: boolean;
   icon?: ReactNode;
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent) => void;
 }
 
 const NAVBAR_DURATION = 160;
@@ -46,6 +47,7 @@ export interface NavbarProps {
   actions?: ReactNode;
   auth?: NavbarAuth;
   variant?: NavbarVariant;
+  forceMobile?: boolean;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -68,6 +70,7 @@ export function Navbar({
   actions,
   auth,
   variant = "default",
+  forceMobile = false,
   className = "",
   style,
 }: NavbarProps) {
@@ -75,23 +78,57 @@ export function Navbar({
   const menuRef = useRef<HTMLDivElement>(null);
   const { mounted, entered } = useMotionMount(menuOpen, NAVBAR_DURATION);
 
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileAuthOpen, setMobileAuthOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const burgerRef = useRef<HTMLButtonElement>(null);
+  const { mounted: mobileMounted, entered: mobileEntered } = useMotionMount(mobileOpen, NAVBAR_DURATION);
+
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setMenuOpen(false);
       }
+      if (
+        mobileOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(e.target as Node) &&
+        burgerRef.current &&
+        !burgerRef.current.contains(e.target as Node)
+      ) {
+        setMobileOpen(false);
+      }
     }
-    if (menuOpen) document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [menuOpen]);
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        if (menuOpen) setMenuOpen(false);
+        if (mobileOpen) setMobileOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [menuOpen, mobileOpen]);
+
+  useEffect(() => {
+    if (!mobileOpen) {
+      setMobileAuthOpen(false);
+    }
+  }, [mobileOpen]);
 
   const navClasses = [
     "m-navbar",
     `m-navbar--${variant}`,
+    forceMobile ? "m-navbar--mobile-forced" : "",
     className,
   ]
     .filter(Boolean)
     .join(" ");
+
+  const hasNavLinksOrActions = (links && links.length > 0) || Boolean(actions) || Boolean(auth);
 
   const [indicatorStyle, setIndicatorStyle] = useState<{
     left: number;
@@ -328,20 +365,221 @@ export function Navbar({
                   ) : null}
                   <button
                     type="button"
-                    className="m-navbar-auth-menu-item"
+                    className="m-navbar-auth-menu-item m-navbar-auth-menu-item--signout"
                     role="menuitem"
                     onClick={() => {
                       setMenuOpen(false);
                       auth.onSignOut?.();
                     }}
                   >
-                    Sign out
+                    <LogOut size={15} aria-hidden="true" className="m-navbar-signout-icon" />
+                    <span>Sign out</span>
                   </button>
                 </div>
               ) : null}
             </div>
           ) : null}
         </div>
+        {hasNavLinksOrActions ? (
+          <button
+            ref={burgerRef}
+            type="button"
+            className={`m-navbar-burger ${mobileOpen ? "m-navbar-burger--open" : ""}`}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="m-navbar-mobile-menu"
+          >
+            <span className="m-navbar-burger-box" aria-hidden="true">
+              <span className="m-navbar-burger-bar" />
+              <span className="m-navbar-burger-bar" />
+              <span className="m-navbar-burger-bar" />
+            </span>
+          </button>
+        ) : null}
+
+        {mobileMounted && hasNavLinksOrActions ? (
+          <div
+            id="m-navbar-mobile-menu"
+            ref={mobileMenuRef}
+            className={`m-navbar-mobile-menu ${mobileEntered ? "m-navbar-mobile-menu--entered" : ""}`}
+            role="dialog"
+            aria-label="Navigation menu"
+          >
+            {links && links.length > 0 ? (
+              <ul className="m-navbar-mobile-links">
+                {links.map((link, idx) => {
+                  const isButton = Boolean(link.onClick && !link.href);
+                  const activeClass = link.active ? "m-navbar-mobile-link--active" : "";
+                  const linkClass = `m-navbar-mobile-link ${activeClass}`.trim();
+                  const itemKey = link.href || `${link.label}-${idx}`;
+
+                  return (
+                    <li key={itemKey}>
+                      {isButton ? (
+                        <button
+                          type="button"
+                          className={linkClass}
+                          onClick={link.onClick}
+                        >
+                          {link.icon ? <span className="m-navbar-link-icon">{link.icon}</span> : null}
+                          <span>{link.label}</span>
+                        </button>
+                      ) : (
+                        <a
+                          href={link.href}
+                          className={linkClass}
+                          onClick={(e) => {
+                            setMobileOpen(false);
+                            link.onClick?.(e);
+                          }}
+                        >
+                          {link.icon ? <span className="m-navbar-link-icon">{link.icon}</span> : null}
+                          <span>{link.label}</span>
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : null}
+
+            {actions ? (
+              <>
+                {links && links.length > 0 ? <div className="m-navbar-mobile-divider" /> : null}
+                <div className="m-navbar-mobile-actions" onClick={() => setMobileOpen(false)}>
+                  {actions}
+                </div>
+              </>
+            ) : null}
+
+            {auth ? (
+              <>
+                {(links && links.length > 0) || actions ? (
+                  <div className="m-navbar-mobile-divider" />
+                ) : null}
+                <div className="m-navbar-mobile-auth">
+                  <button
+                    type="button"
+                    className={`m-navbar-mobile-auth-trigger ${mobileAuthOpen ? "m-navbar-mobile-auth-trigger--open" : ""}`}
+                    onClick={() => setMobileAuthOpen(!mobileAuthOpen)}
+                    aria-expanded={mobileAuthOpen}
+                    aria-haspopup="true"
+                  >
+                    <div className="m-navbar-mobile-auth-trigger-user">
+                      {auth.avatar ? (
+                        <img src={auth.avatar} alt={auth.name} className="m-navbar-avatar" />
+                      ) : (
+                        <AvatarFallback name={auth.name} />
+                      )}
+                      <span className="m-navbar-mobile-auth-trigger-name">{auth.name}</span>
+                    </div>
+                    <span className="m-navbar-auth-chevron" aria-hidden="true">
+                      {mobileAuthOpen ? "▴" : "▾"}
+                    </span>
+                  </button>
+
+                  {mobileAuthOpen ? (
+                    <div className="m-navbar-mobile-auth-dropdown">
+                      {auth.email ? (
+                        <div className="m-navbar-mobile-auth-email">{auth.email}</div>
+                      ) : null}
+
+                      {effectiveAccounts.length > 0 ? (
+                        <>
+                          <div className="m-navbar-auth-menu-divider" />
+                          <div className="m-navbar-auth-section-title">Switch Account</div>
+                          <div className="m-navbar-auth-accounts" role="group" aria-label="Switch account">
+                            {effectiveAccounts.map((acc) => {
+                              const isCurrent = Boolean(acc.active);
+                              return (
+                                <button
+                                  key={acc.id}
+                                  type="button"
+                                  className={`m-navbar-auth-account-item ${isCurrent ? "m-navbar-auth-account-item--active" : ""}`}
+                                  role="menuitem"
+                                  disabled={isCurrent}
+                                  onClick={() => {
+                                    setMobileOpen(false);
+                                    auth.onSwitchAccount?.(acc.id);
+                                  }}
+                                >
+                                  {acc.avatar ? (
+                                    <img src={acc.avatar} alt="" className="m-navbar-auth-account-avatar" />
+                                  ) : (
+                                    <AvatarFallback name={acc.name} className="m-navbar-auth-account-avatar" />
+                                  )}
+                                  <div className="m-navbar-auth-account-meta">
+                                    <span className="m-navbar-auth-account-name">{acc.name}</span>
+                                    {acc.email ? (
+                                      <span className="m-navbar-auth-account-email">{acc.email}</span>
+                                    ) : null}
+                                  </div>
+                                  {isCurrent ? (
+                                    <span className="m-navbar-auth-account-badge" aria-label="Current account">✓</span>
+                                  ) : null}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </>
+                      ) : null}
+
+                      {auth.onAddAccount ? (
+                        <button
+                          type="button"
+                          className="m-navbar-auth-add-btn"
+                          role="menuitem"
+                          onClick={() => {
+                            setMobileOpen(false);
+                            auth.onAddAccount?.();
+                          }}
+                        >
+                          <span className="m-navbar-auth-add-icon" aria-hidden="true">+</span>
+                          <span>Add another account</span>
+                        </button>
+                      ) : null}
+
+                      {auth.menuItems?.length ? (
+                        <div className="m-navbar-auth-menu-divider" />
+                      ) : null}
+
+                      {auth.menuItems?.map((item, i) => (
+                        <button
+                          key={i}
+                          type="button"
+                          className="m-navbar-mobile-menu-item"
+                          role="menuitem"
+                          onClick={() => {
+                            setMobileOpen(false);
+                            item.onClick?.();
+                          }}
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+
+                      <div className="m-navbar-auth-menu-divider" />
+
+                      <button
+                        type="button"
+                        className="m-navbar-mobile-menu-item m-navbar-mobile-menu-item--signout"
+                        role="menuitem"
+                        onClick={() => {
+                          setMobileOpen(false);
+                          auth.onSignOut?.();
+                        }}
+                      >
+                        <LogOut size={15} aria-hidden="true" className="m-navbar-signout-icon" />
+                        <span>Sign out</span>
+                      </button>
+                    </div>
+                  ) : null}
+                </div>
+              </>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </nav>
   );

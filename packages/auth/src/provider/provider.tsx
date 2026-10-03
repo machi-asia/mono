@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState, useCallback, type ReactNode } from "react";
+import type { AuthChangeEvent, Session } from "@supabase/supabase-js";
 import { createClient } from "../client";
 import type { AuthContextValue, AuthState, SavedAccount } from "../types";
 import { ToastProvider } from "@mono/components";
@@ -72,7 +73,36 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    let mounted = true;
+
+    // Fast initial check in case onAuthStateChange is delayed or aborted
+    supabase.auth
+      .getSession()
+      .then(({ data: { session } }: { data: { session: Session | null } }) => {
+        if (!mounted) return;
+        setState({
+          user: session?.user ?? null,
+          session,
+          isLoading: false,
+          isGuest: session?.user?.is_anonymous ?? false,
+        });
+      })
+      .catch(() => {
+        if (!mounted) return;
+        setState((prev) => (prev.isLoading ? { ...prev, isLoading: false } : prev));
+      });
+
+    // Fallback timer so UI never hangs indefinitely in loading state
+    const timeout = setTimeout(() => {
+      if (mounted) {
+        setState((prev) => (prev.isLoading ? { ...prev, isLoading: false } : prev));
+      }
+    }, 3000);
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event: AuthChangeEvent, session: Session | null) => {
+      if (!mounted) return;
       setState({
         user: session?.user ?? null,
         session,
@@ -93,7 +123,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      mounted = false;
+      clearTimeout(timeout);
+      subscription.unsubscribe();
+    };
   }, [supabase]);
 
   const switchAccount = useCallback(async (userId: string) => {

@@ -35,3 +35,17 @@ The scheduled/dispatch workflow `.github/workflows/sync-canonical-files.yml` als
 `templates/dependabot.yml` (as root `dependabot.yml`) and `.github/labels.yml` in the same run;
 these three files are centrally managed — do not fork its logic into consumer repos, and do not
 edit any of them outside this repo.
+
+### 4. Shared Icon Library Standard (`lucide-react`)
+
+All applications under `apps/` and packages under `packages/` MUST standardize on `lucide-react` as
+the single canonical icon library across the organization.
+- Do NOT install or introduce competing icon packages (e.g. `react-icons`, `@tabler/icons-react`,
+  `@heroicons/react`, `font-awesome`, etc.).
+- Ensure `lucide-react` is declared in workspace dependencies whenever icons are required.
+
+### 5. Mandatory Skeleton Loading Components for Asynchronous Fetches
+
+All components that load data from a `fetch` or database query MUST be replaced with a skeleton component (`<Skeleton>`, `<SkeletonText>`, `<SkeletonCard>`, `<SkeletonCircle>`, `<SkeletonButton>`) from `@mono/components` before load completes.
+- Never leave a bare spinner, unstyled loading text, or blank layout container when loading asynchronous data.
+- Ensure skeleton placeholders closely mimic the geometry, proportions, and visual rhythm of the loaded content.

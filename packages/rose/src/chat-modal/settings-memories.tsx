@@ -9,7 +9,7 @@ import {
   KeyRound,
   FileText,
 } from "lucide-react";
-import { Tooltip, Button, Card, Dropdown } from "@mono/components";
+import { Tooltip, Button, Card, Dropdown, Skeleton, SkeletonText } from "@mono/components";
 
 export interface RoseMemoryItem {
   id: string;
@@ -380,7 +380,21 @@ export function RoseMemoriesTab({
 
       <div className="m-rose-memories-list" role="list">
         {isLoading ? (
-          <p className="m-rose-empty-sub">Loading memories…</p>
+          <div role="status" aria-label="Loading memories" aria-busy="true" style={{ display: "flex", flexDirection: "column", gap: "var(--space-3)" }}>
+            {[1, 2, 3].map((n) => (
+              <Card key={n} as="div" bordered padded={false} className="m-rose-memory-card">
+                <div className="m-rose-memory-card-body" style={{ width: "100%" }}>
+                  <div className="m-rose-memory-card-tags">
+                    <Skeleton variant="rounded" width={80} height={20} />
+                    <Skeleton variant="rounded" width={50} height={20} />
+                  </div>
+                  <div style={{ marginTop: "var(--space-2)" }}>
+                    <SkeletonText lines={2} lastLineWidth="70%" />
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
         ) : memories.length === 0 ? (
           <div className="m-rose-empty-memories">
             <Brain size={32} className="m-rose-empty-icon" />

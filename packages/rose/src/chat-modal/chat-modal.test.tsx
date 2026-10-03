@@ -117,7 +117,7 @@ describe("Rose Chat Modal & Interface", () => {
     expect(screen.getAllByRole("listitem").length).toBe(1);
   });
 
-  it("renders Settings button under conversations list and opens Settings modal with personalization and memories", () => {
+  it("renders Settings button under conversations list and opens Settings modal with personalization and memories", async () => {
     render(
       <MockAuthProvider state="signed-in">
         <RoseChat
@@ -139,7 +139,7 @@ describe("Rose Chat Modal & Interface", () => {
     expect(screen.getByRole("dialog", { name: /Rose Settings/i })).toBeInTheDocument();
     expect(screen.getByText("Personalization")).toBeInTheDocument();
     expect(screen.getByText(/Memories/i)).toBeInTheDocument();
-    expect(screen.getByPlaceholderText(/Captain, Alex, Sensei/i)).toBeInTheDocument();
+    expect(await screen.findByPlaceholderText(/Captain, Alex, Sensei/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /Warm & Helpful/i })).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/What would you like Rose to know about you/i)).toBeInTheDocument();
 

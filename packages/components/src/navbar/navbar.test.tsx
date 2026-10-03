@@ -126,4 +126,98 @@ describe("Navbar", () => {
     fireEvent.click(screen.getByText("Add another account"));
     expect(handleAdd).toHaveBeenCalledTimes(1);
   });
+
+  it("renders burger button and opens floating mobile menu on click", () => {
+    const handleHomeClick = vi.fn();
+    render(
+      <Navbar
+        brand={<span>Brand</span>}
+        links={[
+          { label: "Home", href: "/", onClick: handleHomeClick },
+          { label: "Docs", href: "/docs" },
+        ]}
+        actions={<button type="button">Sign in</button>}
+        forceMobile={true}
+      />
+    );
+
+    const burgerBtn = screen.getByRole("button", { name: "Open navigation menu" });
+    expect(burgerBtn).toBeInTheDocument();
+    expect(burgerBtn).toHaveAttribute("aria-expanded", "false");
+
+    // Open floating menu
+    fireEvent.click(burgerBtn);
+    expect(burgerBtn).toHaveAttribute("aria-expanded", "true");
+
+    const dialog = screen.getByRole("dialog", { name: "Navigation menu" });
+    expect(dialog).toBeInTheDocument();
+    expect(dialog).toHaveClass("m-navbar-mobile-menu");
+
+    // Click Home link inside floating menu
+    const homeLinks = screen.getAllByRole("link", { name: "Home" });
+    // The second link is inside the mobile floating menu
+    fireEvent.click(homeLinks[homeLinks.length - 1]);
+    expect(handleHomeClick).toHaveBeenCalledTimes(1);
+  });
+
+  it("closes mobile floating menu when Escape key is pressed", () => {
+    render(
+      <Navbar
+        links={[{ label: "Home", href: "/" }]}
+        forceMobile={true}
+      />
+    );
+
+    const burgerBtn = screen.getByRole("button", { name: "Open navigation menu" });
+    fireEvent.click(burgerBtn);
+    expect(screen.getByRole("dialog", { name: "Navigation menu" })).toBeInTheDocument();
+
+    fireEvent.keyDown(document, { key: "Escape" });
+    expect(burgerBtn).toHaveAttribute("aria-expanded", "false");
+  });
+
+  it("applies m-navbar--mobile-forced class when forceMobile prop is true", () => {
+    const { container } = render(
+      <Navbar links={links} forceMobile={true} />
+    );
+    expect(container.querySelector(".m-navbar--mobile-forced")).toBeInTheDocument();
+  });
+
+  it("collapses and expands auth options via dropdown trigger in mobile menu", () => {
+    const handleSignOut = vi.fn();
+    render(
+      <Navbar
+        forceMobile={true}
+        auth={{
+          name: "Alice",
+          email: "alice@example.com",
+          onSignOut: handleSignOut,
+          accounts: [
+            { id: "1", name: "Alice", email: "alice@example.com", active: true },
+            { id: "2", name: "Bob", email: "bob@example.com" },
+          ],
+        }}
+      />
+    );
+
+    // Open mobile menu
+    const burgerBtn = screen.getByRole("button", { name: "Open navigation menu" });
+    fireEvent.click(burgerBtn);
+
+    // Mobile auth trigger should be visible with user's name
+    const authTrigger = screen.getByRole("button", { name: /Alice/i });
+    expect(authTrigger).toHaveAttribute("aria-expanded", "false");
+    expect(screen.queryByText("Switch Account")).not.toBeInTheDocument();
+
+    // Click trigger to expand auth dropdown
+    fireEvent.click(authTrigger);
+    expect(authTrigger).toHaveAttribute("aria-expanded", "true");
+    expect(screen.getByText("Switch Account")).toBeInTheDocument();
+    expect(screen.getByText("Bob")).toBeInTheDocument();
+
+    // Click sign out
+    const signOutBtn = screen.getByRole("menuitem", { name: "Sign out" });
+    fireEvent.click(signOutBtn);
+    expect(handleSignOut).toHaveBeenCalledTimes(1);
+  });
 });

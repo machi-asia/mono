@@ -14,6 +14,11 @@ const mockStateOptions: { label: string; value: MockAuthState }[] = [
   { label: "Loading", value: "loading" },
 ];
 
+const themeOptions = [
+  { label: "Dark mode", value: "dark" },
+  { label: "Light mode", value: "light" },
+];
+
 function AuthProviderDemo() {
   const auth = useContext(AuthContext);
   return (
@@ -61,15 +66,21 @@ export function AuthShowcase() {
           name: "AuthGate",
           uses: 'import { AuthGate } from "@mono/auth"',
           description:
-            "Client gate. While the session loads it shows a loading state; without a user it renders SignInModal; once a session exists it renders its children. Use the dropdown to drive the mock auth state and see the gate react live.",
+            "Client gate. While the session loads it shows a loading state; without a user it renders SignInModal; once a session exists it renders its children. Use the dropdown to drive the mock auth state and see the gate react live in light or dark theme.",
           propControls: [
             { prop: "mockState", label: "Mock auth state", options: mockStateOptions, defaultValue: "guest" },
+            { prop: "theme", label: "Theme mode", options: themeOptions, defaultValue: "dark" },
           ],
-          render: ({ mockState }) => (
-            <MockAuthProvider state={mockState as MockAuthState}>
-              <AuthGate>
-                <p className="auth-demo-gated">Signed in! This is the gated content behind AuthGate.</p>
-              </AuthGate>
+          render: ({ mockState, theme }) => (
+            <MockAuthProvider state={(mockState as MockAuthState) || "guest"}>
+              <div
+                className={`auth-demo-embed-theme ${theme === "light" ? "light" : "dark"}`}
+                data-theme={theme || "dark"}
+              >
+                <AuthGate>
+                  <p className="auth-demo-gated">Signed in! This is the gated content behind AuthGate.</p>
+                </AuthGate>
+              </div>
             </MockAuthProvider>
           ),
         },
@@ -77,10 +88,16 @@ export function AuthShowcase() {
           name: "SignInModal",
           uses: 'import { SignInModal } from "@mono/auth"',
           description:
-            "A sign-in dialog with no exit or cancel controls. Offers Continue with Google, email/password sign in or register, and Continue as Guest (Supabase anonymous session). Rendered live below in an embed box so it can be inspected without signing into the docs app.",
-          render: () => (
+            "A sign-in dialog with no exit or cancel controls. Offers Continue with Google, email/password sign in or register, and Continue as Guest (Supabase anonymous session). Test both dark and light modes using the Theme mode control.",
+          propControls: [
+            { prop: "theme", label: "Theme mode", options: themeOptions, defaultValue: "dark" },
+          ],
+          render: ({ theme }) => (
             <MockAuthProvider state="signed-out">
-              <div className="auth-demo-modal-embed">
+              <div
+                className={`auth-demo-modal-embed ${theme === "light" ? "light" : "dark"}`}
+                data-theme={theme || "dark"}
+              >
                 <SignInModal />
               </div>
             </MockAuthProvider>

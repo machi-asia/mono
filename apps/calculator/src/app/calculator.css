@@ -41,7 +41,7 @@
   min-height: 600px;
   background: repeating-linear-gradient(
     -45deg,
-    var(--color-surface-2) 0px,
+    var(--color-surface-2) 0,
     var(--color-surface-2) 8px,
     var(--color-surface) 8px,
     var(--color-surface) 16px

@@ -30,13 +30,23 @@
   color: var(--color-text);
 }
 
-.auth-demo-modal-embed {
+.auth-demo-modal-embed,
+.auth-demo-embed-theme {
   position: relative;
-  max-height: 30rem;
+  max-height: 34rem;
   overflow: auto;
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
 }
 
 .auth-demo-modal-embed .auth-modal-overlay {
   position: static;
   padding: 0;
+  background: transparent;
+  backdrop-filter: none;
 }

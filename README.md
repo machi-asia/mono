@@ -35,7 +35,9 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 - **SEO standards** are enforced on every public app via the canonical `.agents/skills/seo/SKILL.md` — every app exports rich `Metadata` + `viewport` (metadataBase, OG, Twitter, canonical), plus `robots.ts` and `sitemap.ts`. `NEXT_PUBLIC_SITE_URL` drives `metadataBase`, OG/canonical/sitemap URLs.
 - **Every package's exported components** must be rendered live on that package's showcase page (`/components/<package>` in the docs app) using the shared `ComponentShowcase` list-view layout from `@mono/components`. Each component renders the actual component via `render(values)` and declares a `propControls` dropdown for every choice/enum prop.
 - **`/docs/adr`** must be updated with an Architecture Decision Record for every significant technical decision.
+- **All apps and packages use `lucide-react`** as the single canonical icon library. No competing icon packages (e.g. `react-icons`, `@tabler/icons-react`, `@heroicons/react`) are permitted.
 - **Follow the design system** (`DESIGN.md`): token-based colors, dark-primary/gold theming via `next-themes`, generous whitespace, subtle motion, and layout/functional primitives used strictly from `@mono/components`.
+- **Mandatory Skeleton Loading Components**: All components that load data from a `fetch` or database query must be replaced with skeleton components (`<Skeleton>`, `<SkeletonText>`, `<SkeletonCard>`, `<SkeletonCircle>`, `<SkeletonButton>`) from `@mono/components` before load completes.
 - **All `.md` files** in the repo must be kept up to date as the project evolves.
 - **Any code change** must also update the relevant documentation files.
 

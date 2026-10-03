@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useMemo, useCallback, useEffect, type CSSProperties } from "react";
 import Image from "next/image";
@@ -122,6 +122,7 @@ export function GameCalculatorView({ gameId }: GameCalculatorViewProps) {
   const router = useRouter();
   const pathname = usePathname();
 
+  const [prevGameId, setPrevGameId] = useState<string>(gameId);
   const [selectedGameId, setSelectedGameId] = useState<string>(gameId);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [sortState, setSortState] = useState<SortState>(null);
@@ -130,15 +131,14 @@ export function GameCalculatorView({ gameId }: GameCalculatorViewProps) {
   const [initialGraphRequests, setInitialGraphRequests] = useState<ProductionRequest[]>([]);
   const [recipeSelections, setRecipeSelections] = useState<Record<string, string>>({});
 
-  useEffect(() => {
-    if (gameId && gameId !== selectedGameId) {
-      setSelectedGameId(gameId);
-      setSearchQuery("");
-      setSortState(null);
-      setInitialGraphRequests([]);
-      setRecipeSelections({});
-    }
-  }, [gameId]);
+  if (gameId !== prevGameId) {
+    setPrevGameId(gameId);
+    setSelectedGameId(gameId);
+    setSearchQuery("");
+    setSortState(null);
+    setInitialGraphRequests([]);
+    setRecipeSelections({});
+  }
 
   const handleGameChange = useCallback((newGameId: string) => {
     setSelectedGameId(newGameId);

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, type FormEvent } from "react";
 import type { Factor } from "@supabase/supabase-js";
+import { Skeleton } from "@mono/components";
 import { createClient } from "../client";
 
 export function MFASection() {
@@ -120,7 +121,9 @@ export function MFASection() {
       {success && <p className="auth-settings-success">{success}</p>}
 
       {loading ? (
-        <p className="auth-settings-muted">Loading factors…</p>
+        <div className="auth-mfa-factors" role="status" aria-label="Loading authentication factors" aria-busy="true" style={{ display: "flex", flexDirection: "column", gap: "var(--space-2)" }}>
+          <Skeleton variant="rounded" width="100%" height={52} count={2} gap="0.5rem" />
+        </div>
       ) : (
         <div className="auth-mfa-factors">
           {factors.totp.length === 0 && factors.webauthn.length === 0 ? (

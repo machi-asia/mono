@@ -27,7 +27,8 @@ These are run in parallel via `npm run test` at the repo root.
 - All authentication belongs in `/packages/auth` (Supabase Auth).
 - All data/store logic belongs in `/packages/database` (Supabase Database/Storage).
 - Every app must use the `AuthProvider` from `/packages/auth`.
-- All layout, button, and functional primitives (`Button`, `Row`, `Col`, `Card`, `Tooltip`, `Dropdown`, date/time pickers, etc.) must be built in and consumed strictly from `/packages/components` — never hand-roll raw `<button>` elements, card divs, or layout containers in apps or packages.
+- All layout, button, and functional primitives (`Button`, `Row`, `Col`, `Card`, `Tooltip`, `Dropdown`, `Skeleton`, `SkeletonText`, `SkeletonCircle`, `SkeletonButton`, `SkeletonCard`, date/time pickers, etc.) must be built in and consumed strictly from `/packages/components` — never hand-roll raw `<button>` elements, card divs, or layout containers in apps or packages.
+- All components that load data from a fetch or database query MUST be replaced with skeleton components (`<Skeleton>`, `<SkeletonText>`, `<SkeletonCard>`, `<SkeletonCircle>`, `<SkeletonButton>`) before load completes.
 - Follow the design system in `DESIGN.md`: token-based colors (no hardcoded hex), `next-themes` theming (dark-primary/gold), shared spacing/easing tokens, generous whitespace, subtle motion, high-image/low-text pages.
 
 ### Documentation
