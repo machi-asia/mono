@@ -52,6 +52,19 @@ function run(args) {
   }
 }
 
+function hasWorkingTreeChanges() {
+  const result = spawnSync("git", ["status", "--porcelain"], { cwd: root, encoding: "utf8" });
+  if (result.status !== 0 || !result.stdout) {
+    return false;
+  }
+  return result.stdout.trim().length > 0;
+}
+
+if (!hasWorkingTreeChanges()) {
+  console.log("[deploy] Working tree is clean. Everything is already committed and up to date.");
+  process.exit(0);
+}
+
 validateTitle();
 
 run(["add", "."]);
