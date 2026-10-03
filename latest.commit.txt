@@ -1,10 +1,11 @@
-feature(components): add skeleton loading component suite and enforce fetch migration
+feature(auth): expand account settings modal to 90% screen viewport
 
-- packages/components: create Skeleton, SkeletonText, SkeletonCircle, SkeletonButton, and SkeletonCard components with CSS token support, pulse/wave animations, and full accessibility semantics
-- packages/components: add unit tests for skeleton components and export them from the package root
-- apps/docs: add interactive Skeleton component live demos and prop controls to the component showcase
-- packages/rose: migrate UsageBar, RoseMemoriesTab, and RoseSettingsModal to replace loading states with Skeleton placeholders
-- packages/auth: migrate MFASection to use Skeleton components during factor loading
-- packages/components: migrate MediaLibrary to use a responsive Skeleton grid placeholder while loading media assets
-- docs: create ADR-015 and update ARCHITECTURE.md, DESIGN.md, AGENTS.md, README.md, and CONTRIBUTING.md to enforce skeleton loading for all async fetches
-- apps: align eslint and stylelint configurations and fix render-phase state updates in calculator app to maintain a zero-error test baseline
+- auth: set AccountSettings modal dimensions to 90vw by 90vh with proportional sidebar and sub-navigation widths
+- auth: expand content section and panel max-widths and paddings to naturally fit the larger viewport
+- auth: replace bulky support button selector with clean category dropdown (Bug Report, Feature Recommendation, General Support)
+- auth: automatically bind current account user.email on submission and remove redundant contact email input field
+- auth: declutter subject and description input placeholders for a clean, minimal interface
+- auth: auto-detect active application site from window location and preselect target application dropdown
+- navbar: remove separate Data & Privacy and Support & Feedback items from user auth dropdown to declutter the menu
+- database: create public.support_tickets table with RLS and client helpers (createSupportTicket, listUserSupportTickets)
+- test: update unit tests to verify AccountSettings tab switching and support ticket submission

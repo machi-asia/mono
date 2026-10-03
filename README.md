@@ -38,6 +38,8 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 - **All apps and packages use `lucide-react`** as the single canonical icon library. No competing icon packages (e.g. `react-icons`, `@tabler/icons-react`, `@heroicons/react`) are permitted.
 - **Follow the design system** (`DESIGN.md`): token-based colors, dark-primary/gold theming via `next-themes`, generous whitespace, subtle motion, and layout/functional primitives used strictly from `@mono/components`.
 - **Mandatory Skeleton Loading Components**: All components that load data from a `fetch` or database query must be replaced with skeleton components (`<Skeleton>`, `<SkeletonText>`, `<SkeletonCard>`, `<SkeletonCircle>`, `<SkeletonButton>`) from `@mono/components` before load completes.
+- **Data & Privacy Registry**: Every application collecting user data must register it in the centralized Data & Privacy registry in `@mono/auth` (accessible via Account Settings > Data & Privacy), detailing what is collected, why it is used, and whether it is Required or Optional (with interactive user controls for optional telemetry).
+- **Support & Recommendations**: Users can submit bug reports, feature suggestions, or general support tickets from the centralized Support tab in `@mono/auth` (accessible via Account Settings > Support), backed by the `public.support_tickets` table in Supabase.
 - **All `.md` files** in the repo must be kept up to date as the project evolves.
 - **Any code change** must also update the relevant documentation files.
 

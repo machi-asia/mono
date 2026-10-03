@@ -37,6 +37,20 @@ export interface RosePersonalizationRecord {
   updated_at?: string;
 }
 
+export interface SupportTicketRecord {
+  id: string;
+  user_id: string | null;
+  user_email: string | null;
+  type: "bug_report" | "recommendation" | "general_support";
+  app: string;
+  subject: string;
+  message: string;
+  status: "open" | "in_progress" | "resolved" | "closed";
+  metadata: Json;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface Database {
   public: {
     Tables: {
@@ -59,6 +73,15 @@ export interface Database {
         Row: RosePersonalizationRecord;
         Insert: RosePersonalizationRecord;
         Update: Partial<RosePersonalizationRecord>;
+      };
+      support_tickets: {
+        Row: SupportTicketRecord;
+        Insert: Omit<SupportTicketRecord, "id" | "created_at" | "updated_at"> & {
+          id?: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Omit<SupportTicketRecord, "id">>;
       };
     };
     Views: Record<string, never>;

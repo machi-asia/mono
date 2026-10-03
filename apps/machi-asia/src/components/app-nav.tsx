@@ -34,6 +34,7 @@ function getAvatarUrl(user: { user_metadata?: Record<string, unknown> }): string
 export function AppNavbar({ currentPath = "/" }: AppNavbarProps) {
   const { user, accounts, switchAccount, signOut } = useAuth();
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [settingsTab, setSettingsTab] = useState<"security" | "privacy" | "support">("security");
   const [addAccountOpen, setAddAccountOpen] = useState(false);
 
   const links = [
@@ -73,7 +74,10 @@ export function AppNavbar({ currentPath = "/" }: AppNavbarProps) {
                 menuItems: [
                   {
                     label: "Account settings",
-                    onClick: () => setSettingsOpen(true),
+                    onClick: () => {
+                      setSettingsTab("security");
+                      setSettingsOpen(true);
+                    },
                   },
                 ],
                 onSignOut: () => signOut(),
@@ -81,7 +85,11 @@ export function AppNavbar({ currentPath = "/" }: AppNavbarProps) {
             : undefined
         }
       />
-      <AccountSettings open={settingsOpen} onClose={() => setSettingsOpen(false)} />
+      <AccountSettings
+        open={settingsOpen}
+        onClose={() => setSettingsOpen(false)}
+        initialTab={settingsTab}
+      />
       {addAccountOpen ? (
         <SignInModal
           onClose={() => setAddAccountOpen(false)}

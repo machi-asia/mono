@@ -5,13 +5,17 @@ import { createClient } from "../client";
 import { useAuth } from "../provider/provider";
 import { ProvidersSection } from "./providers-section";
 import { MFASection } from "./mfa-section";
+import { PrivacySection } from "./privacy-section";
+import { SupportSection } from "./support-section";
 import "./account-settings.css";
 
 interface AccountSettingsProps {
   open: boolean;
   onClose: () => void;
+  initialTab?: "security" | "privacy" | "support";
 }
 
+type TopLevelTab = "security" | "privacy" | "support";
 type SecuritySection = "password" | "passkeys" | "providers" | "mfa";
 
 const sectionLabels: Record<SecuritySection, string> = {
@@ -21,9 +25,16 @@ const sectionLabels: Record<SecuritySection, string> = {
   mfa: "Multi-Factor Authentication",
 };
 
-export function AccountSettings({ open, onClose }: AccountSettingsProps) {
+export function AccountSettings({ open, onClose, initialTab = "security" }: AccountSettingsProps) {
   const { user } = useAuth();
+  const [activeTopTab, setActiveTopTab] = useState<TopLevelTab>(initialTab);
   const [activeSection, setActiveSection] = useState<SecuritySection>("password");
+
+  useEffect(() => {
+    if (open && initialTab) {
+      setActiveTopTab(initialTab);
+    }
+  }, [open, initialTab]);
 
   if (!open || !user) return null;
 
@@ -51,31 +62,60 @@ export function AccountSettings({ open, onClose }: AccountSettingsProps) {
           <nav className="auth-settings-sidebar" aria-label="Settings sections">
             <button
               type="button"
-              className="auth-settings-tab auth-settings-tab--active"
-              aria-current="page"
+              className={`auth-settings-tab${activeTopTab === "security" ? " auth-settings-tab--active" : ""}`}
+              aria-current={activeTopTab === "security" ? "page" : undefined}
+              onClick={() => setActiveTopTab("security")}
             >
               Security
             </button>
+            <button
+              type="button"
+              className={`auth-settings-tab${activeTopTab === "privacy" ? " auth-settings-tab--active" : ""}`}
+              aria-current={activeTopTab === "privacy" ? "page" : undefined}
+              onClick={() => setActiveTopTab("privacy")}
+            >
+              Data & Privacy
+            </button>
+            <button
+              type="button"
+              className={`auth-settings-tab${activeTopTab === "support" ? " auth-settings-tab--active" : ""}`}
+              aria-current={activeTopTab === "support" ? "page" : undefined}
+              onClick={() => setActiveTopTab("support")}
+            >
+              Support
+            </button>
           </nav>
           <div className="auth-settings-content">
-            <nav className="auth-security-nav" aria-label="Security sections">
-              {(["password", "passkeys", "providers", "mfa"] as const).map((section) => (
-                <button
-                  key={section}
-                  type="button"
-                  className={`auth-security-nav-item${activeSection === section ? " auth-security-nav-item--active" : ""}`}
-                  onClick={() => setActiveSection(section)}
-                >
-                  {sectionLabels[section]}
-                </button>
-              ))}
-            </nav>
-            <div className="auth-security-panel">
-              {activeSection === "password" && <PasswordSection />}
-              {activeSection === "passkeys" && <PasskeysSection />}
-              {activeSection === "providers" && <ProvidersSection user={user} />}
-              {activeSection === "mfa" && <MFASection />}
-            </div>
+            {activeTopTab === "security" ? (
+              <>
+                <nav className="auth-security-nav" aria-label="Security sections">
+                  {(["password", "passkeys", "providers", "mfa"] as const).map((section) => (
+                    <button
+                      key={section}
+                      type="button"
+                      className={`auth-security-nav-item${activeSection === section ? " auth-security-nav-item--active" : ""}`}
+                      onClick={() => setActiveSection(section)}
+                    >
+                      {sectionLabels[section]}
+                    </button>
+                  ))}
+                </nav>
+                <div className="auth-security-panel">
+                  {activeSection === "password" && <PasswordSection />}
+                  {activeSection === "passkeys" && <PasskeysSection />}
+                  {activeSection === "providers" && <ProvidersSection user={user} />}
+                  {activeSection === "mfa" && <MFASection />}
+                </div>
+              </>
+            ) : activeTopTab === "privacy" ? (
+              <div className="auth-security-panel auth-privacy-panel">
+                <PrivacySection user={user} />
+              </div>
+            ) : (
+              <div className="auth-security-panel auth-support-panel">
+                <SupportSection user={user} />
+              </div>
+            )}
           </div>
         </div>
       </div>

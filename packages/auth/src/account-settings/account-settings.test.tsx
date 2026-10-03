@@ -10,6 +10,28 @@ vi.mock("../provider/provider", () => ({
 
 vi.mock("../client", () => ({
   createClient: () => ({
+    from: () => ({
+      select: () => ({
+        order: () => Promise.resolve({ data: [], error: null }),
+      }),
+      insert: () => ({
+        select: () => ({
+          single: () =>
+            Promise.resolve({
+              data: {
+                id: "test-ticket-id",
+                type: "bug_report",
+                app: "machi-asia",
+                subject: "Test bug",
+                message: "Steps to reproduce",
+                status: "open",
+                created_at: new Date().toISOString(),
+              },
+              error: null,
+            }),
+        }),
+      }),
+    }),
     auth: {
       updateUser: vi.fn(),
       getUser: vi.fn(),
@@ -157,5 +179,60 @@ describe("AccountSettings", () => {
     const dialog = screen.getByRole("dialog", { name: "Account settings" });
     fireEvent.click(dialog);
     expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
+  it("shows Data & Privacy tab in the sidebar and switches to it", () => {
+    render(<AccountSettings open={true} onClose={() => {}} />);
+    const privacyTab = screen.getByRole("button", { name: "Data & Privacy" });
+    expect(privacyTab).toBeInTheDocument();
+
+    fireEvent.click(privacyTab);
+    expect(screen.getByText("Application Data Collection Registry")).toBeInTheDocument();
+    expect(screen.getByText("Machi Asia (Home & Billing Hub)")).toBeInTheDocument();
+    expect(screen.getByText("Export Account Data (JSON)")).toBeInTheDocument();
+  });
+
+  it("opens directly to Data & Privacy when initialTab is privacy", () => {
+    render(
+      <AccountSettings
+        open={true}
+        onClose={() => {}}
+        initialTab="privacy"
+      />,
+    );
+    expect(screen.getByText("Application Data Collection Registry")).toBeInTheDocument();
+  });
+
+  it("shows Support tab in the sidebar and switches to it", () => {
+    render(<AccountSettings open={true} onClose={() => {}} />);
+    const supportTab = screen.getByRole("button", { name: "Support" });
+    expect(supportTab).toBeInTheDocument();
+
+    fireEvent.click(supportTab);
+    expect(screen.getByText("Support & Recommendations")).toBeInTheDocument();
+    expect(screen.getByLabelText("Target Application")).toBeInTheDocument();
+    expect(screen.getByLabelText("Category")).toBeInTheDocument();
+  });
+
+  it("submits a support bug report to the database", async () => {
+    render(
+      <AccountSettings
+        open={true}
+        onClose={() => {}}
+        initialTab="support"
+      />,
+    );
+
+    const subjectInput = screen.getByLabelText("Subject");
+    const descInput = screen.getByLabelText("Description / Details");
+
+    fireEvent.change(subjectInput, { target: { value: "Graph visual glitch" } });
+    fireEvent.change(descInput, { target: { value: "Nodes overlap on zoom out" } });
+
+    fireEvent.click(screen.getByRole("button", { name: /Submit Bug Report/i }));
+
+    expect(
+      await screen.findByText(/Your bug report has been submitted directly to the database/i),
+    ).toBeInTheDocument();
   });
 });

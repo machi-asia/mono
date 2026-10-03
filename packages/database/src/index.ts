@@ -34,4 +34,15 @@ export type {
   SavePersonalizationOptions,
   MemoryImportance,
 } from "./memory";
+export {
+  createSupportTicket,
+  listUserSupportTickets,
+} from "./support";
+export type {
+  SupportTicketType,
+  SupportTicketStatus,
+  SupportTicketRecord,
+  CreateSupportTicketInput,
+} from "./support";
+
 

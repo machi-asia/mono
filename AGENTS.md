@@ -49,3 +49,13 @@ the single canonical icon library across the organization.
 All components that load data from a `fetch` or database query MUST be replaced with a skeleton component (`<Skeleton>`, `<SkeletonText>`, `<SkeletonCard>`, `<SkeletonCircle>`, `<SkeletonButton>`) from `@mono/components` before load completes.
 - Never leave a bare spinner, unstyled loading text, or blank layout container when loading asynchronous data.
 - Ensure skeleton placeholders closely mimic the geometry, proportions, and visual rhythm of the loaded content.
+
+### 6. Data & Privacy Collection Registry Enforcement
+
+Every application under `apps/` and package under `packages/` that collects, processes, transmits, or stores user data MUST declare that data collection in the centralized **Data & Privacy** registry (`@mono/auth` Account Settings / Data & Privacy modal).
+- **Mandatory Disclosures**: Each entry must clearly specify:
+  1. The specific data collected (e.g. email, companion conversation history, calculation graphs, performance telemetry).
+  2. The exact purpose / what it is being used for (e.g. session authentication, AI response context, factory state synchronization, diagnostic logging).
+  3. Requirement level: explicitly classify whether the collection is **Required** (strictly necessary for core operation) or **Optional** (enhancement/analytics).
+  4. Interactive user control: Any optional collection MUST provide an accessible user opt-in/opt-out toggle with persistent preference state.
+- **Never collect untracked user data**: Introducing new telemetry, analytics pings, cloud data saves, or tracking without registering it in the Data & Privacy registry and updating privacy documentation is strictly prohibited.
