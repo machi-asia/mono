@@ -5,9 +5,9 @@ import { Navbar } from "@mono/components";
 import { useAuth, AccountSettings, SignInModal } from "@mono/auth";
 
 const links = [
-  { label: "Home", href: "/" },
-  { label: "Auth", href: "/components/auth" },
+  { label: "Docs Wiki", href: "/docs" },
   { label: "Components", href: "/components/components" },
+  { label: "Auth", href: "/components/auth" },
   { label: "Database", href: "/components/database" },
   { label: "Rose", href: "/components/rose" },
   { label: "Sync", href: "/components/sync" },
@@ -38,7 +38,7 @@ function getAvatarUrl(user: { user_metadata?: Record<string, unknown> }): string
 export function DocsNavbar() {
   const { user, accounts, switchAccount, signOut } = useAuth();
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [settingsTab, setSettingsTab] = useState<"security" | "privacy" | "support">("security");
+  const [settingsTab, setSettingsTab] = useState<"profile" | "security" | "privacy" | "support">("profile");
   const [addAccountOpen, setAddAccountOpen] = useState(false);
 
   return (
@@ -65,7 +65,7 @@ export function DocsNavbar() {
                   {
                     label: "Account settings",
                     onClick: () => {
-                      setSettingsTab("security");
+                      setSettingsTab("profile");
                       setSettingsOpen(true);
                     },
                   },

@@ -38,6 +38,7 @@ These are run in parallel via `npm run test` at the repo root.
 - Architecture decisions must be recorded in `/docs/adr/` before implementation begins.
 - All `.md` files in the repo must be updated when relevant code changes.
 - Keep `CHANGELOG.md` updated with version entries.
+- **Every significant change** (new architecture pattern, altered public package interface, new app, new ADR, policy update) MUST be reported in the `/docs` wiki: add or update the article in `apps/docs/src/data/wiki-articles.ts` (title, category, tags, read time, author, updated date), keep `docs/` markdown in sync, and give every code block a valid language identifier (`tsx`, `ts`, `json`, `bash`, `sql`, `css`). PRs with undocumented significant changes must not be merged.
 
 ### SEO
 

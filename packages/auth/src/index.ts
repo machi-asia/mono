@@ -3,6 +3,7 @@ export { AuthProvider, useAuth } from "./provider/provider";
 export { AuthGate } from "./auth-gate/auth-gate";
 export { SignInModal } from "./sign-in-modal/sign-in-modal";
 export { AccountSettings } from "./account-settings/account-settings";
+export { ProfileSection } from "./account-settings/profile-section";
 export { DataPrivacyModal } from "./account-settings/data-privacy-modal";
 export { PrivacySection } from "./account-settings/privacy-section";
 export { SupportModal } from "./account-settings/support-modal";

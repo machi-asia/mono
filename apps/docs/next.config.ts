@@ -9,26 +9,16 @@ const nextConfig: NextConfig = {
     "onnxruntime-node",
     "@huggingface/tokenizers",
   ],
-  async redirects() {
-    return [
-      {
-        source: "/auth",
-        destination: "/components/auth",
-        permanent: false,
-      },
-      {
-        source: "/docs",
-        destination: "/",
-        permanent: false,
-      },
-      {
-        source: "/docs/:path*",
-        destination: "/:path*",
-        permanent: false,
-      },
-    ];
-  },
-};
+    async redirects() {
+      return [
+        {
+          source: "/auth",
+          destination: "/components/auth",
+          permanent: false,
+        },
+      ];
+    },
+  };
 
 export default nextConfig;
 

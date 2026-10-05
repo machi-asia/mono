@@ -1,4 +1,7 @@
-fix(ci): handle clean working tree in deploy script
+feature(auth): add profile identity management and linked account swapping
 
-- ci: check for working tree changes in deploy.js before validating title and commit subject
-- ci: report clean working tree gracefully when everything is already deployed
+- auth: create ProfileSection with manual display name editing and profile picture selector from linked accounts (Google, GitHub, Discord, Twitter, Facebook, generated initials, or custom URL)
+- auth: add Profile tab as top-level tab in AccountSettings modal with responsive styling
+- auth: add Swap Account functionality in Linked Providers with prompt account selection support and linked account status badges
+- navbar: update AppNavbar and DocsNavbar settingsTab to support opening to Profile tab by default
+- test: update AccountSettings unit tests to cover Profile tab, avatar options, and linked provider swapping

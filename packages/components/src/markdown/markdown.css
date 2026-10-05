@@ -202,6 +202,62 @@
   color: var(--color-text);
 }
 
+.m-md-code-line {
+  display: inline;
+}
+
+/* Syntax Highlighting Tokens */
+.m-token-keyword {
+  color: #ff7b72;
+  font-weight: 600;
+}
+
+.m-token-string {
+  color: #a5d6ff;
+}
+
+.m-token-comment {
+  color: #8b949e;
+  font-style: italic;
+}
+
+.m-token-number {
+  color: #fca35d;
+}
+
+.m-token-boolean {
+  color: #fca35d;
+  font-weight: 600;
+}
+
+.m-token-type {
+  color: #ffa657;
+}
+
+.m-token-function {
+  color: #d2a8ff;
+}
+
+.m-token-tag {
+  color: #7ee787;
+}
+
+.m-token-attr {
+  color: #79c0ff;
+}
+
+.m-token-property {
+  color: #79c0ff;
+}
+
+.m-token-operator {
+  color: #ff7b72;
+}
+
+.m-token-punctuation {
+  color: #c9d1d9;
+}
+
 /* Obsidian Callouts / Admonitions */
 .m-callout {
   margin: 1.25em 0;

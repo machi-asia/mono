@@ -59,3 +59,12 @@ Every application under `apps/` and package under `packages/` that collects, pro
   3. Requirement level: explicitly classify whether the collection is **Required** (strictly necessary for core operation) or **Optional** (enhancement/analytics).
   4. Interactive user control: Any optional collection MUST provide an accessible user opt-in/opt-out toggle with persistent preference state.
 - **Never collect untracked user data**: Introducing new telemetry, analytics pings, cloud data saves, or tracking without registering it in the Data & Privacy registry and updating privacy documentation is strictly prohibited.
+
+### 7. Mandatory Reporting of Significant Changes in the `/docs` Wiki
+
+Every significant change across the organization — including new architectural patterns, altered public package interfaces, new deployable applications, ADR additions, and organization policy updates — MUST be documented in the centralized **Documentation Wiki** (`/docs`, backed by `apps/docs/src/data/wiki-articles.ts` and `docs/`).
+- **Mandatory Requirements**:
+  1. Add or update the relevant article in `apps/docs/src/data/wiki-articles.ts` with accurate metadata (title, category, tags, read time, author, and updated timestamp).
+  2. Keep matching markdown documentation under `docs/` (`docs/ARCHITECTURE.md`, `docs/API.md`, `docs/adr/`, etc.) in sync.
+  3. Ensure all code blocks specify valid language identifiers (`tsx`, `ts`, `json`, `bash`, `sql`, `css`) to guarantee syntax color coding.
+- **Never ship undocumented features or architectural changes**: Introducing structural changes, public APIs, new package components, or service behaviors without registering them in the `/docs` wiki is strictly prohibited.

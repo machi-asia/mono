@@ -98,7 +98,8 @@ describe("MarkdownRenderer", () => {
     render(<MarkdownRenderer content={md} />);
 
     expect(screen.getByText("typescript")).toBeInTheDocument();
-    expect(screen.getByText("const greeting = 'Hello Obsidian';")).toBeInTheDocument();
+    expect(screen.getByText("const")).toHaveClass("m-token-keyword");
+    expect(screen.getByText("'Hello Obsidian'")).toHaveClass("m-token-string");
 
     const copyBtn = screen.getByRole("button", { name: /copy code/i });
     fireEvent.click(copyBtn);

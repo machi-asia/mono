@@ -34,7 +34,7 @@ function getAvatarUrl(user: { user_metadata?: Record<string, unknown> }): string
 export function AppNavbar({ currentPath = "/" }: AppNavbarProps) {
   const { user, accounts, switchAccount, signOut } = useAuth();
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [settingsTab, setSettingsTab] = useState<"security" | "privacy" | "support">("security");
+  const [settingsTab, setSettingsTab] = useState<"profile" | "security" | "privacy" | "support">("profile");
   const [addAccountOpen, setAddAccountOpen] = useState(false);
 
   const links = [
@@ -75,7 +75,7 @@ export function AppNavbar({ currentPath = "/" }: AppNavbarProps) {
                   {
                     label: "Account settings",
                     onClick: () => {
-                      setSettingsTab("security");
+                      setSettingsTab("profile");
                       setSettingsOpen(true);
                     },
                   },

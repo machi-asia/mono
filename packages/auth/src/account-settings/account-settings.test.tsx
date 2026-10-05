@@ -108,15 +108,17 @@ describe("AccountSettings", () => {
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
-  it("shows Security tab in the sidebar", () => {
+  it("shows Profile tab by default with display name and avatar selector", () => {
     render(<AccountSettings open={true} onClose={() => {}} />);
-    expect(
-      screen.getByRole("button", { name: "Security" }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Profile" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Security" })).toBeInTheDocument();
+    expect(screen.getByLabelText("Display Name")).toBeInTheDocument();
+    expect(screen.getByText("Profile Picture")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Save Name" })).toBeInTheDocument();
   });
 
-  it("shows all security sub-navigation items", () => {
-    render(<AccountSettings open={true} onClose={() => {}} />);
+  it("shows all security sub-navigation items when switching to Security", () => {
+    render(<AccountSettings open={true} onClose={() => {}} initialTab="security" />);
     expect(
       screen.getByRole("button", { name: "Change Password" }),
     ).toBeInTheDocument();
@@ -129,35 +131,49 @@ describe("AccountSettings", () => {
     expect(
       screen.getByRole("button", { name: "Multi-Factor Authentication" }),
     ).toBeInTheDocument();
-  });
-
-  it("shows password form by default", () => {
-    render(<AccountSettings open={true} onClose={() => {}} />);
     expect(screen.getByLabelText("New password")).toBeInTheDocument();
-    expect(screen.getByLabelText("Confirm password")).toBeInTheDocument();
   });
 
   it("switches to passkeys section when clicked", () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).PublicKeyCredential = function () {};
-    render(<AccountSettings open={true} onClose={() => {}} />);
+    render(<AccountSettings open={true} onClose={() => {}} initialTab="security" />);
     fireEvent.click(screen.getByRole("button", { name: "Passkeys" }));
     expect(
       screen.getByRole("button", { name: "Add Passkey" }),
     ).toBeInTheDocument();
   });
 
-  it("switches to providers section when clicked", () => {
-    render(<AccountSettings open={true} onClose={() => {}} />);
+  it("switches to providers section when clicked and allows swapping account", () => {
+    mockUseAuth.mockReturnValue({
+      user: mockUser({
+        identities: [
+          {
+            id: "id-google",
+            provider: "google",
+            identity_data: { email: "googleuser@gmail.com", picture: "https://example.com/google.png" },
+            last_sign_in_at: "",
+            created_at: "",
+          },
+        ],
+      }),
+      session: { user: mockUser() },
+      isLoading: false,
+      isGuest: false,
+    });
+
+    render(<AccountSettings open={true} onClose={() => {}} initialTab="security" />);
     fireEvent.click(
       screen.getByRole("button", { name: "Linked Providers" }),
     );
     expect(screen.getByText("Google")).toBeInTheDocument();
-    expect(screen.getByText("GitHub")).toBeInTheDocument();
+    expect(screen.getByText("googleuser@gmail.com")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Swap Account" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Unlink" })).toBeInTheDocument();
   });
 
   it("switches to MFA section when clicked", () => {
-    render(<AccountSettings open={true} onClose={() => {}} />);
+    render(<AccountSettings open={true} onClose={() => {}} initialTab="security" />);
     fireEvent.click(
       screen.getByRole("button", { name: "Multi-Factor Authentication" }),
     );

@@ -9,7 +9,7 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 | `machi-asia` | Home site — showcase and subscription billing hub for all Machi Asia products |
 | `rose` | Custom AI agent application |
 | `calculator` | Multi-game production calculator with interactive recipe tree graph (styled throughput edge labels) and factory rate planner, a sortable item catalog (name/category carets) in gallery or list view, and per-item last-updated tracking |
-| `docs` | Documentation site — component library docs and user manuals |
+| `docs` | Documentation site — developer knowledge base, wiki articles, ADRs, component library showcases, and user manuals |
 | `hells-forge` | High-performance 2D multiplayer exploration space powered by Pixi.js, spatial circle collisions, WASD movement, and `@mono/sync` |
 
 ## Packages
@@ -37,9 +37,11 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 - **`/docs/adr`** must be updated with an Architecture Decision Record for every significant technical decision.
 - **All apps and packages use `lucide-react`** as the single canonical icon library. No competing icon packages (e.g. `react-icons`, `@tabler/icons-react`, `@heroicons/react`) are permitted.
 - **Follow the design system** (`DESIGN.md`): token-based colors, dark-primary/gold theming via `next-themes`, generous whitespace, subtle motion, and layout/functional primitives used strictly from `@mono/components`.
-- **Mandatory Skeleton Loading Components**: All components that load data from a `fetch` or database query must be replaced with skeleton components (`<Skeleton>`, `<SkeletonText>`, `<SkeletonCard>`, `<SkeletonCircle>`, `<SkeletonButton>`) from `@mono/components` before load completes.
+- **Profile & Identity Management**: Users can manually customize their display name and switch between active profile pictures from any of their linked authentication providers (Google, GitHub, Discord, Twitter, Facebook, generated initials, or custom URL) in `@mono/auth` (accessible via Account Settings > Profile).
+- **Linked Provider Account Swapping**: Linked third-party authentication accounts can be swapped or unlinked seamlessly directly within the Linked Providers security management panel.
 - **Data & Privacy Registry**: Every application collecting user data must register it in the centralized Data & Privacy registry in `@mono/auth` (accessible via Account Settings > Data & Privacy), detailing what is collected, why it is used, and whether it is Required or Optional (with interactive user controls for optional telemetry).
 - **Support & Recommendations**: Users can submit bug reports, feature suggestions, or general support tickets from the centralized Support tab in `@mono/auth` (accessible via Account Settings > Support), backed by the `public.support_tickets` table in Supabase.
+- **Mandatory Documentation Wiki Reporting**: Every significant change across the organization (new architecture patterns, modified public APIs, ADRs, new deployable applications, and policy changes) must be documented in the centralized **Documentation Wiki** (`/docs` / `apps/docs/src/data/wiki-articles.ts`).
 - **All `.md` files** in the repo must be kept up to date as the project evolves.
 - **Any code change** must also update the relevant documentation files.
 

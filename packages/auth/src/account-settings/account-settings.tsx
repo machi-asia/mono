@@ -3,6 +3,7 @@
 import { useState, useEffect, type FormEvent } from "react";
 import { createClient } from "../client";
 import { useAuth } from "../provider/provider";
+import { ProfileSection } from "./profile-section";
 import { ProvidersSection } from "./providers-section";
 import { MFASection } from "./mfa-section";
 import { PrivacySection } from "./privacy-section";
@@ -12,10 +13,10 @@ import "./account-settings.css";
 interface AccountSettingsProps {
   open: boolean;
   onClose: () => void;
-  initialTab?: "security" | "privacy" | "support";
+  initialTab?: "profile" | "security" | "privacy" | "support";
 }
 
-type TopLevelTab = "security" | "privacy" | "support";
+type TopLevelTab = "profile" | "security" | "privacy" | "support";
 type SecuritySection = "password" | "passkeys" | "providers" | "mfa";
 
 const sectionLabels: Record<SecuritySection, string> = {
@@ -25,7 +26,7 @@ const sectionLabels: Record<SecuritySection, string> = {
   mfa: "Multi-Factor Authentication",
 };
 
-export function AccountSettings({ open, onClose, initialTab = "security" }: AccountSettingsProps) {
+export function AccountSettings({ open, onClose, initialTab = "profile" }: AccountSettingsProps) {
   const { user } = useAuth();
   const [activeTopTab, setActiveTopTab] = useState<TopLevelTab>(initialTab);
   const [activeSection, setActiveSection] = useState<SecuritySection>("password");
@@ -62,6 +63,14 @@ export function AccountSettings({ open, onClose, initialTab = "security" }: Acco
           <nav className="auth-settings-sidebar" aria-label="Settings sections">
             <button
               type="button"
+              className={`auth-settings-tab${activeTopTab === "profile" ? " auth-settings-tab--active" : ""}`}
+              aria-current={activeTopTab === "profile" ? "page" : undefined}
+              onClick={() => setActiveTopTab("profile")}
+            >
+              Profile
+            </button>
+            <button
+              type="button"
               className={`auth-settings-tab${activeTopTab === "security" ? " auth-settings-tab--active" : ""}`}
               aria-current={activeTopTab === "security" ? "page" : undefined}
               onClick={() => setActiveTopTab("security")}
@@ -86,7 +95,11 @@ export function AccountSettings({ open, onClose, initialTab = "security" }: Acco
             </button>
           </nav>
           <div className="auth-settings-content">
-            {activeTopTab === "security" ? (
+            {activeTopTab === "profile" ? (
+              <div className="auth-security-panel auth-profile-panel">
+                <ProfileSection user={user} />
+              </div>
+            ) : activeTopTab === "security" ? (
               <>
                 <nav className="auth-security-nav" aria-label="Security sections">
                   {(["password", "passkeys", "providers", "mfa"] as const).map((section) => (

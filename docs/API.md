@@ -46,7 +46,7 @@ or on failure:
 
 ## Per-App API Docs
 
-Document app-specific API endpoints in `docs/user-manual/<app>/api.md` as the APIs are built.
+Every endpoint is documented in [API-ENDPOINTS.md](./API-ENDPOINTS.md) and the `/docs/api-endpoints` wiki article. New or changed endpoints must update both.
 
 ## Authentication
 

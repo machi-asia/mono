@@ -1,40 +1,20 @@
 import type { Metadata } from "next";
-import { Link } from "@mono/components";
+import { getAllArticles } from "../data/wiki-articles";
+import { WikiHomeClient } from "../components/wiki/wiki-home-client";
+import "../styles/wiki.css";
 
 export const metadata: Metadata = {
-  title: "Component Library & Product Documentation",
+  title: "Documentation Wiki | Machi Asia",
   description:
-    "Browse live showcase demos of Machi Asia packages — auth components, shared UI library, database layer, and the Rose AI agent. Developer documentation and user manuals in one place.",
+    "Developer knowledge base, architecture specifications, ADRs, and package documentation for the Machi Asia platform.",
 };
 
-export default function Home() {
+export default function HomePage() {
+  const articles = getAllArticles();
+
   return (
-    <main className="docs-home">
-      <h1 className="docs-home-title">Machi Asia Docs</h1>
-      <p className="docs-home-subtitle">
-        Component library and user documentation for Machi Asia products.
-      </p>
-      <section className="docs-home-section">
-        <h2 className="docs-home-heading">Package Component Showcases</h2>
-        <ul className="docs-home-list">
-          <li>
-            <Link href="/components/auth" variant="underline">@mono/auth</Link>
-            <span className="docs-home-desc">— authentication components</span>
-          </li>
-          <li>
-            <Link href="/components/components" variant="underline">@mono/components</Link>
-            <span className="docs-home-desc">— shared UI components</span>
-          </li>
-          <li>
-            <Link href="/components/database" variant="underline">@mono/database</Link>
-            <span className="docs-home-desc">— data/store exports</span>
-          </li>
-          <li>
-            <Link href="/components/rose" variant="underline">@mono/rose</Link>
-            <span className="docs-home-desc">— AI companion and chat modal components</span>
-          </li>
-        </ul>
-      </section>
+    <main>
+      <WikiHomeClient initialArticles={articles} />
     </main>
   );
 }
