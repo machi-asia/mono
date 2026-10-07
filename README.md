@@ -60,23 +60,29 @@ Copilot). Load a skill whenever the task matches its description.
 | `supabase` | Any task involving Supabase — database, auth, edge functions, storage, CLI, MCP, debugging, or RLS. |
 | `supabase-postgres-best-practices` | Writing or changing anything in Postgres — schema design, migrations, RLS policies, triggers, indexes, slow-query diagnostics. |
 
-## Quality Checks
+## Quality Checks & Test Enforcement
 
-Run all quality checks in one command:
+Run all quality checks and automated test enforcement in one command:
 
 ```bash
 npm run test
 ```
 
-This runs `lint`, `lint:style`, `typecheck`, and `test` (vitest) in parallel across all apps and packages via Turborepo. Individual scripts per app:
+This runs `test:enforce` (verifying test runners and `.test` files across all workspaces) and then executes `lint`, `lint:style`, `typecheck`, and `test` (vitest) across all apps and packages via Turborepo. Individual scripts per app:
 
 | Script | Tool | Purpose |
 |--------|------|---------|
+| `test:enforce` | Script | Validates that every workspace has active `.test.ts`/`.test.tsx` files and no skipped test runners |
 | `lint` | ESLint | Lint TypeScript/JS + Next.js rules |
 | `lint:style` | Stylelint | Lint CSS |
 | `typecheck` | TypeScript | Type-check without emitting |
 | `test` | Vitest | Run unit/component tests |
 | `test:watch` | Vitest | Run tests in watch mode |
+
+### Test Enforcement Rules
+- **Co-located Test Files**: Every new or modified source file, component, hook, utility, API endpoint, or database helper MUST have a co-located `.test.ts` or `.test.tsx` file (or `__tests__/*.test.ts`).
+- **Zero Skipped Test Suites**: Packages may never use `echo skip` or bypass testing.
+- **Pre-Flight Deploy & CI Gate**: `npm run deploy` and `.github/workflows/ci.yml` enforce `scripts/verify-tests.js` and all test suites before building or committing.
 
 ## Environment Verification
 

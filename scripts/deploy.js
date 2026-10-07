@@ -95,17 +95,22 @@ const branch = getCurrentBranch();
 console.log(`[deploy] Syncing remote changes from 'origin/${branch}'...`);
 runCmd("git", ["pull", "--rebase", "origin", branch], { allowFailure: true });
 
-// 2. Build Stage
-console.log("\n[deploy] Step 1/3: Building web and mobile packages...");
+// 2. Pre-Flight Test & Lint Enforcement Stage
+console.log("\n[deploy] Step 1/4: Running test enforcement and full test suite...");
+runCmd("node", ["scripts/verify-tests.js"]);
+runCmd("npm", ["run", "test"]);
+
+// 3. Build Stage
+console.log("\n[deploy] Step 2/4: Building web and mobile packages...");
 runCmd("npx", ["turbo", "build"]);
 runCmd("npx", ["turbo", "build:mobile"]);
 
-// 3. Sync Stage
-console.log("\n[deploy] Step 2/3: Syncing all Capacitor mobile repositories...");
+// 4. Sync Stage
+console.log("\n[deploy] Step 3/4: Syncing all Capacitor mobile repositories...");
 runCmd("npx", ["turbo", "cap:sync"]);
 
-// 4. Git Stage (Auto Commit & Push)
-console.log("\n[deploy] Step 3/3: Checking git state, committing and pushing...");
+// 5. Git Stage (Auto Commit & Push)
+console.log("\n[deploy] Step 4/4: Checking git state, committing and pushing...");
 const hasChanges = hasWorkingTreeChanges();
 
 if (hasChanges) {

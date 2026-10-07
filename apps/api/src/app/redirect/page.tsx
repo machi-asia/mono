@@ -1,6 +1,13 @@
 "use client";
 
-import { useEffect, useState, useTransition, Suspense } from "react";
+import {
+  useEffect,
+  useState,
+  useMemo,
+  useSyncExternalStore,
+  useTransition,
+  Suspense,
+} from "react";
 import { useSearchParams } from "next/navigation";
 import {
   constructRelayUrl,
@@ -35,36 +42,45 @@ function isMobileDevice(): boolean {
   return isMobileUA || (isTouch && window.innerWidth <= 768);
 }
 
+function subscribe(callback: () => void) {
+  if (typeof window === "undefined") return () => {};
+  window.addEventListener("resize", callback);
+  return () => window.removeEventListener("resize", callback);
+}
+
+function getSnapshot(): boolean {
+  return isMobileDevice();
+}
+
+function getServerSnapshot(): boolean {
+  return false;
+}
+
 function RedirectContent() {
   const searchParams = useSearchParams();
-  const [targetUrl, setTargetUrl] = useState("");
-  const [app, setApp] = useState<AppMetadata | null>(null);
-  const [mobileUrls, setMobileUrls] = useState<{ customSchemeUrl: string; androidIntentUrl: string } | null>(null);
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  const isMobile = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const [countdown, setCountdown] = useState(5);
   const [isPaused, setIsPaused] = useState(false);
   const [, startTransition] = useTransition();
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
+  const { targetUrl, app, mobileUrls } = useMemo(() => {
     const returnTo = searchParams.get("returnTo");
-    const hash = window.location.hash;
+    const hash = typeof window !== "undefined" ? window.location.hash : "";
     const { targetUrl: resolvedTarget, app: resolvedApp } = constructRelayUrl(returnTo, searchParams, hash);
     const urls = generateMobileAppUrls(resolvedApp, resolvedTarget);
-
-    setTargetUrl(resolvedTarget);
-    setApp(resolvedApp);
-    setMobileUrls(urls);
-
-    const mobile = isMobileDevice();
-    setIsMobile(mobile);
-
-    // Desktop: Immediate redirect
-    if (!mobile) {
-      window.location.replace(resolvedTarget);
-    }
+    return {
+      targetUrl: resolvedTarget,
+      app: resolvedApp,
+      mobileUrls: urls,
+    };
   }, [searchParams]);
+
+  // Desktop: Immediate redirect
+  useEffect(() => {
+    if (!isMobile && targetUrl && typeof window !== "undefined") {
+      window.location.replace(targetUrl);
+    }
+  }, [isMobile, targetUrl]);
 
   // 5-second countdown on mobile before auto-continuing to browser
   useEffect(() => {

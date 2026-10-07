@@ -43,3 +43,12 @@ The scheduled/dispatch workflow `.github/workflows/sync-canonical-files.yml` als
 `templates/dependabot.yml` (as root `dependabot.yml`) and `.github/labels.yml` in the same run;
 these three files are centrally managed — do not fork its logic into consumer repos, and do not
 edit any of them outside this repo.
+
+### 5. Mandatory `.test` Files and Test Enforcement
+
+Every application, package, module, utility, and UI component MUST have comprehensive unit and integration test coverage.
+
+- **Co-located `.test` Files**: Whenever a new component, hook, utility, API endpoint, or database helper is created or updated, a corresponding co-located `.test.ts` or `.test.tsx` (or `__tests__/*.test.ts`) file MUST be written or updated alongside it.
+- **No Dummy or Skipped Tests**: Workspace `package.json` files MUST configure a valid test runner (e.g. `vitest run`). Using `echo skip`, `exit 0`, or leaving packages without test files is strictly forbidden.
+- **Automated Pre-Flight & CI Enforcement**: All pull requests, deployments (`npm run deploy`), and CI runs execute `node scripts/verify-tests.js` and `npm run test`. Any missing tests or test failures will immediately fail the pipeline.
+

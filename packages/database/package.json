@@ -28,7 +28,8 @@
     "lint": "tsc --noEmit",
     "lint:style": "echo skip",
     "typecheck": "tsc --noEmit",
-    "test": "echo skip",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "clean": "rm -rf dist"
   },
   "dependencies": {
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "@types/node": "^26.4.1",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.11"
   }
 }
