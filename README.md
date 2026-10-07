@@ -43,8 +43,8 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 - **Profile & Identity Management**: Users can manually customize their display name and switch between active profile pictures from any of their linked authentication providers (Google, GitHub, Discord, Twitter, Facebook, generated initials, or custom URL) in `@mono/auth` (accessible via Account Settings > Profile).
 - **Linked Provider Account Swapping**: Linked third-party authentication accounts can be swapped or unlinked seamlessly directly within the Linked Providers security management panel.
 - **Data & Privacy Registry**: Every application collecting user data must register it in the centralized Data & Privacy registry in `@mono/auth` (accessible via Account Settings > Data & Privacy), detailing what is collected, why it is used, and whether it is Required or Optional (with interactive user controls for optional telemetry).
-- **Support & Recommendations**: Users can submit bug reports, feature suggestions, or general support tickets from the centralized Support tab in `@mono/auth` (accessible via Account Settings > Support), backed by the `public.support_tickets` table in Supabase.
 - **Mandatory Documentation Wiki Reporting**: Every significant change across the organization (new architecture patterns, modified public APIs, ADRs, new deployable applications, and policy changes) must be documented in the centralized **Documentation Wiki** (`/docs` / `apps/docs/src/data/wiki-articles.ts`).
+- **Release Tracking (`latest.release.txt`)**: All application release versions, platform targets, and consolidated commit changelogs are persistently tracked and updated in `latest.release.txt` across all apps in the monorepo.
 - **All `.md` files** in the repo must be kept up to date as the project evolves.
 - **Any code change** must also update the relevant documentation files.
 

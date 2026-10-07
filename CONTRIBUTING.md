@@ -74,7 +74,7 @@ These are run in parallel via `npm run test` at the repo root.
 5. If you referenced new env keys, update the corresponding `.env.sample`.
 6. Run `npm run env` to verify environment configuration.
 7. Run `npm run test` (runs lint, stylelint, typecheck, vitest in parallel).
-8. If deploying via `npm run deploy`, inspect `git status` / `git diff` for all uncommitted changes across the entire repo and summarize them in `latest.commit.txt` (see `AGENTS.md` for formatting rules).
+8. If preparing an application release or deploying via `npm run deploy`, update `latest.release.txt` with the release version summary and summarize uncommitted changes in `latest.commit.txt` (see `AGENTS.md` for formatting rules).
 9. Open a pull request against `main` or deploy.
 
 ## Pull Requests

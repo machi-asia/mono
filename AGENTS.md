@@ -20,7 +20,15 @@ to describe ALL of them before a task or session ends.
 - Regenerate it from scratch every time; never append stale entries.
 - Once everything is committed and the tree is clean, empty the file.
 
-### 2. Update `README.md` for every major feature change
+### 2. Maintain `latest.release.txt` for application release versions
+
+`latest.release.txt` tracks, summarizes, and preserves all release notes and commit summaries for every application version across `apps/`.
+
+- Unlike `latest.commit.txt` (which is emptied when the working tree is clean), `latest.release.txt` is persistent and MUST never be emptied.
+- Whenever an application release version is prepared or deployed, `latest.release.txt` MUST be updated to summarize the commits, feature additions, bug fixes, package identifiers, and platform updates for that release version across the monorepo applications.
+- Maintain structured per-app release sections (`@mono/<app-name> (v<version>)`) with platform targets, package IDs, Capgo update channels, and descriptive bullet points.
+
+### 3. Update `README.md` for every major feature change
 
 Any change that adds, removes, or alters user-facing behavior or developer-facing
 infrastructure (new workflows, new templates, new mandated toolchain, changed pipeline
@@ -28,7 +36,7 @@ stages, new sync mechanisms) requires a matching `README.md` update in the same 
 
 Excluded: pure styling tweaks and internal refactors with no behavioral surface.
 
-### 3. Propagate canonical files to all repositories
+### 4. Propagate canonical files to all repositories
 
 Every repository in the org must carry this `AGENTS.md`, synced verbatim from this repo.
 The scheduled/dispatch workflow `.github/workflows/sync-canonical-files.yml` also propagates
