@@ -1,4 +1,4 @@
-// Chat Modal & Views
+// Pure UI Components
 export {
   RoseChatModalProvider,
   useRoseChatModal,
@@ -6,7 +6,9 @@ export {
   RoseChatModalFloatingButton,
   RoseChatModal,
   RoseChat,
-} from "./chat-modal/chat-modal";
+  RoseSettingsModal,
+  RoseVoiceOverlay,
+} from "./components/chat-modal";
 export type {
   RoseChatModalProviderProps,
   RoseChatModalContextType,
@@ -16,23 +18,20 @@ export type {
   RoseChatProps,
   Conversation,
   DisplayMessage,
-} from "./chat-modal/chat-modal";
-export {
-  createNewConversation,
-  loadConversations,
-  saveConversations,
-  generateConversationTitle,
-} from "./chat-modal/conversations";
-export { RoseSettingsModal } from "./chat-modal/settings-modal";
-export type {
   RoseMemoryItem,
   RosePersonalizationData,
   RoseSettingsModalProps,
-} from "./chat-modal/settings-modal";
-export { RoseVoiceOverlay } from "./chat-modal/voice-overlay";
-export type { RoseVoiceOverlayProps } from "./chat-modal/voice-overlay";
+  RoseVoiceOverlayProps,
+} from "./components/chat-modal";
 
-// Voice & Speech Services
+export { UsageBar } from "./components/usage-bar";
+export type { UsageBarProps } from "./components/usage-bar";
+
+// Hooks
+export { useVoiceChat } from "./hooks";
+export type { UseVoiceChatOptions, SpeechProvider } from "./hooks";
+
+// Utilities
 export {
   cleanTextForSpeech,
   isSpeechSynthesisSupported,
@@ -45,95 +44,10 @@ export {
   transcribeAudioBlob,
   createFasterWhisperRecorder,
   createClientWhisperRecorder,
-} from "./voice/speechService";
-export type {
-  SpeakOptions,
-  SpeechRecognitionController,
-  SpeechRecognitionOptions,
-  TranscribeAudioOptions,
-  TranscribeAudioResult,
-  FasterWhisperRecorderOptions,
-  ClientWhisperRecorderOptions,
-} from "./voice/speechService";
-export { useVoiceChat } from "./voice/useVoiceChat";
-export type { UseVoiceChatOptions, SpeechProvider } from "./voice/useVoiceChat";
-
-// Agent Runner, Gemini & Emotions
-export {
-  runAgentChat,
-  ROSE_SYSTEM_INSTRUCTION,
-} from "./agent/agentRunner";
-export type {
-  ChatMessage,
-  RunAgentResult,
-} from "./agent/agentRunner";
-
-export { callGemini } from "./agent/geminiClient";
-export type {
-  GeminiContent,
-  GeminiPart,
-  GeminiToolDeclaration,
-} from "./agent/geminiClient";
-
-export { callGroq, callGroqStream, buildGroqToolPrompt } from "./agent/groqClient";
-export type {
-  GroqMessage,
-  GroqStreamChunk,
-} from "./agent/groqClient";
-
-export {
-  callOllamaChat,
-  callOllamaStream,
-  callOllamaMessagesChat,
-  callOllamaMessagesStream,
-  shouldUseOllamaProvider,
-  getOllamaModelLabel,
-  toOllamaMessages,
-} from "./agent/ollamaClient";
-export type { OllamaChatMessage } from "./agent/ollamaClient";
-
-export { RoseLangfuseTrace, createLangfuseTrace } from "./agent/langfuse";
-export type {
-  LangfuseConfig,
-  TraceOptions,
-  GenerationRecord,
-  SpanRecord,
-} from "./agent/langfuse";
-
-export { ROSE_EMOTIONS, extractEmotion } from "./agent/roseEmotions";
-
-// Agent Tools & Command Registry
-export {
-  TOOLS,
-  getToolByName,
-  webSearchTool,
-  askQuestionTool,
-  learnTool,
-  recallTool,
-  rememberTool,
-  forgetTool,
-  setRememberToolContext,
-  clearRememberToolContext,
-} from "./agent/tools/index";
-export type {
-  Tool,
-  ToolDeclaration,
-} from "./agent/tools/index";
-
-export {
-  getAgentCommandCategories,
-  DEFAULT_COMMAND_CATEGORIES,
-} from "./agent/commandRegistry";
-export type {
-  CommandCategory,
-  CommandItem,
-} from "./agent/commandRegistry";
-
-// Usage & Quotas
-export { UsageBar } from "./usage/usage-bar";
-export type { UsageBarProps } from "./usage/usage-bar";
-
-export {
+  createNewConversation,
+  loadConversations,
+  saveConversations,
+  generateConversationTitle,
   getRoseUsage,
   checkAndIncrementRoseUsage,
   getRoleLimits,
@@ -143,5 +57,16 @@ export {
   roseWeeklyLimitGuest,
   roseDailyLimitUser,
   roseWeeklyLimitUser,
-} from "./usage/usage";
-export type { RoseUsage } from "./usage/usage";
+} from "./utils";
+export type {
+  SpeakOptions,
+  SpeechRecognitionController,
+  SpeechRecognitionOptions,
+  TranscribeAudioOptions,
+  TranscribeAudioResult,
+  FasterWhisperRecorderOptions,
+  ClientWhisperRecorderOptions,
+} from "./utils";
+
+// Types
+export type { RoseUsage } from "./types";

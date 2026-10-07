@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+
+export const dynamic = "force-static";
 import { getAllArticles } from "../data/wiki-articles";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://docs.machi-asia.com";

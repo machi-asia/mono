@@ -1,12 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { AuthProvider, AuthGate } from "@mono/auth";
-import { ThemeProvider, ToastProvider } from "@mono/components";
+import { ThemeProvider, ToastProvider, OtaUpdateNotifier } from "@mono/components";
 import { AdRail } from "../components/ads/ad-rail";
 import { AdSenseScript } from "../components/ads/adsense-script";
 import "reactflow/dist/style.css";
 import "./calculator.css";
-
-export const dynamic = "force-dynamic";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://calculator.machi-asia.com";
 
@@ -79,6 +77,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider>
+          <OtaUpdateNotifier />
           <ToastProvider>
             <AuthProvider>
               <AuthGate>

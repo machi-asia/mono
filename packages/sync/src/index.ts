@@ -1,6 +1,10 @@
+// Types
 export * from "./types";
-export { syncRegistry, registerSyncAction } from "./registry";
+
+// Utilities & Transports
 export {
+  syncRegistry,
+  registerSyncAction,
   dressSyncFunction,
   userOnPress,
   userOnHold,
@@ -8,11 +12,23 @@ export {
   sendSyncEvent,
   flushSyncEvents,
   configureSyncDefaults,
-} from "./dress";
-export type { DressOptions, SyncDispatchOptions } from "./dress";
-export { useSyncRoom, useSyncInput, useSyncHoldButton } from "./hooks";
-export { WebRTCUDPTransport } from "./transport";
-export type { TransportProtocol, SyncTransportOptions, SyncTransport } from "./transport";
+  registerSyncTransportSink,
+  WebRTCUDPTransport,
+} from "./utils";
+export type {
+  DressOptions,
+  SyncDispatchOptions,
+  TransportProtocol,
+  SyncTransportOptions,
+  SyncTransport,
+} from "./utils";
+
+// Hooks
+export {
+  useSyncRoom,
+  useSyncInput,
+  useSyncHoldButton,
+} from "./hooks";
 export type {
   UseSyncRoomOptions,
   KeyBindingMap,

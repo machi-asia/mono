@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { syncRegistry, registerSyncAction } from "../registry";
+import { syncRegistry, registerSyncAction } from "../utils/registry";
 import type { SyncEventPayload } from "../types";
 
 describe("ActionRegistry", () => {

@@ -16,6 +16,12 @@ mono/
 
 ## Applications
 
+### api
+
+The centralized API gateway and microservice. Hosts all HTTP route handlers for Rose AI agent companion, realtime event streaming (SSE), room coordination, and organization usage tracking. Provides an interactive root playground and documentation explorer at `/`.
+
+**Stack:** Next.js App Router, React, TypeScript, `@mono/database`, `@mono/components`
+
 ### machi-asia
 
 The home site for Machi Asia products. Serves as the showcase page and subscription billing hub. Users land here to discover and subscribe to other Machi Asia products.
@@ -160,6 +166,14 @@ See `docs/adr/` for all Architecture Decision Records. Key decisions:
 - [ADR-013: Local Ollama Fallback for Rose in Development](./adr/013-local-ollama-dev-fallback.md)
 - [ADR-014: Multi-Game Production Calculator App](./adr/014-multi-game-calculator-app.md)
 - [ADR-015: Skeleton Loading State Enforcement](./adr/015-skeleton-loading-state-enforcement.md)
+- [ADR-016: User Roles and Multi-Period Resource Usage Monitoring](./adr/016-user-roles-and-usage-monitoring.md)
+
+## User Roles & Multi-Period Usage Monitoring
+
+- **User Roles (`public.user_roles`)**: Maps `user_id` to `guest | member | pro | admin`. Database triggers mirror role states to `auth.users.raw_app_meta_data`, exposing role claims directly in JWTs and `useAuth()`.
+- **Multi-Period Usages (`public.user_usages`)**: Records metric consumption across daily (`YYYY-MM-DD`) and monthly (`YYYY-MM`) windows for `requests`, `ai_tokens`, `turns`, and `storage_bytes`.
+- **Enforcement**: Centralized API gateway (`apps/api`) atomically enforces quotas per role via `increment_user_usage` stored procedure, returning `429 Too Many Requests` when limits are exceeded.
+- **Support Tickets (`public.support_tickets`)**: Allows users to submit bug reports, recommendations, and general support tickets with RLS policies granting user-isolated views and administrative triage.
 
 ## Documentation Requirements
 
@@ -167,4 +181,5 @@ See `docs/adr/` for all Architecture Decision Records. Key decisions:
 - Architecture changes must be preceded by an ADR in `docs/adr/`.
 - Component changes must be reflected in `apps/docs` documentation.
 - Every code change must update the relevant documentation files.
+
 

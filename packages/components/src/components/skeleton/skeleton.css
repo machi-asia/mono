@@ -1,0 +1,155 @@
+@import url("../../tokens.css");
+
+.m-skeleton {
+  display: block;
+  background-color: var(--color-surface-2);
+  border: 1px solid var(--color-border-soft);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.m-skeleton--text {
+  height: 1rem;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  margin-block: 0.25rem;
+}
+
+.m-skeleton--circular {
+  border-radius: var(--radius-pill);
+  flex-shrink: 0;
+}
+
+.m-skeleton--rectangular {
+  border-radius: 0;
+}
+
+.m-skeleton--rounded {
+  border-radius: var(--radius-md);
+}
+
+.m-skeleton--pulse {
+  animation: m-skeleton-pulse 1.8s var(--ease-in-out) infinite;
+}
+
+.m-skeleton--wave {
+  position: relative;
+}
+
+.m-skeleton--wave::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(255 255 255 / 6%) 50%,
+    transparent 100%
+  );
+  animation: m-skeleton-wave 2s infinite;
+}
+
+.light .m-skeleton--wave::after,
+:root[data-theme="light"] .m-skeleton--wave::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(0 0 0 / 5%) 50%,
+    transparent 100%
+  );
+}
+
+.m-skeleton--none {
+  animation: none;
+}
+
+@keyframes m-skeleton-pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes m-skeleton-wave {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .m-skeleton--pulse {
+    animation: none;
+    opacity: 0.7;
+  }
+
+  .m-skeleton--wave::after {
+    animation: none;
+    display: none;
+  }
+}
+
+.m-skeleton-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.m-skeleton-button {
+  display: inline-block;
+  border-radius: var(--radius-sm);
+}
+
+.m-skeleton-button--sm {
+  height: 28px;
+  width: 72px;
+}
+
+.m-skeleton-button--md {
+  height: 36px;
+  width: 96px;
+}
+
+.m-skeleton-button--lg {
+  height: 44px;
+  width: 120px;
+}
+
+.m-skeleton-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.m-skeleton-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.m-skeleton-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.m-skeleton-card-actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}

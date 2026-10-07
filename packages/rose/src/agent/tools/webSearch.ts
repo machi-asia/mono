@@ -82,28 +82,31 @@ export const webSearchTool: Tool = {
         }
       }
 
-      const geminiKey =
+      const gatewayKey =
+        process.env.AI_GATEWAY_API_KEY ||
+        process.env.VERCEL_AI_GATEWAY_API_KEY ||
         process.env.GEMINI_API_KEY ||
         process.env.GOOGLE_API_KEY;
 
-      if (geminiKey) {
-        const model = process.env.GEMINI_MODEL || "gemini-2.0-flash";
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiKey}`;
+      if (gatewayKey) {
+        const model = process.env.AI_GATEWAY_MODEL || "openai/gpt-6-astra";
+        const url = process.env.AI_GATEWAY_URL || "https://ai-gateway.vercel.sh/v1/chat/completions";
         const res = await fetch(url, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${gatewayKey}`,
+          },
           body: JSON.stringify({
-            contents: [
+            model,
+            messages: [
               {
                 role: "user",
-                parts: [
-                  {
-                    text: `Search query: "${query}"\n\nReturn up to ${numResults} realistic, accurate, and concise search results as a JSON array where each object has "title", "url", and "snippet" fields. Output valid JSON array only with no markdown wrapping.`,
-                  },
-                ],
+                content: `Search query: "${query}"\n\nReturn up to ${numResults} realistic, accurate, and concise search results as a JSON array where each object has "title", "url", and "snippet" fields. Output valid JSON array only with no markdown wrapping.`,
               },
             ],
-            generationConfig: { temperature: 0.1, maxOutputTokens: 2048 },
+            temperature: 0.1,
+            max_tokens: 2048,
           }),
         });
 
@@ -111,11 +114,8 @@ export const webSearchTool: Tool = {
           return JSON.stringify({ error: `Search engine query failed with status ${res.status}` });
         }
 
-        const data: Record<string, unknown> = await res.json();
-        const candidates = data.candidates as Array<{
-          content?: { parts: Array<{ text?: string }> };
-        }> | undefined;
-        const text = candidates?.[0]?.content?.parts?.[0]?.text || "[]";
+        const data: any = await res.json();
+        const text = data.choices?.[0]?.message?.content || "[]";
         const jsonMatch = text.match(/\[[\s\S]*\]/);
         const results: SearchResult[] = jsonMatch
           ? (JSON.parse(jsonMatch[0]) as SearchResult[]).slice(0, numResults)
@@ -126,7 +126,7 @@ export const webSearchTool: Tool = {
       return JSON.stringify({
         query,
         results: [],
-        note: "No search provider key configured. Set SERPAPI_KEY or GEMINI_API_KEY.",
+        note: "No search provider key configured. Set SERPAPI_KEY or AI_GATEWAY_API_KEY.",
       });
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "Web search failed";

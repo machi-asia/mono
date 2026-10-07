@@ -1,7 +1,3 @@
-feature(auth): add profile identity management and linked account swapping
+chore(repo): update applications, build web assets, and sync mobile platforms
 
-- auth: create ProfileSection with manual display name editing and profile picture selector from linked accounts (Google, GitHub, Discord, Twitter, Facebook, generated initials, or custom URL)
-- auth: add Profile tab as top-level tab in AccountSettings modal with responsive styling
-- auth: add Swap Account functionality in Linked Providers with prompt account selection support and linked account status badges
-- navbar: update AppNavbar and DocsNavbar settingsTab to support opening to Profile tab by default
-- test: update AccountSettings unit tests to cover Profile tab, avatar options, and linked provider swapping
+- deploy: automated build, sync, and push

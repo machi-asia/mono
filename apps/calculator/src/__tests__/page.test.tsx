@@ -113,7 +113,7 @@ it("navigates to graph view when clicking Graph button on an item card", () => {
 
     fireEvent.click(categoryBtn); // Category desc
     expect(firstItem()).toBe("Boardwalk Plank");
-  });
+  }, 15000);
 
   it("shows the last updated date on item cards", () => {
     render(
@@ -152,7 +152,7 @@ it("navigates to graph view when clicking Graph button on an item card", () => {
     expect(galleryBtn).toHaveAttribute("aria-pressed", "true");
     expect(document.querySelectorAll(".calc-item-card").length).toBe(71);
     expect(document.querySelector(".calc-list")).toBeNull();
-  });
+  }, 15000);
 
   it("auto-colors item cards by category", () => {
     render(

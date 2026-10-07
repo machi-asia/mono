@@ -1,20 +1,29 @@
 export { createClient } from "./client";
 export type {
   Database,
+  Json,
+  UserRole,
+  UserRoleRecord,
+  UsageMetric,
+  UsagePeriodType,
+  UserUsageRecord,
   MediaFileRecord,
   RoseMemoryRecord,
   RosePersonalizationRecord,
+  SupportTicketRecord,
 } from "./types";
 export {
   listUserMedia,
   uploadUserMedia,
   deleteUserMedia,
+  renameUserMedia,
   detectMediaType,
 } from "./media";
 export type {
   ListUserMediaOptions,
   ListUserMediaResult,
   UploadUserMediaOptions,
+  RenameUserMediaOptions,
 } from "./media";
 export {
   createMemory,
@@ -41,8 +50,21 @@ export {
 export type {
   SupportTicketType,
   SupportTicketStatus,
-  SupportTicketRecord,
   CreateSupportTicketInput,
 } from "./support";
-
-
+export {
+  getUserRole,
+  updateUserRole,
+  DEFAULT_USER_ROLE,
+} from "./roles";
+export {
+  ROLE_QUOTAS,
+  ROLE_IMAGE_MAX_SIZE_KB,
+  ROLE_STORAGE_LIMIT_BYTES,
+  recordAndCheckUsage,
+  getUserUsageSummary,
+} from "./usages";
+export type {
+  RoleQuota,
+  CheckUsageResult,
+} from "./usages";

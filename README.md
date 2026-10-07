@@ -6,8 +6,9 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 
 | App | Description |
 |-----|-------------|
+| `api` | Centralized API microservice, interactive API Explorer playground (`/`), realtime SSE sync hub, and organizational usage tracking |
 | `machi-asia` | Home site — showcase and subscription billing hub for all Machi Asia products |
-| `rose` | Custom AI agent application |
+| `rose` | Custom AI companion application |
 | `calculator` | Multi-game production calculator with interactive recipe tree graph (styled throughput edge labels) and factory rate planner, a sortable item catalog (name/category carets) in gallery or list view, and per-item last-updated tracking |
 | `docs` | Documentation site — developer knowledge base, wiki articles, ADRs, component library showcases, and user manuals |
 | `hells-forge` | High-performance 2D multiplayer exploration space powered by Pixi.js, spatial circle collisions, WASD movement, and `@mono/sync` |
@@ -16,10 +17,12 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 
 | Package | Description |
 |---------|-------------|
-| `auth` | Centralized authentication via Supabase — auth provider, session management, middleware |
+| `api-client` | Typed API client SDK configured via `NEXT_PUBLIC_API_URL` for communicating with `apps/api` |
+| `auth` | Centralized authentication via Supabase — auth provider, session management, middleware, data & privacy registry |
 | `database` | Centralized data/store via Supabase — client creation, types, queries |
 | `components` | Shared UI components + design system — tokens, theme, layout primitives (`Row`/`Col`/`Card`), and functional elements |
-| `sync` | Realtime input dressing (`dressSyncFunction`), action registry, and Redis-backed room event synchronization (`userOnPress` / `userOnRelease`) |
+| `rose` | Client UI components, voice mode overlay, settings modals, and usage bars for Rose AI companion |
+| `sync` | Realtime input dressing (`dressSyncFunction`), action registry, and WebRTC/SSE client transports |
 
 ## Conventions
 
@@ -104,10 +107,12 @@ Compiles every app's environment into a single `.env` at the repo root: key name
 npm install
 
 # Run a specific app in dev mode
+npm run dev -w @mono/api
 npm run dev -w @mono/machi-asia
 npm run dev -w @mono/rose
 npm run dev -w @mono/calculator-app
 npm run dev -w @mono/docs
+npm run dev -w @mono/hells-forge
 
 # Build all apps and packages
 npm run build
@@ -125,19 +130,54 @@ SUPABASE_PUBLISHABLE_KEY=your-supabase-publishable-key
 
 > **Canonical Supabase project:** `https://zyatzdkapdqngwyhiqqn.supabase.co`. All migrations, DDL, edge functions, and data changes must target this project only. `NEXT_PUBLIC_SUPABASE_URL` must resolve to this URL; if a connected tool or agent points to a different project, correct it before applying any schema or data change.
 
+## Mobile & Over-The-Air (OTA) Updates
+
+All client-facing applications (`calculator`, `docs`, `hells-forge`, `machi-asia`, `rose`) support hybrid distribution on both Web and Android (Google Play Store) via **Capacitor** and **Capgo**.
+
+### Android Package Identifiers
+- **Calculator**: `asia.machi.calculator`
+- **Docs**: `asia.machi.docs`
+- **Hell's Forge**: `asia.machi.hellsforge`
+- **Machi Asia Portal**: `asia.machi.portal`
+- **Rose AI**: `asia.machi.rose`
+
+### Mobile Build & Sync Workflow
+
+```bash
+# 1. Build static export for mobile
+npm run build:mobile -w @mono/calculator-app
+
+# 2. Sync web assets and plugins with the native Android project
+npm run cap:sync -w @mono/calculator-app
+
+# 3. Open project in Android Studio (for Play Store bundle / APK build)
+npm run cap:open:android -w @mono/calculator-app
+```
+
+### Live Updates (Capgo) & OTA Progress Notification
+- Live OTA updates are distributed seamlessly via `@capgo/capacitor-updater` through the configured channel (`production`).
+- The organization-standard `<OtaUpdateNotifier />` component from `@mono/components` is mounted in the root layout of every client app.
+- During active update downloads, a sleek top glassmorphism pill displays real-time download percentage and installation status, automatically dismissing once the update bundle is verified and ready.
+
+
 ## Project Structure
 
 ```
 mono/
 ├── apps/
+│   ├── api/            # Centralized API service & Interactive Explorer (Next.js)
 │   ├── calculator/     # Multi-game production calculator (Next.js)
 │   ├── docs/           # Documentation site (Next.js)
+│   ├── hells-forge/    # Multiplayer 2D sandbox (Next.js)
 │   ├── machi-asia/     # Showcase + billing hub (Next.js)
-│   └── rose/           # Custom AI agent (Next.js)
+│   └── rose/           # Custom AI agent companion (Next.js)
 ├── packages/
-│   ├── auth/           # Authentication
-│   ├── components/     # Shared UI components
-│   └── database/       # Data/store layer
+│   ├── api-client/     # Standardized typed API client
+│   ├── auth/           # Authentication & privacy registry (pure components/hooks)
+│   ├── components/     # Shared UI components & design system tokens
+│   ├── database/       # Data/store layer & type definitions
+│   ├── rose/           # Rose AI client components & speech utils
+│   └── sync/           # Realtime DRESS input & client transports
 ├── docs/
 │   ├── adr/            # Architecture Decision Records
 │   ├── API.md          # API documentation conventions

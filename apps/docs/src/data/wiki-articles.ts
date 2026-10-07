@@ -52,11 +52,147 @@ export const CATEGORY_DESCRIPTIONS: Record<WikiCategory, string> = {
 export const wikiArticles: WikiArticle[] = [
   WIKI_REPORTING_STANDARD,
   {
+    slug: "account-roles-and-usage-monitoring",
+    title: "Architecture & Auth: User Roles & Multi-Period Usage Monitoring",
+    description: "Organization-wide account roles (guest, member, pro, admin) and multi-period (daily/monthly) usage quota tracking across apps.",
+    category: "Architecture & Core",
+    updatedAt: "2026-10-06",
+    author: "Machi Asia Engineering",
+    readTime: "4 min read",
+    tags: ["auth", "roles", "usage-limits", "quotas", "database", "supabase", "rls"],
+    content: `# Architecture & Auth: User Roles & Multi-Period Usage Monitoring
+
+## 1. Overview
+
+Machi Asia enforces role-based access control and multi-period resource usage monitoring across all deployable applications (\`/apps\`). User roles (\`guest\`, \`member\`, \`pro\`, \`admin\`) govern feature access, storage limits, and daily/monthly consumption quotas.
+
+## 2. Database Schema & Supabase Architecture
+
+### \`public.user_roles\`
+Stores persistent user roles mapped to \`auth.users\` IDs. Changes are automatically mirrored to \`auth.users.raw_app_meta_data\` so role claims are included directly within client session JWTs.
+
+\`\`\`sql
+CREATE TABLE public.user_roles (
+  user_id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  role TEXT NOT NULL DEFAULT 'member' CHECK (role IN ('guest', 'member', 'pro', 'admin')),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+\`\`\`
+
+### \`public.user_usages\`
+Tracks multi-period metric consumption per user, per application, and per period key (\`YYYY-MM-DD\` for daily, \`YYYY-MM\` for monthly).
+
+\`\`\`sql
+CREATE TABLE public.user_usages (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  app TEXT NOT NULL DEFAULT 'global',
+  metric TEXT NOT NULL CHECK (metric IN ('requests', 'ai_tokens', 'turns', 'storage_bytes')),
+  period_type TEXT NOT NULL CHECK (period_type IN ('daily', 'monthly')),
+  period_key TEXT NOT NULL,
+  count BIGINT NOT NULL DEFAULT 0,
+  usage_limit BIGINT NOT NULL DEFAULT 1000,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  CONSTRAINT uq_user_app_metric_period UNIQUE (user_id, app, metric, period_type, period_key)
+);
+\`\`\`
+
+### \`public.support_tickets\`
+Enables users to submit bug reports, recommendations, and general support tickets with RLS policies allowing users to view their own tickets and administrators to manage all tickets.
+
+## 3. Role Quota Matrix
+
+| Role | Daily Requests | Monthly Requests | Daily AI Turns | Monthly AI Turns | Max Image Upload | Total Storage Capacity |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **guest** | 50 | 500 | 15 | 150 | 2 KB | 1 MB |
+| **member** | 250 | 3,500 | 60 | 1,200 | 20 KB | 5 MB |
+| **pro** | 1,500 | 25,000 | 300 | 6,000 | 10 MB | 1 GB |
+| **admin** | Unlimited | Unlimited | Unlimited | Unlimited | Unlimited | Unlimited |
+
+## 4. Quota Enforcement
+
+All API microservice routes (\`apps/api\`) check daily and monthly limits via \`recordAndCheckUsage()\` in \`@mono/database\`. Exceeded quotas return an immediate \`429 Too Many Requests\` error response and display an interactive upgrade/usage modal in the client UI.`,
+  },
+  {
+    slug: "personal-media-library-integration",
+    title: "Packages & Auth: Personal Media Library & Account Integration",
+    description: "Cloud-connected personal media repository integrated into Account Settings with upload, rename, and delete capabilities.",
+    category: "Packages & Libraries",
+    updatedAt: "2026-10-06",
+    author: "Machi Asia Engineering",
+    readTime: "3 min read",
+    tags: ["media-library", "account-settings", "storage", "database", "components"],
+    content: `# Personal Media Library & Account Integration
+
+## 1. Overview
+
+The **Media Library** tab in the organization-wide **Account Settings** modal (\`@mono/auth\`) provides users with a centralized, private cloud storage repository for personal pictures and documents. Assets uploaded here are isolated per user UUID and can be referenced across any Machi Asia application.
+
+## 2. Capabilities & Architecture
+
+- **Connected Component (\`@mono/components\`)**: The \`<MediaLibrary />\` component supports filtered tab views (\`Images\`, \`PDFs\`, \`DOCX\`, \`All\`), pagination, multi-file uploads, and full inspection modals.
+- **Database & Storage Integration (\`@mono/database\`)**:
+  - \`listUserMedia(supabase, options)\`: Queries \`media_files\` table with fallback to Supabase Storage bucket listing under \`users/{userId}/\`.
+  - \`uploadUserMedia(supabase, options)\`: Performs upsert uploads to the \`media\` bucket and creates database tracking records.
+  - \`renameUserMedia(supabase, options)\`: Updates file display names dynamically in the database record.
+  - \`deleteUserMedia(supabase, options)\`: Enforces user path isolation before deleting assets from cloud storage and database tables.
+- **Account Settings Integration (\`@mono/auth\`)**:
+  - Adds the dedicated **"Media Library"** sidebar tab in \`AccountSettings\`.
+  - Discloses cloud asset collection in the centralized **Data & Privacy Registry**.`,
+  },
+  {
+    slug: "centralized-api-and-package-architecture",
+    title: "Architecture: Centralized API Service & Standardized Package Structure",
+    description: "Centralization of all HTTP API routes and usage tracking into apps/api, with uniform component/hook package conventions.",
+    category: "Architecture & Core",
+    updatedAt: "2026-10-06",
+    author: "Machi Asia Engineering",
+    readTime: "4 min read",
+    tags: ["architecture", "api", "packages", "usage-tracking", "microservices"],
+    content: `# Architecture: Centralized API Service & Standardized Package Structure
+
+## 1. Executive Summary
+
+To establish high maintainability and prevent server logic leakage into UI packages, all HTTP endpoints, realtime synchronization event hubs, and usage quota tracking are centralized in **\`apps/api\`** (port 3005). Concurrently, all shared **\`/packages\`** follow a strict folder hierarchy exporting pure UI components, hooks, client utilities, and type definitions.
+
+\`\`\`
+packages/<package-name>/
+├── src/
+│   ├── components/<ComponentName>/
+│   │   ├── <ComponentName>.tsx
+│   │   ├── <ComponentName>.css
+│   │   ├── <ComponentName>.test.tsx
+│   │   └── index.ts
+│   ├── hooks/
+│   ├── types/
+│   ├── utils/
+│   └── index.ts
+\`\`\`
+
+## 2. Centralized \`apps/api\` Gateway
+
+The \`apps/api\` Next.js service hosts:
+- **Interactive Root Documentation (\`/\`)**: Live endpoint test bench with payload editor, schema inspection, cURL / TypeScript code generator, and real-time usage metrics dashboard.
+- **Dual-Mount Routing**: Endpoints are mounted both under root (\`/rose/chat\`, \`/sync/events\`, \`/usage/metrics\`) and with \`/api/*\` aliases for backwards compatibility.
+- **Centralized Usage Tracking**: Global API telemetry, request latency metrics, and Rose AI companion quotas are aggregated centrally in \`src/server/usage/tracker.ts\`.
+
+## 3. Standardized Packages
+
+Packages no longer carry server route handlers. Instead:
+- **\`@mono/components\`**: Design tokens, primitives, layout, and interactive controls.
+- **\`@mono/auth\`**: Auth provider, SignInModal, AuthGate, and the Data & Privacy registry.
+- **\`@mono/rose\`**: Companion ChatModal, VoiceOverlay, SettingsModal, and UsageBar.
+- **\`@mono/sync\`**: DRESS input decorators, action registries, and WebRTC/SSE transports.
+- **\`@mono/api-client\`**: Standardized client SDK configured via \`NEXT_PUBLIC_API_URL\`.`,
+  },
+  {
     slug: "api-endpoints",
     title: "API Endpoint Reference",
     description: "Every HTTP endpoint in the monorepo: Rose chat, settings, transcription, usage, and Sync events and rooms, with request and response shapes.",
     category: "Architecture & Core",
-    updatedAt: "2026-10-03",
+    updatedAt: "2026-10-06",
     author: "Machi Asia Engineering",
     readTime: "5 min read",
     tags: ["api", "endpoints", "rose", "sync", "sse"],
@@ -64,18 +200,20 @@ export const wikiArticles: WikiArticle[] = [
 
 ## Overview
 
-All routes are Next.js App Router handlers that delegate to \`@mono/rose/server\` or \`@mono/sync/server\`. Full reference lives in \`docs/API-ENDPOINTS.md\`.
+All API endpoints are centralized in the \`apps/api\` service. Dual mounting allows requests to either \`/<endpoint>\` or \`/api/<endpoint>\`.
 
-| Method | Path | App | Purpose |
+| Method | Path | Service / Alias | Purpose |
 |---|---|---|---|
-| POST | \`/api/rose/chat\` | rose, docs | Chat with the agent (SSE or JSON) |
-| GET | \`/api/rose/settings\` | rose, docs | Read memories and personalization |
-| POST | \`/api/rose/settings\` | rose, docs | Save personalization, add/update/delete memory |
-| POST | \`/api/rose/transcribe\` | rose, docs | Speech-to-text |
-| GET | \`/api/rose/usage\` | rose, docs | Quota metrics |
-| GET | \`/api/sync/events\` | hells-forge | SSE stream for a room |
-| POST | \`/api/sync/events\` | hells-forge | Publish single or batch events |
-| GET | \`/api/sync/rooms\` | hells-forge | List room members |
+| POST | \`/rose/chat\` | \`/api/rose/chat\` | Chat with the agent (SSE or JSON) |
+| GET | \`/rose/settings\` | \`/api/rose/settings\` | Read memories and personalization |
+| POST | \`/rose/settings\` | \`/api/rose/settings\` | Save personalization, add/update/delete memory |
+| POST | \`/rose/transcribe\` | \`/api/rose/transcribe\` | Speech-to-text audio transcription |
+| GET | \`/rose/usage\` | \`/api/rose/usage\` | Rose interaction quota metrics |
+| GET | \`/sync/events\` | \`/api/sync/events\` | SSE event stream for multiplayer rooms |
+| POST | \`/sync/events\` | \`/api/sync/events\` | Publish single or batch room state events |
+| GET | \`/sync/rooms\` | \`/api/sync/rooms\` | Query active room membership |
+| GET | \`/usage/metrics\` | \`/api/usage/metrics\` | Global API consumption & telemetry |
+| GET | \`/health\` | \`/api/health\` | Service health check |
 
 ## Rose Errors
 
@@ -173,7 +311,7 @@ mono/
 ### Deployable Applications (\`apps/\`)
 - **\`machi-asia\`**: The flagship showcase portal and billing hub. Users authenticate here and manage product subscriptions.
 - **\`docs\`**: The developer documentation portal, interactive component showcase playground, and knowledge wiki.
-- **\`rose\`**: Dedicated companion application powered by Gemini and Groq AI models.
+- **\`rose\`**: Dedicated companion application powered by Vercel AI Gateway and Groq AI models.
 - **\`calculator\`**: Factory automation and crafting recipe calculator supporting Satisfactory, Factorio, Minecraft, and Dyson Sphere Program.
 - **\`portfolio\`**: High-performance personal portfolio showcasing works and technical achievements.
 - **\`hells-forge\`**: Interactive real-time browser game.
@@ -377,7 +515,7 @@ All tables in the Postgres database must have Row Level Security enabled. Every 
     updatedAt: "2026-10-03",
     author: "Machi Asia AI Lab",
     readTime: "7 min read",
-    tags: ["ai", "rose", "gemini", "groq", "voice", "agents"],
+    tags: ["ai", "rose", "ai-gateway", "vercel", "groq", "voice", "agents"],
     content: `# @mono/rose: AI Agent & Companion Library
 
 ## Overview
@@ -386,7 +524,7 @@ All tables in the Postgres database must have Row Level Security enabled. Every 
 
 ## Architecture
 
-1. **Primary LLM Orchestrator**: Google Gemini serves as the core reasoning engine.
+1. **Primary LLM Orchestrator**: Vercel AI Gateway serves as the core reasoning engine.
 2. **Tool Processing & Synthesis**: Groq provides ultra-low-latency structured tool output processing and emotion synthesis into Obsidian-formatted responses.
 3. **Long-Term Memory**: Vector-indexed memory layer that records past user conversations, user preferences, and relationship context.
 4. **Voice Mode**: Real-time voice interaction engine using Web Speech API synthesis alongside Whisper transcription.
@@ -671,7 +809,7 @@ Implement a custom, highly performant \`<MarkdownRenderer />\` in \`@mono/compon
     updatedAt: "2026-09-03",
     author: "Machi Asia AI Team",
     readTime: "4 min read",
-    tags: ["adr", "ai", "rose", "gemini", "groq"],
+    tags: ["adr", "ai", "rose", "ai-gateway", "vercel", "groq"],
     content: `# ADR-008: Rose AI Agent Package Architecture
 
 ## Status
@@ -681,7 +819,7 @@ Implement a custom, highly performant \`<MarkdownRenderer />\` in \`@mono/compon
 The Rose companion agent needed to be embedded in multiple applications (home portal, companion app, docs) while maintaining persistent state and modular tooling.
 
 ## Decision
-Package Rose into \`@mono/rose\`, combining Gemini for core reasoning, Groq for ultra-fast tool formatting, and shared chat modal components.
+Package Rose into \`@mono/rose\`, combining Vercel AI Gateway for unified model access and core reasoning, Groq for ultra-fast tool formatting, and shared chat modal components.
 
 ## Consequences
 - Any app in the monorepo can embed Rose with a single component import.
@@ -710,6 +848,35 @@ Mandate the use of \`<Skeleton>\` components from \`@mono/components\` across al
 ## Consequences
 - Perceived loading latency is significantly reduced.
 - Eliminates Cumulative Layout Shift (CLS) across the platform.`,
+  },
+  {
+    slug: "adr-017-capacitor-and-capgo-mobile-architecture",
+    title: "ADR-017: Capacitor & Capgo Mobile Architecture (Web + Android)",
+    description: "Integration of Capacitor and Capgo across client apps for Google Play Store Android distribution and real-time OTA live update progress notifications.",
+    category: "Architecture Decisions (ADR)",
+    updatedAt: "2026-10-07",
+    author: "Machi Asia Mobile Architecture Guild",
+    readTime: "4 min read",
+    tags: ["adr", "capacitor", "capgo", "android", "mobile", "ota", "google-play"],
+    content: `# ADR-017: Capacitor & Capgo Mobile Architecture (Web + Android)
+
+## Status
+**Accepted** (2026-10-07)
+
+## Context
+All client applications in the Machi Asia ecosystem (\`calculator\`, \`docs\`, \`hells-forge\`, \`machi-asia\`, \`rose\`) require dual distribution on both Web browsers and Android mobile platforms via Google Play Store, supported by instant over-the-air (OTA) updates.
+
+## Decision
+1. **Capacitor Hybrid Bridge**: Integrate \`@capacitor/core\`, \`@capacitor/cli\`, and \`@capacitor/android\` across all client-facing applications.
+2. **Standardized Package IDs**: Standardize on \`asia.machi.<appname>\` for Google Play Store application identifiers.
+3. **Capgo OTA Live Updates**: Implement \`@capgo/capacitor-updater\` with automated channel checks (\`production\`) on application launch and resume.
+4. **Top OTA Progress Popup**: Provide \`<OtaUpdateNotifier />\` in \`@mono/components\` and mount it in the root \`layout.tsx\` of every client app. The popup floats at the top during downloads, displays real-time percent completion, and automatically dismisses once the update is installed.
+5. **Dual-Mode Build**: Use \`npm run build:mobile\` (\`STATIC_EXPORT=true next build\`) to generate static \`out/\` directories for Capacitor sync.
+
+## Consequences
+- Cross-platform parity across Web and Android from a single shared codebase.
+- Hot OTA updates deployed instantly via Capgo Cloud without app store review delays.
+- Clean visual progress indicators for users during live updates.`,
   },
 ];
 

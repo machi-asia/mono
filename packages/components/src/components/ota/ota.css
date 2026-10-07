@@ -1,0 +1,134 @@
+.m-ota-notifier {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1rem;
+  min-width: 280px;
+  max-width: 90vw;
+  background-color: var(--color-surface-glass, rgb(22 20 15 / 85%));
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border, #2a271f);
+  border-radius: var(--radius-pill, 999px);
+  box-shadow: var(--shadow-2, 0 8px 24px rgb(0 0 0 / 40%));
+  color: var(--color-text, #f6f1e6);
+  font-family: inherit;
+  animation: m-ota-slide-down 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: auto;
+}
+
+.m-ota-notifier--complete {
+  border-color: var(--color-success, #22c55e);
+}
+
+.m-ota-notifier--error {
+  border-color: var(--color-error, #ef4444);
+}
+
+.m-ota-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: var(--color-surface-2, rgb(255 255 255 / 8%));
+}
+
+.m-ota-icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-primary, #d4af37);
+}
+
+.m-ota-icon--spin {
+  animation: m-ota-spin 1.2s linear infinite;
+}
+
+.m-ota-icon--success {
+  color: var(--color-success, #22c55e);
+}
+
+.m-ota-icon--error {
+  color: var(--color-error, #ef4444);
+}
+
+.m-ota-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.m-ota-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.m-ota-status {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-text, #f6f1e6);
+}
+
+.m-ota-percent {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-primary, #d4af37);
+}
+
+.m-ota-track {
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-border-soft, rgb(255 255 255 / 10%));
+  border-radius: var(--radius-pill, 999px);
+  overflow: hidden;
+}
+
+.m-ota-bar {
+  height: 100%;
+  background-color: var(--color-primary, #d4af37);
+  border-radius: var(--radius-pill, 999px);
+  transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.m-ota-bar--complete {
+  background-color: var(--color-success, #22c55e);
+}
+
+.m-ota-bar--error {
+  background-color: var(--color-error, #ef4444);
+}
+
+@keyframes m-ota-slide-down {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -1rem) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+@keyframes m-ota-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

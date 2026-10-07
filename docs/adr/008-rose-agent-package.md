@@ -19,7 +19,7 @@ Furthermore, the agent system instructions need to be generalized, retaining onl
 1. **New Package `@mono/rose`**: Located under `packages/rose` with feature folders `src/agent`, `src/usage`, and `src/chat-modal`.
 2. **Generalized System Instructions**: Rose is instructed as a versatile general-purpose AI assistant. It is provided a comprehensive list of Obsidian-compatible Markdown formatting rules (callouts, code blocks, tables, wikilinks, tags, task lists, highlights, and footnotes) which it must strictly employ.
 3. **General-Purpose Tools**: Removed portfolio/specialist tools and kept:
-   - `webSearch`: Live web lookup with SerpAPI or Gemini Search fallback.
+   - `webSearch`: Live web lookup with SerpAPI or Vercel AI Gateway fallback.
    - `askQuestion`: Interactive option picker returning structured payloads rendered as clickable button choices.
 4. **Chat Modal UI**:
    - `RoseChatModalProvider` & `useRoseChatModal`: Context state management.

@@ -9,6 +9,8 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
+    "build:mobile": "turbo build:mobile",
+    "cap:sync": "turbo cap:sync",
     "lint": "turbo lint",
     "lint:style": "turbo lint:style",
     "typecheck": "turbo typecheck",

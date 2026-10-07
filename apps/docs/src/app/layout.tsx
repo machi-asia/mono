@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { AuthProvider, AuthGate } from "@mono/auth";
-import { ThemeProvider } from "@mono/components";
+import { ThemeProvider, OtaUpdateNotifier } from "@mono/components";
 import { DocsNavbar } from "./docs-navbar";
 import "./global.css";
 
@@ -64,6 +64,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider>
+          <OtaUpdateNotifier />
           <AuthProvider>
             <DocsNavbar />
             <AuthGate>{children}</AuthGate>

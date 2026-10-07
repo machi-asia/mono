@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Machi Asia</string>
+    <string name="title_activity_main">Machi Asia</string>
+    <string name="package_name">asia.machi.portal</string>
+    <string name="custom_url_scheme">asia.machi.portal</string>
+</resources>

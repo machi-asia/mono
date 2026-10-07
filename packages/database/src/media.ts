@@ -206,3 +206,40 @@ export async function deleteUserMedia(
     // Ignore DB error if table not present
   }
 }
+
+export interface RenameUserMediaOptions {
+  id?: string;
+  path?: string;
+  newName: string;
+  userId: string;
+}
+
+export async function renameUserMedia(
+  supabase: SupabaseClient<Database>,
+  options: RenameUserMediaOptions
+): Promise<MediaFileRecord | null> {
+  const { id, path, newName, userId } = options;
+  if (!newName || !newName.trim()) {
+    throw new Error("New media name is required");
+  }
+
+  try {
+    let query = supabase.from("media_files").update({ name: newName.trim() } as never).eq("user_id", userId);
+    if (id) {
+      query = query.eq("id", id);
+    } else if (path) {
+      query = query.eq("path", path);
+    } else {
+      throw new Error("Media ID or path required to rename");
+    }
+
+    const { data, error } = await query.select().single();
+    if (error) {
+      throw error;
+    }
+    return data as MediaFileRecord;
+  } catch (_err) {
+    return null;
+  }
+}
+

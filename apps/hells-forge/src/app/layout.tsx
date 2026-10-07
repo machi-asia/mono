@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { AuthProvider, AuthGate } from "@mono/auth";
-import { ThemeProvider, ToastProvider } from "@mono/components";
+import { ThemeProvider, ToastProvider, OtaUpdateNotifier } from "@mono/components";
 import "./forge.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://forge.machi-asia.com";
@@ -63,6 +63,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider>
+          <OtaUpdateNotifier />
           <ToastProvider>
             <AuthProvider>
               <AuthGate>{children}</AuthGate>

@@ -3,10 +3,14 @@ import { notFound } from "next/navigation";
 import { GAMES_DATA } from "../../data/games";
 import { GameCalculatorView } from "../../components/calculator-view/game-calculator-view";
 
-export const dynamic = "force-dynamic";
-
 interface GamePageProps {
   params: Promise<{ gameId: string }>;
+}
+
+export function generateStaticParams() {
+  return GAMES_DATA.map((g) => ({
+    gameId: g.id,
+  }));
 }
 
 export async function generateMetadata({ params }: GamePageProps): Promise<Metadata> {

@@ -49,7 +49,7 @@ export function RoseShowcase() {
     <MockAuthProvider state="signed-in">
       <ComponentShowcase
         packageName="mono/rose"
-        description="Rose AI companion package exports. Features generalized intelligence, hands-free Voice Mode with speech-to-text and spoken synthesis, Google Gemini runner, web search, interactive option picker, long-term memory ('remember') system, personalization settings (custom instructions, nickname, tone), full memories management (view, add, edit, delete), Obsidian-flavored Markdown rendering, tiered message usage quotas, and chat modal overlays."
+        description="Rose AI companion package exports. Features generalized intelligence, hands-free Voice Mode with speech-to-text and spoken synthesis, Vercel AI Gateway runner, web search, interactive option picker, long-term memory ('remember') system, personalization settings (custom instructions, nickname, tone), full memories management (view, add, edit, delete), Obsidian-flavored Markdown rendering, tiered message usage quotas, and chat modal overlays."
         components={[
           {
             name: "RoseChatModal",

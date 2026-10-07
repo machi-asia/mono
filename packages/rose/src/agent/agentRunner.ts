@@ -1,4 +1,14 @@
-import { callGemini, callGeminiStream, type GeminiContent, type GeminiPart, type GeminiToolDeclaration } from "./geminiClient";
+import {
+  callAiGateway as callGemini,
+  callAiGatewayStream as callGeminiStream,
+  callAiGateway,
+  callAiGatewayStream,
+  getAiGatewayApiKey,
+  getAiGatewayModel,
+  type GatewayContent as GeminiContent,
+  type GatewayPart as GeminiPart,
+  type GatewayToolDeclaration as GeminiToolDeclaration,
+} from "./gatewayClient";
 import { callGroq, callGroqStream, callGroqWithUsage, buildGroqToolPrompt } from "./groqClient";
 import {
   callOllamaChat,
@@ -472,11 +482,11 @@ export async function* runAgentChatStream(
   const useOllamaProvider = shouldUseOllamaProvider();
   const executedToolKeys = new Set<string>();
 
-  const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+  const apiKey = getAiGatewayApiKey();
   if (!apiKey && !useOllamaProvider) {
     const fallbackText = formatErrorCallout(
       "Configuration Error",
-      "Missing `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) in server environment variables. Please configure this key in `.env.local`.",
+      "Missing `AI_GATEWAY_API_KEY` (or `GEMINI_API_KEY`) in server environment variables. Please configure this key in `.env.local`.",
       "Error has been sent to admin for logging, we apologies for the issue"
     );
     const { cleanText, emotion } = extractEmotion(fallbackText);
@@ -506,10 +516,10 @@ export async function* runAgentChatStream(
 
     const activeModel = useOllamaProvider
       ? `ollama:${await getOllamaModelLabel()}`
-      : process.env.GEMINI_MODEL || "gemini-3.1-flash-lite";
+      : getAiGatewayModel();
     const genName = useOllamaProvider
       ? `ollama-orchestrator-turn-${loopCount}`
-      : `gemini-orchestrator-turn-${loopCount}`;
+      : `gateway-orchestrator-turn-${loopCount}`;
     const geminiGenId = trace?.startGeneration(
       genName,
       activeModel,
@@ -1101,10 +1111,10 @@ export async function runAgentChat(
 
     const activeModel = useOllamaProvider
       ? `ollama:${await getOllamaModelLabel()}`
-      : process.env.GEMINI_MODEL || "gemini-3.1-flash-lite";
+      : getAiGatewayModel();
     const genName = useOllamaProvider
       ? `ollama-orchestrator-turn-${loopCount}`
-      : `gemini-orchestrator-turn-${loopCount}`;
+      : `gateway-orchestrator-turn-${loopCount}`;
     const geminiGenId = trace?.startGeneration(
       genName,
       activeModel,
@@ -1117,7 +1127,7 @@ export async function runAgentChat(
       if (useOllamaProvider) {
         responseJson = await callOllamaChat(ROSE_SYSTEM_INSTRUCTION, sanitizedContents);
       } else {
-        responseJson = await callGemini(
+        responseJson = await callAiGateway(
           ROSE_SYSTEM_INSTRUCTION,
           sanitizedContents,
           toolDeclarations
@@ -1169,7 +1179,7 @@ export async function runAgentChat(
       addTrace("researching");
       const errorDetails =
         lastOrchestratorErrorMessage ||
-        "Missing `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) in server environment variables. Please configure this key in `.env.local`.";
+        "Missing `AI_GATEWAY_API_KEY` (or `GEMINI_API_KEY`) in server environment variables. Please configure this key in `.env.local`.";
       const fallbackText = formatErrorCallout(
         "Configuration Error",
         errorDetails,

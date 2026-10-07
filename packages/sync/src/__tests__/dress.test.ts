@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { dressSyncFunction, flushSyncEvents } from "../dress";
-import { syncRegistry } from "../registry";
+import { dressSyncFunction, flushSyncEvents } from "../utils/dress";
+import { syncRegistry } from "../utils/registry";
 
 describe("dressSyncFunction", () => {
   beforeEach(() => {
@@ -102,7 +102,7 @@ describe("dressSyncFunction", () => {
     const fetchMock = vi.fn().mockResolvedValue(new Response("{}"));
     vi.stubGlobal("fetch", fetchMock);
 
-    const { sendSyncEvent, flushSyncEvents } = await import("../dress");
+    const { sendSyncEvent, flushSyncEvents } = await import("../utils/dress");
 
     // Send 3 rapid movement events (actionId: player_move)
     await sendSyncEvent("hold", "custom", "player_move", {
@@ -141,7 +141,7 @@ describe("dressSyncFunction", () => {
     const fetchMock = vi.fn().mockResolvedValue(new Response("{}"));
     vi.stubGlobal("fetch", fetchMock);
 
-    const { sendSyncEvent } = await import("../dress");
+    const { sendSyncEvent } = await import("../utils/dress");
 
     // 1 queued movement
     await sendSyncEvent("hold", "custom", "player_move", {
@@ -171,7 +171,7 @@ describe("dressSyncFunction", () => {
     const fetchMock = vi.fn().mockResolvedValue(new Response("{}"));
     vi.stubGlobal("fetch", fetchMock);
 
-    const { sendSyncEvent, registerSyncTransportSink } = await import("../dress");
+    const { sendSyncEvent, registerSyncTransportSink } = await import("../utils/dress");
     const sinkMock = vi.fn().mockReturnValue(true);
 
     registerSyncTransportSink(sinkMock);
@@ -191,3 +191,4 @@ describe("dressSyncFunction", () => {
     registerSyncTransportSink(null);
   });
 });
+

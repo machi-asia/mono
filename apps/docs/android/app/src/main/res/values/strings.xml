@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Machi Docs</string>
+    <string name="title_activity_main">Machi Docs</string>
+    <string name="package_name">asia.machi.docs</string>
+    <string name="custom_url_scheme">asia.machi.docs</string>
+</resources>

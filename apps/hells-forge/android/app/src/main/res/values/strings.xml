@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Hell\'s Forge</string>
+    <string name="title_activity_main">Hell\'s Forge</string>
+    <string name="package_name">asia.machi.hellsforge</string>
+    <string name="custom_url_scheme">asia.machi.hellsforge</string>
+</resources>

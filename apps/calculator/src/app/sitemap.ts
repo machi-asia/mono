@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { GAMES_DATA } from "../data/games";
 
+export const dynamic = "force-static";
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://calculator.machi-asia.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
