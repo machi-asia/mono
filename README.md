@@ -157,12 +157,12 @@ npm run bundle:android
 npm run cap:open:android -w @mono/calculator-app
 ```
 
-### Live Updates (Capgo) & OTA Progress Notification
-- Live OTA updates are distributed seamlessly via `@capgo/capacitor-updater` through the configured channel (`production`).
+### Live Updates (OtaKit) & OTA Progress Notification
+- Live OTA updates are distributed seamlessly via `@otakit/capacitor-updater`.
 - The organization-standard `<OtaUpdateNotifier />` component from `@mono/components` is mounted in the root layout of every client app.
-- During active update downloads, a sleek top glassmorphism pill displays real-time download percentage and installation status, automatically dismissing once the update bundle is verified and ready.
-- **Automated CI/CD**: The `.github/workflows/capgo-ota.yml` workflow automatically builds and uploads OTA bundles to Capgo upon pushes to `main` (requires `CAPGO_TOKEN` in GitHub repository secrets).
-- **Manual / Local CLI Deploy**: Run `CAPGO_TOKEN=<token> npm run deploy:ota` to build and upload OTA bundles directly from your local terminal.
+- During active update downloads, a sleek top glassmorphism pill displays real-time status and installation notifications, automatically dismissing once the update bundle is verified and ready.
+- **Automated CI/CD**: The `.github/workflows/otakit-ota.yml` workflow automatically builds and uploads OTA bundles to OtaKit upon pushes to `main` (requires `OTAKIT_TOKEN` in GitHub repository secrets).
+- **Manual / Local CLI Deploy**: Run `npm run deploy:ota` to build and upload OTA bundles directly from your local terminal.
 
 
 ## Project Structure

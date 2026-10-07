@@ -8,10 +8,9 @@ const config: CapacitorConfig = {
     androidScheme: "https",
   },
   plugins: {
-    CapacitorUpdater: {
-      autoUpdate: true,
-      resetWhenUpdate: false,
-      defaultChannel: "production",
+    OtaKit: {
+      appId: "b4cb8036-75d2-45f1-ac52-3de7904869b3",
+      appReadyTimeout: 10000,
     },
   },
 };

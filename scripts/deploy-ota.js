@@ -5,25 +5,19 @@ const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 
 const apps = [
-  { name: "calculator", path: "apps/calculator", appId: "asia.machi.calculator" },
-  { name: "docs", path: "apps/docs", appId: "asia.machi.docs" },
-  { name: "hells-forge", path: "apps/hells-forge", appId: "asia.machi.hellsforge" },
-  { name: "machi-asia", path: "apps/machi-asia", appId: "asia.machi.portal" },
-  { name: "rose", path: "apps/rose", appId: "asia.machi.rose" },
+  { name: "calculator", path: "apps/calculator", appId: "bcbdb078-9e02-4744-98dd-44afd20505c4" },
+  { name: "docs", path: "apps/docs", appId: "b4cb8036-75d2-45f1-ac52-3de7904869b3" },
+  { name: "hells-forge", path: "apps/hells-forge", appId: "36660daa-e552-4410-9afb-fc6320b592cc" },
+  { name: "machi-asia", path: "apps/machi-asia", appId: "3ad8cf40-58d9-4124-b82a-079df5524596" },
+  { name: "rose", path: "apps/rose", appId: "717836e1-e934-42de-b027-0a5061173bcb" },
 ];
 
-const apiKey = process.env.CAPGO_TOKEN || process.env.CAPGO_KEY;
-const channel = process.env.CAPGO_CHANNEL || "production";
+const apiKey = process.env.OTAKIT_TOKEN || process.env.OTAKIT_KEY;
+const channel = process.env.OTAKIT_CHANNEL;
 
 console.log("\n============================================================");
-console.log("  Machi Asia - Capgo OTA Deployment Pipeline");
+console.log("  Machi Asia - OtaKit OTA Deployment Pipeline");
 console.log("============================================================\n");
-
-if (!apiKey) {
-  console.error("[deploy:ota] Error: CAPGO_TOKEN or CAPGO_KEY environment variable is required.");
-  console.error("  Usage: CAPGO_TOKEN=<key> npm run deploy:ota");
-  process.exit(1);
-}
 
 // 1. Build mobile static exports
 console.log("[deploy:ota] Building mobile web bundles (out/)...");
@@ -48,29 +42,25 @@ for (const app of apps) {
     continue;
   }
 
-  console.log(`\n[deploy:ota] Uploading OTA bundle for ${app.name} (${app.appId}) to channel '${channel}'...`);
-  const uploadResult = spawnSync(
-    "npx",
-    [
-      "@capgo/cli",
-      "bundle",
-      "upload",
-      "--path",
-      outDir,
-      "--channel",
-      channel,
-      "--apikey",
-      apiKey,
-      "--app",
-      app.appId,
-      "--version-exists-ok",
-    ],
-    {
-      cwd: root,
-      stdio: "inherit",
-      shell: process.platform === "win32",
-    }
-  );
+  console.log(`\n[deploy:ota] Uploading OTA bundle for ${app.name} (${app.appId})...`);
+  const uploadArgs = [
+    "-y",
+    "@otakit/cli@latest",
+    "upload",
+    outDir,
+    "--app-id",
+    app.appId,
+    "--release",
+    ...(channel ? [channel] : []),
+    "--ignore-compat",
+    ...(apiKey ? ["--token", apiKey] : []),
+  ];
+
+  const uploadResult = spawnSync("npx", uploadArgs, {
+    cwd: root,
+    stdio: "inherit",
+    shell: process.platform === "win32",
+  });
 
   if (uploadResult.status !== 0) {
     console.error(`[deploy:ota] Failed to upload OTA bundle for ${app.name}`);
@@ -85,6 +75,6 @@ if (hadError) {
   process.exit(1);
 } else {
   console.log("\n============================================================");
-  console.log("  All Capgo OTA Bundles Successfully Deployed!");
+  console.log("  All OtaKit OTA Bundles Successfully Deployed!");
   console.log("============================================================\n");
 }

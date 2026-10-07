@@ -3,7 +3,7 @@ Date: 2026-10-07
 App: Machi Docs (@mono/docs)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.docs
-Capgo Channel: production
+OTA Provider: OtaKit
 
 Updates:
 - Centralized developer knowledge base, ADRs, and architecture blueprints.

@@ -1,4 +1,4 @@
-name: Capgo OTA Deploy
+name: OtaKit OTA Deploy
 
 on:
   push:
@@ -10,17 +10,17 @@ on:
       - "package.json"
       - "package-lock.json"
       - "turbo.json"
-      - ".github/workflows/capgo-ota.yml"
+      - ".github/workflows/otakit-ota.yml"
   workflow_dispatch:
     inputs:
       channel:
-        description: "Target Capgo Channel"
-        required: true
-        default: "production"
+        description: "Target OtaKit Channel (leave empty for base stream)"
+        required: false
+        default: ""
         type: string
 
 concurrency:
-  group: capgo-ota-${{ github.ref }}
+  group: otakit-ota-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -34,19 +34,19 @@ jobs:
         app:
           - name: calculator
             path: apps/calculator
-            app_id: asia.machi.calculator
+            app_id: bcbdb078-9e02-4744-98dd-44afd20505c4
           - name: docs
             path: apps/docs
-            app_id: asia.machi.docs
+            app_id: b4cb8036-75d2-45f1-ac52-3de7904869b3
           - name: hells-forge
             path: apps/hells-forge
-            app_id: asia.machi.hellsforge
+            app_id: 36660daa-e552-4410-9afb-fc6320b592cc
           - name: machi-asia
             path: apps/machi-asia
-            app_id: asia.machi.portal
+            app_id: 3ad8cf40-58d9-4124-b82a-079df5524596
           - name: rose
             path: apps/rose
-            app_id: asia.machi.rose
+            app_id: 717836e1-e934-42de-b027-0a5061173bcb
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -67,14 +67,11 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
-      - name: Upload OTA Bundle to Capgo (${{ matrix.app.name }})
+      - name: Upload OTA Bundle to OtaKit (${{ matrix.app.name }})
         run: |
-          npx @capgo/cli bundle upload \
-            --path ${{ matrix.app.path }}/out \
-            --channel ${{ github.event.inputs.channel || 'production' }} \
-            --apikey ${{ secrets.CAPGO_TOKEN }} \
-            --app ${{ matrix.app.app_id }} \
-            --version-exists-ok \
-            --comment "${{ github.sha }} - ${{ github.event.head_commit.message || 'Manual OTA Deploy' }}"
+          npx -y @otakit/cli@latest upload ${{ matrix.app.path }}/out \
+            --app-id ${{ matrix.app.app_id }} \
+            --release ${{ github.event.inputs.channel }} \
+            --ignore-compat
         env:
-          CAPGO_TOKEN: ${{ secrets.CAPGO_TOKEN }}
+          OTAKIT_TOKEN: ${{ secrets.OTAKIT_TOKEN }}

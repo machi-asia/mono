@@ -3,7 +3,7 @@ Date: 2026-10-07
 App: Machi Calculator (@mono/calculator-app)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.calculator
-Capgo Channel: production
+OTA Provider: OtaKit
 
 Updates:
 - Multi-game factory planner for Satisfactory, Factorio, Minecraft, DSP & Little Rocket Lab.

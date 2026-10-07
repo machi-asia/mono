@@ -3,7 +3,7 @@ Date: 2026-10-07
 App: Rose AI Companion (@mono/rose-app)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.rose
-Capgo Channel: production
+OTA Provider: OtaKit
 
 Updates:
 - Conversational AI companion with emotion awareness.

@@ -7,7 +7,7 @@ Release Name: v1.0.0 - Genesis Release
 App: Machi Calculator (@mono/calculator-app)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.calculator
-Capgo Channel: production
+OTA Provider: OtaKit
 --------------------------------------------------------------------------------
 Updates:
 - Multi-game factory planner for Satisfactory, Factorio, Minecraft, DSP & Little Rocket Lab.
@@ -20,7 +20,7 @@ Release Name: v1.0.0 - Genesis Release
 App: Machi Docs (@mono/docs)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.docs
-Capgo Channel: production
+OTA Provider: OtaKit
 --------------------------------------------------------------------------------
 Updates:
 - Centralized developer knowledge base, ADRs, and architecture blueprints.
@@ -33,7 +33,7 @@ Release Name: v1.0.0 - Genesis Release
 App: Hell's Forge (@mono/hells-forge)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.hellsforge
-Capgo Channel: production
+OTA Provider: OtaKit
 --------------------------------------------------------------------------------
 Updates:
 - Real-time 2D multiplayer exploration powered by Pixi.js.
@@ -46,7 +46,7 @@ Release Name: v1.0.0 - Genesis Release
 App: Machi Asia Portal (@mono/machi-asia)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.portal
-Capgo Channel: production
+OTA Provider: OtaKit
 --------------------------------------------------------------------------------
 Updates:
 - Flagship showcase portal and subscription billing hub.
@@ -59,7 +59,7 @@ Release Name: v1.0.0 - Genesis Release
 App: Rose AI Companion (@mono/rose-app)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.rose
-Capgo Channel: production
+OTA Provider: OtaKit
 --------------------------------------------------------------------------------
 Updates:
 - Conversational AI companion with emotion awareness.

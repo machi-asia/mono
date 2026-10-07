@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Capacitor } from "@capacitor/core";
-import { CapacitorUpdater } from "@capgo/capacitor-updater";
+import { OtaKit, type UpdateStagedEvent, type UpdateFailedEvent } from "@otakit/capacitor-updater";
 
 export interface OtaUpdaterState {
   isSupported: boolean;
@@ -33,37 +33,22 @@ export function useOtaUpdater(): OtaUpdaterState {
 
     setState((prev) => ({ ...prev, isSupported: true }));
 
-    // Notify Capgo that the current app bundle has loaded successfully
+    // Notify OtaKit that the current app bundle has loaded successfully
     try {
-      CapacitorUpdater.notifyAppReady().catch(() => {
-        // Silently catch if not supported or not running from Capgo bundle
+      OtaKit.notifyAppReady().catch(() => {
+        // Silently catch if not running in native app
       });
     } catch {
       // Ignore in mock/test environments
     }
 
-    let downloadListener: { remove: () => void } | null = null;
-    let completeListener: { remove: () => void } | null = null;
-    let failedListener: { remove: () => void } | null = null;
     let availableListener: { remove: () => void } | null = null;
+    let stagedListener: { remove: () => void } | null = null;
+    let failedListener: { remove: () => void } | null = null;
 
     async function registerListeners() {
       try {
-        downloadListener = await CapacitorUpdater.addListener(
-          "download",
-          (info) => {
-            setState({
-              isSupported: true,
-              isUpdating: true,
-              progress: Math.min(100, Math.max(0, Math.round(info.percent))),
-              status: "Downloading update...",
-              error: null,
-              isComplete: false,
-            });
-          }
-        );
-
-        availableListener = await CapacitorUpdater.addListener(
+        availableListener = await OtaKit.addListener(
           "updateAvailable",
           () => {
             setState((prev) => ({
@@ -75,9 +60,9 @@ export function useOtaUpdater(): OtaUpdaterState {
           }
         );
 
-        completeListener = await CapacitorUpdater.addListener(
-          "downloadComplete",
-          () => {
+        stagedListener = await OtaKit.addListener(
+          "updateStaged",
+          (_event: UpdateStagedEvent) => {
             setState({
               isSupported: true,
               isUpdating: true,
@@ -94,9 +79,9 @@ export function useOtaUpdater(): OtaUpdaterState {
           }
         );
 
-        failedListener = await CapacitorUpdater.addListener(
+        failedListener = await OtaKit.addListener(
           "downloadFailed",
-          (info) => {
+          (info: UpdateFailedEvent) => {
             setState((prev) => ({
               ...prev,
               isUpdating: true,
@@ -118,12 +103,12 @@ export function useOtaUpdater(): OtaUpdaterState {
     registerListeners();
 
     return () => {
-      downloadListener?.remove();
       availableListener?.remove();
-      completeListener?.remove();
+      stagedListener?.remove();
       failedListener?.remove();
     };
   }, []);
 
   return state;
 }
+

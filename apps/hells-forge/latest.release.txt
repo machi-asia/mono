@@ -3,7 +3,7 @@ Date: 2026-10-07
 App: Hell's Forge (@mono/hells-forge)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.hellsforge
-Capgo Channel: production
+OTA Provider: OtaKit
 
 Updates:
 - Real-time 2D multiplayer exploration powered by Pixi.js.

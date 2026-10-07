@@ -24,9 +24,9 @@
     @android.webkit.JavascriptInterface <methods>;
 }
 
-# Capgo Live Updater Plugin
--keep public class ee.forgr.capacitor_updater.** { *; }
--keepclassmembers class ee.forgr.capacitor_updater.** { *; }
+# OtaKit Live Updater Plugin
+-keep public class com.otakit.updater.** { *; }
+-keepclassmembers class com.otakit.updater.** { *; }
 
 # Cordova Plugin Compatibility
 -keep public class org.apache.cordova.** { *; }
