@@ -1,0 +1,182 @@
+.redirect-container {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background: var(--color-bg, #0b0f19);
+  color: var(--color-text, #f3f4f6);
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+}
+
+.redirect-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--color-surface, rgb(17 24 39 / 85%));
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border, rgb(255 255 255 / 10%));
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 50%), 0 8px 10px -6px rgb(0 0 0 / 50%);
+  padding: var(--space-6, 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4, 16px);
+  animation: redirect-fade-in 0.3s ease-out;
+}
+
+@keyframes redirect-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.redirect-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-surface-2, rgb(255 255 255 / 5%));
+  border: 1px solid var(--color-border, rgb(255 255 255 / 12%));
+  color: var(--color-primary, #f59e0b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-1, 4px);
+}
+
+.redirect-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1, 4px);
+}
+
+.redirect-title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text, #fff);
+  letter-spacing: -0.02em;
+}
+
+.redirect-desc {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--color-text-muted, #9ca3af);
+  line-height: 1.4;
+}
+
+.redirect-destination {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-surface-2, rgb(255 255 255 / 4%));
+  border: 1px solid var(--color-border, rgb(255 255 255 / 8%));
+  padding: 4px 10px;
+  border-radius: var(--radius-pill, 9999px);
+  font-size: 0.76rem;
+  color: var(--color-text-muted, #9ca3af);
+  font-family: monospace;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.redirect-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 12px);
+  margin-top: var(--space-2, 8px);
+}
+
+.redirect-btn {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2, 8px);
+  padding: 12px 20px;
+  border-radius: var(--radius-md, 10px);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+.redirect-btn:active {
+  transform: scale(0.98);
+}
+
+.redirect-btn-primary {
+  background: var(--color-primary, #f59e0b);
+  color: var(--color-primary-contrast, #000);
+  box-shadow: 0 4px 14px rgb(245 158 11 / 30%);
+}
+
+.redirect-btn-primary:hover {
+  background: var(--color-primary-hover, #d97706);
+}
+
+.redirect-btn-secondary {
+  background: var(--color-surface-2, rgb(255 255 255 / 6%));
+  color: var(--color-text, #f3f4f6);
+  border: 1px solid var(--color-border, rgb(255 255 255 / 12%));
+}
+
+.redirect-btn-secondary:hover {
+  background: var(--color-surface-3, rgb(255 255 255 / 10%));
+  border-color: var(--color-border-hover, rgb(255 255 255 / 20%));
+}
+
+.redirect-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted, #9ca3af);
+  margin-top: var(--space-2, 8px);
+}
+
+.redirect-timer-cancel {
+  background: none;
+  border: none;
+  color: var(--color-primary, #f59e0b);
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.redirect-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgb(255 255 255 / 15%);
+  border-top-color: var(--color-primary, #f59e0b);
+  border-radius: 50%;
+  animation: redirect-spin 0.8s linear infinite;
+}
+
+@keyframes redirect-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

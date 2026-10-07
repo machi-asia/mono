@@ -10,4 +10,5 @@ export { SupportModal } from "./components/account-settings/support-modal";
 export { SupportSection } from "./components/account-settings/support-section";
 export { GoogleIcon } from "./components/icons/google";
 export { GithubIcon } from "./components/icons/github";
+export { getAuthRedirectUrl } from "./utils/redirect";
 export type { AuthContextValue, AuthState, SavedAccount, UserRole } from "./types";

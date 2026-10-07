@@ -5,6 +5,7 @@ import type { AuthChangeEvent, Session, User } from "@supabase/supabase-js";
 import { createClient } from "../../client";
 import type { AuthContextValue, AuthState, SavedAccount, UserRole } from "../../types";
 import { ToastProvider } from "@mono/components";
+import { getAuthRedirectUrl } from "../../utils/redirect";
 
 export const AuthContext = createContext<AuthContextValue | null>(null);
 
@@ -204,7 +205,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const signInWithGoogle = useCallback(async () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: window.location.href },
+      options: { redirectTo: getAuthRedirectUrl(window.location.href) },
     });
     return { error: error?.message };
   }, [supabase]);
@@ -212,7 +213,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const signInWithGithub = useCallback(async () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "github",
-      options: { redirectTo: window.location.href },
+      options: { redirectTo: getAuthRedirectUrl(window.location.href) },
     });
     return { error: error?.message };
   }, [supabase]);

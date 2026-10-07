@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import type { User, UserIdentity } from "@supabase/supabase-js";
 import { RefreshCw, CheckCircle2 } from "lucide-react";
 import { createClient } from "../../client";
+import { getAuthRedirectUrl } from "../../utils/redirect";
 import { GoogleIcon } from "../icons/google";
 import { GithubIcon } from "../icons/github";
 
@@ -44,7 +45,7 @@ export function ProvidersSection({ user }: { user: User }) {
     try {
       const supabase = createClient();
       const options: { redirectTo: string; queryParams?: Record<string, string> } = {
-        redirectTo: window.location.href,
+        redirectTo: getAuthRedirectUrl(window.location.href),
       };
 
       if (promptSelect) {
