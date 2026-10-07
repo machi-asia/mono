@@ -42,17 +42,17 @@ Updates:
 - Over-the-air (OTA) live updates and mobile touch controls.
 
 ================================================================================
-Release Name: v1.0.0 - Genesis Release
+Release Name: v1.1.0 - Mobile Account Settings & OtaKit Update
 App: Machi Asia Portal (@mono/machi-asia)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.portal
 OTA Provider: OtaKit
 --------------------------------------------------------------------------------
 Updates:
-- Flagship showcase portal and subscription billing hub.
-- Unified single sign-on with linked identity providers.
-- Product directory for all Machi Asia web and mobile apps.
-- Instant live updates via Capgo Cloud.
+- Responsive full-screen Account Settings with bottom icon navigation.
+- Profile customization with custom display name and avatar selector.
+- Seamless linked OAuth account swapping and security controls.
+- Fast live updates powered by OtaKit with R8 optimization.
 
 ================================================================================
 Release Name: v1.0.0 - Genesis Release
