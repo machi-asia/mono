@@ -27,17 +27,17 @@
     "@mono/rose": "*",
     "@otakit/capacitor-updater": "^3.2.0",
     "lucide-react": "^1.40.0",
-    "next": "latest",
+    "next": "^16.4.0",
     "next-themes": "^0.4.6",
-    "react": "latest",
-    "react-dom": "latest"
+    "react": "*",
+    "react-dom": "*"
   },
   "devDependencies": {
     "@capacitor/cli": "^8.5.2",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
-    "@types/node": "latest",
-    "@types/react": "latest",
+    "@types/node": "*",
+    "@types/react": "*",
     "@vitejs/plugin-react": "^6.1.1",
     "cross-env": "^10.1.0",
     "eslint": "^9.39.5",
@@ -45,7 +45,7 @@
     "jsdom": "^30.0.1",
     "stylelint": "^17.14.1",
     "stylelint-config-standard": "^40.0.0",
-    "typescript": "latest",
+    "typescript": "*",
     "vitest": "^4.1.11"
   }
 }
