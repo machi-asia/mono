@@ -19,6 +19,7 @@
     "env": "node scripts/check-env.js",
     "global-env": "node scripts/global-env.js",
     "deploy": "node scripts/deploy.js",
+    "deploy:ota": "node scripts/deploy-ota.js",
     "clean": "turbo clean"
   },
   "devDependencies": {

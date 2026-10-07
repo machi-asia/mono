@@ -1,0 +1,80 @@
+name: Capgo OTA Deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "apps/**"
+      - "packages/**"
+      - "package.json"
+      - "package-lock.json"
+      - "turbo.json"
+      - ".github/workflows/capgo-ota.yml"
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: "Target Capgo Channel"
+        required: true
+        default: "production"
+        type: string
+
+concurrency:
+  group: capgo-ota-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy-ota:
+    name: Build & Deploy OTA Bundles
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ota]')"
+    strategy:
+      fail-fast: false
+      matrix:
+        app:
+          - name: calculator
+            path: apps/calculator
+            app_id: asia.machi.calculator
+          - name: docs
+            path: apps/docs
+            app_id: asia.machi.docs
+          - name: hells-forge
+            path: apps/hells-forge
+            app_id: asia.machi.hellsforge
+          - name: machi-asia
+            path: apps/machi-asia
+            app_id: asia.machi.portal
+          - name: rose
+            path: apps/rose
+            app_id: asia.machi.rose
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Web Export for ${{ matrix.app.name }}
+        run: npm --workspace=@mono/${{ matrix.app.name == 'machi-asia' && 'machi-asia' || matrix.app.name == 'rose' && 'rose-app' || matrix.app.name == 'calculator' && 'calculator-app' || matrix.app.name }} run build:mobile
+        env:
+          NEXT_PUBLIC_SITE_URL: "https://machi.asia"
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+
+      - name: Upload OTA Bundle to Capgo (${{ matrix.app.name }})
+        run: |
+          npx @capgo/cli bundle upload \
+            --path ${{ matrix.app.path }}/out \
+            --channel ${{ github.event.inputs.channel || 'production' }} \
+            --apikey ${{ secrets.CAPGO_TOKEN }} \
+            --app ${{ matrix.app.app_id }} \
+            --version-exists-ok \
+            --comment "${{ github.sha }} - ${{ github.event.head_commit.message || 'Manual OTA Deploy' }}"
+        env:
+          CAPGO_TOKEN: ${{ secrets.CAPGO_TOKEN }}
