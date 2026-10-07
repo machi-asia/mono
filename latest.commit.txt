@@ -1,3 +1,0 @@
-chore(repo): update applications, build web assets, and sync mobile platforms
-
-- deploy: automated build, sync, and push

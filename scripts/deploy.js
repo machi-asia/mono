@@ -37,10 +37,7 @@ function previousCommitSubject() {
     encoding: "utf8",
     shell: process.platform === "win32",
   });
-  if (result.status !== 0 || !result.stdout) {
-    return "";
-  }
-  return result.stdout.trim();
+  return (result.stdout && result.stdout.trim()) || "";
 }
 
 function getCurrentBranch() {
@@ -54,15 +51,6 @@ function getCurrentBranch() {
 
 function hasWorkingTreeChanges() {
   const result = spawnSync("git", ["status", "--porcelain"], {
-    cwd: root,
-    encoding: "utf8",
-    shell: process.platform === "win32",
-  });
-  return Boolean(result.stdout && result.stdout.trim().length > 0);
-}
-
-function hasUnpushedCommits() {
-  const result = spawnSync("git", ["cherry", "-v"], {
     cwd: root,
     encoding: "utf8",
     shell: process.platform === "win32",
@@ -90,7 +78,6 @@ function ensureCommitMessage() {
   } else {
     const previous = previousCommitSubject();
     if (previous && title === previous) {
-      // Append timestamp or update slightly to avoid exact duplicate title constraint if same
       const updatedTitle = `${title} (update)`;
       const newBody = raw.replace(title, updatedTitle);
       fs.writeFileSync(commitFile, newBody, "utf8");
@@ -102,16 +89,22 @@ console.log("\n==========================================");
 console.log("  Machi Asia - Unified Deploy Pipeline");
 console.log("==========================================\n");
 
-// 1. Build Stage
-console.log("[deploy] Step 1/3: Building web and mobile packages...");
+const branch = getCurrentBranch();
+
+// 1. Fetch & Rebase to keep local in sync with remote
+console.log(`[deploy] Syncing remote changes from 'origin/${branch}'...`);
+runCmd("git", ["pull", "--rebase", "origin", branch], { allowFailure: true });
+
+// 2. Build Stage
+console.log("\n[deploy] Step 1/3: Building web and mobile packages...");
 runCmd("npx", ["turbo", "build"]);
 runCmd("npx", ["turbo", "build:mobile"]);
 
-// 2. Sync Stage
+// 3. Sync Stage
 console.log("\n[deploy] Step 2/3: Syncing all Capacitor mobile repositories...");
 runCmd("npx", ["turbo", "cap:sync"]);
 
-// 3. Git Stage (Auto Commit & Push)
+// 4. Git Stage (Auto Commit & Push)
 console.log("\n[deploy] Step 3/3: Checking git state, committing and pushing...");
 const hasChanges = hasWorkingTreeChanges();
 
@@ -125,18 +118,20 @@ if (hasChanges) {
 
   // Clear latest.commit.txt per Organization Duty #1
   fs.writeFileSync(commitFile, "", "utf8");
+  runCmd("git", ["add", "latest.commit.txt"], { allowFailure: true });
+  runCmd("git", ["commit", "--amend", "--no-edit"], { allowFailure: true });
   console.log("[deploy] Cleared latest.commit.txt after successful commit.");
 } else {
   console.log("[deploy] Working tree is clean (no uncommitted file modifications).");
 }
 
 // Push to remote repository
-const branch = getCurrentBranch();
 console.log(`[deploy] Pushing commits to remote branch '${branch}'...`);
 const pushResult = runCmd("git", ["push"], { allowFailure: true });
 
 if (pushResult.status !== 0) {
-  console.log(`[deploy] Initial push failed, setting upstream origin '${branch}'...`);
+  console.log(`[deploy] Push rejected. Pulling remote rebase and retrying...`);
+  runCmd("git", ["pull", "--rebase", "origin", branch]);
   runCmd("git", ["push", "-u", "origin", branch]);
 }
 
