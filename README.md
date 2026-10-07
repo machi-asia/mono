@@ -44,7 +44,7 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 - **Linked Provider Account Swapping**: Linked third-party authentication accounts can be swapped or unlinked seamlessly directly within the Linked Providers security management panel.
 - **Data & Privacy Registry**: Every application collecting user data must register it in the centralized Data & Privacy registry in `@mono/auth` (accessible via Account Settings > Data & Privacy), detailing what is collected, why it is used, and whether it is Required or Optional (with interactive user controls for optional telemetry).
 - **Mandatory Documentation Wiki Reporting**: Every significant change across the organization (new architecture patterns, modified public APIs, ADRs, new deployable applications, and policy changes) must be documented in the centralized **Documentation Wiki** (`/docs` / `apps/docs/src/data/wiki-articles.ts`).
-- **Release Tracking (`latest.release.txt`)**: All application release versions, platform targets, and consolidated commit changelogs are persistently tracked and updated in `latest.release.txt` across all apps in the monorepo.
+- **Release Tracking (`latest.release.txt`)**: All application release versions, release names, platform targets, and version updates are persistently tracked in per-directory `latest.release.txt` files (`apps/<app>/latest.release.txt`) and at the root.
 - **All `.md` files** in the repo must be kept up to date as the project evolves.
 - **Any code change** must also update the relevant documentation files.
 
@@ -150,7 +150,10 @@ npm run build:mobile -w @mono/calculator-app
 # 2. Sync web assets and plugins with the native Android project
 npm run cap:sync -w @mono/calculator-app
 
-# 3. Open project in Android Studio (for Play Store bundle / APK build)
+# 3. Generate Android App Bundle (.aab) binaries for Google Play Store across apps
+npm run bundle:android
+
+# 4. Or open a specific project in Android Studio (for manual signing / emulator run)
 npm run cap:open:android -w @mono/calculator-app
 ```
 

@@ -1,0 +1,12 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-10-07
+App: Hell's Forge (@mono/hells-forge)
+Platforms: Web, Android (Google Play Store)
+Package ID: asia.machi.hellsforge
+Capgo Channel: production
+
+Updates:
+- Real-time 2D multiplayer exploration powered by Pixi.js.
+- Interactive body doll inventory and equipment system.
+- Live room presence and state synchronization.
+- Over-the-air (OTA) live updates and mobile touch controls.

@@ -1,0 +1,12 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-10-07
+App: Rose AI Companion (@mono/rose-app)
+Platforms: Web, Android (Google Play Store)
+Package ID: asia.machi.rose
+Capgo Channel: production
+
+Updates:
+- Conversational AI companion with emotion awareness.
+- Real-time voice mode with low-latency speech synthesis.
+- Long-term contextual memory and personalized settings.
+- Over-the-air (OTA) live updates and mobile optimizations.

@@ -16,10 +16,23 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        release {
+            def keystorePath = System.getenv("ANDROID_KEYSTORE_PATH")
+            def keystoreFile = keystorePath ? file(keystorePath) : rootProject.file("../../android/machi-release.keystore")
+            if (keystoreFile.exists()) {
+                storeFile keystoreFile
+                storePassword(System.getenv("ANDROID_KEYSTORE_PASSWORD") ?: "machi-asia-release")
+                keyAlias(System.getenv("ANDROID_KEY_ALIAS") ?: "machi-asia")
+                keyPassword(System.getenv("ANDROID_KEY_PASSWORD") ?: "machi-asia-release")
+            }
+        }
+    }
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }

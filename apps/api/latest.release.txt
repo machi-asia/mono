@@ -1,0 +1,9 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-10-07
+App: Machi Asia API Microservice (@mono/api)
+Platforms: Web API Service
+
+Updates:
+- Unified HTTP REST and SSE streaming endpoints.
+- Interactive API Explorer playground with payload inspector.
+- Real-time usage tracking, quota management, and health telemetry.

@@ -20,13 +20,13 @@ to describe ALL of them before a task or session ends.
 - Regenerate it from scratch every time; never append stale entries.
 - Once everything is committed and the tree is clean, empty the file.
 
-### 2. Maintain `latest.release.txt` for application release versions
+### 2. Maintain per-directory `latest.release.txt` for application release versions
 
-`latest.release.txt` tracks, summarizes, and preserves all release notes and commit summaries for every application version across `apps/`.
+`latest.release.txt` is maintained in the root directory and within every application directory (`apps/<app>/latest.release.txt`) to track, summarize, and preserve all release notes, release names, and version updates across `apps/`.
 
 - Unlike `latest.commit.txt` (which is emptied when the working tree is clean), `latest.release.txt` is persistent and MUST never be emptied.
-- Whenever an application release version is prepared or deployed, `latest.release.txt` MUST be updated to summarize the commits, feature additions, bug fixes, package identifiers, and platform updates for that release version across the monorepo applications.
-- Maintain structured per-app release sections (`@mono/<app-name> (v<version>)`) with platform targets, package IDs, Capgo update channels, and descriptive bullet points.
+- Whenever an application release version is prepared or deployed, `latest.release.txt` in each affected app directory (and root manifest) MUST be updated.
+- Format: every `latest.release.txt` MUST include the **Release Name** (e.g. `Release Name: v1.0.0 - Genesis Release`), metadata (Date, App, Platforms, Package ID, Capgo Channel), and an **Updates** section strictly limited to concise, store-compliant release notes (2-4 bullet points, under 500 characters for Google Play Store `en-US` limits).
 
 ### 3. Update `README.md` for every major feature change
 

@@ -3,6 +3,19 @@
 import { useState, useEffect, type FormEvent } from "react";
 import { createClient } from "../../client";
 import { useAuth } from "../provider/provider";
+import {
+  User,
+  Shield,
+  Palette,
+  Image as ImageIcon,
+  Lock,
+  LifeBuoy,
+  Key,
+  Fingerprint,
+  Link as LinkIcon,
+  QrCode,
+  X,
+} from "lucide-react";
 import { ProfileSection } from "./profile-section";
 import { ProvidersSection } from "./providers-section";
 import { MFASection } from "./mfa-section";
@@ -27,6 +40,16 @@ const sectionLabels: Record<SecuritySection, string> = {
   passkeys: "Passkeys",
   providers: "Linked Providers",
   mfa: "Multi-Factor Authentication",
+};
+
+const sectionIcons: Record<
+  SecuritySection,
+  React.ComponentType<{ size?: number | string; className?: string }>
+> = {
+  password: Key,
+  passkeys: Fingerprint,
+  providers: LinkIcon,
+  mfa: QrCode,
 };
 
 export function AccountSettings({ open, onClose, initialTab = "profile" }: AccountSettingsProps) {
@@ -59,7 +82,7 @@ export function AccountSettings({ open, onClose, initialTab = "profile" }: Accou
             onClick={onClose}
             aria-label="Close"
           >
-            ✕
+            <X size={18} />
           </button>
         </div>
         <div className="auth-settings-body">
@@ -69,48 +92,66 @@ export function AccountSettings({ open, onClose, initialTab = "profile" }: Accou
               className={`auth-settings-tab${activeTopTab === "profile" ? " auth-settings-tab--active" : ""}`}
               aria-current={activeTopTab === "profile" ? "page" : undefined}
               onClick={() => setActiveTopTab("profile")}
+              title="Profile"
+              aria-label="Profile"
             >
-              Profile
+              <User size={18} className="auth-settings-tab-icon" />
+              <span className="auth-settings-tab-label">Profile</span>
             </button>
             <button
               type="button"
               className={`auth-settings-tab${activeTopTab === "security" ? " auth-settings-tab--active" : ""}`}
               aria-current={activeTopTab === "security" ? "page" : undefined}
               onClick={() => setActiveTopTab("security")}
+              title="Security"
+              aria-label="Security"
             >
-              Security
+              <Shield size={18} className="auth-settings-tab-icon" />
+              <span className="auth-settings-tab-label">Security</span>
             </button>
             <button
               type="button"
               className={`auth-settings-tab${activeTopTab === "display" ? " auth-settings-tab--active" : ""}`}
               aria-current={activeTopTab === "display" ? "page" : undefined}
               onClick={() => setActiveTopTab("display")}
+              title="Display"
+              aria-label="Display"
             >
-              Display
+              <Palette size={18} className="auth-settings-tab-icon" />
+              <span className="auth-settings-tab-label">Display</span>
             </button>
             <button
               type="button"
               className={`auth-settings-tab${activeTopTab === "media" ? " auth-settings-tab--active" : ""}`}
               aria-current={activeTopTab === "media" ? "page" : undefined}
               onClick={() => setActiveTopTab("media")}
+              title="Media Library"
+              aria-label="Media Library"
             >
-              Media Library
+              <ImageIcon size={18} className="auth-settings-tab-icon" />
+              <span className="auth-settings-tab-label">Media Library</span>
             </button>
             <button
               type="button"
               className={`auth-settings-tab${activeTopTab === "privacy" ? " auth-settings-tab--active" : ""}`}
               aria-current={activeTopTab === "privacy" ? "page" : undefined}
               onClick={() => setActiveTopTab("privacy")}
+              title="Data & Privacy"
+              aria-label="Data & Privacy"
             >
-              Data & Privacy
+              <Lock size={18} className="auth-settings-tab-icon" />
+              <span className="auth-settings-tab-label">Data & Privacy</span>
             </button>
             <button
               type="button"
               className={`auth-settings-tab${activeTopTab === "support" ? " auth-settings-tab--active" : ""}`}
               aria-current={activeTopTab === "support" ? "page" : undefined}
               onClick={() => setActiveTopTab("support")}
+              title="Support"
+              aria-label="Support"
             >
-              Support
+              <LifeBuoy size={18} className="auth-settings-tab-icon" />
+              <span className="auth-settings-tab-label">Support</span>
             </button>
           </nav>
           <div className="auth-settings-content">
@@ -121,16 +162,22 @@ export function AccountSettings({ open, onClose, initialTab = "profile" }: Accou
             ) : activeTopTab === "security" ? (
               <>
                 <nav className="auth-security-nav" aria-label="Security sections">
-                  {(["password", "passkeys", "providers", "mfa"] as const).map((section) => (
-                    <button
-                      key={section}
-                      type="button"
-                      className={`auth-security-nav-item${activeSection === section ? " auth-security-nav-item--active" : ""}`}
-                      onClick={() => setActiveSection(section)}
-                    >
-                      {sectionLabels[section]}
-                    </button>
-                  ))}
+                  {(["password", "passkeys", "providers", "mfa"] as const).map((section) => {
+                    const SectionIcon = sectionIcons[section];
+                    return (
+                      <button
+                        key={section}
+                        type="button"
+                        className={`auth-security-nav-item${activeSection === section ? " auth-security-nav-item--active" : ""}`}
+                        onClick={() => setActiveSection(section)}
+                        title={sectionLabels[section]}
+                        aria-label={sectionLabels[section]}
+                      >
+                        <SectionIcon size={16} className="auth-security-nav-icon" />
+                        <span className="auth-security-nav-label">{sectionLabels[section]}</span>
+                      </button>
+                    );
+                  })}
                 </nav>
                 <div className="auth-security-panel">
                   {activeSection === "password" && <PasswordSection />}

@@ -10,6 +10,7 @@
     "dev": "turbo dev",
     "build": "turbo build",
     "build:mobile": "turbo build:mobile",
+    "bundle:android": "node scripts/bundle-android.js",
     "cap:sync": "turbo cap:sync",
     "lint": "turbo lint",
     "lint:style": "turbo lint:style",

@@ -1,21 +1,35 @@
 # Add project specific ProGuard rules here.
 # You can control the set of applied configuration files using the
 # proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Preserve line numbers and source file attributes for Play Store stack trace deobfuscation
+-keepattributes SourceFile,LineNumberTable,Signature,InnerClasses,EnclosingMethod,Exceptions,*Annotation*
+-renamesourcefileattribute SourceFile
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Capacitor Core & Bridge Reflection
+-keep public class com.getcapacitor.** { *; }
+-keep public class * extends com.getcapacitor.Plugin { *; }
+-keep public class * extends com.getcapacitor.Bridge { *; }
+-keep public class * extends com.getcapacitor.BridgeActivity { *; }
+-keepclassmembers class * extends com.getcapacitor.Plugin {
+    public *;
+}
+-keepclassmembers class * {
+    @com.getcapacitor.PluginMethod public *;
+    @com.getcapacitor.annotation.CapacitorPlugin public *;
+}
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Preserve JavaScript Interface methods
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+
+# Capgo Live Updater Plugin
+-keep public class ee.forgr.capacitor_updater.** { *; }
+-keepclassmembers class ee.forgr.capacitor_updater.** { *; }
+
+# Cordova Plugin Compatibility
+-keep public class org.apache.cordova.** { *; }
+-keepclassmembers class * extends org.apache.cordova.CordovaPlugin {
+    public *;
+}

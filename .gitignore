@@ -42,3 +42,13 @@ Desktop.ini
 .cache/
 .vercel/
 .next-env.d.ts.local
+
+# Android Signing & Build Cache
+*.keystore
+*.jks
+keystore.properties
+.gradle/
+**/android/.gradle/
+**/android/app/build/
+**/android/build/
+

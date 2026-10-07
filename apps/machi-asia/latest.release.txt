@@ -1,0 +1,12 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-10-07
+App: Machi Asia Portal (@mono/machi-asia)
+Platforms: Web, Android (Google Play Store)
+Package ID: asia.machi.portal
+Capgo Channel: production
+
+Updates:
+- Flagship showcase portal and subscription billing hub.
+- Unified single sign-on with linked identity providers.
+- Product directory for all Machi Asia web and mobile apps.
+- Instant live updates via Capgo Cloud.

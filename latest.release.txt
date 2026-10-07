@@ -3,78 +3,76 @@
 # Distribution: Web & Android (Google Play Store)
 
 ================================================================================
-@mono/calculator-app (v1.0.0)
-App: Machi Calculator
+Release Name: v1.0.0 - Genesis Release
+App: Machi Calculator (@mono/calculator-app)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.calculator
 Capgo Channel: production
 --------------------------------------------------------------------------------
-- feat(calculator): multi-game factory and recipe calculator supporting Satisfactory, Factorio, Minecraft, Dyson Sphere Program, and Little Rocket Lab.
-- feat(calculator): interactive recipe tree graph visualization with calculated throughput edge labels and production target planner.
-- feat(calculator): sortable item catalog with gallery/list views, search filtering, and caret sorting by name and category.
-- feat(calculator): integrated @mono/auth session management, ThemeProvider, ToastProvider, and AdRail components.
-- feat(calculator): dual-mode static export (npm run build:mobile) for Capacitor Android native project synchronization.
-- feat(calculator): real-time over-the-air (OTA) updates via Capgo Cloud and floating <OtaUpdateNotifier /> progress popup.
+Updates:
+- Multi-game factory planner for Satisfactory, Factorio, Minecraft, DSP & Little Rocket Lab.
+- Interactive recipe tree graph with live throughput calculations.
+- Searchable item catalog with category sorting and gallery view.
+- Real-time over-the-air (OTA) updates and mobile performance optimizations.
 
 ================================================================================
-@mono/docs (v1.0.0)
-App: Machi Docs
+Release Name: v1.0.0 - Genesis Release
+App: Machi Docs (@mono/docs)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.docs
 Capgo Channel: production
 --------------------------------------------------------------------------------
-- feat(docs): centralized documentation wiki, interactive ADR repository, and developer architectural blueprints.
-- feat(docs): live interactive component showcases for @mono/components, @mono/auth, @mono/rose, and @mono/sync.
-- feat(docs): search-indexed wiki home with category filters, keyboard shortcuts, and Obsidian-flavored markdown rendering.
-- feat(docs): dual-mode static export (npm run build:mobile) with pre-rendered static routes and sitemaps.
-- feat(docs): Capacitor hybrid bridge and Android Gradle project initialization ready for Google Play Store.
-- feat(docs): real-time over-the-air (OTA) update support with top progress banner integration.
+Updates:
+- Centralized developer knowledge base, ADRs, and architecture blueprints.
+- Interactive live component showcases and prop playground.
+- Search-indexed wiki documentation with category filters.
+- Seamless over-the-air (OTA) live updates.
 
 ================================================================================
-@mono/hells-forge (v1.0.0)
-App: Hell's Forge
+Release Name: v1.0.0 - Genesis Release
+App: Hell's Forge (@mono/hells-forge)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.hellsforge
 Capgo Channel: production
 --------------------------------------------------------------------------------
-- feat(hells-forge): high-performance 2D multiplayer exploration space powered by Pixi.js, circle collisions, and WASD movement.
-- feat(hells-forge): realtime state synchronization hub powered by @mono/sync, Server-Sent Events (SSE), and Redis Pub/Sub.
-- feat(hells-forge): interactive body doll equipment inventory, animated forge environments, and player presence tracking.
-- feat(hells-forge): dual-mode mobile static export and native Android platform packaging with Capacitor.
-- feat(hells-forge): Capgo over-the-air live update pipeline with <OtaUpdateNotifier /> progress tracking.
+Updates:
+- Real-time 2D multiplayer exploration powered by Pixi.js.
+- Interactive body doll inventory and equipment system.
+- Live room presence and state synchronization.
+- Over-the-air (OTA) live updates and mobile touch controls.
 
 ================================================================================
-@mono/machi-asia (v1.0.0)
-App: Machi Asia Portal
+Release Name: v1.0.0 - Genesis Release
+App: Machi Asia Portal (@mono/machi-asia)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.portal
 Capgo Channel: production
 --------------------------------------------------------------------------------
-- feat(machi-asia): organization flagship showcase hub and product subscription billing portal.
-- feat(machi-asia): product directory showcase highlighting Game Production Calculator, Rose AI, and Developer Docs.
-- feat(machi-asia): unified account authentication, linked identity providers, and multi-tier subscription options.
-- feat(machi-asia): full SEO metadata, Open Graph cards, sitemap.ts, and robots.ts integration.
-- feat(machi-asia): Capacitor Android hybrid project generation and Capgo OTA live update integration.
+Updates:
+- Flagship showcase portal and subscription billing hub.
+- Unified single sign-on with linked identity providers.
+- Product directory for all Machi Asia web and mobile apps.
+- Instant live updates via Capgo Cloud.
 
 ================================================================================
-@mono/rose-app (v1.0.0)
-App: Rose AI
+Release Name: v1.0.0 - Genesis Release
+App: Rose AI Companion (@mono/rose-app)
 Platforms: Web, Android (Google Play Store)
 Package ID: asia.machi.rose
 Capgo Channel: production
 --------------------------------------------------------------------------------
-- feat(rose): custom conversational AI companion with voice mode, emotion awareness, and vector memory management.
-- feat(rose): Vercel AI Gateway orchestration with Groq low-latency synthesis and local Ollama development fallback.
-- feat(rose): real-time voice mode with Web Speech API synthesis, Faster-Whisper transcription, and audio wave visualizations.
-- feat(rose): long-term memory system with user-isolated index maps and persistent personalization settings.
-- feat(rose): dual-mode static build, Capacitor Android platform packaging, and Capgo instant live updates.
+Updates:
+- Conversational AI companion with emotion awareness.
+- Real-time voice mode with low-latency speech synthesis.
+- Long-term contextual memory and personalized settings.
+- Over-the-air (OTA) live updates and mobile optimizations.
 
 ================================================================================
-@mono/api (v1.0.0)
-App: Machi Asia API Microservice
+Release Name: v1.0.0 - Genesis Release
+App: Machi Asia API Microservice (@mono/api)
 Platforms: Web API Service
 --------------------------------------------------------------------------------
-- feat(api): centralized HTTP REST and SSE streaming endpoints (/rose/chat, /rose/settings, /rose/transcribe, /sync/events, /sync/rooms).
-- feat(api): interactive API Explorer playground at root (/) with payload inspector, cURL/TypeScript code generators, and telemetry dashboard.
-- feat(api): multi-period usage tracking (daily/monthly quotas) for requests, AI tokens, turns, and storage capacity.
-- feat(api): service health checks, Redis presence integration, and Supabase RLS verification.
+Updates:
+- Unified HTTP REST and SSE streaming endpoints.
+- Interactive API Explorer playground with payload inspector.
+- Real-time usage tracking, quota management, and health telemetry.

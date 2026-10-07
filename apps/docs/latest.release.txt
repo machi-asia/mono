@@ -1,0 +1,12 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-10-07
+App: Machi Docs (@mono/docs)
+Platforms: Web, Android (Google Play Store)
+Package ID: asia.machi.docs
+Capgo Channel: production
+
+Updates:
+- Centralized developer knowledge base, ADRs, and architecture blueprints.
+- Interactive live component showcases and prop playground.
+- Search-indexed wiki documentation with category filters.
+- Seamless over-the-air (OTA) live updates.

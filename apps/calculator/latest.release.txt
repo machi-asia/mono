@@ -1,0 +1,12 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-10-07
+App: Machi Calculator (@mono/calculator-app)
+Platforms: Web, Android (Google Play Store)
+Package ID: asia.machi.calculator
+Capgo Channel: production
+
+Updates:
+- Multi-game factory planner for Satisfactory, Factorio, Minecraft, DSP & Little Rocket Lab.
+- Interactive recipe tree graph with live throughput calculations.
+- Searchable item catalog with category sorting and gallery view.
+- Real-time over-the-air (OTA) updates and mobile performance optimizations.
