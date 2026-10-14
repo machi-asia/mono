@@ -8,6 +8,7 @@ import { useAuth, AccountSettings, SignInModal } from "@mono/auth";
 const links = [
   { label: "Docs Wiki", href: "/docs" },
   { label: "Components", href: "/components/components" },
+  { label: "Scroll Sections", href: "/components/sections" },
   { label: "Auth", href: "/components/auth" },
   { label: "Database", href: "/components/database" },
   { label: "Rose", href: "/components/rose" },

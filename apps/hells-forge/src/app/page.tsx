@@ -611,9 +611,9 @@ export default function ForgeWorldPage() {
           clampToWorldBounds(local, DEFAULT_WORLD_CONFIG);
 
           // 7. Update Pixi rendering stage, visual effects, and camera
-          renderer.updateEffects();
-          renderer.updatePlayers(allPlayers, local.id);
-          renderer.centerCameraOn(local);
+          renderer.updateEffects?.();
+          renderer.updatePlayers?.(allPlayers, local.id);
+          renderer.centerCameraOn?.(local);
 
           // 8. Synchronize React state for UI (blood gauge and body doll)
           healthSyncTimer += deltaSeconds;

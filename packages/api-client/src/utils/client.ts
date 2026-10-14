@@ -1,8 +1,11 @@
 import type { ApiClientConfig, ChatMessage, RoseUsageResponse } from "../types";
 
 export function getApiBaseUrl(): string {
-  if (typeof process !== "undefined" && process.env?.NEXT_PUBLIC_API_URL) {
-    return process.env.NEXT_PUBLIC_API_URL.replace(/\/$/, "");
+  if (typeof process !== "undefined" && process.env) {
+    const url = process.env.API_SERVICE_URL || process.env.NEXT_PUBLIC_API_URL;
+    if (url) {
+      return url.replace(/\/$/, "");
+    }
   }
   return "";
 }

@@ -1,0 +1,97 @@
+/* ===== Featured Works Section (Swiss Cinematic Showcases) ===== */
+.featured-scroll-section {
+    position: relative;
+    background: var(--background);
+}
+
+.featured-subtitle {
+    color: var(--foreground-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+}
+
+.featured-subtitle-icon {
+    color: var(--muted);
+}
+
+.featured-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--card-bg);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 16px 36px rgb(0 0 0 / 50%);
+}
+
+.featured-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 54px rgb(0 0 0 / 70%);
+}
+
+.featured-video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    overflow: hidden;
+}
+
+
+.featured-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-content {
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--hairline);
+}
+
+.featured-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+.featured-description {
+    font-size: 0.9375rem;
+    color: var(--foreground-muted);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.featured-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.featured-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    transition: gap 0.2s ease;
+    margin-top: auto;
+}
+
+.featured-link:hover {
+    gap: 0.75rem;
+}
+
+html.light-mode .featured-link {
+    color: #000;
+}

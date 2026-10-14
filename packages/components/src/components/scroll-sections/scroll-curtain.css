@@ -1,0 +1,53 @@
+[data-mono="scroll-curtain"],
+.mono-scroll-curtain {
+  position: relative;
+  background: transparent;
+}
+
+[data-mono="scroll-curtain"] > .mono-curtain-viewport,
+.mono-scroll-curtain > .mono-curtain-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+}
+
+[data-mono="scroll-curtain"] .mono-curtain-content,
+.mono-scroll-curtain .mono-curtain-content {
+  height: 100%;
+  transform: scale(calc(1.08 - var(--m-progress, 0) * 0.08));
+  background: transparent;
+}
+
+[data-mono="scroll-curtain"] .mono-curtain-panel,
+.mono-scroll-curtain .mono-curtain-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  background: var(--color-surface, #16140f);
+  box-shadow: 0 16px 36px -8px rgb(0 0 0 / 60%);
+  will-change: transform;
+}
+
+[data-mono="scroll-curtain"][data-curtain-direction="up"] .mono-curtain-panel,
+.mono-scroll-curtain.up .mono-curtain-panel {
+  transform: translateY(calc(var(--m-progress, 0) * -101%));
+}
+
+[data-mono="scroll-curtain"][data-curtain-direction="down"] .mono-curtain-panel,
+.mono-scroll-curtain.down .mono-curtain-panel {
+  transform: translateY(calc(var(--m-progress, 0) * 101%));
+}
+
+[data-mono="scroll-curtain"][data-curtain-direction="left"] .mono-curtain-panel,
+.mono-scroll-curtain.left .mono-curtain-panel {
+  transform: translateX(calc(var(--m-progress, 0) * -101%));
+}
+
+[data-mono="scroll-curtain"][data-curtain-direction="right"] .mono-curtain-panel,
+.mono-scroll-curtain.right .mono-curtain-panel {
+  transform: translateX(calc(var(--m-progress, 0) * 101%));
+}

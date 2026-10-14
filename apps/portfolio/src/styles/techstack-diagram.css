@@ -1,0 +1,234 @@
+/* Technical Diagram & Inspector Styles */
+
+.techstack-split-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1.75rem;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.techstack-diagram-pane {
+    flex: 1;
+    min-width: 0;
+}
+
+.techstack-inspector-pane {
+    width: 340px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 6rem;
+}
+
+.techstack-inspector-card {
+    position: absolute;
+    inset: calc(20 / 710 * 100%) 0 calc(30 / 710 * 100%);
+    background: rgb(255 255 255 / 3%);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow-y: auto;
+    backdrop-filter: blur(8px);
+    scrollbar-width: thin;
+    scrollbar-color: var(--card-border) transparent;
+}
+
+.techstack-inspector-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 0.75rem;
+}
+
+.techstack-inspector-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px currentcolor;
+}
+
+.techstack-inspector-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin: 0;
+}
+
+.techstack-inspector-subtitle {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.techstack-inspector-exp {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    background: rgb(var(--accent-rgb), 0.08);
+    border: 1px solid rgb(var(--accent-rgb), 0.2);
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+    align-self: flex-start;
+}
+
+.techstack-inspector-desc {
+    font-size: 0.82rem;
+    color: var(--foreground);
+    line-height: 1.45;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.techstack-inspector-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    border-top: 1px solid var(--card-border);
+    padding-top: 0.75rem;
+}
+
+.techstack-inspector-section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.techstack-inspector-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.techstack-inspector-tag {
+    font-size: 0.7rem;
+    color: var(--foreground);
+    background: rgb(255 255 255 / 6%);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    padding: 0.15rem 0.45rem;
+}
+
+.techstack-inspector-relations {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 0.25rem;
+}
+
+.techstack-inspector-relation-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    background: rgb(255 255 255 / 2%);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 0.5rem 0.6rem;
+}
+
+.techstack-inspector-relation-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.techstack-inspector-relation-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.techstack-inspector-relation-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.techstack-inspector-relation-cat {
+    font-size: 0.7rem;
+    color: var(--muted);
+}
+
+.techstack-inspector-relation-reason {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.techstack-inspector-placeholder {
+    position: absolute;
+    inset: calc(20 / 710 * 100%) 0 calc(30 / 710 * 100%);
+    background: rgb(255 255 255 / 2%);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem 1.25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    backdrop-filter: blur(8px);
+}
+
+.techstack-placeholder-icon {
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+.techstack-inspector-placeholder h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0;
+}
+
+.techstack-inspector-placeholder p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsive Layout adaptation */
+@media (width <= 1024px) {
+    .techstack-split-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch;
+    }
+    
+    .techstack-inspector-pane {
+        width: 100%;
+        position: static;
+        min-height: auto;
+    }
+    
+    .techstack-inspector-card {
+        position: static;
+        inset: auto;
+        max-height: none;
+    }
+
+    .techstack-inspector-placeholder {
+        position: static;
+        inset: auto;
+        min-height: auto;
+    }
+}

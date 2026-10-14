@@ -1,0 +1,59 @@
+.reveal {
+  position: relative;
+  background: transparent;
+  will-change: opacity, transform;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease, clip-path 0.4s ease;
+}
+
+.fade-up {
+  opacity: var(--m-progress, 0);
+  transform: translateY(calc((1 - var(--m-progress, 0)) * 40px));
+}
+
+.fade-down {
+  opacity: var(--m-progress, 0);
+  transform: translateY(calc((1 - var(--m-progress, 0)) * -40px));
+}
+
+.fade-left {
+  opacity: var(--m-progress, 0);
+  transform: translateX(calc((1 - var(--m-progress, 0)) * 40px));
+}
+
+.fade-right {
+  opacity: var(--m-progress, 0);
+  transform: translateX(calc((1 - var(--m-progress, 0)) * -40px));
+}
+
+.zoom-in {
+  opacity: var(--m-progress, 0);
+  transform: scale(calc(0.88 + var(--m-progress, 0) * 0.12));
+}
+
+.zoom-out {
+  opacity: var(--m-progress, 0);
+  transform: scale(calc(1.12 - var(--m-progress, 0) * 0.12));
+}
+
+.blur {
+  opacity: var(--m-progress, 0);
+  filter: blur(calc((1 - var(--m-progress, 0)) * 16px));
+}
+
+.wipe {
+  clip-path: inset(0 calc((1 - var(--m-progress, 0)) * 100%) 0 0);
+}
+
+.rotate {
+  opacity: var(--m-progress, 0);
+  transform-origin: center bottom;
+  transform: rotate(calc((1 - var(--m-progress, 0)) * -4deg))
+    translateY(calc((1 - var(--m-progress, 0)) * 28px));
+}
+
+.flip {
+  opacity: var(--m-progress, 0);
+  transform-origin: center top;
+  transform: perspective(1200px) rotateX(calc((1 - var(--m-progress, 0)) * -18deg))
+    translateY(calc((1 - var(--m-progress, 0)) * 26px));
+}

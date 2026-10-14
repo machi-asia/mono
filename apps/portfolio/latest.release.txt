@@ -1,0 +1,11 @@
+Release Name: v1.0.0 - Portfolio Genesis Release
+Date: 2026-10-07
+App: Portfolio
+Platforms: Web (Next.js 16 App Router)
+Package ID: @mono/portfolio
+Capgo Channel: N/A
+
+Updates:
+- Created @mono/portfolio Next.js application showcasing full-stack engineering track, computer vision models, and architecture.
+- Integrated interactive transparent scroll sections (ScrollReveal, ScrollHorizontal, ScrollStack, ScrollDepth, ScrollSplit).
+- Added comprehensive unit testing across all components and pages with full type-safety.

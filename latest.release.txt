@@ -76,3 +76,15 @@ Updates:
 - Unified HTTP REST and SSE streaming endpoints.
 - Interactive API Explorer playground with payload inspector.
 - Real-time usage tracking, quota management, and health telemetry.
+
+================================================================================
+Release Name: v1.0.0 - Genesis Release
+App: Angelo Justine D. Kamachi Portfolio (@mono/portfolio)
+Platforms: Web (Next.js 16 App Router)
+Package ID: @mono/portfolio
+--------------------------------------------------------------------------------
+Updates:
+- Interactive portfolio landing page utilizing @mono/components transparent scroll sections.
+- Featured engineering works carousel, stacked enterprise project timeline, and skill depth grid.
+- Comprehensive unit testing and full strict TypeScript coverage.
+

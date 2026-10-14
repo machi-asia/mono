@@ -1,0 +1,347 @@
+/* ===== Stewart & Partners Inspired Cinematic Scroll Showcase ===== */
+
+.sp-cinematic-stage {
+    position: relative;
+    width: 100%;
+    min-height: 280vh;
+    background: var(--background);
+}
+
+.sp-cinematic-sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background);
+}
+
+/* Pinned Brand Typography on Left */
+.sp-cinematic-pinned-title-holder {
+    position: absolute;
+    left: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 6;
+    pointer-events: none;
+    max-width: 45vw;
+    user-select: none;
+}
+
+.sp-cinematic-section-eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+}
+
+.sp-cinematic-brand-title {
+    font-size: clamp(2.75rem, 6.5vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+    color: var(--foreground);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+html.light-mode .sp-cinematic-brand-title {
+    color: #050505;
+}
+
+/* Floating Right Counter */
+.sp-cinematic-floating-counter {
+    position: absolute;
+    right: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 7;
+    pointer-events: none;
+    text-align: right;
+    user-select: none;
+}
+
+.sp-cinematic-counter-label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--foreground);
+    line-height: 1.35;
+}
+
+.sp-cinematic-counter-sub {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Asymmetric 5-Column Grid */
+.sp-cinematic-photo-grid {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 2.2vw;
+    padding: 0 5vw;
+    pointer-events: none;
+    z-index: auto;
+    align-items: center;
+}
+
+/* Layers: Below vs Above Pinned Typography */
+.sp-cinematic-layer-below {
+    z-index: 2;
+}
+
+.sp-cinematic-layer-above {
+    z-index: 8;
+}
+
+/* Grid Items: ZERO Borders, Pure Floating Media */
+.sp-cinematic-grid-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+    cursor: pointer;
+    transition:
+        opacity 0.4s cubic-bezier(0.45, 0, 0.55, 1),
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.4s ease;
+    will-change: transform, opacity;
+}
+
+/* Column Placements */
+.sp-cinematic-item-1 {
+    grid-column: 2;
+    width: 90%;
+    margin-top: 15vh;
+}
+
+.sp-cinematic-item-2 {
+    grid-column: 4;
+    width: 86%;
+    margin-top: -10vh;
+}
+
+.sp-cinematic-item-3 {
+    grid-column: 1;
+    width: 95%;
+    margin-top: 45vh;
+}
+
+.sp-cinematic-item-4 {
+    grid-column: 3;
+    width: 88%;
+    margin-top: 85vh;
+}
+
+.sp-cinematic-item-5 {
+    grid-column: 5;
+    width: 92%;
+    margin-top: 55vh;
+}
+
+/* Media Frame */
+.sp-cinematic-media-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #09090b;
+    box-shadow: 0 16px 42px rgb(0 0 0 / 65%);
+}
+
+.sp-cinematic-media-frame-portrait {
+    aspect-ratio: 3 / 4;
+}
+
+.sp-cinematic-media-frame-landscape {
+    aspect-ratio: 16 / 10;
+}
+
+.sp-cinematic-media-video,
+.sp-cinematic-media-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Floating Project Metadata */
+.sp-cinematic-meta-bar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: 0.65rem;
+    gap: 0.5rem;
+}
+
+.sp-cinematic-num {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--foreground);
+    letter-spacing: 0.04em;
+}
+
+.sp-cinematic-work-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--foreground);
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sp-cinematic-work-tag {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-left: auto;
+}
+
+/* Transparent Hit Area */
+.sp-cinematic-item-hit {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* S&P Hover Dimming */
+.sp-cinematic-grid-item.highlight {
+    transform: translateY(-4px) scale(1.02);
+    z-index: 25 !important;
+}
+
+.sp-cinematic-grid-item.highlight .sp-cinematic-media-frame {
+    box-shadow: 0 24px 60px rgb(0 0 0 / 85%);
+}
+
+.sp-cinematic-photo-grid.is-hovering .sp-cinematic-grid-item.fadeout {
+    opacity: 0.25;
+    filter: grayscale(100%);
+    transform: scale(0.98);
+}
+
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    border-width: 0 !important;
+}
+
+/* Responsive Styles */
+@media (width <= 1024px) {
+    .sp-cinematic-pinned-title-holder {
+        max-width: 60vw;
+    }
+
+    .sp-cinematic-photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 3vw;
+    }
+
+    .sp-cinematic-item-1 {
+        grid-column: 1;
+        margin-top: 10vh;
+    }
+
+    .sp-cinematic-item-2 {
+        grid-column: 2;
+        margin-top: 0;
+    }
+
+    .sp-cinematic-item-3 {
+        grid-column: 3;
+        margin-top: 30vh;
+    }
+
+    .sp-cinematic-item-4 {
+        grid-column: 1;
+        margin-top: 60vh;
+    }
+
+    .sp-cinematic-item-5 {
+        grid-column: 2;
+        margin-top: 50vh;
+    }
+}
+
+@media (width <= 768px) {
+    .sp-cinematic-stage {
+        min-height: 220vh;
+    }
+
+    .sp-cinematic-pinned-title-holder {
+        top: 15%;
+        transform: none;
+        left: 6vw;
+        max-width: 88vw;
+    }
+
+    .sp-cinematic-floating-counter {
+        top: 15%;
+        right: 6vw;
+        transform: none;
+    }
+
+    .sp-cinematic-photo-grid {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 4vw;
+        padding: 0 6vw;
+    }
+
+    .sp-cinematic-item-1 {
+        grid-column: 1;
+        margin-top: 30vh;
+        width: 100%;
+    }
+
+    .sp-cinematic-item-2 {
+        grid-column: 2;
+        margin-top: 25vh;
+        width: 100%;
+    }
+
+    .sp-cinematic-item-3 {
+        grid-column: 1;
+        margin-top: 70vh;
+        width: 100%;
+    }
+
+    .sp-cinematic-item-4 {
+        grid-column: 2;
+        margin-top: 75vh;
+        width: 100%;
+    }
+
+    .sp-cinematic-item-5 {
+        grid-column: 1;
+        margin-top: 115vh;
+        width: 100%;
+    }
+}

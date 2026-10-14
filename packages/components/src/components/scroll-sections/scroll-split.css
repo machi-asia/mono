@@ -1,0 +1,66 @@
+[data-mono="scroll-split"],
+.mono-scroll-split {
+  position: relative;
+  background: transparent;
+}
+
+[data-mono="scroll-split"] > .mono-split-viewport,
+.mono-scroll-split > .mono-split-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+}
+
+[data-mono="scroll-split"] .mono-split-content,
+.mono-scroll-split .mono-split-content {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: scale(calc(1.08 - var(--m-progress, 0) * 0.08));
+  background: transparent;
+}
+
+[data-mono="scroll-split"] .mono-split-panels,
+.mono-scroll-split .mono-split-panels {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+[data-mono="scroll-split"] .mono-split-panel,
+.mono-scroll-split .mono-split-panel {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  background: var(--background, #020203);
+  box-shadow: 0 16px 36px -8px rgb(0 0 0 / 60%);
+  will-change: transform;
+}
+
+[data-mono="scroll-split"][data-split-direction="horizontal"] .mono-split-panelA,
+.mono-scroll-split.horizontal .mono-split-panelA {
+  inset: 0 50% 0 0;
+  transform: translateX(calc(var(--m-progress, 0) * -101%));
+}
+
+[data-mono="scroll-split"][data-split-direction="horizontal"] .mono-split-panelB,
+.mono-scroll-split.horizontal .mono-split-panelB {
+  inset: 0 0 0 50%;
+  transform: translateX(calc(var(--m-progress, 0) * 101%));
+}
+
+[data-mono="scroll-split"][data-split-direction="vertical"] .mono-split-panelA,
+.mono-scroll-split.vertical .mono-split-panelA {
+  inset: 0 0 50%;
+  transform: translateY(calc(var(--m-progress, 0) * -101%));
+}
+
+[data-mono="scroll-split"][data-split-direction="vertical"] .mono-split-panelB,
+.mono-scroll-split.vertical .mono-split-panelB {
+  inset: 50% 0 0;
+  transform: translateY(calc(var(--m-progress, 0) * 101%));
+}

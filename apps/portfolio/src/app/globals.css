@@ -1,0 +1,346 @@
+/* Angelo Justine D. Kamachi Portfolio Global Styles */
+
+/* Creative Minimalist Swiss Typography & Image System */
+
+@import url("../../../../packages/components/src/tokens.css");
+@import url("../../../../packages/components/src/components/scroll-sections/scroll-reveal.css");
+@import url("../../../../packages/components/src/components/scroll-sections/scroll-stack.css");
+@import url("../../../../packages/components/src/components/scroll-sections/scroll-horizontal.css");
+@import url("../../../../packages/components/src/components/scroll-sections/parallax.css");
+@import url("../../../../packages/components/src/components/scroll-sections/scroll-zoom.css");
+@import url("../../../../packages/components/src/components/scroll-sections/scroll-curtain.css");
+@import url("../../../../packages/components/src/components/scroll-sections/scroll-rotate.css");
+@import url("../../../../packages/components/src/components/scroll-sections/scroll-split.css");
+@import url("../../../../packages/components/src/components/scroll-sections/scroll-depth.css");
+@import url("../styles/components.css");
+@import url("../styles/hero.css");
+@import url("../styles/about.css");
+@import url("../styles/certificates.css");
+@import url("../styles/skills.css");
+@import url("../styles/techstack-diagram.css");
+@import url("../styles/featured.css");
+@import url("../styles/featured-dialog.css");
+@import url("../styles/cinematic-showcase.css");
+@import url("../styles/carousel.css");
+@import url("../styles/projects.css");
+@import url("../styles/experience.css");
+@import url("../styles/visitors.css");
+@import url("../styles/faq.css");
+@import url("../styles/footer.css");
+@import url("../styles/contact.css");
+@import url("../styles/section-backgrounds.css");
+
+:root {
+    --background: #000;
+    --background-rgb: 0, 0, 0;
+    --foreground: #fff;
+    --foreground-muted: #d4d4d8;
+    --card-bg: #0c0c0e;
+    --card-bg-rgb: 12, 12, 14;
+    --card-border: rgb(255 255 255 / 3%);
+    --card-border-hover: rgb(255 255 255 / 12%);
+    --muted: #8e8e93;
+    --hairline: rgb(255 255 255 / 4%);
+    --accent-r: 255;
+    --accent-g: 255;
+    --accent-b: 255;
+    --accent-rgb: var(--accent-r), var(--accent-g), var(--accent-b);
+    --accent: #fff;
+    --accent-light: #e4e4e7;
+    --accent-glow: rgb(255 255 255 / 12%);
+
+    /* Stewart & Partners Studio Categorical Accents */
+    --sp-blue: #2c4eff;
+    --sp-emerald: #24d480;
+    --sp-violet: #ab9bf2;
+    --sp-orange: #ff5c01;
+    --sp-yellow: #ffd92d;
+    --color-brand-cyan: #2c4eff;
+    --color-brand-purple: #ab9bf2;
+    --color-brand-emerald: #24d480;
+    --color-brand-amber: #ff5c01;
+    --glass-bg: rgb(10 10 12 / 85%);
+    --glass-border: rgb(255 255 255 / 10%);
+    --glass-hover: rgb(255 255 255 / 15%);
+}
+
+html.light-mode {
+    --background: #fff;
+    --background-rgb: 255, 255, 255;
+    --foreground: #09090b;
+    --foreground-muted: #52525b;
+    --card-bg: #fbfbfb;
+    --card-bg-rgb: 251, 251, 251;
+    --card-border: rgb(0 0 0 / 8%);
+    --card-border-hover: rgb(0 0 0 / 22%);
+    --muted: #71717a;
+    --hairline: rgb(0 0 0 / 6%);
+    --accent-r: 0;
+    --accent-g: 0;
+    --accent-b: 0;
+    --accent-rgb: 0, 0, 0;
+    --accent: #09090b;
+    --accent-light: #27272a;
+    --accent-glow: rgb(0 0 0 / 8%);
+}
+
+/* Optional themes with subtle typographic restraint */
+html.theme-indigo {
+    --accent: #e0e7ff;
+    --accent-light: #c7d2fe;
+}
+
+html.theme-emerald {
+    --accent: #d1fae5;
+    --accent-light: #a7f3d0;
+}
+
+html.theme-rose {
+    --accent: #ffe4e6;
+    --accent-light: #fecdd3;
+}
+
+html.theme-gold {
+    --accent: #fef3c7;
+    --accent-light: #fde68a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--card-border) transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--card-border);
+    border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+html {
+    scroll-behavior: auto;
+    color-scheme: dark;
+    overflow-x: clip;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    background-image:
+        radial-gradient(circle 900px at 50% 0%, rgb(255 255 255 / 2%) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.018 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: cover, 140px 140px;
+    color: var(--foreground);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Inter, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    min-height: 100vh;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
+/* Swiss High-Contrast Gradient Text */
+.gradient-text {
+    background: linear-gradient(180deg, #fff 0%, #a1a1aa 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+html.light-mode .gradient-text {
+    background: linear-gradient(180deg, #09090b 0%, #71717a 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Cinematic Full-Width Sections */
+.section {
+    padding: 4.5rem 1.5rem;
+    max-width: 1320px;
+    margin: 0 auto;
+    position: relative;
+}
+
+@media (width >= 768px) {
+    .section {
+        padding: 6.5rem 2.5rem;
+    }
+}
+
+@media (width >= 1280px) {
+    .section {
+        padding: 8rem 3.5rem;
+    }
+}
+
+/* Clean Minimalist Section Header */
+.section-header-wrap {
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+@media (width >= 768px) {
+    .section-header-wrap {
+        margin-bottom: 3.5rem;
+    }
+}
+
+.section-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: var(--foreground);
+    text-transform: uppercase;
+}
+
+@media (width >= 768px) {
+    .section-title {
+        font-size: 3.25rem;
+    }
+}
+
+@media (width >= 1024px) {
+    .section-title {
+        font-size: 4rem;
+    }
+}
+
+.section-header-companion {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 12px rgb(0 0 0 / 40%));
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: float-gentle 4s ease-in-out infinite;
+}
+
+@media (width >= 768px) {
+    .section-header-companion {
+        width: 58px;
+        height: 58px;
+    }
+}
+
+.section-header-companion:hover {
+    transform: scale(1.12) rotate(4deg);
+}
+
+.separator {
+    height: 1px;
+    background-color: var(--hairline);
+    border: none;
+    margin: 0;
+    width: 100%;
+}
+
+/* Ambient Background Watermark Layers */
+.ambient-illustration {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.045;
+    filter: grayscale(100%) contrast(120%);
+    transition: opacity 0.5s ease;
+}
+
+html.light-mode .ambient-illustration {
+    opacity: 0.035;
+}
+
+.ambient-illustration-1 {
+    top: 5%;
+    right: -2%;
+    width: 320px;
+    height: 320px;
+}
+
+.ambient-illustration-2 {
+    top: 30%;
+    left: -3%;
+    width: 400px;
+    height: 400px;
+}
+
+.ambient-illustration-3 {
+    top: 55%;
+    right: -2%;
+    width: 360px;
+    height: 360px;
+}
+
+.ambient-illustration-4 {
+    top: 75%;
+    left: -2%;
+    width: 380px;
+    height: 380px;
+}
+
+.ambient-img {
+    object-fit: contain;
+}
+
+/* Floating animation for creative artwork vignettes */
+@keyframes float-gentle {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+}
+
+.animate-float-gentle {
+    animation: float-gentle 4s ease-in-out infinite;
+}
+

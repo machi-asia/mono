@@ -1,0 +1,289 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "api": {
+      "root": "apps/api",
+      "framework": "nextjs"
+    },
+    "machi-asia": {
+      "root": "apps/machi-asia",
+      "framework": "nextjs",
+      "bindings": [
+        {
+          "type": "service",
+          "service": "api",
+          "format": "url",
+          "env": "API_SERVICE_URL"
+        }
+      ]
+    },
+    "docs": {
+      "root": "apps/docs",
+      "framework": "nextjs"
+    },
+    "calculator": {
+      "root": "apps/calculator",
+      "framework": "nextjs"
+    },
+    "hells-forge": {
+      "root": "apps/hells-forge",
+      "framework": "nextjs"
+    },
+    "rose": {
+      "root": "apps/rose",
+      "framework": "nextjs",
+      "bindings": [
+        {
+          "type": "service",
+          "service": "api",
+          "format": "url",
+          "env": "API_SERVICE_URL"
+        }
+      ]
+    },
+    "portfolio": {
+      "root": "apps/portfolio",
+      "framework": "nextjs"
+    },
+    "itemlist-home": {
+      "root": "apps/itemlist-home",
+      "framework": "nextjs"
+    },
+    "itemlist-create": {
+      "root": "apps/itemlist-create",
+      "framework": "nextjs"
+    },
+    "itemlist-rimworld": {
+      "root": "apps/itemlist-rimworld",
+      "framework": "nextjs"
+    },
+    "itemlist-admin": {
+      "root": "apps/itemlist-admin",
+      "framework": "nextjs"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "docs.machi.asia"
+        }
+      ],
+      "destination": {
+        "service": "docs"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "rose.machi.asia"
+        }
+      ],
+      "destination": {
+        "service": "rose"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "rose.machi-asia.com"
+        }
+      ],
+      "destination": {
+        "service": "rose"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "calculator.machi.asia"
+        }
+      ],
+      "destination": {
+        "service": "calculator"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "hellsforge.machi.asia"
+        }
+      ],
+      "destination": {
+        "service": "hells-forge"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "portfolio.machi.asia"
+        }
+      ],
+      "destination": {
+        "service": "portfolio"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "api.machi.asia"
+        }
+      ],
+      "destination": {
+        "service": "api"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "api.machi-asia.com"
+        }
+      ],
+      "destination": {
+        "service": "api"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "admin.itemlist.online"
+        }
+      ],
+      "destination": {
+        "service": "itemlist-admin"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "create.itemlist.online"
+        }
+      ],
+      "destination": {
+        "service": "itemlist-create"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "rimworld.itemlist.online"
+        }
+      ],
+      "destination": {
+        "service": "itemlist-rimworld"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "itemlist.online"
+        }
+      ],
+      "destination": {
+        "service": "itemlist-home"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.itemlist.online"
+        }
+      ],
+      "destination": {
+        "service": "itemlist-home"
+      }
+    },
+    {
+      "source": "/admin(/.*)?",
+      "destination": {
+        "service": "itemlist-admin"
+      }
+    },
+    {
+      "source": "/create(/.*)?",
+      "destination": {
+        "service": "itemlist-create"
+      }
+    },
+    {
+      "source": "/rimworld(/.*)?",
+      "destination": {
+        "service": "itemlist-rimworld"
+      }
+    },
+    {
+      "source": "/docs(/.*)?",
+      "destination": {
+        "service": "docs"
+      }
+    },
+    {
+      "source": "/calculator(/.*)?",
+      "destination": {
+        "service": "calculator"
+      }
+    },
+    {
+      "source": "/rose(/.*)?",
+      "destination": {
+        "service": "rose"
+      }
+    },
+    {
+      "source": "/portfolio(/.*)?",
+      "destination": {
+        "service": "portfolio"
+      }
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "api"
+      }
+    },
+    {
+      "source": "/redirect",
+      "destination": {
+        "service": "api"
+      }
+    },
+    {
+      "source": "/health",
+      "destination": {
+        "service": "api"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "machi-asia"
+      }
+    }
+  ]
+}

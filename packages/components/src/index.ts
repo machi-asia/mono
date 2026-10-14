@@ -93,3 +93,41 @@ export type { UseMotionMountResult } from "./components/motion";
 export { OtaUpdateNotifier, useOtaUpdater } from "./components/ota";
 export type { OtaUpdateNotifierProps, OtaUpdaterState } from "./components/ota";
 
+export {
+  ScrollReveal,
+  ScrollStack,
+  ScrollHorizontal,
+  Parallax,
+  ScrollZoom,
+  ScrollCurtain,
+  ScrollRotate,
+  ScrollSplit,
+  ScrollDepth,
+  HorizontalScrollSection,
+  CardStackSection,
+  SplitCurtainSection,
+  ParallaxSection,
+  ZoomFocusSection,
+  useScrollLoop,
+  useScrollProgress,
+  usePinProgress,
+  clamp01,
+} from "./components/scroll-sections";
+export type {
+  ScrollRevealVariant,
+  ScrollRevealProps,
+  ScrollStackProps,
+  ScrollHorizontalProps,
+  ParallaxProps,
+  ScrollZoomMode,
+  ScrollZoomProps,
+  ScrollCurtainDirection,
+  ScrollCurtainProps,
+  ScrollRotateProps,
+  ScrollSplitDirection,
+  ScrollSplitProps,
+  ScrollDepthProps,
+} from "./components/scroll-sections";
+
+
+

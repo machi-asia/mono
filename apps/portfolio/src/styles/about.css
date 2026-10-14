@@ -1,0 +1,512 @@
+/* ===== About Section (Creative Visual Bento) ===== */
+.about-grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+@media (width >= 1024px) {
+    .about-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 3.5rem;
+    }
+}
+
+.about-bento-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.75rem;
+}
+
+.about-statement {
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: var(--foreground);
+    margin-bottom: 1.25rem;
+}
+
+@media (width >= 768px) {
+    .about-statement {
+        font-size: 1.75rem;
+    }
+}
+
+.about-text {
+    color: var(--foreground-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+}
+
+.about-character-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+}
+
+.about-character-img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 12px rgb(0 0 0 / 50%));
+}
+
+.about-character-quote {
+    font-size: 0.875rem;
+    color: var(--foreground-muted);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.about-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background-color: var(--hairline);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.about-stat-card {
+    background: var(--card-bg) !important;
+    padding: 1.25rem 1rem !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    text-align: left;
+}
+
+.about-stat-icon {
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+    width: 18px;
+    height: 18px;
+}
+
+.about-stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--foreground);
+    margin-bottom: 0.25rem;
+}
+
+.about-stat-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+}
+
+/* Education Card (Minimalist Luxury) */
+.education-card {
+    background: var(--card-bg);
+    border-radius: 6px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.education-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--hairline);
+    margin-bottom: 1.25rem;
+}
+
+.education-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    color: var(--foreground);
+}
+
+.education-icon {
+    color: var(--muted);
+    width: 18px;
+    height: 18px;
+}
+
+.education-scroll {
+    max-height: 480px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.education-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.125rem;
+    border-radius: 4px;
+    background: rgb(255 255 255 / 2.5%);
+    transition: all 0.2s ease;
+}
+
+.education-item:hover {
+    background: rgb(255 255 255 / 4.5%);
+}
+
+html.light-mode .education-item {
+    background: rgb(0 0 0 / 2%);
+}
+
+html.light-mode .education-item:hover {
+    background: rgb(0 0 0 / 4%);
+}
+
+.education-item-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 4px;
+    background-color: rgb(255 255 255 / 5%);
+    color: var(--foreground);
+    flex-shrink: 0;
+}
+
+.education-item-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: var(--foreground);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+}
+
+.education-item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.education-item-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--foreground);
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+}
+
+.education-item-subtitle {
+    font-size: 0.8125rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+/* Education Diploma & Milestone Photos Strip */
+.education-diploma-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin-top: 0.75rem;
+}
+
+.education-diploma-thumb-wrap {
+    position: relative;
+    width: 4rem;
+    height: 3rem;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: var(--background);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.education-diploma-thumb-wrap:hover {
+    transform: scale(1.06);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 60%);
+}
+
+.education-diploma-thumb-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.education-diploma-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 40%);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: opacity 0.2s ease;
+}
+
+.education-diploma-thumb-wrap:hover .education-diploma-overlay {
+    opacity: 1;
+}
+
+/* Diploma Preview Dialog */
+.diploma-preview-dialog {
+    max-width: 840px !important;
+    width: 90vw !important;
+    background: var(--card-bg) !important;
+    padding: 1.5rem !important;
+}
+
+.diploma-modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.diploma-modal-header {
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 0.75rem;
+}
+
+.diploma-modal-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--foreground);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+}
+
+.diploma-modal-subtitle {
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+
+.diploma-modal-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.diploma-modal-image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.diploma-modal-image {
+    object-fit: contain;
+}
+
+@keyframes zoom-panel-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.education-zoom-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+.education-zoom-images {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.education-zoom-img {
+    display: block;
+    width: 15rem;
+    max-height: 22rem;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: var(--background);
+    flex-shrink: 0;
+}
+
+/* About Photo Milestones Gallery */
+.about-photos-gallery {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.about-photos-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+}
+
+.about-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.about-photo-item {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+}
+
+.about-photo-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--card-border-hover);
+}
+
+.about-photo-img {
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.about-photo-item:hover .about-photo-img {
+    transform: scale(1.06);
+}
+
+.about-photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.35rem 0.5rem;
+    background: linear-gradient(180deg, transparent, rgb(0 0 0 / 80%));
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===== Stewart & Partners Editorial Intro Statement & Pinned Split Stage ===== */
+.sp-editorial-intro-layout {
+    display: grid;
+    grid-template-columns: 0.32fr 1fr;
+    gap: 4vw;
+    padding: 6rem 0 7rem;
+    border-bottom: 1px solid var(--hairline);
+    position: relative;
+    z-index: 2;
+}
+
+.sp-editorial-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sp-editorial-code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--muted);
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.sp-editorial-pinned-name {
+    font-size: 1.85rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--foreground);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.sp-editorial-statement {
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    color: var(--foreground);
+    margin: 0;
+}
+
+html.light-mode .sp-editorial-statement {
+    color: #111;
+}
+
+.sp-about-split-stage {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4vw;
+    padding: 6rem 0;
+    align-items: start;
+    position: relative;
+    z-index: 2;
+}
+
+.sp-about-pinned-col {
+    position: sticky;
+    top: 14vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sp-about-scroll-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+@media (width <= 1024px) {
+    .sp-editorial-intro-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 4rem 0 5rem;
+    }
+
+    .sp-about-split-stage {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 4rem 0;
+    }
+
+    .sp-about-pinned-col {
+        position: static;
+    }
+}
+
+

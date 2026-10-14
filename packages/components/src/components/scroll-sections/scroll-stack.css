@@ -1,0 +1,32 @@
+.stack {
+  position: relative;
+  background: transparent;
+}
+
+[data-mono="scroll-stack"] > .mono-stack-layer,
+.stack > .mono-stack-layer {
+  position: sticky;
+  top: clamp(20px, 8vh, 80px);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+[data-mono="scroll-stack"] .mono-stack-card,
+.stack .mono-stack-card {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  transform-origin: center top;
+  transform: perspective(1200px)
+    scale(calc(1 - var(--m-depth, 0) * var(--m-stack-scale, 0.12)))
+    translateY(calc(var(--m-depth, 0) * -7%));
+  filter: brightness(calc(1 - var(--m-cover, 0) * var(--m-stack-dim, 0.35)));
+  will-change: transform, filter;
+}

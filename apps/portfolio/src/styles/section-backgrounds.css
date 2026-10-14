@@ -1,0 +1,168 @@
+/* Section Backgrounds & Generative Static Patterns */
+
+/* Base Section Background Container */
+.section-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-bg-image {
+    object-fit: cover;
+    opacity: 0.04;
+    filter: grayscale(100%) contrast(120%) brightness(0.8);
+    transition: opacity 0.5s ease;
+}
+
+html.light-mode .section-bg-image {
+    opacity: 0.03;
+    filter: grayscale(100%) contrast(110%) brightness(1.1);
+}
+
+.section-bg-image-blurred {
+    object-fit: cover;
+    opacity: 0.05;
+    filter: blur(36px) grayscale(90%) brightness(0.75);
+}
+
+.section-bg-watermark-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    height: 480px;
+    opacity: 0.035;
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+
+.section-bg-watermark-right {
+    position: absolute;
+    top: 15%;
+    right: -5%;
+    width: 420px;
+    height: 420px;
+    opacity: 0.035;
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+
+.section-bg-watermark-left {
+    position: absolute;
+    bottom: 10%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    opacity: 0.035;
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+
+/* Subtle edge transitions without muddy vignettes */
+.section-bg-gradient-radial {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle 900px at 50% 50%, transparent 60%, var(--background) 100%);
+    opacity: 0.6;
+}
+
+.section-bg-gradient-vertical {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--background) 0%, transparent 15%, transparent 85%, var(--background) 100%);
+    opacity: 0.7;
+}
+
+/* Static Generative SVG Pattern Layers */
+
+/* 1. Blueprint Grid Pattern */
+.bg-pattern-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, rgb(255 255 255 / 4%) 1px, transparent 1px),
+        linear-gradient(to bottom, rgb(255 255 255 / 4%) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+html.light-mode .bg-pattern-grid {
+    background-image:
+        linear-gradient(to right, rgb(0 0 0 / 4%) 1px, transparent 1px),
+        linear-gradient(to bottom, rgb(0 0 0 / 4%) 1px, transparent 1px);
+}
+
+/* 2. Precision Dot Matrix */
+.bg-pattern-dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgb(255 255 255 / 10%) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+html.light-mode .bg-pattern-dots {
+    background-image: radial-gradient(circle, rgb(0 0 0 / 8%) 1px, transparent 1px);
+}
+
+/* 3. Diagonal Architectural Drafting Hatch */
+.bg-pattern-diagonal {
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgb(255 255 255 / 2%) 0,
+        rgb(255 255 255 / 2%) 1px,
+        transparent 1px,
+        transparent 16px
+    );
+}
+
+html.light-mode .bg-pattern-diagonal {
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgb(0 0 0 / 2%) 0,
+        rgb(0 0 0 / 2%) 1px,
+        transparent 1px,
+        transparent 16px
+    );
+}
+
+/* 4. Topographic Elevation Waves */
+.bg-pattern-topography {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0c30 15 30 45 60 45s30-30 60-30v30c-30 0-30 30-60 30S30 45 0 60V0zm0 60c30 15 30 45 60 45s30-30 60-30v30c-30 0-30 30-60 30S30 105 0 120V60z' fill='none' stroke='rgba(255,255,255,0.035)' stroke-width='1'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+html.light-mode .bg-pattern-topography {
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0c30 15 30 45 60 45s30-30 60-30v30c-30 0-30 30-60 30S30 45 0 60V0zm0 60c30 15 30 45 60 45s30-30 60-30v30c-30 0-30 30-60 30S30 105 0 120V60z' fill='none' stroke='rgba(0,0,0,0.035)' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+/* 5. Isometric Circuit Architecture Pattern */
+.bg-pattern-circuit {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'%3E%3Cpath d='M0 20h20v20H0zm40 0h20v20H40zm20 40h20v20H60zm-40 0h20v20H20z'/%3E%3Ccircle cx='20' cy='20' r='2' fill='rgba(255,255,255,0.06)'/%3E%3Ccircle cx='60' cy='60' r='2' fill='rgba(255,255,255,0.06)'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+html.light-mode .bg-pattern-circuit {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(0,0,0,0.04)' stroke-width='1'%3E%3Cpath d='M0 20h20v20H0zm40 0h20v20H40zm20 40h20v20H60zm-40 0h20v20H20z'/%3E%3Ccircle cx='20' cy='20' r='2' fill='rgba(0,0,0,0.06)'/%3E%3Ccircle cx='60' cy='60' r='2' fill='rgba(0,0,0,0.06)'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* 6. Isometric Hexagons / Mesh */
+.bg-pattern-isometric {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='104' viewBox='0 0 60 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 17.32v34.64L30 69.28 0 51.96V17.32L30 0zm0 104l30-17.32V52.04L30 34.72 0 52.04v34.64L30 104z' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+html.light-mode .bg-pattern-isometric {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='104' viewBox='0 0 60 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 17.32v34.64L30 69.28 0 51.96V17.32L30 0zm0 104l30-17.32V52.04L30 34.72 0 52.04v34.64L30 104z' fill='none' stroke='rgba(0,0,0,0.03)' stroke-width='1'/%3E%3C/svg%3E");
+}

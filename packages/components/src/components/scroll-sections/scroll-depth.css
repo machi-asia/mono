@@ -1,0 +1,28 @@
+[data-mono="scroll-depth"],
+.mono-scroll-depth {
+  position: relative;
+  background: transparent;
+}
+
+[data-mono="scroll-depth"] > .mono-depth-viewport,
+.mono-scroll-depth > .mono-depth-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 1200px;
+  background: transparent;
+}
+
+[data-mono="scroll-depth"] .mono-depth-layer,
+.mono-scroll-depth .mono-depth-layer {
+  --m-lp: clamp(0, calc((var(--m-progress, 0) - var(--m-layer-start, 0)) * 2.2222), 1);
+
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transform: translateZ(calc((var(--m-lp) - 1) * 1100px));
+  opacity: min(1, calc(var(--m-lp) * 1.5));
+  background: transparent;
+}

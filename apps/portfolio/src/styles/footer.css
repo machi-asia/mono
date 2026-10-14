@@ -1,0 +1,116 @@
+/* ===== Footer (Swiss Typographic Colophon) ===== */
+.footer {
+    padding: 6rem 1.5rem 4rem;
+    border-top: 1px solid var(--hairline);
+    background: var(--background);
+}
+
+@media (width >= 768px) {
+    .footer {
+        padding: 8rem 2.5rem 5rem;
+    }
+}
+
+.footer-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.footer-main-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr;
+}
+
+@media (width >= 768px) {
+    .footer-main-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: flex-end;
+    }
+}
+
+.footer-statement {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: var(--foreground);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
+@media (width >= 768px) {
+    .footer-statement {
+        font-size: 4rem;
+    }
+}
+
+.footer-subtitle {
+    color: var(--foreground-muted);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 520px;
+}
+
+.footer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+@media (width >= 768px) {
+    .footer-actions {
+        align-items: flex-end;
+    }
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--hairline);
+}
+
+.footer-copyright {
+    font-size: 0.8125rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer-social-link {
+    color: var(--muted);
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-social-link:hover {
+    color: var(--foreground);
+}
+
+.footer-sp-reveal {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transition: clip-path 0.8s cubic-bezier(0.62, 0.05, 0.01, 0.99);
+}
+
+.footer-sp-clock {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+

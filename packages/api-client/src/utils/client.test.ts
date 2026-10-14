@@ -1,13 +1,25 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { ApiClient, defaultApiClient } from "./client";
+import { ApiClient, defaultApiClient, getApiBaseUrl } from "./client";
 
 describe("ApiClient", () => {
   beforeEach(() => {
     vi.restoreAllMocks();
+    delete process.env.API_SERVICE_URL;
+    delete process.env.NEXT_PUBLIC_API_URL;
   });
 
   it("instantiates default client", () => {
     expect(defaultApiClient).toBeInstanceOf(ApiClient);
+  });
+
+  it("resolves base URL prioritizing API_SERVICE_URL then NEXT_PUBLIC_API_URL", () => {
+    expect(getApiBaseUrl()).toBe("");
+
+    process.env.NEXT_PUBLIC_API_URL = "https://api.machi.asia/";
+    expect(getApiBaseUrl()).toBe("https://api.machi.asia");
+
+    process.env.API_SERVICE_URL = "http://internal-api:3005/";
+    expect(getApiBaseUrl()).toBe("http://internal-api:3005");
   });
 
   it("calls rose.getSettings with correct headers", async () => {

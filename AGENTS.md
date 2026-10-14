@@ -52,3 +52,12 @@ Every application, package, module, utility, and UI component MUST have comprehe
 - **No Dummy or Skipped Tests**: Workspace `package.json` files MUST configure a valid test runner (e.g. `vitest run`). Using `echo skip`, `exit 0`, or leaving packages without test files is strictly forbidden.
 - **Automated Pre-Flight & CI Enforcement**: All pull requests, deployments (`npm run deploy`), and CI runs execute `node scripts/verify-tests.js` and `npm run test`. Any missing tests or test failures will immediately fail the pipeline.
 
+### 6. Keep `vercel.json` Up to Date with Applications and Routing
+
+Whenever an application is added, renamed, moved, or deleted, or when routing or subdomains change, `vercel.json` MUST be updated in the same change.
+
+- **Services**: Define service configuration (`root` and `framework`) under `services` for all apps deployed to Vercel.
+- **Subdomain & Path Rewrites**: Maintain host rewrites (`has: [{ "type": "host", "value": ... }]`) and path rewrites under `rewrites` for all domains, subdomains (e.g. `docs.machi.asia`, `rose.machi.asia`, `calculator.machi.asia`, `hellsforge.machi.asia`, `itemlist.online`, `create.itemlist.online`, `rimworld.itemlist.online`, `admin.itemlist.online`), and path fallbacks.
+- **Order of Rewrites**: Keep specific subdomain host rewrites and `/api/*` rewrites above catch-all routes to avoid unintended routing collisions.
+
+
