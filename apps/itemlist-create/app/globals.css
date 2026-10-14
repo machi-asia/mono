@@ -2,10 +2,43 @@
 @source "../../../packages/game-calculator/src";
 @import "@xyflow/react/dist/style.css";
 
+@font-face {
+  font-family: "Minecraft";
+  src: url("./fonts/Minecraft.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-minecraft: "Minecraft", monospace, sans-serif;
+  font-family: var(--font-minecraft);
+}
+
+*,
+*::before,
+*::after,
+body,
+input,
+button,
+select,
+textarea,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+div {
+  font-family: var(--font-minecraft) !important;
+}
+
 body {
   background-color: #09090b;
   color: #f4f4f5;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   height: 100vh;
   overflow: hidden;
 }
@@ -39,8 +72,8 @@ input[type="number"] {
 
 *::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.18);
-  border-radius: 9999px;
-  border: 1px solid transparent;
+  border-radius: 0 !important;
+  border: 0 !important;
   background-clip: padding-box;
 }
 
@@ -55,3 +88,120 @@ input[type="number"] {
 *::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+/*
+ * Create-specific UI constraints:
+ * 1. Absolutely NO corner radiuses anywhere.
+ * 2. Elements must either have NO border or a MINIMUM of 3 pixels of border.
+ * 3. Favor top borders with subdued stone/slab colors (not stark white), removing distracting side borders.
+ */
+
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* Subtle, subdued Minecraft stone/slab color for top borders */
+:root {
+  --mc-border-top-color: #3f3f46; /* zinc-700: visible yet dark & subtle */
+  --mc-node-border-color: #52525b; /* zinc-600 */
+}
+
+/* React Flow wrapper: MUST be borderless, transparent, and unpadded so internal cards align with handles */
+.react-flow__node {
+  border: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Target the actual card element directly with clean 3px borders aligned with handles */
+.react-flow__node > div {
+  border: 3px solid #27272a !important; /* zinc-800 clean solid boundary */
+  border-top: 3px solid #71717a !important; /* zinc-500 subtle top highlight */
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Target planner cards in the top drawer: minimum 3px border */
+section .grid > div {
+  border: 3px solid #27272a !important;
+  border-top: 3px solid #52525b !important;
+  border-radius: 0 !important;
+}
+
+/* Tabs: Active tab gets a clean 3px border, inactive stays borderless */
+[class*="group relative flex items-center"][class*="rounded-md"] {
+  border-radius: 0 !important;
+}
+
+div:has(> input[type="text"]),
+[class*="bg-indigo-600/20"] {
+  border: 3px solid #4f46e5 !important;
+  border-radius: 0 !important;
+}
+
+/* Rate number bar: Avoid duplicate borders between wrapper and input */
+/* The rate input container gets the 3px border */
+div:has(> input[type="number"]) {
+  border: 3px solid #3f3f46 !important;
+  border-radius: 0 !important;
+}
+
+div:has(> input[type="number"]):focus-within {
+  border-color: #6366f1 !important;
+}
+
+/* The inner input inside the rate bar must have NO border */
+div:has(> input[type="number"]) input[type="number"] {
+  border: none !important;
+  outline: none !important;
+}
+
+/* The caret divider inside the rate bar */
+div:has(> input[type="number"]) div {
+  border-left-width: 2px !important;
+  border-left-color: #3f3f46 !important;
+}
+
+/* Standalone inputs (outside the rate bar): clean 3px border */
+input[type="text"]:not(div:has(> input[type="number"]) *),
+input[type="number"]:not(div:has(> input[type="number"]) *) {
+  border: 3px solid #27272a !important;
+  border-top-color: #3f3f46 !important;
+}
+
+/* Modals and dialogs: solid 3px subdued border */
+[role="dialog"] {
+  border: 3px solid #3f3f46 !important;
+}
+
+/* Explicitly borderless elements remain borderless */
+.border-0,
+.border-none {
+  border: 0 !important;
+}
+
+[data-radix-popper-content-wrapper],
+[role="dialog"],
+[role="menu"],
+[role="listbox"],
+[role="tooltip"],
+.react-flow__node,
+.react-flow__panel,
+.react-flow__controls,
+.react-flow__attribution {
+  border-radius: 0 !important;
+}
+
+/* Ensure summary metric chip text and items are strictly unbolded (normal weight) */
+.metrics-chip,
+.metrics-chip *,
+span[class*="bg-white/"] span,
+span[class*="bg-white/"] {
+  font-weight: 400 !important;
+  font-synthesis-weight: none !important;
+}
+
+

@@ -16,6 +16,15 @@ describe("redirect-resolver", () => {
       expect(isAllowedRedirectUrl("https://rose.machi.asia")).toBe(true);
     });
 
+    it("allows *.itemlist.online subdomains and apex domain", () => {
+      expect(isAllowedRedirectUrl("https://itemlist.online")).toBe(true);
+      expect(isAllowedRedirectUrl("https://admin.itemlist.online")).toBe(true);
+      expect(isAllowedRedirectUrl("https://admin.itemlist.online/")).toBe(true);
+      expect(isAllowedRedirectUrl("https://create.itemlist.online")).toBe(true);
+      expect(isAllowedRedirectUrl("https://rimworld.itemlist.online")).toBe(true);
+      expect(isAllowedRedirectUrl("https://www.itemlist.online")).toBe(true);
+    });
+
     it("allows localhost and 127.0.0.1 on various ports", () => {
       expect(isAllowedRedirectUrl("http://localhost:3000")).toBe(true);
       expect(isAllowedRedirectUrl("http://localhost:3001/calculator")).toBe(true);
@@ -25,6 +34,7 @@ describe("redirect-resolver", () => {
     it("rejects malicious or disallowed URLs", () => {
       expect(isAllowedRedirectUrl("https://evil.com")).toBe(false);
       expect(isAllowedRedirectUrl("https://machi.asia.evil.com")).toBe(false);
+      expect(isAllowedRedirectUrl("https://itemlist.online.evil.com")).toBe(false);
       expect(isAllowedRedirectUrl("javascript:alert(1)")).toBe(false);
       expect(isAllowedRedirectUrl("not-a-url")).toBe(false);
     });
@@ -49,6 +59,13 @@ describe("redirect-resolver", () => {
     it("resolves rose from hostname or port 3004", () => {
       expect(resolveAppFromUrl("https://rose.machi.asia").id).toBe("rose");
       expect(resolveAppFromUrl("http://localhost:3004").id).toBe("rose");
+    });
+
+    it("resolves itemlist apps accurately", () => {
+      expect(resolveAppFromUrl("https://admin.itemlist.online").id).toBe("itemlist-admin");
+      expect(resolveAppFromUrl("https://create.itemlist.online").id).toBe("itemlist-create");
+      expect(resolveAppFromUrl("https://rimworld.itemlist.online").id).toBe("itemlist-rimworld");
+      expect(resolveAppFromUrl("https://itemlist.online").id).toBe("itemlist-home");
     });
 
     it("defaults to portal for main domain or port 3000", () => {

@@ -46,7 +46,37 @@ A multi-game production and crafting recipe calculator. Allows users to select f
 
 **Stack:** Next.js, React, TypeScript, `@mono/components`
 
+### itemlist-home
+
+Centralized directory portal for game-specific production calculators (`itemlist.online`). Displays game selection tiles, direct launch links, and active development indicators.
+
+**Stack:** Next.js App Router, React, Tailwind CSS
+
+### itemlist-create
+
+Dedicated recipe dependency and kinetic automation calculator for the Minecraft Create mod (`create.itemlist.online`). Evaluates RPM speed, assembly chains, and machine throughput.
+
+**Stack:** Next.js App Router, React, `@mono/game-calculator`
+
+### itemlist-rimworld
+
+Colony production and fabrication bench bill calculator for RimWorld (`rimworld.itemlist.online`).
+
+**Stack:** Next.js App Router, React, `@mono/game-calculator`
+
+### itemlist-admin
+
+Administrative oversight portal for community data consensus, user-submitted issue reports, and manual recipe verification (`admin.itemlist.online`).
+
+**Stack:** Next.js App Router, React, `@mono/api-client`, Supabase Auth
+
 ## Packages
+
+### game-calculator (`/packages/game-calculator`)
+
+Shared calculation and visualization engine for factory games. Houses the interactive Dagre-based graph calculator view, node visualizers, item inspection popups, and community issue reporting modals.
+
+**Stack:** React, `@xyflow/react`, `dagre`, `@mono/api-client`
 
 ### auth (`/packages/auth`)
 

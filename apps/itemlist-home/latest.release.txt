@@ -1,0 +1,11 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-10-14
+App: ItemList Home (@mono/itemlist-home)
+Platforms: Web (Next.js 16 App Router)
+Package ID: online.itemlist.home
+Capgo Channel: N/A
+
+Updates:
+- Centralized landing hub and game directory for production calculators.
+- Game selector cards for Minecraft Create mod and RimWorld production calculators.
+- SEO optimized with Open Graph, Twitter cards, and structured JSON-LD metadata.

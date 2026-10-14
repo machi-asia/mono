@@ -1,13 +1,28 @@
-import type { ApiClientConfig, ChatMessage, RoseUsageResponse } from "../types";
+import type {
+  ApiClientConfig,
+  ChatMessage,
+  RoseUsageResponse,
+  ItemListReportCorrections,
+  ItemListReportSubmission,
+  ItemListCommunityOverride,
+  ItemListReportItem,
+} from "../types";
 
 export function getApiBaseUrl(): string {
-  if (typeof process !== "undefined" && process.env) {
-    const url = process.env.API_SERVICE_URL || process.env.NEXT_PUBLIC_API_URL;
+  const env = typeof globalThis !== "undefined" ? (globalThis as Record<string, unknown>).process as { env?: Record<string, string | undefined> } | undefined : undefined;
+  if (env && env.env) {
+    const url = env.env.API_SERVICE_URL || env.env.NEXT_PUBLIC_API_URL;
     if (url) {
       return url.replace(/\/$/, "");
     }
   }
-  return "";
+  if (typeof window !== "undefined" && window.location) {
+    const host = window.location.hostname;
+    if (host === "localhost" || host === "127.0.0.1") {
+      return "http://localhost:3005";
+    }
+  }
+  return "https://api.machi.asia";
 }
 
 export class ApiClient {
@@ -118,6 +133,61 @@ export class ApiClient {
         headers,
       });
       return res.json();
+    },
+  };
+
+  // ItemList Endpoints
+  public itemlist = {
+    getOverrides: async (gameId: string): Promise<ItemListCommunityOverride[]> => {
+      const headers = await this.getHeaders();
+      const res = await fetch(this.resolveUrl(`/itemlist/overrides?gameId=${encodeURIComponent(gameId)}`), {
+        method: "GET",
+        headers,
+      });
+      if (!res.ok) {
+        throw new Error(`Failed to fetch overrides: ${res.statusText}`);
+      }
+      return res.json();
+    },
+
+    submitReport: async (
+      payload: ItemListReportSubmission
+    ): Promise<{ success: boolean; report?: ItemListReportItem; error?: string }> => {
+      const headers = await this.getHeaders();
+      const res = await fetch(this.resolveUrl("/itemlist/reports"), {
+        method: "POST",
+        headers,
+        body: JSON.stringify(payload),
+      });
+      return res.json();
+    },
+
+    admin: {
+      getReports: async (): Promise<ItemListReportItem[]> => {
+        const headers = await this.getHeaders();
+        const res = await fetch(this.resolveUrl("/itemlist/admin/reports"), {
+          method: "GET",
+          headers,
+        });
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.error || `Failed to fetch admin reports: ${res.statusText}`);
+        }
+        return res.json();
+      },
+
+      updateReportStatus: async (
+        reportId: string,
+        status: "pending" | "resolved" | "rejected"
+      ): Promise<{ success: boolean; report?: ItemListReportItem; error?: string }> => {
+        const headers = await this.getHeaders();
+        const res = await fetch(this.resolveUrl(`/itemlist/admin/reports/${encodeURIComponent(reportId)}`), {
+          method: "PATCH",
+          headers,
+          body: JSON.stringify({ status }),
+        });
+        return res.json();
+      },
     },
   };
 }

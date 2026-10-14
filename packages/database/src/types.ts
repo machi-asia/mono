@@ -76,6 +76,21 @@ export interface SupportTicketRecord {
   updated_at: string;
 }
 
+export interface IssueReportRecord {
+  id: string;
+  game_id: string;
+  item_id: string;
+  item_name: string;
+  issue_type: string;
+  description: string | null;
+  suggested_fix: string | null;
+  reporter_hash: string;
+  corrections: Json;
+  consensus_key: string;
+  status: "pending" | "resolved" | "rejected";
+  created_at: string;
+}
+
 export interface Database {
   public: {
     Tables: {
@@ -125,6 +140,15 @@ export interface Database {
         };
         Update: Partial<Omit<SupportTicketRecord, "id">>;
       };
+      issue_reports: {
+        Row: IssueReportRecord;
+        Insert: Omit<IssueReportRecord, "id" | "status" | "created_at"> & {
+          id?: string;
+          status?: "pending" | "resolved" | "rejected";
+          created_at?: string;
+        };
+        Update: Partial<Omit<IssueReportRecord, "id">>;
+      };
     };
     Views: Record<string, never>;
     Functions: {
@@ -138,6 +162,16 @@ export interface Database {
           p_monthly_limit?: number;
         };
         Returns: Json;
+      };
+      get_community_overrides: {
+        Args: {
+          p_game_id: string;
+        };
+        Returns: Json;
+      };
+      is_admin: {
+        Args: Record<string, never>;
+        Returns: boolean;
       };
     };
     Enums: Record<string, never>;

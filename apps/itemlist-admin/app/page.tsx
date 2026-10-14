@@ -2,7 +2,18 @@
 
 import React, { useEffect, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
+import { ApiClient } from "@mono/api-client";
 import { getAdminSupabaseClient } from "../lib/supabase";
+
+function getAdminApiClient() {
+  return new ApiClient({
+    getAuthToken: async () => {
+      const supabase = getAdminSupabaseClient();
+      const { data } = await supabase.auth.getSession();
+      return data.session?.access_token || null;
+    },
+  });
+}
 import {
   ShieldAlert,
   ShieldCheck,
@@ -79,16 +90,13 @@ export default function AdminDashboardPage() {
 
       setIsAdmin(true);
 
-      // Fetch issue reports
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { data, error } = await (supabase.from("issue_reports") as any)
-        .select("*")
-        .order("created_at", { ascending: false });
-
-      if (error) {
-        console.error("Failed to load issue reports:", error);
-      } else {
-        setReports(data || []);
+      // Fetch issue reports via dedicated API (api.machi.asia)
+      try {
+        const apiClient = getAdminApiClient();
+        const data = await apiClient.itemlist.admin.getReports();
+        setReports((data as unknown as IssueReportRow[]) || []);
+      } catch (err: unknown) {
+        console.error("Failed to load issue reports from API:", err);
       }
 
       setLoading(false);
@@ -105,18 +113,19 @@ export default function AdminDashboardPage() {
 
   const handleUpdateStatus = async (reportId: string, newStatus: "pending" | "resolved" | "rejected") => {
     setUpdatingId(reportId);
-    const supabase = getAdminSupabaseClient();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { error } = await (supabase.from("issue_reports") as any)
-      .update({ status: newStatus })
-      .eq("id", reportId);
-
-    if (!error) {
-      setReports((prev) =>
-        prev.map((r) => (r.id === reportId ? { ...r, status: newStatus } : r))
-      );
-    } else {
-      alert(`Error updating report: ${error.message}`);
+    try {
+      const apiClient = getAdminApiClient();
+      const res = await apiClient.itemlist.admin.updateReportStatus(reportId, newStatus);
+      if (res.success) {
+        setReports((prev) =>
+          prev.map((r) => (r.id === reportId ? { ...r, status: newStatus } : r))
+        );
+      } else {
+        alert(`Error updating report: ${res.error || "Unknown error"}`);
+      }
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : String(err);
+      alert(`Error updating report: ${msg}`);
     }
     setUpdatingId(null);
   };

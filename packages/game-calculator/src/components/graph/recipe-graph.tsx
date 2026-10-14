@@ -120,12 +120,12 @@ export function RecipeGraphView({
       {/* Metrics Row - Hidden on mobile view (< sm) to preserve canvas space */}
       <div className="hidden sm:flex flex-wrap items-center justify-between gap-3 py-1 text-xs">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="flex items-center gap-1.5 font-medium text-zinc-400">
+          <span className="flex items-center gap-1.5 font-bold text-zinc-300">
             <Cpu className="h-3.5 w-3.5 text-indigo-400" />
-            <span>Facilities ({totalMachineCount.toFixed(1)}):</span>
+            <span className="font-bold">Facilities ({totalMachineCount.toFixed(1)}):</span>
           </span>
           {Object.keys(totalBuildings).length === 0 ? (
-            <span className="text-zinc-500">None</span>
+            <span className="text-zinc-500 font-normal">None</span>
           ) : (
             (calculation.buildingDetails || Object.entries(totalBuildings).map(([name, count]) => ({ name, count, icon: undefined, pairedCatalystIcon: undefined }))).map((bldg) => {
               const icon = bldg.icon;
@@ -135,7 +135,7 @@ export function RecipeGraphView({
               return (
                 <span
                   key={bldg.name}
-                  className="inline-flex items-center gap-1.5 rounded bg-white/[0.04] px-2 py-0.5 text-zinc-200"
+                  className="metrics-chip inline-flex items-center gap-1.5 rounded bg-white/[0.04] px-2 py-0.5 text-zinc-200 font-normal text-xs"
                 >
                   <div className="flex items-center gap-0.5 shrink-0">
                     {isImg ? (
@@ -161,8 +161,10 @@ export function RecipeGraphView({
                       />
                     ) : null}
                   </div>
-                  <span>{bldg.name}</span>
-                  <span className="font-mono font-semibold text-indigo-400">×{bldg.count}</span>
+                  <span className="font-normal text-zinc-400">{bldg.name}</span>
+                  <span className="font-mono font-normal text-indigo-400">
+                    ×{typeof bldg.count === "number" ? Number(bldg.count.toFixed(1)) : bldg.count}
+                  </span>
                 </span>
               );
             })
@@ -170,12 +172,12 @@ export function RecipeGraphView({
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <span className="flex items-center gap-1.5 font-medium text-zinc-400">
+          <span className="flex items-center gap-1.5 font-bold text-zinc-300">
             <Boxes className="h-3.5 w-3.5 text-emerald-400" />
-            <span>Raw Inputs:</span>
+            <span className="font-bold">Raw Inputs:</span>
           </span>
           {rawIngredients.length === 0 ? (
-            <span className="text-zinc-500">None</span>
+            <span className="text-zinc-500 font-normal">None</span>
           ) : (
             rawIngredients.map((raw) => {
               const icon = raw.icon;
@@ -183,7 +185,7 @@ export function RecipeGraphView({
               return (
                 <span
                   key={raw.itemId}
-                  className="inline-flex items-center gap-1.5 rounded bg-white/[0.04] px-2 py-0.5 text-zinc-200"
+                  className="metrics-chip inline-flex items-center gap-1.5 rounded bg-white/[0.04] px-2 py-0.5 text-zinc-400 font-normal text-xs"
                 >
                   {isImg ? (
                     <img
@@ -197,8 +199,8 @@ export function RecipeGraphView({
                   ) : icon ? (
                     <span className="text-xs leading-none">{icon}</span>
                   ) : null}
-                  <span>{raw.itemName}</span>
-                  <span className="font-mono font-semibold text-emerald-400">
+                  <span className="font-normal text-zinc-400">{raw.itemName}</span>
+                  <span className="font-mono font-normal text-emerald-400">
                     {raw.requiredPerMinute}/m
                   </span>
                 </span>

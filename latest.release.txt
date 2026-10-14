@@ -88,3 +88,47 @@ Updates:
 - Featured engineering works carousel, stacked enterprise project timeline, and skill depth grid.
 - Comprehensive unit testing and full strict TypeScript coverage.
 
+================================================================================
+Release Name: v1.0.0 - Genesis Release
+App: ItemList Home (@mono/itemlist-home)
+Platforms: Web (Next.js 16 App Router)
+Package ID: online.itemlist.home
+--------------------------------------------------------------------------------
+Updates:
+- Centralized landing hub and game directory for production calculators.
+- Game selector cards for Minecraft Create mod and RimWorld production calculators.
+- SEO optimized with Open Graph, Twitter cards, and structured JSON-LD metadata.
+
+================================================================================
+Release Name: v1.0.0 - Genesis Release
+App: ItemList Create (@mono/itemlist-create)
+Platforms: Web (Next.js 16 App Router)
+Package ID: online.itemlist.create
+--------------------------------------------------------------------------------
+Updates:
+- Interactive Minecraft Create mod recipe tree planner and calculation graph.
+- Kinetic speed RPM, processing duration, and building requirements analysis.
+- Crowd-sourced issue reporting and community consensus overrides support.
+
+================================================================================
+Release Name: v1.0.0 - Genesis Release
+App: ItemList RimWorld (@mono/itemlist-rimworld)
+Platforms: Web (Next.js 16 App Router)
+Package ID: online.itemlist.rimworld
+--------------------------------------------------------------------------------
+Updates:
+- RimWorld colony manufacturing and fabrication bench bill throughput planner.
+- Interactive recipe tree graph and work-time duration calculations.
+- Integrated issue reporting with server-side consensus processing.
+
+================================================================================
+Release Name: v1.0.0 - Genesis Release
+App: ItemList Admin (@mono/itemlist-admin)
+Platforms: Web (Next.js 16 App Router)
+Package ID: online.itemlist.admin
+--------------------------------------------------------------------------------
+Updates:
+- Staff administrative oversight portal for community data consensus and issue reports.
+- Authenticated status triage (pending, resolved, rejected) via api.machi.asia.
+- Supabase authentication with role-based access control.
+

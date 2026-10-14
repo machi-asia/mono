@@ -54,11 +54,48 @@ export const APP_REGISTRY: Record<string, AppMetadata> = {
     defaultUrl: "https://rose.machi.asia",
     description: "Conversational AI companion & voice agent",
   },
+  "itemlist-admin": {
+    id: "itemlist-admin",
+    name: "ItemList Admin",
+    subdomain: "admin.itemlist.online",
+    packageId: "online.itemlist.admin",
+    scheme: "itemlistadmin",
+    defaultUrl: "https://admin.itemlist.online",
+    description: "Administrative oversight & issue consensus portal",
+  },
+  "itemlist-create": {
+    id: "itemlist-create",
+    name: "ItemList Create",
+    subdomain: "create.itemlist.online",
+    packageId: "online.itemlist.create",
+    scheme: "itemlistcreate",
+    defaultUrl: "https://create.itemlist.online",
+    description: "Create mod recipe calculator & production planner",
+  },
+  "itemlist-rimworld": {
+    id: "itemlist-rimworld",
+    name: "ItemList RimWorld",
+    subdomain: "rimworld.itemlist.online",
+    packageId: "online.itemlist.rimworld",
+    scheme: "itemlistrimworld",
+    defaultUrl: "https://rimworld.itemlist.online",
+    description: "RimWorld recipe calculator & colony production",
+  },
+  "itemlist-home": {
+    id: "itemlist-home",
+    name: "ItemList Home",
+    subdomain: "itemlist.online",
+    packageId: "online.itemlist.home",
+    scheme: "itemlisthome",
+    defaultUrl: "https://itemlist.online",
+    description: "Unified portal for production recipe calculators",
+  },
 };
 
 /**
  * Validates if the returnTo URL belongs to an allowed host:
  * - Any *.machi.asia or machi.asia
+ * - Any *.itemlist.online or itemlist.online
  * - localhost or 127.0.0.1 on any port (3000-3999)
  */
 export function isAllowedRedirectUrl(urlStr: string): boolean {
@@ -72,6 +109,11 @@ export function isAllowedRedirectUrl(urlStr: string): boolean {
 
     // Allow *.machi.asia and machi.asia
     if (hostname === "machi.asia" || hostname.endsWith(".machi.asia")) {
+      return true;
+    }
+
+    // Allow *.itemlist.online and itemlist.online
+    if (hostname === "itemlist.online" || hostname.endsWith(".itemlist.online")) {
       return true;
     }
 
@@ -95,6 +137,18 @@ export function resolveAppFromUrl(urlStr: string): AppMetadata {
     const hostname = parsed.hostname.toLowerCase();
     const port = parsed.port;
 
+    if (hostname.includes("admin.itemlist") || hostname.includes("itemlist-admin") || port === "3013") {
+      return APP_REGISTRY["itemlist-admin"];
+    }
+    if (hostname.includes("create.itemlist") || hostname.includes("itemlist-create") || port === "3011") {
+      return APP_REGISTRY["itemlist-create"];
+    }
+    if (hostname.includes("rimworld.itemlist") || hostname.includes("itemlist-rimworld") || port === "3012") {
+      return APP_REGISTRY["itemlist-rimworld"];
+    }
+    if (hostname === "itemlist.online" || hostname === "www.itemlist.online" || port === "3010") {
+      return APP_REGISTRY["itemlist-home"];
+    }
     if (hostname.includes("calculator") || port === "3001") {
       return APP_REGISTRY.calculator;
     }

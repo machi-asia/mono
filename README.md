@@ -12,15 +12,22 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 | `calculator` | Multi-game production calculator with interactive recipe tree graph (styled throughput edge labels) and factory rate planner, a sortable item catalog (name/category carets) in gallery or list view, and per-item last-updated tracking |
 | `docs` | Documentation site — developer knowledge base, wiki articles, ADRs, component library showcases, and user manuals |
 | `hells-forge` | High-performance 2D multiplayer exploration space powered by Pixi.js, spatial circle collisions, WASD movement, and `@mono/sync` |
+| `portfolio` | Personal portfolio landing page utilizing @mono/components transparent scroll sections and showcase galleries |
+| `itemlist-home` | Centralized game production calculator directory and launch portal (`itemlist.online`) |
+| `itemlist-create` | Minecraft Create mod recipe tree planner and kinetic automation throughput calculator (`create.itemlist.online`) |
+| `itemlist-rimworld` | RimWorld colony manufacturing and fabrication bench bill throughput planner (`rimworld.itemlist.online`) |
+| `itemlist-admin` | Staff administrative moderation portal for community recipe data consensus and issue triage (`admin.itemlist.online`) |
 
 ## Packages
 
 | Package | Description |
 |---------|-------------|
 | `api-client` | Typed API client SDK configured via `NEXT_PUBLIC_API_URL` for communicating with `apps/api` |
+| `app-config` | Shared application metadata, route registry, and Supabase client configuration for ItemList |
 | `auth` | Centralized authentication via Supabase — auth provider, session management, middleware, data & privacy registry |
 | `database` | Centralized data/store via Supabase — client creation, types, queries |
 | `components` | Shared UI components + design system — tokens, theme, layout primitives (`Row`/`Col`/`Card`), and functional elements |
+| `game-calculator` | Shared recipe graph engine, Dagre dependency layout, issue reporting modals, and calculator views |
 | `rose` | Client UI components, voice mode overlay, settings modals, and usage bars for Rose AI companion |
 | `sync` | Realtime input dressing (`dressSyncFunction`), action registry, and WebRTC/SSE client transports |
 

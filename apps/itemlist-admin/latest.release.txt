@@ -1,0 +1,11 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-10-14
+App: ItemList Admin (@mono/itemlist-admin)
+Platforms: Web (Next.js 16 App Router)
+Package ID: online.itemlist.admin
+Capgo Channel: N/A
+
+Updates:
+- Staff administrative oversight portal for community data consensus and issue reports.
+- Authenticated status triage (pending, resolved, rejected) via api.machi.asia.
+- Supabase authentication with role-based access control.

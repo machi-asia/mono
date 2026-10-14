@@ -17,8 +17,7 @@
 .mono-scroll-split .mono-split-content {
   height: 100%;
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden auto;
   transform: scale(calc(1.08 - var(--m-progress, 0) * 0.08));
   background: transparent;
 }

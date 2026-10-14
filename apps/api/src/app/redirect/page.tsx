@@ -23,6 +23,9 @@ import {
   ExternalLink,
   Smartphone,
   Globe2,
+  ShieldCheck,
+  Wrench,
+  Boxes,
 } from "lucide-react";
 import "./redirect.css";
 
@@ -32,6 +35,10 @@ const APP_ICONS: Record<string, React.ComponentType<{ size?: number; className?:
   "hells-forge": Flame,
   portal: Globe,
   rose: Bot,
+  "itemlist-admin": ShieldCheck,
+  "itemlist-create": Wrench,
+  "itemlist-rimworld": Boxes,
+  "itemlist-home": Globe,
 };
 
 function isMobileDevice(): boolean {

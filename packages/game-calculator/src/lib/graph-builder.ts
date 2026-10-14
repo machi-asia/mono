@@ -407,10 +407,10 @@ export function calculateRecipeGraph(
       const cycleSeconds = Math.max(0.1, acc.recipe.processingTimeSeconds);
       const outputPerMachinePerMinute = (outputBatch / cycleSeconds) * 60;
       const count = acc.demandedOutputPerMinute / outputPerMachinePerMinute;
-      acc.buildingCount = Number(count.toFixed(2));
+      acc.buildingCount = Number(count.toFixed(1));
 
       const bName = acc.buildingName || "Assembler";
-      totalBuildings[bName] = (totalBuildings[bName] || 0) + Number(count.toFixed(2));
+      totalBuildings[bName] = Number(((totalBuildings[bName] || 0) + count).toFixed(1));
       if (!buildingIconsMap[bName]) {
         buildingIconsMap[bName] = acc.buildingIcon || resolveMachineIcon(bName);
       }
@@ -482,7 +482,7 @@ export function calculateRecipeGraph(
       item: acc.item,
       label: acc.item.name,
       itemIcon: acc.item.icon,
-      outputPerMinute: Number(acc.demandedOutputPerMinute.toFixed(2)),
+      outputPerMinute: Number(acc.demandedOutputPerMinute.toFixed(1)),
       isRequested: acc.requestedDirectly > 0,
       requestedQuantity: acc.requestedDirectly > 0 ? acc.requestedDirectly : undefined,
       isRawInput,

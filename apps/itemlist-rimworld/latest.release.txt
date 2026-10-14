@@ -1,0 +1,11 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-10-14
+App: ItemList RimWorld (@mono/itemlist-rimworld)
+Platforms: Web (Next.js 16 App Router)
+Package ID: online.itemlist.rimworld
+Capgo Channel: N/A
+
+Updates:
+- RimWorld colony manufacturing and fabrication bench bill throughput planner.
+- Interactive recipe tree graph and work-time duration calculations.
+- Integrated issue reporting with server-side consensus processing.

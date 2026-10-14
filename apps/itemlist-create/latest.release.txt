@@ -1,0 +1,11 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-10-14
+App: ItemList Create (@mono/itemlist-create)
+Platforms: Web (Next.js 16 App Router)
+Package ID: online.itemlist.create
+Capgo Channel: N/A
+
+Updates:
+- Interactive Minecraft Create mod recipe tree planner and calculation graph.
+- Kinetic speed RPM, processing duration, and building requirements analysis.
+- Crowd-sourced issue reporting and community consensus overrides support.
