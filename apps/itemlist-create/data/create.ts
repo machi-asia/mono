@@ -326,34 +326,6 @@ export const CREATE_DATA: GameDataset = {
     "description": "File:Empty Blaze Burner.png|Empty",
     "recipes": [
       {
-        "id": "recipe-blaze-burner-crafter-0",
-        "name": "Mechanical Crafter - Blaze Burner",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "iron-sheet",
-            "itemName": "Iron Sheet",
-            "amount": 4
-          },
-          {
-            "itemId": "netherrack",
-            "itemName": "Netherrack",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "empty-blaze-burner",
-            "itemName": "Empty Blaze Burner",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
         "id": "recipe-blaze-burner-crafting-wiki-1",
         "name": "Mechanical Crafter - Blaze Burner",
         "method": "Mechanical Crafting",
@@ -404,29 +376,6 @@ export const CREATE_DATA: GameDataset = {
             "itemId": "block-of-andesite-alloy",
             "itemName": "Block of Andesite Alloy",
             "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-block-of-andesite-alloy-crafter-1",
-        "name": "Mechanical Crafter - Block of Andesite Alloy",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "block-of-andesite-alloy",
-            "itemName": "Block of Andesite Alloy",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 9
           }
         ],
         "speedRpm": 64,
@@ -510,29 +459,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-block-of-brass-crafter-1",
-        "name": "Mechanical Crafter - Block of Brass",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "block-of-brass",
-            "itemName": "Block of Brass",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "brass-ingot",
-            "itemName": "Brass Ingot",
-            "amount": 9
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -561,123 +487,6 @@ export const CREATE_DATA: GameDataset = {
           {
             "itemId": "block-of-copper",
             "itemName": "Block of Copper",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-block-of-copper-crafter-1",
-        "name": "Mechanical Crafter - Block of Copper",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "block-of-copper",
-            "itemName": "Block of Copper",
-            "amount": 4
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "cut-copper",
-            "itemName": "Cut Copper",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-block-of-copper-crafter-2",
-        "name": "Mechanical Crafter - Block of Copper",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "block-of-copper",
-            "itemName": "Block of Copper",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "copper-ingot",
-            "itemName": "Copper Ingot",
-            "amount": 9
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-block-of-copper-crafter-3",
-        "name": "Mechanical Crafter - Block of Copper",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "golden-sheet",
-            "itemName": "Golden Sheet",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          },
-          {
-            "itemId": "block-of-copper",
-            "itemName": "Block of Copper",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "steam-engine",
-            "itemName": "Steam Engine",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-block-of-copper-crafter-4",
-        "name": "Mechanical Crafter - Block of Copper",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 2
-          },
-          {
-            "itemId": "shaft",
-            "itemName": "Shaft",
-            "amount": 1
-          },
-          {
-            "itemId": "copper-ingot",
-            "itemName": "Copper Ingot",
-            "amount": 3
-          },
-          {
-            "itemId": "block-of-copper",
-            "itemName": "Block of Copper",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "copper-backtank",
-            "itemName": "Copper Backtank",
             "amount": 1
           }
         ],
@@ -712,29 +521,6 @@ export const CREATE_DATA: GameDataset = {
             "itemId": "block-of-experience",
             "itemName": "Block of Experience",
             "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-block-of-experience-crafter-1",
-        "name": "Mechanical Crafter - Block of Experience",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "block-of-experience",
-            "itemName": "Block of Experience",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "nugget-of-experience",
-            "itemName": "Nugget of Experience",
-            "amount": 9
           }
         ],
         "speedRpm": 64,
@@ -837,74 +623,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Building & Decoration",
     "icon": "/items/metal_bracket.png",
     "description": "Metal Bracket.png|Metal",
-    "recipes": [
-      {
-        "id": "recipe-bracket-crafter-0",
-        "name": "Mechanical Crafter - Bracket",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "stick",
-            "itemName": "Stick",
-            "amount": 3
-          },
-          {
-            "itemId": "oak-planks",
-            "itemName": "Oak Planks",
-            "amount": 2
-          },
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "wooden-bracket",
-            "itemName": "Wooden Bracket",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-bracket-crafter-1",
-        "name": "Mechanical Crafter - Bracket",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "iron-nugget",
-            "itemName": "Iron Nugget",
-            "amount": 3
-          },
-          {
-            "itemId": "iron-ingot",
-            "itemName": "Iron Ingot",
-            "amount": 2
-          },
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "metal-bracket",
-            "itemName": "Metal Bracket",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
@@ -942,39 +661,6 @@ export const CREATE_DATA: GameDataset = {
             "itemId": "brass-funnel",
             "itemName": "Brass Funnel",
             "amount": 2
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-brass-funnel-crafting-wiki-1",
-        "name": "Mechanical Crafter - Brass Funnel",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "brass-ingot",
-            "itemName": "Brass Ingot",
-            "amount": 1
-          },
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "dried-kelp",
-            "itemName": "Dried Kelp",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "brass-funnel",
-            "itemName": "Brass Funnel",
-            "amount": 1
           }
         ],
         "speedRpm": 64,
@@ -1093,146 +779,6 @@ export const CREATE_DATA: GameDataset = {
             "itemId": "cardboard",
             "itemName": "Cardboard",
             "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-cardboard-crafter-1",
-        "name": "Mechanical Crafter - Cardboard",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "cardboard",
-            "itemName": "Cardboard",
-            "amount": 4
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "block-of-cardboard",
-            "itemName": "Block of Cardboard",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-cardboard-crafter-2",
-        "name": "Mechanical Crafter - Cardboard",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "block-of-cardboard",
-            "itemName": "Block of Cardboard",
-            "amount": 1
-          },
-          {
-            "itemId": "string",
-            "itemName": "String",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "bound-block-of-cardboard",
-            "itemName": "Bound Block of Cardboard",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-cardboard-crafter-3",
-        "name": "Mechanical Crafter - Cardboard",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "cardboard",
-            "itemName": "Cardboard",
-            "amount": 1
-          },
-          {
-            "itemId": "paper",
-            "itemName": "Paper",
-            "amount": 3
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "book",
-            "itemName": "Book",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-cardboard-crafter-4",
-        "name": "Mechanical Crafter - Cardboard",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "stick",
-            "itemName": "Stick",
-            "amount": 8
-          },
-          {
-            "itemId": "cardboard",
-            "itemName": "Cardboard",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "item-frame",
-            "itemName": "Item Frame",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-cardboard-crafter-5",
-        "name": "Mechanical Crafter - Cardboard",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "black-dye",
-            "itemName": "Black Dye",
-            "amount": 1
-          },
-          {
-            "itemId": "string",
-            "itemName": "String",
-            "amount": 1
-          },
-          {
-            "itemId": "cardboard",
-            "itemName": "Cardboard",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "name-tag",
-            "itemName": "Name Tag",
-            "amount": 1
           }
         ],
         "speedRpm": 64,
@@ -1485,1322 +1031,6 @@ export const CREATE_DATA: GameDataset = {
           }
         ],
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-0",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "cogwheel",
-            "itemName": "Cogwheel",
-            "amount": 4
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "gearbox",
-            "itemName": "Gearbox",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-1",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wooden-slab",
-            "itemName": "Wooden Slab",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "cogwheel",
-            "itemName": "Cogwheel",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "gantry-carriage",
-            "itemName": "Gantry Carriage",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-2",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "compass",
-            "itemName": "Compass",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "speedometer",
-            "itemName": "Speedometer",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-3",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "stick",
-            "itemName": "Stick",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "analog-lever",
-            "itemName": "Analog Lever",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-4",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-hand",
-            "itemName": "Brass Hand",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "deployer",
-            "itemName": "Deployer",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-5",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wooden-slab",
-            "itemName": "Wooden Slab",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "piston-extension-pole",
-            "itemName": "Piston Extension Pole",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-piston",
-            "itemName": "Mechanical Piston",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-6",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "iron-nugget",
-            "itemName": "Iron Nugget",
-            "amount": 3
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "encased-chain-drive",
-            "itemName": "Encased Chain Drive",
-            "amount": 2
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-7",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "wool",
-            "itemName": "Wool",
-            "amount": 1
-          },
-          {
-            "itemId": "iron-sheet",
-            "itemName": "Iron Sheet",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "rope-pulley",
-            "itemName": "Rope Pulley",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-8",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "cogwheel",
-            "itemName": "Cogwheel",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "whisk",
-            "itemName": "Whisk",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-mixer",
-            "itemName": "Mechanical Mixer",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-9",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "iron-sheet",
-            "itemName": "Iron Sheet",
-            "amount": 3
-          },
-          {
-            "itemId": "iron-ingot",
-            "itemName": "Iron Ingot",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-saw",
-            "itemName": "Mechanical Saw",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-10",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "depot",
-            "itemName": "Depot",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-11",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "iron-sheet",
-            "itemName": "Iron Sheet",
-            "amount": 3
-          },
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 3
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-plough",
-            "itemName": "Mechanical Plough",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-12",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 3
-          },
-          {
-            "itemId": "iron-ingot",
-            "itemName": "Iron Ingot",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-drill",
-            "itemName": "Mechanical Drill",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-13",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 4
-          },
-          {
-            "itemId": "iron-sheet",
-            "itemName": "Iron Sheet",
-            "amount": 2
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-harvester",
-            "itemName": "Mechanical Harvester",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-14",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "cogwheel",
-            "itemName": "Cogwheel",
-            "amount": 1
-          },
-          {
-            "itemId": "redstone-dust",
-            "itemName": "Redstone Dust",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "gearshift",
-            "itemName": "Gearshift",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-15",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "shaft",
-            "itemName": "Shaft",
-            "amount": 1
-          },
-          {
-            "itemId": "redstone-dust",
-            "itemName": "Redstone Dust",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "clutch",
-            "itemName": "Clutch",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-16",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "shaft",
-            "itemName": "Shaft",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "propeller",
-            "itemName": "Propeller",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "encased-fan",
-            "itemName": "Encased Fan",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-17",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wooden-slab",
-            "itemName": "Wooden Slab",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "shaft",
-            "itemName": "Shaft",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-bearing",
-            "itemName": "Mechanical Bearing",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-18",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "shaft",
-            "itemName": "Shaft",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "block-of-iron",
-            "itemName": "Block of Iron",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-press",
-            "itemName": "Mechanical Press",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-19",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "cogwheel",
-            "itemName": "Cogwheel",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "stone",
-            "itemName": "Stone",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "millstone",
-            "itemName": "Millstone",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-20",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "chute",
-            "itemName": "Chute",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "portable-storage-interface",
-            "itemName": "Portable Storage Interface",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-21",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "oak-planks",
-            "itemName": "Oak Planks",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "clock",
-            "itemName": "Clock",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "cuckoo-clock",
-            "itemName": "Cuckoo Clock",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-22",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "stone-button-any-wood-button",
-            "itemName": "Stone Button;Any Wood Button",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "contraption-controls",
-            "itemName": "Contraption Controls",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-23",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "crushing-wheel",
-            "itemName": "Crushing Wheel",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-roller",
-            "itemName": "Mechanical Roller",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-24",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wood-door",
-            "itemName": "Wood Door",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "andesite-door",
-            "itemName": "Andesite Door",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-25",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "iron-bars",
-            "itemName": "Iron Bars",
-            "amount": 1
-          },
-          {
-            "itemId": "copper-casing",
-            "itemName": "Copper Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "item-drain",
-            "itemName": "Item Drain",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-26",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "copper-casing",
-            "itemName": "Copper Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "dried-kelp-block",
-            "itemName": "Dried Kelp Block",
-            "amount": 1
-          },
-          {
-            "itemId": "copper-sheet",
-            "itemName": "Copper Sheet",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "hose-pulley",
-            "itemName": "Hose Pulley",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-27",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "copper-casing",
-            "itemName": "Copper Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "chute",
-            "itemName": "Chute",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "portable-fluid-interface",
-            "itemName": "Portable Fluid Interface",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-28",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "copper-casing",
-            "itemName": "Copper Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "dried-kelp",
-            "itemName": "Dried Kelp",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "spout",
-            "itemName": "Spout",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-29",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wood-door",
-            "itemName": "Wood Door",
-            "amount": 1
-          },
-          {
-            "itemId": "copper-casing",
-            "itemName": "Copper Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "copper-door",
-            "itemName": "Copper Door",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-30",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "oak-planks",
-            "itemName": "Oak Planks",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "clockwork-bearing",
-            "itemName": "Clockwork Bearing",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-31",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "observer",
-            "itemName": "Observer",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "smart-observer",
-            "itemName": "Smart Observer",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-32",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "crafting-table",
-            "itemName": "Crafting Table",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-crafter",
-            "itemName": "Mechanical Crafter",
-            "amount": 3
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-33",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "precision-mechanism",
-            "itemName": "Precision Mechanism",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "rotation-speed-controller",
-            "itemName": "Rotation Speed Controller",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-34",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "brass-sheet",
-            "itemName": "Brass Sheet",
-            "amount": 3
-          },
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          },
-          {
-            "itemId": "precision-mechanism",
-            "itemName": "Precision Mechanism",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-arm",
-            "itemName": "Mechanical Arm",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-35",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "cogwheel",
-            "itemName": "Cogwheel",
-            "amount": 1
-          },
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "sequenced-gearshift",
-            "itemName": "Sequenced Gearshift",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-36",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "dried-kelp-block",
-            "itemName": "Dried Kelp Block",
-            "amount": 1
-          },
-          {
-            "itemId": "iron-sheet",
-            "itemName": "Iron Sheet",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "elevator-pulley",
-            "itemName": "Elevator Pulley",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-37",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "redstone-comparator",
-            "itemName": "Redstone Comparator",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "threshold-switch",
-            "itemName": "Threshold Switch",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-38",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "train-casing",
-            "itemName": "Train Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "train-signal",
-            "itemName": "Train Signal",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-39",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "train-casing",
-            "itemName": "Train Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "compass",
-            "itemName": "Compass",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "train-station",
-            "itemName": "Train Station",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-40",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "train-casing",
-            "itemName": "Train Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "wood-pressure-plate-stone-pressure-plate-polished-blackstone-pressure-plate-light-weighted-pressure-plate-heavy-weighted-pressure-plate",
-            "itemName": "Wood Pressure Plate;Stone Pressure Plate;Polished Blackstone Pressure Plate;Light Weighted Pressure Plate;Heavy Weighted Pressure Plate",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "train-observer",
-            "itemName": "Train Observer",
-            "amount": 2
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-casing-crafter-41",
-        "name": "Mechanical Crafter - Casing",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "lever",
-            "itemName": "Lever",
-            "amount": 1
-          },
-          {
-            "itemId": "train-casing",
-            "itemName": "Train Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "precision-mechanism",
-            "itemName": "Precision Mechanism",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "train-controls",
-            "itemName": "Train Controls",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -2901,39 +1131,6 @@ export const CREATE_DATA: GameDataset = {
             "itemId": "chute",
             "itemName": "Chute",
             "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-chute-crafter-1",
-        "name": "Mechanical Crafter - Chute",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "brass-sheet",
-            "itemName": "Brass Sheet",
-            "amount": 1
-          },
-          {
-            "itemId": "chute",
-            "itemName": "Chute",
-            "amount": 1
-          },
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "smart-chute",
-            "itemName": "Smart Chute",
-            "amount": 1
           }
         ],
         "speedRpm": 64,
@@ -3103,6 +1300,39 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
+      },
+      {
+        "id": "recipe-casing-crafter-30",
+        "name": "Mechanical Crafter - Clockwork Bearing",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
+        "processingTimeSeconds": 4,
+        "ingredients": [
+          {
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
+            "amount": 1
+          },
+          {
+            "itemId": "brass-casing",
+            "itemName": "Brass Casing",
+            "amount": 1
+          },
+          {
+            "itemId": "electron-tube",
+            "itemName": "Electron Tube",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "clockwork-bearing",
+            "itemName": "Clockwork Bearing",
+            "amount": 1
+          }
+        ],
+        "speedRpm": 64,
+        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -3207,62 +1437,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-cogwheel-crafter-1",
-        "name": "Mechanical Crafter - Cogwheel",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "shaft",
-            "itemName": "Shaft",
-            "amount": 1
-          },
-          {
-            "itemId": "oak-planks",
-            "itemName": "Oak Planks",
-            "amount": 2
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "large-cogwheel",
-            "itemName": "Large Cogwheel",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-cogwheel-crafter-2",
-        "name": "Mechanical Crafter - Cogwheel",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "cogwheel",
-            "itemName": "Cogwheel",
-            "amount": 1
-          },
-          {
-            "itemId": "oak-planks",
-            "itemName": "Oak Planks",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "large-cogwheel",
-            "itemName": "Large Cogwheel",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -3317,6 +1491,39 @@ export const CREATE_DATA: GameDataset = {
           {
             "itemId": "oak-button",
             "itemName": "Oak Button",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "contraption-controls",
+            "itemName": "Contraption Controls",
+            "amount": 1
+          }
+        ],
+        "speedRpm": 64,
+        "sourceMod": "Create Mod"
+      },
+      {
+        "id": "recipe-casing-crafter-22",
+        "name": "Mechanical Crafter - Contraption Controls",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
+        "processingTimeSeconds": 4,
+        "ingredients": [
+          {
+            "itemId": "stone-button-any-wood-button",
+            "itemName": "Stone Button;Any Wood Button",
+            "amount": 1
+          },
+          {
+            "itemId": "andesite-casing",
+            "itemName": "Andesite Casing",
+            "amount": 1
+          },
+          {
+            "itemId": "electron-tube",
+            "itemName": "Electron Tube",
             "amount": 1
           }
         ],
@@ -4236,34 +2443,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-factory-gauge-crafting-wiki-1",
-        "name": "Mechanical Crafter - Factory Gauge",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "stock-link",
-            "itemName": "Stock Link",
-            "amount": 1
-          },
-          {
-            "itemId": "precision-mechanism",
-            "itemName": "Precision Mechanism",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "factory-gauge",
-            "itemName": "Factory Gauge",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -4454,31 +2633,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Building & Decoration",
     "icon": "/items/framed_glass.png",
     "description": "Framed Glass.png|Framed",
-    "recipes": [
-      {
-        "id": "recipe-framed-glass-crafter-0",
-        "name": "Mechanical Crafter - Framed Glass",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "framed-glass",
-            "itemName": "Framed Glass",
-            "amount": 6
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "framed-glass-pane",
-            "itemName": "Framed Glass Pane",
-            "amount": 16
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
@@ -4560,34 +2715,6 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-gantry-carriage-crafter-1",
-        "name": "Mechanical Crafter - Gantry Carriage",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 2
-          },
-          {
-            "itemId": "redstone-dust",
-            "itemName": "Redstone Dust",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "gantry-shaft",
-            "itemName": "Gantry Shaft",
-            "amount": 8
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
         "id": "recipe-gantry-carriage-crafting-wiki-2",
         "name": "Mechanical Crafter - Gantry Carriage",
         "method": "Mechanical Crafting",
@@ -4642,29 +2769,6 @@ export const CREATE_DATA: GameDataset = {
           {
             "itemId": "gearbox",
             "itemName": "Gearbox",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-gearbox-crafter-1",
-        "name": "Mechanical Crafter - Gearbox",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "vertical-gearbox-gearbox",
-            "itemName": "Vertical Gearbox;Gearbox",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "gearbox-vertical-gearbox",
-            "itemName": "Gearbox;Vertical Gearbox",
             "amount": 1
           }
         ],
@@ -5227,29 +3331,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-linear-chassis-crafter-1",
-        "name": "Mechanical Crafter - Linear Chassis",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "linear-chassis-secondary-linear-chassis",
-            "itemName": "Linear Chassis;Secondary Linear Chassis",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "secondary-linear-chassis-linear-chassis",
-            "itemName": "Secondary Linear Chassis;Linear Chassis",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -5497,191 +3578,6 @@ export const CREATE_DATA: GameDataset = {
             "itemId": "mechanical-crafter",
             "itemName": "Mechanical Crafter",
             "amount": 3
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-mechanical-crafter-crafter-1",
-        "name": "Mechanical Crafter - Mechanical Crafter",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "speedRpm": 64,
-        "ingredients": [
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 16
-          },
-          {
-            "itemId": "oak-planks",
-            "itemName": "Oak Planks",
-            "amount": 4
-          },
-          {
-            "itemId": "stone",
-            "itemName": "Stone",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "crushing-wheel",
-            "itemName": "Crushing Wheel",
-            "amount": 2
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-mechanical-crafter-crafter-2",
-        "name": "Mechanical Crafter - Mechanical Crafter",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "speedRpm": 64,
-        "ingredients": [
-          {
-            "itemId": "brass-ingot",
-            "itemName": "Brass Ingot",
-            "amount": 1
-          },
-          {
-            "itemId": "precision-mechanism",
-            "itemName": "Precision Mechanism",
-            "amount": 1
-          },
-          {
-            "itemId": "stick",
-            "itemName": "Stick",
-            "amount": 6
-          },
-          {
-            "itemId": "brass-hand",
-            "itemName": "Brass Hand",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "extendo-grip",
-            "itemName": "Extendo Grip",
-            "amount": 1
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-mechanical-crafter-crafter-3",
-        "name": "Mechanical Crafter - Mechanical Crafter",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "speedRpm": 64,
-        "ingredients": [
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          },
-          {
-            "itemId": "precision-mechanism",
-            "itemName": "Precision Mechanism",
-            "amount": 1
-          },
-          {
-            "itemId": "fluid-pipe",
-            "itemName": "Fluid Pipe",
-            "amount": 3
-          },
-          {
-            "itemId": "copper-ingot",
-            "itemName": "Copper Ingot",
-            "amount": 2
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "potato-cannon",
-            "itemName": "Potato Cannon",
-            "amount": 1
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-mechanical-crafter-crafter-4",
-        "name": "Mechanical Crafter - Mechanical Crafter",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "speedRpm": 64,
-        "ingredients": [
-          {
-            "itemId": "glass-any-stained-glass",
-            "itemName": "glass;Any Stained Glass",
-            "amount": 3
-          },
-          {
-            "itemId": "ender-pearl",
-            "itemName": "Ender Pearl",
-            "amount": 1
-          },
-          {
-            "itemId": "precision-mechanism",
-            "itemName": "Precision Mechanism",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-ingot",
-            "itemName": "Brass Ingot",
-            "amount": 1
-          },
-          {
-            "itemId": "obsidian",
-            "itemName": "Obsidian",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "wand-of-symmetry",
-            "itemName": "Wand Of Symmetry",
-            "amount": 1
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-mechanical-crafter-mechanical-crafting-wiki-5",
-        "name": "Mechanical Crafter - Mechanical Crafter",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "crafting-table",
-            "itemName": "Crafting Table",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-crafter",
-            "itemName": "Mechanical Crafter",
-            "amount": 1
           }
         ],
         "speedRpm": 64,
@@ -5981,62 +3877,6 @@ export const CREATE_DATA: GameDataset = {
             "itemId": "mechanical-piston",
             "itemName": "Mechanical Piston",
             "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-mechanical-piston-crafter-1",
-        "name": "Mechanical Crafter - Mechanical Piston",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "mechanical-piston",
-            "itemName": "Mechanical Piston",
-            "amount": 1
-          },
-          {
-            "itemId": "slimeball",
-            "itemName": "Slimeball",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "sticky-mechanical-piston",
-            "itemName": "Sticky Mechanical Piston",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-mechanical-piston-crafter-2",
-        "name": "Mechanical Crafter - Mechanical Piston",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "oak-planks",
-            "itemName": "Oak Planks",
-            "amount": 2
-          },
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "piston-extension-pole",
-            "itemName": "Piston Extension Pole",
-            "amount": 8
           }
         ],
         "speedRpm": 64,
@@ -6958,261 +4798,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Building & Decoration",
     "icon": "/items/oak_planks_1.png",
     "description": "Spruce_Planks.png|Spruce",
-    "recipes": [
-      {
-        "id": "recipe-planks-crafter-0",
-        "name": "Mechanical Crafter - Planks",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "oak-log",
-            "itemName": "Oak Log",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "oak-planks",
-            "itemName": "Oak Planks",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-planks-crafter-1",
-        "name": "Mechanical Crafter - Planks",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "spruce-log",
-            "itemName": "Spruce Log",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "spruce-planks",
-            "itemName": "Spruce Planks",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-planks-crafter-2",
-        "name": "Mechanical Crafter - Planks",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "birch-log",
-            "itemName": "Birch Log",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "birch-planks",
-            "itemName": "Birch Planks",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-planks-crafter-3",
-        "name": "Mechanical Crafter - Planks",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "jungle-log",
-            "itemName": "Jungle Log",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "jungle-planks",
-            "itemName": "Jungle Planks",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-planks-crafter-4",
-        "name": "Mechanical Crafter - Planks",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "acacia-log",
-            "itemName": "Acacia Log",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "acacia-planks",
-            "itemName": "Acacia Planks",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-planks-crafter-5",
-        "name": "Mechanical Crafter - Planks",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "dark-oak-log",
-            "itemName": "Dark Oak Log",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "dark-oak-planks",
-            "itemName": "Dark Oak Planks",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-planks-crafter-6",
-        "name": "Mechanical Crafter - Planks",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "mangrove-log",
-            "itemName": "Mangrove Log",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mangrove-planks",
-            "itemName": "Mangrove Planks",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-planks-crafter-7",
-        "name": "Mechanical Crafter - Planks",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "crimson-stem",
-            "itemName": "Crimson Stem",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "crimson-planks",
-            "itemName": "Crimson Planks",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-planks-crafter-8",
-        "name": "Mechanical Crafter - Planks",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "warped-stem",
-            "itemName": "Warped Stem",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "warped-planks",
-            "itemName": "Warped Planks",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-planks-crafter-9",
-        "name": "Mechanical Crafter - Planks",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "cherry-log",
-            "itemName": "Cherry Log",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "cherry-planks",
-            "itemName": "Cherry Planks",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-planks-crafter-10",
-        "name": "Mechanical Crafter - Planks",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "bamboo-block",
-            "itemName": "Bamboo Block",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "bamboo-planks",
-            "itemName": "Bamboo Planks",
-            "amount": 2
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
@@ -7297,41 +4883,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Logistics & Fluids",
     "icon": "/items/white_postbox.png",
     "description": "White Postbox.png|White",
-    "recipes": [
-      {
-        "id": "recipe-postbox-crafter-0",
-        "name": "Mechanical Crafter - Postbox",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "dye",
-            "itemName": "Dye",
-            "amount": 1
-          },
-          {
-            "itemId": "barrel",
-            "itemName": "Barrel",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "white-postbox-orange-postbox-magenta-postbox-light-blue-postbox-yellow-postbox-lime-postbox-pink-postbox-gray-postbox-light-gray-postbox-cyan-postbox-purple-postbox-blue-postbox-brown-postbox-green-postbox-red-postbox-black-postbox",
-            "itemName": "White Postbox;Orange Postbox;Magenta Postbox;Light Blue Postbox;Yellow Postbox;Lime Postbox;Pink Postbox;Gray Postbox;Light Gray Postbox;Cyan Postbox;Purple Postbox;Blue Postbox;Brown Postbox;Green Postbox;Red Postbox;Black Postbox",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
@@ -7768,34 +5320,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-redstone-link-crafting-wiki-1",
-        "name": "Mechanical Crafter - Redstone Link",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "transmitter",
-            "itemName": "Transmitter",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "redstone-link",
-            "itemName": "Redstone Link",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -7921,29 +5445,6 @@ export const CREATE_DATA: GameDataset = {
     "icon": "/items/rose_quartz_block.png",
     "description": "Rose Quartz Block.png|Block",
     "recipes": [
-      {
-        "id": "recipe-rose-quartz-block-crafter-0",
-        "name": "Mechanical Crafter - Rose Quartz Block",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "rose-quartz-tiles-small-rose-quartz-tiles",
-            "itemName": "Rose Quartz Tiles;Small Rose Quartz Tiles",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "small-rose-quartz-tiles-rose-quartz-tiles",
-            "itemName": "Small Rose Quartz Tiles;Rose Quartz Tiles",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
       {
         "id": "recipe-rose-quartz-block-crafting-wiki-1",
         "name": "Mechanical Crafter - Rose Quartz Block",
@@ -8173,34 +5674,6 @@ export const CREATE_DATA: GameDataset = {
     "description": "Cut Scoria Slab.png|Cut Slab",
     "recipes": [
       {
-        "id": "recipe-scoria-crafter-0",
-        "name": "Mechanical Crafter - Scoria",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "scoria",
-            "itemName": "Scoria",
-            "amount": 8
-          },
-          {
-            "itemId": "black-dye",
-            "itemName": "Black Dye",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "scorchia",
-            "itemName": "Scorchia",
-            "amount": 8
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
         "id": "recipe-scoria-crafting-wiki-1",
         "name": "Mechanical Crafter - Scoria",
         "method": "Mechanical Crafting",
@@ -8232,36 +5705,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Building & Decoration",
     "icon": "/items/white_seat.png",
     "description": "Orange Seat.png|Orange",
-    "recipes": [
-      {
-        "id": "recipe-seat-crafter-0",
-        "name": "Mechanical Crafter - Seat",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wool",
-            "itemName": "Wool",
-            "amount": 1
-          },
-          {
-            "itemId": "wooden-slab",
-            "itemName": "Wooden Slab",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "white-seat-orange-seat-magenta-seat-light-blue-seat-yellow-seat-lime-seat-pink-seat-gray-seat-light-gray-seat-cyan-seat-purple-seat-blue-seat-brown-seat-green-seat-red-seat-black-seat",
-            "itemName": "White Seat;Orange Seat;Magenta Seat;Light Blue Seat;Yellow Seat;Lime Seat;Pink Seat;Gray Seat;Light Gray Seat;Cyan Seat;Purple Seat;Blue Seat;Brown Seat;Green Seat;Red Seat;Black Seat",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
@@ -8392,148 +5836,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Building & Decoration",
     "icon": "/items/andesite_door_block.png",
     "description": "Sliding Doors are s with special functions on Contraptions.",
-    "recipes": [
-      {
-        "id": "recipe-sliding-door-crafter-0",
-        "name": "Mechanical Crafter - Sliding Door",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wood-door",
-            "itemName": "Wood Door",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "andesite-door",
-            "itemName": "Andesite Door",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-sliding-door-crafter-1",
-        "name": "Mechanical Crafter - Sliding Door",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wood-door",
-            "itemName": "Wood Door",
-            "amount": 1
-          },
-          {
-            "itemId": "copper-casing",
-            "itemName": "Copper Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "copper-door",
-            "itemName": "Copper Door",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-sliding-door-crafter-2",
-        "name": "Mechanical Crafter - Sliding Door",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wood-door",
-            "itemName": "Wood Door",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "brass-door",
-            "itemName": "Brass Door",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-sliding-door-crafter-3",
-        "name": "Mechanical Crafter - Sliding Door",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wood-door",
-            "itemName": "Wood Door",
-            "amount": 1
-          },
-          {
-            "itemId": "framed-glass",
-            "itemName": "Framed Glass",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "framed-glass-door",
-            "itemName": "Framed Glass Door",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-sliding-door-crafter-4",
-        "name": "Mechanical Crafter - Sliding Door",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wood-door",
-            "itemName": "Wood Door",
-            "amount": 1
-          },
-          {
-            "itemId": "train-casing",
-            "itemName": "Train Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "train-door",
-            "itemName": "Train Door",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
@@ -9023,34 +6326,6 @@ export const CREATE_DATA: GameDataset = {
     "description": "The Stressometer is used to measure the amount of Stress on a Shaft. This stress is the \"load\" of the system.",
     "recipes": [
       {
-        "id": "recipe-stressometer-crafter-0",
-        "name": "Mechanical Crafter - Stressometer",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "compass",
-            "itemName": "Compass",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "speedometer",
-            "itemName": "Speedometer",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
         "id": "recipe-stressometer-crafter-1",
         "name": "Mechanical Crafter - Stressometer",
         "method": "Mechanical Crafting",
@@ -9082,36 +6357,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Building & Decoration",
     "icon": "/items/red_table_cloth.png",
     "description": "Red Table Cloth.png|Red",
-    "recipes": [
-      {
-        "id": "recipe-table-cloth-crafter-0",
-        "name": "Mechanical Crafter - Table Cloth",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wool",
-            "itemName": "Wool",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "white-table-cloth-orange-table-cloth-magenta-table-cloth-light-blue-table-cloth-yellow-table-cloth-lime-table-cloth-pink-table-cloth-gray-table-cloth-light-gray-table-cloth-cyan-table-cloth-purple-table-cloth-blue-table-cloth-brown-table-cloth-green-table-cloth-red-table-cloth-black-table-cloth",
-            "itemName": "White Table Cloth;Orange Table Cloth;Magenta Table Cloth;Light Blue Table Cloth;Yellow Table Cloth;Lime Table Cloth;Pink Table Cloth;Gray Table Cloth;Light Gray Table Cloth;Cyan Table Cloth;Purple Table Cloth;Blue Table Cloth;Brown Table Cloth;Green Table Cloth;Red Table Cloth;Black Table Cloth",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
@@ -9196,31 +6442,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Building & Decoration",
     "icon": "/items/tiled_glass.png",
     "description": "Tiled Glass is a decorative variant of",
-    "recipes": [
-      {
-        "id": "recipe-tiled-glass-crafter-0",
-        "name": "Mechanical Crafter - Tiled Glass",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "tiled-glass",
-            "itemName": "Tiled Glass",
-            "amount": 6
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "tiled-glass-pane",
-            "itemName": "Tiled Glass Pane",
-            "amount": 16
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
@@ -9230,72 +6452,6 @@ export const CREATE_DATA: GameDataset = {
     "icon": "/items/brown_toolbox_1.png",
     "description": "Brown Toolbox.png|Brown",
     "recipes": [
-      {
-        "id": "recipe-toolbox-crafter-0",
-        "name": "Mechanical Crafter - Toolbox",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "cogwheel",
-            "itemName": "Cogwheel",
-            "amount": 1
-          },
-          {
-            "itemId": "golden-sheet",
-            "itemName": "Golden Sheet",
-            "amount": 2
-          },
-          {
-            "itemId": "chest",
-            "itemName": "Chest",
-            "amount": 1
-          },
-          {
-            "itemId": "leather",
-            "itemName": "Leather",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "brown-toolbox",
-            "itemName": "Brown Toolbox",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-toolbox-crafter-1",
-        "name": "Mechanical Crafter - Toolbox",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "brown-toolbox-white-toolbox-orange-toolbox-magenta-toolbox-light-blue-toolbox-yellow-toolbox-lime-toolbox-pink-toolbox-gray-toolbox-light-gray-toolbox-cyan-toolbox-purple-toolbox-blue-toolbox-green-toolbox-red-toolbox-black-toolbox",
-            "itemName": "Brown Toolbox;White Toolbox;Orange Toolbox;Magenta Toolbox;Light Blue Toolbox;Yellow Toolbox;Lime Toolbox;Pink Toolbox;Gray Toolbox;Light Gray Toolbox;Cyan Toolbox;Purple Toolbox;Blue Toolbox;Green Toolbox;Red Toolbox;Black Toolbox",
-            "amount": 1
-          },
-          {
-            "itemId": "dye",
-            "itemName": "Dye",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "white-toolbox-orange-toolbox-magenta-toolbox-light-blue-toolbox-yellow-toolbox-lime-toolbox-pink-toolbox-gray-toolbox-light-gray-toolbox-cyan-toolbox-purple-toolbox-blue-toolbox-brown-toolbox-green-toolbox-red-toolbox-black-toolbox",
-            "itemName": "White Toolbox;Orange Toolbox;Magenta Toolbox;Light Blue Toolbox;Yellow Toolbox;Lime Toolbox;Pink Toolbox;Gray Toolbox;Light Gray Toolbox;Cyan Toolbox;Purple Toolbox;Blue Toolbox;Brown Toolbox;Green Toolbox;Red Toolbox;Black Toolbox",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
       {
         "id": "recipe-toolbox-crafting-wiki-2",
         "name": "Mechanical Crafter - Toolbox",
@@ -9494,34 +6650,6 @@ export const CREATE_DATA: GameDataset = {
             "itemId": "train-signal",
             "itemName": "Train Signal",
             "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-train-signal-crafting-wiki-1",
-        "name": "Mechanical Crafter - Train Signal",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "train-casing",
-            "itemName": "Train Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "train-signal",
-            "itemName": "Train Signal",
-            "amount": 1
           }
         ],
         "speedRpm": 64,
@@ -9766,36 +6894,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Kinetics & Contraptions",
     "icon": "/items/copper_valve_handle.png",
     "description": "Copper Valve Handle.png|Copper",
-    "recipes": [
-      {
-        "id": "recipe-valve-handle-crafter-0",
-        "name": "Mechanical Crafter - Valve Handle",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "copper-sheet",
-            "itemName": "Copper Sheet",
-            "amount": 3
-          },
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "copper-valve-handle",
-            "itemName": "Copper Valve Handle",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
@@ -9836,34 +6935,6 @@ export const CREATE_DATA: GameDataset = {
           {
             "itemId": "water-wheel",
             "itemName": "Water Wheel",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-water-wheel-crafter-1",
-        "name": "Mechanical Crafter - Water Wheel",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "oak-planks",
-            "itemName": "Oak Planks",
-            "amount": 8
-          },
-          {
-            "itemId": "water-wheel",
-            "itemName": "Water Wheel",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "large-water-wheel",
-            "itemName": "Large Water Wheel",
             "amount": 1
           }
         ],
@@ -10092,85 +7163,6 @@ export const CREATE_DATA: GameDataset = {
     "description": "White_Sail Block.png|White Sail",
     "recipes": [
       {
-        "id": "recipe-windmill-sail-crafter-0",
-        "name": "Mechanical Crafter - Windmill Sail",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "white-sail",
-            "itemName": "White Sail",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "sail-frame",
-            "itemName": "Sail Frame",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-windmill-sail-crafter-1",
-        "name": "Mechanical Crafter - Windmill Sail",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "sail-frame",
-            "itemName": "Sail Frame",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "white-sail",
-            "itemName": "White Sail",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-windmill-sail-crafter-2",
-        "name": "Mechanical Crafter - Windmill Sail",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "wool",
-            "itemName": "Wool",
-            "amount": 1
-          },
-          {
-            "itemId": "stick",
-            "itemName": "Stick",
-            "amount": 2
-          },
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "white-sail",
-            "itemName": "White Sail",
-            "amount": 2
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
         "id": "recipe-windmill-sail-crafting-wiki-3",
         "name": "Mechanical Crafter - Windmill Sail",
         "method": "Mechanical Crafting",
@@ -10225,143 +7217,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Building & Decoration",
     "icon": "/items/oak_window_1.png",
     "description": "Spruce_Window.png|Spruce",
-    "recipes": [
-      {
-        "id": "recipe-window-crafter-0",
-        "name": "Mechanical Crafter - Window",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "oak-planks",
-            "itemName": "Oak Planks",
-            "amount": 3
-          },
-          {
-            "itemId": "glass-tiled-glass-framed-glass-horizontal-framed-glass-vertical-framed-glass",
-            "itemName": "Glass;Tiled Glass;Framed Glass;Horizontal Framed Glass;Vertical Framed Glass",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "oak-window",
-            "itemName": "Oak Window",
-            "amount": 2
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-window-crafter-1",
-        "name": "Mechanical Crafter - Window",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "iron-nugget",
-            "itemName": "Iron Nugget",
-            "amount": 3
-          },
-          {
-            "itemId": "glass-tiled-glass-framed-glass-horizontal-framed-glass-vertical-framed-glass",
-            "itemName": "Glass;Tiled Glass;Framed Glass;Horizontal Framed Glass;Vertical Framed Glass",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "ornate-iron-window",
-            "itemName": "Ornate Iron Window",
-            "amount": 2
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-window-crafter-2",
-        "name": "Mechanical Crafter - Window",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "block-of-industrial-iron",
-            "itemName": "Block of Industrial Iron",
-            "amount": 3
-          },
-          {
-            "itemId": "glass-tiled-glass-framed-glass-horizontal-framed-glass-vertical-framed-glass",
-            "itemName": "Glass;Tiled Glass;Framed Glass;Horizontal Framed Glass;Vertical Framed Glass",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "industrial-iron-window",
-            "itemName": "Industrial Iron Window",
-            "amount": 2
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-window-crafter-3",
-        "name": "Mechanical Crafter - Window",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "block-of-weathered-iron",
-            "itemName": "Block of Weathered Iron",
-            "amount": 3
-          },
-          {
-            "itemId": "glass-tiled-glass-framed-glass-horizontal-framed-glass-vertical-framed-glass",
-            "itemName": "Glass;Tiled Glass;Framed Glass;Horizontal Framed Glass;Vertical Framed Glass",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "weathered-iron-window",
-            "itemName": "Weathered Iron Window",
-            "amount": 2
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-window-crafter-4",
-        "name": "Mechanical Crafter - Window",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "oak-window",
-            "itemName": "Oak Window",
-            "amount": 6
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "oak-window-pane",
-            "itemName": "Oak Window Pane",
-            "amount": 16
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
@@ -10406,77 +7262,6 @@ export const CREATE_DATA: GameDataset = {
           }
         ],
         "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-brass-hand-crafter-1",
-        "name": "Mechanical Crafter - Brass Hand",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-hand",
-            "itemName": "Brass Hand",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "deployer",
-            "itemName": "Deployer",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-brass-hand-crafter-2",
-        "name": "Mechanical Crafter - Brass Hand",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "speedRpm": 64,
-        "ingredients": [
-          {
-            "itemId": "brass-ingot",
-            "itemName": "Brass Ingot",
-            "amount": 1
-          },
-          {
-            "itemId": "precision-mechanism",
-            "itemName": "Precision Mechanism",
-            "amount": 1
-          },
-          {
-            "itemId": "stick",
-            "itemName": "Stick",
-            "amount": 6
-          },
-          {
-            "itemId": "brass-hand",
-            "itemName": "Brass Hand",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "extendo-grip",
-            "itemName": "Extendo Grip",
-            "amount": 1
-          }
-        ],
         "sourceMod": "Create Mod"
       },
       {
@@ -14267,47 +11052,6 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-crushing-lapis-lazuli-ore-55",
-        "name": "Crushing Wheels (from Lapis Lazuli Ore)",
-        "method": "Crushing",
-        "buildingRequired": "Crushing Wheel",
-        "processingTimeSeconds": 0.45,
-        "speedRpm": 128,
-        "ingredients": [
-          {
-            "itemId": "lapis-lazuli-ore",
-            "itemName": "Lapis Lazuli Ore",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "lapis-lazuli",
-            "itemName": "Lapis Lazuli",
-            "amount": 10
-          },
-          {
-            "itemId": "lapis-lazuli",
-            "itemName": "Lapis Lazuli",
-            "amount": 1,
-            "chance": 50
-          },
-          {
-            "itemId": "nugget-of-experience",
-            "itemName": "Nugget of Experience",
-            "amount": 1,
-            "chance": 75
-          },
-          {
-            "itemId": "cobblestone",
-            "itemName": "Cobblestone",
-            "amount": 1,
-            "chance": 12
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
         "id": "recipe-crushing-nether-gold-ore-60",
         "name": "Crushing Wheels (from Nether Gold Ore)",
         "method": "Crushing",
@@ -17231,47 +13975,6 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-crushing-diamond-horse-armor-40",
-        "name": "Crushing Wheels (from Diamond Horse Armor)",
-        "method": "Crushing",
-        "buildingRequired": "Crushing Wheel",
-        "processingTimeSeconds": 0.95,
-        "speedRpm": 128,
-        "ingredients": [
-          {
-            "itemId": "diamond-horse-armor",
-            "itemName": "Diamond Horse Armor",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "diamond",
-            "itemName": "Diamond",
-            "amount": 1
-          },
-          {
-            "itemId": "leather",
-            "itemName": "Leather",
-            "amount": 2,
-            "chance": 50
-          },
-          {
-            "itemId": "diamond",
-            "itemName": "Diamond",
-            "amount": 3,
-            "chance": 10
-          },
-          {
-            "itemId": "string",
-            "itemName": "String",
-            "amount": 2,
-            "chance": 25
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
         "id": "recipe-crushing-diamond-ore-41",
         "name": "Crushing Wheels (from Diamond Ore)",
         "method": "Crushing",
@@ -17308,6 +14011,47 @@ export const CREATE_DATA: GameDataset = {
             "itemName": "Cobblestone",
             "amount": 1,
             "chance": 12
+          }
+        ],
+        "sourceMod": "Create Mod"
+      },
+      {
+        "id": "recipe-crushing-diamond-horse-armor-40",
+        "name": "Crushing Wheels (from Diamond Horse Armor)",
+        "method": "Crushing",
+        "buildingRequired": "Crushing Wheel",
+        "processingTimeSeconds": 0.95,
+        "speedRpm": 128,
+        "ingredients": [
+          {
+            "itemId": "diamond-horse-armor",
+            "itemName": "Diamond Horse Armor",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "diamond",
+            "itemName": "Diamond",
+            "amount": 1
+          },
+          {
+            "itemId": "leather",
+            "itemName": "Leather",
+            "amount": 2,
+            "chance": 50
+          },
+          {
+            "itemId": "diamond",
+            "itemName": "Diamond",
+            "amount": 3,
+            "chance": 10
+          },
+          {
+            "itemId": "string",
+            "itemName": "String",
+            "amount": 2,
+            "chance": 25
           }
         ],
         "sourceMod": "Create Mod"
@@ -17449,47 +14193,6 @@ export const CREATE_DATA: GameDataset = {
           {
             "itemId": "deepslate",
             "itemName": "Deepslate",
-            "amount": 1,
-            "chance": 12
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-crushing-lapis-lazuli-ore-55",
-        "name": "Crushing Wheels (from Lapis Lazuli Ore)",
-        "method": "Crushing",
-        "buildingRequired": "Crushing Wheel",
-        "processingTimeSeconds": 0.45,
-        "speedRpm": 128,
-        "ingredients": [
-          {
-            "itemId": "lapis-lazuli-ore",
-            "itemName": "Lapis Lazuli Ore",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "lapis-lazuli",
-            "itemName": "Lapis Lazuli",
-            "amount": 10
-          },
-          {
-            "itemId": "lapis-lazuli",
-            "itemName": "Lapis Lazuli",
-            "amount": 1,
-            "chance": 50
-          },
-          {
-            "itemId": "nugget-of-experience",
-            "itemName": "Nugget of Experience",
-            "amount": 1,
-            "chance": 75
-          },
-          {
-            "itemId": "cobblestone",
-            "itemName": "Cobblestone",
             "amount": 1,
             "chance": 12
           }
@@ -17807,6 +14510,65 @@ export const CREATE_DATA: GameDataset = {
     "description": "Produced by Create automation machines (Crushing, Bulk Washing).",
     "recipes": [
       {
+        "id": "recipe-fan-washing-crushed-gold-ore-3",
+        "name": "Bulk Washing (from Crushed Gold Ore)",
+        "method": "Bulk Washing",
+        "buildingRequired": "Encased Fan",
+        "processingTimeSeconds": 7.5,
+        "speedRpm": 128,
+        "ingredients": [
+          {
+            "itemId": "crushed-gold-ore",
+            "itemName": "Crushed Gold Ore",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "gold-nugget",
+            "itemName": "Gold Nugget",
+            "amount": 9
+          },
+          {
+            "itemId": "nether-quartz",
+            "itemName": "Nether Quartz",
+            "amount": 1,
+            "chance": 50
+          }
+        ],
+        "sourceMod": "Create Mod"
+      },
+      {
+        "id": "recipe-fan-washing-red-sand-10",
+        "name": "Bulk Washing (from Red Sand)",
+        "method": "Bulk Washing",
+        "buildingRequired": "Encased Fan",
+        "processingTimeSeconds": 7.5,
+        "speedRpm": 128,
+        "ingredients": [
+          {
+            "itemId": "red-sand",
+            "itemName": "Red Sand",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "gold-nugget",
+            "itemName": "Gold Nugget",
+            "amount": 3,
+            "chance": 12.5
+          },
+          {
+            "itemId": "dead-bush",
+            "itemName": "Dead Bush",
+            "amount": 1,
+            "chance": 5
+          }
+        ],
+        "sourceMod": "Create Mod"
+      },
+      {
         "id": "recipe-crushing-cut-ochrum-37",
         "name": "Crushing Wheels (from Cut Ochrum)",
         "method": "Crushing",
@@ -17880,53 +14642,6 @@ export const CREATE_DATA: GameDataset = {
             "itemName": "Iron Nugget",
             "amount": 1,
             "chance": 10
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-crushing-golden-horse-armor-48",
-        "name": "Crushing Wheels (from Golden Horse Armor)",
-        "method": "Crushing",
-        "buildingRequired": "Crushing Wheel",
-        "processingTimeSeconds": 0.95,
-        "speedRpm": 128,
-        "ingredients": [
-          {
-            "itemId": "golden-horse-armor",
-            "itemName": "Golden Horse Armor",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "gold-ingot",
-            "itemName": "Gold Ingot",
-            "amount": 2
-          },
-          {
-            "itemId": "leather",
-            "itemName": "Leather",
-            "amount": 2,
-            "chance": 50
-          },
-          {
-            "itemId": "gold-ingot",
-            "itemName": "Gold Ingot",
-            "amount": 2,
-            "chance": 50
-          },
-          {
-            "itemId": "string",
-            "itemName": "String",
-            "amount": 2,
-            "chance": 25
-          },
-          {
-            "itemId": "gold-nugget",
-            "itemName": "Gold Nugget",
-            "amount": 8,
-            "chance": 25
           }
         ],
         "sourceMod": "Create Mod"
@@ -18045,65 +14760,6 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-fan-washing-crushed-gold-ore-3",
-        "name": "Bulk Washing (from Crushed Gold Ore)",
-        "method": "Bulk Washing",
-        "buildingRequired": "Encased Fan",
-        "processingTimeSeconds": 7.5,
-        "speedRpm": 128,
-        "ingredients": [
-          {
-            "itemId": "crushed-gold-ore",
-            "itemName": "Crushed Gold Ore",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "gold-nugget",
-            "itemName": "Gold Nugget",
-            "amount": 9
-          },
-          {
-            "itemId": "nether-quartz",
-            "itemName": "Nether Quartz",
-            "amount": 1,
-            "chance": 50
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-fan-washing-red-sand-10",
-        "name": "Bulk Washing (from Red Sand)",
-        "method": "Bulk Washing",
-        "buildingRequired": "Encased Fan",
-        "processingTimeSeconds": 7.5,
-        "speedRpm": 128,
-        "ingredients": [
-          {
-            "itemId": "red-sand",
-            "itemName": "Red Sand",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "gold-nugget",
-            "itemName": "Gold Nugget",
-            "amount": 3,
-            "chance": 12.5
-          },
-          {
-            "itemId": "dead-bush",
-            "itemName": "Dead Bush",
-            "amount": 1,
-            "chance": 5
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
         "id": "recipe-fan-washing-soul-sand-12",
         "name": "Bulk Washing (from Soul Sand)",
         "method": "Bulk Washing",
@@ -18129,6 +14785,53 @@ export const CREATE_DATA: GameDataset = {
             "itemName": "Gold Nugget",
             "amount": 1,
             "chance": 2
+          }
+        ],
+        "sourceMod": "Create Mod"
+      },
+      {
+        "id": "recipe-crushing-golden-horse-armor-48",
+        "name": "Crushing Wheels (from Golden Horse Armor)",
+        "method": "Crushing",
+        "buildingRequired": "Crushing Wheel",
+        "processingTimeSeconds": 0.95,
+        "speedRpm": 128,
+        "ingredients": [
+          {
+            "itemId": "golden-horse-armor",
+            "itemName": "Golden Horse Armor",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "gold-ingot",
+            "itemName": "Gold Ingot",
+            "amount": 2
+          },
+          {
+            "itemId": "leather",
+            "itemName": "Leather",
+            "amount": 2,
+            "chance": 50
+          },
+          {
+            "itemId": "gold-ingot",
+            "itemName": "Gold Ingot",
+            "amount": 2,
+            "chance": 50
+          },
+          {
+            "itemId": "string",
+            "itemName": "String",
+            "amount": 2,
+            "chance": 25
+          },
+          {
+            "itemId": "gold-nugget",
+            "itemName": "Gold Nugget",
+            "amount": 8,
+            "chance": 25
           }
         ],
         "sourceMod": "Create Mod"
@@ -18689,6 +15392,52 @@ export const CREATE_DATA: GameDataset = {
     "description": "Produced by Create automation machines (Crushing, Milling).",
     "recipes": [
       {
+        "id": "recipe-crushing-any-wool-89",
+        "name": "Crushing Wheels (from Any Wool)",
+        "method": "Crushing",
+        "buildingRequired": "Crushing Wheel",
+        "processingTimeSeconds": 0.45,
+        "speedRpm": 128,
+        "ingredients": [
+          {
+            "itemId": "wool",
+            "itemName": "Wool",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "string",
+            "itemName": "String",
+            "amount": 1
+          }
+        ],
+        "sourceMod": "Create Mod"
+      },
+      {
+        "id": "recipe-milling-any-wool-43",
+        "name": "Millstone (from Any Wool)",
+        "method": "Milling",
+        "buildingRequired": "Millstone",
+        "processingTimeSeconds": 5,
+        "speedRpm": 32,
+        "ingredients": [
+          {
+            "itemId": "wool",
+            "itemName": "Wool",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "string",
+            "itemName": "String",
+            "amount": 1
+          }
+        ],
+        "sourceMod": "Create Mod"
+      },
+      {
         "id": "recipe-crushing-diamond-horse-armor-40",
         "name": "Crushing Wheels (from Diamond Horse Armor)",
         "method": "Crushing",
@@ -18775,52 +15524,6 @@ export const CREATE_DATA: GameDataset = {
           }
         ],
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-crushing-any-wool-89",
-        "name": "Crushing Wheels (from Any Wool)",
-        "method": "Crushing",
-        "buildingRequired": "Crushing Wheel",
-        "processingTimeSeconds": 0.45,
-        "speedRpm": 128,
-        "ingredients": [
-          {
-            "itemId": "wool",
-            "itemName": "Wool",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "string",
-            "itemName": "String",
-            "amount": 1
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-milling-any-wool-43",
-        "name": "Millstone (from Any Wool)",
-        "method": "Milling",
-        "buildingRequired": "Millstone",
-        "processingTimeSeconds": 5,
-        "speedRpm": 32,
-        "ingredients": [
-          {
-            "itemId": "wool",
-            "itemName": "Wool",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "string",
-            "itemName": "String",
-            "amount": 1
-          }
-        ],
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Vanilla"
@@ -18832,6 +15535,76 @@ export const CREATE_DATA: GameDataset = {
     "icon": "/items/wheat_seeds_je1_be1.png",
     "description": "Produced by Create automation machines (Crushing, Milling).",
     "recipes": [
+      {
+        "id": "recipe-crushing-wheat-86",
+        "name": "Crushing Wheels (from Wheat)",
+        "method": "Crushing",
+        "buildingRequired": "Crushing Wheel",
+        "processingTimeSeconds": 0.7,
+        "speedRpm": 128,
+        "ingredients": [
+          {
+            "itemId": "wheat",
+            "itemName": "Wheat",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "wheat-flour",
+            "itemName": "Wheat Flour",
+            "amount": 1
+          },
+          {
+            "itemId": "wheat-flour",
+            "itemName": "Wheat Flour",
+            "amount": 2,
+            "chance": 25
+          },
+          {
+            "itemId": "wheat-seeds",
+            "itemName": "Wheat Seeds",
+            "amount": 1,
+            "chance": 25
+          }
+        ],
+        "sourceMod": "Create Mod"
+      },
+      {
+        "id": "recipe-milling-wheat-40",
+        "name": "Millstone (from Wheat)",
+        "method": "Milling",
+        "buildingRequired": "Millstone",
+        "processingTimeSeconds": 5,
+        "speedRpm": 32,
+        "ingredients": [
+          {
+            "itemId": "wheat",
+            "itemName": "Wheat",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "wheat-flour",
+            "itemName": "Wheat Flour",
+            "amount": 1
+          },
+          {
+            "itemId": "wheat-flour",
+            "itemName": "Wheat Flour",
+            "amount": 2,
+            "chance": 25
+          },
+          {
+            "itemId": "wheat-seeds",
+            "itemName": "Wheat Seeds",
+            "amount": 1,
+            "chance": 25
+          }
+        ],
+        "sourceMod": "Create Mod"
+      },
       {
         "id": "recipe-crushing-fern-45",
         "name": "Crushing Wheels (from Fern)",
@@ -18945,41 +15718,6 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-crushing-wheat-86",
-        "name": "Crushing Wheels (from Wheat)",
-        "method": "Crushing",
-        "buildingRequired": "Crushing Wheel",
-        "processingTimeSeconds": 0.7,
-        "speedRpm": 128,
-        "ingredients": [
-          {
-            "itemId": "wheat",
-            "itemName": "Wheat",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "wheat-flour",
-            "itemName": "Wheat Flour",
-            "amount": 1
-          },
-          {
-            "itemId": "wheat-flour",
-            "itemName": "Wheat Flour",
-            "amount": 2,
-            "chance": 25
-          },
-          {
-            "itemId": "wheat-seeds",
-            "itemName": "Wheat Seeds",
-            "amount": 1,
-            "chance": 25
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
         "id": "recipe-milling-fern-17",
         "name": "Millstone (from Fern)",
         "method": "Milling",
@@ -19087,41 +15825,6 @@ export const CREATE_DATA: GameDataset = {
             "itemName": "Wheat Seeds",
             "amount": 1,
             "chance": 50
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-milling-wheat-40",
-        "name": "Millstone (from Wheat)",
-        "method": "Milling",
-        "buildingRequired": "Millstone",
-        "processingTimeSeconds": 5,
-        "speedRpm": 32,
-        "ingredients": [
-          {
-            "itemId": "wheat",
-            "itemName": "Wheat",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "wheat-flour",
-            "itemName": "Wheat Flour",
-            "amount": 1
-          },
-          {
-            "itemId": "wheat-flour",
-            "itemName": "Wheat Flour",
-            "amount": 2,
-            "chance": 25
-          },
-          {
-            "itemId": "wheat-seeds",
-            "itemName": "Wheat Seeds",
-            "amount": 1,
-            "chance": 25
           }
         ],
         "sourceMod": "Create Mod"
@@ -19295,29 +15998,6 @@ export const CREATE_DATA: GameDataset = {
     "description": "Produced by Create automation machines (Crushing, Milling).",
     "recipes": [
       {
-        "id": "recipe-crushing-granite-49",
-        "name": "Crushing Wheels (from Granite)",
-        "method": "Crushing",
-        "buildingRequired": "Crushing Wheel",
-        "processingTimeSeconds": 0.95,
-        "speedRpm": 128,
-        "ingredients": [
-          {
-            "itemId": "granite",
-            "itemName": "Granite",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "red-sand",
-            "itemName": "Red Sand",
-            "amount": 1
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
         "id": "recipe-crushing-terracotta-83",
         "name": "Crushing Wheels (from Terracotta)",
         "method": "Crushing",
@@ -19341,12 +16021,35 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-milling-granite-18",
-        "name": "Millstone (from Granite)",
+        "id": "recipe-milling-terracotta-39",
+        "name": "Millstone (from Terracotta)",
         "method": "Milling",
         "buildingRequired": "Millstone",
         "processingTimeSeconds": 5,
         "speedRpm": 32,
+        "ingredients": [
+          {
+            "itemId": "terracotta",
+            "itemName": "Terracotta",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "red-sand",
+            "itemName": "Red Sand",
+            "amount": 1
+          }
+        ],
+        "sourceMod": "Create Mod"
+      },
+      {
+        "id": "recipe-crushing-granite-49",
+        "name": "Crushing Wheels (from Granite)",
+        "method": "Crushing",
+        "buildingRequired": "Crushing Wheel",
+        "processingTimeSeconds": 0.95,
+        "speedRpm": 128,
         "ingredients": [
           {
             "itemId": "granite",
@@ -19364,16 +16067,16 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-milling-terracotta-39",
-        "name": "Millstone (from Terracotta)",
+        "id": "recipe-milling-granite-18",
+        "name": "Millstone (from Granite)",
         "method": "Milling",
         "buildingRequired": "Millstone",
         "processingTimeSeconds": 5,
         "speedRpm": 32,
         "ingredients": [
           {
-            "itemId": "terracotta",
-            "itemName": "Terracotta",
+            "itemId": "granite",
+            "itemName": "Granite",
             "amount": 1
           }
         ],
@@ -20226,12 +16929,12 @@ export const CREATE_DATA: GameDataset = {
     "description": "Produced by Create automation machines (Crushing, Milling).",
     "recipes": [
       {
-        "id": "recipe-crushing-sugar-cane-80",
-        "name": "Crushing Wheels (from Sugar Cane)",
-        "method": "Crushing",
-        "buildingRequired": "Crushing Wheel",
-        "processingTimeSeconds": 0.2,
-        "speedRpm": 128,
+        "id": "recipe-milling-sugar-cane-36",
+        "name": "Millstone (from Sugar Cane)",
+        "method": "Milling",
+        "buildingRequired": "Millstone",
+        "processingTimeSeconds": 5,
+        "speedRpm": 32,
         "ingredients": [
           {
             "itemId": "sugar-cane",
@@ -20255,12 +16958,12 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-milling-sugar-cane-36",
-        "name": "Millstone (from Sugar Cane)",
-        "method": "Milling",
-        "buildingRequired": "Millstone",
-        "processingTimeSeconds": 5,
-        "speedRpm": 32,
+        "id": "recipe-crushing-sugar-cane-80",
+        "name": "Crushing Wheels (from Sugar Cane)",
+        "method": "Crushing",
+        "buildingRequired": "Crushing Wheel",
+        "processingTimeSeconds": 0.2,
+        "speedRpm": 128,
         "ingredients": [
           {
             "itemId": "sugar-cane",
@@ -20317,12 +17020,12 @@ export const CREATE_DATA: GameDataset = {
     "description": "Produced by Create automation machines (Crushing, Milling).",
     "recipes": [
       {
-        "id": "recipe-crushing-wheat-86",
-        "name": "Crushing Wheels (from Wheat)",
-        "method": "Crushing",
-        "buildingRequired": "Crushing Wheel",
-        "processingTimeSeconds": 0.7,
-        "speedRpm": 128,
+        "id": "recipe-milling-wheat-40",
+        "name": "Millstone (from Wheat)",
+        "method": "Milling",
+        "buildingRequired": "Millstone",
+        "processingTimeSeconds": 5,
+        "speedRpm": 32,
         "ingredients": [
           {
             "itemId": "wheat",
@@ -20352,12 +17055,12 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-milling-wheat-40",
-        "name": "Millstone (from Wheat)",
-        "method": "Milling",
-        "buildingRequired": "Millstone",
-        "processingTimeSeconds": 5,
-        "speedRpm": 32,
+        "id": "recipe-crushing-wheat-86",
+        "name": "Crushing Wheels (from Wheat)",
+        "method": "Crushing",
+        "buildingRequired": "Crushing Wheel",
+        "processingTimeSeconds": 0.7,
+        "speedRpm": 128,
         "ingredients": [
           {
             "itemId": "wheat",
@@ -20956,62 +17659,6 @@ export const CREATE_DATA: GameDataset = {
     "description": "Produced by Create automation machines (Mixing).",
     "recipes": [
       {
-        "id": "recipe-crafting-andesite-alloy-iron",
-        "name": "Mechanical Crafter - Andesite Alloy (from Iron Nugget)",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 2,
-        "speedRpm": 64,
-        "ingredients": [
-          {
-            "itemId": "andesite",
-            "itemName": "Andesite",
-            "amount": 2
-          },
-          {
-            "itemId": "iron-nugget",
-            "itemName": "Iron Nugget",
-            "amount": 2
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-crafting-andesite-alloy-zinc",
-        "name": "Mechanical Crafter - Andesite Alloy (from Zinc Nugget)",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 2,
-        "speedRpm": 64,
-        "ingredients": [
-          {
-            "itemId": "andesite",
-            "itemName": "Andesite",
-            "amount": 2
-          },
-          {
-            "itemId": "zinc-nugget",
-            "itemName": "Zinc Nugget",
-            "amount": 2
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
         "id": "recipe-mixer-andesite-alloy-1",
         "name": "Mechanical Mixer - Andesite Alloy (from Andesite & Iron Nugget)",
         "method": "Mixing",
@@ -21068,15 +17715,76 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-andesite-alloy-crafting-wiki-4",
+        "id": "recipe-crafting-andesite-alloy-iron",
+        "name": "Mechanical Crafter - Andesite Alloy (from Iron Nugget)",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
+        "processingTimeSeconds": 2,
+        "speedRpm": 64,
+        "ingredients": [
+          {
+            "itemId": "andesite",
+            "itemName": "Andesite",
+            "amount": 2
+          },
+          {
+            "itemId": "iron-nugget",
+            "itemName": "Iron Nugget",
+            "amount": 2
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "andesite-alloy",
+            "itemName": "Andesite Alloy",
+            "amount": 1
+          }
+        ],
+        "sourceMod": "Create Mod"
+      },
+      {
+        "id": "recipe-crafting-andesite-alloy-zinc",
+        "name": "Mechanical Crafter - Andesite Alloy (from Zinc Nugget)",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
+        "processingTimeSeconds": 2,
+        "speedRpm": 64,
+        "ingredients": [
+          {
+            "itemId": "andesite",
+            "itemName": "Andesite",
+            "amount": 2
+          },
+          {
+            "itemId": "zinc-nugget",
+            "itemName": "Zinc Nugget",
+            "amount": 2
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "andesite-alloy",
+            "itemName": "Andesite Alloy",
+            "amount": 1
+          }
+        ],
+        "sourceMod": "Create Mod"
+      },
+      {
+        "id": "recipe-andesite-alloy-crafting-wiki-6",
         "name": "Mechanical Crafter - Andesite Alloy",
         "method": "Mechanical Crafting",
         "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "block-of-andesite-alloy",
-            "itemName": "Block of Andesite Alloy",
+            "itemId": "zinc-nugget",
+            "itemName": "Zinc Nugget",
+            "amount": 1
+          },
+          {
+            "itemId": "andesite",
+            "itemName": "Andesite",
             "amount": 1
           }
         ],
@@ -21114,20 +17822,15 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-andesite-alloy-crafting-wiki-6",
+        "id": "recipe-andesite-alloy-crafting-wiki-4",
         "name": "Mechanical Crafter - Andesite Alloy",
         "method": "Mechanical Crafting",
         "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "zinc-nugget",
-            "itemName": "Zinc Nugget",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite",
-            "itemName": "Andesite",
+            "itemId": "block-of-andesite-alloy",
+            "itemName": "Block of Andesite Alloy",
             "amount": 1
           }
         ],
@@ -21177,6 +17880,29 @@ export const CREATE_DATA: GameDataset = {
             "amount": 2
           }
         ],
+        "sourceMod": "Create Mod"
+      },
+      {
+        "id": "recipe-block-of-brass-crafter-1",
+        "name": "Mechanical Crafter - Block of Brass",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
+        "processingTimeSeconds": 4,
+        "ingredients": [
+          {
+            "itemId": "block-of-brass",
+            "itemName": "Block of Brass",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "itemId": "brass-ingot",
+            "itemName": "Brass Ingot",
+            "amount": 9
+          }
+        ],
+        "speedRpm": 64,
         "sourceMod": "Create Mod"
       }
     ],
@@ -21386,31 +18112,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Materials & Resources",
     "icon": "/items/stripped_oak_wood__ud__je1_be1.png",
     "description": "Produced by Create automation machines (Sawing).",
-    "recipes": [
-      {
-        "id": "recipe-saw-any-stripped-wood-0",
-        "name": "Mechanical Saw - Any Stripped Wood (from Any Wood)",
-        "method": "Sawing",
-        "buildingRequired": "Mechanical Saw",
-        "processingTimeSeconds": 1,
-        "speedRpm": 64,
-        "ingredients": [
-          {
-            "itemId": "wood",
-            "itemName": "Wood",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "stripped-wood",
-            "itemName": "Stripped Wood",
-            "amount": 1
-          }
-        ],
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
@@ -21419,31 +18121,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Building & Decoration",
     "icon": "/items/oak_planks_2.png",
     "description": "Produced by Create automation machines (Sawing).",
-    "recipes": [
-      {
-        "id": "recipe-saw-any-planks-1",
-        "name": "Mechanical Saw - Any Planks (from Any Stripped Wood)",
-        "method": "Sawing",
-        "buildingRequired": "Mechanical Saw",
-        "processingTimeSeconds": 1,
-        "speedRpm": 64,
-        "ingredients": [
-          {
-            "itemId": "stripped-wood",
-            "itemName": "Stripped Wood",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "oak-planks",
-            "itemName": "Oak Planks",
-            "amount": 6
-          }
-        ],
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
@@ -21452,31 +18130,7 @@ export const CREATE_DATA: GameDataset = {
     "category": "Materials & Resources",
     "icon": "/items/white_concrete.png",
     "description": "Produced by Create automation machines (Bulk Washing).",
-    "recipes": [
-      {
-        "id": "recipe-fan-washing-any-concrete-powder-0",
-        "name": "Bulk Washing (from Any Concrete Powder)",
-        "method": "Bulk Washing",
-        "buildingRequired": "Encased Fan",
-        "processingTimeSeconds": 7.5,
-        "speedRpm": 128,
-        "ingredients": [
-          {
-            "itemId": "concrete-powder",
-            "itemName": "Concrete Powder",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "concrete",
-            "itemName": "Concrete",
-            "amount": 1
-          }
-        ],
-        "sourceMod": "Create Mod"
-      }
-    ],
+    "recipes": [],
     "sourceMod": "Create Mod"
   },
   {
