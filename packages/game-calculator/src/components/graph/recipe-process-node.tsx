@@ -93,10 +93,13 @@ function RecipeProcessNodeComponent({ data }: NodeProps<RecipeCustomNode>) {
               onError={(e) => {
                 // If local image fails or 404s, fall back to Minecraft Wiki / assets URL or generic icon
                 const target = e.currentTarget;
+                const cleanName = currentLabel.toLowerCase().replace(/[^a-z0-9]+/g, "_");
                 if (!target.dataset.triedFallback) {
-                  target.dataset.triedFallback = "true";
-                  const cleanName = currentLabel.toLowerCase().replace(/[^a-z0-9]+/g, "_");
+                  target.dataset.triedFallback = "item";
                   target.src = `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.20.1/assets/minecraft/textures/item/${cleanName}.png`;
+                } else if (target.dataset.triedFallback === "item") {
+                  target.dataset.triedFallback = "block";
+                  target.src = `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.20.1/assets/minecraft/textures/block/${cleanName}.png`;
                 } else {
                   target.style.display = "none";
                   const parent = target.parentElement;

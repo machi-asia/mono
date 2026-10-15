@@ -7,7 +7,7 @@ export const CREATE_DATA: GameDataset = {
   "tagline": "Build kinetic contraptions, rotational power networks, and automated multi-step assembly lines.",
   "homeUrl": "https://itemlist.online",
   "items": [
-  {
+{
     "id": "adjustable-chain-gearshift",
     "name": "Adjustable Chain Gearshift",
     "category": "Kinetics & Contraptions",
@@ -19,34 +19,6 @@ export const CREATE_DATA: GameDataset = {
         "name": "Mechanical Crafter - Adjustable Chain Gearshift",
         "method": "Mechanical Crafting",
         "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "encased-chain-drive",
-            "itemName": "Encased Chain Drive",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "adjustable-chain-gearshift",
-            "itemName": "Adjustable Chain Gearshift",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-adjustable-chain-gearshift-crafting-wiki-1",
-        "name": "Crafting Table - Adjustable Chain Gearshift",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -110,14 +82,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-analog-lever-crafting-wiki-1",
-        "name": "Crafting Table - Analog Lever",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Analog Lever",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-stick",
-            "itemName": "{{MC|Stick",
+            "itemId": "stick",
+            "itemName": "Stick",
             "amount": 1
           }
         ],
@@ -322,9 +294,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-basin-crafting-wiki-1",
-        "name": "Crafting Table - Basin",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Basin",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -383,9 +355,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-blaze-burner-crafting-wiki-1",
-        "name": "Crafting Table - Blaze Burner",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Blaze Burner",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -462,9 +434,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-block-of-andesite-alloy-crafting-wiki-2",
-        "name": "Crafting Table - Block of Andesite Alloy",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Block of Andesite Alloy",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -770,9 +742,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-block-of-experience-crafting-wiki-2",
-        "name": "Crafting Table - Block of Experience",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Block of Experience",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -835,9 +807,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-block-of-zinc-crafting-wiki-1",
-        "name": "Crafting Table - Block of Zinc",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Block of Zinc",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -879,8 +851,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 3
           },
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 2
           },
           {
@@ -977,9 +949,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-brass-funnel-crafting-wiki-1",
-        "name": "Crafting Table - Brass Funnel",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Brass Funnel",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -993,8 +965,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-dried-kelp",
-            "itemName": "{{Mc|Dried Kelp",
+            "itemId": "dried-kelp",
+            "itemName": "Dried Kelp",
             "amount": 1
           }
         ],
@@ -1053,9 +1025,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-brass-tunnel-crafting-wiki-1",
-        "name": "Crafting Table - Brass Tunnel",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Brass Tunnel",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -1069,8 +1041,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-dried-kelp",
-            "itemName": "{{Mc|Dried Kelp",
+            "itemId": "dried-kelp",
+            "itemName": "Dried Kelp",
             "amount": 1
           }
         ],
@@ -1291,9 +1263,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-cardboard-crafting-wiki-7",
-        "name": "Crafting Table - Cardboard",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Cardboard",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -1354,8 +1326,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-log",
-            "itemName": "Any Log",
+            "itemId": "log",
+            "itemName": "Log",
             "amount": 2
           }
         ],
@@ -1550,8 +1522,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-slab",
-            "itemName": "Any Wood Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           },
           {
@@ -1672,8 +1644,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-slab",
-            "itemName": "Any Wood Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           },
           {
@@ -1738,8 +1710,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-wool",
-            "itemName": "Any Wool",
+            "itemId": "wool",
+            "itemName": "Wool",
             "amount": 1
           },
           {
@@ -2058,8 +2030,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-slab",
-            "itemName": "Any Wood Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           },
           {
@@ -2134,8 +2106,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-stone",
-            "itemName": "Any Stone",
+            "itemId": "stone",
+            "itemName": "Stone",
             "amount": 1
           }
         ],
@@ -2185,8 +2157,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 1
           },
           {
@@ -2218,8 +2190,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-stone-button-any-wood-button",
-            "itemName": "Any Stone Button;Any Wood Button",
+            "itemId": "stone-button-any-wood-button",
+            "itemName": "Stone Button;Any Wood Button",
             "amount": 1
           },
           {
@@ -2284,8 +2256,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-door",
-            "itemName": "Any Wood Door",
+            "itemId": "wood-door",
+            "itemName": "Wood Door",
             "amount": 1
           },
           {
@@ -2429,8 +2401,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-door",
-            "itemName": "Any Wood Door",
+            "itemId": "wood-door",
+            "itemName": "Wood Door",
             "amount": 1
           },
           {
@@ -2457,8 +2429,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 1
           },
           {
@@ -2782,8 +2754,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-wood-pressure-plate-stone-pressure-plate-polished-blackstone-pressure-plate-light-weighted-pressure-plate-heavy-weighted-pressure-plate",
-            "itemName": "Any Wood Pressure Plate;Stone Pressure Plate;Polished Blackstone Pressure Plate;Light Weighted Pressure Plate;Heavy Weighted Pressure Plate",
+            "itemId": "wood-pressure-plate-stone-pressure-plate-polished-blackstone-pressure-plate-light-weighted-pressure-plate-heavy-weighted-pressure-plate",
+            "itemName": "Wood Pressure Plate;Stone Pressure Plate;Polished Blackstone Pressure Plate;Light Weighted Pressure Plate;Heavy Weighted Pressure Plate",
             "amount": 1
           }
         ],
@@ -2870,9 +2842,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-chain-conveyor-crafting-wiki-1",
-        "name": "Crafting Table - Chain Conveyor",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Chain Conveyor",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -2969,9 +2941,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-chute-crafting-wiki-2",
-        "name": "Crafting Table - Chute",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Chute",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -2980,8 +2952,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-iron-ingot",
-            "itemName": "{{MC|Iron Ingot",
+            "itemId": "iron-ingot",
+            "itemName": "Iron Ingot",
             "amount": 1
           }
         ],
@@ -3023,8 +2995,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 1
           }
         ],
@@ -3040,9 +3012,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-clipboard-crafting-wiki-1",
-        "name": "Crafting Table - Clipboard",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Clipboard",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -3051,36 +3023,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-paper",
-            "itemName": "{{MC|Paper",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "clipboard",
-            "itemName": "Clipboard",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-clipboard-crafting-wiki-2",
-        "name": "Crafting Table - Clipboard",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "clipboard",
-            "itemName": "Clipboard|",
-            "amount": 1
-          },
-          {
-            "itemId": "crafting-table-shapeless-1-b2-clipboard-output-clipboard",
-            "itemName": "{{Crafting Table|shapeless=1|B2=Clipboard|Output=Clipboard",
+            "itemId": "paper",
+            "itemName": "Paper",
             "amount": 1
           }
         ],
@@ -3112,8 +3056,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-slab",
-            "itemName": "Any Wood Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           },
           {
@@ -3139,14 +3083,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-clockwork-bearing-crafting-wiki-1",
-        "name": "Crafting Table - Clockwork Bearing",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Clockwork Bearing",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-wood-slab",
-            "itemName": "Any {{MC|Wood Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           }
         ],
@@ -3205,14 +3149,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-clutch-crafting-wiki-1",
-        "name": "Crafting Table - Clutch",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Clutch",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-redstone-dust",
-            "itemName": "{{Mc|Redstone Dust",
+            "itemId": "redstone-dust",
+            "itemName": "Redstone Dust",
             "amount": 1
           }
         ],
@@ -3249,8 +3193,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 1
           }
         ],
@@ -3277,8 +3221,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 2
           }
         ],
@@ -3305,8 +3249,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 1
           }
         ],
@@ -3314,34 +3258,6 @@ export const CREATE_DATA: GameDataset = {
           {
             "itemId": "large-cogwheel",
             "itemName": "Large Cogwheel",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-cogwheel-crafting-wiki-3",
-        "name": "Crafting Table - Cogwheel",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "shaft",
-            "itemName": "Shaft",
-            "amount": 1
-          },
-          {
-            "itemId": "any-mc-planks",
-            "itemName": "Any {{MC|Planks",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "cogwheel",
-            "itemName": "Cogwheel",
             "amount": 1
           }
         ],
@@ -3366,8 +3282,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-button",
-            "itemName": "Any Wood Button",
+            "itemId": "wood-button",
+            "itemName": "Wood Button",
             "amount": 1
           },
           {
@@ -3393,14 +3309,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-contraption-controls-crafting-wiki-1",
-        "name": "Crafting Table - Contraption Controls",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Contraption Controls",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-wooden-button",
-            "itemName": "Any {{MC|Wooden Button",
+            "itemId": "oak-button",
+            "itemName": "Oak Button",
             "amount": 1
           }
         ],
@@ -3459,14 +3375,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-controller-rail-crafting-wiki-1",
-        "name": "Crafting Table - Controller Rail",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Controller Rail",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-gold-gold-ingot",
-            "itemName": "{{MC|Gold|Gold Ingot",
+            "itemId": "gold-ingot",
+            "itemName": "Gold Ingot",
             "amount": 1
           }
         ],
@@ -3622,13 +3538,13 @@ export const CREATE_DATA: GameDataset = {
             "amount": 16
           },
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 4
           },
           {
-            "itemId": "any-stone",
-            "itemName": "Any Stone",
+            "itemId": "stone",
+            "itemName": "Stone",
             "amount": 1
           }
         ],
@@ -3659,8 +3575,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 1
           },
           {
@@ -3686,14 +3602,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-cuckoo-clock-crafting-wiki-1",
-        "name": "Crafting Table - Cuckoo Clock",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Cuckoo Clock",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-planks",
-            "itemName": "Any {{MC|Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 1
           }
         ],
@@ -3800,39 +3716,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-deployer-crafting-wiki-1",
-        "name": "Crafting Table - Deployer",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-hand",
-            "itemName": "Brass Hand",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "deployer",
-            "itemName": "Deployer",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -3849,34 +3732,6 @@ export const CREATE_DATA: GameDataset = {
         "name": "Mechanical Crafter - Depot",
         "method": "Mechanical Crafting",
         "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "depot",
-            "itemName": "Depot",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-depot-crafting-wiki-1",
-        "name": "Crafting Table - Depot",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -3983,9 +3838,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-display-board-crafting-wiki-1",
-        "name": "Crafting Table - Display Board",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Display Board",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -4024,34 +3879,6 @@ export const CREATE_DATA: GameDataset = {
         "name": "Mechanical Crafter - Display Link",
         "method": "Mechanical Crafting",
         "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "transmitter",
-            "itemName": "Transmitter",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "display-link",
-            "itemName": "Display Link",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-display-link-crafting-wiki-1",
-        "name": "Crafting Table - Display Link",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -4120,9 +3947,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-elevator-pulley-crafting-wiki-1",
-        "name": "Crafting Table - Elevator Pulley",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Elevator Pulley",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -4131,8 +3958,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-dried-kelp-block",
-            "itemName": "{{MC|Dried Kelp Block",
+            "itemId": "dried-kelp-block",
+            "itemName": "Dried Kelp Block",
             "amount": 1
           }
         ],
@@ -4214,9 +4041,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-encased-chain-drive-crafting-wiki-2",
-        "name": "Crafting Table - Encased Chain Drive",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Encased Chain Drive",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -4242,14 +4069,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-encased-chain-drive-crafting-wiki-3",
-        "name": "Crafting Table - Encased Chain Drive",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Encased Chain Drive",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-iron-nugget",
-            "itemName": "{{Mc|Iron Nugget",
+            "itemId": "iron-nugget",
+            "itemName": "Iron Nugget",
             "amount": 1
           }
         ],
@@ -4412,9 +4239,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-factory-gauge-crafting-wiki-1",
-        "name": "Crafting Table - Factory Gauge",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Factory Gauge",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -4450,34 +4277,6 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-fluid-pipe-crafter-0",
-        "name": "Mechanical Crafter - Fluid Pipe",
-        "method": "Mechanical Crafting",
-        "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "copper-sheet",
-            "itemName": "Copper Sheet",
-            "amount": 2
-          },
-          {
-            "itemId": "copper-ingot",
-            "itemName": "Copper Ingot",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "fluid-pipe",
-            "itemName": "Fluid Pipe",
-            "amount": 4
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-fluid-pipe-crafter-1",
         "name": "Mechanical Crafter - Fluid Pipe",
         "method": "Mechanical Crafting",
         "buildingRequired": "Mechanical Crafter",
@@ -4579,34 +4378,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-fluid-valve-crafting-wiki-1",
-        "name": "Crafting Table - Fluid Valve",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "iron-sheet",
-            "itemName": "Iron Sheet",
-            "amount": 1
-          },
-          {
-            "itemId": "fluid-pipe",
-            "itemName": "Fluid Pipe",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "fluid-valve",
-            "itemName": "Fluid Valve",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -4648,9 +4419,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-flywheel-crafting-wiki-1",
-        "name": "Crafting Table - Flywheel",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Flywheel",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -4725,8 +4496,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-trapdoor",
-            "itemName": "Any Wood Trapdoor",
+            "itemId": "wood-trapdoor",
+            "itemName": "Wood Trapdoor",
             "amount": 1
           },
           {
@@ -4763,8 +4534,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-slab",
-            "itemName": "Any Wood Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           },
           {
@@ -4818,14 +4589,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-gantry-carriage-crafting-wiki-2",
-        "name": "Crafting Table - Gantry Carriage",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Gantry Carriage",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-wooden-slab",
-            "itemName": "Any {{MC|Wooden Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           }
         ],
@@ -4902,9 +4673,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-gearbox-crafting-wiki-2",
-        "name": "Crafting Table - Gearbox",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Gearbox",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -4973,14 +4744,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-gearshift-crafting-wiki-1",
-        "name": "Crafting Table - Gearshift",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Gearshift",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-redstone-dust",
-            "itemName": "{{MC|Redstone Dust",
+            "itemId": "redstone-dust",
+            "itemName": "Redstone Dust",
             "amount": 1
           }
         ],
@@ -5055,8 +4826,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 3
           },
           {
@@ -5153,9 +4924,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-hose-pulley-crafting-wiki-1",
-        "name": "Crafting Table - Hose Pulley",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Hose Pulley",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -5164,8 +4935,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-dried-kelp-block",
-            "itemName": "{{MC|Dried Kelp Block",
+            "itemId": "dried-kelp-block",
+            "itemName": "Dried Kelp Block",
             "amount": 1
           }
         ],
@@ -5295,9 +5066,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-item-vault-crafting-wiki-1",
-        "name": "Crafting Table - Item Vault",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Item Vault",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -5306,8 +5077,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-barrel",
-            "itemName": "{{MC|Barrel",
+            "itemId": "barrel",
+            "itemName": "Barrel",
             "amount": 1
           }
         ],
@@ -5339,8 +5110,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 8
           },
           {
@@ -5361,14 +5132,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-large-water-wheel-crafting-wiki-1",
-        "name": "Crafting Table - Large Water Wheel",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Large Water Wheel",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 1
           },
           {
@@ -5389,14 +5160,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-large-water-wheel-crafting-wiki-2",
-        "name": "Crafting Table - Large Water Wheel",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Large Water Wheel",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-planks",
-            "itemName": "Any {{MC|Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 1
           }
         ],
@@ -5442,8 +5213,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 2
           },
           {
-            "itemId": "any-log",
-            "itemName": "Any Log",
+            "itemId": "log",
+            "itemName": "Log",
             "amount": 3
           }
         ],
@@ -5530,9 +5301,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-mechanical-arm-crafting-wiki-1",
-        "name": "Crafting Table - Mechanical Arm",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Mechanical Arm",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -5584,8 +5355,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-slab",
-            "itemName": "Any Wood Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           },
           {
@@ -5611,37 +5382,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-mechanical-bearing-crafting-wiki-1",
-        "name": "Crafting Table - Mechanical Bearing",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Mechanical Bearing",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-wooden-slab",
-            "itemName": "Any {{MC|Wooden Slab",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-bearing",
-            "itemName": "Mechanical Bearing",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-mechanical-bearing-crafting-wiki-2",
-        "name": "Crafting Table - Mechanical Bearing",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "any-mc-wood-slab",
-            "itemName": "Any {{MC|Wood Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           }
         ],
@@ -5690,14 +5438,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-mechanical-belt-crafting-wiki-1",
-        "name": "Crafting Table - Mechanical Belt",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Mechanical Belt",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-dried-kelp",
-            "itemName": "{{MC|Dried Kelp",
+            "itemId": "dried-kelp",
+            "itemName": "Dried Kelp",
             "amount": 1
           }
         ],
@@ -5768,13 +5516,13 @@ export const CREATE_DATA: GameDataset = {
             "amount": 16
           },
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 4
           },
           {
-            "itemId": "any-stone",
-            "itemName": "Any Stone",
+            "itemId": "stone",
+            "itemName": "Stone",
             "amount": 1
           }
         ],
@@ -5872,8 +5620,8 @@ export const CREATE_DATA: GameDataset = {
         "speedRpm": 64,
         "ingredients": [
           {
-            "itemId": "any-glass-any-stained-glass",
-            "itemName": "Any glass;Any Stained Glass",
+            "itemId": "glass-any-stained-glass",
+            "itemName": "glass;Any Stained Glass",
             "amount": 3
           },
           {
@@ -5924,8 +5672,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-crafting-table",
-            "itemName": "{{Mc|Crafting Table",
+            "itemId": "crafting-table",
+            "itemName": "Crafting Table",
             "amount": 1
           }
         ],
@@ -5984,9 +5732,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-mechanical-drill-crafting-wiki-1",
-        "name": "Crafting Table - Mechanical Drill",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Mechanical Drill",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -6017,9 +5765,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-mechanical-drill-crafting-wiki-2",
-        "name": "Crafting Table - Mechanical Drill",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Mechanical Drill",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -6028,8 +5776,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-iron-ingot",
-            "itemName": "{{MC|Iron Ingot",
+            "itemId": "iron-ingot",
+            "itemName": "Iron Ingot",
             "amount": 1
           }
         ],
@@ -6088,9 +5836,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-mechanical-harvester-crafting-wiki-1",
-        "name": "Crafting Table - Mechanical Harvester",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Mechanical Harvester",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -6213,8 +5961,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-slab",
-            "itemName": "Any Wood Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           },
           {
@@ -6274,8 +6022,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 2
           },
           {
@@ -6296,14 +6044,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-mechanical-piston-crafting-wiki-3",
-        "name": "Crafting Table - Mechanical Piston",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Mechanical Piston",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-wooden-slab",
-            "itemName": "Any {{MC|Wooden Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           }
         ],
@@ -6362,9 +6110,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-mechanical-plough-crafting-wiki-1",
-        "name": "Crafting Table - Mechanical Plough",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Mechanical Plough",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -6454,41 +6202,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-block-of-iron",
-            "itemName": "{{Mc|Block of Iron",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-press",
-            "itemName": "Mechanical Press",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-mechanical-press-pressing-wiki-2",
-        "name": "Mechanical Press - Mechanical Press",
-        "method": "Pressing",
-        "buildingRequired": "Mechanical Press",
-        "processingTimeSeconds": 2,
-        "ingredients": [
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "shaft",
-            "itemName": "Shaft",
-            "amount": 1
-          },
-          {
-            "itemId": "mc-block-of-iron",
-            "itemName": "{{MC|Block of Iron",
+            "itemId": "block-of-iron",
+            "itemName": "Block of Iron",
             "amount": 1
           }
         ],
@@ -6525,8 +6240,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-block-of-iron",
-            "itemName": "{{MC|Block of Iron",
+            "itemId": "block-of-iron",
+            "itemName": "Block of Iron",
             "amount": 1
           }
         ],
@@ -6548,8 +6263,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 2,
         "ingredients": [
           {
-            "itemId": "any-mc-planks",
-            "itemName": "Any {{MC|Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 1
           }
         ],
@@ -6643,39 +6358,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-mechanical-roller-crafting-wiki-1",
-        "name": "Crafting Table - Mechanical Roller",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "crushing-wheel",
-            "itemName": "Crushing Wheel",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "mechanical-roller",
-            "itemName": "Mechanical Roller",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -6733,8 +6415,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-iron-ingot",
-            "itemName": "{{Mc|Iron Ingot",
+            "itemId": "iron-ingot",
+            "itemName": "Iron Ingot",
             "amount": 1
           }
         ],
@@ -6788,9 +6470,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-metal-girder-crafting-wiki-1",
-        "name": "Crafting Table - Metal Girder",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Metal Girder",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -6842,8 +6524,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-stone",
-            "itemName": "Any Stone",
+            "itemId": "stone",
+            "itemName": "Stone",
             "amount": 1
           }
         ],
@@ -6875,8 +6557,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-mc-stone",
-            "itemName": "Any {{MC|Stone",
+            "itemId": "stone",
+            "itemName": "Stone",
             "amount": 1
           }
         ],
@@ -6925,9 +6607,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-nixie-tube-crafting-wiki-1",
-        "name": "Crafting Table - Nixie Tube",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Nixie Tube",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -6997,8 +6679,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 4
           },
           {
-            "itemId": "any-wool",
-            "itemName": "Any Wool",
+            "itemId": "wool",
+            "itemName": "Wool",
             "amount": 1
           }
         ],
@@ -7066,14 +6748,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-package-frogport-crafting-wiki-1",
-        "name": "Crafting Table - Package Frogport",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Package Frogport",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-slimeball",
-            "itemName": "{{MC|Slimeball",
+            "itemId": "slimeball",
+            "itemName": "Slimeball",
             "amount": 1
           }
         ],
@@ -7209,8 +6891,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-planks",
-            "itemName": "Any Wood Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 2
           },
           {
@@ -7605,34 +7287,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-portable-storage-interface-crafting-wiki-1",
-        "name": "Crafting Table - Portable Storage Interface",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "chute",
-            "itemName": "Chute",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "portable-storage-interface",
-            "itemName": "Portable Storage Interface",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -7652,8 +7306,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-dye",
-            "itemName": "Any Dye",
+            "itemId": "dye",
+            "itemName": "Dye",
             "amount": 1
           },
           {
@@ -7710,8 +7364,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-stone",
-            "itemName": "Any Stone",
+            "itemId": "stone",
+            "itemName": "Stone",
             "amount": 3
           }
         ],
@@ -7753,8 +7407,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-stone",
-            "itemName": "Any Stone",
+            "itemId": "stone",
+            "itemName": "Stone",
             "amount": 3
           }
         ],
@@ -7801,8 +7455,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-stone",
-            "itemName": "Any Stone",
+            "itemId": "stone",
+            "itemName": "Stone",
             "amount": 3
           }
         ],
@@ -7849,8 +7503,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-stone",
-            "itemName": "Any Stone",
+            "itemId": "stone",
+            "itemName": "Stone",
             "amount": 3
           }
         ],
@@ -7897,8 +7551,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-stone",
-            "itemName": "Any Stone",
+            "itemId": "stone",
+            "itemName": "Stone",
             "amount": 3
           }
         ],
@@ -7914,14 +7568,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-pulse-timer-crafting-wiki-1",
-        "name": "Crafting Table - Pulse Timer",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Pulse Timer",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-amethyst-shard",
-            "itemName": "{{MC|Amethyst Shard",
+            "itemId": "amethyst-shard",
+            "itemName": "Amethyst Shard",
             "amount": 1
           }
         ],
@@ -7953,8 +7607,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-log",
-            "itemName": "Any Log",
+            "itemId": "log",
+            "itemName": "Log",
             "amount": 3
           },
           {
@@ -7988,29 +7642,6 @@ export const CREATE_DATA: GameDataset = {
         "name": "Mechanical Crafter - Re-Packager",
         "method": "Mechanical Crafting",
         "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "packager",
-            "itemName": "Packager",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "re-packager",
-            "itemName": "Re-Packager",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-re-packager-crafting-wiki-1",
-        "name": "Crafting Table - Re-Packager",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -8074,9 +7705,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-redstone-contact-crafting-wiki-1",
-        "name": "Crafting Table - Redstone Contact",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Redstone Contact",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -8085,8 +7716,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-cobblestone",
-            "itemName": "{{MC|Cobblestone",
+            "itemId": "cobblestone",
+            "itemName": "Cobblestone",
             "amount": 1
           }
         ],
@@ -8140,9 +7771,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-redstone-link-crafting-wiki-1",
-        "name": "Crafting Table - Redstone Link",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Redstone Link",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -8232,8 +7863,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-wool",
-            "itemName": "Any Wool",
+            "itemId": "wool",
+            "itemName": "Wool",
             "amount": 1
           },
           {
@@ -8254,9 +7885,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-rope-pulley-crafting-wiki-1",
-        "name": "Crafting Table - Rope Pulley",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Rope Pulley",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -8265,36 +7896,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-mc-wool",
-            "itemName": "Any {{MC|Wool",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "rope-pulley",
-            "itemName": "Rope Pulley",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-rope-pulley-crafting-wiki-2",
-        "name": "Crafting Table - Rope Pulley",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "andesite-casing",
-            "itemName": "Andesite Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "mc-wool",
-            "itemName": "{{MC|Wool",
+            "itemId": "wool",
+            "itemName": "Wool",
             "amount": 1
           }
         ],
@@ -8343,9 +7946,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-rose-quartz-block-crafting-wiki-1",
-        "name": "Crafting Table - Rose Quartz Block",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Rose Quartz Block",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -8409,9 +8012,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-rose-quartz-lamp-crafting-wiki-1",
-        "name": "Crafting Table - Rose Quartz Lamp",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Rose Quartz Lamp",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -8420,8 +8023,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-redstone-dust",
-            "itemName": "{{MC|Redstone Dust",
+            "itemId": "redstone-dust",
+            "itemName": "Redstone Dust",
             "amount": 1
           }
         ],
@@ -8496,8 +8099,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 2
           },
           {
-            "itemId": "any-log",
-            "itemName": "Any Log",
+            "itemId": "log",
+            "itemName": "Log",
             "amount": 2
           },
           {
@@ -8599,14 +8202,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-scoria-crafting-wiki-1",
-        "name": "Crafting Table - Scoria",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Scoria",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-soul-sand",
-            "itemName": "{{MC|Soul Sand",
+            "itemId": "soul-sand",
+            "itemName": "Soul Sand",
             "amount": 1
           }
         ],
@@ -8638,13 +8241,13 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wool",
-            "itemName": "Any Wool",
+            "itemId": "wool",
+            "itemName": "Wool",
             "amount": 1
           },
           {
-            "itemId": "any-wood-slab",
-            "itemName": "Any Wood Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           }
         ],
@@ -8688,39 +8291,6 @@ export const CREATE_DATA: GameDataset = {
           {
             "itemId": "electron-tube",
             "itemName": "Electron Tube",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "sequenced-gearshift",
-            "itemName": "Sequenced Gearshift",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-sequenced-gearshift-crafting-wiki-1",
-        "name": "Crafting Table - Sequenced Gearshift",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "cogwheel",
-            "itemName": "Cogwheel",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
             "amount": 1
           }
         ],
@@ -8792,9 +8362,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-shaft-crafting-wiki-2",
-        "name": "Crafting Table - Shaft",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Shaft",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -8831,8 +8401,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-door",
-            "itemName": "Any Wood Door",
+            "itemId": "wood-door",
+            "itemName": "Wood Door",
             "amount": 1
           },
           {
@@ -8859,8 +8429,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-door",
-            "itemName": "Any Wood Door",
+            "itemId": "wood-door",
+            "itemName": "Wood Door",
             "amount": 1
           },
           {
@@ -8887,8 +8457,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-door",
-            "itemName": "Any Wood Door",
+            "itemId": "wood-door",
+            "itemName": "Wood Door",
             "amount": 1
           },
           {
@@ -8915,8 +8485,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-door",
-            "itemName": "Any Wood Door",
+            "itemId": "wood-door",
+            "itemName": "Wood Door",
             "amount": 1
           },
           {
@@ -8943,8 +8513,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-door",
-            "itemName": "Any Wood Door",
+            "itemId": "wood-door",
+            "itemName": "Wood Door",
             "amount": 1
           },
           {
@@ -8978,39 +8548,6 @@ export const CREATE_DATA: GameDataset = {
         "name": "Mechanical Crafter - Smart Fluid Pipe",
         "method": "Mechanical Crafting",
         "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "brass-sheet",
-            "itemName": "Brass Sheet",
-            "amount": 1
-          },
-          {
-            "itemId": "fluid-pipe",
-            "itemName": "Fluid Pipe",
-            "amount": 1
-          },
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "smart-fluid-pipe",
-            "itemName": "Smart Fluid Pipe",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-smart-fluid-pipe-crafting-wiki-1",
-        "name": "Crafting Table - Smart Fluid Pipe",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -9081,39 +8618,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-smart-observer-crafting-wiki-1",
-        "name": "Crafting Table - Smart Observer",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          },
-          {
-            "itemId": "brass-casing",
-            "itemName": "Brass Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "mc-observer",
-            "itemName": "{{MC|Observer",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "smart-observer",
-            "itemName": "Smart Observer",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -9150,9 +8654,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-speedometer-crafting-wiki-1",
-        "name": "Crafting Table - Speedometer",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Speedometer",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -9161,8 +8665,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-compass",
-            "itemName": "{{MC|Compass",
+            "itemId": "compass",
+            "itemName": "Compass",
             "amount": 1
           }
         ],
@@ -9227,8 +8731,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-kelp",
-            "itemName": "{{MC|Kelp",
+            "itemId": "kelp",
+            "itemName": "Kelp",
             "amount": 1
           }
         ],
@@ -9287,9 +8791,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-steam-engine-crafting-wiki-1",
-        "name": "Crafting Table - Steam Engine",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Steam Engine",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -9303,8 +8807,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-block-of-copper",
-            "itemName": "{{MC|Block of Copper",
+            "itemId": "block-of-copper",
+            "itemName": "Block of Copper",
             "amount": 1
           }
         ],
@@ -9355,34 +8859,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-steam-whistle-crafting-wiki-1",
-        "name": "Crafting Table - Steam Whistle",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "golden-sheet",
-            "itemName": "Golden Sheet",
-            "amount": 1
-          },
-          {
-            "itemId": "mc-copper-ingot",
-            "itemName": "{{MC|Copper Ingot",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "steam-whistle",
-            "itemName": "Steam Whistle",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -9412,8 +8888,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-cobblestone",
-            "itemName": "Any Cobblestone",
+            "itemId": "cobblestone",
+            "itemName": "Cobblestone",
             "amount": 2
           },
           {
@@ -9447,34 +8923,6 @@ export const CREATE_DATA: GameDataset = {
         "name": "Mechanical Crafter - Stock Link",
         "method": "Mechanical Crafting",
         "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "transmitter",
-            "itemName": "Transmitter",
-            "amount": 1
-          },
-          {
-            "itemId": "item-vault",
-            "itemName": "Item Vault",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "stock-link",
-            "itemName": "Stock Link",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-stock-link-crafting-wiki-1",
-        "name": "Crafting Table - Stock Link",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -9543,14 +8991,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-stock-ticker-crafting-wiki-1",
-        "name": "Crafting Table - Stock Ticker",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Stock Ticker",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-glass",
-            "itemName": "Any {{MC|Glass",
+            "itemId": "glass",
+            "itemName": "Glass",
             "amount": 1
           }
         ],
@@ -9643,8 +9091,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wool",
-            "itemName": "Any Wool",
+            "itemId": "wool",
+            "itemName": "Wool",
             "amount": 1
           },
           {
@@ -9708,9 +9156,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-threshold-switch-crafting-wiki-1",
-        "name": "Crafting Table - Threshold Switch",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Threshold Switch",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -9724,8 +9172,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-comparat",
-            "itemName": "{{MC|Comparat",
+            "itemId": "comparator",
+            "itemName": "Comparator",
             "amount": 1
           }
         ],
@@ -9833,8 +9281,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-dye",
-            "itemName": "Any Dye",
+            "itemId": "dye",
+            "itemName": "Dye",
             "amount": 1
           }
         ],
@@ -9850,9 +9298,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-toolbox-crafting-wiki-2",
-        "name": "Crafting Table - Toolbox",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Toolbox",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -9866,8 +9314,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-chest",
-            "itemName": "{{MC|Chest",
+            "itemId": "chest",
+            "itemName": "Chest",
             "amount": 1
           }
         ],
@@ -9926,14 +9374,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-train-controls-crafting-wiki-1",
-        "name": "Crafting Table - Train Controls",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Train Controls",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-lever",
-            "itemName": "{{MC|Lever",
+            "itemId": "lever",
+            "itemName": "Lever",
             "amount": 1
           }
         ],
@@ -9970,8 +9418,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-wood-pressure-plate-stone-pressure-plate-polished-blackstone-pressure-plate-light-weighted-pressure-plate-heavy-weighted-pressure-plate",
-            "itemName": "Any Wood Pressure Plate;Stone Pressure Plate;Polished Blackstone Pressure Plate;Light Weighted Pressure Plate;Heavy Weighted Pressure Plate",
+            "itemId": "wood-pressure-plate-stone-pressure-plate-polished-blackstone-pressure-plate-light-weighted-pressure-plate-heavy-weighted-pressure-plate",
+            "itemName": "Wood Pressure Plate;Stone Pressure Plate;Polished Blackstone Pressure Plate;Light Weighted Pressure Plate;Heavy Weighted Pressure Plate",
             "amount": 1
           }
         ],
@@ -9987,9 +9435,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-train-observer-crafting-wiki-1",
-        "name": "Crafting Table - Train Observer",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Train Observer",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -9998,8 +9446,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-mc-pressure-plate",
-            "itemName": "Any {{MC|Pressure Plate",
+            "itemId": "pressure-plate",
+            "itemName": "Pressure Plate",
             "amount": 1
           }
         ],
@@ -10053,9 +9501,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-train-signal-crafting-wiki-1",
-        "name": "Crafting Table - Train Signal",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Train Signal",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -10116,34 +9564,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-train-station-crafting-wiki-1",
-        "name": "Crafting Table - Train Station",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "train-casing",
-            "itemName": "Train Casing",
-            "amount": 1
-          },
-          {
-            "itemId": "mc-compass",
-            "itemName": "{{MC|Compass",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "train-station",
-            "itemName": "Train Station",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -10185,14 +9605,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-train-track-crafting-wiki-1",
-        "name": "Crafting Table - Train Track",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Train Track",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-stone-slab",
-            "itemName": "{{MC|Stone Slab",
+            "itemId": "stone-slab",
+            "itemName": "Stone Slab",
             "amount": 1
           }
         ],
@@ -10224,8 +9644,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-trapdoor",
-            "itemName": "Any Wood Trapdoor",
+            "itemId": "wood-trapdoor",
+            "itemName": "Wood Trapdoor",
             "amount": 1
           },
           {
@@ -10246,14 +9666,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-train-trapdoor-crafting-wiki-1",
-        "name": "Crafting Table - Train Trapdoor",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Train Trapdoor",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-wooden-trapdo",
-            "itemName": "Any {{MC|Wooden Trapdo",
+            "itemId": "wooden-trapdoor",
+            "itemName": "Wooden Trapdoor",
             "amount": 1
           }
         ],
@@ -10294,8 +9714,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-slab",
-            "itemName": "Any wood Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           },
           {
@@ -10316,14 +9736,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-turntable-crafting-wiki-1",
-        "name": "Crafting Table - Turntable",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Turntable",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-wooden-slab",
-            "itemName": "Any {{MC|Wooden Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           }
         ],
@@ -10402,8 +9822,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 8
           },
           {
@@ -10430,8 +9850,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 8
           },
           {
@@ -10452,14 +9872,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-water-wheel-crafting-wiki-2",
-        "name": "Crafting Table - Water Wheel",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Water Wheel",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-planks",
-            "itemName": "Any {{MC|Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 1
           }
         ],
@@ -10475,14 +9895,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-water-wheel-crafting-wiki-3",
-        "name": "Crafting Table - Water Wheel",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Water Wheel",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-wooden-slab",
-            "itemName": "Any {{MC|Wooden Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           }
         ],
@@ -10498,14 +9918,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-water-wheel-crafting-wiki-4",
-        "name": "Crafting Table - Water Wheel",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Water Wheel",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 1
           },
           {
@@ -10566,39 +9986,6 @@ export const CREATE_DATA: GameDataset = {
         ],
         "speedRpm": 64,
         "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-weighted-ejector-crafting-wiki-1",
-        "name": "Crafting Table - Weighted Ejector",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "golden-sheet",
-            "itemName": "Golden Sheet",
-            "amount": 1
-          },
-          {
-            "itemId": "depot",
-            "itemName": "Depot",
-            "amount": 1
-          },
-          {
-            "itemId": "cogwheel",
-            "itemName": "Cogwheel",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "weighted-ejector",
-            "itemName": "Weighted Ejector",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
       }
     ],
     "sourceMod": "Create Mod"
@@ -10618,13 +10005,13 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wood-slab",
-            "itemName": "Any Wood Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           },
           {
-            "itemId": "any-stone",
-            "itemName": "Any Stone",
+            "itemId": "stone",
+            "itemName": "Stone",
             "amount": 1
           },
           {
@@ -10645,14 +10032,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-windmill-bearing-crafting-wiki-1",
-        "name": "Crafting Table - Windmill Bearing",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Windmill Bearing",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-wooden-slab",
-            "itemName": "Any {{MC|Wooden Slab",
+            "itemId": "wooden-slab",
+            "itemName": "Wooden Slab",
             "amount": 1
           }
         ],
@@ -10668,9 +10055,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-windmill-bearing-crafting-wiki-2",
-        "name": "Crafting Table - Windmill Bearing",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Windmill Bearing",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -10679,8 +10066,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "any-mc-stone",
-            "itemName": "Any {{MC|Stone",
+            "itemId": "stone",
+            "itemName": "Stone",
             "amount": 1
           }
         ],
@@ -10758,8 +10145,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-wool",
-            "itemName": "Any Wool",
+            "itemId": "wool",
+            "itemName": "Wool",
             "amount": 1
           },
           {
@@ -10785,14 +10172,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-windmill-sail-crafting-wiki-3",
-        "name": "Crafting Table - Windmill Sail",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Windmill Sail",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-mc-wool",
-            "itemName": "Any {{MC|Wool",
+            "itemId": "wool",
+            "itemName": "Wool",
             "amount": 1
           }
         ],
@@ -10808,9 +10195,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-windmill-sail-crafting-wiki-4",
-        "name": "Crafting Table - Windmill Sail",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Windmill Sail",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -10847,8 +10234,8 @@ export const CREATE_DATA: GameDataset = {
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 3
           },
           {
@@ -11094,9 +10481,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-brass-hand-crafting-wiki-3",
-        "name": "Crafting Table - Brass Hand",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Brass Hand",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -11135,34 +10522,6 @@ export const CREATE_DATA: GameDataset = {
         "name": "Mechanical Crafter - Electron Tube",
         "method": "Mechanical Crafting",
         "buildingRequired": "Mechanical Crafter",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "polished-rose-quartz",
-            "itemName": "Polished Rose Quartz",
-            "amount": 1
-          },
-          {
-            "itemId": "iron-sheet",
-            "itemName": "Iron Sheet",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "electron-tube",
-            "itemName": "Electron Tube",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-electron-tube-crafting-wiki-1",
-        "name": "Crafting Table - Electron Tube",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -11236,9 +10595,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-precision-mechanism-crafting-wiki-1",
-        "name": "Crafting Table - Precision Mechanism",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Precision Mechanism",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -11257,8 +10616,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-iron-nugget",
-            "itemName": "{{MC|Iron Nugget",
+            "itemId": "iron-nugget",
+            "itemName": "Iron Nugget",
             "amount": 1
           }
         ],
@@ -11311,38 +10670,10 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-sequenced-sturdy-sheet",
-        "name": "Sequenced Assembly - Sturdy Sheet",
-        "method": "Sequenced Assembly",
-        "buildingRequired": "Deployer",
-        "processingTimeSeconds": 5,
-        "speedRpm": 64,
-        "ingredients": [
-          {
-            "itemId": "powdered-obsidian",
-            "itemName": "Powdered Obsidian",
-            "amount": 1
-          },
-          {
-            "itemId": "lava-bucket",
-            "itemName": "Lava Bucket",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "sturdy-sheet",
-            "itemName": "Sturdy Sheet",
-            "amount": 1
-          }
-        ],
-        "sourceMod": "Create Mod"
-      },
-      {
         "id": "recipe-sturdy-sheet-crafting-wiki-2",
-        "name": "Crafting Table - Sturdy Sheet",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Sturdy Sheet",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -11351,8 +10682,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mb-of-mc-lava",
-            "itemName": "mB of {{MC|Lava",
+            "itemId": "mb-of-lava",
+            "itemName": "mB of Lava",
             "amount": 500
           }
         ],
@@ -11411,14 +10742,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-transmitter-crafting-wiki-1",
-        "name": "Crafting Table - Transmitter",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Transmitter",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-lightning-rod",
-            "itemName": "{{MC|Lightning Rod",
+            "itemId": "lightning-rod",
+            "itemName": "Lightning Rod",
             "amount": 1
           }
         ],
@@ -11482,9 +10813,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-potato-cannon-crafting-wiki-1",
-        "name": "Crafting Table - Potato Cannon",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Potato Cannon",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -11503,8 +10834,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-copper-ingot",
-            "itemName": "{{MC|Copper Ingot",
+            "itemId": "copper-ingot",
+            "itemName": "Copper Ingot",
             "amount": 1
           }
         ],
@@ -13024,9 +12355,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-zinc-nugget-crafting-wiki-5",
-        "name": "Crafting Table - Zinc Nugget",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Zinc Nugget",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -15211,9 +14542,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-nugget-of-experience-crafting-wiki-25",
-        "name": "Crafting Table - Nugget of Experience",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Nugget of Experience",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -19454,8 +18785,8 @@ export const CREATE_DATA: GameDataset = {
         "speedRpm": 128,
         "ingredients": [
           {
-            "itemId": "any-wool",
-            "itemName": "Any Wool",
+            "itemId": "wool",
+            "itemName": "Wool",
             "amount": 1
           }
         ],
@@ -19477,8 +18808,8 @@ export const CREATE_DATA: GameDataset = {
         "speedRpm": 32,
         "ingredients": [
           {
-            "itemId": "any-wool",
-            "itemName": "Any Wool",
+            "itemId": "wool",
+            "itemName": "Wool",
             "amount": 1
           }
         ],
@@ -20557,14 +19888,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-cinder-flour-crafting-wiki-1",
-        "name": "Crafting Table - Cinder Flour",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Cinder Flour",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-netherrack",
-            "itemName": "{{Mc|Netherrack",
+            "itemId": "netherrack",
+            "itemName": "Netherrack",
             "amount": 1
           }
         ],
@@ -20692,14 +20023,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-powdered-obsidian-crafting-wiki-1",
-        "name": "Crafting Table - Powdered Obsidian",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Powdered Obsidian",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-obsidian",
-            "itemName": "{{MC|Obsidian",
+            "itemId": "obsidian",
+            "itemName": "Obsidian",
             "amount": 1
           }
         ],
@@ -21090,14 +20421,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-iron-sheet-crafting-wiki-1",
-        "name": "Crafting Table - Iron Sheet",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Iron Sheet",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-iron-ingot",
-            "itemName": "{{MC|Iron Ingot",
+            "itemId": "iron-ingot",
+            "itemName": "Iron Ingot",
             "amount": 1
           }
         ],
@@ -21146,14 +20477,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-golden-sheet-crafting-wiki-1",
-        "name": "Crafting Table - Golden Sheet",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Golden Sheet",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-gold-ingot",
-            "itemName": "{{MC|Gold Ingot",
+            "itemId": "gold-ingot",
+            "itemName": "Gold Ingot",
             "amount": 1
           }
         ],
@@ -21466,14 +20797,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-blaze-cake-base-crafting-wiki-1",
-        "name": "Crafting Table - Blaze Cake Base",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Blaze Cake Base",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-egg",
-            "itemName": "{{Mc|Egg",
+            "itemId": "egg",
+            "itemName": "Egg",
             "amount": 1
           }
         ],
@@ -21738,9 +21069,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-andesite-alloy-crafting-wiki-4",
-        "name": "Crafting Table - Andesite Alloy",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Andesite Alloy",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -21761,39 +21092,11 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-andesite-alloy-crafting-wiki-5",
-        "name": "Crafting Table - Andesite Alloy",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Andesite Alloy",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
-          {
-            "itemId": "mc-andesite",
-            "itemName": "{{Mc|Andesite",
-            "amount": 1
-          }
-        ],
-        "outputs": [
-          {
-            "itemId": "andesite-alloy",
-            "itemName": "Andesite Alloy",
-            "amount": 1
-          }
-        ],
-        "speedRpm": 64,
-        "sourceMod": "Create Mod"
-      },
-      {
-        "id": "recipe-andesite-alloy-crafting-wiki-6",
-        "name": "Crafting Table - Andesite Alloy",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
-        "processingTimeSeconds": 4,
-        "ingredients": [
-          {
-            "itemId": "zinc-nugget",
-            "itemName": "Zinc Nugget",
-            "amount": 1
-          },
           {
             "itemId": "andesite",
             "itemName": "Andesite",
@@ -21811,11 +21114,11 @@ export const CREATE_DATA: GameDataset = {
         "sourceMod": "Create Mod"
       },
       {
-        "id": "recipe-andesite-alloy-mixing-wiki-7",
-        "name": "Mechanical Mixer - Andesite Alloy",
-        "method": "Mixing",
-        "buildingRequired": "Mechanical Mixer",
-        "processingTimeSeconds": 3,
+        "id": "recipe-andesite-alloy-crafting-wiki-6",
+        "name": "Mechanical Crafter - Andesite Alloy",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
+        "processingTimeSeconds": 4,
         "ingredients": [
           {
             "itemId": "zinc-nugget",
@@ -21895,8 +21198,8 @@ export const CREATE_DATA: GameDataset = {
         "speedRpm": 64,
         "ingredients": [
           {
-            "itemId": "any-leaves",
-            "itemName": "Any Leaves",
+            "itemId": "leaves",
+            "itemName": "Leaves",
             "amount": 1
           },
           {
@@ -21987,14 +21290,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-250mb-of-chocolate-crafting-wiki-2",
-        "name": "Crafting Table - 250mB of Chocolate",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - 250mB of Chocolate",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-sugar",
-            "itemName": "{{Mc|Sugar",
+            "itemId": "sugar",
+            "itemName": "Sugar",
             "amount": 1
           }
         ],
@@ -22060,8 +21363,8 @@ export const CREATE_DATA: GameDataset = {
         "speedRpm": 64,
         "ingredients": [
           {
-            "itemId": "any-cobblestone",
-            "itemName": "Any Cobblestone",
+            "itemId": "cobblestone",
+            "itemName": "Cobblestone",
             "amount": 1
           }
         ],
@@ -22093,15 +21396,15 @@ export const CREATE_DATA: GameDataset = {
         "speedRpm": 64,
         "ingredients": [
           {
-            "itemId": "any-wood",
-            "itemName": "Any Wood",
+            "itemId": "wood",
+            "itemName": "Wood",
             "amount": 1
           }
         ],
         "outputs": [
           {
-            "itemId": "any-stripped-wood",
-            "itemName": "Any Stripped Wood",
+            "itemId": "stripped-wood",
+            "itemName": "Stripped Wood",
             "amount": 1
           }
         ],
@@ -22126,15 +21429,15 @@ export const CREATE_DATA: GameDataset = {
         "speedRpm": 64,
         "ingredients": [
           {
-            "itemId": "any-stripped-wood",
-            "itemName": "Any Stripped Wood",
+            "itemId": "stripped-wood",
+            "itemName": "Stripped Wood",
             "amount": 1
           }
         ],
         "outputs": [
           {
-            "itemId": "any-planks",
-            "itemName": "Any Planks",
+            "itemId": "oak-planks",
+            "itemName": "Oak Planks",
             "amount": 6
           }
         ],
@@ -22159,15 +21462,15 @@ export const CREATE_DATA: GameDataset = {
         "speedRpm": 128,
         "ingredients": [
           {
-            "itemId": "any-concrete-powder",
-            "itemName": "Any Concrete Powder",
+            "itemId": "concrete-powder",
+            "itemName": "Concrete Powder",
             "amount": 1
           }
         ],
         "outputs": [
           {
-            "itemId": "any-concrete",
-            "itemName": "Any Concrete",
+            "itemId": "concrete",
+            "itemName": "Concrete",
             "amount": 1
           }
         ],
@@ -22258,8 +21561,8 @@ export const CREATE_DATA: GameDataset = {
         "speedRpm": 128,
         "ingredients": [
           {
-            "itemId": "any-stained-glass",
-            "itemName": "Any Stained Glass",
+            "itemId": "stained-glass",
+            "itemName": "Stained Glass",
             "amount": 1
           }
         ],
@@ -22291,8 +21594,8 @@ export const CREATE_DATA: GameDataset = {
         "speedRpm": 128,
         "ingredients": [
           {
-            "itemId": "any-stained-glass-pane",
-            "itemName": "Any Stained Glass Pane",
+            "itemId": "stained-glass-pane",
+            "itemName": "Stained Glass Pane",
             "amount": 1
           }
         ],
@@ -22413,9 +21716,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-dough-crafting-wiki-1",
-        "name": "Crafting Table - Dough",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Dough",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -22424,8 +21727,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mb-of-mc-water",
-            "itemName": "mB of {{MC|Water",
+            "itemId": "mb-of-water",
+            "itemName": "mB of Water",
             "amount": 1000
           }
         ],
@@ -22441,9 +21744,9 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-dough-crafting-wiki-2",
-        "name": "Crafting Table - Dough",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Dough",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -22452,8 +21755,8 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           },
           {
-            "itemId": "mc-water-bucket",
-            "itemName": "{{MC|Water Bucket",
+            "itemId": "water-bucket",
+            "itemName": "Water Bucket",
             "amount": 1
           }
         ],
@@ -22469,14 +21772,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-dough-crafting-wiki-3",
-        "name": "Crafting Table - Dough",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Dough",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-water-bucket",
-            "itemName": "{{MC|Water Bucket",
+            "itemId": "water-bucket",
+            "itemName": "Water Bucket",
             "amount": 1
           }
         ],
@@ -23149,14 +22452,14 @@ export const CREATE_DATA: GameDataset = {
       },
       {
         "id": "recipe-chocolate-glazed-berries-crafting-wiki-1",
-        "name": "Crafting Table - Chocolate Glazed Berries",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Chocolate Glazed Berries",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
-            "itemId": "mc-sweet-berries",
-            "itemName": "{{MC|Sweet Berries",
+            "itemId": "sweet-berries",
+            "itemName": "Sweet Berries",
             "amount": 1
           }
         ],
@@ -23210,7 +22513,7 @@ export const CREATE_DATA: GameDataset = {
     ],
     "sourceMod": "Create Mod"
   },
-    {
+  {
     "id": "cardboard-sword",
     "name": "Cardboard Sword",
     "category": "Equipment & Utilities",
@@ -23220,9 +22523,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-cardboard-sword-crafting",
-        "name": "Crafting Table - Cardboard Sword",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Cardboard Sword",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23243,7 +22546,7 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           }
         ],
-        "speedRpm": 0,
+        "speedRpm": 64,
         "sourceMod": "Create Mod"
       }
     ]
@@ -23258,9 +22561,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-cardboard-helmet-crafting",
-        "name": "Crafting Table - Cardboard Helmet",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Cardboard Helmet",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23276,7 +22579,7 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           }
         ],
-        "speedRpm": 0,
+        "speedRpm": 64,
         "sourceMod": "Create Mod"
       }
     ]
@@ -23291,9 +22594,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-cardboard-chestplate-crafting",
-        "name": "Crafting Table - Cardboard Chestplate",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Cardboard Chestplate",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23309,7 +22612,7 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           }
         ],
-        "speedRpm": 0,
+        "speedRpm": 64,
         "sourceMod": "Create Mod"
       }
     ]
@@ -23324,9 +22627,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-cardboard-leggings-crafting",
-        "name": "Crafting Table - Cardboard Leggings",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Cardboard Leggings",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23342,7 +22645,7 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           }
         ],
-        "speedRpm": 0,
+        "speedRpm": 64,
         "sourceMod": "Create Mod"
       }
     ]
@@ -23357,9 +22660,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-cardboard-boots-crafting",
-        "name": "Crafting Table - Cardboard Boots",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Cardboard Boots",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23375,12 +22678,12 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           }
         ],
-        "speedRpm": 0,
+        "speedRpm": 64,
         "sourceMod": "Create Mod"
       }
     ]
   },
-    {
+  {
     "id": "diesel-engine",
     "name": "Diesel Engine",
     "category": "Kinetic Generators",
@@ -23390,9 +22693,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-diesel-engine-crafting",
-        "name": "Crafting Table - Diesel Engine",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Diesel Engine",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23443,9 +22746,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-modular-diesel-engine-crafting",
-        "name": "Crafting Table - Modular Diesel Engine",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Modular Diesel Engine",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23491,9 +22794,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-huge-diesel-engine-crafting",
-        "name": "Crafting Table - Huge Diesel Engine",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Huge Diesel Engine",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23577,9 +22880,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-portable-engine-crafting",
-        "name": "Crafting Table - Portable Engine",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Portable Engine",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23620,9 +22923,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-modular-accumulator-crafting",
-        "name": "Crafting Table - Modular Accumulator",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Modular Accumulator",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23653,7 +22956,7 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           }
         ],
-        "speedRpm": 0,
+        "speedRpm": 64,
         "sourceMod": "Create Crafts & Additions"
       }
     ]
@@ -23802,9 +23105,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-physics-assembler-crafting",
-        "name": "Crafting Table - Physics Assembler",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Physics Assembler",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23830,7 +23133,7 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           }
         ],
-        "speedRpm": 0,
+        "speedRpm": 64,
         "sourceMod": "Create: Aeronautics"
       }
     ]
@@ -23845,9 +23148,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-coaster-cart-crafting",
-        "name": "Crafting Table - Coaster Cart",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Coaster Cart",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23878,7 +23181,7 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           }
         ],
-        "speedRpm": 0,
+        "speedRpm": 64,
         "sourceMod": "Create: Coasters Simulated"
       }
     ]
@@ -23893,9 +23196,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-torsion-spring-crafting",
-        "name": "Crafting Table - Torsion Spring",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Torsion Spring",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23936,9 +23239,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-propeller-bearing-crafting",
-        "name": "Crafting Table - Propeller Bearing",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Propeller Bearing",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -23979,9 +23282,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-swivel-bearing-crafting",
-        "name": "Crafting Table - Swivel Bearing",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Swivel Bearing",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -24022,9 +23325,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-steam-vent-crafting",
-        "name": "Crafting Table - Steam Vent",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Steam Vent",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -24045,7 +23348,7 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           }
         ],
-        "speedRpm": 0,
+        "speedRpm": 64,
         "sourceMod": "Create: Aeronautics"
       }
     ]
@@ -24060,9 +23363,9 @@ export const CREATE_DATA: GameDataset = {
     "recipes": [
       {
         "id": "recipe-fireclay-crafting",
-        "name": "Crafting Table - Fireclay",
-        "method": "Crafting",
-        "buildingRequired": "Crafting Table",
+        "name": "Mechanical Crafter - Fireclay",
+        "method": "Mechanical Crafting",
+        "buildingRequired": "Mechanical Crafter",
         "processingTimeSeconds": 4,
         "ingredients": [
           {
@@ -24078,7 +23381,7 @@ export const CREATE_DATA: GameDataset = {
             "amount": 1
           }
         ],
-        "speedRpm": 0,
+        "speedRpm": 64,
         "sourceMod": "Create: The Factory Must Grow"
       }
     ]
@@ -24131,6 +23434,6 @@ export const CREATE_DATA: GameDataset = {
       }
     ]
   },
-    ...VANILLA_CRAFTING_ITEMS
+  ...VANILLA_CRAFTING_ITEMS
   ]
 };

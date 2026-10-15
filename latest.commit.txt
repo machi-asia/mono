@@ -1,0 +1,6 @@
+feature(itemlist-create): replace crafting table recipes with mechanical crafter and resolve missing item icons
+
+- itemlist-create: replace 124 manual Crafting Table recipes with automated Mechanical Crafter recipes
+- itemlist-create: clean up wikitext parser artifacts in recipe ingredients and deduplicate identical recipes
+- itemlist-create: add missing item icons for wooden slab, doors, buttons, pressure plates, trapdoors, and addon items
+- game-calculator: add multi-stage fallback asset resolution in RecipeProcessNode and register missing raw item icons
