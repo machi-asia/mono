@@ -16,7 +16,7 @@
   "dependencies": {
     "@mono/app-config": "*",
     "@mono/game-calculator": "*",
-    "next": "16.3.8",
+    "next": "16.4.1",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
