@@ -19,6 +19,7 @@ import ContactDialog from "../components/sections/ContactDialog";
 
 // Local Data
 import type { GitHubRepo } from "../data/types";
+import { createClient } from "@mono/auth";
 import { faqItems, workCompanies, educationHistory } from "../data/experience";
 import { featuredWorks } from "../data/featured-works";
 import { certificatesData } from "../data/certificates";
@@ -122,19 +123,25 @@ export default function HomePage() {
     const [reposLoading, setReposLoading] = useState(false);
     const [reposError, setReposError] = useState<string | null>(null);
 
-    // Fetch GitHub repos live (with graceful fallback to local cache)
+    // Fetch cached GitHub repos from Supabase (populated daily at 12:00 AM by cron)
     useEffect(() => {
         let isMounted = true;
         const fetchRepos = async () => {
             try {
-                const res = await fetch("https://api.github.com/users/kamachi-dev/repos?sort=updated&per_page=100");
-                if (!res.ok) {
+                const supabase = createClient();
+                const { data, error } = await supabase
+                    .from("portfolio_github_cache")
+                    .select("repos")
+                    .eq("id", "kamachi-dev")
+                    .maybeSingle();
+
+                const row = data as { repos?: unknown } | null;
+                if (error || !row || !Array.isArray(row.repos) || row.repos.length === 0) {
                     if (isMounted) setRepos(FALLBACK_REPOS);
                     return;
                 }
-                const data = await res.json();
-                if (isMounted && Array.isArray(data) && data.length > 0) {
-                    setRepos(data);
+                if (isMounted) {
+                    setRepos(row.repos as GitHubRepo[]);
                 }
             } catch {
                 if (isMounted) setRepos(FALLBACK_REPOS);

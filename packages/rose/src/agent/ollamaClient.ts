@@ -9,8 +9,8 @@ export interface OllamaChatMessage {
 const OLLAMA_DEFAULT_BASE_URL = "http://localhost:11434";
 const OLLAMA_DEFAULT_MODEL = "qwen2.5:3b";
 const OLLAMA_REQUEST_TIMEOUT_MS = 180_000;
-const OLLAMA_CONNECT_TIMEOUT_MS = 10_000;
-const OLLAMA_STREAM_IDLE_TIMEOUT_MS = 60_000;
+const OLLAMA_CONNECT_TIMEOUT_MS = 120_000;
+const OLLAMA_STREAM_IDLE_TIMEOUT_MS = 120_000;
 
 const TOOL_EMIT_HINT = `
 Tool Calling Format (CRITICAL):
@@ -185,8 +185,8 @@ function buildOllamaRequest(
     keep_alive: "10m",
     options: {
       temperature: 0.7,
-      num_predict: 4096,
-      num_ctx: 4096,
+      num_predict: 8192,
+      num_ctx: 16384,
     },
   };
 }
@@ -254,14 +254,17 @@ export async function* callOllamaStream(
   let buffer = "";
   let promptTokens: number | undefined;
   let evalTokens: number | undefined;
+  let isThinking = false;
 
   try {
     while (true) {
-      const { done, value } = await withTimeout(
-        reader.read(),
-        OLLAMA_STREAM_IDLE_TIMEOUT_MS,
-        "Ollama stream"
-      );
+      const { done, value } = isThinking
+        ? await reader.read()
+        : await withTimeout(
+            reader.read(),
+            OLLAMA_STREAM_IDLE_TIMEOUT_MS,
+            "Ollama stream"
+          );
       if (done) break;
 
       buffer += decoder.decode(value, { stream: true });
@@ -286,8 +289,15 @@ export async function* callOllamaStream(
         if (parsed.prompt_eval_count != null) promptTokens = parsed.prompt_eval_count;
         if (parsed.eval_count != null) evalTokens = parsed.eval_count;
 
+        const thinkingDelta = parsed.message?.thinking;
+        if (thinkingDelta) {
+          isThinking = true;
+          yield { thinkingChunk: thinkingDelta };
+        }
+
         const deltaText = parsed.message?.content;
         if (deltaText) {
+          isThinking = false;
           yield { textChunk: deltaText, rawCandidate: parsed };
         }
 
@@ -377,14 +387,17 @@ export async function* callOllamaMessagesStream(
   let buffer = "";
   let promptTokens: number | undefined;
   let evalTokens: number | undefined;
+  let isThinking = false;
 
   try {
     while (true) {
-      const { done, value } = await withTimeout(
-        reader.read(),
-        OLLAMA_STREAM_IDLE_TIMEOUT_MS,
-        "Ollama stream"
-      );
+      const { done, value } = isThinking
+        ? await reader.read()
+        : await withTimeout(
+            reader.read(),
+            OLLAMA_STREAM_IDLE_TIMEOUT_MS,
+            "Ollama stream"
+          );
       if (done) break;
 
       buffer += decoder.decode(value, { stream: true });
@@ -409,8 +422,15 @@ export async function* callOllamaMessagesStream(
         if (parsed.prompt_eval_count != null) promptTokens = parsed.prompt_eval_count;
         if (parsed.eval_count != null) evalTokens = parsed.eval_count;
 
+        const thinkingDelta = parsed.message?.thinking;
+        if (thinkingDelta) {
+          isThinking = true;
+          yield { thinkingChunk: thinkingDelta };
+        }
+
         const deltaText = parsed.message?.content;
         if (deltaText) {
+          isThinking = false;
           yield { textChunk: deltaText };
         }
 

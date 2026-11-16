@@ -33,6 +33,8 @@ export type { UseVoiceChatOptions, SpeechProvider } from "./hooks";
 
 // Utilities
 export {
+  getRoseApiBasePath,
+  getRoseTranscribeEndpoint,
   cleanTextForSpeech,
   isSpeechSynthesisSupported,
   isSpeechRecognitionSupported,
@@ -67,6 +69,32 @@ export type {
   FasterWhisperRecorderOptions,
   ClientWhisperRecorderOptions,
 } from "./utils";
+
+// Agent Core & Tools
+export {
+  runAgentChat,
+  runAgentChatStream,
+  formatErrorCallout,
+  parseErrorDetails,
+  extractToolCallsFromText,
+  sanitizeHistory,
+  toCleanHistory,
+  ROSE_EMOTIONS,
+  extractEmotion,
+  createLangfuseTrace,
+  RoseLangfuseTrace,
+  MEMORY_CONTEXT_MARKER,
+  PERSONALIZATION_CONTEXT_MARKER,
+  buildMemoryIndexContext,
+  hasMemoryContext,
+  setMemoryToolContext,
+  clearMemoryToolContext,
+  runWithMemoryToolContext,
+  type AgentStreamEvent,
+  type ChatMessage,
+  type RunAgentResult,
+  type MemoryToolExecutionContext,
+} from "./agent";
 
 // Types
 export type { RoseUsage } from "./types";

@@ -17,8 +17,8 @@ export type { RowProps, ColProps, CardProps } from "./components/layout";
 export { Button } from "./components/button";
 export type { ButtonProps, ButtonVariant, ButtonSize } from "./components/button";
 
-export { Link } from "./components/link";
-export type { LinkProps, LinkVariant } from "./components/link";
+export { Link, useResolvedHref, resolveHref, resolveAppHref } from "./components/link";
+export type { LinkProps, LinkVariant, AppId, LocalLinkOptions } from "./components/link";
 
 export { Tooltip } from "./components/tooltip";
 export type { TooltipProps, TooltipPosition, TooltipVariant } from "./components/tooltip";
@@ -129,5 +129,31 @@ export type {
   ScrollDepthProps,
 } from "./components/scroll-sections";
 
-
-
+export {
+  PresentationDeck,
+  PresentationPinnedSection,
+  PresentationHorizontal,
+  PresentationZoom,
+  PresentationCardStack,
+  PresentationSplit,
+  PresentationParallax,
+  PresentationPopOutCard,
+  usePresentationScroll,
+} from "./components/presentation";
+export type {
+  PresentationSpringConfig,
+  PresentationBaseProps,
+  PresentationPinnedStep,
+  PresentationPinnedSectionProps,
+  PresentationHorizontalProps,
+  PresentationZoomMode,
+  PresentationZoomProps,
+  PresentationCardStackProps,
+  PresentationSplitDirection,
+  PresentationSplitProps,
+  PresentationParallaxLayer,
+  PresentationParallaxProps,
+  PresentationDeckSectionItem,
+  PresentationDeckProps,
+  PresentationPopOutCardProps,
+} from "./components/presentation";

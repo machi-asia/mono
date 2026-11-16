@@ -1,0 +1,1428 @@
+[
+  {
+    "id": "90180244884409",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Marketplace"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "DEPLOYED TO PROD"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-75d1b135-d5be-47d1-a9d2-501bdd8b8545"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 7 2026, 8:16PM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5a1b8ffc-2b89-4a11-b521-246fa8a6d99c"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-78f34e8e-7c2a-451e-a19f-49c86ae1f9ae"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-472b9029-7982-493a-b4d7-1c2a195548e7"
+        }
+      }
+    ],
+    "comment_text": "This Marketplace has been move to DEPLOYED TO PROD\nDate updated: Aug 7 2026, 8:16PM (Asia/Singapore)\nTriggered by: Angelo Kamachi\n\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786104999684",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244833609",
+    "comment": [
+      {
+        "text": "PRODUCTION PR READY FOR REVIEW (reopened)\n\n"
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 37590522,
+          "username": "Ian Pelea",
+          "email": "ian@prosperna.com",
+          "initials": "IP",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/37590522_IvQ.jpg"
+        },
+        "text": "@Ian Pelea"
+      },
+      {
+        "text": " reopened the main PR fresh after the branch got additional commits (icon redesign) and the dev/staging PRs were also reopened, it is waiting for your review, merging it deploys to production.\n\nMAIN PR: https://github.com/Prosperna/prosperna1/pull/7756 (replaces closed #7750)\nSTAGING PR: https://github.com/Prosperna/prosperna1/pull/7755 (replaces closed #7753/#7749)\nDEV PR: https://github.com/Prosperna/prosperna1/pull/7754 (replaces closed #7752), plus earlier merged/QA-approved dev PRs #7725, #7744, #7748\nREPO/BRANCH: prosperna1 / fix/marketplace-icons\n"
+      }
+    ],
+    "comment_text": "PRODUCTION PR READY FOR REVIEW (reopened)\n\n reopened the main PR fresh after the branch got additional commits (icon redesign) and the dev/staging PRs were also reopened, it is waiting for your review, merging it deploys to production.\n\nMAIN PR: https://github.com/Prosperna/prosperna1/pull/7756 (replaces closed #7750)\nSTAGING PR: https://github.com/Prosperna/prosperna1/pull/7755 (replaces closed #7753/#7749)\nDEV PR: https://github.com/Prosperna/prosperna1/pull/7754 (replaces closed #7752), plus earlier merged/QA-approved dev PRs #7725, #7744, #7748\nREPO/BRANCH: prosperna1 / fix/marketplace-icons\n@Ian Pelea",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097159107",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786095102465",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244832673",
+    "comment": [
+      {
+        "text": "Reopened fresh PRs after the force-push, to avoid any stale diff/review state on the previous ones.\n\nPULL REQUESTS\nprosperna1 / fix/marketplace-icons-dev4 -> dev: https://github.com/Prosperna/prosperna1/pull/7754 (replaces closed #7752)\nprosperna1 / fix/marketplace-icons-staging1 -> staging: https://github.com/Prosperna/prosperna1/pull/7755 (replaces closed #7753, which replaced #7749)\n\nSame content as before (full cherry-picked commit history, only the icon redesign actually changes files), verified no merge conflicts against current dev/staging tips before opening."
+      }
+    ],
+    "comment_text": "Reopened fresh PRs after the force-push, to avoid any stale diff/review state on the previous ones.\n\nPULL REQUESTS\nprosperna1 / fix/marketplace-icons-dev4 -> dev: https://github.com/Prosperna/prosperna1/pull/7754 (replaces closed #7752)\nprosperna1 / fix/marketplace-icons-staging1 -> staging: https://github.com/Prosperna/prosperna1/pull/7755 (replaces closed #7753, which replaced #7749)\n\nSame content as before (full cherry-picked commit history, only the icon redesign actually changes files), verified no merge conflicts against current dev/staging tips before opening.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097175828",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786094923667",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244831034",
+    "comment": [
+      {
+        "text": "Update: rebuilt PR #7752 (dev) to cherry-pick the full commit history (all 6 marketplace icon commits in order) rather than just the newest one, per standard practice, the first 5 are no-op/empty commits since dev already has that content merged, but the full lineage is now preserved on the branch. Final file diff is unchanged (still just the 2 icon files). No action needed, just flagging the branch was force-updated."
+      }
+    ],
+    "comment_text": "Update: rebuilt PR #7752 (dev) to cherry-pick the full commit history (all 6 marketplace icon commits in order) rather than just the newest one, per standard practice, the first 5 are no-op/empty commits since dev already has that content merged, but the full lineage is now preserved on the branch. Final file diff is unchanged (still just the 2 icon files). No action needed, just flagging the branch was force-updated.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097180988",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786094680446",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244826576",
+    "comment": [
+      {
+        "text": "Correction to my last comment: the main PR #7750 is still open (not merged yet), but since it tracks the fix/marketplace-icons branch directly, it already picked up the new icon redesign commit automatically, no separate main PR is needed for this. Once dev/staging are approved and #7750 merges, the icon redesign goes to production along with everything else in one shot."
+      }
+    ],
+    "comment_text": "Correction to my last comment: the main PR #7750 is still open (not merged yet), but since it tracks the fix/marketplace-icons branch directly, it already picked up the new icon redesign commit automatically, no separate main PR is needed for this. Once dev/staging are approved and #7750 merges, the icon redesign goes to production along with everything else in one shot.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097184402",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786094038088",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244826461",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\nRedesigned the Additional Fee and Multi-currency marketplace icons. The Additional Fee tag icon had a stray notch from an unclosed path, and its punch-hole dot did not clearly read as additional. The Multi-currency icon used two plus-sign crosses that read as an add icon rather than currency. Replaced with a clean price tag with a plus mark, and a single coin with a dollar sign.\n\nEXTRA WORK\nNone beyond the reported issue.\n\nPULL REQUESTS\nprosperna1 / fix/marketplace-icons-dev4 -> dev: https://github.com/Prosperna/prosperna1/pull/7752\nprosperna1 / fix/marketplace-icons-staging1 -> staging: https://github.com/Prosperna/prosperna1/pull/7753 (supersedes and closes the earlier staging PR #7749, which had not been merged yet, so this one just carries everything forward plus the icon redesign)\nThe main PR (#7750) already merged this branch history up to the previous fix, this icon redesign commit is on top of fix/marketplace-icons and will need a small additional main PR once dev/staging are approved, or can be folded into the next promotion round, your call.\n\nHOW IT WAS TESTED\nSVG-only change for the dev PR, nothing to lint or test there. For the staging PR (which also carries the full set of earlier marketplace icon commits since staging had not received them yet), linted all touched JS/JSX files (clean) and ran targeted vitest suites covering Multi-currency, Marketplace, Applications, and Checkout (71/71 passed). Verified no merge conflicts against current origin/dev and origin/staging tips.\n\nNEXT STEPS\nQA validation on dev, then staging approval. Let me know if you want the icon redesign promoted to main as its own small PR now, or bundled with a future promotion.\n\nQA TEST CASES\nSee the updated QA TEST CASES SUMMARY comment on this task, cases 11-12 added for the redesigned icons."
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\nRedesigned the Additional Fee and Multi-currency marketplace icons. The Additional Fee tag icon had a stray notch from an unclosed path, and its punch-hole dot did not clearly read as additional. The Multi-currency icon used two plus-sign crosses that read as an add icon rather than currency. Replaced with a clean price tag with a plus mark, and a single coin with a dollar sign.\n\nEXTRA WORK\nNone beyond the reported issue.\n\nPULL REQUESTS\nprosperna1 / fix/marketplace-icons-dev4 -> dev: https://github.com/Prosperna/prosperna1/pull/7752\nprosperna1 / fix/marketplace-icons-staging1 -> staging: https://github.com/Prosperna/prosperna1/pull/7753 (supersedes and closes the earlier staging PR #7749, which had not been merged yet, so this one just carries everything forward plus the icon redesign)\nThe main PR (#7750) already merged this branch history up to the previous fix, this icon redesign commit is on top of fix/marketplace-icons and will need a small additional main PR once dev/staging are approved, or can be folded into the next promotion round, your call.\n\nHOW IT WAS TESTED\nSVG-only change for the dev PR, nothing to lint or test there. For the staging PR (which also carries the full set of earlier marketplace icon commits since staging had not received them yet), linted all touched JS/JSX files (clean) and ran targeted vitest suites covering Multi-currency, Marketplace, Applications, and Checkout (71/71 passed). Verified no merge conflicts against current origin/dev and origin/staging tips.\n\nNEXT STEPS\nQA validation on dev, then staging approval. Let me know if you want the icon redesign promoted to main as its own small PR now, or bundled with a future promotion.\n\nQA TEST CASES\nSee the updated QA TEST CASES SUMMARY comment on this task, cases 11-12 added for the redesigned icons.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097193065",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786094003570",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244818430",
+    "comment": [
+      {
+        "text": "PRODUCTION PR READY FOR REVIEW\n\n"
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 37590522,
+          "username": "Ian Pelea",
+          "email": "ian@prosperna.com",
+          "initials": "IP",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/37590522_IvQ.jpg"
+        },
+        "text": "@Ian Pelea"
+      },
+      {
+        "text": " the main PR is open and waiting for your review, merging it deploys to production.\n\nMAIN PR: https://github.com/Prosperna/prosperna1/pull/7750\nSTAGING PR: https://github.com/Prosperna/prosperna1/pull/7749\nDEV PRs (merged, QA-approved): https://github.com/Prosperna/prosperna1/pull/7725, https://github.com/Prosperna/prosperna1/pull/7744, https://github.com/Prosperna/prosperna1/pull/7748\nREPO/BRANCH: prosperna1 / fix/marketplace-icons\n"
+      }
+    ],
+    "comment_text": "PRODUCTION PR READY FOR REVIEW\n\n the main PR is open and waiting for your review, merging it deploys to production.\n\nMAIN PR: https://github.com/Prosperna/prosperna1/pull/7750\nSTAGING PR: https://github.com/Prosperna/prosperna1/pull/7749\nDEV PRs (merged, QA-approved): https://github.com/Prosperna/prosperna1/pull/7725, https://github.com/Prosperna/prosperna1/pull/7744, https://github.com/Prosperna/prosperna1/pull/7748\nREPO/BRANCH: prosperna1 / fix/marketplace-icons\n@Ian Pelea",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097219483",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786092422744",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244816779",
+    "comment": [
+      {
+        "text": "Promoted to staging (staging had not received any of this work yet, so this brings across the full set of dev fixes in one PR): https://github.com/Prosperna/prosperna1/pull/7749\n\nNote: a couple of pre-existing, unrelated eslint errors (react-hooks/set-state-in-effect) were found on staging in LazadaApp.jsx and Marketplace.jsx, on old useEffect blocks this change does not touch. Confirmed via diff these predate this fix and are out of scope here."
+      }
+    ],
+    "comment_text": "Promoted to staging (staging had not received any of this work yet, so this brings across the full set of dev fixes in one PR): https://github.com/Prosperna/prosperna1/pull/7749\n\nNote: a couple of pre-existing, unrelated eslint errors (react-hooks/set-state-in-effect) were found on staging in LazadaApp.jsx and Marketplace.jsx, on old useEffect blocks this change does not touch. Confirmed via diff these predate this fix and are out of scope here.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097222557",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786092012418",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244814162",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\nFollow-up fix to PR #7744 (already merged to dev). The Customer Delivery Dates detail modal icon was still wrong, it was showing a different blue notification-style icon file (cdd-notification-icon.png) instead of the same repo icon (icons/custom-delivery-dates.svg) used on its own marketplace card and elsewhere, so the modal icon looked inconsistent (blue, smaller circle) versus the card icon (black outline). Fixed to use the same icon source as the card.\n\nEXTRA WORK\nNone beyond the reported issue.\n\nPULL REQUESTS\nprosperna1 / fix/marketplace-icons-dev3 -> dev: https://github.com/Prosperna/prosperna1/pull/7748\n\nHOW IT WAS TESTED\nLinted the touched file with eslint (clean). Ran targeted vitest suites covering Multi-currency, Marketplace, Applications, and Checkout (71/71 passed). Verified no merge conflicts against the current origin/dev tip.\n\nNEXT STEPS\nQA validation on dev once this PR is merged. After QA approval this and the earlier fixes will be promoted to staging and main together.\n\nQA TEST CASES\nSee the updated QA TEST CASES SUMMARY comment on this task for step-by-step verification."
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\nFollow-up fix to PR #7744 (already merged to dev). The Customer Delivery Dates detail modal icon was still wrong, it was showing a different blue notification-style icon file (cdd-notification-icon.png) instead of the same repo icon (icons/custom-delivery-dates.svg) used on its own marketplace card and elsewhere, so the modal icon looked inconsistent (blue, smaller circle) versus the card icon (black outline). Fixed to use the same icon source as the card.\n\nEXTRA WORK\nNone beyond the reported issue.\n\nPULL REQUESTS\nprosperna1 / fix/marketplace-icons-dev3 -> dev: https://github.com/Prosperna/prosperna1/pull/7748\n\nHOW IT WAS TESTED\nLinted the touched file with eslint (clean). Ran targeted vitest suites covering Multi-currency, Marketplace, Applications, and Checkout (71/71 passed). Verified no merge conflicts against the current origin/dev tip.\n\nNEXT STEPS\nQA validation on dev once this PR is merged. After QA approval this and the earlier fixes will be promoted to staging and main together.\n\nQA TEST CASES\nSee the updated QA TEST CASES SUMMARY comment on this task for step-by-step verification.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097227129",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786091631213",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244808429",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "47ab0b91-04ab-4a23-8b83-1906d5cb5755.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/47ab0b91-04ab-4a23-8b83-1906d5cb5755/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/47ab0b91-04ab-4a23-8b83-1906d5cb5755_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/47ab0b91-04ab-4a23-8b83-1906d5cb5755_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/47ab0b91-04ab-4a23-8b83-1906d5cb5755/image.png",
+          "uploaded": true,
+          "width": 810,
+          "height": 973
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "47ab0b91-04ab-4a23-8b83-1906d5cb5755.png",
+          "data-attachment": "{\"id\":\"47ab0b91-04ab-4a23-8b83-1906d5cb5755.png\",\"version\":\"0\",\"date\":1786090698357,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/47ab0b91-04ab-4a23-8b83-1906d5cb5755_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/47ab0b91-04ab-4a23-8b83-1906d5cb5755_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/47ab0b91-04ab-4a23-8b83-1906d5cb5755/image.png\",\"width\":810,\"height\":973,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/47ab0b91-04ab-4a23-8b83-1906d5cb5755/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/47ab0b91-04ab-4a23-8b83-1906d5cb5755/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/47ab0b91-04ab-4a23-8b83-1906d5cb5755/image.png\"}",
+          "data-natural-width": "810",
+          "data-natural-height": "973"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2jDXNZ2I2W"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "e48cdefe-5938-40a4-a108-2aad3373b7c3.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/e48cdefe-5938-40a4-a108-2aad3373b7c3/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/e48cdefe-5938-40a4-a108-2aad3373b7c3_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/e48cdefe-5938-40a4-a108-2aad3373b7c3_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/e48cdefe-5938-40a4-a108-2aad3373b7c3/image.png",
+          "uploaded": true,
+          "width": 813,
+          "height": 635
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "e48cdefe-5938-40a4-a108-2aad3373b7c3.png",
+          "data-attachment": "{\"id\":\"e48cdefe-5938-40a4-a108-2aad3373b7c3.png\",\"version\":\"0\",\"date\":1786090707814,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/e48cdefe-5938-40a4-a108-2aad3373b7c3_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/e48cdefe-5938-40a4-a108-2aad3373b7c3_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/e48cdefe-5938-40a4-a108-2aad3373b7c3/image.png\",\"width\":813,\"height\":635,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/e48cdefe-5938-40a4-a108-2aad3373b7c3/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/e48cdefe-5938-40a4-a108-2aad3373b7c3/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/e48cdefe-5938-40a4-a108-2aad3373b7c3/image.png\"}",
+          "data-natural-width": "813",
+          "data-natural-height": "635"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-MPCB2wjtqV"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "5fa02d23-a357-4059-a081-4d34efd0d955.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/5fa02d23-a357-4059-a081-4d34efd0d955/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/5fa02d23-a357-4059-a081-4d34efd0d955_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/5fa02d23-a357-4059-a081-4d34efd0d955_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/5fa02d23-a357-4059-a081-4d34efd0d955/image.png",
+          "uploaded": true,
+          "width": 811,
+          "height": 688
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "5fa02d23-a357-4059-a081-4d34efd0d955.png",
+          "data-attachment": "{\"id\":\"5fa02d23-a357-4059-a081-4d34efd0d955.png\",\"version\":\"0\",\"date\":1786090717865,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/5fa02d23-a357-4059-a081-4d34efd0d955_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/5fa02d23-a357-4059-a081-4d34efd0d955_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/5fa02d23-a357-4059-a081-4d34efd0d955/image.png\",\"width\":811,\"height\":688,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/5fa02d23-a357-4059-a081-4d34efd0d955/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/5fa02d23-a357-4059-a081-4d34efd0d955/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/5fa02d23-a357-4059-a081-4d34efd0d955/image.png\"}",
+          "data-natural-width": "811",
+          "data-natural-height": "688"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-jBDxDIpbRP"
+        }
+      },
+      {
+        "text": "US",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-euZlRbKcTR"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\nimage.png\nUS\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786090724743",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244808115",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "388af0a8-d57e-43a3-ab1d-815f1741a179.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/388af0a8-d57e-43a3-ab1d-815f1741a179/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/388af0a8-d57e-43a3-ab1d-815f1741a179_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/388af0a8-d57e-43a3-ab1d-815f1741a179_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/388af0a8-d57e-43a3-ab1d-815f1741a179/image.png",
+          "uploaded": true,
+          "width": 829,
+          "height": 635
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "388af0a8-d57e-43a3-ab1d-815f1741a179.png",
+          "data-attachment": "{\"id\":\"388af0a8-d57e-43a3-ab1d-815f1741a179.png\",\"version\":\"0\",\"date\":1786090622038,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/388af0a8-d57e-43a3-ab1d-815f1741a179_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/388af0a8-d57e-43a3-ab1d-815f1741a179_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/388af0a8-d57e-43a3-ab1d-815f1741a179/image.png\",\"width\":829,\"height\":635,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/388af0a8-d57e-43a3-ab1d-815f1741a179/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/388af0a8-d57e-43a3-ab1d-815f1741a179/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/388af0a8-d57e-43a3-ab1d-815f1741a179/image.png\"}",
+          "data-natural-width": "829",
+          "data-natural-height": "635"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-DWqVdJIe8U"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "144db597-9fa9-49cb-8c86-2ba3afec907e.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/144db597-9fa9-49cb-8c86-2ba3afec907e/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/144db597-9fa9-49cb-8c86-2ba3afec907e_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/144db597-9fa9-49cb-8c86-2ba3afec907e_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/144db597-9fa9-49cb-8c86-2ba3afec907e/image.png",
+          "uploaded": true,
+          "width": 844,
+          "height": 701
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "144db597-9fa9-49cb-8c86-2ba3afec907e.png",
+          "data-attachment": "{\"id\":\"144db597-9fa9-49cb-8c86-2ba3afec907e.png\",\"version\":\"0\",\"date\":1786090609962,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/144db597-9fa9-49cb-8c86-2ba3afec907e_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/144db597-9fa9-49cb-8c86-2ba3afec907e_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/144db597-9fa9-49cb-8c86-2ba3afec907e/image.png\",\"width\":844,\"height\":701,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/144db597-9fa9-49cb-8c86-2ba3afec907e/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/144db597-9fa9-49cb-8c86-2ba3afec907e/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/144db597-9fa9-49cb-8c86-2ba3afec907e/image.png\"}",
+          "data-natural-width": "844",
+          "data-natural-height": "701"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-dj37wYF-1M"
+        }
+      },
+      {
+        "text": "PH",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-TyQExCbBqO"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\nPH\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097238040",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786090626224",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244806531",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\nFast-follow fix for the QA return, addressing the 3 apps still showing a broken icon when clicked into: Customer Delivery Dates and Announcement (PH account), plus Multi-currency (US account).\n1. Announcements detail modal was using the raw API icon URL with no local fallback at all, now uses the local icon first.\n2. Customer Delivery Dates detail modal already had a local fallback icon available but checked the API icon first, so the fallback never actually kicked in when the API icon was broken, priority flipped so the local icon is used first.\n3. Multi-currency detail modal had the same backwards priority issue, fixed the same way.\n\nEXTRA WORK\nNone beyond the reported issue.\n\nPULL REQUESTS\nprosperna1 / fix/marketplace-icons-dev2 -> dev: https://github.com/Prosperna/prosperna1/pull/7744\n\nHOW IT WAS TESTED\nLinted all 3 touched files with eslint (clean). Ran targeted vitest suites covering Multi-currency, Marketplace, Applications, and Checkout (71/71 passed). Verified no merge conflicts against the current origin/dev tip.\n\nNEXT STEPS\nQA validation on dev once this PR is merged. After QA approval this will be promoted to staging and main together with the original fix.\n\nQA TEST CASES\nSee the updated QA TEST CASES SUMMARY comment on this task for step-by-step verification."
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\nFast-follow fix for the QA return, addressing the 3 apps still showing a broken icon when clicked into: Customer Delivery Dates and Announcement (PH account), plus Multi-currency (US account).\n1. Announcements detail modal was using the raw API icon URL with no local fallback at all, now uses the local icon first.\n2. Customer Delivery Dates detail modal already had a local fallback icon available but checked the API icon first, so the fallback never actually kicked in when the API icon was broken, priority flipped so the local icon is used first.\n3. Multi-currency detail modal had the same backwards priority issue, fixed the same way.\n\nEXTRA WORK\nNone beyond the reported issue.\n\nPULL REQUESTS\nprosperna1 / fix/marketplace-icons-dev2 -> dev: https://github.com/Prosperna/prosperna1/pull/7744\n\nHOW IT WAS TESTED\nLinted all 3 touched files with eslint (clean). Ran targeted vitest suites covering Multi-currency, Marketplace, Applications, and Checkout (71/71 passed). Verified no merge conflicts against the current origin/dev tip.\n\nNEXT STEPS\nQA validation on dev once this PR is merged. After QA approval this will be promoted to staging and main together with the original fix.\n\nQA TEST CASES\nSee the updated QA TEST CASES SUMMARY comment on this task for step-by-step verification.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097252875",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786090262950",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244796514",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Marketplace"
+      },
+      {
+        "text": " has been move back to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN DEVELOPMENT"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-563d50ef-83f3-4eb2-b08e-c4e678b94e71"
+        }
+      },
+      {
+        "text": "as tag ",
+        "attributes": {}
+      },
+      {
+        "text": "QA return",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-f007b441-9ff1-4f62-b3f4-1d39c9bbc8a2"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 7 2026, 3:42PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-55190d2e-48b3-4799-869e-301e32ad58ec"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ce854d80-34e8-434d-86e2-9e9fcdd7df5d"
+        }
+      }
+    ],
+    "comment_text": "This task Marketplace has been move back to IN DEVELOPMENT \nas tag QA return\nDate updated: Aug 7 2026, 3:42PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "thumbs_up",
+        "date": "1786097257177",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786088569776",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244796503",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-pm2pKpWIWe"
+        }
+      },
+      {
+        "text": "url: ",
+        "attributes": {}
+      },
+      {
+        "text": "https://prodev.prosperna.ph/home/marketplace",
+        "attributes": {
+          "link": "https://prodev.prosperna.ph/home/marketplace"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-qrkTDJN_WQ"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "FAILED",
+        "attributes": {
+          "bold": true,
+          "badge-class": "red"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-b-e1-VeQLE"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-VU4AJbzodn"
+        }
+      },
+      {
+        "text": "PH Account:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-SiNLZcNLRS"
+        }
+      },
+      {
+        "type": "frame",
+        "frame": {
+          "id": "b346ce1e-e5ad-405d-91eb-7ebef38fbd8c.mp4",
+          "service": "clickup_video",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/b346ce1e-e5ad-405d-91eb-7ebef38fbd8c/20260807-0736-19.4608779.mp4?view=open",
+          "src": "https://t7537039.p.clickup-attachments.com/t7537039/b346ce1e-e5ad-405d-91eb-7ebef38fbd8c/20260807-0736-19.4608779.mp4?view=open",
+          "source": 1
+        },
+        "text": "https://t7537039.p.clickup-attachments.com/t7537039/b346ce1e-e5ad-405d-91eb-7ebef38fbd8c/20260807-0736-19.4608779.mp4?view=open",
+        "attributes": {
+          "block-id": "block-lk9Ln1cOM0",
+          "data-size": "large",
+          "data-origin": "attachment"
+        }
+      },
+      {
+        "text": "Apps that still has broken image(icon) when clicked:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-KExnONjh81"
+        }
+      },
+      {
+        "text": "Customer Delivery Dates",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Jdpzm51l3A",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Announcement",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-yTCyg9x5XV",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-mivutiXYLD"
+        }
+      },
+      {
+        "text": "US Account:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-YdwuFYEbh3"
+        }
+      },
+      {
+        "type": "frame",
+        "frame": {
+          "id": "ac1018cd-84c2-4c58-ae0c-50192ad0f2e8.mp4",
+          "service": "clickup_video",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/ac1018cd-84c2-4c58-ae0c-50192ad0f2e8/20260807-0740-10.6346240.mp4?view=open",
+          "src": "https://t7537039.p.clickup-attachments.com/t7537039/ac1018cd-84c2-4c58-ae0c-50192ad0f2e8/20260807-0740-10.6346240.mp4?view=open",
+          "source": 1
+        },
+        "text": "https://t7537039.p.clickup-attachments.com/t7537039/ac1018cd-84c2-4c58-ae0c-50192ad0f2e8/20260807-0740-10.6346240.mp4?view=open",
+        "attributes": {
+          "block-id": "block-hL9Uod4Q0m",
+          "data-size": "large",
+          "data-origin": "attachment"
+        }
+      },
+      {
+        "text": "Apps that still has broken image(icon) when clicked:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-P46d0em9vU"
+        }
+      },
+      {
+        "text": "Multi-currency",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-BznXF66BHc",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Customer Delivery Dates",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bTOfCzY0Yl",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Announcement",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Qh4wZEVXre",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-BPcQ8wQrit"
+        }
+      },
+      {
+        "text": "Moving this task to \"IN DEVELOPMENT\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-RadH3aldvI"
+        }
+      },
+      {
+        "text": "cc ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "env: DEV\nurl: https://prodev.prosperna.ph/home/marketplace\nStatus: FAILED\n\nPH Account:\nhttps://t7537039.p.clickup-attachments.com/t7537039/b346ce1e-e5ad-405d-91eb-7ebef38fbd8c/20260807-0736-19.4608779.mp4?view=openApps that still has broken image(icon) when clicked:\nCustomer Delivery Dates\nAnnouncement\n\nUS Account:\nhttps://t7537039.p.clickup-attachments.com/t7537039/ac1018cd-84c2-4c58-ae0c-50192ad0f2e8/20260807-0740-10.6346240.mp4?view=openApps that still has broken image(icon) when clicked:\nMulti-currency\nCustomer Delivery Dates\nAnnouncement\n\nMoving this task to \"IN DEVELOPMENT\"\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097266624",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      },
+      {
+        "reaction": "1F44D",
+        "date": "1786088603473",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      }
+    ],
+    "date": "1786088567197",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244796498",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Marketplace"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 7 2026, 3:42PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Marketplace hss been move to IN TESTING \nUpdated: Aug 7 2026, 3:42PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "thumbs_up",
+        "date": "1786097269093",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786088565470",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244733014",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Marketplace"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "READY FOR TESTING"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1d974daa-846f-4f2b-aa92-4d7879d6a360"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 7 2026, 12:05PM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2f823e5f-a650-4c0d-b5b1-fff90b29e6cf"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eb747be5-76e2-450a-80a4-2f28d51dc0ed"
+        }
+      }
+    ],
+    "comment_text": "This Marketplace has been move to READY FOR TESTING\nDate updated: Aug 7 2026, 12:05PM (Asia/Singapore)\nTriggered by: Angelo Kamachi\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "thumbs_up",
+        "date": "1786097271250",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786075554113",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244690014",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "a0d156d1-a9f3-454b-9ada-4e594697e2bf.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/a0d156d1-a9f3-454b-9ada-4e594697e2bf/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/a0d156d1-a9f3-454b-9ada-4e594697e2bf_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/a0d156d1-a9f3-454b-9ada-4e594697e2bf_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/a0d156d1-a9f3-454b-9ada-4e594697e2bf/image.png",
+          "uploaded": true,
+          "width": 447,
+          "height": 316
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "a0d156d1-a9f3-454b-9ada-4e594697e2bf.png",
+          "data-attachment": "{\"id\":\"a0d156d1-a9f3-454b-9ada-4e594697e2bf.png\",\"version\":\"0\",\"date\":1786061713231,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/a0d156d1-a9f3-454b-9ada-4e594697e2bf_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/a0d156d1-a9f3-454b-9ada-4e594697e2bf_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/a0d156d1-a9f3-454b-9ada-4e594697e2bf/image.png\",\"width\":447,\"height\":316,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/a0d156d1-a9f3-454b-9ada-4e594697e2bf/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/a0d156d1-a9f3-454b-9ada-4e594697e2bf/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/a0d156d1-a9f3-454b-9ada-4e594697e2bf/image.png\"}",
+          "data-natural-width": "447",
+          "data-natural-height": "316"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-OKDYPKAAld"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "0330afb3-f5a2-48ca-8821-e440a4fbd18b.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/0330afb3-f5a2-48ca-8821-e440a4fbd18b/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/0330afb3-f5a2-48ca-8821-e440a4fbd18b_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/0330afb3-f5a2-48ca-8821-e440a4fbd18b_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/0330afb3-f5a2-48ca-8821-e440a4fbd18b/image.png",
+          "uploaded": true,
+          "width": 822,
+          "height": 753
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "0330afb3-f5a2-48ca-8821-e440a4fbd18b.png",
+          "data-attachment": "{\"id\":\"0330afb3-f5a2-48ca-8821-e440a4fbd18b.png\",\"version\":\"0\",\"date\":1786061721523,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/0330afb3-f5a2-48ca-8821-e440a4fbd18b_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/0330afb3-f5a2-48ca-8821-e440a4fbd18b_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/0330afb3-f5a2-48ca-8821-e440a4fbd18b/image.png\",\"width\":822,\"height\":753,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/0330afb3-f5a2-48ca-8821-e440a4fbd18b/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/0330afb3-f5a2-48ca-8821-e440a4fbd18b/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/0330afb3-f5a2-48ca-8821-e440a4fbd18b/image.png\"}",
+          "data-natural-width": "822",
+          "data-natural-height": "753"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fefoRrUG1O"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "9e12f07e-c1a6-425a-8811-6a39cd4a0a26.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/9e12f07e-c1a6-425a-8811-6a39cd4a0a26/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/9e12f07e-c1a6-425a-8811-6a39cd4a0a26_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/9e12f07e-c1a6-425a-8811-6a39cd4a0a26_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/9e12f07e-c1a6-425a-8811-6a39cd4a0a26/image.png",
+          "uploaded": true,
+          "width": 815,
+          "height": 718
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "9e12f07e-c1a6-425a-8811-6a39cd4a0a26.png",
+          "data-attachment": "{\"id\":\"9e12f07e-c1a6-425a-8811-6a39cd4a0a26.png\",\"version\":\"0\",\"date\":1786061729594,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/9e12f07e-c1a6-425a-8811-6a39cd4a0a26_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/9e12f07e-c1a6-425a-8811-6a39cd4a0a26_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/9e12f07e-c1a6-425a-8811-6a39cd4a0a26/image.png\",\"width\":815,\"height\":718,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/9e12f07e-c1a6-425a-8811-6a39cd4a0a26/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/9e12f07e-c1a6-425a-8811-6a39cd4a0a26/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/9e12f07e-c1a6-425a-8811-6a39cd4a0a26/image.png\"}",
+          "data-natural-width": "815",
+          "data-natural-height": "718"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7COr0I1Mkw"
+        }
+      },
+      {
+        "text": "marketplace backend based icons replaced with repo based",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-z5dflq0Gir"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\nimage.png\nmarketplace backend based icons replaced with repo based\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097272935",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786061758776",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244689945",
+    "comment": [
+      {
+        "text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-08-07, PR https://github.com/Prosperna/prosperna1/pull/7748\n\nWHERE TO TEST\nDev environment, Dashboard > Marketplace page (All Apps and My Apps tabs). Test on both a PH account and a US account, some cases below only apply to one region. No special account/plan preconditions required, though having Lazada or Shopee activated lets you check the My Apps tab too.\n\nTEST CASES\n1. Open Marketplace > All Apps tab. Find the Lazada card. EXPECTED: shows the Lazada logo image clearly, not a broken image icon or Brand Logo placeholder text.\n2. On the same tab, find the Shopee card. EXPECTED: shows the Shopee logo image clearly.\n3. On the same tab, find the Temporarily Closed card. EXPECTED: shows a new closed-sign icon (a hanging CLOSED sign graphic), not a broken image.\n4. Click Learn More (or the equivalent action) on the Lazada card. EXPECTED: the Lazada detail modal opens and shows the Lazada logo at the top, not a broken image.\n5. Click into the Shopee card the same way. EXPECTED: the Shopee detail modal opens and shows the Shopee logo at the top.\n6. If you have Lazada or Shopee already activated, check the My Apps tab. EXPECTED: same correct logos appear there too.\n7. Click Learn More on the Temporarily Closed card. EXPECTED (known behavior, not a bug from this PR): nothing happens. This app has no dedicated detail page in this environment yet, so the click being a no-op is expected and outside the scope of this fix, this PR only fixes the broken icon.\n8. (PH account) Click Learn More on the Announcement card. EXPECTED: the detail modal opens and shows the Announcements icon at the top, not a broken image.\n9. (updated for PR #7748, PH and US accounts) Click Learn More on the Customer Delivery Dates card. EXPECTED: the detail modal opens and shows the same black outline calendar icon as the card itself at the top, not a broken image and not a different blue icon.\n10. (US account only) Click Learn More on the Multi-currency card. EXPECTED: the detail modal opens and shows the Multi-currency icon at the top, not a broken image.\n\nTEST DATA\nNo special test data, store IDs, or seeded accounts needed, this is a static icon display fix, all data comes from the existing Marketplace apps API. Multi-currency only shows for US merchant accounts, use a US account to verify case 10.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\nClicking Learn More on the Temporarily Closed card does not navigate anywhere, this is pre-existing behavior unrelated to this fix and should not be flagged as a bug here. Any other marketplace app whose icon was already displaying correctly before this change should look unchanged."
+      }
+    ],
+    "comment_text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-08-07, PR https://github.com/Prosperna/prosperna1/pull/7748\n\nWHERE TO TEST\nDev environment, Dashboard > Marketplace page (All Apps and My Apps tabs). Test on both a PH account and a US account, some cases below only apply to one region. No special account/plan preconditions required, though having Lazada or Shopee activated lets you check the My Apps tab too.\n\nTEST CASES\n1. Open Marketplace > All Apps tab. Find the Lazada card. EXPECTED: shows the Lazada logo image clearly, not a broken image icon or Brand Logo placeholder text.\n2. On the same tab, find the Shopee card. EXPECTED: shows the Shopee logo image clearly.\n3. On the same tab, find the Temporarily Closed card. EXPECTED: shows a new closed-sign icon (a hanging CLOSED sign graphic), not a broken image.\n4. Click Learn More (or the equivalent action) on the Lazada card. EXPECTED: the Lazada detail modal opens and shows the Lazada logo at the top, not a broken image.\n5. Click into the Shopee card the same way. EXPECTED: the Shopee detail modal opens and shows the Shopee logo at the top.\n6. If you have Lazada or Shopee already activated, check the My Apps tab. EXPECTED: same correct logos appear there too.\n7. Click Learn More on the Temporarily Closed card. EXPECTED (known behavior, not a bug from this PR): nothing happens. This app has no dedicated detail page in this environment yet, so the click being a no-op is expected and outside the scope of this fix, this PR only fixes the broken icon.\n8. (PH account) Click Learn More on the Announcement card. EXPECTED: the detail modal opens and shows the Announcements icon at the top, not a broken image.\n9. (updated for PR #7748, PH and US accounts) Click Learn More on the Customer Delivery Dates card. EXPECTED: the detail modal opens and shows the same black outline calendar icon as the card itself at the top, not a broken image and not a different blue icon.\n10. (US account only) Click Learn More on the Multi-currency card. EXPECTED: the detail modal opens and shows the Multi-currency icon at the top, not a broken image.\n\nTEST DATA\nNo special test data, store IDs, or seeded accounts needed, this is a static icon display fix, all data comes from the existing Marketplace apps API. Multi-currency only shows for US merchant accounts, use a US account to verify case 10.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\nClicking Learn More on the Temporarily Closed card does not navigate anywhere, this is pre-existing behavior unrelated to this fix and should not be flagged as a bug here. Any other marketplace app whose icon was already displaying correctly before this change should look unchanged.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097276023",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786061708737",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244689926",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\nMarketplace app cards were showing a broken image (visible as a Brand Logo placeholder) for Lazada, Shopee, and the Temporarily Closed app because their icon came straight from an unreliable API-provided URL. Fixed by resolving icons from local repo assets first and only falling back to the API URL if no local match exists.\n1. Lazada and Shopee marketplace cards (All Apps and My Apps tabs) now use local icon files instead of the API icon URL.\n2. Temporarily Closed marketplace card now shows a new custom closed-sign icon (hanging CLOSED sign) instead of a broken image, matched by its title since it has no dedicated app key entry.\n3. The Lazada/Shopee app detail modal (opened when clicking into either app) now also renders the local icon first, with the API icon URL only as a fallback.\n\nEXTRA WORK\nNone beyond the reported issue.\n\nPULL REQUESTS\nprosperna1 / fix/marketplace-icons-dev1 -> dev: https://github.com/Prosperna/prosperna1/pull/7725\n\nHOW IT WAS TESTED\nLinted all touched files with eslint (clean). Ran targeted vitest suites covering the Marketplace page, Applications list, and Checkout flow (59/59 passed). Verified no merge conflicts against the current origin/dev tip.\n\nNEXT STEPS\nQA validation on dev once this PR is merged. After QA approval this will be promoted to staging and main.\n\nQA TEST CASES\nSee the QA TEST CASES SUMMARY comment on this task for step-by-step verification."
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\nMarketplace app cards were showing a broken image (visible as a Brand Logo placeholder) for Lazada, Shopee, and the Temporarily Closed app because their icon came straight from an unreliable API-provided URL. Fixed by resolving icons from local repo assets first and only falling back to the API URL if no local match exists.\n1. Lazada and Shopee marketplace cards (All Apps and My Apps tabs) now use local icon files instead of the API icon URL.\n2. Temporarily Closed marketplace card now shows a new custom closed-sign icon (hanging CLOSED sign) instead of a broken image, matched by its title since it has no dedicated app key entry.\n3. The Lazada/Shopee app detail modal (opened when clicking into either app) now also renders the local icon first, with the API icon URL only as a fallback.\n\nEXTRA WORK\nNone beyond the reported issue.\n\nPULL REQUESTS\nprosperna1 / fix/marketplace-icons-dev1 -> dev: https://github.com/Prosperna/prosperna1/pull/7725\n\nHOW IT WAS TESTED\nLinted all touched files with eslint (clean). Ran targeted vitest suites covering the Marketplace page, Applications list, and Checkout flow (59/59 passed). Verified no merge conflicts against the current origin/dev tip.\n\nNEXT STEPS\nQA validation on dev once this PR is merged. After QA approval this will be promoted to staging and main.\n\nQA TEST CASES\nSee the QA TEST CASES SUMMARY comment on this task for step-by-step verification.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F440",
+        "date": "1786097279990",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786061692616",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244409617",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Merchant Page"
+      },
+      {
+        "text": " has been created ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bf7e6b93-37f7-4ef1-9574-05993b503c8f"
+        }
+      },
+      {
+        "text": "Date: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 6 2026, 3:53PM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5acb7133-fc27-48ba-9a62-6a27fcef1ac4"
+        }
+      },
+      {
+        "text": "By ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2da5208f-53d3-4f34-b235-72f66cc916c1"
+        }
+      }
+    ],
+    "comment_text": "This task Merchant Page has been created \nDate: Aug 6 2026, 3:53PM (Asia/Singapore)\nBy Angelo Kamachi\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "thumbs_up",
+        "date": "1786097283593",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1786002833800",
+    "reply_count": 0
+  }
+]

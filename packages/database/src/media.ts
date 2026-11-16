@@ -1,5 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { Database, MediaFileRecord } from "./types";
+import type { Database, MediaFileRecord, UserRole } from "./types";
+import { recordAndCheckUsage, ROLE_STORAGE_LIMIT_BYTES } from "./usages";
 
 export interface ListUserMediaOptions {
   userId: string;
@@ -20,6 +21,7 @@ export interface UploadUserMediaOptions {
   file: File;
   userId: string;
   bucket?: string;
+  role?: UserRole;
 }
 
 export function detectMediaType(file: File | { name: string; type?: string }): "image" | "pdf" | "docx" | "file" {
@@ -131,7 +133,25 @@ export async function uploadUserMedia(
   supabase: SupabaseClient<Database>,
   options: UploadUserMediaOptions
 ): Promise<MediaFileRecord> {
-  const { file, userId, bucket = "media" } = options;
+  const { file, userId, bucket = "media", role = "member" } = options;
+
+  // Enforce storage_bytes quota before uploading
+  const quotaCheck = await recordAndCheckUsage({
+    userId,
+    app: "media",
+    metric: "storage_bytes",
+    amount: file.size || 0,
+    role,
+    monthlyLimitOverride: ROLE_STORAGE_LIMIT_BYTES[role] ?? ROLE_STORAGE_LIMIT_BYTES.member,
+    clientOverride: supabase,
+  });
+
+  if (!quotaCheck.allowed) {
+    throw new Error(
+      `Storage quota exceeded (${quotaCheck.exceededType || "monthly"} limit reached). Please delete old files or upgrade your tier.`
+    );
+  }
+
   const sanitizedName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
   const storagePath = `users/${userId}/${Date.now()}-${sanitizedName}`;
   const mediaType = detectMediaType(file);
@@ -242,4 +262,3 @@ export async function renameUserMedia(
     return null;
   }
 }
-

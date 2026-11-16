@@ -5,6 +5,11 @@ import "./markdown.css";
 import { CodeBlock } from "./markdown-code-block";
 import { Callout, type CalloutType } from "./markdown-callout";
 import { renderInline } from "./markdown-inline";
+import { MarkdownTable } from "./markdown-table";
+import { MarkdownHeading } from "./markdown-heading";
+import { MarkdownMath } from "./markdown-math";
+import { MarkdownChart } from "./markdown-chart";
+import { MarkdownMermaid } from "./markdown-mermaid";
 
 export type { CalloutType };
 
@@ -55,13 +60,25 @@ export function MarkdownRenderer({
           i++;
         }
         if (i < rawLines.length) i++; // skip closing ```
-        blocks.push(
-          <CodeBlock
-            key={`block-${blockIndex++}`}
-            code={codeLines.join("\n")}
-            language={lang}
-          />
-        );
+        const joinedCode = codeLines.join("\n");
+        const normalizedLang = lang.trim().toLowerCase();
+        if (normalizedLang === "chart") {
+          blocks.push(
+            <MarkdownChart key={`block-${blockIndex++}`} code={joinedCode} />
+          );
+        } else if (normalizedLang === "mermaid") {
+          blocks.push(
+            <MarkdownMermaid key={`block-${blockIndex++}`} code={joinedCode} />
+          );
+        } else {
+          blocks.push(
+            <CodeBlock
+              key={`block-${blockIndex++}`}
+              code={joinedCode}
+              language={lang}
+            />
+          );
+        }
         continue;
       }
 
@@ -113,6 +130,51 @@ export function MarkdownRenderer({
         continue;
       }
 
+      // 2b. Display Math Blocks: $$...$$ or \[...\]
+      const trimmedLine = line.trim();
+      if (trimmedLine.startsWith("$$") || trimmedLine.startsWith("\\[")) {
+        const isBracket = trimmedLine.startsWith("\\[");
+        const openDelim = isBracket ? "\\[" : "$$";
+        const closeDelim = isBracket ? "\\]" : "$$";
+        const afterOpen = trimmedLine.slice(openDelim.length);
+
+        // Single-line display math: $$...$$ or \[...\]
+        if (afterOpen.endsWith(closeDelim) && afterOpen.length > closeDelim.length) {
+          const formula = afterOpen.slice(0, -closeDelim.length);
+          blocks.push(
+            <MarkdownMath key={`block-${blockIndex++}`} formula={formula} displayMode />
+          );
+          i++;
+          continue;
+        }
+
+        // Multi-line display math
+        if (afterOpen === "") {
+          const mathLines: string[] = [];
+          let j = i + 1;
+          let closed = false;
+          while (j < rawLines.length) {
+            if (rawLines[j].trim() === closeDelim) {
+              closed = true;
+              break;
+            }
+            mathLines.push(rawLines[j]);
+            j++;
+          }
+          if (closed) {
+            blocks.push(
+              <MarkdownMath
+                key={`block-${blockIndex++}`}
+                formula={mathLines.join("\n")}
+                displayMode
+              />
+            );
+            i = j + 1;
+            continue;
+          }
+        }
+      }
+
       // 3. Regular Blockquote: > text
       if (line.startsWith(">")) {
         const quoteLines: string[] = [];
@@ -139,18 +201,16 @@ export function MarkdownRenderer({
       // 4. Headers: #, ##, ###, ####, #####, ######
       const headerMatch = line.match(/^(#{1,6})\s+(.+)$/);
       if (headerMatch) {
-        const level = headerMatch[1].length;
+        const level = headerMatch[1].length as 1 | 2 | 3 | 4 | 5 | 6;
         const text = headerMatch[2];
         const key = `block-${blockIndex++}`;
         const inlineContent = inline(text, `h-${blockIndex}`);
-        const cls = `m-md-heading m-md-h${level}`;
 
-        if (level === 1) blocks.push(<h1 key={key} className={cls}>{inlineContent}</h1>);
-        else if (level === 2) blocks.push(<h2 key={key} className={cls}>{inlineContent}</h2>);
-        else if (level === 3) blocks.push(<h3 key={key} className={cls}>{inlineContent}</h3>);
-        else if (level === 4) blocks.push(<h4 key={key} className={cls}>{inlineContent}</h4>);
-        else if (level === 5) blocks.push(<h5 key={key} className={cls}>{inlineContent}</h5>);
-        else blocks.push(<h6 key={key} className={cls}>{inlineContent}</h6>);
+        blocks.push(
+          <MarkdownHeading key={key} level={level} rawText={text}>
+            {inlineContent}
+          </MarkdownHeading>
+        );
 
         i++;
         continue;
@@ -164,14 +224,16 @@ export function MarkdownRenderer({
       }
 
       // 6. GFM Tables: | col1 | col2 |
-      if (line.trim().startsWith("|") && line.trim().endsWith("|")) {
+      if (line.trim().startsWith("|")) {
+        let nextI = i;
         const tableLines: string[] = [];
-        while (i < rawLines.length && rawLines[i].trim().startsWith("|") && rawLines[i].trim().endsWith("|")) {
-          tableLines.push(rawLines[i].trim());
-          i++;
+        while (nextI < rawLines.length && rawLines[nextI].trim().startsWith("|")) {
+          tableLines.push(rawLines[nextI].trim());
+          nextI++;
         }
 
         if (tableLines.length >= 2 && /^[|:\s-]+$/.test(tableLines[1])) {
+          i = nextI;
           const headerCells = tableLines[0]
             .split("|")
             .slice(1, -1)
@@ -184,26 +246,12 @@ export function MarkdownRenderer({
           );
 
           blocks.push(
-            <div key={`block-${blockIndex++}`} className="m-md-table-wrap">
-              <table className="m-md-table">
-                <thead>
-                  <tr>
-                    {headerCells.map((cell, idx) => (
-                      <th key={`th-${idx}`}>{inline(cell, `th-${idx}`)}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {bodyRows.map((rowCells, rIdx) => (
-                    <tr key={`tr-${rIdx}`}>
-                      {rowCells.map((cell, cIdx) => (
-                        <td key={`td-${rIdx}-${cIdx}`}>{inline(cell, `td-${rIdx}-${cIdx}`)}</td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <MarkdownTable
+              key={`block-${blockIndex++}`}
+              headers={headerCells}
+              rows={bodyRows}
+              renderCell={(cellText, keyPrefix) => inline(cellText, keyPrefix)}
+            />
           );
           continue;
         }
@@ -306,18 +354,29 @@ export function MarkdownRenderer({
         !/^(#{1,6})\s+/.test(rawLines[i]) &&
         !/^[-*+]\s+/.test(rawLines[i].trimStart()) &&
         !/^\d+\.\s+/.test(rawLines[i].trimStart()) &&
-        !/^(\*{3,}|-{3,}|_{3,})$/.test(rawLines[i].trim()) &&
-        !rawLines[i].trim().startsWith("|")
+        !/^(\*{3,}|-{3,}|_{3,})$/.test(rawLines[i].trim())
       ) {
+        if (rawLines[i].trim().startsWith("|")) {
+          if (i + 1 < rawLines.length && /^[|:\s-]+$/.test(rawLines[i + 1].trim())) {
+            break;
+          }
+        }
         pLines.push(rawLines[i]);
         i++;
       }
 
-      blocks.push(
-        <p key={`block-${blockIndex++}`} className="m-md-p">
-          {inline(pLines.join(" "), `p-${blockIndex}`)}
-        </p>
-      );
+      if (pLines.length === 0 && i < rawLines.length) {
+        pLines.push(rawLines[i]);
+        i++;
+      }
+
+      if (pLines.length > 0) {
+        blocks.push(
+          <p key={`block-${blockIndex++}`} className="m-md-p">
+            {inline(pLines.join(" "), `p-${blockIndex}`)}
+          </p>
+        );
+      }
     }
 
     return blocks;

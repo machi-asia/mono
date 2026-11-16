@@ -13,8 +13,7 @@
     }
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "lint:style": "stylelint --allow-empty-input \"src/**/*.css\"",
     "typecheck": "tsc --noEmit",
@@ -23,7 +22,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "ioredis": "^5.4.2"
+    "@mono/app-config": "*"
   },
   "peerDependencies": {
     "react": "^19.0.0"

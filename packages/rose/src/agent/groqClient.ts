@@ -5,6 +5,7 @@ export interface GroqMessage {
 
 export interface GroqStreamChunk {
   textChunk?: string;
+  thinkingChunk?: string;
   finishReason?: string;
   error?: string;
   usage?: {
@@ -184,7 +185,9 @@ The main agent called one or more tools, and the outputs were captured as struct
 Your Task:
 - Carefully inspect and analyze the structured tool output JSON provided below.
 - Synthesize, explain, and format a complete, helpful, and accurate response directly addressing the user's inquiry.
-- Use rich Obsidian-flavored Markdown (headings, callout notes > [!note], > [!tip], > [!info], bold/highlight text ==key term==, markdown links, code blocks, or tables where appropriate).
+- Use rich Obsidian-flavored Markdown (headings #, ##, callout notes > [!note], > [!tip], > [!info], bold/highlight text ==key term==, markdown links, or tables | col1 | col2 |).
+- EMBEDDED IMAGES: Whenever the tool findings explicitly include verified image URLs (imageUrl or Image URL), embed them in your answer with ![Caption](image_url). NEVER guess, invent, or make up image URLs from sites like Bloomberg, Vox, or news outlets that are not in the structured tool JSON. If no image URL is in the findings, do not output any image tags. Images automatically scale to fit the chat display.
+- CRITICAL: Do NOT wrap your entire answer in a markdown code block (\`\`\`markdown or \`\`\`). Output plain Markdown directly so headings, callout boxes, and tables render in real time. Only use code blocks for actual programming code snippets or config files.
 - If additional tool actions or interactive questions are helpful, you may emit tool calls or structured actions.
 - Conclude your response with an emotion tag <emotion>EMOTION_NAME</emotion> on the last line. Choose strictly from: happy, bright, coding, confused, researching, sad, sleeping, surprised, thinking.`;
 

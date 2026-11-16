@@ -1,7 +1,11 @@
 "use client";
 
 import type { ReactNode, MouseEvent } from "react";
-import { ExternalLink, Hash } from "lucide-react";
+import { Hash } from "lucide-react";
+import { resolveHref } from "@mono/app-config";
+import { MarkdownImage } from "./markdown-image";
+import { MarkdownLink } from "./markdown-link";
+import { MarkdownMath } from "./markdown-math";
 
 interface RenderInlineOptions {
   onWikilinkClick?: (link: string, alias?: string) => void;
@@ -10,8 +14,28 @@ interface RenderInlineOptions {
 
 function safeHref(href: string): string {
   const normalized = href.trim();
-  if (/^(https?:|mailto:|tel:|#|\/|\.)/i.test(normalized)) return normalized;
-  return /^[a-z][a-z0-9+.-]*:/i.test(normalized) ? "#" : normalized;
+  if (/^(https?:|mailto:|tel:|#|\/|\.)/i.test(normalized)) {
+    return resolveHref(normalized);
+  }
+  return /^[a-z][a-z0-9+.-]*:/i.test(normalized) ? "#" : resolveHref(normalized);
+}
+
+function safeImageSrc(src: string): string {
+  const normalized = src.trim();
+  // Safe relative paths, data URLs, blob URLs, or localhost URLs can be loaded directly
+  if (/^(data:image\/|blob:|\/|\.\/)/i.test(normalized)) {
+    return resolveHref(normalized);
+  }
+  // If it's a remote HTTP/HTTPS image, route via high-availability, CORS-friendly image proxy
+  // to prevent OpaqueResponseBlocking (CORB/ORB), referrer blocks, hotlink bans, and mixed-content issues.
+  if (/^https?:\/\//i.test(normalized)) {
+    // Avoid double-proxying
+    if (normalized.startsWith("https://wsrv.nl/?url=") || normalized.startsWith("https://images.weserv.nl/?url=")) {
+      return normalized;
+    }
+    return `https://wsrv.nl/?url=${encodeURIComponent(normalized)}`;
+  }
+  return resolveHref(normalized);
 }
 
 export function renderInline(
@@ -68,6 +92,31 @@ export function renderInline(
         </span>
       );
       remaining = remaining.slice(fullMatch.length);
+      continue;
+    }
+
+    // 2b. Inline Math: \(...\) or $...$
+    const parenMathMatch = remaining.match(/^\\\((.+?)\\\)/);
+    if (parenMathMatch) {
+      nodes.push(
+        <MarkdownMath
+          key={`${keyPrefix}-math-${nodeIndex++}`}
+          formula={parenMathMatch[1]}
+        />
+      );
+      remaining = remaining.slice(parenMathMatch[0].length);
+      continue;
+    }
+
+    const dollarMathMatch = remaining.match(/^\$([^\s$][^$\n]*?[^\s$]|\S)\$/);
+    if (dollarMathMatch) {
+      nodes.push(
+        <MarkdownMath
+          key={`${keyPrefix}-math-${nodeIndex++}`}
+          formula={dollarMathMatch[1]}
+        />
+      );
+      remaining = remaining.slice(dollarMathMatch[0].length);
       continue;
     }
 
@@ -151,7 +200,25 @@ export function renderInline(
       continue;
     }
 
-    // 9. Standard Link: [text](url)
+    // 9. Markdown Image: ![alt](url)
+    const imgMatch = remaining.match(/^!\[([^\]]*)\]\(([^)]+)\)/);
+    if (imgMatch) {
+      const fullMatch = imgMatch[0];
+      const altText = imgMatch[1].trim();
+      const rawSrc = imgMatch[2].trim();
+      const src = safeImageSrc(rawSrc);
+      nodes.push(
+        <MarkdownImage
+          key={`${keyPrefix}-img-${nodeIndex++}`}
+          src={src}
+          alt={altText}
+        />
+      );
+      remaining = remaining.slice(fullMatch.length);
+      continue;
+    }
+
+    // 10. Standard Link: [text](url)
     const linkMatch = remaining.match(/^\[([^\]]+)\]\(([^)]+)\)/);
     if (linkMatch) {
       const fullMatch = linkMatch[0];
@@ -160,18 +227,13 @@ export function renderInline(
       const href = safeHref(rawHref);
       const isExternal = /^https?:\/\//i.test(href);
       nodes.push(
-        <a
+        <MarkdownLink
           key={`${keyPrefix}-link-${nodeIndex++}`}
           href={href}
-          className="m-md-link"
-          target={isExternal ? "_blank" : undefined}
-          rel={isExternal ? "noopener noreferrer" : undefined}
+          isExternal={isExternal}
         >
           {renderInline(textLabel, `${keyPrefix}-l`, options)}
-          {isExternal ? (
-            <ExternalLink size={11} className="m-md-external-icon" aria-hidden="true" />
-          ) : null}
-        </a>
+        </MarkdownLink>
       );
       remaining = remaining.slice(fullMatch.length);
       continue;
@@ -194,7 +256,7 @@ export function renderInline(
     }
 
     // Regular text character(s)
-    const nextSpecial = remaining.search(/(\[\[|#[a-zA-Z0-9_\-/]|==|~~|\*\*\*|\*\*|__|\*|_|`|\[[^\]]+\]\(|\[\^)/);
+    const nextSpecial = remaining.search(/(\[\[|#[a-zA-Z0-9_\-/]|\\\(|\$|==|~~|\*\*\*|\*\*|__|\*|_|`|!\[[^\]]*\]\(|\[[^\]]+\]\(|\[\^)/);
     if (nextSpecial === -1) {
       nodes.push(remaining);
       break;

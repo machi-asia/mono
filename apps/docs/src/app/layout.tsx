@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { AuthProvider, AuthGate } from "@mono/auth";
-import { ThemeProvider, OtaUpdateNotifier } from "@mono/components";
+import { MonoAppShell } from "@mono/auth";
 import { DocsNavbar } from "./docs-navbar";
 import "./global.css";
 
@@ -63,13 +62,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider>
-          <OtaUpdateNotifier />
-          <AuthProvider>
-            <DocsNavbar />
-            <AuthGate>{children}</AuthGate>
-          </AuthProvider>
-        </ThemeProvider>
+        <MonoAppShell requireAuth header={<DocsNavbar />}>
+          {children}
+        </MonoAppShell>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

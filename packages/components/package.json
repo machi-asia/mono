@@ -14,8 +14,7 @@
     "./tokens.css": "./src/tokens.css"
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "lint:style": "stylelint --allow-empty-input \"src/**/*.css\"",
     "typecheck": "tsc --noEmit",
@@ -29,9 +28,13 @@
     "@capacitor/core": "^8.5.2",
     "@capacitor/haptics": "^8.0.2",
     "@capacitor/status-bar": "^8.0.4",
+    "@mono/app-config": "^0.1.0",
     "@mono/database": "^0.1.0",
     "@otakit/capacitor-updater": "^3.2.0",
+    "framer-motion": "^14.0.0",
+    "katex": "^0.19.1",
     "lucide-react": "^1.40.0",
+    "mermaid": "^12.3.0",
     "next-themes": "^0.4.6"
   },
   "peerDependencies": {
@@ -40,6 +43,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
+    "@types/katex": "^0.16.8",
     "@types/node": "^26.4.1",
     "@types/react": "^19.2.18",
     "@vitejs/plugin-react": "^6.1.1",

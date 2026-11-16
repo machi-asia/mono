@@ -13,15 +13,16 @@
     }
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "lint:style": "echo skip",
     "typecheck": "tsc --noEmit",
     "test": "vitest run src/",
     "clean": "rm -rf dist"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@mono/app-config": "*"
+  },
   "devDependencies": {
     "@types/node": "^26.4.1",
     "typescript": "^6.0.3",

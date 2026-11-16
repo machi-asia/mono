@@ -5,6 +5,7 @@ import { useAuth } from "@mono/auth";
 import { Usage, Tooltip, Skeleton } from "@mono/components";
 import { getRoseUsage, currentDay } from "../../utils/usage";
 import type { RoseUsage } from "../../types";
+import { getRoseApiBasePath } from "../../utils/endpoints";
 import "./usage.css";
 
 export interface UsageBarProps {
@@ -54,7 +55,7 @@ export function setCachedUsage(userId: string, data: RoseUsage): void {
 
 export function UsageBar({
   usage: initialUsage,
-  apiBasePath = "/api/rose",
+  apiBasePath = getRoseApiBasePath(),
   onRefreshRef,
   className = "",
   size = "sm",

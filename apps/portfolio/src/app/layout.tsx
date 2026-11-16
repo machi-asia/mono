@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { MotionConfig } from "framer-motion";
-import { AuthProvider } from "@mono/auth";
-import { ThemeProvider, ToastProvider, OtaUpdateNotifier } from "@mono/components";
+import { MonoAppShell } from "@mono/auth";
 import SmoothScroll from "../components/SmoothScroll";
 import "lenis/dist/lenis.css";
 import "./globals.css";
@@ -37,15 +36,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="portfolio-app">
         <MotionConfig reducedMotion="never">
-          <ThemeProvider>
+          <MonoAppShell>
             <SmoothScroll />
-            <OtaUpdateNotifier />
-            <ToastProvider>
-              <AuthProvider>
-                {children}
-              </AuthProvider>
-            </ToastProvider>
-          </ThemeProvider>
+            {children}
+          </MonoAppShell>
         </MotionConfig>
       </body>
     </html>

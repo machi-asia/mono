@@ -38,8 +38,7 @@
     }
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "lint:style": "stylelint --allow-empty-input \"src/**/*.css\"",
     "typecheck": "tsc --noEmit",
@@ -48,7 +47,10 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "@mono/api-client": "*",
+    "@mono/app-config": "*",
     "@mono/components": "*",
+    "@mono/database": "*",
     "@supabase/ssr": "^0.12.5",
     "@supabase/supabase-js": "^2.113.0",
     "lucide-react": "^1.40.0"

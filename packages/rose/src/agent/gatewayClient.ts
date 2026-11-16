@@ -27,6 +27,7 @@ export interface GatewayToolDeclaration {
 
 export interface GatewayStreamChunk {
   textChunk?: string;
+  thinkingChunk?: string;
   functionCall?: {
     name: string;
     args: Record<string, unknown>;
@@ -281,7 +282,7 @@ export async function* callAiGatewayStream(
     model,
     messages: formatOpenAiMessages(systemInstruction, contents),
     temperature: 0.7,
-    max_tokens: 4096,
+    max_tokens: 8192,
     stream: true,
     stream_options: {
       include_usage: true,
@@ -334,6 +335,12 @@ export async function* callAiGatewayStream(
           const parsed = JSON.parse(dataStr);
           const choice = parsed.choices?.[0];
           const delta = choice?.delta;
+
+          const reasoningDelta =
+            delta?.reasoning_content ?? delta?.reasoning ?? delta?.thinking;
+          if (reasoningDelta) {
+            yield { thinkingChunk: reasoningDelta, rawCandidate: parsed };
+          }
 
           if (delta?.content) {
             yield { textChunk: delta.content, rawCandidate: parsed };

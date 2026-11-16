@@ -1,0 +1,165 @@
+.mono-usage-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 12px);
+  border-radius: var(--radius-md, 10px);
+  color: var(--color-text, #f8fafc);
+}
+
+.mono-usage-tracker--card {
+  padding: var(--space-4, 16px);
+  border: 1px solid var(--color-border, rgb(255 255 255 / 12%));
+  background: var(--color-surface-2, rgb(255 255 255 / 4%));
+}
+
+.mono-usage-tracker--inline {
+  padding: var(--space-2, 8px) 0;
+}
+
+.mono-usage-tracker--compact {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border, rgb(255 255 255 / 12%));
+  background: var(--color-surface-2, rgb(255 255 255 / 5%));
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.mono-usage-tracker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2, 8px);
+  flex-wrap: wrap;
+}
+
+.mono-usage-tracker-title-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+
+.mono-usage-tracker-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.mono-usage-tracker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgb(255 255 255 / 8%);
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.mono-usage-tracker-badge--locked {
+  background: rgb(239 68 68 / 15%);
+  color: var(--color-error, #ef4444);
+}
+
+.mono-usage-tracker-badge--warning {
+  background: rgb(245 158 11 / 15%);
+  color: var(--color-warning, #f59e0b);
+}
+
+.mono-usage-tracker-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+
+.mono-usage-tracker-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 6px);
+  border: 1px solid var(--color-border, rgb(255 255 255 / 14%));
+  background: var(--color-surface-1, rgb(255 255 255 / 6%));
+  color: var(--color-text, #f8fafc);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.mono-usage-tracker-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.mono-usage-tracker-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mono-usage-tracker-btn--primary {
+  background: var(--color-primary, #6366f1);
+  border-color: transparent;
+  color: #fff;
+}
+
+.mono-usage-gate {
+  position: relative;
+  border-radius: var(--radius-md, 10px);
+}
+
+.mono-usage-gate--disabled-content {
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.45;
+  filter: grayscale(0.35);
+}
+
+.mono-usage-gate-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2, 8px);
+  padding: var(--space-4, 16px);
+  text-align: center;
+  border-radius: var(--radius-md, 10px);
+  background: rgb(10 12 20 / 78%);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgb(239 68 68 / 35%);
+}
+
+.mono-usage-gate-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3, 12px);
+  flex-wrap: wrap;
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  margin-bottom: var(--space-3, 12px);
+  border-radius: var(--radius-md, 10px);
+  border: 1px solid rgb(239 68 68 / 40%);
+  background: rgb(239 68 68 / 12%);
+  color: var(--color-text, #f8fafc);
+  font-size: 0.85rem;
+}
+
+.mono-usage-gate-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text, #f8fafc);
+}
+
+.mono-usage-gate-desc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted, #cbd5e1);
+  max-width: 360px;
+}

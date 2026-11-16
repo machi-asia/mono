@@ -1,15 +1,4 @@
-export interface RoseUsage {
-  allowed: boolean;
-  count: number;
-  limit: number;
-  week: string;
-  dailyCount: number;
-  dailyLimit: number;
-  day: string;
-  exceededType?: "daily" | "weekly";
-  remaining: number;
-  role?: "admin" | "guest" | "authenticated";
-}
+export type { RoseUsage } from "@mono/database";
 
 export interface RoseMemoryItem {
   id: string;

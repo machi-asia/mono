@@ -1,89 +1,60 @@
 import { NextResponse } from "next/server";
-import { createClient as createSupabaseClient } from "@supabase/supabase-js";
+import {
+  listMemoryIndexes,
+  getPersonalization,
+  recordAndCheckUsage,
+  createClient,
+} from "@mono/database";
 import {
   runAgentChat,
   runAgentChatStream,
   formatErrorCallout,
-  type ChatMessage,
-} from "./agent/agentRunner";
-import { checkAndIncrementRoseUsage } from "./usage-calc";
-import { listMemoryIndexes, getPersonalization } from "@mono/database";
-import { createClient as createServerSupabaseClient } from "@mono/database/server";
-import { createLangfuseTrace } from "./agent/langfuse";
-import { setMemoryToolContext, clearMemoryToolContext } from "./agent/tools/memory-store";
-import {
+  createLangfuseTrace,
+  setMemoryToolContext,
+  clearMemoryToolContext,
   PERSONALIZATION_CONTEXT_MARKER,
   buildMemoryIndexContext,
   hasMemoryContext,
-} from "./agent/memoryContext";
-import { createClient } from "@mono/database";
+  type ChatMessage,
+} from "@mono/rose/agent";
+import { checkAndIncrementRoseUsage } from "./usage-calc";
+import { resolveRequestAuth } from "../security/guard";
 
 export async function getAuthUser(
   req: Request
 ): Promise<{ user: any; supabaseClient: any } | null> {
-  const authHeader = req.headers.get("authorization");
-  if (authHeader?.startsWith("Bearer ")) {
-    const token = authHeader.slice(7);
-    if (token && token !== "mock-access-token") {
-      try {
-        const supabaseUrl =
-          process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL!;
-        const supabaseKey =
-          process.env.SUPABASE_SECRET_KEY ||
-          process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
-          process.env.SUPABASE_PUBLISHABLE_KEY!;
-
-        const supabase = createSupabaseClient(
-          supabaseUrl,
-          supabaseKey,
-          {
-            global: {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            },
-          }
-        );
-        const {
-          data: { user },
-        } = await supabase.auth.getUser(token);
-        if (user) return { user, supabaseClient: supabase };
-      } catch {
-        // ignore
-      }
-    }
+  const auth = await resolveRequestAuth(req);
+  if (!auth.user && !auth.isAuthenticated) {
+    return null;
   }
-
-  try {
-    const supabase = await createServerSupabaseClient();
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (user) return { user, supabaseClient: supabase };
-  } catch {
-    // ignore
-  }
-
-  const headerUserId = req.headers.get("x-user-id");
-  if (headerUserId) {
-    return {
-      user: { id: headerUserId, roles: [] },
-      supabaseClient: createClient(),
-    };
-  }
-
-  return null;
+  return {
+    user: auth.user || {
+      id: auth.userId,
+      roles: auth.roles,
+      is_anonymous: auth.isAnonymous,
+    },
+    supabaseClient: auth.supabaseClient,
+  };
 }
 
 export async function handleRoseChat(req: Request): Promise<Response> {
   try {
     const body = await req.json().catch(() => ({}));
-    const message = typeof body.message === "string" ? body.message.trim() : "";
+    let message = typeof body.message === "string" ? body.message.trim() : "";
     const history: ChatMessage[] = Array.isArray(body.history) ? body.history : [];
+
+    // Support OpenAI-style messages array from playground if body.message is omitted
+    if (!message && Array.isArray(body.messages) && body.messages.length > 0) {
+      const last = body.messages[body.messages.length - 1];
+      if (last && typeof last.content === "string") {
+        message = last.content.trim();
+      }
+    }
+
     const wantsStream =
       req.headers.get("accept")?.includes("text/event-stream") ||
-      body.stream === true ||
-      body.stream !== false;
+      (body.stream === true && body.stream !== false) ||
+      (body.stream === undefined && !Array.isArray(body.messages));
 
     if (!message) {
       return NextResponse.json(
@@ -92,12 +63,12 @@ export async function handleRoseChat(req: Request): Promise<Response> {
       );
     }
 
-    const authResult = await getAuthUser(req);
-    const user = authResult?.user;
-    const clientOverride = authResult?.supabaseClient;
-    const userId = user?.id || "00000000-0000-0000-0000-000000000001";
-    const userRoles = (user as any)?.roles || (user?.is_anonymous ? ["guest"] : []);
+    const auth = await resolveRequestAuth(req);
+    const userId = auth.userId;
+    const userRoles = auth.roles;
+    const clientOverride = auth.supabaseClient;
 
+    // 1. Check & increment Rose conversation turns quota
     const usage = await checkAndIncrementRoseUsage(userId, userRoles, clientOverride);
     if (!usage.allowed) {
       const limitReason =
@@ -118,7 +89,7 @@ export async function handleRoseChat(req: Request): Promise<Response> {
           headers: {
             "Content-Type": "text/event-stream",
             "Cache-Control": "no-cache, no-transform",
-            "Connection": "keep-alive",
+            Connection: "keep-alive",
           },
         });
       }
@@ -129,6 +100,17 @@ export async function handleRoseChat(req: Request): Promise<Response> {
           text: `> [!warning] Quota Limit Reached\n> ${limitReason}`,
           emotion: "sleeping",
           usage,
+          quota: {
+            locked: true,
+            metric: "turns",
+            role: auth.role,
+            dailyUsed: usage.dailyCount,
+            dailyLimit: usage.dailyLimit,
+            monthlyUsed: usage.count,
+            monthlyLimit: usage.limit,
+            remaining: 0,
+            exceededType: usage.exceededType,
+          },
         },
         { status: 429 }
       );
@@ -138,7 +120,7 @@ export async function handleRoseChat(req: Request): Promise<Response> {
       userId,
       sessionId: typeof body.conversationId === "string" ? body.conversationId : undefined,
       input: message,
-      tags: ["rose", user?.is_anonymous ? "guest" : "authenticated"],
+      tags: ["rose", auth.isAnonymous ? "guest" : "authenticated"],
       metadata: {
         wantsStream,
         roles: userRoles,
@@ -151,13 +133,13 @@ export async function handleRoseChat(req: Request): Promise<Response> {
 
     try {
       memoryIndexes = await listMemoryIndexes(dbClient, { userId });
-    } catch (_memErr) {
+    } catch {
       // ignore memory retrieval errors gracefully
     }
 
     try {
       userPersonalization = await getPersonalization(dbClient, userId);
-    } catch (_pErr) {
+    } catch {
       // ignore personalization retrieval errors gracefully
     }
 
@@ -205,7 +187,11 @@ export async function handleRoseChat(req: Request): Promise<Response> {
         });
         memoryAugmentedHistory.unshift({
           role: "model",
-          parts: [{ text: "Understood. I have loaded your personalization guidelines and long-term memory indexes into active context. <emotion>happy</emotion>" }],
+          parts: [
+            {
+              text: "Understood. I have loaded your personalization guidelines and long-term memory indexes into active context. <emotion>happy</emotion>",
+            },
+          ],
         });
       }
     }
@@ -219,9 +205,26 @@ export async function handleRoseChat(req: Request): Promise<Response> {
           };
 
           try {
-            for await (const event of runAgentChatStream(memoryAugmentedHistory, message, langfuseTrace)) {
+            for await (const event of runAgentChatStream(
+              memoryAugmentedHistory,
+              message,
+              langfuseTrace
+            )) {
               if (event.type === "done") {
                 clearMemoryToolContext();
+                const estimatedTokens = Math.max(
+                  10,
+                  Math.ceil((message.length + (event.text?.length || 0)) / 4)
+                );
+                await recordAndCheckUsage({
+                  userId,
+                  app: "rose",
+                  metric: "ai_tokens",
+                  amount: estimatedTokens,
+                  role: auth.role,
+                  clientOverride: dbClient,
+                }).catch(() => {});
+
                 await langfuseTrace.complete(event.text, {
                   emotion: event.emotion,
                   traces: event.traces,
@@ -236,7 +239,8 @@ export async function handleRoseChat(req: Request): Promise<Response> {
             }
           } catch (streamErr: any) {
             clearMemoryToolContext();
-            const errorMsg = streamErr?.message || String(streamErr) || "Stream processing failed";
+            const errorMsg =
+              streamErr?.message || String(streamErr) || "Stream processing failed";
             console.error("[RoseServer] Stream processing error:", errorMsg);
             await langfuseTrace.complete(null, { error: errorMsg });
             send({
@@ -256,7 +260,7 @@ export async function handleRoseChat(req: Request): Promise<Response> {
         headers: {
           "Content-Type": "text/event-stream",
           "Cache-Control": "no-cache, no-transform",
-          "Connection": "keep-alive",
+          Connection: "keep-alive",
         },
       });
     }
@@ -264,6 +268,19 @@ export async function handleRoseChat(req: Request): Promise<Response> {
     let result: any;
     try {
       result = await runAgentChat(memoryAugmentedHistory, message, undefined, langfuseTrace);
+      const estimatedTokens = Math.max(
+        10,
+        Math.ceil((message.length + (result.text?.length || 0)) / 4)
+      );
+      await recordAndCheckUsage({
+        userId,
+        app: "rose",
+        metric: "ai_tokens",
+        amount: estimatedTokens,
+        role: auth.role,
+        clientOverride: dbClient,
+      }).catch(() => {});
+
       await langfuseTrace.complete(result.text, {
         emotion: result.emotion,
         traces: result.traces,

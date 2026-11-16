@@ -5,6 +5,8 @@ export * from "./types";
 export {
   syncRegistry,
   registerSyncAction,
+  getSyncEventsUrl,
+  getSyncRoomsUrl,
   dressSyncFunction,
   userOnPress,
   userOnHold,

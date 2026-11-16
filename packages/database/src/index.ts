@@ -1,9 +1,15 @@
-export { createClient } from "./client";
+export {
+  createClient,
+  createTokenClient,
+  createServiceClient,
+} from "./client";
 export type {
   Database,
   Json,
   UserRole,
   UserRoleRecord,
+  CoreUsageMetric,
+  BuiltInUsageMetric,
   UsageMetric,
   UsagePeriodType,
   UserUsageRecord,
@@ -11,6 +17,8 @@ export type {
   RoseMemoryRecord,
   RosePersonalizationRecord,
   SupportTicketRecord,
+  IssueReportRecord,
+  KeepaliveHeartbeatRecord,
 } from "./types";
 export {
   listUserMedia,
@@ -55,16 +63,39 @@ export type {
 export {
   getUserRole,
   updateUserRole,
+  isValidUserRole,
+  resolveSafeRoleFromUser,
   DEFAULT_USER_ROLE,
 } from "./roles";
 export {
   ROLE_QUOTAS,
   ROLE_IMAGE_MAX_SIZE_KB,
   ROLE_STORAGE_LIMIT_BYTES,
+  DEFAULT_CUSTOM_METRIC_QUOTAS,
+  USAGE_METRICS_REGISTRY,
+  registerUsageMetric,
+  getMetricDefinition,
+  listRegisteredMetrics,
+  getRoleQuotaForMetric,
+  isRoleAtLeast,
   recordAndCheckUsage,
+  getUserUsageStatus,
   getUserUsageSummary,
+  getRoseUsage,
+  checkAndIncrementRoseUsage,
+  getRoleLimits,
+  currentDay,
+  currentMonth,
+  currentWeek,
+  roseDailyLimitGuest,
+  roseWeeklyLimitGuest,
+  roseDailyLimitUser,
+  roseWeeklyLimitUser,
+  resetFallbackUsageLedger,
 } from "./usages";
 export type {
   RoleQuota,
+  UsageMetricDefinition,
   CheckUsageResult,
+  RoseUsage,
 } from "./usages";

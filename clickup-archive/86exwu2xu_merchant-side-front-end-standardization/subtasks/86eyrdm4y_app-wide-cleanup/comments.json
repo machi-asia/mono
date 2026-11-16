@@ -1,0 +1,4190 @@
+[
+  {
+    "id": "1100740000255412",
+    "comment": [
+      {
+        "type": "tag",
+        "user": {
+          "id": 95622662,
+          "username": "Aira Pilor",
+          "email": "aira@prosperna.com",
+          "initials": "AP",
+          "profilePicture": null
+        },
+        "text": "@Aira Pilor"
+      },
+      {
+        "text": " QA for the button hover colours, date picker footer, Balances and a tablet bug is posted above (dev, tested live on prodev). Branch fix/kamachi-button-hover-colors; PRs: dev https://github.com/Prosperna/prosperna1/pull/9394 (merged), staging https://github.com/Prosperna/prosperna1/pull/9298, main https://github.com/Prosperna/prosperna1/pull/9299. Everything in scope passes live. Found on dev and not caused by this change: the date picker panel runs off the right edge at 768 and 820px; the fix is checked locally and not deployed yet."
+      }
+    ],
+    "comment_text": " QA for the button hover colours, date picker footer, Balances and a tablet bug is posted above (dev, tested live on prodev). Branch fix/kamachi-button-hover-colors; PRs: dev https://github.com/Prosperna/prosperna1/pull/9394 (merged), staging https://github.com/Prosperna/prosperna1/pull/9298, main https://github.com/Prosperna/prosperna1/pull/9299. Everything in scope passes live. Found on dev and not caused by this change: the date picker panel runs off the right edge at 768 and 820px; the fix is checked locally and not deployed yet.@Aira Pilor",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1794192291159",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000255411",
+    "comment": [
+      {
+        "text": "QA on deployed dev: button hover colours, date picker footer, Balances, and a tablet bug found\n\n",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "ENV: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "dev (https://prodev.prosperna.com)\n",
+        "attributes": {}
+      },
+      {
+        "text": "BRANCH: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "fix/kamachi-button-hover-colors\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "DEV: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "https://github.com/Prosperna/prosperna1/pull/9394 (merged and live). Earlier PR #9297, merged: https://github.com/Prosperna/prosperna1/pull/9297. The tablet fix has no PR yet.\n",
+        "attributes": {}
+      },
+      {
+        "text": "STAGING: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "https://github.com/Prosperna/prosperna1/pull/9298\n",
+        "attributes": {}
+      },
+      {
+        "text": "MAIN: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "https://github.com/Prosperna/prosperna1/pull/9299\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e8ib42Kg8L"
+        }
+      },
+      {
+        "type": "table-embed",
+        "table-embed": {
+          "rows": [
+            {
+              "insert": {
+                "id": "row-6ygkqz"
+              }
+            },
+            {
+              "insert": {
+                "id": "row-t7zlbk"
+              }
+            },
+            {
+              "insert": {
+                "id": "row-i0iqhc"
+              }
+            },
+            {
+              "insert": {
+                "id": "row-vow0g5"
+              }
+            },
+            {
+              "insert": {
+                "id": "row-0u96vk"
+              }
+            },
+            {
+              "insert": {
+                "id": "row-snffwv"
+              }
+            },
+            {
+              "insert": {
+                "id": "row-4ai24f"
+              }
+            },
+            {
+              "insert": {
+                "id": "row-7owbpq"
+              }
+            },
+            {
+              "insert": {
+                "id": "row-1geqdl"
+              }
+            },
+            {
+              "insert": {
+                "id": "row-ul6nyg"
+              }
+            }
+          ],
+          "columns": [
+            {
+              "insert": {
+                "id": "column-nszsyx"
+              },
+              "attributes": {
+                "width": "260"
+              }
+            },
+            {
+              "insert": {
+                "id": "column-j57l2p"
+              },
+              "attributes": {
+                "width": "260"
+              }
+            },
+            {
+              "insert": {
+                "id": "column-hom7sh"
+              },
+              "attributes": {
+                "width": "340"
+              }
+            }
+          ],
+          "cells": {
+            "1:1": {
+              "content": [
+                {
+                  "insert": "What needed changing",
+                  "attributes": {
+                    "bold": true
+                  }
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-RBL10S7jRH"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "1:2": {
+              "content": [
+                {
+                  "insert": "Why it needed changing",
+                  "attributes": {
+                    "bold": true
+                  }
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-PagB6mehFj"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "1:3": {
+              "content": [
+                {
+                  "insert": "How it was changed",
+                  "attributes": {
+                    "bold": true
+                  }
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-kbLGXOlSg2"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "2:1": {
+              "content": [
+                {
+                  "insert": "Cancel and Save/Apply had different heights and corner radius (date picker, contact create and edit forms)"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-vIVzpaQcBN"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "2:2": {
+              "content": [
+                {
+                  "insert": "The Tailwind migrations (#7560 dashboard, #7857 contacts) replaced the shared Bootstrap buttons with hand-written ones"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-L609Rfw3Dn"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "2:3": {
+              "content": [
+                {
+                  "insert": "Shared buttons again (variant cancel / primary): DashboardDatePicker.jsx, LeadFormBody.jsx, edit/index.jsx. Both are 38px tall with a 6px radius. Live on dev (#9297)"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-2GyOujSi6Q"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "3:1": {
+              "content": [
+                {
+                  "insert": "Save, Apply and Import / Update Products turned grey on hover"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-B75AKvVTqo"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "3:2": {
+              "content": [
+                {
+                  "insert": "Global hover for .btn-primary and .btn-light was grey #4b4b4b"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-8ZKzFmvsCr"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "3:3": {
+              "content": [
+                {
+                  "insert": "Hover uses the $primary token (black): _buttons.scss. Live on dev (#9297)"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-AtHo4EB1Ot"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "4:1": {
+              "content": [
+                {
+                  "insert": "Cancel hovered grey or black instead of staying white"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-KGXkRpfSm8"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "4:2": {
+              "content": [
+                {
+                  "insert": "Hard-coded hex hovers in the migrated buttons, and .btn-cancel hovering black"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-eEhxzVtOCi"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "4:3": {
+              "content": [
+                {
+                  "insert": ".btn-cancel hover is white with $primary text and border: _buttons.scss. Live on dev (#9297)"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-IUdDBLJm8x"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "5:1": {
+              "content": [
+                {
+                  "insert": "Contact create and edit forms ignored the new hover colours"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-HFpehXqAQc"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "5:2": {
+              "content": [
+                {
+                  "insert": "AppButton is Tailwind based and hard-codes its own hover hex"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-xH3U8ZH5hP"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "5:3": {
+              "content": [
+                {
+                  "insert": "AppButton primary and light hover to bg-primary, cancel stays white with text-primary and border-primary: AppButton.jsx. Live on dev (#9394)"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-QX1vtTNgcn"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "6:1": {
+              "content": [
+                {
+                  "insert": "Date picker footer broke a date in the middle on narrow screens (Nov 5, then 2026 on the next line)"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-M2uHQpIoeY"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "6:2": {
+              "content": [
+                {
+                  "insert": "The selected period was one inline string, so it could wrap at any space, including inside a date"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-YvWAnJVQNs"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "6:3": {
+              "content": [
+                {
+                  "insert": "Each date is in a no-wrap span (.selected-period-date): DashboardDatePicker.jsx and .css. Live on dev (#9394)"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-aCFYnXiTrj"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "7:1": {
+              "content": [
+                {
+                  "insert": "Apply was cut off at 320px after that wrapping fix (found in the earlier local QA)"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-ulPZb7lE6A"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "7:2": {
+              "content": [
+                {
+                  "insert": "With each date on one line the text could not shrink, and the footer had no way to wrap its buttons"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-1MfdNj9l29"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "7:3": {
+              "content": [
+                {
+                  "insert": "Footer wraps (tw:flex-wrap), buttons stay right-aligned (tw:ml-auto), text keeps a small preferred width (tw:flex-[1_1_6.25rem]), plus a footer test: DashboardDatePicker.jsx. Live on dev (#9394)"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-HN3hpoqSAI"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "8:1": {
+              "content": [
+                {
+                  "insert": "Balances: Withdraw button was green even on an inactive card (production p1)"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-hm8DheJHnh"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "8:2": {
+              "content": [
+                {
+                  "insert": "The old Bootstrap version used the green secondary variant on every card state"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-ITNwcZn1ot"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "8:3": {
+              "content": [
+                {
+                  "insert": "MAIN ONLY (#9299): Withdraw is secondary only on the active card, light otherwise, in Withdrawals/index.jsx. Dev already behaves this way from its own Finance rewrite (secondary when active, outline when not)"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-fwBOwb6H6h"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "9:1": {
+              "content": [
+                {
+                  "insert": "Abandoned Carts Reminder actions menu looked grey on hover"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-0XJ2f1PJm2"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "9:2": {
+              "content": [
+                {
+                  "insert": "Already identical to main: stock Bootstrap menu hover (#f4f6fb), nothing overrides it"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-dCpr7NrZmV"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "9:3": {
+              "content": [
+                {
+                  "insert": "No code change"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-woozWVeVsL"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "10:1": {
+              "content": [
+                {
+                  "insert": "FOUND ON LIVE DEV: the date picker panel runs off the right edge at 768 and 820px, so Cancel and Apply cannot be reached"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-zyhugmp67E"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "10:2": {
+              "content": [
+                {
+                  "insert": "From 640px up the picker is a two-month panel (666px wide) anchored to the toggle, which sits about 362px from the left edge, and nothing kept the panel on screen. Not caused by this change; it was already there"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-7r3In9KWac"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "10:3": {
+              "content": [
+                {
+                  "insert": "After the panel opens (and on resize) it is measured and shifted left just enough to fit with an 8px margin (useLayoutEffect + translateX): DashboardDatePicker.jsx plus two tests. NOT DEPLOYED: commit 407a20d1a on the feature branch and a local dev branch, not pushed and no PR yet"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "block-id": "block-C41NbD61Nb"
+                  }
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            }
+          },
+          "attributes": {
+            "block-id": "block-HAdnYw53Xh"
+          }
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-3GIlUkE2E9"
+        }
+      },
+      {
+        "text": "SCREENSHOTS, LIVE ON DEV\n\n",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "Date picker footer, 1440px: the period fits on one line, Cancel and Apply on the right\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "d260b1a7-bd9a-4ad7-9afc-b6afc9a22f86.png",
+          "name": "live-period-footer-1440-v4.png",
+          "title": "live-period-footer-1440-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/d260b1a7-bd9a-4ad7-9afc-b6afc9a22f86/live-period-footer-1440-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/d260b1a7-bd9a-4ad7-9afc-b6afc9a22f86/d260b1a7-bd9a-4ad7-9afc-b6afc9a22f86_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/d260b1a7-bd9a-4ad7-9afc-b6afc9a22f86/d260b1a7-bd9a-4ad7-9afc-b6afc9a22f86_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/d260b1a7-bd9a-4ad7-9afc-b6afc9a22f86/live-period-footer-1440-v4.png",
+          "width": 671,
+          "height": 72
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Date picker footer in a 375px wide window: the dates wrap between the dates, beside the buttons\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "a90e9540-e649-4417-9231-2e621ca605b2.png",
+          "name": "live-period-footer-390-v4.png",
+          "title": "live-period-footer-390-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/a90e9540-e649-4417-9231-2e621ca605b2/live-period-footer-390-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/a90e9540-e649-4417-9231-2e621ca605b2/a90e9540-e649-4417-9231-2e621ca605b2_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/a90e9540-e649-4417-9231-2e621ca605b2/live-period-footer-390-v4.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/a90e9540-e649-4417-9231-2e621ca605b2/live-period-footer-390-v4.png",
+          "width": 381,
+          "height": 90
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Date picker footer in a 360px wide window: buttons on their own row, all visible\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "b34590df-835f-4547-ae8d-c71d5d73f67f.png",
+          "name": "live-period-footer-375-v4.png",
+          "title": "live-period-footer-375-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/b34590df-835f-4547-ae8d-c71d5d73f67f/live-period-footer-375-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/b34590df-835f-4547-ae8d-c71d5d73f67f/b34590df-835f-4547-ae8d-c71d5d73f67f_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/b34590df-835f-4547-ae8d-c71d5d73f67f/live-period-footer-375-v4.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/b34590df-835f-4547-ae8d-c71d5d73f67f/live-period-footer-375-v4.png",
+          "width": 366,
+          "height": 112
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Date picker footer in a 305px wide window: buttons on their own row, Apply fully visible\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "429f8efb-74de-490a-9232-cd3e0ec1cc35.png",
+          "name": "live-period-footer-320-v4.png",
+          "title": "live-period-footer-320-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/429f8efb-74de-490a-9232-cd3e0ec1cc35/live-period-footer-320-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/429f8efb-74de-490a-9232-cd3e0ec1cc35/429f8efb-74de-490a-9232-cd3e0ec1cc35_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/429f8efb-74de-490a-9232-cd3e0ec1cc35/live-period-footer-320-v4.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/429f8efb-74de-490a-9232-cd3e0ec1cc35/live-period-footer-320-v4.png",
+          "width": 311,
+          "height": 112
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Date picker, Cancel on hover: stays white, text and border go black\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "1bbda6de-bd68-4427-ba16-11c213de18e2.png",
+          "name": "live-picker-cancel-hover-1440-v4.png",
+          "title": "live-picker-cancel-hover-1440-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/1bbda6de-bd68-4427-ba16-11c213de18e2/live-picker-cancel-hover-1440-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/1bbda6de-bd68-4427-ba16-11c213de18e2/1bbda6de-bd68-4427-ba16-11c213de18e2_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/1bbda6de-bd68-4427-ba16-11c213de18e2/live-picker-cancel-hover-1440-v4.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/1bbda6de-bd68-4427-ba16-11c213de18e2/live-picker-cancel-hover-1440-v4.png",
+          "width": 337,
+          "height": 137
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Date picker, Apply on hover: stays black\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "95cf7a35-cb08-46bf-8fac-1b3f77a493e6.png",
+          "name": "live-picker-apply-hover-1440-v4.png",
+          "title": "live-picker-apply-hover-1440-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/95cf7a35-cb08-46bf-8fac-1b3f77a493e6/live-picker-apply-hover-1440-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/95cf7a35-cb08-46bf-8fac-1b3f77a493e6/95cf7a35-cb08-46bf-8fac-1b3f77a493e6_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/95cf7a35-cb08-46bf-8fac-1b3f77a493e6/live-picker-apply-hover-1440-v4.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/95cf7a35-cb08-46bf-8fac-1b3f77a493e6/live-picker-apply-hover-1440-v4.png",
+          "width": 329,
+          "height": 137
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Contact create form, Cancel on hover: stays white\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "6cb42305-45ab-487c-9b6b-c5a3537e39b5.png",
+          "name": "live-leads-create-cancel-hover-1440-v4.png",
+          "title": "live-leads-create-cancel-hover-1440-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/6cb42305-45ab-487c-9b6b-c5a3537e39b5/live-leads-create-cancel-hover-1440-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/6cb42305-45ab-487c-9b6b-c5a3537e39b5/6cb42305-45ab-487c-9b6b-c5a3537e39b5_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/6cb42305-45ab-487c-9b6b-c5a3537e39b5/live-leads-create-cancel-hover-1440-v4.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/6cb42305-45ab-487c-9b6b-c5a3537e39b5/live-leads-create-cancel-hover-1440-v4.png",
+          "width": 337,
+          "height": 137
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Contact create form, Save on hover: stays black\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "1667dcd7-dae2-45ac-806d-76fb2ebd8dba.png",
+          "name": "live-leads-create-save-hover-1440-v4.png",
+          "title": "live-leads-create-save-hover-1440-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/1667dcd7-dae2-45ac-806d-76fb2ebd8dba/live-leads-create-save-hover-1440-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/1667dcd7-dae2-45ac-806d-76fb2ebd8dba/1667dcd7-dae2-45ac-806d-76fb2ebd8dba_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/1667dcd7-dae2-45ac-806d-76fb2ebd8dba/live-leads-create-save-hover-1440-v4.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/1667dcd7-dae2-45ac-806d-76fb2ebd8dba/live-leads-create-save-hover-1440-v4.png",
+          "width": 243,
+          "height": 137
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Contact edit form, Cancel on hover: stays white\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "a7499f12-bb39-4f13-af0e-2961d3a3f7de.png",
+          "name": "live-leads-edit-cancel-hover-1440-v4.png",
+          "title": "live-leads-edit-cancel-hover-1440-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/a7499f12-bb39-4f13-af0e-2961d3a3f7de/live-leads-edit-cancel-hover-1440-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/a7499f12-bb39-4f13-af0e-2961d3a3f7de/a7499f12-bb39-4f13-af0e-2961d3a3f7de_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/a7499f12-bb39-4f13-af0e-2961d3a3f7de/live-leads-edit-cancel-hover-1440-v4.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/a7499f12-bb39-4f13-af0e-2961d3a3f7de/live-leads-edit-cancel-hover-1440-v4.png",
+          "width": 301,
+          "height": 137
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Contact edit form, Save on hover: stays black\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "6c893e93-d41c-4a7c-96d1-67820915e9f5.png",
+          "name": "live-leads-edit-save-hover-1440-v4.png",
+          "title": "live-leads-edit-save-hover-1440-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/6c893e93-d41c-4a7c-96d1-67820915e9f5/live-leads-edit-save-hover-1440-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/6c893e93-d41c-4a7c-96d1-67820915e9f5/6c893e93-d41c-4a7c-96d1-67820915e9f5_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/6c893e93-d41c-4a7c-96d1-67820915e9f5/live-leads-edit-save-hover-1440-v4.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/6c893e93-d41c-4a7c-96d1-67820915e9f5/live-leads-edit-save-hover-1440-v4.png",
+          "width": 288,
+          "height": 137
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Import / Update Products on hover: stays black\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "6a2785fd-1f08-45e3-93ce-9973c2061cc2.png",
+          "name": "live-import-hover-1440-v4.png",
+          "title": "live-import-hover-1440-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/6a2785fd-1f08-45e3-93ce-9973c2061cc2/live-import-hover-1440-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/6a2785fd-1f08-45e3-93ce-9973c2061cc2/6a2785fd-1f08-45e3-93ce-9973c2061cc2_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/6a2785fd-1f08-45e3-93ce-9973c2061cc2/6a2785fd-1f08-45e3-93ce-9973c2061cc2_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/6a2785fd-1f08-45e3-93ce-9973c2061cc2/live-import-hover-1440-v4.png",
+          "width": 725,
+          "height": 360
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Balances, Available active: black card with a green Withdraw (dimmed because this store's balance is 0), 1440px\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "94e33318-4022-4525-af06-88aa607ab8d8.png",
+          "name": "live-balances-available-active-1440-v4.png",
+          "title": "live-balances-available-active-1440-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/94e33318-4022-4525-af06-88aa607ab8d8/live-balances-available-active-1440-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/94e33318-4022-4525-af06-88aa607ab8d8/94e33318-4022-4525-af06-88aa607ab8d8_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/94e33318-4022-4525-af06-88aa607ab8d8/94e33318-4022-4525-af06-88aa607ab8d8_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/94e33318-4022-4525-af06-88aa607ab8d8/live-balances-available-active-1440-v4.png",
+          "width": 1319,
+          "height": 171
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Balances, Pending active: Available is a white card with an outlined Withdraw, 1440px\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "b5b74dbc-0680-4f99-9581-25d96f804669.png",
+          "name": "live-balances-pending-active-1440-v4.png",
+          "title": "live-balances-pending-active-1440-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/b5b74dbc-0680-4f99-9581-25d96f804669/live-balances-pending-active-1440-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/b5b74dbc-0680-4f99-9581-25d96f804669/b5b74dbc-0680-4f99-9581-25d96f804669_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/b5b74dbc-0680-4f99-9581-25d96f804669/b5b74dbc-0680-4f99-9581-25d96f804669_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/b5b74dbc-0680-4f99-9581-25d96f804669/live-balances-pending-active-1440-v4.png",
+          "width": 1319,
+          "height": 171
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Balances, Available active at 390px\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "c4b0ad43-c3af-41e0-b909-bbf7ad5661c8.png",
+          "name": "live-balances-available-active-390-v4.png",
+          "title": "live-balances-available-active-390-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/c4b0ad43-c3af-41e0-b909-bbf7ad5661c8/live-balances-available-active-390-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/c4b0ad43-c3af-41e0-b909-bbf7ad5661c8/c4b0ad43-c3af-41e0-b909-bbf7ad5661c8_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/c4b0ad43-c3af-41e0-b909-bbf7ad5661c8/c4b0ad43-c3af-41e0-b909-bbf7ad5661c8_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/c4b0ad43-c3af-41e0-b909-bbf7ad5661c8/live-balances-available-active-390-v4.png",
+          "width": 343,
+          "height": 740
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Balances, Pending active at 390px\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "07cde751-286c-4242-8a19-271526f5baf2.png",
+          "name": "live-balances-pending-active-390-v4.png",
+          "title": "live-balances-pending-active-390-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/07cde751-286c-4242-8a19-271526f5baf2/live-balances-pending-active-390-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/07cde751-286c-4242-8a19-271526f5baf2/07cde751-286c-4242-8a19-271526f5baf2_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/07cde751-286c-4242-8a19-271526f5baf2/07cde751-286c-4242-8a19-271526f5baf2_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/07cde751-286c-4242-8a19-271526f5baf2/live-balances-pending-active-390-v4.png",
+          "width": 343,
+          "height": 740
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "THE TABLET BUG: BEFORE (LIVE ON DEV) AND AFTER (FIX CHECKED LOCALLY)\n\n",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "BEFORE, live on dev at 768px: the panel runs off the right edge, Cancel and Apply are off screen\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "272e927d-d219-40bd-900f-059315a9f534.png",
+          "name": "live-tablet-bug-768-v4.png",
+          "title": "live-tablet-bug-768-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/272e927d-d219-40bd-900f-059315a9f534/live-tablet-bug-768-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/272e927d-d219-40bd-900f-059315a9f534/272e927d-d219-40bd-900f-059315a9f534_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/272e927d-d219-40bd-900f-059315a9f534/272e927d-d219-40bd-900f-059315a9f534_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/272e927d-d219-40bd-900f-059315a9f534/live-tablet-bug-768-v4.png",
+          "width": 768,
+          "height": 900
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "AFTER (local check on a dev based branch), 768px: whole panel on screen, Cancel and Apply visible\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "f4e62c37-dd98-4a3f-a7d0-593bbf9552c3.png",
+          "name": "fix-tablet-picker-768-v4.png",
+          "title": "fix-tablet-picker-768-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/f4e62c37-dd98-4a3f-a7d0-593bbf9552c3/fix-tablet-picker-768-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/f4e62c37-dd98-4a3f-a7d0-593bbf9552c3/f4e62c37-dd98-4a3f-a7d0-593bbf9552c3_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/f4e62c37-dd98-4a3f-a7d0-593bbf9552c3/f4e62c37-dd98-4a3f-a7d0-593bbf9552c3_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/f4e62c37-dd98-4a3f-a7d0-593bbf9552c3/fix-tablet-picker-768-v4.png",
+          "width": 768,
+          "height": 900
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "AFTER (local check), 820px\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "76667db0-38f3-47ae-b89a-3ca313cef71c.png",
+          "name": "fix-tablet-picker-820-v4.png",
+          "title": "fix-tablet-picker-820-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/76667db0-38f3-47ae-b89a-3ca313cef71c/fix-tablet-picker-820-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/76667db0-38f3-47ae-b89a-3ca313cef71c/76667db0-38f3-47ae-b89a-3ca313cef71c_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/76667db0-38f3-47ae-b89a-3ca313cef71c/76667db0-38f3-47ae-b89a-3ca313cef71c_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/76667db0-38f3-47ae-b89a-3ca313cef71c/fix-tablet-picker-820-v4.png",
+          "width": 820,
+          "height": 900
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "AFTER (local check), 700px: just above the phone sheet cutoff, panel sits next to the left edge\n",
+        "attributes": {}
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "a174e1d9-55ea-49ca-9665-3433b54d5076.png",
+          "name": "fix-tablet-picker-700-v4.png",
+          "title": "fix-tablet-picker-700-v4.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/a174e1d9-55ea-49ca-9665-3433b54d5076/fix-tablet-picker-700-v4.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/a174e1d9-55ea-49ca-9665-3433b54d5076/a174e1d9-55ea-49ca-9665-3433b54d5076_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/a174e1d9-55ea-49ca-9665-3433b54d5076/a174e1d9-55ea-49ca-9665-3433b54d5076_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/a174e1d9-55ea-49ca-9665-3433b54d5076/fix-tablet-picker-700-v4.png",
+          "width": 700,
+          "height": 900
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "CHECKED\n",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "LIVE on deployed dev (prodev.prosperna.com), driven in a Chromium window that was logged in by the user; the deploy of PR #9394 had finished and the page had the new classes. Nothing was saved, applied or withdrawn: hover and measure only. Window widths 1440, 768, 390, 375, 360 and 320 (the page shows 15px less because of the scrollbar, so the narrow layouts measured are 375, 360, 345 and 305). In scope and passing live: Cancel and Apply stay inside the picker at every width; dates wrap between the dates beside the buttons at the 375px layout and the buttons drop to their own row below that; Cancel is white at rest and on hover, Save, Apply and Import are black, all 38px tall with a 6px radius on the contact forms and picker; contact create and edit forms and the Import / Update Products button checked at 1440 and 390; Balances matches the rule in both card states. FOUND: the tablet overflow described in the last table row. It is not part of this change and is not deployed: the fix was checked in a local test page on a dev based branch at 1440, 1280, 1024, 900, 820, 768, 700, 390, 375 and 320px, the same page reproduced the live bug before the fix, and every screenshot was looked at. Tests: 18 picker tests pass, ESLint clean. Limits: the fix is not on dev yet (needs a push and a PR); at about 700px the shifted panel sits close to the left menu; the disabled Withdraw state shows dimmed because the balance is 0; staging was not tested and PR #9298 does not have the footer or Balances fixes.",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "QA on deployed dev: button hover colours, date picker footer, Balances, and a tablet bug found\n\nENV: dev (https://prodev.prosperna.com)\nBRANCH: fix/kamachi-button-hover-colors\n\nDEV: https://github.com/Prosperna/prosperna1/pull/9394 (merged and live). Earlier PR #9297, merged: https://github.com/Prosperna/prosperna1/pull/9297. The tablet fix has no PR yet.\nSTAGING: https://github.com/Prosperna/prosperna1/pull/9298\nMAIN: https://github.com/Prosperna/prosperna1/pull/9299\n\n\nWhat needed changing Why it needed changing How it was changed\nCancel and Save/Apply had different heights and corner radius (date picker, contact create and edit forms) The Tailwind migrations (#7560 dashboard, #7857 contacts) replaced the shared Bootstrap buttons with hand-written ones Shared buttons again (variant cancel / primary): DashboardDatePicker.jsx, LeadFormBody.jsx, edit/index.jsx. Both are 38px tall with a 6px radius. Live on dev (#9297)\nSave, Apply and Import / Update Products turned grey on hover Global hover for .btn-primary and .btn-light was grey #4b4b4b Hover uses the $primary token (black): _buttons.scss. Live on dev (#9297)\nCancel hovered grey or black instead of staying white Hard-coded hex hovers in the migrated buttons, and .btn-cancel hovering black .btn-cancel hover is white with $primary text and border: _buttons.scss. Live on dev (#9297)\nContact create and edit forms ignored the new hover colours AppButton is Tailwind based and hard-codes its own hover hex AppButton primary and light hover to bg-primary, cancel stays white with text-primary and border-primary: AppButton.jsx. Live on dev (#9394)\nDate picker footer broke a date in the middle on narrow screens (Nov 5, then 2026 on the next line) The selected period was one inline string, so it could wrap at any space, including inside a date Each date is in a no-wrap span (.selected-period-date): DashboardDatePicker.jsx and .css. Live on dev (#9394)\nApply was cut off at 320px after that wrapping fix (found in the earlier local QA) With each date on one line the text could not shrink, and the footer had no way to wrap its buttons Footer wraps (tw:flex-wrap), buttons stay right-aligned (tw:ml-auto), text keeps a small preferred width (tw:flex-[1_1_6.25rem]), plus a footer test: DashboardDatePicker.jsx. Live on dev (#9394)\nBalances: Withdraw button was green even on an inactive card (production p1) The old Bootstrap version used the green secondary variant on every card state MAIN ONLY (#9299): Withdraw is secondary only on the active card, light otherwise, in Withdrawals/index.jsx. Dev already behaves this way from its own Finance rewrite (secondary when active, outline when not)\nAbandoned Carts Reminder actions menu looked grey on hover Already identical to main: stock Bootstrap menu hover (#f4f6fb), nothing overrides it No code change\nFOUND ON LIVE DEV: the date picker panel runs off the right edge at 768 and 820px, so Cancel and Apply cannot be reached From 640px up the picker is a two-month panel (666px wide) anchored to the toggle, which sits about 362px from the left edge, and nothing kept the panel on screen. Not caused by this change; it was already there After the panel opens (and on resize) it is measured and shifted left just enough to fit with an 8px margin (useLayoutEffect + translateX): DashboardDatePicker.jsx plus two tests. NOT DEPLOYED: commit 407a20d1a on the feature branch and a local dev branch, not pushed and no PR yet\nSCREENSHOTS, LIVE ON DEV\n\nDate picker footer, 1440px: the period fits on one line, Cancel and Apply on the right\n\n\nDate picker footer in a 375px wide window: the dates wrap between the dates, beside the buttons\n\n\nDate picker footer in a 360px wide window: buttons on their own row, all visible\n\n\nDate picker footer in a 305px wide window: buttons on their own row, Apply fully visible\n\n\nDate picker, Cancel on hover: stays white, text and border go black\n\n\nDate picker, Apply on hover: stays black\n\n\nContact create form, Cancel on hover: stays white\n\n\nContact create form, Save on hover: stays black\n\n\nContact edit form, Cancel on hover: stays white\n\n\nContact edit form, Save on hover: stays black\n\n\nImport / Update Products on hover: stays black\n\n\nBalances, Available active: black card with a green Withdraw (dimmed because this store's balance is 0), 1440px\n\n\nBalances, Pending active: Available is a white card with an outlined Withdraw, 1440px\n\n\nBalances, Available active at 390px\n\n\nBalances, Pending active at 390px\n\n\nTHE TABLET BUG: BEFORE (LIVE ON DEV) AND AFTER (FIX CHECKED LOCALLY)\n\nBEFORE, live on dev at 768px: the panel runs off the right edge, Cancel and Apply are off screen\n\n\nAFTER (local check on a dev based branch), 768px: whole panel on screen, Cancel and Apply visible\n\n\nAFTER (local check), 820px\n\n\nAFTER (local check), 700px: just above the phone sheet cutoff, panel sits next to the left edge\n\n\nCHECKED\nLIVE on deployed dev (prodev.prosperna.com), driven in a Chromium window that was logged in by the user; the deploy of PR #9394 had finished and the page had the new classes. Nothing was saved, applied or withdrawn: hover and measure only. Window widths 1440, 768, 390, 375, 360 and 320 (the page shows 15px less because of the scrollbar, so the narrow layouts measured are 375, 360, 345 and 305). In scope and passing live: Cancel and Apply stay inside the picker at every width; dates wrap between the dates beside the buttons at the 375px layout and the buttons drop to their own row below that; Cancel is white at rest and on hover, Save, Apply and Import are black, all 38px tall with a 6px radius on the contact forms and picker; contact create and edit forms and the Import / Update Products button checked at 1440 and 390; Balances matches the rule in both card states. FOUND: the tablet overflow described in the last table row. It is not part of this change and is not deployed: the fix was checked in a local test page on a dev based branch at 1440, 1280, 1024, 900, 820, 768, 700, 390, 375 and 320px, the same page reproduced the live bug before the fix, and every screenshot was looked at. Tests: 18 picker tests pass, ESLint clean. Limits: the fix is not on dev yet (needs a push and a PR); at about 700px the shifted panel sits close to the left menu; the disabled Withdraw state shows dimmed because the balance is 0; staging was not tested and PR #9298 does not have the footer or Balances fixes.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1794192267656",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000255406",
+    "comment": [
+      {
+        "text": "READY FOR QA ON DEV (MOBILE PASS 2)\n\n"
+      },
+      {
+        "user": {
+          "id": 95622662,
+          "username": "Aira Pilor",
+          "email": "aira@prosperna.com",
+          "initials": "AP",
+          "profilePicture": null
+        },
+        "type": "tag",
+        "text": "@Aira Pilor"
+      },
+      {
+        "text": " mobile pass 2 and the Edit Shipping Address error fix are merged to dev (https://github.com/Prosperna/prosperna1/pull/9397). Please retest on dev at phone width (375px) using the QA TEST CASES SUMMARY (MOBILE PASS 2): https://app.clickup.com/t/86eyrdm4y?comment=1100740000255368\nBefore / after screenshots are under each test case. Give dev about 10 minutes to refresh first.\n"
+      }
+    ],
+    "comment_text": "READY FOR QA ON DEV (MOBILE PASS 2)\n\n mobile pass 2 and the Edit Shipping Address error fix are merged to dev (https://github.com/Prosperna/prosperna1/pull/9397). Please retest on dev at phone width (375px) using the QA TEST CASES SUMMARY (MOBILE PASS 2): https://app.clickup.com/t/86eyrdm4y?comment=1100740000255368\nBefore / after screenshots are under each test case. Give dev about 10 minutes to refresh first.\n@Aira Pilor",
+    "user": {
+      "id": 113539146,
+      "username": "Cyril Ayson",
+      "email": "cyril.ayson@prosperna.com",
+      "color": "#1090e0",
+      "initials": "CA",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1794191986387",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000255368",
+    "comment": [
+      {
+        "text": "QA TEST CASES SUMMARY (MOBILE PASS 2)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-HEwk7466YE"
+        }
+      },
+      {
+        "text": "LAST UPDATED: 2026-11-09, dev PR https://github.com/Prosperna/prosperna1/pull/9397",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2pGJqgnFWV"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-qcRtH6Ud2c"
+        }
+      },
+      {
+        "text": "WHERE TO TEST",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-AgXZXKk5-T"
+        }
+      },
+      {
+        "text": "- Environment: dev merchant dashboard, after the dev PR is merged and dev refreshes.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-85KBd3qOft"
+        }
+      },
+      {
+        "text": "- Device: a phone, or Chrome DevTools device mode at 375 x 812. Desktop checks at 1280px.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-PfWCm-qqOy"
+        }
+      },
+      {
+        "text": "- Before / after screenshots are under each test case (before = your Nov 9 screenshot).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-9QgTI52The"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-IchzAto3p4"
+        }
+      },
+      {
+        "text": "TEST CASES (MOBILE, 375px)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7gMNdCc9P7"
+        }
+      },
+      {
+        "text": "1. Edit Shipping Address error",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fyr8y5Iqp2"
+        }
+      },
+      {
+        "text": "   Steps: Contacts > open a contact whose saved address has no province (the one from your screenshot) > Edit Contact > edit the shipping address.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0GujIXheY4"
+        }
+      },
+      {
+        "text": "   Expected: no \"provinceAddress must be a string type\" message. State/Province is empty with the normal \"Required\" prompt, and saving works after picking a province, city and barangay.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-96v7ZHM-WG"
+        }
+      },
+      {
+        "text": "01-shipping-address-error-before.png",
+        "type": "image",
+        "image": {
+          "id": "97c0891f-0ead-496e-8331-7e7acf618e0b.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/97c0891f-0ead-496e-8331-7e7acf618e0b/01-shipping-address-error-before.png",
+          "name": "01-shipping-address-error-before.png",
+          "type": "png",
+          "title": "01-shipping-address-error-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/97c0891f-0ead-496e-8331-7e7acf618e0b/97c0891f-0ead-496e-8331-7e7acf618e0b_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/97c0891f-0ead-496e-8331-7e7acf618e0b/97c0891f-0ead-496e-8331-7e7acf618e0b_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/97c0891f-0ead-496e-8331-7e7acf618e0b/97c0891f-0ead-496e-8331-7e7acf618e0b_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "01-shipping-address-error-before.png",
+          "width": "115",
+          "data-id": "97c0891f-0ead-496e-8331-7e7acf618e0b.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7Sp_NwwPZz"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-F2qfzR67I4"
+        }
+      },
+      {
+        "text": "2. Contact profile tabs",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ORMkjlteb-"
+        }
+      },
+      {
+        "text": "   Expected: Contact Details, Order History, Conversations, Senior/PWD stay on one line and the row swipes sideways. Nothing overlaps.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-BCJub-TRot"
+        }
+      },
+      {
+        "text": "03-contact-tabs-375-before.png",
+        "type": "image",
+        "image": {
+          "id": "2eec3c33-4690-4096-8400-6c375bf77061.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/2eec3c33-4690-4096-8400-6c375bf77061/03-contact-tabs-375-before.png",
+          "name": "03-contact-tabs-375-before.png",
+          "type": "png",
+          "title": "03-contact-tabs-375-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/2eec3c33-4690-4096-8400-6c375bf77061/2eec3c33-4690-4096-8400-6c375bf77061_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/2eec3c33-4690-4096-8400-6c375bf77061/2eec3c33-4690-4096-8400-6c375bf77061_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/2eec3c33-4690-4096-8400-6c375bf77061/2eec3c33-4690-4096-8400-6c375bf77061_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "03-contact-tabs-375-before.png",
+          "width": "115",
+          "data-id": "2eec3c33-4690-4096-8400-6c375bf77061.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Nn07asIRoU"
+        }
+      },
+      {
+        "text": "03-contact-tabs-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "495b01bc-0c21-4177-b9f8-e76edc41e6f9.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/495b01bc-0c21-4177-b9f8-e76edc41e6f9/03-contact-tabs-375-after.jpg",
+          "name": "03-contact-tabs-375-after.jpg",
+          "type": "jpg",
+          "title": "03-contact-tabs-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/495b01bc-0c21-4177-b9f8-e76edc41e6f9/03-contact-tabs-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/495b01bc-0c21-4177-b9f8-e76edc41e6f9/495b01bc-0c21-4177-b9f8-e76edc41e6f9_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/495b01bc-0c21-4177-b9f8-e76edc41e6f9/495b01bc-0c21-4177-b9f8-e76edc41e6f9_medium.jpg",
+          "width": 314,
+          "height": 679
+        },
+        "attributes": {
+          "alt": "03-contact-tabs-375-after.jpg",
+          "width": "115",
+          "data-id": "495b01bc-0c21-4177-b9f8-e76edc41e6f9.jpg",
+          "data-natural-width": "314",
+          "data-natural-height": "679"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-9CR_icAsMW"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-roN96mU3g5"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_tlb1Jv6Xk"
+        }
+      },
+      {
+        "text": "3. Discounts",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-t3bzk33W7S"
+        }
+      },
+      {
+        "text": "   Expected: the Senior/PWD card text uses the card width, Edit text is centred, and only one Create Discount button shows.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-QaCjnB0WVf"
+        }
+      },
+      {
+        "text": "02-discounts-375-before.png",
+        "type": "image",
+        "image": {
+          "id": "9266a66f-73aa-4b69-9ad3-e12d0b281eb5.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/9266a66f-73aa-4b69-9ad3-e12d0b281eb5/02-discounts-375-before.png",
+          "name": "02-discounts-375-before.png",
+          "type": "png",
+          "title": "02-discounts-375-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/9266a66f-73aa-4b69-9ad3-e12d0b281eb5/9266a66f-73aa-4b69-9ad3-e12d0b281eb5_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/9266a66f-73aa-4b69-9ad3-e12d0b281eb5/9266a66f-73aa-4b69-9ad3-e12d0b281eb5_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/9266a66f-73aa-4b69-9ad3-e12d0b281eb5/9266a66f-73aa-4b69-9ad3-e12d0b281eb5_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "02-discounts-375-before.png",
+          "width": "115",
+          "data-id": "9266a66f-73aa-4b69-9ad3-e12d0b281eb5.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5f4Ml5mCK9"
+        }
+      },
+      {
+        "text": "02-discounts-375-after.png",
+        "type": "image",
+        "image": {
+          "id": "c1642135-deb8-4f23-9f28-1e54b56a05e7.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/c1642135-deb8-4f23-9f28-1e54b56a05e7/02-discounts-375-after.png",
+          "name": "02-discounts-375-after.png",
+          "type": "png",
+          "title": "02-discounts-375-after.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/c1642135-deb8-4f23-9f28-1e54b56a05e7/02-discounts-375-after.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/c1642135-deb8-4f23-9f28-1e54b56a05e7/c1642135-deb8-4f23-9f28-1e54b56a05e7_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/c1642135-deb8-4f23-9f28-1e54b56a05e7/c1642135-deb8-4f23-9f28-1e54b56a05e7_medium.png",
+          "width": 295,
+          "height": 600
+        },
+        "attributes": {
+          "alt": "02-discounts-375-after.png",
+          "width": "122",
+          "data-id": "c1642135-deb8-4f23-9f28-1e54b56a05e7.png",
+          "data-natural-width": "295",
+          "data-natural-height": "600"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--f7qro0tIb"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-uj-3iT0cza"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-zDLlbcYEku"
+        }
+      },
+      {
+        "text": "4. Product review detail header",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-nK_Crr-Uyo"
+        }
+      },
+      {
+        "text": "   Expected: product image and name on top, Contact and Unpublish side by side below them.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-HsLUVRGP98"
+        }
+      },
+      {
+        "text": "04-review-header-375-before.png",
+        "type": "image",
+        "image": {
+          "id": "be17806f-e575-4258-8757-89d6d4424bab.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/be17806f-e575-4258-8757-89d6d4424bab/04-review-header-375-before.png",
+          "name": "04-review-header-375-before.png",
+          "type": "png",
+          "title": "04-review-header-375-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/be17806f-e575-4258-8757-89d6d4424bab/be17806f-e575-4258-8757-89d6d4424bab_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/be17806f-e575-4258-8757-89d6d4424bab/be17806f-e575-4258-8757-89d6d4424bab_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/be17806f-e575-4258-8757-89d6d4424bab/be17806f-e575-4258-8757-89d6d4424bab_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "04-review-header-375-before.png",
+          "width": "115",
+          "data-id": "be17806f-e575-4258-8757-89d6d4424bab.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0NFQeUt-LO"
+        }
+      },
+      {
+        "text": "04-review-header-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "5b5a447d-ebe4-4792-8f45-c9eda872408f.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/5b5a447d-ebe4-4792-8f45-c9eda872408f/04-review-header-375-after.jpg",
+          "name": "04-review-header-375-after.jpg",
+          "type": "jpg",
+          "title": "04-review-header-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/5b5a447d-ebe4-4792-8f45-c9eda872408f/04-review-header-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/5b5a447d-ebe4-4792-8f45-c9eda872408f/5b5a447d-ebe4-4792-8f45-c9eda872408f_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/5b5a447d-ebe4-4792-8f45-c9eda872408f/5b5a447d-ebe4-4792-8f45-c9eda872408f_medium.jpg",
+          "width": 314,
+          "height": 679
+        },
+        "attributes": {
+          "alt": "04-review-header-375-after.jpg",
+          "width": "115",
+          "data-id": "5b5a447d-ebe4-4792-8f45-c9eda872408f.jpg",
+          "data-natural-width": "314",
+          "data-natural-height": "679"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-N5HebQS_c0"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2yMAEJhLrq"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-LnNikJiU_J"
+        }
+      },
+      {
+        "text": "5. Product review replies",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Mfgx-SFyHy"
+        }
+      },
+      {
+        "text": "   Expected: replies use the screen width; tapping \"...\" opens a small Edit / Delete menu under the button, not a full-width one.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-zcjFf8oTOk"
+        }
+      },
+      {
+        "text": "05-review-replies-375-before.png",
+        "type": "image",
+        "image": {
+          "id": "82044e00-96a7-4f2c-ab83-eb1d4480ee3e.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/82044e00-96a7-4f2c-ab83-eb1d4480ee3e/05-review-replies-375-before.png",
+          "name": "05-review-replies-375-before.png",
+          "type": "png",
+          "title": "05-review-replies-375-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/82044e00-96a7-4f2c-ab83-eb1d4480ee3e/82044e00-96a7-4f2c-ab83-eb1d4480ee3e_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/82044e00-96a7-4f2c-ab83-eb1d4480ee3e/82044e00-96a7-4f2c-ab83-eb1d4480ee3e_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/82044e00-96a7-4f2c-ab83-eb1d4480ee3e/82044e00-96a7-4f2c-ab83-eb1d4480ee3e_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "05-review-replies-375-before.png",
+          "width": "115",
+          "data-id": "82044e00-96a7-4f2c-ab83-eb1d4480ee3e.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5ZYSRFbNwa"
+        }
+      },
+      {
+        "text": "05-review-replies-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "fb1a1fb3-d873-45dd-9c5e-c711005a2684.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/fb1a1fb3-d873-45dd-9c5e-c711005a2684/05-review-replies-375-after.jpg",
+          "name": "05-review-replies-375-after.jpg",
+          "type": "jpg",
+          "title": "05-review-replies-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/fb1a1fb3-d873-45dd-9c5e-c711005a2684/05-review-replies-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/fb1a1fb3-d873-45dd-9c5e-c711005a2684/fb1a1fb3-d873-45dd-9c5e-c711005a2684_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/fb1a1fb3-d873-45dd-9c5e-c711005a2684/fb1a1fb3-d873-45dd-9c5e-c711005a2684_medium.jpg",
+          "width": 314,
+          "height": 679
+        },
+        "attributes": {
+          "alt": "05-review-replies-375-after.jpg",
+          "width": "115",
+          "data-id": "fb1a1fb3-d873-45dd-9c5e-c711005a2684.jpg",
+          "data-natural-width": "314",
+          "data-natural-height": "679"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-G6LoqnBjbC"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-b0r7dffiCy"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-TiDb4fGhxx"
+        }
+      },
+      {
+        "text": "6. Product Label chips (product form)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ncv5vbcrRP"
+        }
+      },
+      {
+        "text": "   Expected: each chip (e.g. New, Sale) is one short line with its x next to the label. Applies to other multi-selects too.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-98Q2saRJfr"
+        }
+      },
+      {
+        "text": "06-product-label-chips-375-before.png",
+        "type": "image",
+        "image": {
+          "id": "05f8c412-5749-4ed6-9bf0-346d089800d4.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/05f8c412-5749-4ed6-9bf0-346d089800d4/06-product-label-chips-375-before.png",
+          "name": "06-product-label-chips-375-before.png",
+          "type": "png",
+          "title": "06-product-label-chips-375-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/05f8c412-5749-4ed6-9bf0-346d089800d4/05f8c412-5749-4ed6-9bf0-346d089800d4_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/05f8c412-5749-4ed6-9bf0-346d089800d4/05f8c412-5749-4ed6-9bf0-346d089800d4_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/05f8c412-5749-4ed6-9bf0-346d089800d4/05f8c412-5749-4ed6-9bf0-346d089800d4_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "06-product-label-chips-375-before.png",
+          "width": "115",
+          "data-id": "05f8c412-5749-4ed6-9bf0-346d089800d4.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-f3cORbCZ1T"
+        }
+      },
+      {
+        "text": "06-product-label-chips-375-after-v2.jpg",
+        "type": "image",
+        "image": {
+          "id": "4e234c32-12e1-471b-831b-f40ba67505f2.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/4e234c32-12e1-471b-831b-f40ba67505f2/06-product-label-chips-375-after-v2.jpg",
+          "name": "06-product-label-chips-375-after-v2.jpg",
+          "type": "jpg",
+          "title": "06-product-label-chips-375-after-v2.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/4e234c32-12e1-471b-831b-f40ba67505f2/06-product-label-chips-375-after-v2.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/4e234c32-12e1-471b-831b-f40ba67505f2/4e234c32-12e1-471b-831b-f40ba67505f2_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/4e234c32-12e1-471b-831b-f40ba67505f2/4e234c32-12e1-471b-831b-f40ba67505f2_medium.jpg",
+          "width": 394,
+          "height": 852
+        },
+        "attributes": {
+          "width": "115",
+          "data-id": "4e234c32-12e1-471b-831b-f40ba67505f2.jpg",
+          "data-attachment": null,
+          "data-natural-width": "394",
+          "data-natural-height": "852"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-iMEWP-ETVK"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-KkpRbNjSzK"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-YbpZ4-4k4J"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-pD8nkdpf7V"
+        }
+      },
+      {
+        "text": "7. Variant Display Type (product form > Variants)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-JiNmJ0GLc_"
+        }
+      },
+      {
+        "text": "   Expected: Text, Image and Color Swatch are one per row with their full description visible.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-KFymNLoV_s"
+        }
+      },
+      {
+        "text": "07-variant-display-type-375-before.png",
+        "type": "image",
+        "image": {
+          "id": "d926423a-68d8-4c06-92ba-131e1f9c8479.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/d926423a-68d8-4c06-92ba-131e1f9c8479/07-variant-display-type-375-before.png",
+          "name": "07-variant-display-type-375-before.png",
+          "type": "png",
+          "title": "07-variant-display-type-375-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/d926423a-68d8-4c06-92ba-131e1f9c8479/d926423a-68d8-4c06-92ba-131e1f9c8479_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/d926423a-68d8-4c06-92ba-131e1f9c8479/d926423a-68d8-4c06-92ba-131e1f9c8479_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/d926423a-68d8-4c06-92ba-131e1f9c8479/d926423a-68d8-4c06-92ba-131e1f9c8479_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "07-variant-display-type-375-before.png",
+          "width": "115",
+          "data-id": "d926423a-68d8-4c06-92ba-131e1f9c8479.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-MgLqZGyeMR"
+        }
+      },
+      {
+        "text": "07-variant-display-type-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "1b387ac6-cd37-47ed-a0b8-bc1836b0ca64.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/1b387ac6-cd37-47ed-a0b8-bc1836b0ca64/07-variant-display-type-375-after.jpg",
+          "name": "07-variant-display-type-375-after.jpg",
+          "type": "jpg",
+          "title": "07-variant-display-type-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/1b387ac6-cd37-47ed-a0b8-bc1836b0ca64/07-variant-display-type-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/1b387ac6-cd37-47ed-a0b8-bc1836b0ca64/1b387ac6-cd37-47ed-a0b8-bc1836b0ca64_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/1b387ac6-cd37-47ed-a0b8-bc1836b0ca64/1b387ac6-cd37-47ed-a0b8-bc1836b0ca64_medium.jpg",
+          "width": 314,
+          "height": 679
+        },
+        "attributes": {
+          "alt": "07-variant-display-type-375-after.jpg",
+          "width": "115",
+          "data-id": "1b387ac6-cd37-47ed-a0b8-bc1836b0ca64.jpg",
+          "data-natural-width": "314",
+          "data-natural-height": "679"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-pV61yXd2G4"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-cKyUDv0Y3n"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Bk5kxMJhnw"
+        }
+      },
+      {
+        "text": "8. Related Items Preview (product form)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-JgZCj9pUxT"
+        }
+      },
+      {
+        "text": "   Expected: 2 products per row, names wrap normally, \"See All >\" on one line.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-uNof2FgRnj"
+        }
+      },
+      {
+        "text": "08-related-items-375-before.png",
+        "type": "image",
+        "image": {
+          "id": "4c0fa130-b0cd-4ee5-9b65-1eaf191f990e.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/4c0fa130-b0cd-4ee5-9b65-1eaf191f990e/08-related-items-375-before.png",
+          "name": "08-related-items-375-before.png",
+          "type": "png",
+          "title": "08-related-items-375-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/4c0fa130-b0cd-4ee5-9b65-1eaf191f990e/4c0fa130-b0cd-4ee5-9b65-1eaf191f990e_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/4c0fa130-b0cd-4ee5-9b65-1eaf191f990e/4c0fa130-b0cd-4ee5-9b65-1eaf191f990e_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/4c0fa130-b0cd-4ee5-9b65-1eaf191f990e/4c0fa130-b0cd-4ee5-9b65-1eaf191f990e_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "08-related-items-375-before.png",
+          "width": "115",
+          "data-id": "4c0fa130-b0cd-4ee5-9b65-1eaf191f990e.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_tTnVBdzIo"
+        }
+      },
+      {
+        "text": "08-related-items-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "4e791526-1ee7-42cc-90cc-2ff0e46e4c6c.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/4e791526-1ee7-42cc-90cc-2ff0e46e4c6c/08-related-items-375-after.jpg",
+          "name": "08-related-items-375-after.jpg",
+          "type": "jpg",
+          "title": "08-related-items-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/4e791526-1ee7-42cc-90cc-2ff0e46e4c6c/08-related-items-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/4e791526-1ee7-42cc-90cc-2ff0e46e4c6c/4e791526-1ee7-42cc-90cc-2ff0e46e4c6c_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/4e791526-1ee7-42cc-90cc-2ff0e46e4c6c/4e791526-1ee7-42cc-90cc-2ff0e46e4c6c_medium.jpg",
+          "width": 314,
+          "height": 679
+        },
+        "attributes": {
+          "alt": "08-related-items-375-after.jpg",
+          "width": "115",
+          "data-id": "4e791526-1ee7-42cc-90cc-2ff0e46e4c6c.jpg",
+          "data-natural-width": "314",
+          "data-natural-height": "679"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-31erv-GctP"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-G2Mz7mt_fP"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-j7BJ0D5AH9"
+        }
+      },
+      {
+        "text": "9. Product form save bar",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2tsCjVT6YV"
+        }
+      },
+      {
+        "text": "   Expected: Duplicate Product full width on top, Cancel and Save side by side below. The Max head sits above the bar and does not cover Save.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-oNA7FZv0vw"
+        }
+      },
+      {
+        "text": "09-product-form-actions-375-before.png",
+        "type": "image",
+        "image": {
+          "id": "539baa58-1112-4546-bf8e-978d0a6cb327.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/539baa58-1112-4546-bf8e-978d0a6cb327/09-product-form-actions-375-before.png",
+          "name": "09-product-form-actions-375-before.png",
+          "type": "png",
+          "title": "09-product-form-actions-375-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/539baa58-1112-4546-bf8e-978d0a6cb327/539baa58-1112-4546-bf8e-978d0a6cb327_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/539baa58-1112-4546-bf8e-978d0a6cb327/539baa58-1112-4546-bf8e-978d0a6cb327_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/539baa58-1112-4546-bf8e-978d0a6cb327/539baa58-1112-4546-bf8e-978d0a6cb327_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "09-product-form-actions-375-before.png",
+          "width": "115",
+          "data-id": "539baa58-1112-4546-bf8e-978d0a6cb327.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-LiWgeTJkd8"
+        }
+      },
+      {
+        "text": "09-product-form-actions-375-after.png",
+        "type": "image",
+        "image": {
+          "id": "d672ad42-a428-4b08-afb1-ac72d6a1c484.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/d672ad42-a428-4b08-afb1-ac72d6a1c484/09-product-form-actions-375-after.png",
+          "name": "09-product-form-actions-375-after.png",
+          "type": "png",
+          "title": "09-product-form-actions-375-after.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/d672ad42-a428-4b08-afb1-ac72d6a1c484/09-product-form-actions-375-after.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/d672ad42-a428-4b08-afb1-ac72d6a1c484/d672ad42-a428-4b08-afb1-ac72d6a1c484_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/d672ad42-a428-4b08-afb1-ac72d6a1c484/09-product-form-actions-375-after.png",
+          "width": 314,
+          "height": 141
+        },
+        "attributes": {
+          "alt": "09-product-form-actions-375-after.png",
+          "width": "300",
+          "data-id": "d672ad42-a428-4b08-afb1-ac72d6a1c484.png",
+          "data-natural-width": "314",
+          "data-natural-height": "141"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-wdt-czX9iF"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-XBTpskCS7l"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ltR5KXibuQ"
+        }
+      },
+      {
+        "text": "10. Blog post editor bar",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2FkPpzN-_Z"
+        }
+      },
+      {
+        "text": "    Expected: Cancel / Duplicate on the first row, Move to Draft / Update on the second, normal text size. The Max head sits above the bar and does not cover the Update arrow.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-OoDd8hpP-a"
+        }
+      },
+      {
+        "text": "10-blog-action-bar-375-before.png",
+        "type": "image",
+        "image": {
+          "id": "c38576e4-eab8-49c0-b861-833423e403e8.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/c38576e4-eab8-49c0-b861-833423e403e8/10-blog-action-bar-375-before.png",
+          "name": "10-blog-action-bar-375-before.png",
+          "type": "png",
+          "title": "10-blog-action-bar-375-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/c38576e4-eab8-49c0-b861-833423e403e8/c38576e4-eab8-49c0-b861-833423e403e8_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/c38576e4-eab8-49c0-b861-833423e403e8/c38576e4-eab8-49c0-b861-833423e403e8_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/c38576e4-eab8-49c0-b861-833423e403e8/c38576e4-eab8-49c0-b861-833423e403e8_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "10-blog-action-bar-375-before.png",
+          "width": "115",
+          "data-id": "c38576e4-eab8-49c0-b861-833423e403e8.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Ne7izVrcmP"
+        }
+      },
+      {
+        "text": "10-blog-action-bar-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "5f1152c8-11c9-4fa0-be5d-b35c3fd37830.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/5f1152c8-11c9-4fa0-be5d-b35c3fd37830/10-blog-action-bar-375-after.jpg",
+          "name": "10-blog-action-bar-375-after.jpg",
+          "type": "jpg",
+          "title": "10-blog-action-bar-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/5f1152c8-11c9-4fa0-be5d-b35c3fd37830/10-blog-action-bar-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/5f1152c8-11c9-4fa0-be5d-b35c3fd37830/5f1152c8-11c9-4fa0-be5d-b35c3fd37830_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/5f1152c8-11c9-4fa0-be5d-b35c3fd37830/5f1152c8-11c9-4fa0-be5d-b35c3fd37830_medium.jpg",
+          "width": 314,
+          "height": 679
+        },
+        "attributes": {
+          "alt": "10-blog-action-bar-375-after.jpg",
+          "width": "115",
+          "data-id": "5f1152c8-11c9-4fa0-be5d-b35c3fd37830.jpg",
+          "data-natural-width": "314",
+          "data-natural-height": "679"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-tGUqXqhkOp"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-qFvh-q9Sl9"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bKRHcyhi6S"
+        }
+      },
+      {
+        "text": "11. Popup builder tabs (Announcements > Popup)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-U53dcdfLBo"
+        }
+      },
+      {
+        "text": "    Expected: Design & Content, Form, Tools, Display Settings stay whole words and the row swipes sideways.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-vq0ITkb9eu"
+        }
+      },
+      {
+        "text": "11-popup-tabs-375-before.png",
+        "type": "image",
+        "image": {
+          "id": "937dceac-2a3b-4621-8679-41adce51adcc.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/937dceac-2a3b-4621-8679-41adce51adcc/11-popup-tabs-375-before.png",
+          "name": "11-popup-tabs-375-before.png",
+          "type": "png",
+          "title": "11-popup-tabs-375-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/937dceac-2a3b-4621-8679-41adce51adcc/937dceac-2a3b-4621-8679-41adce51adcc_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/937dceac-2a3b-4621-8679-41adce51adcc/937dceac-2a3b-4621-8679-41adce51adcc_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/937dceac-2a3b-4621-8679-41adce51adcc/937dceac-2a3b-4621-8679-41adce51adcc_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "11-popup-tabs-375-before.png",
+          "width": "115",
+          "data-id": "937dceac-2a3b-4621-8679-41adce51adcc.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-g6VO8CNrlQ"
+        }
+      },
+      {
+        "text": "11-popup-tabs-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "de9637e6-1b16-4c59-ac03-f44bb77a572d.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/de9637e6-1b16-4c59-ac03-f44bb77a572d/11-popup-tabs-375-after.jpg",
+          "name": "11-popup-tabs-375-after.jpg",
+          "type": "jpg",
+          "title": "11-popup-tabs-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/de9637e6-1b16-4c59-ac03-f44bb77a572d/11-popup-tabs-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/de9637e6-1b16-4c59-ac03-f44bb77a572d/de9637e6-1b16-4c59-ac03-f44bb77a572d_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/de9637e6-1b16-4c59-ac03-f44bb77a572d/de9637e6-1b16-4c59-ac03-f44bb77a572d_medium.jpg",
+          "width": 314,
+          "height": 679
+        },
+        "attributes": {
+          "alt": "11-popup-tabs-375-after.jpg",
+          "width": "115",
+          "data-id": "de9637e6-1b16-4c59-ac03-f44bb77a572d.jpg",
+          "data-natural-width": "314",
+          "data-natural-height": "679"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lJ7GcuaRhZ"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-uuhrdxWhyR"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eJRqwgmurD"
+        }
+      },
+      {
+        "text": "12. Create New Add-on popup (product form > Add-ons)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7d6r6ZOLFa"
+        }
+      },
+      {
+        "text": "    Expected: the title has space from the left edge; Cancel is black text on white.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-GAEANkoOBD"
+        }
+      },
+      {
+        "text": "12-addon-modal-375-before.png",
+        "type": "image",
+        "image": {
+          "id": "d51742d1-ae01-46ca-b316-f6f210183e2d.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/d51742d1-ae01-46ca-b316-f6f210183e2d/12-addon-modal-375-before.png",
+          "name": "12-addon-modal-375-before.png",
+          "type": "png",
+          "title": "12-addon-modal-375-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/d51742d1-ae01-46ca-b316-f6f210183e2d/d51742d1-ae01-46ca-b316-f6f210183e2d_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/d51742d1-ae01-46ca-b316-f6f210183e2d/d51742d1-ae01-46ca-b316-f6f210183e2d_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/d51742d1-ae01-46ca-b316-f6f210183e2d/d51742d1-ae01-46ca-b316-f6f210183e2d_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "12-addon-modal-375-before.png",
+          "width": "115",
+          "data-id": "d51742d1-ae01-46ca-b316-f6f210183e2d.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-NLLIygkkqx"
+        }
+      },
+      {
+        "text": "12-addon-modal-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "a4874e0b-6171-484c-8c0b-46f84e344c0d.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/a4874e0b-6171-484c-8c0b-46f84e344c0d/12-addon-modal-375-after.jpg",
+          "name": "12-addon-modal-375-after.jpg",
+          "type": "jpg",
+          "title": "12-addon-modal-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/a4874e0b-6171-484c-8c0b-46f84e344c0d/12-addon-modal-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/a4874e0b-6171-484c-8c0b-46f84e344c0d/a4874e0b-6171-484c-8c0b-46f84e344c0d_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/a4874e0b-6171-484c-8c0b-46f84e344c0d/a4874e0b-6171-484c-8c0b-46f84e344c0d_medium.jpg",
+          "width": 314,
+          "height": 679
+        },
+        "attributes": {
+          "alt": "12-addon-modal-375-after.jpg",
+          "width": "115",
+          "data-id": "a4874e0b-6171-484c-8c0b-46f84e344c0d.jpg",
+          "data-natural-width": "314",
+          "data-natural-height": "679"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lSH5KGjzoG"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-AP6Qx2Aw-D"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-4aYSoysBIp"
+        }
+      },
+      {
+        "text": "13. Order details",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-VCFVjWQREN"
+        }
+      },
+      {
+        "text": "    Expected: values (email, status, payment type, tracking link) get more room than the labels, and all rows line up.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-WuPPuMcJT1"
+        }
+      },
+      {
+        "text": "13-order-details-375-before.png",
+        "type": "image",
+        "image": {
+          "id": "3d4857bf-788d-4758-93f9-e1dfb947823c.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/3d4857bf-788d-4758-93f9-e1dfb947823c/13-order-details-375-before.png",
+          "name": "13-order-details-375-before.png",
+          "type": "png",
+          "title": "13-order-details-375-before.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/3d4857bf-788d-4758-93f9-e1dfb947823c/3d4857bf-788d-4758-93f9-e1dfb947823c_large.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/3d4857bf-788d-4758-93f9-e1dfb947823c/3d4857bf-788d-4758-93f9-e1dfb947823c_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/3d4857bf-788d-4758-93f9-e1dfb947823c/3d4857bf-788d-4758-93f9-e1dfb947823c_medium.png",
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "alt": "13-order-details-375-before.png",
+          "width": "115",
+          "data-id": "3d4857bf-788d-4758-93f9-e1dfb947823c.png",
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-dpvpvV11RK"
+        }
+      },
+      {
+        "text": "13-order-details-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "ba7bf87a-cff1-47c4-ad07-98ed6d411220.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/ba7bf87a-cff1-47c4-ad07-98ed6d411220/13-order-details-375-after.jpg",
+          "name": "13-order-details-375-after.jpg",
+          "type": "jpg",
+          "title": "13-order-details-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/ba7bf87a-cff1-47c4-ad07-98ed6d411220/13-order-details-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/ba7bf87a-cff1-47c4-ad07-98ed6d411220/ba7bf87a-cff1-47c4-ad07-98ed6d411220_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/ba7bf87a-cff1-47c4-ad07-98ed6d411220/ba7bf87a-cff1-47c4-ad07-98ed6d411220_medium.jpg",
+          "width": 450,
+          "height": 974
+        },
+        "attributes": {
+          "alt": "13-order-details-375-after.jpg",
+          "width": "115",
+          "data-id": "ba7bf87a-cff1-47c4-ad07-98ed6d411220.jpg",
+          "data-natural-width": "450",
+          "data-natural-height": "974"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-pomj2Zoacv"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-29E0rSYcKn"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-mrxuReVpMS"
+        }
+      },
+      {
+        "text": "14. Max head on other bottom bars",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_1iGXqIo5v"
+        }
+      },
+      {
+        "text": "    Steps: Announcements, Temporary Close (Store Settings), Inventory with items selected.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-SGIdze8Mhh"
+        }
+      },
+      {
+        "text": "    Expected: the Max head always sits above the bottom bar and never covers its buttons.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-S_HXUIeaH9"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-zXmFstW8b0"
+        }
+      },
+      {
+        "text": "TEST CASES (DESKTOP, 1280px)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fW65kIqRHe"
+        }
+      },
+      {
+        "text": "15. Desktop unchanged",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-6yHeWBNmA6"
+        }
+      },
+      {
+        "text": "    Steps: repeat 2, 4, 9, 10, 13 on desktop.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-3Zppb0hZt0"
+        }
+      },
+      {
+        "text": "    Expected: same as before this change, except the Max head now sits above the blog editor bar instead of over Update.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-wMTIAC6YuQ"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-zzL9SoixVT"
+        }
+      },
+      {
+        "text": "OUT OF SCOPE / KNOWN BEHAVIOR",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-rfaMjniY-F"
+        }
+      },
+      {
+        "text": "- Product Reviews list and the Product Description editor were not changed (nothing broken found at 375px).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Wi7NZgGJ9z"
+        }
+      },
+      {
+        "text": "- The previous QA TEST CASES SUMMARY (pass 1) still applies.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-reL5EXkNO5"
+        }
+      }
+    ],
+    "comment_text": "QA TEST CASES SUMMARY (MOBILE PASS 2)\nLAST UPDATED: 2026-11-09, dev PR https://github.com/Prosperna/prosperna1/pull/9397\n\nWHERE TO TEST\n- Environment: dev merchant dashboard, after the dev PR is merged and dev refreshes.\n- Device: a phone, or Chrome DevTools device mode at 375 x 812. Desktop checks at 1280px.\n- Before / after screenshots are under each test case (before = your Nov 9 screenshot).\n\nTEST CASES (MOBILE, 375px)\n1. Edit Shipping Address error\n   Steps: Contacts > open a contact whose saved address has no province (the one from your screenshot) > Edit Contact > edit the shipping address.\n   Expected: no \"provinceAddress must be a string type\" message. State/Province is empty with the normal \"Required\" prompt, and saving works after picking a province, city and barangay.\n01-shipping-address-error-before.png\n\n2. Contact profile tabs\n   Expected: Contact Details, Order History, Conversations, Senior/PWD stay on one line and the row swipes sideways. Nothing overlaps.\n03-contact-tabs-375-before.png\n03-contact-tabs-375-after.jpg\n\n\n3. Discounts\n   Expected: the Senior/PWD card text uses the card width, Edit text is centred, and only one Create Discount button shows.\n02-discounts-375-before.png\n02-discounts-375-after.png\n\n\n4. Product review detail header\n   Expected: product image and name on top, Contact and Unpublish side by side below them.\n04-review-header-375-before.png\n04-review-header-375-after.jpg\n\n\n5. Product review replies\n   Expected: replies use the screen width; tapping \"...\" opens a small Edit / Delete menu under the button, not a full-width one.\n05-review-replies-375-before.png\n05-review-replies-375-after.jpg\n\n\n6. Product Label chips (product form)\n   Expected: each chip (e.g. New, Sale) is one short line with its x next to the label. Applies to other multi-selects too.\n06-product-label-chips-375-before.png\n06-product-label-chips-375-after-v2.jpg\n\n\n\n7. Variant Display Type (product form > Variants)\n   Expected: Text, Image and Color Swatch are one per row with their full description visible.\n07-variant-display-type-375-before.png\n07-variant-display-type-375-after.jpg\n\n\n8. Related Items Preview (product form)\n   Expected: 2 products per row, names wrap normally, \"See All >\" on one line.\n08-related-items-375-before.png\n08-related-items-375-after.jpg\n\n\n9. Product form save bar\n   Expected: Duplicate Product full width on top, Cancel and Save side by side below. The Max head sits above the bar and does not cover Save.\n09-product-form-actions-375-before.png\n09-product-form-actions-375-after.png\n\n\n10. Blog post editor bar\n    Expected: Cancel / Duplicate on the first row, Move to Draft / Update on the second, normal text size. The Max head sits above the bar and does not cover the Update arrow.\n10-blog-action-bar-375-before.png\n10-blog-action-bar-375-after.jpg\n\n\n11. Popup builder tabs (Announcements > Popup)\n    Expected: Design & Content, Form, Tools, Display Settings stay whole words and the row swipes sideways.\n11-popup-tabs-375-before.png\n11-popup-tabs-375-after.jpg\n\n\n12. Create New Add-on popup (product form > Add-ons)\n    Expected: the title has space from the left edge; Cancel is black text on white.\n12-addon-modal-375-before.png\n12-addon-modal-375-after.jpg\n\n\n13. Order details\n    Expected: values (email, status, payment type, tracking link) get more room than the labels, and all rows line up.\n13-order-details-375-before.png\n13-order-details-375-after.jpg\n\n\n14. Max head on other bottom bars\n    Steps: Announcements, Temporary Close (Store Settings), Inventory with items selected.\n    Expected: the Max head always sits above the bottom bar and never covers its buttons.\n\nTEST CASES (DESKTOP, 1280px)\n15. Desktop unchanged\n    Steps: repeat 2, 4, 9, 10, 13 on desktop.\n    Expected: same as before this change, except the Max head now sits above the blog editor bar instead of over Update.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- Product Reviews list and the Product Description editor were not changed (nothing broken found at 375px).\n- The previous QA TEST CASES SUMMARY (pass 1) still applies.\n",
+    "user": {
+      "id": 113539146,
+      "username": "Cyril Ayson",
+      "email": "cyril.ayson@prosperna.com",
+      "color": "#1090e0",
+      "initials": "CA",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1794191181334",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000255367",
+    "comment": [
+      {
+        "text": "MOBILE PASS 2 (375px) + SHIPPING ADDRESS ERROR: DEV PR READY\n\nACCOMPLISHED\nFixed every item from Aira's Nov 9 phone screenshots on dev:\n1. Contacts > Edit Shipping Address error (\"provinceAddress must be a string type...\"): the form filled the province with the whole saved object when it had no name. It now loads as text, the same way city and barangay already did. Traced to commit e5f8cfcd4 (Feb 4); my earlier fix for 86eqqbxed covered city and barangay but missed province. Same code is on prod, so the fix goes up with this task's promotion.\n2. Contact profile tabs: stay on one line and scroll sideways (Senior/PWD no longer overlaps Conversations).\n3. Product review detail: product name above Contact / Unpublish on phones; replies use the screen width; the Edit / Delete menu no longer stretches across the screen.\n4. Product form: variant Display Type cards stack; Related Items show 2 per row; Product Label chips are one line again; the save bar is Duplicate on top, Cancel and Save side by side.\n5. Order details: values get more of each row, and all rows line up.\n6. Discounts: Senior/PWD card text uses the width, Edit is centred, no second Create Discount button.\n7. Blog post editor bar: 2 x 2 buttons at normal size on phones.\n8. Popup builder tabs: Form and Tools no longer break mid-word.\n9. Create New Add-on popup: padded title, black Cancel.\n\nEXTRA WORK\n- Accessibility (WCAG 2.5.8 target size): the floating Max head covered Save / Update on every page with a bottom save bar (product form, blog editor, announcements, temporary close, inventory bulk bar). It now sits above the bar. Also fixed the head stretching after being dragged on a phone.\n- The chip \"x\" fix applies to every multi-select on touch screens, not only Product Labels.\n- Moved the touched blog bar and review reply styles from SCSS to Tailwind.\n\nPULL REQUESTS\n- DEV: https://github.com/Prosperna/prosperna1/pull/9397 (branch fix/dashboard-mobile-layout-dev-2, cherry-picked from the main-based fix/dashboard-mobile-layout)\n\nHOW IT WAS TESTED\n- ESLint and Stylelint on the changed files, tests for every touched screen (1954 passing on dev), production build on both branches.\n- Checked each screen in the browser at 375px, plus tablet and desktop to confirm they are unchanged. Every touched button is 44px tall with at least 8px between buttons.\n\nNEXT STEPS\n- Merge the dev PR, then QA retests on dev using the QA TEST CASES SUMMARY (MOBILE PASS 2) comment and its screenshots.\n- Staging and main promotion after QA approval, together with pass 1.\n"
+      }
+    ],
+    "comment_text": "MOBILE PASS 2 (375px) + SHIPPING ADDRESS ERROR: DEV PR READY\n\nACCOMPLISHED\nFixed every item from Aira's Nov 9 phone screenshots on dev:\n1. Contacts > Edit Shipping Address error (\"provinceAddress must be a string type...\"): the form filled the province with the whole saved object when it had no name. It now loads as text, the same way city and barangay already did. Traced to commit e5f8cfcd4 (Feb 4); my earlier fix for 86eqqbxed covered city and barangay but missed province. Same code is on prod, so the fix goes up with this task's promotion.\n2. Contact profile tabs: stay on one line and scroll sideways (Senior/PWD no longer overlaps Conversations).\n3. Product review detail: product name above Contact / Unpublish on phones; replies use the screen width; the Edit / Delete menu no longer stretches across the screen.\n4. Product form: variant Display Type cards stack; Related Items show 2 per row; Product Label chips are one line again; the save bar is Duplicate on top, Cancel and Save side by side.\n5. Order details: values get more of each row, and all rows line up.\n6. Discounts: Senior/PWD card text uses the width, Edit is centred, no second Create Discount button.\n7. Blog post editor bar: 2 x 2 buttons at normal size on phones.\n8. Popup builder tabs: Form and Tools no longer break mid-word.\n9. Create New Add-on popup: padded title, black Cancel.\n\nEXTRA WORK\n- Accessibility (WCAG 2.5.8 target size): the floating Max head covered Save / Update on every page with a bottom save bar (product form, blog editor, announcements, temporary close, inventory bulk bar). It now sits above the bar. Also fixed the head stretching after being dragged on a phone.\n- The chip \"x\" fix applies to every multi-select on touch screens, not only Product Labels.\n- Moved the touched blog bar and review reply styles from SCSS to Tailwind.\n\nPULL REQUESTS\n- DEV: https://github.com/Prosperna/prosperna1/pull/9397 (branch fix/dashboard-mobile-layout-dev-2, cherry-picked from the main-based fix/dashboard-mobile-layout)\n\nHOW IT WAS TESTED\n- ESLint and Stylelint on the changed files, tests for every touched screen (1954 passing on dev), production build on both branches.\n- Checked each screen in the browser at 375px, plus tablet and desktop to confirm they are unchanged. Every touched button is 44px tall with at least 8px between buttons.\n\nNEXT STEPS\n- Merge the dev PR, then QA retests on dev using the QA TEST CASES SUMMARY (MOBILE PASS 2) comment and its screenshots.\n- Staging and main promotion after QA approval, together with pass 1.\n",
+    "user": {
+      "id": 113539146,
+      "username": "Cyril Ayson",
+      "email": "cyril.ayson@prosperna.com",
+      "color": "#1090e0",
+      "initials": "CA",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1794191180872",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000255302",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "App Wide Cleanup"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "READY FOR TESTING"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1d974daa-846f-4f2b-aa92-4d7879d6a360"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Nov 9 2026, 9:50AM (Asia/Manila)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2f823e5f-a650-4c0d-b5b1-fff90b29e6cf"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eb747be5-76e2-450a-80a4-2f28d51dc0ed"
+        }
+      }
+    ],
+    "comment_text": "This App Wide Cleanup has been move to READY FOR TESTING\nDate updated: Nov 9 2026, 9:50AM (Asia/Manila)\nTriggered by: Angelo Kamachi\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1794189010485",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000249286",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "App Wide Cleanup"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "READY FOR TESTING"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1d974daa-846f-4f2b-aa92-4d7879d6a360"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Nov 6 2026, 1:01PM (Asia/Manila)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2f823e5f-a650-4c0d-b5b1-fff90b29e6cf"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Cyril Ayson"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eb747be5-76e2-450a-80a4-2f28d51dc0ed"
+        }
+      }
+    ],
+    "comment_text": "This App Wide Cleanup has been move to READY FOR TESTING\nDate updated: Nov 6 2026, 1:01PM (Asia/Manila)\nTriggered by: Cyril Ayson\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1793941270009",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000249274",
+    "comment": [
+      {
+        "text": "READY FOR QA ON DEV\n\n"
+      },
+      {
+        "user": {
+          "id": 95622662,
+          "username": "Aira Pilor",
+          "email": "aira@prosperna.com",
+          "initials": "AP",
+          "profilePicture": null
+        },
+        "type": "tag",
+        "text": "@Aira Pilor"
+      },
+      {
+        "text": " the mobile layout pass is merged to dev (https://github.com/Prosperna/prosperna1/pull/9381). Please retest on dev at phone width (375px) using the QA TEST CASES SUMMARY: https://app.clickup.com/t/86eyrdm4y?comment=1100740000249257\nThe expected-result screenshots are attached to this task (file names are listed in each test case).\n"
+      }
+    ],
+    "comment_text": "READY FOR QA ON DEV\n\n the mobile layout pass is merged to dev (https://github.com/Prosperna/prosperna1/pull/9381). Please retest on dev at phone width (375px) using the QA TEST CASES SUMMARY: https://app.clickup.com/t/86eyrdm4y?comment=1100740000249257\nThe expected-result screenshots are attached to this task (file names are listed in each test case).\n@Aira Pilor",
+    "user": {
+      "id": 113539146,
+      "username": "Cyril Ayson",
+      "email": "cyril.ayson@prosperna.com",
+      "color": "#1090e0",
+      "initials": "CA",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1793941164836",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000249258",
+    "comment": [
+      {
+        "text": "MOBILE LAYOUT PASS (375px): DEV PR READY\n\nACCOMPLISHED\nAudited the TO FIX doc pages plus Finance, Settings, Media Library, Marketplace and Storefront on staging at phone width (375px), then fixed every mobile finding:\n1. Top bar: on phones it wrapped into two rows (140px) and hid every page title under it. It is now a single 70px row, and the extra mobile padding for pages with the \"plan will expire\" banner is removed.\n2. Floating Max head: smaller on phones and the \"Ask me anything\" bubble no longer appears there (it covered pagination and bottom buttons).\n3. \"New version available\" message: stacked and raised above the Max head on phones.\n4. MaxAI intro popups: compact on phones (shorter video, stacked footer).\n5. Empty tables (Discounts, Abandoned Carts, Template Library, User Control, Store Locations, Balances): no more header-only table with a sideways scrollbar on phones.\n6. Store Settings and Messaging Settings: the 15+ item sub-menu is now a swipeable chip row on phones.\n7. Page-level fixes: Gmail card badge wrapping, Payments / Withdrawal / Marketplace / Shipping padding, Withdrawal label-value gap, Digital Settings options one per row with Save inside the card, Media Library search row and empty-state copy, Design Settings banner contrast and info box, Mega Menu buttons and preset names.\n\nEXTRA WORK\n- Moved the styles of every element touched from SCSS to Tailwind (per the repo rule) and deleted three stylesheets.\n- Fixed pre-existing lint errors in the touched files (they exist on main and dev too).\n- Added the QA screenshots step to our workflow; screenshots for this PR are attached to this task.\n\nPULL REQUESTS\n- DEV: https://github.com/Prosperna/prosperna1/pull/9381 (branch fix/dashboard-mobile-layout-dev, cherry-picked from the main-based fix/dashboard-mobile-layout)\n\nHOW IT WAS TESTED\n- ESLint and Stylelint on the changed files, targeted unit tests for every touched component (new tests for the empty-table behaviour, the settings chips and Digital Settings), production build.\n- Checked every page above in the browser at 375px, plus desktop and tablet to confirm they are unchanged.\n\nNEXT STEPS\n- Merge the dev PR, then QA retests on dev using the QA TEST CASES SUMMARY comment and the attached screenshots.\n- Staging and main promotion PRs after QA approval. Expect cherry-pick branches: main is behind staging/dev on several of these files (Finance especially).\n- Not covered: the desktop styling items in the TO FIX doc (hover colours, Orders close button, Discounts crown icon, cart images, pagination, tooltips) and Mega Menu in the browser (the test account redirects to Max AI).\n\nQA TEST CASES\n- Posted a QA TEST CASES SUMMARY comment for this task: https://app.clickup.com/t/86eyrdm4y?comment=1100740000249257\n"
+      }
+    ],
+    "comment_text": "MOBILE LAYOUT PASS (375px): DEV PR READY\n\nACCOMPLISHED\nAudited the TO FIX doc pages plus Finance, Settings, Media Library, Marketplace and Storefront on staging at phone width (375px), then fixed every mobile finding:\n1. Top bar: on phones it wrapped into two rows (140px) and hid every page title under it. It is now a single 70px row, and the extra mobile padding for pages with the \"plan will expire\" banner is removed.\n2. Floating Max head: smaller on phones and the \"Ask me anything\" bubble no longer appears there (it covered pagination and bottom buttons).\n3. \"New version available\" message: stacked and raised above the Max head on phones.\n4. MaxAI intro popups: compact on phones (shorter video, stacked footer).\n5. Empty tables (Discounts, Abandoned Carts, Template Library, User Control, Store Locations, Balances): no more header-only table with a sideways scrollbar on phones.\n6. Store Settings and Messaging Settings: the 15+ item sub-menu is now a swipeable chip row on phones.\n7. Page-level fixes: Gmail card badge wrapping, Payments / Withdrawal / Marketplace / Shipping padding, Withdrawal label-value gap, Digital Settings options one per row with Save inside the card, Media Library search row and empty-state copy, Design Settings banner contrast and info box, Mega Menu buttons and preset names.\n\nEXTRA WORK\n- Moved the styles of every element touched from SCSS to Tailwind (per the repo rule) and deleted three stylesheets.\n- Fixed pre-existing lint errors in the touched files (they exist on main and dev too).\n- Added the QA screenshots step to our workflow; screenshots for this PR are attached to this task.\n\nPULL REQUESTS\n- DEV: https://github.com/Prosperna/prosperna1/pull/9381 (branch fix/dashboard-mobile-layout-dev, cherry-picked from the main-based fix/dashboard-mobile-layout)\n\nHOW IT WAS TESTED\n- ESLint and Stylelint on the changed files, targeted unit tests for every touched component (new tests for the empty-table behaviour, the settings chips and Digital Settings), production build.\n- Checked every page above in the browser at 375px, plus desktop and tablet to confirm they are unchanged.\n\nNEXT STEPS\n- Merge the dev PR, then QA retests on dev using the QA TEST CASES SUMMARY comment and the attached screenshots.\n- Staging and main promotion PRs after QA approval. Expect cherry-pick branches: main is behind staging/dev on several of these files (Finance especially).\n- Not covered: the desktop styling items in the TO FIX doc (hover colours, Orders close button, Discounts crown icon, cart images, pagination, tooltips) and Mega Menu in the browser (the test account redirects to Max AI).\n\nQA TEST CASES\n- Posted a QA TEST CASES SUMMARY comment for this task: https://app.clickup.com/t/86eyrdm4y?comment=1100740000249257\n",
+    "user": {
+      "id": 113539146,
+      "username": "Cyril Ayson",
+      "email": "cyril.ayson@prosperna.com",
+      "color": "#1090e0",
+      "initials": "CA",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1793940819220",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000249257",
+    "comment": [
+      {
+        "text": "QA TEST CASES SUMMARY",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-RgPll_r2aJ"
+        }
+      },
+      {
+        "text": "LAST UPDATED: 2026-11-06, dev PR https://github.com/Prosperna/prosperna1/pull/9381 (merged)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-GAa4Q12mt1"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-F1xf3AkV5H"
+        }
+      },
+      {
+        "text": "WHERE TO TEST",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-BG91iTaNiP"
+        }
+      },
+      {
+        "text": "- Environment: dev merchant dashboard, logged in as a merchant (any plan).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5TA4eOTUd7"
+        }
+      },
+      {
+        "text": "- Device: a phone, or Chrome DevTools device mode at 375 x 812 (iPhone SE / X size). Desktop checks at 1280px wide.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-pDuE1tGb39"
+        }
+      },
+      {
+        "text": "- Screenshots of the expected result are attached to this task (shown under each test case; before = staging today, after = this change).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lW3wREKDhC"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-o8pkC54kof"
+        }
+      },
+      {
+        "text": "TEST CASES (MOBILE, 375px)",
+        "attributes": {
+          "color": "inherit",
+          "background": "initial"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-pgQaAiNSvl"
+        }
+      },
+      {
+        "text": "1. Header and page titles [01-discounts-375-before.jpg / 01-discounts-375-after.jpg]",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-PMpS3NC0Hh"
+        }
+      },
+      {
+        "text": "   Steps: open Discounts, Orders, Contacts, Abandoned Carts, Template Library, Balances, Withdrawal Settings.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-scIlbmADhX"
+        }
+      },
+      {
+        "text": "   Expected: the top bar is one row (hamburger on the left, icons on the right). The page title (e.g. \"Discounts\") is fully visible right under it. Nothing is hidden behind the top bar. With the \"plan will expire\" banner showing, the title still sits right under the bar with no large empty gap.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-q9lRo8m0l-"
+        }
+      },
+      {
+        "text": "01-discounts-375-before.jpg",
+        "type": "image",
+        "image": {
+          "id": "433bf848-3a8f-4c3a-ac8b-8bcf426ac4d6.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/433bf848-3a8f-4c3a-ac8b-8bcf426ac4d6/01-discounts-375-before.jpg",
+          "name": "01-discounts-375-before.jpg",
+          "type": "jpg",
+          "title": "01-discounts-375-before.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/433bf848-3a8f-4c3a-ac8b-8bcf426ac4d6/01-discounts-375-before.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/433bf848-3a8f-4c3a-ac8b-8bcf426ac4d6/433bf848-3a8f-4c3a-ac8b-8bcf426ac4d6_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/433bf848-3a8f-4c3a-ac8b-8bcf426ac4d6/433bf848-3a8f-4c3a-ac8b-8bcf426ac4d6_medium.jpg",
+          "width": 236,
+          "height": 512
+        },
+        "attributes": {
+          "width": "115",
+          "data-id": "433bf848-3a8f-4c3a-ac8b-8bcf426ac4d6.jpg",
+          "data-attachment": null,
+          "data-natural-width": "236",
+          "data-natural-height": "512"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2M8SQ8Cjoj"
+        }
+      },
+      {
+        "text": "01-discounts-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "2d892fe9-c011-4e30-9a76-e7b97f9ab7bf.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/2d892fe9-c011-4e30-9a76-e7b97f9ab7bf/01-discounts-375-after.jpg",
+          "name": "01-discounts-375-after.jpg",
+          "type": "jpg",
+          "title": "01-discounts-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/2d892fe9-c011-4e30-9a76-e7b97f9ab7bf/01-discounts-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/2d892fe9-c011-4e30-9a76-e7b97f9ab7bf/2d892fe9-c011-4e30-9a76-e7b97f9ab7bf_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/2d892fe9-c011-4e30-9a76-e7b97f9ab7bf/2d892fe9-c011-4e30-9a76-e7b97f9ab7bf_medium.jpg",
+          "width": 399,
+          "height": 512
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "2d892fe9-c011-4e30-9a76-e7b97f9ab7bf.jpg",
+          "data-attachment": null,
+          "data-natural-width": "399",
+          "data-natural-height": "512"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-dMrRHahTFn"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-NqSDr-oYeE"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-xqdioxGtzs"
+        }
+      },
+      {
+        "text": "2. Hamburger menu",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-On2Py-GbKw"
+        }
+      },
+      {
+        "text": "   Steps: tap the hamburger icon.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-D_8d5dLQeL"
+        }
+      },
+      {
+        "text": "   Expected: the side menu opens and closes as before.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-UHOxz2FcOb"
+        }
+      },
+      {
+        "text": "3. Floating Max head",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-cDPIn-p-TI"
+        }
+      },
+      {
+        "text": "   Steps: open any listing page and wait 10 seconds.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-jKNgcqGGhB"
+        }
+      },
+      {
+        "text": "   Expected: the Max head in the bottom-right is smaller and the \"Ask me anything\" speech bubble does not appear on phones. Pagination and bottom buttons are not covered.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-4rDhMNtiCt"
+        }
+      },
+      {
+        "text": "4. \"A new version of Prosperna is available\" message (appears after a deploy)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-rOoTXMJiT6"
+        }
+      },
+      {
+        "text": "   Expected: the message and its Refresh / Later buttons are stacked, full width, and sit above the Max head.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gbLXU9DZDu"
+        }
+      },
+      {
+        "text": "5. MaxAI intro popups (Orders, Page Builder, Media Library, Mega Menu) [05-page-builder-maxai-modal-375-after.jpg]",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lsxnsQ0ULl"
+        }
+      },
+      {
+        "text": "   Expected: the popup fits the screen: shorter video, \"Don't show this again\" above a full-width \"Got it\" button.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-p8q5ThuMou"
+        }
+      },
+      {
+        "text": "05-page-builder-maxai-modal-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "09a39eeb-9fa6-4ab7-a10a-821157cfbf12.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/09a39eeb-9fa6-4ab7-a10a-821157cfbf12/05-page-builder-maxai-modal-375-after.jpg",
+          "name": "05-page-builder-maxai-modal-375-after.jpg",
+          "type": "jpg",
+          "title": "05-page-builder-maxai-modal-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/09a39eeb-9fa6-4ab7-a10a-821157cfbf12/05-page-builder-maxai-modal-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/09a39eeb-9fa6-4ab7-a10a-821157cfbf12/09a39eeb-9fa6-4ab7-a10a-821157cfbf12_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/09a39eeb-9fa6-4ab7-a10a-821157cfbf12/09a39eeb-9fa6-4ab7-a10a-821157cfbf12_medium.jpg",
+          "width": 399,
+          "height": 512
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "09a39eeb-9fa6-4ab7-a10a-821157cfbf12.jpg",
+          "data-attachment": null,
+          "data-natural-width": "399",
+          "data-natural-height": "512"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-uy5lXT8Xdy"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-z9xqBoZAzT"
+        }
+      },
+      {
+        "text": "6. Empty tables",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-8q1pT81f-f"
+        }
+      },
+      {
+        "text": "   Steps: open a listing with no results (e.g. search for \"zzzz\" in Discounts, or a store with no discounts / users / store locations).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-z6SPpkWeNA"
+        }
+      },
+      {
+        "text": "   Expected: on phones only the empty-state message shows, with no column header row and no sideways scrollbar. With results, the table header and horizontal scroll work as before.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-n-eCI1rDC2"
+        }
+      },
+      {
+        "text": "7. Store Settings sub-menu [02-store-settings-375-before.jpg / 02-store-settings-375-after.jpg]",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0CY8sULp0r"
+        }
+      },
+      {
+        "text": "   Expected: under \"Store Settings\" the sections show as one row of chips you can swipe sideways (instead of a long list). Tapping a chip scrolls to that section and highlights the chip.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ZYizzQcoXQ"
+        }
+      },
+      {
+        "text": "02-store-settings-375-before.jpg",
+        "type": "image",
+        "image": {
+          "id": "7196a2fe-428a-4c59-80d7-f4021d2435f0.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/7196a2fe-428a-4c59-80d7-f4021d2435f0/02-store-settings-375-before.jpg",
+          "name": "02-store-settings-375-before.jpg",
+          "type": "jpg",
+          "title": "02-store-settings-375-before.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/7196a2fe-428a-4c59-80d7-f4021d2435f0/02-store-settings-375-before.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/7196a2fe-428a-4c59-80d7-f4021d2435f0/7196a2fe-428a-4c59-80d7-f4021d2435f0_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/7196a2fe-428a-4c59-80d7-f4021d2435f0/7196a2fe-428a-4c59-80d7-f4021d2435f0_medium.jpg",
+          "width": 236,
+          "height": 512
+        },
+        "attributes": {
+          "width": "115",
+          "data-id": "7196a2fe-428a-4c59-80d7-f4021d2435f0.jpg",
+          "data-attachment": null,
+          "data-natural-width": "236",
+          "data-natural-height": "512"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d8IvP06Jkr"
+        }
+      },
+      {
+        "text": "02-store-settings-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "aefa2e5b-be44-40aa-a73b-fc59713de6c3.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/aefa2e5b-be44-40aa-a73b-fc59713de6c3/02-store-settings-375-after.jpg",
+          "name": "02-store-settings-375-after.jpg",
+          "type": "jpg",
+          "title": "02-store-settings-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/aefa2e5b-be44-40aa-a73b-fc59713de6c3/02-store-settings-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/aefa2e5b-be44-40aa-a73b-fc59713de6c3/aefa2e5b-be44-40aa-a73b-fc59713de6c3_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/aefa2e5b-be44-40aa-a73b-fc59713de6c3/aefa2e5b-be44-40aa-a73b-fc59713de6c3_medium.jpg",
+          "width": 399,
+          "height": 512
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "aefa2e5b-be44-40aa-a73b-fc59713de6c3.jpg",
+          "data-attachment": null,
+          "data-natural-width": "399",
+          "data-natural-height": "512"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-HNBpMQY_Hj"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-slpkUBC9nn"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gK1MuJkFJu"
+        }
+      },
+      {
+        "text": "8. Messaging Settings [03-messaging-settings-375-after.jpg]",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-GS29mgK0e5"
+        }
+      },
+      {
+        "text": "   Expected: same chip row (Email Integration, Email Templates, Alerts). In the Gmail card the Connected / Not Connected badge sits on its own line and the \"Secure OAuth 2.0...\" line is not squeezed.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Ws0i1h8e3G"
+        }
+      },
+      {
+        "text": "03-messaging-settings-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "30650d78-323a-4d17-a754-684a8f0c7b34.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/30650d78-323a-4d17-a754-684a8f0c7b34/03-messaging-settings-375-after.jpg",
+          "name": "03-messaging-settings-375-after.jpg",
+          "type": "jpg",
+          "title": "03-messaging-settings-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/30650d78-323a-4d17-a754-684a8f0c7b34/03-messaging-settings-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/30650d78-323a-4d17-a754-684a8f0c7b34/30650d78-323a-4d17-a754-684a8f0c7b34_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/30650d78-323a-4d17-a754-684a8f0c7b34/30650d78-323a-4d17-a754-684a8f0c7b34_medium.jpg",
+          "width": 399,
+          "height": 512
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "30650d78-323a-4d17-a754-684a8f0c7b34.jpg",
+          "data-attachment": null,
+          "data-natural-width": "399",
+          "data-natural-height": "512"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-9I6PG8MKO7"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--We_tiiREG"
+        }
+      },
+      {
+        "text": "9. Digital Product Payment Settings [04-digital-settings-375-after.jpg]",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-vYCewnGHhj"
+        }
+      },
+      {
+        "text": "   Expected: Credit Card, E-wallets and Over the Counter are one per line. The Save button is inside the card and full width. Saving still works and still blocks unticking the last option.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-J7E9Bi7NbL"
+        }
+      },
+      {
+        "text": "04-digital-settings-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "d7c27acf-e8ab-4666-86b4-35067e2bda71.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/d7c27acf-e8ab-4666-86b4-35067e2bda71/04-digital-settings-375-after.jpg",
+          "name": "04-digital-settings-375-after.jpg",
+          "type": "jpg",
+          "title": "04-digital-settings-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/d7c27acf-e8ab-4666-86b4-35067e2bda71/04-digital-settings-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/d7c27acf-e8ab-4666-86b4-35067e2bda71/d7c27acf-e8ab-4666-86b4-35067e2bda71_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/d7c27acf-e8ab-4666-86b4-35067e2bda71/d7c27acf-e8ab-4666-86b4-35067e2bda71_medium.jpg",
+          "width": 399,
+          "height": 512
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "d7c27acf-e8ab-4666-86b4-35067e2bda71.jpg",
+          "data-attachment": null,
+          "data-natural-width": "399",
+          "data-natural-height": "512"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-hRJyMcqOuz"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-CQoczNURVm"
+        }
+      },
+      {
+        "text": "10. Payment Settings [07-payment-settings-375-after.jpg]",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fr2fiLJb_Y"
+        }
+      },
+      {
+        "text": "    Expected: the provider cards (Xendit etc.) use more of the screen width; text is not cramped.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-u_-uwcb5of"
+        }
+      },
+      {
+        "text": "07-payment-settings-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "809b4970-67ee-4d8e-9e99-97336d77dded.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/809b4970-67ee-4d8e-9e99-97336d77dded/07-payment-settings-375-after.jpg",
+          "name": "07-payment-settings-375-after.jpg",
+          "type": "jpg",
+          "title": "07-payment-settings-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/809b4970-67ee-4d8e-9e99-97336d77dded/07-payment-settings-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/809b4970-67ee-4d8e-9e99-97336d77dded/809b4970-67ee-4d8e-9e99-97336d77dded_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/809b4970-67ee-4d8e-9e99-97336d77dded/809b4970-67ee-4d8e-9e99-97336d77dded_medium.jpg",
+          "width": 399,
+          "height": 512
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "809b4970-67ee-4d8e-9e99-97336d77dded.jpg",
+          "data-attachment": null,
+          "data-natural-width": "399",
+          "data-natural-height": "512"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-VJsnGsN2JR"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-j0B3BRKZ_p"
+        }
+      },
+      {
+        "text": "11. Marketplace [06-marketplace-375-after.jpg]",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-dHEr5mYWDC"
+        }
+      },
+      {
+        "text": "    Expected: app cards fill the width with normal side margins (no wide empty gutters).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-XCWatYxkah"
+        }
+      },
+      {
+        "text": "06-marketplace-375-after.jpg",
+        "type": "image",
+        "image": {
+          "id": "a611e586-dacb-4c67-a0ce-8210c6df64cc.jpg",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/a611e586-dacb-4c67-a0ce-8210c6df64cc/06-marketplace-375-after.jpg",
+          "name": "06-marketplace-375-after.jpg",
+          "type": "jpg",
+          "title": "06-marketplace-375-after.jpg",
+          "uploaded": true,
+          "extension": "image/jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/a611e586-dacb-4c67-a0ce-8210c6df64cc/06-marketplace-375-after.jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/a611e586-dacb-4c67-a0ce-8210c6df64cc/a611e586-dacb-4c67-a0ce-8210c6df64cc_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/a611e586-dacb-4c67-a0ce-8210c6df64cc/a611e586-dacb-4c67-a0ce-8210c6df64cc_medium.jpg",
+          "width": 399,
+          "height": 512
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "a611e586-dacb-4c67-a0ce-8210c6df64cc.jpg",
+          "data-attachment": null,
+          "data-natural-width": "399",
+          "data-natural-height": "512"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-wxBZ7aAbHE"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-y4ULxylBHy"
+        }
+      },
+      {
+        "text": "12. Shipping Settings",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0MGQ7D2R-E"
+        }
+      },
+      {
+        "text": "    Expected: the \"Prosperna Shipping\" heading has padding matching the cards below.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-jotkIRC6BF"
+        }
+      },
+      {
+        "text": "13. Withdrawal Settings",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-XnyOjoiy8B"
+        }
+      },
+      {
+        "text": "    Expected: in Banking Information there is a clear gap between the labels (e.g. \"Default Business Bank Account\") and the values. The My Banks table uses the full card width.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bBcTcisTV5"
+        }
+      },
+      {
+        "text": "14. Media Library",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ipzBQkOH3H"
+        }
+      },
+      {
+        "text": "    Expected: the Search box and the type filter each take a full row. With an empty library, the message no longer says \"on the left column\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ln9devOW9c"
+        }
+      },
+      {
+        "text": "15. Design Settings",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-MlXHzsQqNH"
+        }
+      },
+      {
+        "text": "    Expected: the \"Colors & Style has moved\" banner text is dark and easy to read. The subdomain info box under \"Name Your Online Store\" is less padded.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-m5eV3gWr8l"
+        }
+      },
+      {
+        "text": "16. Mega Menu (legacy accounts only, newer accounts are redirected to Max AI)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-GO2as4V0t3"
+        }
+      },
+      {
+        "text": "    Expected: Save Changes and Apply Preset to Menu sit side by side at full width; preset names wrap instead of being cut off.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-wgbNafyKEt"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-g_G4PbYhD_"
+        }
+      },
+      {
+        "text": "TEST CASES (DESKTOP, 1280px)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-8zewBxBLsW"
+        }
+      },
+      {
+        "text": "17. Desktop unchanged",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-uGdqdE8BuP"
+        }
+      },
+      {
+        "text": "    Steps: repeat 1, 7, 8, 9 and 6 on desktop.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-31svwNJFwL"
+        }
+      },
+      {
+        "text": "    Expected: the top bar, Store/Messaging settings side list, tables and Digital Settings look the same as before this change (Save may now sit inside the card).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Yb7Wi39aFi"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-kk0etZYzQ-"
+        }
+      },
+      {
+        "text": "TEST DATA",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EySmtftf6w"
+        }
+      },
+      {
+        "text": "- Any merchant account on dev. For empty-table checks use a search term with no matches, or a store with no discounts / users / store locations.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lTvduHEv03"
+        }
+      },
+      {
+        "text": "- Mega Menu needs a legacy account (created before the Max AI menu builder); newer accounts are redirected.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-tTrj9-wgVX"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e5qmXm8MdZ"
+        }
+      },
+      {
+        "text": "OUT OF SCOPE / KNOWN BEHAVIOR",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-mNI7sK9m3H"
+        }
+      },
+      {
+        "text": "- Tables WITH rows still scroll sideways on phones (intended, the columns need the width).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0TN6a0noHC"
+        }
+      },
+      {
+        "text": "- Items from the TO FIX doc that are desktop styling (black hover states, Orders close button, Discounts crown icon, Abandoned Carts images, filter hover, pagination style, tooltips) are not part of this PR.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-38vjm1EEl0"
+        }
+      },
+      {
+        "text": "- Calendar and Template Library design are owned by Adrianne.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Slo5RpUeG9"
+        }
+      }
+    ],
+    "comment_text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-11-06, dev PR https://github.com/Prosperna/prosperna1/pull/9381 (merged)\n\nWHERE TO TEST\n- Environment: dev merchant dashboard, logged in as a merchant (any plan).\n- Device: a phone, or Chrome DevTools device mode at 375 x 812 (iPhone SE / X size). Desktop checks at 1280px wide.\n- Screenshots of the expected result are attached to this task (shown under each test case; before = staging today, after = this change).\n\nTEST CASES (MOBILE, 375px)\n1. Header and page titles [01-discounts-375-before.jpg / 01-discounts-375-after.jpg]\n   Steps: open Discounts, Orders, Contacts, Abandoned Carts, Template Library, Balances, Withdrawal Settings.\n   Expected: the top bar is one row (hamburger on the left, icons on the right). The page title (e.g. \"Discounts\") is fully visible right under it. Nothing is hidden behind the top bar. With the \"plan will expire\" banner showing, the title still sits right under the bar with no large empty gap.\n01-discounts-375-before.jpg\n01-discounts-375-after.jpg\n\n\n2. Hamburger menu\n   Steps: tap the hamburger icon.\n   Expected: the side menu opens and closes as before.\n3. Floating Max head\n   Steps: open any listing page and wait 10 seconds.\n   Expected: the Max head in the bottom-right is smaller and the \"Ask me anything\" speech bubble does not appear on phones. Pagination and bottom buttons are not covered.\n4. \"A new version of Prosperna is available\" message (appears after a deploy)\n   Expected: the message and its Refresh / Later buttons are stacked, full width, and sit above the Max head.\n5. MaxAI intro popups (Orders, Page Builder, Media Library, Mega Menu) [05-page-builder-maxai-modal-375-after.jpg]\n   Expected: the popup fits the screen: shorter video, \"Don't show this again\" above a full-width \"Got it\" button.\n05-page-builder-maxai-modal-375-after.jpg\n\n6. Empty tables\n   Steps: open a listing with no results (e.g. search for \"zzzz\" in Discounts, or a store with no discounts / users / store locations).\n   Expected: on phones only the empty-state message shows, with no column header row and no sideways scrollbar. With results, the table header and horizontal scroll work as before.\n7. Store Settings sub-menu [02-store-settings-375-before.jpg / 02-store-settings-375-after.jpg]\n   Expected: under \"Store Settings\" the sections show as one row of chips you can swipe sideways (instead of a long list). Tapping a chip scrolls to that section and highlights the chip.\n02-store-settings-375-before.jpg\n02-store-settings-375-after.jpg\n\n\n8. Messaging Settings [03-messaging-settings-375-after.jpg]\n   Expected: same chip row (Email Integration, Email Templates, Alerts). In the Gmail card the Connected / Not Connected badge sits on its own line and the \"Secure OAuth 2.0...\" line is not squeezed.\n03-messaging-settings-375-after.jpg\n\n9. Digital Product Payment Settings [04-digital-settings-375-after.jpg]\n   Expected: Credit Card, E-wallets and Over the Counter are one per line. The Save button is inside the card and full width. Saving still works and still blocks unticking the last option.\n04-digital-settings-375-after.jpg\n\n10. Payment Settings [07-payment-settings-375-after.jpg]\n    Expected: the provider cards (Xendit etc.) use more of the screen width; text is not cramped.\n07-payment-settings-375-after.jpg\n\n11. Marketplace [06-marketplace-375-after.jpg]\n    Expected: app cards fill the width with normal side margins (no wide empty gutters).\n06-marketplace-375-after.jpg\n\n12. Shipping Settings\n    Expected: the \"Prosperna Shipping\" heading has padding matching the cards below.\n13. Withdrawal Settings\n    Expected: in Banking Information there is a clear gap between the labels (e.g. \"Default Business Bank Account\") and the values. The My Banks table uses the full card width.\n14. Media Library\n    Expected: the Search box and the type filter each take a full row. With an empty library, the message no longer says \"on the left column\".\n15. Design Settings\n    Expected: the \"Colors & Style has moved\" banner text is dark and easy to read. The subdomain info box under \"Name Your Online Store\" is less padded.\n16. Mega Menu (legacy accounts only, newer accounts are redirected to Max AI)\n    Expected: Save Changes and Apply Preset to Menu sit side by side at full width; preset names wrap instead of being cut off.\n\nTEST CASES (DESKTOP, 1280px)\n17. Desktop unchanged\n    Steps: repeat 1, 7, 8, 9 and 6 on desktop.\n    Expected: the top bar, Store/Messaging settings side list, tables and Digital Settings look the same as before this change (Save may now sit inside the card).\n\nTEST DATA\n- Any merchant account on dev. For empty-table checks use a search term with no matches, or a store with no discounts / users / store locations.\n- Mega Menu needs a legacy account (created before the Max AI menu builder); newer accounts are redirected.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- Tables WITH rows still scroll sideways on phones (intended, the columns need the width).\n- Items from the TO FIX doc that are desktop styling (black hover states, Orders close button, Discounts crown icon, Abandoned Carts images, filter hover, pagination style, tooltips) are not part of this PR.\n- Calendar and Template Library design are owned by Adrianne.\n",
+    "user": {
+      "id": 113539146,
+      "username": "Cyril Ayson",
+      "email": "cyril.ayson@prosperna.com",
+      "color": "#1090e0",
+      "initials": "CA",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1793940818643",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000243792",
+    "comment": [
+      {
+        "text": "QA: Cancel white and accept buttons black on hover\n\n",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "ENV: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "dev\n"
+      },
+      {
+        "text": "BRANCH: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "fix/kamachi-button-hover-colors\n\n"
+      },
+      {
+        "text": "DEV: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "https://github.com/Prosperna/prosperna1/pull/9297\n"
+      },
+      {
+        "text": "STAGING: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "https://github.com/Prosperna/prosperna1/pull/9298\n"
+      },
+      {
+        "text": "MAIN: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "https://github.com/Prosperna/prosperna1/pull/9299\n\n"
+      },
+      {
+        "text": "WHAT NEEDED CHANGING | WHY IT NEEDED CHANGING | HOW IT WAS CHANGED\n",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "Cancel and Save/Apply had different heights and corner radius (dashboard date picker, contact create and edit forms) | The Tailwind migrations (#7560 dashboard, #7857 contacts) replaced the shared Bootstrap buttons with hand-written ones | Date picker and both lead forms use the shared buttons again (variant cancel / primary): DashboardDatePicker.jsx, LeadFormBody.jsx, edit/index.jsx. Both buttons are now 38px tall with a 6px radius\n"
+      },
+      {
+        "text": "Save, Apply and Import / Update Products turned grey on hover | The global hover for .btn-primary and .btn-light was grey #4b4b4b | Hover now uses the $primary token (black): _buttons.scss\n"
+      },
+      {
+        "text": "Cancel hovered grey (#999999 / gray-50) or black instead of staying white | Hard-coded hex hovers in the migrated buttons, and .btn-cancel hovering black | .btn-cancel hover is white with $primary text and border: _buttons.scss\n"
+      },
+      {
+        "text": "Contact create and edit forms ignored the new hover colours | AppButton is Tailwind based and hard-codes its own hover hex (cancel black, primary and light #4b4b4b) | AppButton primary and light hover to bg-primary, cancel stays white with text-primary and border-primary: AppButton.jsx\n"
+      },
+      {
+        "text": "Abandoned Carts \"Reminder actions\" menu looked grey on hover | Already identical to main: it uses the stock Bootstrap menu hover (#f4f6fb) and nothing overrides it | No code change\n"
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "SCREENSHOTS\n\n",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "Date picker, Cancel on hover: stays white, text and border go black\n"
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "1c354784-5744-4877-8917-6f450ac55d89.png",
+          "name": "picker-cancel-hover-1440.png",
+          "title": "picker-cancel-hover-1440.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/1c354784-5744-4877-8917-6f450ac55d89/picker-cancel-hover-1440.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/1c354784-5744-4877-8917-6f450ac55d89/1c354784-5744-4877-8917-6f450ac55d89_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/1c354784-5744-4877-8917-6f450ac55d89/picker-cancel-hover-1440.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/1c354784-5744-4877-8917-6f450ac55d89/picker-cancel-hover-1440.png",
+          "width": 578,
+          "height": 217
+        }
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Date picker, Apply on hover: stays black\n"
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "740fae42-0bb8-4d76-a232-2d952426be59.png",
+          "name": "picker-apply-hover-1440.png",
+          "title": "picker-apply-hover-1440.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/740fae42-0bb8-4d76-a232-2d952426be59/picker-apply-hover-1440.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/740fae42-0bb8-4d76-a232-2d952426be59/740fae42-0bb8-4d76-a232-2d952426be59_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/740fae42-0bb8-4d76-a232-2d952426be59/picker-apply-hover-1440.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/740fae42-0bb8-4d76-a232-2d952426be59/picker-apply-hover-1440.png",
+          "width": 570,
+          "height": 217
+        }
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Contact create form, Cancel on hover: stays white\n"
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "c119afe4-2aae-4e9b-babf-9766bfbd248e.png",
+          "name": "leads-create-cancel-hover-1440.png",
+          "title": "leads-create-cancel-hover-1440.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/c119afe4-2aae-4e9b-babf-9766bfbd248e/leads-create-cancel-hover-1440.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/c119afe4-2aae-4e9b-babf-9766bfbd248e/c119afe4-2aae-4e9b-babf-9766bfbd248e_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/c119afe4-2aae-4e9b-babf-9766bfbd248e/leads-create-cancel-hover-1440.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/c119afe4-2aae-4e9b-babf-9766bfbd248e/leads-create-cancel-hover-1440.png",
+          "width": 302,
+          "height": 137
+        }
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Contact create form, Save on hover: stays black\n"
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "012a0589-4670-4898-9c8e-40ead61f7a85.png",
+          "name": "leads-create-save-hover-1440.png",
+          "title": "leads-create-save-hover-1440.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/012a0589-4670-4898-9c8e-40ead61f7a85/leads-create-save-hover-1440.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/012a0589-4670-4898-9c8e-40ead61f7a85/012a0589-4670-4898-9c8e-40ead61f7a85_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/012a0589-4670-4898-9c8e-40ead61f7a85/leads-create-save-hover-1440.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/012a0589-4670-4898-9c8e-40ead61f7a85/leads-create-save-hover-1440.png",
+          "width": 290,
+          "height": 137
+        }
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Contact edit form, Cancel on hover: stays white\n"
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "8b22fca4-de53-45f2-b31b-5547fb395236.png",
+          "name": "leads-edit-cancel-hover-1440.png",
+          "title": "leads-edit-cancel-hover-1440.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/8b22fca4-de53-45f2-b31b-5547fb395236/leads-edit-cancel-hover-1440.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/8b22fca4-de53-45f2-b31b-5547fb395236/8b22fca4-de53-45f2-b31b-5547fb395236_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/8b22fca4-de53-45f2-b31b-5547fb395236/leads-edit-cancel-hover-1440.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/8b22fca4-de53-45f2-b31b-5547fb395236/leads-edit-cancel-hover-1440.png",
+          "width": 302,
+          "height": 137
+        }
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Contact edit form, Save on hover: stays black\n"
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "1322c98d-9a87-4366-b9b0-56646a913016.png",
+          "name": "leads-edit-save-hover-1440.png",
+          "title": "leads-edit-save-hover-1440.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/1322c98d-9a87-4366-b9b0-56646a913016/leads-edit-save-hover-1440.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/1322c98d-9a87-4366-b9b0-56646a913016/1322c98d-9a87-4366-b9b0-56646a913016_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/1322c98d-9a87-4366-b9b0-56646a913016/leads-edit-save-hover-1440.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/1322c98d-9a87-4366-b9b0-56646a913016/leads-edit-save-hover-1440.png",
+          "width": 290,
+          "height": 137
+        }
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Import / Update Products on hover: stays black\n"
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "e6772709-d000-4f0e-9e01-8f49db19f9aa.png",
+          "name": "import-hover-1440.png",
+          "title": "import-hover-1440.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/e6772709-d000-4f0e-9e01-8f49db19f9aa/import-hover-1440.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/e6772709-d000-4f0e-9e01-8f49db19f9aa/e6772709-d000-4f0e-9e01-8f49db19f9aa_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/e6772709-d000-4f0e-9e01-8f49db19f9aa/import-hover-1440.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/e6772709-d000-4f0e-9e01-8f49db19f9aa/import-hover-1440.png",
+          "width": 430,
+          "height": 147
+        }
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Phone width (390px), contact create form Cancel on hover\n"
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "9564a5b5-e980-4355-b86d-ef3e0cb63916.png",
+          "name": "leads-create-cancel-hover-390.png",
+          "title": "leads-create-cancel-hover-390.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/9564a5b5-e980-4355-b86d-ef3e0cb63916/leads-create-cancel-hover-390.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/9564a5b5-e980-4355-b86d-ef3e0cb63916/9564a5b5-e980-4355-b86d-ef3e0cb63916_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/9564a5b5-e980-4355-b86d-ef3e0cb63916/leads-create-cancel-hover-390.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/9564a5b5-e980-4355-b86d-ef3e0cb63916/leads-create-cancel-hover-390.png",
+          "width": 302,
+          "height": 137
+        }
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Phone width (390px), date picker Cancel on hover\n"
+      },
+      {
+        "type": "image",
+        "image": {
+          "id": "91bbfb2a-7e15-4fa9-840a-bfb173f80b40.png",
+          "name": "picker-cancel-hover-390.png",
+          "title": "picker-cancel-hover-390.png",
+          "type": "image/png",
+          "extension": "png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/91bbfb2a-7e15-4fa9-840a-bfb173f80b40/picker-cancel-hover-390.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/91bbfb2a-7e15-4fa9-840a-bfb173f80b40/91bbfb2a-7e15-4fa9-840a-bfb173f80b40_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/91bbfb2a-7e15-4fa9-840a-bfb173f80b40/picker-cancel-hover-390.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/91bbfb2a-7e15-4fa9-840a-bfb173f80b40/picker-cancel-hover-390.png",
+          "width": 390,
+          "height": 150
+        }
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "CHECKED\n",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "Real DashboardDatePicker and AppButton pairs rendered with the app's CSS at 1440px and 390px; hover each control and read the computed style. Cancel is white at rest and on hover (text and border go black). Save, Apply and Import are black at rest and on hover. Cancel and its partner are both 38px tall with a 6px radius. No sideways scroll, no console errors. Tests: 191 passing, ESLint clean. Limit: the lead forms and the Import button were rendered as the same AppButton / btn btn-primary markup, not as the full pages, and this was not run on the deployed dev site. The change is global for .btn-cancel, .btn-primary, .btn-light and AppButton primary, cancel and light."
+      }
+    ],
+    "comment_text": "QA: Cancel white and accept buttons black on hover\n\nENV: dev\nBRANCH: fix/kamachi-button-hover-colors\n\nDEV: https://github.com/Prosperna/prosperna1/pull/9297\nSTAGING: https://github.com/Prosperna/prosperna1/pull/9298\nMAIN: https://github.com/Prosperna/prosperna1/pull/9299\n\nWHAT NEEDED CHANGING | WHY IT NEEDED CHANGING | HOW IT WAS CHANGED\nCancel and Save/Apply had different heights and corner radius (dashboard date picker, contact create and edit forms) | The Tailwind migrations (#7560 dashboard, #7857 contacts) replaced the shared Bootstrap buttons with hand-written ones | Date picker and both lead forms use the shared buttons again (variant cancel / primary): DashboardDatePicker.jsx, LeadFormBody.jsx, edit/index.jsx. Both buttons are now 38px tall with a 6px radius\nSave, Apply and Import / Update Products turned grey on hover | The global hover for .btn-primary and .btn-light was grey #4b4b4b | Hover now uses the $primary token (black): _buttons.scss\nCancel hovered grey (#999999 / gray-50) or black instead of staying white | Hard-coded hex hovers in the migrated buttons, and .btn-cancel hovering black | .btn-cancel hover is white with $primary text and border: _buttons.scss\nContact create and edit forms ignored the new hover colours | AppButton is Tailwind based and hard-codes its own hover hex (cancel black, primary and light #4b4b4b) | AppButton primary and light hover to bg-primary, cancel stays white with text-primary and border-primary: AppButton.jsx\nAbandoned Carts \"Reminder actions\" menu looked grey on hover | Already identical to main: it uses the stock Bootstrap menu hover (#f4f6fb) and nothing overrides it | No code change\n\nSCREENSHOTS\n\nDate picker, Cancel on hover: stays white, text and border go black\n\n\nDate picker, Apply on hover: stays black\n\n\nContact create form, Cancel on hover: stays white\n\n\nContact create form, Save on hover: stays black\n\n\nContact edit form, Cancel on hover: stays white\n\n\nContact edit form, Save on hover: stays black\n\n\nImport / Update Products on hover: stays black\n\n\nPhone width (390px), contact create form Cancel on hover\n\n\nPhone width (390px), date picker Cancel on hover\n\n\nCHECKED\nReal DashboardDatePicker and AppButton pairs rendered with the app's CSS at 1440px and 390px; hover each control and read the computed style. Cancel is white at rest and on hover (text and border go black). Save, Apply and Import are black at rest and on hover. Cancel and its partner are both 38px tall with a 6px radius. No sideways scroll, no console errors. Tests: 191 passing, ESLint clean. Limit: the lead forms and the Import button were rendered as the same AppButton / btn btn-primary markup, not as the full pages, and this was not run on the deployed dev site. The change is global for .btn-cancel, .btn-primary, .btn-light and AppButton primary, cancel and light.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1793840492204",
+    "reply_count": 0
+  },
+  {
+    "id": "90180250183917",
+    "comment": [
+      {
+        "text": "Hi, we need to standardize our pagination first for both desktop and mobile, specifically mobile since that is where our work mainly diverges, the desktop pagination seems to be about the same as before.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-KWnIawQfBN"
+        }
+      }
+    ],
+    "comment_text": "Hi, we need to standardize our pagination first for both desktop and mobile, specifically mobile since that is where our work mainly diverges, the desktop pagination seems to be about the same as before.\n",
+    "user": {
+      "id": 113539146,
+      "username": "Cyril Ayson",
+      "email": "cyril.ayson@prosperna.com",
+      "color": "#1090e0",
+      "initials": "CA",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787793159537",
+    "reply_count": 0
+  },
+  {
+    "id": "90180250181742",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "App Wide Cleanup"
+      },
+      {
+        "text": " has been created ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bf7e6b93-37f7-4ef1-9574-05993b503c8f"
+        }
+      },
+      {
+        "text": "Date: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 27 2026, 9:02AM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5acb7133-fc27-48ba-9a62-6a27fcef1ac4"
+        }
+      },
+      {
+        "text": "By ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2da5208f-53d3-4f34-b235-72f66cc916c1"
+        }
+      }
+    ],
+    "comment_text": "This task App Wide Cleanup has been created \nDate: Aug 27 2026, 9:02AM (Asia/Singapore)\nBy Angelo Kamachi\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787792529307",
+    "reply_count": 0
+  }
+]

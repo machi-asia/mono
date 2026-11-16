@@ -9,6 +9,7 @@ import {
   KeyRound,
   FileText,
 } from "lucide-react";
+import { getRoseApiBasePath } from "../../utils/endpoints";
 import { Tooltip, Button, Card, Dropdown, Skeleton, SkeletonText } from "@mono/components";
 
 export interface RoseMemoryItem {
@@ -38,7 +39,7 @@ const LOCAL_STORAGE_MEMORIES_KEY = "mono_rose_local_memories";
 
 export function RoseMemoriesTab({
   isOpen,
-  apiBasePath = "/api/rose",
+  apiBasePath = getRoseApiBasePath(),
   onCountChange,
   onStatus,
 }: RoseMemoriesTabProps) {

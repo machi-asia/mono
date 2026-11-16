@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { AuthProvider, AuthGate } from "@mono/auth";
-import { ToastProvider, OtaUpdateNotifier } from "@mono/components";
+import { MonoAppShell } from "@mono/auth";
+import { RoseNavbar } from "./rose-navbar";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rose.machi-asia.com";
 
@@ -61,12 +61,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <OtaUpdateNotifier />
-        <ToastProvider>
-          <AuthProvider>
-            <AuthGate>{children}</AuthGate>
-          </AuthProvider>
-        </ToastProvider>
+        <MonoAppShell requireAuth header={<RoseNavbar />}>
+          {children}
+        </MonoAppShell>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

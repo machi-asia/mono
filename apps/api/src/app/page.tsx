@@ -107,17 +107,17 @@ const API_ENDPOINTS: EndpointDoc[] = [
     method: "GET",
     path: "/rose/usage",
     alias: "/api/rose/usage",
-    description: "Retrieve current user / guest daily and weekly Rose interaction limits and remaining quotas.",
+    description: "Retrieve current user / guest daily and monthly Rose interaction limits and remaining quotas.",
     responseSample: JSON.stringify(
       {
         allowed: true,
         count: 12,
-        limit: 50,
-        week: "2026-W41",
+        limit: 150,
+        month: "2026-10",
         dailyCount: 3,
-        dailyLimit: 10,
+        dailyLimit: 15,
         day: "2026-10-06",
-        remaining: 7,
+        remaining: 12,
         role: "guest",
       },
       null,
@@ -352,7 +352,7 @@ ${selectedEndpoint.method === "POST" && requestPayload && !requestPayload.starts
               <Usage
                 label="Rose AI Daily Guest Quota"
                 used={3}
-                total={10}
+                total={metrics.rose?.guestDailyLimit || 15}
                 unit="turns"
                 size="md"
                 warningThreshold={70}
@@ -371,6 +371,18 @@ ${selectedEndpoint.method === "POST" && requestPayload && !requestPayload.starts
                 dangerThreshold={90}
                 description="Simultaneous active event channels across rooms"
               />
+            </div>
+            <div className="api-card" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
+                <Shield size={16} style={{ color: "var(--accent-cyan)" }} />
+                <strong style={{ fontSize: "0.9rem" }}>4-Tier Role Quota Matrix</strong>
+              </div>
+              <div style={{ fontSize: "0.78rem", color: "var(--text-secondary)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.35rem" }}>
+                <span><strong>Guest:</strong> {metrics.quotas?.guest?.turns?.daily ?? 15} turns/d · {metrics.quotas?.guest?.requests?.daily ?? 300} req/d</span>
+                <span><strong>Member:</strong> {metrics.quotas?.member?.turns?.daily ?? 60} turns/d · {metrics.quotas?.member?.requests?.daily ?? 2000} req/d</span>
+                <span><strong>Pro:</strong> {metrics.quotas?.pro?.turns?.daily ?? 500} turns/d · {metrics.quotas?.pro?.requests?.daily ?? 15000} req/d</span>
+                <span><strong>Admin:</strong> Unlimited</span>
+              </div>
             </div>
           </div>
         )}

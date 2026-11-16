@@ -10,11 +10,15 @@
       "types": "./src/index.ts",
       "import": "./src/index.ts",
       "default": "./src/index.ts"
+    },
+    "./agent": {
+      "types": "./src/agent/index.ts",
+      "import": "./src/agent/index.ts",
+      "default": "./src/agent/index.ts"
     }
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "lint:style": "stylelint --allow-empty-input \"src/**/*.css\"",
     "typecheck": "tsc --noEmit",
@@ -24,11 +28,12 @@
   },
   "dependencies": {
     "@huggingface/transformers": "^4.2.0",
+    "@mono/api-client": "*",
+    "@mono/app-config": "*",
     "@mono/auth": "^0.1.0",
     "@mono/components": "^0.1.0",
     "@mono/database": "^0.1.0",
     "@supabase/supabase-js": "^2.113.0",
-    "faster-whisper-ts": "^1.2.1",
     "lucide-react": "^1.40.0"
   },
   "peerDependencies": {

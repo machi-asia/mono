@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { AuthProvider, AuthGate } from "@mono/auth";
-import { ThemeProvider, ToastProvider, OtaUpdateNotifier } from "@mono/components";
+import { MonoAppShell } from "@mono/auth";
 import { AdRail } from "../components/ads/ad-rail";
 import { AdSenseScript } from "../components/ads/adsense-script";
 import "reactflow/dist/style.css";
@@ -76,19 +75,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider>
-          <OtaUpdateNotifier />
-          <ToastProvider>
-            <AuthProvider>
-              <AuthGate>
-                <div className="calc-app-shell">
-                  {children}
-                  <AdRail />
-                </div>
-              </AuthGate>
-            </AuthProvider>
-          </ToastProvider>
-        </ThemeProvider>
+        <MonoAppShell requireAuth>
+          <div className="calc-app-shell">
+            {children}
+            <AdRail />
+          </div>
+        </MonoAppShell>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

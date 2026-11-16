@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { DEFAULT_USER_ROLE, getUserRole } from "../roles";
+import { DEFAULT_USER_ROLE, getUserRole, resolveSafeRoleFromUser } from "../roles";
 import * as clientModule from "../client";
 
 describe("database roles module", () => {
@@ -19,7 +19,7 @@ describe("database roles module", () => {
     expect(role).toBe("guest");
   });
 
-  it("returns metadata role when present on user", async () => {
+  it("returns app_metadata role when present on user", async () => {
     const mockSupabase = {
       auth: {
         getUser: vi.fn().mockResolvedValue({
@@ -37,5 +37,15 @@ describe("database roles module", () => {
 
     const role = await getUserRole();
     expect(role).toBe("admin");
+  });
+
+  it("does not allow user_metadata to escalate role to admin", () => {
+    const role = resolveSafeRoleFromUser({
+      id: "user-456",
+      is_anonymous: false,
+      user_metadata: { role: "admin" },
+      app_metadata: {},
+    });
+    expect(role).toBe("member");
   });
 });

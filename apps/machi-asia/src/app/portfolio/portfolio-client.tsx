@@ -1,15 +1,13 @@
 "use client";
 
-import { Row, Col, Card, Button, Tooltip, Link as MonoLink } from "@mono/components";
+import { Row, Col, Card, Button, Tooltip, Link as MonoLink, resolveHref } from "@mono/components";
 import { GithubIcon } from "@mono/auth";
 import {
   Code,
   Terminal,
   Cpu,
-  Layers,
   ExternalLink,
   Mail,
-  Workflow,
   Sparkles,
   Server,
   Zap,
@@ -126,16 +124,16 @@ export function PortfolioClient() {
         </div>
 
         <div style={{ display: "flex", gap: "var(--space-3)", marginTop: "var(--space-2)", flexWrap: "wrap" }}>
-          <a href="https://github.com/machi-asia" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+          <MonoLink href="https://github.com/machi-asia" external style={{ textDecoration: "none" }}>
             <Button variant="primary" size="md" icon={<GithubIcon size={16} />}>
               GitHub Organization
             </Button>
-          </a>
-          <a href="mailto:contact@machi-asia.com" style={{ textDecoration: "none" }}>
+          </MonoLink>
+          <MonoLink href="mailto:contact@machi-asia.com" style={{ textDecoration: "none" }}>
             <Button variant="secondary" size="md" icon={<Mail size={16} />}>
               Get in Touch
             </Button>
-          </a>
+          </MonoLink>
         </div>
       </section>
 
@@ -196,11 +194,15 @@ export function PortfolioClient() {
                     {proj.metrics}
                   </span>
                   {proj.url && (
-                    <a href={proj.url} target={proj.url.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                    <MonoLink
+                      href={resolveHref(proj.url)}
+                      external={proj.url.startsWith("http")}
+                      style={{ textDecoration: "none" }}
+                    >
                       <Button variant="primary" size="sm" icon={<ExternalLink size={14} />}>
                         Live Demo
                       </Button>
-                    </a>
+                    </MonoLink>
                   )}
                 </div>
               </Card>
@@ -272,11 +274,11 @@ export function PortfolioClient() {
                 <p style={{ margin: "0 0 var(--space-3)", fontSize: "0.85rem", color: "var(--color-text-muted)" }}>
                   Available for select software architecture consulting and product development.
                 </p>
-                <a href="mailto:contact@machi-asia.com" style={{ textDecoration: "none" }}>
+                <MonoLink href="mailto:contact@machi-asia.com" style={{ textDecoration: "none" }}>
                   <Button variant="primary" size="sm">
                     Inquire Availability
                   </Button>
-                </a>
+                </MonoLink>
               </div>
             </Col>
           </Row>

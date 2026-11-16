@@ -1,0 +1,2073 @@
+[
+  {
+    "id": "1100740000005293",
+    "comment": [
+      {
+        "text": "KB is HERE: ",
+        "attributes": {}
+      },
+      {
+        "type": "link_mention",
+        "link_mention": {
+          "url": "https://help.prosperna.com/store-front/arrange-store-locations-in-alphabetical-order-and-update-store-logo"
+        },
+        "text": ""
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-CorxMe541-"
+        }
+      }
+    ],
+    "comment_text": "KB is HERE: help.prosperna.com/store-front/arrange-store-locations-in-alphabetical-order-and-update-store-logo \n \n",
+    "user": {
+      "id": 32155790,
+      "username": "Dyne",
+      "email": "dyne@prosperna.com",
+      "color": "#388d3c",
+      "initials": "D",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/32155790_clz.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1788245282405",
+    "reply_count": 0
+  },
+  {
+    "id": "90180250370849",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Merchant Side | Store Location | Cannot upload a store logo per location — cards show auto-generated initials only"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "DEPLOYED TO PROD"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-75d1b135-d5be-47d1-a9d2-501bdd8b8545"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 27 2026, 9:49PM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5a1b8ffc-2b89-4a11-b521-246fa8a6d99c"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-78f34e8e-7c2a-451e-a19f-49c86ae1f9ae"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-472b9029-7982-493a-b4d7-1c2a195548e7"
+        }
+      }
+    ],
+    "comment_text": "This Merchant Side | Store Location | Cannot upload a store logo per location — cards show auto-generated initials only has been move to DEPLOYED TO PROD\nDate updated: Aug 27 2026, 9:49PM (Asia/Singapore)\nTriggered by: Angelo Kamachi\n\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788213973958",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787838599622",
+    "reply_count": 0
+  },
+  {
+    "id": "90180250226915",
+    "comment": [
+      {
+        "text": "QA Result: STAGING re-verify — PASSED (7/7)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--lheIi_4s5"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-E3YGkV3AVf"
+        }
+      },
+      {
+        "text": "Env: Staging",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-RT5mhmeLoF"
+        }
+      },
+      {
+        "text": "URL: Merchant: https://prostage.prosperna.ph/ (prosperna1) · Storefront: https://bubzrfjybgbjlizwmyvc.prostage.prosperna.ph (p1-customer)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-VoRfH7q2YB"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-prgThXaxVE"
+        }
+      },
+      {
+        "text": "Re-ran the same coverage that passed on DEV (Aug 25) against Staging ahead of deployment, reusing the existing specs unchanged (only env/account values overridden).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-3nCU7z34JY"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-6y6X0VwbHZ"
+        }
+      },
+      {
+        "text": "TEST CASE #17 (merchant): Edit Location modal offers a real Store Image field wired to the Media Gallery",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-M9TmImf5z0"
+        }
+      },
+      {
+        "text": "STEPS: Go to Store Locations (/home/store-locations) → Actions (…) → Edit → scroll to \"Store Image\" → click \"Add Image\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-dfqjTIxdDN"
+        }
+      },
+      {
+        "text": "EXPECTED: Modal shows a \"Store Image\" field (title \"Store Image\", subtitle \"Show your customers what this location looks like.\") with an \"Add Image\" launcher opening the Media Gallery picker.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--SX2WpM9UV"
+        }
+      },
+      {
+        "text": "ACTUAL: Matches expected. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-cSv_XWbOfJ"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-QhQByGzAWp"
+        }
+      },
+      {
+        "text": "TEST CASE #18 (merchant): A location with no Store Image shows the empty Preview state",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-M-P8F7r9ro"
+        }
+      },
+      {
+        "text": "STEPS: Open Edit modal for a location with no image set.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Hwajker7zd"
+        }
+      },
+      {
+        "text": "EXPECTED: Preview shows \"No picture selected yet\"; no \"Remove Picture\" button.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-arGkK3ajVg"
+        }
+      },
+      {
+        "text": "ACTUAL: Matches expected. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-AunqkIZDJi"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-yeE4HW4Rth"
+        }
+      },
+      {
+        "text": "TEST CASE #19 (merchant): Selecting a Media Gallery image sets the Preview; Save persists it and it survives a reload",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-qMJZfafuup"
+        }
+      },
+      {
+        "text": "STEPS: Open Edit modal → open Media Gallery → select an image → confirm → Save → reopen the modal fresh",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-9nIQVU44O6"
+        }
+      },
+      {
+        "text": "EXPECTED: Preview shows the selected image immediately; still shown after Save + fresh reopen (proves server-side persistence).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-P5jd1kX3RX"
+        }
+      },
+      {
+        "text": "ACTUAL: Matches expected. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-W5BwUXfnGi"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-UNqG2_NaN5"
+        }
+      },
+      {
+        "text": "TEST CASE #20 (merchant): Remove Picture clears the Store Image; Save persists the clear and it survives a reload",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-6g6HXqJ-yq"
+        }
+      },
+      {
+        "text": "STEPS: Open Edit modal on the TC19 location → click \"Remove Picture\" → Save → reopen the modal fresh",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EfB8stNl3Z"
+        }
+      },
+      {
+        "text": "EXPECTED: Preview reverts to \"No picture selected yet\" immediately, stays that way after Save + fresh reopen.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-wRr0cWTjbP"
+        }
+      },
+      {
+        "text": "ACTUAL: Matches expected. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-c9QcRFiczr"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-KMojAq0SQO"
+        }
+      },
+      {
+        "text": "TEST CASE #17 (storefront): A location with a Store Image shows that image on the storefront card, not initials (list view)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gmNEF_XjuY"
+        }
+      },
+      {
+        "text": "STEPS: Merchant sets a Store Image and saves → open the storefront's Select Store Location picker (/locations) → list view → search for that location",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-yqBZphQnAA"
+        }
+      },
+      {
+        "text": "EXPECTED: Card renders the real image, not the initials fallback tile.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-tApf2AL1ht"
+        }
+      },
+      {
+        "text": "ACTUAL: Matches expected. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-XSwzRXjWZn"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Xcls8lKNed"
+        }
+      },
+      {
+        "text": "TEST CASE #18 (storefront): The same Store Image also renders on the storefront card in grid view",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-WL5pnEkmFo"
+        }
+      },
+      {
+        "text": "STEPS: With the same image still set, open the storefront picker → grid view → search.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2Af30LsMxt"
+        }
+      },
+      {
+        "text": "EXPECTED: Grid card also renders the real image, not initials.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bid7H9uEJ0"
+        }
+      },
+      {
+        "text": "ACTUAL: Matches expected. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lCdTCl33K_"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-IgU6Oc60Hh"
+        }
+      },
+      {
+        "text": "TEST CASE #19 (storefront): Removing the Store Image reverts the storefront card to initials, in both views",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-B23Cb50GFe"
+        }
+      },
+      {
+        "text": "STEPS: Merchant removes the Store Image and saves → check the storefront picker in both list and grid view.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-AZkXMUC0bj"
+        }
+      },
+      {
+        "text": "EXPECTED: Both views show the initials fallback tile again.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ePNGaZQWtG"
+        }
+      },
+      {
+        "text": "ACTUAL: Matches expected. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-jT383YO02w"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-DvExV08EGf"
+        }
+      },
+      {
+        "text": "No product defects found on Staging. All behavior matches the DEV-verified result. Screenshots attached below.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eLQ5jMGrXG"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-zGmvqDp46S"
+        }
+      },
+      {
+        "text": "We can now deploy these changes to production.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-77n78-jQw1"
+        }
+      },
+      {
+        "text": "cc ",
+        "attributes": {}
+      },
+      {
+        "text": "@Angelo Kamachi",
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      }
+    ],
+    "comment_text": "QA Result: STAGING re-verify — PASSED (7/7)\n\nEnv: Staging\nURL: Merchant: https://prostage.prosperna.ph/ (prosperna1) · Storefront: https://bubzrfjybgbjlizwmyvc.prostage.prosperna.ph (p1-customer)\n\nRe-ran the same coverage that passed on DEV (Aug 25) against Staging ahead of deployment, reusing the existing specs unchanged (only env/account values overridden).\n\nTEST CASE #17 (merchant): Edit Location modal offers a real Store Image field wired to the Media Gallery\nSTEPS: Go to Store Locations (/home/store-locations) → Actions (…) → Edit → scroll to \"Store Image\" → click \"Add Image\"\nEXPECTED: Modal shows a \"Store Image\" field (title \"Store Image\", subtitle \"Show your customers what this location looks like.\") with an \"Add Image\" launcher opening the Media Gallery picker.\nACTUAL: Matches expected. PASSED.\n\nTEST CASE #18 (merchant): A location with no Store Image shows the empty Preview state\nSTEPS: Open Edit modal for a location with no image set.\nEXPECTED: Preview shows \"No picture selected yet\"; no \"Remove Picture\" button.\nACTUAL: Matches expected. PASSED.\n\nTEST CASE #19 (merchant): Selecting a Media Gallery image sets the Preview; Save persists it and it survives a reload\nSTEPS: Open Edit modal → open Media Gallery → select an image → confirm → Save → reopen the modal fresh\nEXPECTED: Preview shows the selected image immediately; still shown after Save + fresh reopen (proves server-side persistence).\nACTUAL: Matches expected. PASSED.\n\nTEST CASE #20 (merchant): Remove Picture clears the Store Image; Save persists the clear and it survives a reload\nSTEPS: Open Edit modal on the TC19 location → click \"Remove Picture\" → Save → reopen the modal fresh\nEXPECTED: Preview reverts to \"No picture selected yet\" immediately, stays that way after Save + fresh reopen.\nACTUAL: Matches expected. PASSED.\n\nTEST CASE #17 (storefront): A location with a Store Image shows that image on the storefront card, not initials (list view)\nSTEPS: Merchant sets a Store Image and saves → open the storefront's Select Store Location picker (/locations) → list view → search for that location\nEXPECTED: Card renders the real image, not the initials fallback tile.\nACTUAL: Matches expected. PASSED.\n\nTEST CASE #18 (storefront): The same Store Image also renders on the storefront card in grid view\nSTEPS: With the same image still set, open the storefront picker → grid view → search.\nEXPECTED: Grid card also renders the real image, not initials.\nACTUAL: Matches expected. PASSED.\n\nTEST CASE #19 (storefront): Removing the Store Image reverts the storefront card to initials, in both views\nSTEPS: Merchant removes the Store Image and saves → check the storefront picker in both list and grid view.\nEXPECTED: Both views show the initials fallback tile again.\nACTUAL: Matches expected. PASSED.\n\nNo product defects found on Staging. All behavior matches the DEV-verified result. Screenshots attached below.\n\nWe can now deploy these changes to production.\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788213981192",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787807178445",
+    "reply_count": 0
+  },
+  {
+    "id": "90180249590194",
+    "comment": [
+      {
+        "text": "Endorsing these changes to \"Code Review\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-BVwXRKozS_"
+        }
+      },
+      {
+        "text": "cc ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 37590522,
+          "username": "Ian Pelea",
+          "email": "ian@prosperna.com",
+          "initials": "IP",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/37590522_IvQ.jpg"
+        },
+        "text": "@Ian Pelea"
+      }
+    ],
+    "comment_text": "Endorsing these changes to \"Code Review\"\ncc @Angelo Kamachi @Ian Pelea",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1787712544663",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787626632138",
+    "reply_count": 0
+  },
+  {
+    "id": "90180249590114",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Merchant Side | Store Location | Cannot upload a store logo per location — cards show auto-generated initials only"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7774e130-bf56-467b-9d1a-3971afce0fce"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 25 2026, 10:56AM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fcf1bfa1-92df-420d-bc36-a6111d7c79f3"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e62af9f7-0865-4e25-b8f0-2c363c784893"
+        }
+      }
+    ],
+    "comment_text": "This task Merchant Side | Store Location | Cannot upload a store logo per location — cards show auto-generated initials only has been move to PASSED TESTING \nDate updated: Aug 25 2026, 10:56AM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1787712545768",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787626587938",
+    "reply_count": 0
+  },
+  {
+    "id": "90180249590043",
+    "comment": [
+      {
+        "text": "QA Result: PASSED (7/7)",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "Env:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " DEV-local\n",
+        "attributes": {}
+      },
+      {
+        "text": "URL:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Merchant: ",
+        "attributes": {}
+      },
+      {
+        "text": "http://localhost:3000",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": " (prosperna1) · Storefront: ",
+        "attributes": {}
+      },
+      {
+        "text": "https://farmwithmaricph.prodev.prosperna.ph",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": " (p1-customer, real DEV domain)\n",
+        "attributes": {}
+      },
+      {
+        "type": "divider",
+        "attributes": {},
+        "divider": true
+      },
+      {
+        "text": "\n",
+        "attributes": {}
+      },
+      {
+        "text": "TEST CASE #1: The Edit Location modal offers a real Store Image field wired to the Media Gallery",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "(AC1)",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\nSTEPS:\nGo to Store Locations (",
+        "attributes": {}
+      },
+      {
+        "text": "/home/store-locations",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": ")",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "On a row, click Actions (…) → Edit",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Scroll to the \"Store Image\" section, click \"Add Image\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "\nEXPECTED: Edit Store Location modal shows a \"Store Image\" field (title exactly \"Store Image\", subtitle exactly \"Show your customers what this location looks like.\" per the requested copy fix) with an \"Add Image\" launcher that opens the Media Gallery picker.\nACTUAL: Matches expected. ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED.",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "TEST CASE #2: A location with no Store Image shows the empty Preview state",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "(AC4, control)",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\nSTEPS: Open Edit modal for a location with no image set.\nEXPECTED: Preview panel shows \"No picture selected yet\"; no \"Remove Picture\" button.\nACTUAL: Matches expected. ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED.",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "TEST CASE #3: Selecting a Media Gallery image sets the Preview; Save persists it and it survives a reload",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "(AC1, AC2)",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\nSTEPS:\nOpen Edit modal, open Media Gallery, select an existing image, confirm Select",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Save (through the \"Save Changes\" confirmation)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Reopen the modal fresh (not the same in-memory form state)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "\nEXPECTED: Preview shows the selected image immediately; after Save and a fresh reopen, the same image is still shown (proves server-side persistence, not just local form state).\nACTUAL: Matches expected. ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED.",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "TEST CASE #4: Remove Picture clears the Store Image; Save persists the clear and it survives a reload",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "(AC2, AC4)",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\nSTEPS:\nOpen Edit modal on the location from Case #3, click \"Remove Picture\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Save",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Reopen the modal fresh",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "\nEXPECTED: Preview reverts to \"No picture selected yet\" immediately, and stays that way after Save + fresh reopen.\nACTUAL: Matches expected. ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED.",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "TEST CASE #5: A location with a Store Image shows that image on the storefront card, not initials (list view)",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "(AC3)",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\nSTEPS:\nMerchant sets a Store Image on an active location and saves",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Open the storefront's Select Store Location picker (",
+        "attributes": {}
+      },
+      {
+        "text": "/locations",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": "), switch to list view, search for that location",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "\nEXPECTED: The card renders the real image, not the initials fallback tile.\nACTUAL: Matches expected. ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED.",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "TEST CASE #6: The same Store Image also renders on the storefront card in grid view",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "(AC3, both views)",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\nSTEPS: With the same image still set, open the storefront picker, switch to grid view, search.\nEXPECTED: Grid card also renders the real image, not initials.\nACTUAL: Matches expected. ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED.",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n\n",
+        "attributes": {}
+      },
+      {
+        "text": "TEST CASE #7: Removing the Store Image reverts the storefront card to initials, in both views",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "(AC4, control)",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\nSTEPS:\nMerchant removes the Store Image and saves",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Check the storefront picker in both list view and grid view",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "\nEXPECTED: Both views show the initials fallback tile again.\nACTUAL: Matches expected. ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED.",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {}
+      },
+      {
+        "type": "divider",
+        "attributes": {},
+        "divider": true
+      },
+      {
+        "text": "\n",
+        "attributes": {}
+      },
+      {
+        "text": "No product defects found.",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " All 4 acceptance criteria hold end-to-end, including the requested \"Store Picture\" → \"Store Image\" copy fix (title + subtitle match exactly).\n\nScreenshots and videos for all 7 cases attached below.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "QA Result: PASSED (7/7)\n\nEnv: DEV-local\nURL: Merchant: http://localhost:3000 (prosperna1) · Storefront: https://farmwithmaricph.prodev.prosperna.ph (p1-customer, real DEV domain)\nundefined\nTEST CASE #1: The Edit Location modal offers a real Store Image field wired to the Media Gallery (AC1)\nSTEPS:\nGo to Store Locations (/home/store-locations)\nOn a row, click Actions (…) → Edit\nScroll to the \"Store Image\" section, click \"Add Image\"\n\nEXPECTED: Edit Store Location modal shows a \"Store Image\" field (title exactly \"Store Image\", subtitle exactly \"Show your customers what this location looks like.\" per the requested copy fix) with an \"Add Image\" launcher that opens the Media Gallery picker.\nACTUAL: Matches expected. PASSED.\n\nTEST CASE #2: A location with no Store Image shows the empty Preview state (AC4, control)\nSTEPS: Open Edit modal for a location with no image set.\nEXPECTED: Preview panel shows \"No picture selected yet\"; no \"Remove Picture\" button.\nACTUAL: Matches expected. PASSED.\n\nTEST CASE #3: Selecting a Media Gallery image sets the Preview; Save persists it and it survives a reload (AC1, AC2)\nSTEPS:\nOpen Edit modal, open Media Gallery, select an existing image, confirm Select\nSave (through the \"Save Changes\" confirmation)\nReopen the modal fresh (not the same in-memory form state)\n\nEXPECTED: Preview shows the selected image immediately; after Save and a fresh reopen, the same image is still shown (proves server-side persistence, not just local form state).\nACTUAL: Matches expected. PASSED.\n\nTEST CASE #4: Remove Picture clears the Store Image; Save persists the clear and it survives a reload (AC2, AC4)\nSTEPS:\nOpen Edit modal on the location from Case #3, click \"Remove Picture\"\nSave\nReopen the modal fresh\n\nEXPECTED: Preview reverts to \"No picture selected yet\" immediately, and stays that way after Save + fresh reopen.\nACTUAL: Matches expected. PASSED.\n\nTEST CASE #5: A location with a Store Image shows that image on the storefront card, not initials (list view) (AC3)\nSTEPS:\nMerchant sets a Store Image on an active location and saves\nOpen the storefront's Select Store Location picker (/locations), switch to list view, search for that location\n\nEXPECTED: The card renders the real image, not the initials fallback tile.\nACTUAL: Matches expected. PASSED.\n\nTEST CASE #6: The same Store Image also renders on the storefront card in grid view (AC3, both views)\nSTEPS: With the same image still set, open the storefront picker, switch to grid view, search.\nEXPECTED: Grid card also renders the real image, not initials.\nACTUAL: Matches expected. PASSED.\n\nTEST CASE #7: Removing the Store Image reverts the storefront card to initials, in both views (AC4, control)\nSTEPS:\nMerchant removes the Store Image and saves\nCheck the storefront picker in both list view and grid view\n\nEXPECTED: Both views show the initials fallback tile again.\nACTUAL: Matches expected. PASSED.\nundefined\nNo product defects found. All 4 acceptance criteria hold end-to-end, including the requested \"Store Picture\" → \"Store Image\" copy fix (title + subtitle match exactly).\n\nScreenshots and videos for all 7 cases attached below.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1787712548927",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787626548198",
+    "reply_count": 0
+  },
+  {
+    "id": "90180249440632",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Merchant Side | Store Location | Cannot upload a store logo per location — cards show auto-generated initials only"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 24 2026, 8:26PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Merchant Side | Store Location | Cannot upload a store logo per location — cards show auto-generated initials only hss been move to IN TESTING \nUpdated: Aug 24 2026, 8:26PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1787712549819",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787574403486",
+    "reply_count": 0
+  },
+  {
+    "id": "90180249241326",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Merchant Side | Store Location | Cannot upload a store logo per location — cards show auto-generated initials only"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "READY FOR TESTING"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1d974daa-846f-4f2b-aa92-4d7879d6a360"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 24 2026, 8:28AM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2f823e5f-a650-4c0d-b5b1-fff90b29e6cf"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eb747be5-76e2-450a-80a4-2f28d51dc0ed"
+        }
+      }
+    ],
+    "comment_text": "This Merchant Side | Store Location | Cannot upload a store logo per location — cards show auto-generated initials only has been move to READY FOR TESTING\nDate updated: Aug 24 2026, 8:28AM (Asia/Singapore)\nTriggered by: Angelo Kamachi\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1787534840419",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787531340611",
+    "reply_count": 0
+  },
+  {
+    "id": "90180249240252",
+    "comment": [
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "5c9ae8ce-48cd-44c2-a52a-94f0f6d7ed76.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/5c9ae8ce-48cd-44c2-a52a-94f0f6d7ed76/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/5c9ae8ce-48cd-44c2-a52a-94f0f6d7ed76/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/5c9ae8ce-48cd-44c2-a52a-94f0f6d7ed76_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/5c9ae8ce-48cd-44c2-a52a-94f0f6d7ed76/image.png",
+          "width": 420,
+          "height": 267
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "5c9ae8ce-48cd-44c2-a52a-94f0f6d7ed76.png",
+          "data-natural-width": "420",
+          "data-natural-height": "267"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-RRzGmsa5US"
+        }
+      },
+      {
+        "text": "text has been updated",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-vubrD8Ayyr"
+        }
+      }
+    ],
+    "comment_text": "image.png\ntext has been updated\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1787534845536",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787530492984",
+    "reply_count": 0
+  },
+  {
+    "id": "90180249237060",
+    "comment": [
+      {
+        "text": "Hi ",
+        "attributes": {}
+      },
+      {
+        "text": "@Angelo Kamachi",
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-teAdo4Pdml"
+        }
+      },
+      {
+        "text": "Please make this small text fix:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-HvSmO0Edjn"
+        }
+      },
+      {
+        "text": "In this screenshot, make the following changes:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "ordered"
+          },
+          "block-id": "block-Z3GqEz2Mg-"
+        }
+      },
+      {
+        "text": "Change the title from \"Store Picture\" to \"Store Image\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "ordered"
+          },
+          "indent": 1,
+          "block-id": "block-JZ_khUtfhw"
+        }
+      },
+      {
+        "text": "Change the subtitle from \"Show customers what this location looks like\" to \"Show your customers what this location looks like.\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "ordered"
+          },
+          "indent": 1,
+          "block-id": "block-tkjxQfA66n"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "533c18b5-86af-4107-bb13-f3a518b8e85a.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/533c18b5-86af-4107-bb13-f3a518b8e85a/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/533c18b5-86af-4107-bb13-f3a518b8e85a/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/533c18b5-86af-4107-bb13-f3a518b8e85a_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/533c18b5-86af-4107-bb13-f3a518b8e85a_medium.png",
+          "width": 799,
+          "height": 1079
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "185",
+          "data-id": "533c18b5-86af-4107-bb13-f3a518b8e85a.png",
+          "data-natural-width": "799",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Ke1-sFClfp"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Qgnko6Rg1b"
+        }
+      },
+      {
+        "text": "Moving this task from \"Ready for Testing\" back to \"In Development\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EKDrTU4amF"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-51r682BRIz"
+        }
+      },
+      {
+        "text": "cc: ",
+        "attributes": {}
+      },
+      {
+        "text": "@Aira Pilor",
+        "type": "tag",
+        "user": {
+          "id": 95622662,
+          "username": "Aira Pilor",
+          "email": "aira@prosperna.com",
+          "initials": "AP",
+          "profilePicture": null
+        }
+      }
+    ],
+    "comment_text": "Hi @Angelo Kamachi\nPlease make this small text fix:\nIn this screenshot, make the following changes:\nChange the title from \"Store Picture\" to \"Store Image\"\nChange the subtitle from \"Show customers what this location looks like\" to \"Show your customers what this location looks like.\".\nimage.png\n\nMoving this task from \"Ready for Testing\" back to \"In Development\".\n\ncc: @Aira Pilor",
+    "user": {
+      "id": 25568383,
+      "username": "Dennis Velasco",
+      "email": "dennis@prosperna.com",
+      "color": "#04a9f4",
+      "initials": "DV",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "thumbs_up",
+        "date": "1787527679837",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      }
+    ],
+    "date": "1787527643765",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248380290",
+    "comment": [
+      {
+        "text": "All three changes now in dev",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7XO258qIyI"
+        }
+      },
+      {
+        "text": "business-profiles-api",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EsHgR8JAxG",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "properna1",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-pCEusindp5",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "p1-customer",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-OUBBFvuUff",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ceyb_DNIkC"
+        }
+      },
+      {
+        "text": "Ready to test",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_pK0dpkKhc"
+        }
+      },
+      {
+        "text": "cc: ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 95622662,
+          "username": "Aira Pilor",
+          "email": "aira@prosperna.com",
+          "initials": "AP",
+          "profilePicture": null
+        },
+        "text": "@Aira Pilor"
+      }
+    ],
+    "comment_text": "All three changes now in dev\nbusiness-profiles-api\nproperna1\np1-customer\n\nReady to test\ncc: @Aira Pilor",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1787527396680",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787188742525",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248380193",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Merchant Side | Store Location | Cannot upload a store logo per location — cards show auto-generated initials only"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "READY FOR TESTING"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1d974daa-846f-4f2b-aa92-4d7879d6a360"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 20 2026, 9:18AM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2f823e5f-a650-4c0d-b5b1-fff90b29e6cf"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eb747be5-76e2-450a-80a4-2f28d51dc0ed"
+        }
+      }
+    ],
+    "comment_text": "This Merchant Side | Store Location | Cannot upload a store logo per location — cards show auto-generated initials only has been move to READY FOR TESTING\nDate updated: Aug 20 2026, 9:18AM (Asia/Singapore)\nTriggered by: Angelo Kamachi\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1787527403876",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787188687876",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248376923",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "6e28177d-d05e-47ef-986f-9a8f03b08928.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/6e28177d-d05e-47ef-986f-9a8f03b08928_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/6e28177d-d05e-47ef-986f-9a8f03b08928_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/6e28177d-d05e-47ef-986f-9a8f03b08928_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/6e28177d-d05e-47ef-986f-9a8f03b08928/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "6e28177d-d05e-47ef-986f-9a8f03b08928.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-UguDP2jT5q"
+        }
+      },
+      {
+        "text": "now reflecting on p1-customer",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-WxjYcp9pIL"
+        }
+      }
+    ],
+    "comment_text": "image.png\nnow reflecting on p1-customer\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1787527414343",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787187196026",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248376906",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "8f9f34bc-17cb-4ec2-9efd-7c418655f059.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/8f9f34bc-17cb-4ec2-9efd-7c418655f059_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/8f9f34bc-17cb-4ec2-9efd-7c418655f059_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/8f9f34bc-17cb-4ec2-9efd-7c418655f059_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/8f9f34bc-17cb-4ec2-9efd-7c418655f059/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "8f9f34bc-17cb-4ec2-9efd-7c418655f059.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Ovd0kAM2vV"
+        }
+      },
+      {
+        "text": "uses media library for selecting images",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-M2Yl9L04a6"
+        }
+      }
+    ],
+    "comment_text": "image.png\nuses media library for selecting images\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1787527428156",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787187175954",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248376866",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "61e74d94-ecbc-42e9-8ee2-cfe28e22e5a7.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/61e74d94-ecbc-42e9-8ee2-cfe28e22e5a7/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/61e74d94-ecbc-42e9-8ee2-cfe28e22e5a7_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/61e74d94-ecbc-42e9-8ee2-cfe28e22e5a7_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/61e74d94-ecbc-42e9-8ee2-cfe28e22e5a7/image.png",
+          "uploaded": true,
+          "width": 799,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "185",
+          "data-id": "61e74d94-ecbc-42e9-8ee2-cfe28e22e5a7.png",
+          "data-attachment": null,
+          "data-natural-width": "799",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-peYHDG7QRs"
+        }
+      },
+      {
+        "text": "new Store Picture feature in edit location modal integrated",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-QdX609vYGA"
+        }
+      }
+    ],
+    "comment_text": "image.png\nnew Store Picture feature in edit location modal integrated\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1787527433212",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787187142732",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248235595",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Merchant Side | Store Location | Cannot upload a store logo per location — cards show auto-generated initials only"
+      },
+      {
+        "text": " has been created ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bf7e6b93-37f7-4ef1-9574-05993b503c8f"
+        }
+      },
+      {
+        "text": "Date: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 20 2026, 12:15AM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5acb7133-fc27-48ba-9a62-6a27fcef1ac4"
+        }
+      },
+      {
+        "text": "By ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2da5208f-53d3-4f34-b235-72f66cc916c1"
+        }
+      }
+    ],
+    "comment_text": "This task Merchant Side | Store Location | Cannot upload a store logo per location — cards show auto-generated initials only has been created \nDate: Aug 20 2026, 12:15AM (Asia/Shanghai)\nBy Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1787527475122",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1787156141592",
+    "reply_count": 0
+  }
+]

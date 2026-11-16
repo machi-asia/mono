@@ -6,6 +6,17 @@ export interface AskQuestionArgs {
   allowMultiple?: boolean;
 }
 
+function normalizeOptionString(item: unknown): string {
+  if (typeof item === "string") return item.trim();
+  if (item && typeof item === "object") {
+    const obj = item as Record<string, unknown>;
+    const val = obj.title ?? obj.label ?? obj.text ?? obj.name ?? obj.value;
+    if (val != null) return String(val).trim();
+    return JSON.stringify(item);
+  }
+  return String(item ?? "").trim();
+}
+
 export const askQuestionTool: Tool = {
   declaration: {
     name: "askQuestion",
@@ -34,7 +45,10 @@ export const askQuestionTool: Tool = {
   execute: async (args: Record<string, unknown>) => {
     try {
       const question = (args.question as string) || "Please choose an option:";
-      const options = Array.isArray(args.options) ? (args.options as string[]) : [];
+      const rawOpts = args.options || (args as any).choices;
+      const options = Array.isArray(rawOpts)
+        ? rawOpts.map(normalizeOptionString).filter(Boolean)
+        : [];
       const allowMultiple = Boolean(args.allowMultiple);
 
       const payload = {

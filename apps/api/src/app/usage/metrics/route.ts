@@ -1,26 +1,16 @@
-import { handleUsageMetricsRoute, recordApiCall } from "@/server/usage/tracker";
+import { handleUsageMetricsRoute } from "@/server/usage/tracker";
+import { handleCorsPreflight, withApiGuard } from "@/server/security/guard";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
-  const start = Date.now();
-  try {
-    const res = await handleUsageMetricsRoute(req);
-    recordApiCall("/usage/metrics", "GET", Date.now() - start, !res.ok);
-    return res;
-  } catch (err) {
-    recordApiCall("/usage/metrics", "GET", Date.now() - start, true);
-    throw err;
-  }
+  return withApiGuard(
+    req,
+    { endpoint: "/usage/metrics", app: "api" },
+    async () => handleUsageMetricsRoute(req)
+  );
 }
 
-export async function OPTIONS() {
-  return new Response(null, {
-    status: 204,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization",
-    },
-  });
+export async function OPTIONS(req: Request) {
+  return handleCorsPreflight(req, "GET, OPTIONS");
 }

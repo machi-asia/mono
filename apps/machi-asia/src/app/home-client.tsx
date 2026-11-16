@@ -1,8 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Row, Col, Card, Button, Tooltip, Accordion, Usage } from "@mono/components";
-import { ArrowRight, Bot, Calculator, Check, Sparkles, Zap, Shield, HelpCircle, Code2, Globe } from "lucide-react";
+import { Row, Col, Card, Button, Tooltip, Accordion, Usage, Link as MonoLink, resolveHref } from "@mono/components";
+import { ArrowRight, Bot, Calculator, Check, Sparkles, Zap, Shield, Code2, Globe } from "lucide-react";
 
 const PRODUCTS = [
   {
@@ -37,7 +37,7 @@ const PRODUCTS = [
       "Multi-provider LLM orchestration",
       "Real-time usage and tier quota monitoring",
     ],
-    tierInfo: "Guest limit: 10/day, User: 20/day, Pro: Unlimited.",
+    tierInfo: "Guest limit: 15/day, Member: 60/day, Pro: 500/day.",
   },
   {
     id: "hells-forge",
@@ -85,7 +85,7 @@ const SUBSCRIPTION_PLANS = [
     tooltip: "Free guest and user tier limits apply across all apps.",
     features: [
       "Access to Game Production Calculator",
-      "Rose AI basic chat (20 messages / day)",
+      "Rose AI basic chat (60 messages / day)",
       "Hell's Forge public multiplayer access",
       "Obsidian markdown & docs reading",
       "Community support",
@@ -97,11 +97,11 @@ const SUBSCRIPTION_PLANS = [
     name: "Pro Builder",
     price: "$9",
     period: "/ month",
-    description: "Uncapped usage, premium AI features, and cloud saves.",
+    description: "High-volume usage, premium AI features, and cloud saves.",
     popular: true,
-    tooltip: "Includes unlimited voice mode, custom agent memory, and priority compute.",
+    tooltip: "Includes voice mode, custom agent memory, and priority compute.",
     features: [
-      "Unlimited Rose AI messages & voice mode",
+      "500 Rose AI messages / day & voice mode",
       "Extended Rose long-term vector memory",
       "Cloud factory blueprint saving & sharing",
       "Zero advertisements across all web applications",
@@ -136,7 +136,7 @@ const FAQ_ITEMS = [
     title: "How do subscriptions work across the different apps?",
     content: (
       <p style={{ margin: 0, lineHeight: 1.6, color: "var(--color-text-muted)" }}>
-        A single Machi Asia subscription unlocks pro capabilities across all connected applications in the monorepo, including unlimited queries in Rose AI, ad-free factory planning in Game Production Calculator, and premium workspace access.
+        A single Machi Asia subscription unlocks pro capabilities across all connected applications in the monorepo, including expanded queries in Rose AI, ad-free factory planning in Game Production Calculator, and premium workspace access.
       </p>
     ),
   },
@@ -160,7 +160,7 @@ const FAQ_ITEMS = [
     title: "Where can I view developer documentation for the components?",
     content: (
       <p style={{ margin: 0, lineHeight: 1.6, color: "var(--color-text-muted)" }}>
-        Developer documentation, design tokens, and live interactive component playgrounds are hosted in our documentation app at <a href="https://docs.machi-asia.com" style={{ color: "var(--color-primary)" }}>docs.machi-asia.com</a>.
+        Developer documentation, design tokens, and live interactive component playgrounds are hosted in our documentation app at <MonoLink href="https://docs.machi-asia.com" style={{ color: "var(--color-primary)" }}>docs.machi-asia.com</MonoLink>.
       </p>
     ),
   },
@@ -247,11 +247,11 @@ export function HomeClient() {
                   <span style={{ fontSize: "0.82rem", color: "var(--color-primary)", fontWeight: 600 }}>
                     {prod.badge}
                   </span>
-                  <a href={prod.url} style={{ textDecoration: "none" }}>
+                  <MonoLink href={resolveHref(prod.url)} style={{ textDecoration: "none" }}>
                     <Button variant="primary" size="sm" icon={<ArrowRight size={14} />}>
                       Launch App
                     </Button>
-                  </a>
+                  </MonoLink>
                 </div>
               </Card>
             </Col>
@@ -345,10 +345,10 @@ export function HomeClient() {
                   <Usage
                     label="Rose AI Free Daily Quota"
                     used={14}
-                    total={20}
+                    total={60}
                     unit="messages"
                     size="sm"
-                    description="Resets daily at 00:00 UTC. Upgraded plans have no daily cap."
+                    description="Resets daily at 00:00 UTC. Upgraded plans enjoy expanded caps."
                   />
                 </div>
               </div>
@@ -359,11 +359,11 @@ export function HomeClient() {
                 <p style={{ margin: "0 0 var(--space-4)", fontSize: "0.85rem", color: "var(--color-text-muted)", lineHeight: 1.5 }}>
                   Looking for custom on-premises LLM deployment, high-throughput batch recalculation, or custom game support?
                 </p>
-                <a href="mailto:contact@machi-asia.com" style={{ textDecoration: "none" }}>
+                <MonoLink href="mailto:contact@machi-asia.com" style={{ textDecoration: "none" }}>
                   <Button variant="secondary" size="sm" icon={<Globe size={14} />}>
                     Contact Engineering
                   </Button>
-                </a>
+                </MonoLink>
               </div>
             </Col>
           </Row>

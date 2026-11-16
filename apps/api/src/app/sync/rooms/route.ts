@@ -1,39 +1,24 @@
 import { handleSyncRoomsRoute } from "@/server/sync/handlers";
-import { recordApiCall } from "@/server/usage/tracker";
+import { handleCorsPreflight, withApiGuard } from "@/server/security/guard";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
-  const start = Date.now();
-  try {
-    const res = await handleSyncRoomsRoute(req);
-    recordApiCall("/sync/rooms", "GET", Date.now() - start, !res.ok);
-    return res;
-  } catch (err) {
-    recordApiCall("/sync/rooms", "GET", Date.now() - start, true);
-    throw err;
-  }
+  return withApiGuard(
+    req,
+    { endpoint: "/sync/rooms", app: "sync" },
+    async () => handleSyncRoomsRoute(req)
+  );
 }
 
 export async function POST(req: Request) {
-  const start = Date.now();
-  try {
-    const res = await handleSyncRoomsRoute(req);
-    recordApiCall("/sync/rooms", "POST", Date.now() - start, !res.ok);
-    return res;
-  } catch (err) {
-    recordApiCall("/sync/rooms", "POST", Date.now() - start, true);
-    throw err;
-  }
+  return withApiGuard(
+    req,
+    { endpoint: "/sync/rooms", app: "sync", metric: "requests", cost: 1 },
+    async () => handleSyncRoomsRoute(req)
+  );
 }
 
-export async function OPTIONS() {
-  return new Response(null, {
-    status: 204,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization",
-    },
-  });
+export async function OPTIONS(req: Request) {
+  return handleCorsPreflight(req, "GET, POST, OPTIONS");
 }

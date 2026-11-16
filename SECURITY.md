@@ -31,16 +31,24 @@ Every app must wrap its root layout with `AuthProvider`. Users without a valid s
 - Keep dependencies up to date.
 - Review new dependencies before adding them.
 
-## Data Access
+## Data Access & Usage Quota Integrity
 
 All data access is managed through `/packages/database` using **Supabase Database and Storage**. Enforce:
 
-- **Server-Only Database Execution**: All database queries, insertions, mutations, and storage interactions must strictly take place on the server side (Server Components, Route Handlers, or `@mono/database/server`). Direct database or storage calls must never be executed from client browser components.
+- **Server-Only Database Execution (`assertServerOnlyExecution`)**: Privileged database helpers (`createServiceClient`, `createTokenClient`, `updateUserRole`, and `recordAndCheckUsage`) throw a runtime security violation if invoked inside a browser environment (`typeof window !== "undefined"`).
+- **Zero Client Usage Mutation**:
+  - `public.user_usages` has no `INSERT`, `UPDATE`, or `DELETE` RLS policies for `anon` or `authenticated` roles; browser clients using the publishable key can never modify usage counts or limits directly in Supabase.
+  - The `public.increment_user_usage` RPC revokes `EXECUTE` from `public`, `anon`, and `authenticated` (granted strictly to `service_role`), rejects negative `p_amount` (`p_amount < 0`), and enforces a defense-in-depth JWT role check inside PL/pgSQL.
+  - `POST /usage/track` strips `dailyLimitOverride` and `monthlyLimitOverride` from non-admin request payloads, rejects negative `amount`, and computes quota limits exclusively on the server from `ROLE_QUOTAS`.
+  - `UsageProvider` (`@mono/auth`) never caches or trusts usage counts in `localStorage` and routes all usage snapshots and increments through `apps/api` (`/usage/metrics?scope=user` and `/usage/track`).
+- **Anti-Spoofing on Community Consensus & Realtime Sync**:
+  - `POST /itemlist/reports` ignores client-supplied `reporterHash` and derives `reporter_hash` deterministically on the server from verified `auth.userId` + client IP so a single user cannot spoof multiple hashes to trigger `get_community_overrides`.
+  - `POST /sync/events` binds event `userId` to verified `auth.userId` (and prefixes guest IDs so guests cannot impersonate registered UUIDs) and blocks clients from emitting server-only triggers (`server_player_state`, `room_members_update`).
 - Input validation at the database boundary.
 - Row Level Security (RLS) on all tables.
 - **Key Separation**:
-  - Browser clients use `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` and `NEXT_PUBLIC_SUPABASE_URL` exclusively for authentication sessions (`AuthProvider`).
-  - Server operations use `SUPABASE_SECRET_KEY` (or server publishable key with RLS) to handle privileged/backend operations.
+  - Browser clients use `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` and `NEXT_PUBLIC_SUPABASE_URL` exclusively for authentication sessions (`AuthProvider`) and read-only authorized queries.
+  - Server operations use `SUPABASE_SECRET_KEY` (`createServiceClient`) to handle privileged/backend operations.
 
 ## Code Review
 

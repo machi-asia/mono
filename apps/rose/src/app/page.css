@@ -1,0 +1,228 @@
+/* Floating Rose Page Layout */
+html,
+body {
+  height: 100%;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+.m-rose-page-wrapper {
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background, #0b0b0d);
+  overflow: hidden;
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+}
+
+/* Flush full-bleed layout for RoseChat on the dedicated page: edge borders and margins removed */
+.m-rose-chat-container--floating {
+  background: transparent;
+  padding: calc(64px + var(--space-2, 8px)) 0 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  gap: 0;
+}
+
+/* Glass Header floating at top */
+.m-rose-chat-container--floating .m-rose-chat-header {
+  background: var(--color-surface-glass, rgb(22 20 15 / 80%));
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border, #26262a);
+  border-radius: var(--radius-pill, 999px);
+  box-shadow: var(--shadow-2);
+  margin: 0 var(--space-3, 12px) var(--space-2, 8px);
+  padding: 6px var(--space-4, 16px);
+  min-height: 48px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Main Chat Body: edge borders and outer margins removed to sit cleanly against edges */
+.m-rose-chat-container--floating .m-rose-chat-body {
+  border-radius: 0;
+  overflow: hidden;
+  border: none;
+  border-top: 1px solid var(--color-border, #26262a);
+  box-shadow: none;
+  background: var(--color-surface-glass, rgb(22 20 15 / 80%));
+  backdrop-filter: blur(20px);
+  flex: 1;
+  min-height: 0;
+}
+
+/* Sidebar with internal right divider preserved, outer edge borders minimized */
+.m-rose-chat-container--floating .m-rose-sidebar {
+  background: rgb(0 0 0 / 20%);
+  backdrop-filter: blur(16px);
+  border-right: 1px solid var(--color-border, #26262a);
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.m-rose-chat-container--floating .m-rose-sidebar-header {
+  background: transparent;
+  border-bottom: 1px solid var(--color-border, #26262a);
+  padding: var(--space-3, 12px) var(--space-3, 12px);
+  flex-shrink: 0;
+}
+
+/* Matched height for settings footer & input section: borderless container, pill borders only */
+.m-rose-chat-container--floating .m-rose-sidebar-footer {
+  border-top: none;
+  background: transparent;
+  box-sizing: border-box;
+  min-height: 68px;
+  height: 68px;
+  padding: var(--space-2, 8px) var(--space-3, 12px) var(--space-3, 12px);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.m-rose-chat-container--floating .m-rose-sidebar-settings-btn {
+  height: 48px;
+  min-height: 48px;
+  box-sizing: border-box;
+  border-radius: var(--radius-pill, 999px);
+  border: 1px solid var(--color-border, #26262a);
+  background: var(--color-surface-glass, rgb(22 20 15 / 80%));
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-2);
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  transition:
+    box-shadow var(--duration-fast, 120ms) var(--ease-out),
+    border-color var(--duration-fast, 120ms) var(--ease-out),
+    color var(--duration-fast, 120ms) var(--ease-out);
+}
+
+.m-rose-chat-container--floating .m-rose-sidebar-settings-btn:hover {
+  border-color: var(--color-primary, #d4af37);
+  box-shadow: 0 0 0 2px rgb(212 175 55 / 20%), var(--shadow-2);
+  color: var(--color-primary, #d4af37);
+}
+
+.m-rose-chat-container--floating .m-rose-sidebar-item {
+  border-radius: var(--radius-pill, 999px);
+  border: 1px solid transparent;
+  padding: 6px 12px;
+}
+
+.m-rose-chat-container--floating .m-rose-sidebar-item.active {
+  border-color: rgb(212 175 55 / 30%);
+}
+
+.m-rose-chat-container--floating .m-rose-sidebar-new-btn {
+  border-radius: var(--radius-pill, 999px);
+  border: 1px solid rgb(212 175 55 / 25%);
+}
+
+.m-rose-chat-container--floating .m-rose-chat-main {
+  background: transparent;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Usage Strip with bottom border and seamless integration */
+.m-rose-chat-container--floating .m-rose-chat-usage-strip {
+  background: rgb(0 0 0 / 12%);
+  border-top: none;
+  border-bottom: 1px solid var(--color-border, #26262a);
+  margin: 0;
+  padding: var(--space-2, 8px) var(--space-5, 20px);
+  flex-shrink: 0;
+}
+
+.m-rose-chat-container--floating .m-rose-usage-bar {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+/* Message feed */
+.m-rose-chat-container--floating .m-rose-messages-feed {
+  padding: var(--space-4, 16px) var(--space-5, 20px);
+  gap: var(--space-3, 12px);
+  flex: 1;
+  min-height: 0;
+  overflow: hidden auto;
+}
+
+/* Keep borders on chat messages */
+.m-rose-chat-container--floating .m-rose-msg-row--model .m-rose-msg-bubble {
+  background: rgb(24 24 27 / 70%);
+  border: 1px solid var(--color-border, #26262a);
+  backdrop-filter: blur(8px);
+}
+
+.m-rose-chat-container--floating .m-rose-msg-row--user .m-rose-msg-bubble {
+  border: 1px solid rgb(212 175 55 / 35%);
+}
+
+/* Input Container with matched height: borderless container, pill borders only */
+.m-rose-chat-container--floating .m-rose-input-container {
+  background: transparent;
+  border-top: none;
+  box-sizing: border-box;
+  min-height: 68px;
+  height: 68px;
+  padding: var(--space-2, 8px) var(--space-4, 16px) var(--space-3, 12px);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Pill Input Bar with border */
+.m-rose-chat-container--floating .m-rose-input-bar {
+  background: var(--color-surface-glass, rgb(22 20 15 / 80%));
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border, #26262a);
+  border-radius: var(--radius-pill, 999px);
+  box-shadow: var(--shadow-2);
+  min-height: 48px;
+  height: 48px;
+  box-sizing: border-box;
+  padding: 6px 8px 6px 18px;
+  width: 100%;
+  transition:
+    box-shadow var(--duration-fast, 120ms) var(--ease-out),
+    border-color var(--duration-fast, 120ms) var(--ease-out);
+}
+
+.m-rose-chat-container--floating .m-rose-input-bar:focus-within {
+  border-color: var(--color-primary, #d4af37);
+  box-shadow: 0 0 0 2px rgb(212 175 55 / 35%), var(--shadow-2);
+}
+
+.m-rose-chat-container--floating .m-rose-send-btn {
+  border-radius: var(--radius-pill, 999px);
+}
+
+.m-rose-chat-container--floating .m-rose-voice-btn {
+  border-radius: var(--radius-pill, 999px);
+}

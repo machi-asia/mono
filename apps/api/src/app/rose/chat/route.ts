@@ -1,27 +1,16 @@
 import { handleRoseChat } from "@/server/rose/chat";
-import { recordApiCall } from "@/server/usage/tracker";
+import { handleCorsPreflight, withApiGuard } from "@/server/security/guard";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
-  const start = Date.now();
-  try {
-    const res = await handleRoseChat(req);
-    recordApiCall("/rose/chat", "POST", Date.now() - start, !res.ok);
-    return res;
-  } catch (err) {
-    recordApiCall("/rose/chat", "POST", Date.now() - start, true);
-    throw err;
-  }
+  return withApiGuard(
+    req,
+    { endpoint: "/rose/chat", app: "rose", metric: "requests", cost: 1 },
+    async () => handleRoseChat(req)
+  );
 }
 
-export async function OPTIONS() {
-  return new Response(null, {
-    status: 204,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization",
-    },
-  });
+export async function OPTIONS(req: Request) {
+  return handleCorsPreflight(req, "POST, OPTIONS");
 }

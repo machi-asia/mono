@@ -1,0 +1,502 @@
+/* Shared Framer Motion Presentation Suite Styles */
+
+.mono-pres-deck {
+  position: relative;
+  width: 100%;
+}
+
+.mono-pres-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-primary, #d4af37);
+  transform-origin: 0% 50%;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.mono-pres-nav-dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 55;
+  padding: 10px 8px;
+  border-radius: var(--radius-pill, 999px);
+  background: var(--color-surface-glass, rgb(22 20 15 / 80%));
+  border: 1px solid var(--color-border, #2a271f);
+  backdrop-filter: blur(10px);
+}
+
+.mono-pres-nav-dot {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: var(--color-text-muted, #a8a29e);
+  opacity: 0.45;
+  cursor: pointer;
+  transition: transform 200ms ease, opacity 200ms ease, background-color 200ms ease;
+}
+
+.mono-pres-nav-dot:hover,
+.mono-pres-nav-dot[data-active="true"] {
+  opacity: 1;
+  background: var(--color-primary, #d4af37);
+  transform: scale(1.3);
+}
+
+/* 1. PresentationPinnedSection */
+.mono-pres-pinned {
+  position: relative;
+  width: 100%;
+}
+
+.mono-pres-pinned-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mono-pres-pinned-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.mono-pres-pinned-header {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  right: 28px;
+  z-index: 3;
+}
+
+.mono-pres-pinned-stage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1120px;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 32px 24px;
+  box-sizing: border-box;
+}
+
+.mono-pres-pinned-step {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  align-items: center;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.mono-pres-pinned-step-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill, 999px);
+  background: var(--color-primary, #d4af37);
+  color: var(--color-primary-contrast, #14110a);
+  margin-bottom: 12px;
+}
+
+.mono-pres-pinned-step-title {
+  margin: 0 0 12px;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  color: var(--color-text, #f6f1e6);
+}
+
+.mono-pres-pinned-step-desc {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-text-muted, #a8a29e);
+}
+
+.mono-pres-pinned-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 4;
+}
+
+.mono-pres-pinned-dot {
+  width: 28px;
+  height: 4px;
+  border-radius: 4px;
+  background: rgb(255 255 255 / 22%);
+  overflow: hidden;
+}
+
+/* 2. PresentationHorizontal */
+.mono-pres-horizontal {
+  position: relative;
+  width: 100%;
+}
+
+.mono-pres-horizontal-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mono-pres-horizontal-header {
+  position: relative;
+  z-index: 3;
+  padding: 24px 32px 0;
+  flex-shrink: 0;
+}
+
+.mono-pres-horizontal-track {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  height: 100%;
+  will-change: transform;
+}
+
+.mono-pres-horizontal-slide {
+  flex: 0 0 100vw;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 32px;
+  box-sizing: border-box;
+}
+
+.mono-pres-horizontal-progress-wrap {
+  position: absolute;
+  bottom: 24px;
+  left: 32px;
+  right: 32px;
+  height: 4px;
+  border-radius: 4px;
+  background: rgb(255 255 255 / 15%);
+  overflow: hidden;
+  z-index: 3;
+}
+
+.mono-pres-horizontal-progress-fill {
+  height: 100%;
+  width: 100%;
+  background: var(--color-primary, #d4af37);
+  transform-origin: 0% 50%;
+}
+
+/* 3. PresentationZoom */
+.mono-pres-zoom {
+  position: relative;
+  width: 100%;
+}
+
+.mono-pres-zoom-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.mono-pres-zoom-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.mono-pres-zoom-target {
+  position: relative;
+  z-index: 1;
+  will-change: transform, opacity, border-radius;
+  display: grid;
+  place-items: center;
+}
+
+.mono-pres-zoom-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  pointer-events: none;
+}
+
+/* 4. PresentationCardStack */
+.mono-pres-stack {
+  position: relative;
+  width: 100%;
+}
+
+.mono-pres-stack-card-slot {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 0;
+}
+
+.mono-pres-stack-card-inner {
+  width: 100%;
+  height: 100%;
+  will-change: transform, opacity, filter;
+  transform-origin: center top;
+}
+
+/* 5. PresentationSplit */
+.mono-pres-split {
+  position: relative;
+  width: 100%;
+}
+
+.mono-pres-split-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.mono-pres-split-content {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  will-change: transform, opacity;
+}
+
+.mono-pres-split-panels {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.mono-pres-split-panel {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  background: var(--color-surface, #16140f);
+  border: 1px solid var(--color-border, #2a271f);
+  box-shadow: var(--shadow-2, 0 8px 24px rgb(0 0 0 / 50%));
+  will-change: transform;
+}
+
+.mono-pres-split-panel[data-dir="horizontal"][data-side="a"] {
+  inset: 0 50% 0 0;
+}
+
+.mono-pres-split-panel[data-dir="horizontal"][data-side="b"] {
+  inset: 0 0 0 50%;
+}
+
+.mono-pres-split-panel[data-dir="vertical"][data-side="a"] {
+  inset: 0 0 50%;
+}
+
+.mono-pres-split-panel[data-dir="vertical"][data-side="b"] {
+  inset: 50% 0 0;
+}
+
+/* 6. PresentationParallax */
+.mono-pres-parallax {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.mono-pres-parallax-layer {
+  position: absolute;
+  inset: -15% 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.mono-pres-parallax-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+/* 7. PresentationPopOutCard (Two-Halves Card with Image Out-of-Bounds on Top, Bottom Overlap Div) */
+.mono-pres-popout-stage {
+  position: relative;
+  width: 100%;
+  padding-top: 260px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  box-sizing: border-box;
+}
+
+.mono-pres-popout-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+}
+
+.mono-pres-popout-card {
+  position: relative;
+  width: 100%;
+  border-radius: 28px;
+  border: 1px solid rgb(212 175 55 / 35%);
+  box-shadow:
+    0 24px 60px rgb(0 0 0 / 50%),
+    inset 0 1px 0 rgb(255 255 255 / 15%);
+  box-sizing: border-box;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TOP HALF: Visual stage frame where the image towers way out of the card */
+.mono-pres-popout-top-half {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: visible;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  z-index: 1;
+}
+
+.mono-pres-popout-portal-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  overflow: visible;
+
+  /* Shift down slightly so ~5% is buried beneath the bottom half */
+  margin-bottom: -28px;
+}
+
+.mono-pres-popout-image-motion {
+  position: relative;
+  z-index: 2;
+
+  /* Image boundary WAY larger than the card so it massively bursts outside top, left, and right */
+  width: 165%;
+  max-width: 1420px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transform-origin: 50% 100%;
+  will-change: transform;
+  margin-bottom: 0;
+  line-height: 0;
+}
+
+.mono-pres-popout-img {
+  display: block;
+  width: 100%;
+  min-height: 480px;
+  max-height: 620px;
+  height: auto;
+  object-fit: contain;
+  vertical-align: bottom;
+  user-select: none;
+  filter: drop-shadow(0 -28px 48px rgb(0 0 0 / 70%));
+}
+
+/* 
+ * BOTTOM HALF: Overlapping cover div situated ONE LAYER HIGHER (z-index: 10) than the image (z-index: 2).
+ * Buries approximately 5% of the bottom of the image inside the card, creating the illusion of rising out from within the card.
+ */
+.mono-pres-popout-bottom-half {
+  position: relative;
+  z-index: 10;
+  padding: 32px 40px 36px;
+  box-sizing: border-box;
+  border-bottom-left-radius: 27px;
+  border-bottom-right-radius: 27px;
+  border-top: 1px solid rgb(212 175 55 / 35%);
+  box-shadow: 0 -12px 30px -4px rgb(0 0 0 / 40%);
+}
+
+.mono-pres-popout-badge {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: #14110a;
+  color: #d4af37;
+  border: 1px solid rgb(212 175 55 / 35%);
+  margin-bottom: 14px;
+}
+
+.mono-pres-popout-title {
+  margin: 0 0 10px;
+  font-size: clamp(1.65rem, 3.2vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.mono-pres-popout-desc {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  opacity: 0.88;
+}
+
+.mono-pres-popout-children {
+  margin-top: 20px;
+}
+

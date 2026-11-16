@@ -23,8 +23,7 @@
     }
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "lint:style": "echo skip",
     "typecheck": "tsc --noEmit",
@@ -33,6 +32,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "@mono/app-config": "*",
     "@supabase/ssr": "^0.12.5",
     "@supabase/supabase-js": "^2.113.0"
   },

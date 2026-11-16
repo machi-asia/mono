@@ -1,0 +1,2442 @@
+[
+  {
+    "id": "1100740000226232",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Design Settings"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "DEPLOYED TO PROD"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-75d1b135-d5be-47d1-a9d2-501bdd8b8545"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 31 2026, 1:39PM (Asia/Manila)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5a1b8ffc-2b89-4a11-b521-246fa8a6d99c"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-78f34e8e-7c2a-451e-a19f-49c86ae1f9ae"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-472b9029-7982-493a-b4d7-1c2a195548e7"
+        }
+      }
+    ],
+    "comment_text": "This Design Settings has been move to DEPLOYED TO PROD\nDate updated: Oct 31 2026, 1:39PM (Asia/Manila)\nTriggered by: Angelo Kamachi\n\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1793425170026",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000146201",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Design Settings"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "READY FOR TESTING"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1d974daa-846f-4f2b-aa92-4d7879d6a360"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 9 2026, 2:17PM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2f823e5f-a650-4c0d-b5b1-fff90b29e6cf"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eb747be5-76e2-450a-80a4-2f28d51dc0ed"
+        }
+      }
+    ],
+    "comment_text": "This Design Settings has been move to READY FOR TESTING\nDate updated: Oct 9 2026, 2:17PM (Asia/Singapore)\nTriggered by: Angelo Kamachi\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791526633604",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000140075",
+    "comment": [
+      {
+        "text": "QA Returns Fix: PR #8779",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 3
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "PR:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " https://github.com/Prosperna/prosperna1/pull/8779 ("
+      },
+      {
+        "text": "refactor/tw-page-builder-standard-dev8",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": " to "
+      },
+      {
+        "text": "dev",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": ")"
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Fixes returns from:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " comment 1100740000136788 (TC5, TC7, TC9)"
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "What was changed",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 4
+        }
+      },
+      {
+        "text": "Tab-bar arrow (TC5):",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " the \">\" arrow now updates as soon as the sidebar is expanded or collapsed. Before, it only updated when the browser window was resized."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "ordered"
+          }
+        }
+      },
+      {
+        "text": "Home Page tooltip (TC7):",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " the \"?\" next to \"Select Your Home Page\" now opens on a phone tap. It uses the same tooltip as Store Description (black bubble, white text)."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "ordered"
+          }
+        }
+      },
+      {
+        "text": "Colors & Styles on a phone (TC9):",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " the form now fits the screen width, so all \"?\" icons can be reached. The store preview scrolls sideways inside its own area instead of pushing the form off the screen."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "ordered"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Where to test",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 4
+        }
+      },
+      {
+        "text": "Environment:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " dev, after PR #8779 is merged"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Pages:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Design Settings (tab bar, Home Page tab) and AI Studio > Colors & Styles"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Account:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " any store with Design Settings access"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Test cases",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 4
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "TC1: Arrow appears when the sidebar expands",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Setup:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " desktop at 1440px, sidebar collapsed, Design Settings open. All five tabs fit and no arrow shows."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Steps:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " click the top-left menu icon to expand the sidebar."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Expected:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " \"Cookie Policy\" no longer fits and the \">\" arrow appears right away, without resizing the window. Clicking it scrolls the tab bar."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "TC2: Arrow disappears when the sidebar collapses",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Setup:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " continue from TC1."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Steps:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " click the menu icon again."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Expected:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " all tabs fit and the arrow goes away right away."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "TC3: Arrow on phone and window resize (regression)",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Steps:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " open Design Settings at 390px. Then, on desktop, resize the window across widths where the tabs do and don't fit."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Expected:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " no arrow on the phone. On desktop the arrow shows only when the tabs overflow."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "TC4: Home Page tooltip on a phone tap",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Setup:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " phone at 390px, Design Settings > Home Page."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Steps:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " tap the \"?\" next to \"Select Your Home Page\". Tap it again, then tap elsewhere on the page."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Expected:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " the first tap opens the tooltip. The second tap, or a tap elsewhere, closes it."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "TC5: Home Page tooltip on desktop (regression)",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Steps:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " hover the same \"?\", then click it."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Expected:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " hovering opens it and clicking keeps it open. It looks the same as the Store Description tooltip."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "TC6: Colors & Styles fits a phone",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Setup:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Design Settings > \"Open in AI Studio\", at 390px (also try 360px)."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Steps:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " expand Color Settings, Headings/Subheadings/Body, Button Settings and Category Settings. Tap every \"?\"."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Expected:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " nothing is cut off on the right. All 19 \"?\" icons can be reached and each one opens its tooltip."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "TC7: Store preview on a phone",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Setup:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " same as TC6, then scroll down to the store preview."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Steps:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " swipe the preview sideways."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Expected:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " if the preview is wider than the screen, it scrolls on its own. The rest of the page doesn't move sideways."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "TC8: Colors & Styles on desktop (regression)",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Steps:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " view the page at 1440px and hover every \"?\"."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Expected:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " the layout is the same as before and all tooltips open."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Out of scope",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 4
+        }
+      },
+      {
+        "text": "The purple open-section headings in Colors & Styles are a deliberate AI Studio restyle and aren't part of this task."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      }
+    ],
+    "comment_text": "QA Returns Fix: PR #8779\n\nPR: https://github.com/Prosperna/prosperna1/pull/8779 (refactor/tw-page-builder-standard-dev8 to dev)\nFixes returns from: comment 1100740000136788 (TC5, TC7, TC9)\n\nWhat was changed\nTab-bar arrow (TC5): the \">\" arrow now updates as soon as the sidebar is expanded or collapsed. Before, it only updated when the browser window was resized.\nHome Page tooltip (TC7): the \"?\" next to \"Select Your Home Page\" now opens on a phone tap. It uses the same tooltip as Store Description (black bubble, white text).\nColors & Styles on a phone (TC9): the form now fits the screen width, so all \"?\" icons can be reached. The store preview scrolls sideways inside its own area instead of pushing the form off the screen.\n\nWhere to test\nEnvironment: dev, after PR #8779 is merged\nPages: Design Settings (tab bar, Home Page tab) and AI Studio > Colors & Styles\nAccount: any store with Design Settings access\n\nTest cases\n\nTC1: Arrow appears when the sidebar expands\nSetup: desktop at 1440px, sidebar collapsed, Design Settings open. All five tabs fit and no arrow shows.\nSteps: click the top-left menu icon to expand the sidebar.\nExpected: \"Cookie Policy\" no longer fits and the \">\" arrow appears right away, without resizing the window. Clicking it scrolls the tab bar.\n\nTC2: Arrow disappears when the sidebar collapses\nSetup: continue from TC1.\nSteps: click the menu icon again.\nExpected: all tabs fit and the arrow goes away right away.\n\nTC3: Arrow on phone and window resize (regression)\nSteps: open Design Settings at 390px. Then, on desktop, resize the window across widths where the tabs do and don't fit.\nExpected: no arrow on the phone. On desktop the arrow shows only when the tabs overflow.\n\nTC4: Home Page tooltip on a phone tap\nSetup: phone at 390px, Design Settings > Home Page.\nSteps: tap the \"?\" next to \"Select Your Home Page\". Tap it again, then tap elsewhere on the page.\nExpected: the first tap opens the tooltip. The second tap, or a tap elsewhere, closes it.\n\nTC5: Home Page tooltip on desktop (regression)\nSteps: hover the same \"?\", then click it.\nExpected: hovering opens it and clicking keeps it open. It looks the same as the Store Description tooltip.\n\nTC6: Colors & Styles fits a phone\nSetup: Design Settings > \"Open in AI Studio\", at 390px (also try 360px).\nSteps: expand Color Settings, Headings/Subheadings/Body, Button Settings and Category Settings. Tap every \"?\".\nExpected: nothing is cut off on the right. All 19 \"?\" icons can be reached and each one opens its tooltip.\n\nTC7: Store preview on a phone\nSetup: same as TC6, then scroll down to the store preview.\nSteps: swipe the preview sideways.\nExpected: if the preview is wider than the screen, it scrolls on its own. The rest of the page doesn't move sideways.\n\nTC8: Colors & Styles on desktop (regression)\nSteps: view the page at 1440px and hover every \"?\".\nExpected: the layout is the same as before and all tooltips open.\n\nOut of scope\nThe purple open-section headings in Colors & Styles are a deliberate AI Studio restyle and aren't part of this task.\n\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791423909757",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000140062",
+    "comment": [
+      {
+        "text": "QA TEST CASES - PR #8779\n\nWHERE TO TEST\nEnvironment: dev\nPages: Design Settings (tab bar, Home Page tab), AI Studio > Colors & Styles\nPreconditions: a store account with Design Settings access\n\nTEST CASES\n\n1. Tab-bar arrow appears when the sidebar expands (re-test of TC5)\nSetup: desktop, 1440px wide, left sidebar collapsed, Design Settings open. All five tabs fit and no arrow shows.\nSteps: click the top-left menu icon to expand the sidebar.\nExpected: \"Cookie Policy\" no longer fits and the \">\" arrow appears right away, without resizing the window. Clicking it scrolls the tab bar.\n\n2. Tab-bar arrow disappears when the sidebar collapses (re-test of TC5)\nSetup: continue from case 1.\nSteps: click the menu icon again to collapse the sidebar.\nExpected: all tabs fit and the \">\" arrow goes away right away.\n\n3. Tab-bar arrow on phone and window resize (regression check)\nSteps: view Design Settings at 390px, then resize a desktop window across widths where the tabs do and do not fit.\nExpected: no arrow on the phone. On desktop the arrow shows only when tabs overflow.\n\n4. Home Page tooltip on a phone tap (re-test of TC7)\nSetup: phone, 390px, Design Settings > Home Page.\nSteps: tap the \"?\" next to \"Select Your Home Page\". Tap it again, then tap elsewhere on the page.\nExpected: the first tap opens the tooltip. The second tap or a tap elsewhere closes it.\n\n5. Home Page tooltip on desktop (regression check)\nSteps: on desktop, hover the same \"?\", then click it.\nExpected: hover opens it, and clicking keeps it open. It now looks like the Store Description tooltip: black bubble, white text.\n\n6. Colors & Styles fits a phone (re-test of TC9)\nSetup: open Design Settings, click \"Open in AI Studio\", phone width 390px (also try 360px).\nSteps: expand Color Settings, Headings/Subheadings/Body, Button and Category Settings. Tap every \"?\".\nExpected: the form fits the screen width, nothing is cut off on the right, and all 19 \"?\" icons can be reached and open their tooltip.\n\n7. Colors & Styles store preview on a phone\nSetup: same as case 6, scroll down to the store preview.\nSteps: swipe the preview sideways.\nExpected: the preview stays inside its own area. If it's wider than the screen it scrolls on its own, and the rest of the page doesn't move sideways.\n\n8. Colors & Styles on desktop (regression check)\nSteps: view the same page at 1440px and hover every \"?\".\nExpected: layout is the same as before, and all tooltips open.\n\nTEST DATA\nNo special data or IDs needed.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\nThe purple open-section headings in Colors & Styles are a deliberate AI Studio restyle and not part of this task."
+      }
+    ],
+    "comment_text": "QA TEST CASES - PR #8779\n\nWHERE TO TEST\nEnvironment: dev\nPages: Design Settings (tab bar, Home Page tab), AI Studio > Colors & Styles\nPreconditions: a store account with Design Settings access\n\nTEST CASES\n\n1. Tab-bar arrow appears when the sidebar expands (re-test of TC5)\nSetup: desktop, 1440px wide, left sidebar collapsed, Design Settings open. All five tabs fit and no arrow shows.\nSteps: click the top-left menu icon to expand the sidebar.\nExpected: \"Cookie Policy\" no longer fits and the \">\" arrow appears right away, without resizing the window. Clicking it scrolls the tab bar.\n\n2. Tab-bar arrow disappears when the sidebar collapses (re-test of TC5)\nSetup: continue from case 1.\nSteps: click the menu icon again to collapse the sidebar.\nExpected: all tabs fit and the \">\" arrow goes away right away.\n\n3. Tab-bar arrow on phone and window resize (regression check)\nSteps: view Design Settings at 390px, then resize a desktop window across widths where the tabs do and do not fit.\nExpected: no arrow on the phone. On desktop the arrow shows only when tabs overflow.\n\n4. Home Page tooltip on a phone tap (re-test of TC7)\nSetup: phone, 390px, Design Settings > Home Page.\nSteps: tap the \"?\" next to \"Select Your Home Page\". Tap it again, then tap elsewhere on the page.\nExpected: the first tap opens the tooltip. The second tap or a tap elsewhere closes it.\n\n5. Home Page tooltip on desktop (regression check)\nSteps: on desktop, hover the same \"?\", then click it.\nExpected: hover opens it, and clicking keeps it open. It now looks like the Store Description tooltip: black bubble, white text.\n\n6. Colors & Styles fits a phone (re-test of TC9)\nSetup: open Design Settings, click \"Open in AI Studio\", phone width 390px (also try 360px).\nSteps: expand Color Settings, Headings/Subheadings/Body, Button and Category Settings. Tap every \"?\".\nExpected: the form fits the screen width, nothing is cut off on the right, and all 19 \"?\" icons can be reached and open their tooltip.\n\n7. Colors & Styles store preview on a phone\nSetup: same as case 6, scroll down to the store preview.\nSteps: swipe the preview sideways.\nExpected: the preview stays inside its own area. If it's wider than the screen it scrolls on its own, and the rest of the page doesn't move sideways.\n\n8. Colors & Styles on desktop (regression check)\nSteps: view the same page at 1440px and hover every \"?\".\nExpected: layout is the same as before, and all tooltips open.\n\nTEST DATA\nNo special data or IDs needed.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\nThe purple open-section headings in Colors & Styles are a deliberate AI Studio restyle and not part of this task.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791423658431",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000136788",
+    "comment": [
+      {
+        "text": "Env: DEV\nStatus: FAILED\nURL: https://prodev.prosperna.ph/home/design-settings\n\nTEST CASE #1: Store Description help icon spacing and tooltip\nSTEPS:\nStep 1 - On desktop (1440px), open Design Settings > Store Information.\nStep 2 - Look at the \"?\" next to \"Store Description\", then hover it.\nEXPECTED RESULT: The \"?\" is clearly spaced from the label text, and hovering it opens the tooltip without covering the icon.\nEVIDENCE: TC1-store-description-tooltip.mp4\nACTUAL RESULT: The \"?\" is spaced from the label, and the tooltip opens 8px clear of the icon.\n\nTEST CASE #2: \"Add Social Media Platform\" hover colour\nSTEPS:\nStep 1 - On desktop, open Design Settings > Social Media.\nStep 2 - Hover the \"Add Social Media Platform\" button.\nEXPECTED RESULT: On hover the button turns fully black (black background and border, white text).\nEVIDENCE: TC2-add-social-hover.mp4\nACTUAL RESULT: On hover the background and border turn black and the text turns white.\n\nTEST CASE #3: Store Logo and Favicon position\nSTEPS:\nStep 1 - On desktop (1440px), open Design Settings > Store Branding.\nStep 2 - Look at the Store Logo / Favicon previews next to \"Store Logo & Favicon\".\nStep 3 - Narrow the window to phone width (390px).\nEXPECTED RESULT: Same position as the main branch: the previews sit beside the title on desktop without covering \"Select an option to proceed\", and move below it on a phone.\nEVIDENCE: TC3-logo-favicon-position.mp4\nACTUAL RESULT: The previews sit beside the title at 1440px and below it at 390px; the subtitle is not covered at either width.\n\nTEST CASE #4: Tab-bar arrow on phone and desktop\nSTEPS:\nStep 1 - On a phone (390px), open Design Settings and swipe the tab bar.\nStep 2 - On desktop, view Design Settings at widths where the tabs do and do not fit, and click the \">\" arrow when it shows.\nEXPECTED RESULT: No arrow on a phone (the tab bar scrolls by swipe). On desktop the arrow shows only when the tabs do not fit, and clicking it scrolls the tab bar.\nEVIDENCE: TC4-arrow-phone.mp4, TC4-arrow-desktop.mp4\nACTUAL RESULT: No arrow on the phone. On desktop the arrow shows only at widths where the tabs overflow, and clicking it scrolls the tab bar.\n\nTEST CASE #5: Tab-bar arrow after expanding or collapsing the sidebar\nSTEPS:\nStep 1 - On desktop (1440px), open Design Settings with the left sidebar collapsed. All five tabs fit and no arrow shows.\nStep 2 - Click the top-left menu icon to expand the sidebar.\nStep 3 - Click it again to collapse the sidebar.\nEXPECTED RESULT: When the sidebar expands and \"Cookie Policy\" no longer fits, the \">\" arrow appears. When it collapses and all tabs fit, the arrow goes away.\nEVIDENCE: TC4b-arrow-sidebar-toggle.mp4\nACTUAL RESULT: After expanding, \"Cookie Policy\" is cut off (\"Cookie Poli\") and no arrow appears. After collapsing, all tabs fit but the \">\" arrow stays and does nothing. The arrow only corrects itself after the browser window is resized.\n\nTEST CASE #6: Last tab sits at the right edge of the tab bar\nSTEPS:\nStep 1 - On a phone (390px), open Design Settings and scroll the tab bar to the end.\nStep 2 - On desktop with the sidebar expanded, scroll the tab bar to the end.\nEXPECTED RESULT: The last tab (\"Cookie Policy\") sits flush against the right edge of the tab bar, with no empty space after it.\nEVIDENCE: TC5-last-tab-phone.mp4, TC5-last-tab-desktop.mp4\nACTUAL RESULT: \"Cookie Policy\" sits flush with the right edge at both sizes.\n\nTEST CASE #7: Home Page tooltip\nSTEPS:\nStep 1 - On desktop, open Design Settings > Home Page and hover the \"?\" next to \"Select Your Home Page\".\nStep 2 - On a phone (390px), open the same tab and tap that \"?\".\nEXPECTED RESULT: The tooltip opens on desktop hover and on a phone tap.\nEVIDENCE: TC6-home-tooltip-desktop.mp4, TC6-home-tooltip-phone.mp4\nACTUAL RESULT: Desktop hover opens the tooltip. On a phone, tapping the \"?\" shows nothing (0 of 6 taps), while the Store Description \"?\" on the same page opens on the same tap.\n\nTEST CASE #8: Design Settings layout on mobile\nSTEPS:\nStep 1 - On a phone (390px and 360px), open Design Settings.\nStep 2 - Open each tab: Store Information, Social Media, Store Branding, Home Page, Cookie Policy.\nStep 3 - Open the same page on desktop (1440px).\nEXPECTED RESULT: On a phone the settings form is full width with the store preview below it, and no tab's content runs off the side of the screen. On desktop the form and preview sit side by side.\nEVIDENCE: TC7-mobile-layout-390.mp4, TC7-mobile-layout-360.mp4, TC7-desktop-control.mp4\nACTUAL RESULT: On both phone widths the form is full width with the preview below it, and all five tabs fit the screen. On desktop the form and preview sit side by side.\n\nTEST CASE #9: Colors & Style tooltips (now in AI Studio)\nSTEPS:\nStep 1 - Open Design Settings and click \"Open in AI Studio\" on the \"Colors & Style has moved\" notice.\nStep 2 - On desktop, expand Color Settings, Headings/Subheadings/Body, Button and Category Settings, and hover every \"?\".\nStep 3 - Repeat on a phone (390px), tapping every \"?\".\nEXPECTED RESULT: Every \"?\" opens its tooltip, on desktop and on a phone.\nEVIDENCE: TC8-colors-tooltips-desktop.mp4, TC8-colors-tooltips-phone.mp4\nACTUAL RESULT: On desktop all 19 tooltips open. On a phone the Colors & Style form is wider than the screen and cut off on the right: 12 of the 19 \"?\" icons are off-screen and cannot be reached, because the page does not scroll sideways.\n\nTEST CASE #10: Colors & Style section heading colour\nSTEPS:\nStep 1 - Open AI Studio > Colors & Styles and expand a section.\nEXPECTED RESULT: Not tested on this task.\nEVIDENCE: N/A\nACTUAL RESULT: Not tested — the open-section heading colour in AI Studio is a deliberate restyle and is out of scope for this task.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV\nStatus: FAILED\nURL: https://prodev.prosperna.ph/home/design-settings\n\nTEST CASE #1: Store Description help icon spacing and tooltip\nSTEPS:\nStep 1 - On desktop (1440px), open Design Settings > Store Information.\nStep 2 - Look at the \"?\" next to \"Store Description\", then hover it.\nEXPECTED RESULT: The \"?\" is clearly spaced from the label text, and hovering it opens the tooltip without covering the icon.\nEVIDENCE: TC1-store-description-tooltip.mp4\nACTUAL RESULT: The \"?\" is spaced from the label, and the tooltip opens 8px clear of the icon.\n\nTEST CASE #2: \"Add Social Media Platform\" hover colour\nSTEPS:\nStep 1 - On desktop, open Design Settings > Social Media.\nStep 2 - Hover the \"Add Social Media Platform\" button.\nEXPECTED RESULT: On hover the button turns fully black (black background and border, white text).\nEVIDENCE: TC2-add-social-hover.mp4\nACTUAL RESULT: On hover the background and border turn black and the text turns white.\n\nTEST CASE #3: Store Logo and Favicon position\nSTEPS:\nStep 1 - On desktop (1440px), open Design Settings > Store Branding.\nStep 2 - Look at the Store Logo / Favicon previews next to \"Store Logo & Favicon\".\nStep 3 - Narrow the window to phone width (390px).\nEXPECTED RESULT: Same position as the main branch: the previews sit beside the title on desktop without covering \"Select an option to proceed\", and move below it on a phone.\nEVIDENCE: TC3-logo-favicon-position.mp4\nACTUAL RESULT: The previews sit beside the title at 1440px and below it at 390px; the subtitle is not covered at either width.\n\nTEST CASE #4: Tab-bar arrow on phone and desktop\nSTEPS:\nStep 1 - On a phone (390px), open Design Settings and swipe the tab bar.\nStep 2 - On desktop, view Design Settings at widths where the tabs do and do not fit, and click the \">\" arrow when it shows.\nEXPECTED RESULT: No arrow on a phone (the tab bar scrolls by swipe). On desktop the arrow shows only when the tabs do not fit, and clicking it scrolls the tab bar.\nEVIDENCE: TC4-arrow-phone.mp4, TC4-arrow-desktop.mp4\nACTUAL RESULT: No arrow on the phone. On desktop the arrow shows only at widths where the tabs overflow, and clicking it scrolls the tab bar.\n\nTEST CASE #5: Tab-bar arrow after expanding or collapsing the sidebar\nSTEPS:\nStep 1 - On desktop (1440px), open Design Settings with the left sidebar collapsed. All five tabs fit and no arrow shows.\nStep 2 - Click the top-left menu icon to expand the sidebar.\nStep 3 - Click it again to collapse the sidebar.\nEXPECTED RESULT: When the sidebar expands and \"Cookie Policy\" no longer fits, the \">\" arrow appears. When it collapses and all tabs fit, the arrow goes away.\nEVIDENCE: TC4b-arrow-sidebar-toggle.mp4\nACTUAL RESULT: After expanding, \"Cookie Policy\" is cut off (\"Cookie Poli\") and no arrow appears. After collapsing, all tabs fit but the \">\" arrow stays and does nothing. The arrow only corrects itself after the browser window is resized.\n\nTEST CASE #6: Last tab sits at the right edge of the tab bar\nSTEPS:\nStep 1 - On a phone (390px), open Design Settings and scroll the tab bar to the end.\nStep 2 - On desktop with the sidebar expanded, scroll the tab bar to the end.\nEXPECTED RESULT: The last tab (\"Cookie Policy\") sits flush against the right edge of the tab bar, with no empty space after it.\nEVIDENCE: TC5-last-tab-phone.mp4, TC5-last-tab-desktop.mp4\nACTUAL RESULT: \"Cookie Policy\" sits flush with the right edge at both sizes.\n\nTEST CASE #7: Home Page tooltip\nSTEPS:\nStep 1 - On desktop, open Design Settings > Home Page and hover the \"?\" next to \"Select Your Home Page\".\nStep 2 - On a phone (390px), open the same tab and tap that \"?\".\nEXPECTED RESULT: The tooltip opens on desktop hover and on a phone tap.\nEVIDENCE: TC6-home-tooltip-desktop.mp4, TC6-home-tooltip-phone.mp4\nACTUAL RESULT: Desktop hover opens the tooltip. On a phone, tapping the \"?\" shows nothing (0 of 6 taps), while the Store Description \"?\" on the same page opens on the same tap.\n\nTEST CASE #8: Design Settings layout on mobile\nSTEPS:\nStep 1 - On a phone (390px and 360px), open Design Settings.\nStep 2 - Open each tab: Store Information, Social Media, Store Branding, Home Page, Cookie Policy.\nStep 3 - Open the same page on desktop (1440px).\nEXPECTED RESULT: On a phone the settings form is full width with the store preview below it, and no tab's content runs off the side of the screen. On desktop the form and preview sit side by side.\nEVIDENCE: TC7-mobile-layout-390.mp4, TC7-mobile-layout-360.mp4, TC7-desktop-control.mp4\nACTUAL RESULT: On both phone widths the form is full width with the preview below it, and all five tabs fit the screen. On desktop the form and preview sit side by side.\n\nTEST CASE #9: Colors & Style tooltips (now in AI Studio)\nSTEPS:\nStep 1 - Open Design Settings and click \"Open in AI Studio\" on the \"Colors & Style has moved\" notice.\nStep 2 - On desktop, expand Color Settings, Headings/Subheadings/Body, Button and Category Settings, and hover every \"?\".\nStep 3 - Repeat on a phone (390px), tapping every \"?\".\nEXPECTED RESULT: Every \"?\" opens its tooltip, on desktop and on a phone.\nEVIDENCE: TC8-colors-tooltips-desktop.mp4, TC8-colors-tooltips-phone.mp4\nACTUAL RESULT: On desktop all 19 tooltips open. On a phone the Colors & Style form is wider than the screen and cut off on the right: 12 of the 19 \"?\" icons are off-screen and cannot be reached, because the page does not scroll sideways.\n\nTEST CASE #10: Colors & Style section heading colour\nSTEPS:\nStep 1 - Open AI Studio > Colors & Styles and expand a section.\nEXPECTED RESULT: Not tested on this task.\nEVIDENCE: N/A\nACTUAL RESULT: Not tested — the open-section heading colour in AI Studio is a deliberate restyle and is out of scope for this task.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791360595489",
+    "reply_count": 0
+  },
+  {
+    "id": "90180246193197",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "b235c0f8-d9b6-47d7-8f8f-97217a2804af.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/b235c0f8-d9b6-47d7-8f8f-97217a2804af/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/b235c0f8-d9b6-47d7-8f8f-97217a2804af_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/b235c0f8-d9b6-47d7-8f8f-97217a2804af_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/b235c0f8-d9b6-47d7-8f8f-97217a2804af/image.png",
+          "uploaded": true,
+          "width": 574,
+          "height": 1030
+        },
+        "attributes": {
+          "width": "139",
+          "data-id": "b235c0f8-d9b6-47d7-8f8f-97217a2804af.png",
+          "data-attachment": "{\"id\":\"b235c0f8-d9b6-47d7-8f8f-97217a2804af.png\",\"version\":\"0\",\"date\":1786517388530,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/b235c0f8-d9b6-47d7-8f8f-97217a2804af_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/b235c0f8-d9b6-47d7-8f8f-97217a2804af_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/b235c0f8-d9b6-47d7-8f8f-97217a2804af/image.png\",\"width\":574,\"height\":1030,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/b235c0f8-d9b6-47d7-8f8f-97217a2804af/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/b235c0f8-d9b6-47d7-8f8f-97217a2804af/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/b235c0f8-d9b6-47d7-8f8f-97217a2804af/image.png\"}",
+          "data-natural-width": "574",
+          "data-natural-height": "1030"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-DWhnRxSJql"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "0b23ccce-b434-4df1-8222-29e1cbf30056.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/0b23ccce-b434-4df1-8222-29e1cbf30056/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/0b23ccce-b434-4df1-8222-29e1cbf30056_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/0b23ccce-b434-4df1-8222-29e1cbf30056_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/0b23ccce-b434-4df1-8222-29e1cbf30056/image.png",
+          "uploaded": true,
+          "width": 559,
+          "height": 1029
+        },
+        "attributes": {
+          "width": "135",
+          "data-id": "0b23ccce-b434-4df1-8222-29e1cbf30056.png",
+          "data-attachment": "{\"id\":\"0b23ccce-b434-4df1-8222-29e1cbf30056.png\",\"version\":\"0\",\"date\":1786517820445,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/0b23ccce-b434-4df1-8222-29e1cbf30056_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/0b23ccce-b434-4df1-8222-29e1cbf30056_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/0b23ccce-b434-4df1-8222-29e1cbf30056/image.png\",\"width\":559,\"height\":1029,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/0b23ccce-b434-4df1-8222-29e1cbf30056/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/0b23ccce-b434-4df1-8222-29e1cbf30056/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/0b23ccce-b434-4df1-8222-29e1cbf30056/image.png\"}",
+          "data-natural-width": "559",
+          "data-natural-height": "1029"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Htmzx7jnb_"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "95924267-4fe4-49df-a65b-ed90b22d6032.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/95924267-4fe4-49df-a65b-ed90b22d6032/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/95924267-4fe4-49df-a65b-ed90b22d6032_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/95924267-4fe4-49df-a65b-ed90b22d6032_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/95924267-4fe4-49df-a65b-ed90b22d6032/image.png",
+          "uploaded": true,
+          "width": 492,
+          "height": 891
+        },
+        "attributes": {
+          "width": "138",
+          "data-id": "95924267-4fe4-49df-a65b-ed90b22d6032.png",
+          "data-attachment": "{\"id\":\"95924267-4fe4-49df-a65b-ed90b22d6032.png\",\"version\":\"0\",\"date\":1786517820472,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/95924267-4fe4-49df-a65b-ed90b22d6032_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/95924267-4fe4-49df-a65b-ed90b22d6032_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/95924267-4fe4-49df-a65b-ed90b22d6032/image.png\",\"width\":492,\"height\":891,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/95924267-4fe4-49df-a65b-ed90b22d6032/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/95924267-4fe4-49df-a65b-ed90b22d6032/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/95924267-4fe4-49df-a65b-ed90b22d6032/image.png\"}",
+          "data-natural-width": "492",
+          "data-natural-height": "891"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-taBp_cDUI9"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "e4c4b017-73ab-445b-b294-38c7d93599d3.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/e4c4b017-73ab-445b-b294-38c7d93599d3/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/e4c4b017-73ab-445b-b294-38c7d93599d3_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/e4c4b017-73ab-445b-b294-38c7d93599d3_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/e4c4b017-73ab-445b-b294-38c7d93599d3/image.png",
+          "uploaded": true,
+          "width": 493,
+          "height": 853
+        },
+        "attributes": {
+          "width": "144",
+          "data-id": "e4c4b017-73ab-445b-b294-38c7d93599d3.png",
+          "data-attachment": "{\"id\":\"e4c4b017-73ab-445b-b294-38c7d93599d3.png\",\"version\":\"0\",\"date\":1786517820388,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/e4c4b017-73ab-445b-b294-38c7d93599d3_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/e4c4b017-73ab-445b-b294-38c7d93599d3_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/e4c4b017-73ab-445b-b294-38c7d93599d3/image.png\",\"width\":493,\"height\":853,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/e4c4b017-73ab-445b-b294-38c7d93599d3/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/e4c4b017-73ab-445b-b294-38c7d93599d3/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/e4c4b017-73ab-445b-b294-38c7d93599d3/image.png\"}",
+          "data-natural-width": "493",
+          "data-natural-height": "853"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Er6S-fxsFv"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "319f9754-6e8d-4276-a46b-0fa24f2fb3d5.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/319f9754-6e8d-4276-a46b-0fa24f2fb3d5/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/319f9754-6e8d-4276-a46b-0fa24f2fb3d5_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/319f9754-6e8d-4276-a46b-0fa24f2fb3d5_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/319f9754-6e8d-4276-a46b-0fa24f2fb3d5/image.png",
+          "uploaded": true,
+          "width": 563,
+          "height": 1044
+        },
+        "attributes": {
+          "width": "134",
+          "data-id": "319f9754-6e8d-4276-a46b-0fa24f2fb3d5.png",
+          "data-attachment": "{\"id\":\"319f9754-6e8d-4276-a46b-0fa24f2fb3d5.png\",\"version\":\"0\",\"date\":1786517820368,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/319f9754-6e8d-4276-a46b-0fa24f2fb3d5_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/319f9754-6e8d-4276-a46b-0fa24f2fb3d5_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/319f9754-6e8d-4276-a46b-0fa24f2fb3d5/image.png\",\"width\":563,\"height\":1044,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/319f9754-6e8d-4276-a46b-0fa24f2fb3d5/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/319f9754-6e8d-4276-a46b-0fa24f2fb3d5/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/319f9754-6e8d-4276-a46b-0fa24f2fb3d5/image.png\"}",
+          "data-natural-width": "563",
+          "data-natural-height": "1044"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-AsTnqQNZoA"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "a995754b-3bcb-4a6d-b4bb-25672f3610bd.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/a995754b-3bcb-4a6d-b4bb-25672f3610bd/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/a995754b-3bcb-4a6d-b4bb-25672f3610bd_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/a995754b-3bcb-4a6d-b4bb-25672f3610bd_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/a995754b-3bcb-4a6d-b4bb-25672f3610bd/image.png",
+          "uploaded": true,
+          "width": 552,
+          "height": 1031
+        },
+        "attributes": {
+          "width": "133",
+          "data-id": "a995754b-3bcb-4a6d-b4bb-25672f3610bd.png",
+          "data-attachment": "{\"id\":\"a995754b-3bcb-4a6d-b4bb-25672f3610bd.png\",\"version\":\"0\",\"date\":1786517820399,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/a995754b-3bcb-4a6d-b4bb-25672f3610bd_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/a995754b-3bcb-4a6d-b4bb-25672f3610bd_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/a995754b-3bcb-4a6d-b4bb-25672f3610bd/image.png\",\"width\":552,\"height\":1031,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/a995754b-3bcb-4a6d-b4bb-25672f3610bd/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/a995754b-3bcb-4a6d-b4bb-25672f3610bd/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/a995754b-3bcb-4a6d-b4bb-25672f3610bd/image.png\"}",
+          "data-natural-width": "552",
+          "data-natural-height": "1031"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gynQ6R6Djl"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "b61509cb-af89-4fa1-b81d-cfceeb330345.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/b61509cb-af89-4fa1-b81d-cfceeb330345/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/b61509cb-af89-4fa1-b81d-cfceeb330345_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/b61509cb-af89-4fa1-b81d-cfceeb330345_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/b61509cb-af89-4fa1-b81d-cfceeb330345/image.png",
+          "uploaded": true,
+          "width": 511,
+          "height": 811
+        },
+        "attributes": {
+          "width": "157",
+          "data-id": "b61509cb-af89-4fa1-b81d-cfceeb330345.png",
+          "data-attachment": "{\"id\":\"b61509cb-af89-4fa1-b81d-cfceeb330345.png\",\"version\":\"0\",\"date\":1786517824784,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/b61509cb-af89-4fa1-b81d-cfceeb330345_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/b61509cb-af89-4fa1-b81d-cfceeb330345_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/b61509cb-af89-4fa1-b81d-cfceeb330345/image.png\",\"width\":511,\"height\":811,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/b61509cb-af89-4fa1-b81d-cfceeb330345/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/b61509cb-af89-4fa1-b81d-cfceeb330345/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/b61509cb-af89-4fa1-b81d-cfceeb330345/image.png\"}",
+          "data-natural-width": "511",
+          "data-natural-height": "811"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-uJ4WOSJI6j"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "4764d746-26ea-4d18-b2b9-b837c0476eec.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/4764d746-26ea-4d18-b2b9-b837c0476eec/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/4764d746-26ea-4d18-b2b9-b837c0476eec_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/4764d746-26ea-4d18-b2b9-b837c0476eec_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/4764d746-26ea-4d18-b2b9-b837c0476eec/image.png",
+          "uploaded": true,
+          "width": 498,
+          "height": 1007
+        },
+        "attributes": {
+          "width": "123",
+          "data-id": "4764d746-26ea-4d18-b2b9-b837c0476eec.png",
+          "data-attachment": "{\"id\":\"4764d746-26ea-4d18-b2b9-b837c0476eec.png\",\"version\":\"0\",\"date\":1786517833075,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/4764d746-26ea-4d18-b2b9-b837c0476eec_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/4764d746-26ea-4d18-b2b9-b837c0476eec_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/4764d746-26ea-4d18-b2b9-b837c0476eec/image.png\",\"width\":498,\"height\":1007,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/4764d746-26ea-4d18-b2b9-b837c0476eec/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/4764d746-26ea-4d18-b2b9-b837c0476eec/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/4764d746-26ea-4d18-b2b9-b837c0476eec/image.png\"}",
+          "data-natural-width": "498",
+          "data-natural-height": "1007"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-djPBkUuOFJ"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "3816efcc-6ff6-4502-bdf8-47d55662c1cf.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/3816efcc-6ff6-4502-bdf8-47d55662c1cf/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/3816efcc-6ff6-4502-bdf8-47d55662c1cf_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/3816efcc-6ff6-4502-bdf8-47d55662c1cf_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/3816efcc-6ff6-4502-bdf8-47d55662c1cf/image.png",
+          "uploaded": true,
+          "width": 536,
+          "height": 1033
+        },
+        "attributes": {
+          "width": "129",
+          "data-id": "3816efcc-6ff6-4502-bdf8-47d55662c1cf.png",
+          "data-attachment": "{\"id\":\"3816efcc-6ff6-4502-bdf8-47d55662c1cf.png\",\"version\":\"0\",\"date\":1786518122886,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/3816efcc-6ff6-4502-bdf8-47d55662c1cf_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/3816efcc-6ff6-4502-bdf8-47d55662c1cf_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/3816efcc-6ff6-4502-bdf8-47d55662c1cf/image.png\",\"width\":536,\"height\":1033,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/3816efcc-6ff6-4502-bdf8-47d55662c1cf/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/3816efcc-6ff6-4502-bdf8-47d55662c1cf/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/3816efcc-6ff6-4502-bdf8-47d55662c1cf/image.png\"}",
+          "data-natural-width": "536",
+          "data-natural-height": "1033"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1oKnMxSxBH"
+        }
+      },
+      {
+        "text": "design settings mobile view fixed and improved",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-kppJbgL6y1"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\nimage.png\nimage.png\nimage.png\nimage.png\nimage.png\nimage.png\nimage.png\ndesign settings mobile view fixed and improved\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786518133523",
+    "reply_count": 0
+  },
+  {
+    "id": "90180243961849",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-QYvM--KzGr"
+        }
+      },
+      {
+        "text": "url: ",
+        "attributes": {}
+      },
+      {
+        "text": "https://prodev.prosperna.ph/home/design-settings",
+        "attributes": {
+          "link": "https://prodev.prosperna.ph/home/design-settings"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-KiLizqULjX"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "FAILED",
+        "attributes": {
+          "bold": true,
+          "badge-class": "red"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-kaFmtRODWg"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-y2TElSuXVS"
+        }
+      },
+      {
+        "text": "DESKTOP VIEW:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-S47YwSsZAa"
+        }
+      },
+      {
+        "type": "frame",
+        "frame": {
+          "id": "d4acd8db-c083-4cab-9ac0-faa8b070a16a.mp4",
+          "service": "clickup_video",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/d4acd8db-c083-4cab-9ac0-faa8b070a16a/20260805-0253-21.8801172.mp4?view=open",
+          "src": "https://t7537039.p.clickup-attachments.com/t7537039/d4acd8db-c083-4cab-9ac0-faa8b070a16a/20260805-0253-21.8801172.mp4?view=open",
+          "source": 1
+        },
+        "text": "https://t7537039.p.clickup-attachments.com/t7537039/d4acd8db-c083-4cab-9ac0-faa8b070a16a/20260805-0253-21.8801172.mp4?view=open",
+        "attributes": {
+          "block-id": "block-Rg_Wz5DCrz",
+          "data-size": "large",
+          "data-origin": "attachment"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-y164WNdud7"
+        }
+      },
+      {
+        "text": "ISSUE:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-4W-RLLbbMb"
+        }
+      },
+      {
+        "text": "Layout on Mobile View:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-6KKxemjiFe",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "frame",
+        "frame": {
+          "id": "9fb76390-6e29-4948-9298-3ecef13849ee.mp4",
+          "service": "clickup_video",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/9fb76390-6e29-4948-9298-3ecef13849ee/image_picker_155BA0C9-FA59-450A-B090-DD2AB3F43ED0-7825-00000545875AE7AFScreenRecording_08-05-2026%2010-58-07_1.mp4?open=true",
+          "src": "https://t7537039.p.clickup-attachments.com/t7537039/9fb76390-6e29-4948-9298-3ecef13849ee/image_picker_155BA0C9-FA59-450A-B090-DD2AB3F43ED0-7825-00000545875AE7AFScreenRecording_08-05-2026%2010-58-07_1.mp4?open=true",
+          "source": 1
+        },
+        "text": "https://t7537039.p.clickup-attachments.com/t7537039/9fb76390-6e29-4948-9298-3ecef13849ee/image_picker_155BA0C9-FA59-450A-B090-DD2AB3F43ED0-7825-00000545875AE7AFScreenRecording_08-05-2026%2010-58-07_1.mp4?open=true",
+        "attributes": {
+          "block-id": "block-hx__GrqZbF",
+          "data-size": "large"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-PvRKsWvAJh"
+        }
+      },
+      {
+        "text": "Moving this task to \"Ready Priority\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-jiPp44IExd"
+        }
+      },
+      {
+        "text": "cc ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "env: DEV\nurl: https://prodev.prosperna.ph/home/design-settings\nStatus: FAILED\n\nDESKTOP VIEW:\nhttps://t7537039.p.clickup-attachments.com/t7537039/d4acd8db-c083-4cab-9ac0-faa8b070a16a/20260805-0253-21.8801172.mp4?view=open\nISSUE:\nLayout on Mobile View:\nhttps://t7537039.p.clickup-attachments.com/t7537039/9fb76390-6e29-4948-9298-3ecef13849ee/image_picker_155BA0C9-FA59-450A-B090-DD2AB3F43ED0-7825-00000545875AE7AFScreenRecording_08-05-2026%2010-58-07_1.mp4?open=true\nMoving this task to \"Ready Priority\"\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1785898932254",
+    "reply_count": 0
+  },
+  {
+    "id": "90180243961835",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Design Settings"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 5 2026, 11:02AM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Design Settings hss been move to IN TESTING \nUpdated: Aug 5 2026, 11:02AM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1785898926664",
+    "reply_count": 0
+  },
+  {
+    "id": "90180243171511",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "fe27cf60-8bd1-49ee-ba4a-7c403c69c654.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/fe27cf60-8bd1-49ee-ba4a-7c403c69c654/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/fe27cf60-8bd1-49ee-ba4a-7c403c69c654_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/fe27cf60-8bd1-49ee-ba4a-7c403c69c654_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/fe27cf60-8bd1-49ee-ba4a-7c403c69c654/image.png",
+          "uploaded": true,
+          "width": 851,
+          "height": 91
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "fe27cf60-8bd1-49ee-ba4a-7c403c69c654.png",
+          "data-attachment": "{\"id\":\"fe27cf60-8bd1-49ee-ba4a-7c403c69c654.png\",\"version\":\"0\",\"date\":1785719184069,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/fe27cf60-8bd1-49ee-ba4a-7c403c69c654_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/fe27cf60-8bd1-49ee-ba4a-7c403c69c654_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/fe27cf60-8bd1-49ee-ba4a-7c403c69c654/image.png\",\"width\":851,\"height\":91,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/fe27cf60-8bd1-49ee-ba4a-7c403c69c654/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/fe27cf60-8bd1-49ee-ba4a-7c403c69c654/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/fe27cf60-8bd1-49ee-ba4a-7c403c69c654/image.png\"}",
+          "data-natural-width": "851",
+          "data-natural-height": "91"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-v5CLMUJ51E"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "a495e10d-6b51-488e-b79f-8f1259fbd5e3.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/a495e10d-6b51-488e-b79f-8f1259fbd5e3/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/a495e10d-6b51-488e-b79f-8f1259fbd5e3_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/a495e10d-6b51-488e-b79f-8f1259fbd5e3_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/a495e10d-6b51-488e-b79f-8f1259fbd5e3/image.png",
+          "uploaded": true,
+          "width": 842,
+          "height": 86
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "a495e10d-6b51-488e-b79f-8f1259fbd5e3.png",
+          "data-attachment": "{\"id\":\"a495e10d-6b51-488e-b79f-8f1259fbd5e3.png\",\"version\":\"0\",\"date\":1785719202203,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/a495e10d-6b51-488e-b79f-8f1259fbd5e3_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/a495e10d-6b51-488e-b79f-8f1259fbd5e3_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/a495e10d-6b51-488e-b79f-8f1259fbd5e3/image.png\",\"width\":842,\"height\":86,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/a495e10d-6b51-488e-b79f-8f1259fbd5e3/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/a495e10d-6b51-488e-b79f-8f1259fbd5e3/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/a495e10d-6b51-488e-b79f-8f1259fbd5e3/image.png\"}",
+          "data-natural-width": "842",
+          "data-natural-height": "86"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-N9WGNqHAxQ"
+        }
+      },
+      {
+        "text": "reworked the navigation arrow in the nav bar (desktop mode)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e0nOQf-ffJ"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "47aa57c3-1509-4ba5-8f9d-75b8fa7b7670.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/47aa57c3-1509-4ba5-8f9d-75b8fa7b7670/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/47aa57c3-1509-4ba5-8f9d-75b8fa7b7670/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/47aa57c3-1509-4ba5-8f9d-75b8fa7b7670_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/47aa57c3-1509-4ba5-8f9d-75b8fa7b7670/image.png",
+          "uploaded": true,
+          "width": 474,
+          "height": 187
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "47aa57c3-1509-4ba5-8f9d-75b8fa7b7670.png",
+          "data-attachment": "{\"id\":\"47aa57c3-1509-4ba5-8f9d-75b8fa7b7670.png\",\"version\":\"0\",\"date\":1785719266226,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/47aa57c3-1509-4ba5-8f9d-75b8fa7b7670_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/47aa57c3-1509-4ba5-8f9d-75b8fa7b7670/image.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/47aa57c3-1509-4ba5-8f9d-75b8fa7b7670/image.png\",\"width\":474,\"height\":187,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/47aa57c3-1509-4ba5-8f9d-75b8fa7b7670/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/47aa57c3-1509-4ba5-8f9d-75b8fa7b7670/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/47aa57c3-1509-4ba5-8f9d-75b8fa7b7670/image.png\"}",
+          "data-natural-width": "474",
+          "data-natural-height": "187"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-MS1bC0oivc"
+        }
+      },
+      {
+        "text": "the last item in the nav bar list now properly snaps to the rightmost edge of the navbar",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-pCAbB2dKAX"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\nreworked the navigation arrow in the nav bar (desktop mode)\nimage.png\nthe last item in the nav bar list now properly snaps to the rightmost edge of the navbar\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1785719286298",
+    "reply_count": 0
+  },
+  {
+    "id": "90180242995123",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "72c712da-7d9f-4e8e-8081-d83b1d1aaea8.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/72c712da-7d9f-4e8e-8081-d83b1d1aaea8/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/72c712da-7d9f-4e8e-8081-d83b1d1aaea8_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/72c712da-7d9f-4e8e-8081-d83b1d1aaea8_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/72c712da-7d9f-4e8e-8081-d83b1d1aaea8/image.png",
+          "uploaded": true,
+          "width": 518,
+          "height": 381
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "72c712da-7d9f-4e8e-8081-d83b1d1aaea8.png",
+          "data-attachment": "{\"id\":\"72c712da-7d9f-4e8e-8081-d83b1d1aaea8.png\",\"version\":\"0\",\"date\":1785596409468,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/72c712da-7d9f-4e8e-8081-d83b1d1aaea8_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/72c712da-7d9f-4e8e-8081-d83b1d1aaea8_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/72c712da-7d9f-4e8e-8081-d83b1d1aaea8/image.png\",\"width\":518,\"height\":381,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/72c712da-7d9f-4e8e-8081-d83b1d1aaea8/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/72c712da-7d9f-4e8e-8081-d83b1d1aaea8/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/72c712da-7d9f-4e8e-8081-d83b1d1aaea8/image.png\"}",
+          "data-natural-width": "518",
+          "data-natural-height": "381"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-T2f-Gj0LjP"
+        }
+      },
+      {
+        "text": "home page tooltip now working",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-TWaTpcHeo9"
+        }
+      }
+    ],
+    "comment_text": "image.png\nhome page tooltip now working\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1785596418358",
+    "reply_count": 0
+  },
+  {
+    "id": "90180242994642",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "568e25a3-f7a5-4eb4-a3f8-f9df2f20619c.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/568e25a3-f7a5-4eb4-a3f8-f9df2f20619c/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/568e25a3-f7a5-4eb4-a3f8-f9df2f20619c_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/568e25a3-f7a5-4eb4-a3f8-f9df2f20619c_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/568e25a3-f7a5-4eb4-a3f8-f9df2f20619c/image.png",
+          "uploaded": true,
+          "width": 1089,
+          "height": 412
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "568e25a3-f7a5-4eb4-a3f8-f9df2f20619c.png",
+          "data-attachment": "{\"id\":\"568e25a3-f7a5-4eb4-a3f8-f9df2f20619c.png\",\"version\":\"0\",\"date\":1785596346592,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/568e25a3-f7a5-4eb4-a3f8-f9df2f20619c_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/568e25a3-f7a5-4eb4-a3f8-f9df2f20619c_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/568e25a3-f7a5-4eb4-a3f8-f9df2f20619c/image.png\",\"width\":1089,\"height\":412,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/568e25a3-f7a5-4eb4-a3f8-f9df2f20619c/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/568e25a3-f7a5-4eb4-a3f8-f9df2f20619c/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/568e25a3-f7a5-4eb4-a3f8-f9df2f20619c/image.png\"}",
+          "data-natural-width": "1089",
+          "data-natural-height": "412"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-DZQhrCgP1D"
+        }
+      },
+      {
+        "text": "dropdown colors now black",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-IIyo72UvWv"
+        }
+      }
+    ],
+    "comment_text": "image.png\ndropdown colors now black\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1785596352131",
+    "reply_count": 0
+  },
+  {
+    "id": "90180242994581",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "d66c9809-bb01-4a78-be51-c376f9a4c721.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/d66c9809-bb01-4a78-be51-c376f9a4c721/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/d66c9809-bb01-4a78-be51-c376f9a4c721_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/d66c9809-bb01-4a78-be51-c376f9a4c721_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/d66c9809-bb01-4a78-be51-c376f9a4c721/image.png",
+          "uploaded": true,
+          "width": 916,
+          "height": 383
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "d66c9809-bb01-4a78-be51-c376f9a4c721.png",
+          "data-attachment": "{\"id\":\"d66c9809-bb01-4a78-be51-c376f9a4c721.png\",\"version\":\"0\",\"date\":1785596250771,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/d66c9809-bb01-4a78-be51-c376f9a4c721_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/d66c9809-bb01-4a78-be51-c376f9a4c721_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/d66c9809-bb01-4a78-be51-c376f9a4c721/image.png\",\"width\":916,\"height\":383,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/d66c9809-bb01-4a78-be51-c376f9a4c721/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/d66c9809-bb01-4a78-be51-c376f9a4c721/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/d66c9809-bb01-4a78-be51-c376f9a4c721/image.png\"}",
+          "data-natural-width": "916",
+          "data-natural-height": "383"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_0B06w8GB4"
+        }
+      },
+      {
+        "text": "all tooltips now working under Colors and Style",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e1d7507CTt"
+        }
+      }
+    ],
+    "comment_text": "image.png\nall tooltips now working under Colors and Style\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1785596259754",
+    "reply_count": 0
+  },
+  {
+    "id": "90180242994549",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "85e9f8ed-6a6e-45fd-abc0-0ac8c0375119.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/85e9f8ed-6a6e-45fd-abc0-0ac8c0375119/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/85e9f8ed-6a6e-45fd-abc0-0ac8c0375119/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/85e9f8ed-6a6e-45fd-abc0-0ac8c0375119_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/85e9f8ed-6a6e-45fd-abc0-0ac8c0375119/image.png",
+          "uploaded": true,
+          "width": 457,
+          "height": 123
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "85e9f8ed-6a6e-45fd-abc0-0ac8c0375119.png",
+          "data-attachment": "{\"id\":\"85e9f8ed-6a6e-45fd-abc0-0ac8c0375119.png\",\"version\":\"0\",\"date\":1785596214183,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/85e9f8ed-6a6e-45fd-abc0-0ac8c0375119_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/85e9f8ed-6a6e-45fd-abc0-0ac8c0375119/image.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/85e9f8ed-6a6e-45fd-abc0-0ac8c0375119/image.png\",\"width\":457,\"height\":123,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/85e9f8ed-6a6e-45fd-abc0-0ac8c0375119/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/85e9f8ed-6a6e-45fd-abc0-0ac8c0375119/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/85e9f8ed-6a6e-45fd-abc0-0ac8c0375119/image.png\"}",
+          "data-natural-width": "457",
+          "data-natural-height": "123"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-V6YGLrB_91"
+        }
+      },
+      {
+        "text": "navigation arrow has been removed in mobile",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-pMv0FLFcCx"
+        }
+      }
+    ],
+    "comment_text": "image.png\nnavigation arrow has been removed in mobile\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1785596231636",
+    "reply_count": 0
+  },
+  {
+    "id": "90180242994408",
+    "comment": [
+      {
+        "text": "store logo and favicon position matching main branch, was the intended outcome",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-hfd3tP3IjF"
+        }
+      }
+    ],
+    "comment_text": "store logo and favicon position matching main branch, was the intended outcome\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1785596134578",
+    "reply_count": 0
+  },
+  {
+    "id": "90180242994196",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "d0168f4f-03f7-46c6-b31e-4918c010b6a1.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/d0168f4f-03f7-46c6-b31e-4918c010b6a1/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/d0168f4f-03f7-46c6-b31e-4918c010b6a1_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/d0168f4f-03f7-46c6-b31e-4918c010b6a1_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/d0168f4f-03f7-46c6-b31e-4918c010b6a1/image.png",
+          "uploaded": true,
+          "width": 1065,
+          "height": 201
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "d0168f4f-03f7-46c6-b31e-4918c010b6a1.png",
+          "data-attachment": "{\"id\":\"d0168f4f-03f7-46c6-b31e-4918c010b6a1.png\",\"version\":\"0\",\"date\":1785595931879,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/d0168f4f-03f7-46c6-b31e-4918c010b6a1_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/d0168f4f-03f7-46c6-b31e-4918c010b6a1_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/d0168f4f-03f7-46c6-b31e-4918c010b6a1/image.png\",\"width\":1065,\"height\":201,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/d0168f4f-03f7-46c6-b31e-4918c010b6a1/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/d0168f4f-03f7-46c6-b31e-4918c010b6a1/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/d0168f4f-03f7-46c6-b31e-4918c010b6a1/image.png\"}",
+          "data-natural-width": "1065",
+          "data-natural-height": "201"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-zyNccNe-m7"
+        }
+      },
+      {
+        "text": "hover now fully black",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--nMqs-7Qvv"
+        }
+      }
+    ],
+    "comment_text": "image.png\nhover now fully black\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1785595937187",
+    "reply_count": 0
+  },
+  {
+    "id": "90180242993737",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "a1b9eaad-e91f-4617-be3f-1615ad96e0d1.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/a1b9eaad-e91f-4617-be3f-1615ad96e0d1/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/a1b9eaad-e91f-4617-be3f-1615ad96e0d1/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/a1b9eaad-e91f-4617-be3f-1615ad96e0d1_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/a1b9eaad-e91f-4617-be3f-1615ad96e0d1/image.png",
+          "uploaded": true,
+          "width": 382,
+          "height": 263
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "a1b9eaad-e91f-4617-be3f-1615ad96e0d1.png",
+          "data-attachment": "{\"id\":\"a1b9eaad-e91f-4617-be3f-1615ad96e0d1.png\",\"version\":\"0\",\"date\":1785595804955,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/a1b9eaad-e91f-4617-be3f-1615ad96e0d1_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/a1b9eaad-e91f-4617-be3f-1615ad96e0d1/image.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/a1b9eaad-e91f-4617-be3f-1615ad96e0d1/image.png\",\"width\":382,\"height\":263,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/a1b9eaad-e91f-4617-be3f-1615ad96e0d1/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/a1b9eaad-e91f-4617-be3f-1615ad96e0d1/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/a1b9eaad-e91f-4617-be3f-1615ad96e0d1/image.png\"}",
+          "data-natural-width": "382",
+          "data-natural-height": "263"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-nBg-Bv0Ngj"
+        }
+      },
+      {
+        "text": "tool tip now has spacing",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Z-Ff0_CLbf"
+        }
+      }
+    ],
+    "comment_text": "image.png\ntool tip now has spacing\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1785595809859",
+    "reply_count": 0
+  },
+  {
+    "id": "90180234425337",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-l_UAQdNQ7Q"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "FAILED",
+        "attributes": {
+          "badge-class": "red"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-En_kezQ_Sv"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0DMxc3H7QT"
+        }
+      },
+      {
+        "text": "ISSUES:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-UnR5HhuJjS"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-CoXQRbP2Bo"
+        }
+      },
+      {
+        "text": "Tooltip is too close to the text.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ssbiKhpEqq"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "fde5cb14-7c79-4702-ae33-54c8af640a65.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/fde5cb14-7c79-4702-ae33-54c8af640a65/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/fde5cb14-7c79-4702-ae33-54c8af640a65_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/fde5cb14-7c79-4702-ae33-54c8af640a65_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/fde5cb14-7c79-4702-ae33-54c8af640a65/image.png",
+          "uploaded": true,
+          "width": 1536,
+          "height": 771
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "fde5cb14-7c79-4702-ae33-54c8af640a65.png",
+          "data-attachment": "{\"id\":\"fde5cb14-7c79-4702-ae33-54c8af640a65.png\",\"version\":\"0\",\"date\":1783091346940,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/fde5cb14-7c79-4702-ae33-54c8af640a65_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/fde5cb14-7c79-4702-ae33-54c8af640a65_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/fde5cb14-7c79-4702-ae33-54c8af640a65/image.png\",\"width\":1536,\"height\":771,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/fde5cb14-7c79-4702-ae33-54c8af640a65/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/fde5cb14-7c79-4702-ae33-54c8af640a65/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/fde5cb14-7c79-4702-ae33-54c8af640a65/image.png\"}",
+          "data-natural-width": "1536",
+          "data-natural-height": "771"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-yDNaYNzYjj"
+        }
+      },
+      {
+        "text": "Hover Effects is not \"Black\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--sPmgbN3CC"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "f1c676b7-9b47-473d-b45e-eb8bef508fc0.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/f1c676b7-9b47-473d-b45e-eb8bef508fc0/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/f1c676b7-9b47-473d-b45e-eb8bef508fc0_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/f1c676b7-9b47-473d-b45e-eb8bef508fc0_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/f1c676b7-9b47-473d-b45e-eb8bef508fc0/image.png",
+          "uploaded": true,
+          "width": 1536,
+          "height": 792
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "f1c676b7-9b47-473d-b45e-eb8bef508fc0.png",
+          "data-attachment": "{\"id\":\"f1c676b7-9b47-473d-b45e-eb8bef508fc0.png\",\"version\":\"0\",\"date\":1783091386131,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/f1c676b7-9b47-473d-b45e-eb8bef508fc0_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/f1c676b7-9b47-473d-b45e-eb8bef508fc0_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/f1c676b7-9b47-473d-b45e-eb8bef508fc0/image.png\",\"width\":1536,\"height\":792,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/f1c676b7-9b47-473d-b45e-eb8bef508fc0/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/f1c676b7-9b47-473d-b45e-eb8bef508fc0/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/f1c676b7-9b47-473d-b45e-eb8bef508fc0/image.png\"}",
+          "data-natural-width": "1536",
+          "data-natural-height": "792"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-NLmkQ5MnaU"
+        }
+      },
+      {
+        "text": "Fix the Position:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-TFf7FMJKdl"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "31106de1-b3c9-4da5-879d-c5c45dc388e3.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/31106de1-b3c9-4da5-879d-c5c45dc388e3/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/31106de1-b3c9-4da5-879d-c5c45dc388e3_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/31106de1-b3c9-4da5-879d-c5c45dc388e3_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/31106de1-b3c9-4da5-879d-c5c45dc388e3/image.png",
+          "uploaded": true,
+          "width": 1536,
+          "height": 772
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "31106de1-b3c9-4da5-879d-c5c45dc388e3.png",
+          "data-attachment": "{\"id\":\"31106de1-b3c9-4da5-879d-c5c45dc388e3.png\",\"version\":\"0\",\"date\":1783091419292,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/31106de1-b3c9-4da5-879d-c5c45dc388e3_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/31106de1-b3c9-4da5-879d-c5c45dc388e3_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/31106de1-b3c9-4da5-879d-c5c45dc388e3/image.png\",\"width\":1536,\"height\":772,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/31106de1-b3c9-4da5-879d-c5c45dc388e3/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/31106de1-b3c9-4da5-879d-c5c45dc388e3/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/31106de1-b3c9-4da5-879d-c5c45dc388e3/image.png\"}",
+          "data-natural-width": "1536",
+          "data-natural-height": "772"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ZytqkTR7yS"
+        }
+      },
+      {
+        "text": "Why do we need this \"  >  \" when we can scroll the list.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-oSwiRXrJZ8"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "8bc0b1ec-95db-46d9-bf77-07e9d9f60e65.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/8bc0b1ec-95db-46d9-bf77-07e9d9f60e65/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/8bc0b1ec-95db-46d9-bf77-07e9d9f60e65_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/8bc0b1ec-95db-46d9-bf77-07e9d9f60e65_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/8bc0b1ec-95db-46d9-bf77-07e9d9f60e65/image.png",
+          "uploaded": true,
+          "width": 303,
+          "height": 657
+        },
+        "attributes": {
+          "width": "115",
+          "data-id": "8bc0b1ec-95db-46d9-bf77-07e9d9f60e65.png",
+          "data-attachment": "{\"id\":\"8bc0b1ec-95db-46d9-bf77-07e9d9f60e65.png\",\"version\":\"0\",\"date\":1783091509721,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/8bc0b1ec-95db-46d9-bf77-07e9d9f60e65_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/8bc0b1ec-95db-46d9-bf77-07e9d9f60e65_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/8bc0b1ec-95db-46d9-bf77-07e9d9f60e65/image.png\",\"width\":303,\"height\":657,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/8bc0b1ec-95db-46d9-bf77-07e9d9f60e65/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/8bc0b1ec-95db-46d9-bf77-07e9d9f60e65/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/8bc0b1ec-95db-46d9-bf77-07e9d9f60e65/image.png\"}",
+          "data-natural-width": "303",
+          "data-natural-height": "657"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-IyQuqBqNUb"
+        }
+      },
+      {
+        "text": "All the tooltips under \"Color and Styles\" are not working. Additionally, Text SubHeadings are \"Blue\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-xiuQzluIgn"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "25cc4b0d-9fa8-429a-96b1-bb546614ea1b.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/25cc4b0d-9fa8-429a-96b1-bb546614ea1b/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/25cc4b0d-9fa8-429a-96b1-bb546614ea1b_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/25cc4b0d-9fa8-429a-96b1-bb546614ea1b_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/25cc4b0d-9fa8-429a-96b1-bb546614ea1b/image.png",
+          "uploaded": true,
+          "width": 300,
+          "height": 651
+        },
+        "attributes": {
+          "width": "115",
+          "data-id": "25cc4b0d-9fa8-429a-96b1-bb546614ea1b.png",
+          "data-attachment": "{\"id\":\"25cc4b0d-9fa8-429a-96b1-bb546614ea1b.png\",\"version\":\"0\",\"date\":1783091599229,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/25cc4b0d-9fa8-429a-96b1-bb546614ea1b_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/25cc4b0d-9fa8-429a-96b1-bb546614ea1b_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/25cc4b0d-9fa8-429a-96b1-bb546614ea1b/image.png\",\"width\":300,\"height\":651,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/25cc4b0d-9fa8-429a-96b1-bb546614ea1b/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/25cc4b0d-9fa8-429a-96b1-bb546614ea1b/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/25cc4b0d-9fa8-429a-96b1-bb546614ea1b/image.png\"}",
+          "data-natural-width": "300",
+          "data-natural-height": "651"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-qOLgk9YE8d"
+        }
+      },
+      {
+        "text": "This tooltip is not working.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-xBLQjGS_6e"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "ad3b5e94-0fd3-4c16-b418-151f14698775.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/ad3b5e94-0fd3-4c16-b418-151f14698775/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/ad3b5e94-0fd3-4c16-b418-151f14698775_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/ad3b5e94-0fd3-4c16-b418-151f14698775_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/ad3b5e94-0fd3-4c16-b418-151f14698775/image.png",
+          "uploaded": true,
+          "width": 305,
+          "height": 655
+        },
+        "attributes": {
+          "width": "116",
+          "data-id": "ad3b5e94-0fd3-4c16-b418-151f14698775.png",
+          "data-attachment": "{\"id\":\"ad3b5e94-0fd3-4c16-b418-151f14698775.png\",\"version\":\"0\",\"date\":1783091622963,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/ad3b5e94-0fd3-4c16-b418-151f14698775_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/ad3b5e94-0fd3-4c16-b418-151f14698775_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/ad3b5e94-0fd3-4c16-b418-151f14698775/image.png\",\"width\":305,\"height\":655,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/ad3b5e94-0fd3-4c16-b418-151f14698775/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/ad3b5e94-0fd3-4c16-b418-151f14698775/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/ad3b5e94-0fd3-4c16-b418-151f14698775/image.png\"}",
+          "data-natural-width": "305",
+          "data-natural-height": "655"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-NKrW5dNpdS"
+        }
+      },
+      {
+        "text": "Can we make the last section on the list be at the right?",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-zE6HpJVANG"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "436303b3-88cf-493d-8cf6-c6d4b10ab983.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/436303b3-88cf-493d-8cf6-c6d4b10ab983/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/436303b3-88cf-493d-8cf6-c6d4b10ab983_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/436303b3-88cf-493d-8cf6-c6d4b10ab983_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/436303b3-88cf-493d-8cf6-c6d4b10ab983/image.png",
+          "uploaded": true,
+          "width": 303,
+          "height": 652
+        },
+        "attributes": {
+          "width": "116",
+          "data-id": "436303b3-88cf-493d-8cf6-c6d4b10ab983.png",
+          "data-attachment": "{\"id\":\"436303b3-88cf-493d-8cf6-c6d4b10ab983.png\",\"version\":\"0\",\"date\":1783091679494,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/436303b3-88cf-493d-8cf6-c6d4b10ab983_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/436303b3-88cf-493d-8cf6-c6d4b10ab983_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/436303b3-88cf-493d-8cf6-c6d4b10ab983/image.png\",\"width\":303,\"height\":652,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/436303b3-88cf-493d-8cf6-c6d4b10ab983/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/436303b3-88cf-493d-8cf6-c6d4b10ab983/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/436303b3-88cf-493d-8cf6-c6d4b10ab983/image.png\"}",
+          "data-natural-width": "303",
+          "data-natural-height": "652"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-SBmPPYXIDe"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-hTGkh68x_E"
+        }
+      },
+      {
+        "text": "Kindly fix all the returns.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-J96Od8Rpfs"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-L0L6eGzeTg"
+        }
+      },
+      {
+        "text": "Moving this subtask to \"Ready Priority\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-RfMaFO5vBZ"
+        }
+      },
+      {
+        "text": "cc",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "env: DEV\nStatus: FAILED\n\nISSUES:\n\nTooltip is too close to the text.\nimage.png\nHover Effects is not \"Black\"\nimage.png\nFix the Position:\nimage.png\nWhy do we need this \"  >  \" when we can scroll the list.\nimage.png\nAll the tooltips under \"Color and Styles\" are not working. Additionally, Text SubHeadings are \"Blue\"\nimage.png\nThis tooltip is not working.\nimage.png\nCan we make the last section on the list be at the right?\nimage.png\n\nKindly fix all the returns.\n\nMoving this subtask to \"Ready Priority\"\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1783388261818",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1783091723483",
+    "reply_count": 0
+  },
+  {
+    "id": "90180234409597",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Design Settings"
+      },
+      {
+        "text": " has been created ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bf7e6b93-37f7-4ef1-9574-05993b503c8f"
+        }
+      },
+      {
+        "text": "Date: ",
+        "attributes": {}
+      },
+      {
+        "text": "Jul 3 2026, 10:16PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5acb7133-fc27-48ba-9a62-6a27fcef1ac4"
+        }
+      },
+      {
+        "text": "By ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2da5208f-53d3-4f34-b235-72f66cc916c1"
+        }
+      }
+    ],
+    "comment_text": "This task Design Settings has been created \nDate: Jul 3 2026, 10:16PM (Asia/Shanghai)\nBy Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1783388265204",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1783088164120",
+    "reply_count": 0
+  }
+]

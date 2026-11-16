@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack -p 3005",
+    "dev": "next dev -p 3005",
     "build": "next build",
     "start": "next start -p 3005",
     "lint": "eslint .",
@@ -14,32 +14,35 @@
   },
   "dependencies": {
     "@huggingface/transformers": "^4.2.0",
+    "@mono/api-client": "*",
+    "@mono/app-config": "*",
     "@mono/auth": "*",
     "@mono/components": "*",
     "@mono/database": "*",
+    "@mono/rose": "*",
     "@supabase/ssr": "^0.12.5",
     "@supabase/supabase-js": "^2.113.0",
     "faster-whisper-ts": "^1.2.1",
     "ioredis": "^5.4.2",
     "lucide-react": "^1.40.0",
-    "next": "latest",
+    "next": "^16.3.4",
     "next-themes": "^0.4.6",
-    "react": "latest",
-    "react-dom": "latest"
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
+    "@types/node": "^26.4.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.1",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.4",
     "jsdom": "^30.0.1",
     "stylelint": "^17.14.1",
     "stylelint-config-standard": "^40.0.0",
-    "typescript": "latest",
+    "typescript": "^6.0.3",
     "vitest": "^4.1.11"
   }
 }

@@ -1,0 +1,2037 @@
+[
+  {
+    "id": "1100740000133719",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Users"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7774e130-bf56-467b-9d1a-3971afce0fce"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 6 2026, 10:27PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fcf1bfa1-92df-420d-bc36-a6111d7c79f3"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e62af9f7-0865-4e25-b8f0-2c363c784893"
+        }
+      }
+    ],
+    "comment_text": "This task Users has been move to PASSED TESTING \nDate updated: Oct 6 2026, 10:27PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791296827376",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000133696",
+    "comment": [
+      {
+        "text": "Env: DEV (deployed)\nStatus: PASSED\nURL: https://prodev.prosperna.com/home/settings/user-control\n\nTEST CASE #1: Permissions opens the permission page at phone width (390x844)\nSTEPS:\nStep 1 - Set the viewport to 390x844 and open Settings > Users.\nStep 2 - Open the ••• row menu on a non-archived user.\nStep 3 - Click \"Permissions\".\nEXPECTED RESULT: The permission page for that user opens and the URL ends with that user's id.\nEVIDENCE: tc08-menu-open-phone.png, tc08-permissions-page.png\nACTUAL RESULT: The menu opened fully on screen, and clicking \"Permissions\" opened the user's permission page with the URL ending in the user's id. PASSED.\n\nTEST CASE #2: Permissions opens the permission page at desktop width (1440x900)\nSTEPS:\nStep 1 - Open Settings > Users at 1440x900.\nStep 2 - Open the ••• row menu on a non-archived user.\nStep 3 - Click \"Permissions\".\nEXPECTED RESULT: The permission page for that user opens.\nEVIDENCE: tc08-control-menu-desktop.png, tc08-control-permissions-page.png\nACTUAL RESULT: The permission page opened and the URL changed to the user's id. PASSED.\n\nTEST CASE #3: Browser Back returns to the Users list with the menu closed\nSTEPS:\nStep 1 - Open a user's permission page through ••• > Permissions.\nStep 2 - Press the browser Back button.\nEXPECTED RESULT: The Users list is shown again and the row menu is closed.\nEVIDENCE: tc10-back-to-list.png\nACTUAL RESULT: Back returned to the Users list with no row menu open. PASSED.\n\nTEST CASE #4: Permissions opens in a new tab\nSTEPS:\nStep 1 - Open the ••• row menu on a non-archived user.\nStep 2 - Open \"Permissions\" in a new tab (Ctrl+click).\nEXPECTED RESULT: The permission page opens in the new tab.\nEVIDENCE: tc11-new-tab-permissions.png\nACTUAL RESULT: A new tab opened on the user's permission page. PASSED.\n\nTEST CASE #5: The other row-menu entries still work\nSTEPS:\nStep 1 - On a newly invited user, click ••• > Resend Invitation.\nStep 2 - On an invited user whose 24-hour link has expired, click ••• > Resend Invitation.\nStep 3 - On any non-archived user, click ••• > Edit.\nStep 4 - Click ••• > Disable and confirm.\nStep 5 - On the now-archived user, click ••• > Restore.\nStep 6 - Disable the user again, then click ••• > Delete Permanently and confirm.\nEXPECTED RESULT: Each entry does what it says. Resend on a fresh invite is refused while the link is still valid. Resend on an expired invite sends a new link. Edit opens the Edit User modal without leaving the page. Disable archives the user. Restore returns the user to its previous status. Delete Permanently removes the user.\nEVIDENCE: tc13-resend-fresh-invite.png, tc13b-resend-expired-invite.png, tc08b-edit-modal.png, tc14-disable-dialog.png, tc14-archived.png, tc16-restored.png, tc17-delete-dialog.png, tc17-deleted.png\nACTUAL RESULT: Resend on a fresh invite reported that the registration link is still valid. Resend on an expired invite resent the verification link. Edit opened the modal on the same page. Disable archived the user, Restore returned it to Invited, and Delete Permanently removed it from the list. PASSED.\n\nTEST CASE #6: The row menu on the last row is not clipped at phone width\nSTEPS:\nStep 1 - Set the viewport to 390x844 and open Settings > Users.\nStep 2 - Scroll to the last row and open its ••• menu.\nEXPECTED RESULT: The menu is fully on screen and not cut off by the table or the screen edge.\nEVIDENCE: tc12-last-row-menu-phone.png\nACTUAL RESULT: All menu entries rendered fully inside the screen. PASSED.\n\nTEST CASE #7: Archived users are not offered Permissions\nSTEPS:\nStep 1 - Open Settings > Users.\nStep 2 - Open the ••• menu on an archived user.\nEXPECTED RESULT: \"Permissions\" is not offered.\nEVIDENCE: tc15-archived-menu.png\nACTUAL RESULT: The menu offered only \"Restore\" and \"Delete Permanently\". PASSED.\n\nTEST CASE #8: Store column chips do not overlap the Role column (desktop)\nSTEPS:\nStep 1 - Open Settings > Users and set Display to 100.\nStep 2 - Wait for the Store chips to show the location names.\nStep 3 - At 1280, 1366, 1440, 1536 and 1920px wide, scroll the table fully right and compare each Store chip with its cell and the Role text beside it. Repeated in Microsoft Edge at 150% zoom.\nEXPECTED RESULT: Every chip stays inside its Store cell and ends before the Role text.\nEVIDENCE: demo-1280.png, demo-1920.png\nACTUAL RESULT: All 21 chips stayed inside their cells at every width; the location chip ends about 15px before the Role text. PASSED.\n\nTEST CASE #9: Store column chips do not overlap the Role column (mobile)\nSTEPS:\nStep 1 - Open Settings > Users on a touch phone at 360, 375, 390, 414 and 430px wide, Display set to 100.\nStep 2 - Scroll the table right to the Store and Role columns.\nEXPECTED RESULT: Every chip stays inside its Store cell and ends before the Role text.\nEVIDENCE: tc19-store-column-phone-390.png, tc19-store-column-phone-390-scrolled.png\nACTUAL RESULT: The table scrolls sideways at every phone width and all 21 chips stayed inside their cells, clear of the Role column. PASSED.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV (deployed)\nStatus: PASSED\nURL: https://prodev.prosperna.com/home/settings/user-control\n\nTEST CASE #1: Permissions opens the permission page at phone width (390x844)\nSTEPS:\nStep 1 - Set the viewport to 390x844 and open Settings > Users.\nStep 2 - Open the ••• row menu on a non-archived user.\nStep 3 - Click \"Permissions\".\nEXPECTED RESULT: The permission page for that user opens and the URL ends with that user's id.\nEVIDENCE: tc08-menu-open-phone.png, tc08-permissions-page.png\nACTUAL RESULT: The menu opened fully on screen, and clicking \"Permissions\" opened the user's permission page with the URL ending in the user's id. PASSED.\n\nTEST CASE #2: Permissions opens the permission page at desktop width (1440x900)\nSTEPS:\nStep 1 - Open Settings > Users at 1440x900.\nStep 2 - Open the ••• row menu on a non-archived user.\nStep 3 - Click \"Permissions\".\nEXPECTED RESULT: The permission page for that user opens.\nEVIDENCE: tc08-control-menu-desktop.png, tc08-control-permissions-page.png\nACTUAL RESULT: The permission page opened and the URL changed to the user's id. PASSED.\n\nTEST CASE #3: Browser Back returns to the Users list with the menu closed\nSTEPS:\nStep 1 - Open a user's permission page through ••• > Permissions.\nStep 2 - Press the browser Back button.\nEXPECTED RESULT: The Users list is shown again and the row menu is closed.\nEVIDENCE: tc10-back-to-list.png\nACTUAL RESULT: Back returned to the Users list with no row menu open. PASSED.\n\nTEST CASE #4: Permissions opens in a new tab\nSTEPS:\nStep 1 - Open the ••• row menu on a non-archived user.\nStep 2 - Open \"Permissions\" in a new tab (Ctrl+click).\nEXPECTED RESULT: The permission page opens in the new tab.\nEVIDENCE: tc11-new-tab-permissions.png\nACTUAL RESULT: A new tab opened on the user's permission page. PASSED.\n\nTEST CASE #5: The other row-menu entries still work\nSTEPS:\nStep 1 - On a newly invited user, click ••• > Resend Invitation.\nStep 2 - On an invited user whose 24-hour link has expired, click ••• > Resend Invitation.\nStep 3 - On any non-archived user, click ••• > Edit.\nStep 4 - Click ••• > Disable and confirm.\nStep 5 - On the now-archived user, click ••• > Restore.\nStep 6 - Disable the user again, then click ••• > Delete Permanently and confirm.\nEXPECTED RESULT: Each entry does what it says. Resend on a fresh invite is refused while the link is still valid. Resend on an expired invite sends a new link. Edit opens the Edit User modal without leaving the page. Disable archives the user. Restore returns the user to its previous status. Delete Permanently removes the user.\nEVIDENCE: tc13-resend-fresh-invite.png, tc13b-resend-expired-invite.png, tc08b-edit-modal.png, tc14-disable-dialog.png, tc14-archived.png, tc16-restored.png, tc17-delete-dialog.png, tc17-deleted.png\nACTUAL RESULT: Resend on a fresh invite reported that the registration link is still valid. Resend on an expired invite resent the verification link. Edit opened the modal on the same page. Disable archived the user, Restore returned it to Invited, and Delete Permanently removed it from the list. PASSED.\n\nTEST CASE #6: The row menu on the last row is not clipped at phone width\nSTEPS:\nStep 1 - Set the viewport to 390x844 and open Settings > Users.\nStep 2 - Scroll to the last row and open its ••• menu.\nEXPECTED RESULT: The menu is fully on screen and not cut off by the table or the screen edge.\nEVIDENCE: tc12-last-row-menu-phone.png\nACTUAL RESULT: All menu entries rendered fully inside the screen. PASSED.\n\nTEST CASE #7: Archived users are not offered Permissions\nSTEPS:\nStep 1 - Open Settings > Users.\nStep 2 - Open the ••• menu on an archived user.\nEXPECTED RESULT: \"Permissions\" is not offered.\nEVIDENCE: tc15-archived-menu.png\nACTUAL RESULT: The menu offered only \"Restore\" and \"Delete Permanently\". PASSED.\n\nTEST CASE #8: Store column chips do not overlap the Role column (desktop)\nSTEPS:\nStep 1 - Open Settings > Users and set Display to 100.\nStep 2 - Wait for the Store chips to show the location names.\nStep 3 - At 1280, 1366, 1440, 1536 and 1920px wide, scroll the table fully right and compare each Store chip with its cell and the Role text beside it. Repeated in Microsoft Edge at 150% zoom.\nEXPECTED RESULT: Every chip stays inside its Store cell and ends before the Role text.\nEVIDENCE: demo-1280.png, demo-1920.png\nACTUAL RESULT: All 21 chips stayed inside their cells at every width; the location chip ends about 15px before the Role text. PASSED.\n\nTEST CASE #9: Store column chips do not overlap the Role column (mobile)\nSTEPS:\nStep 1 - Open Settings > Users on a touch phone at 360, 375, 390, 414 and 430px wide, Display set to 100.\nStep 2 - Scroll the table right to the Store and Role columns.\nEXPECTED RESULT: Every chip stays inside its Store cell and ends before the Role text.\nEVIDENCE: tc19-store-column-phone-390.png, tc19-store-column-phone-390-scrolled.png\nACTUAL RESULT: The table scrolls sideways at every phone width and all 21 chips stayed inside their cells, clear of the Role column. PASSED.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791296490878",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000133489",
+    "comment": [
+      {
+        "text": "Env: DEV-local\nStatus: PASSED\nURL: http://localhost:3000/home/settings/user-control\n\nTEST CASE #1: Permissions opens the permission page at phone width (390x844)\nSTEPS:\nStep 1 - Set the viewport to 390x844 and open Settings > Users.\nStep 2 - Open the ••• row menu on a non-archived user.\nStep 3 - Click \"Permissions\".\nEXPECTED RESULT: The permission page for that user opens and the URL ends with that user's id.\nEVIDENCE: tc08-menu-open-phone.png, tc08-permissions-page.png\nACTUAL RESULT: The menu opened fully on screen, and clicking \"Permissions\" opened the user's \"Access for …\" permission page with the URL ending in the user's id. PASSED.\n\nTEST CASE #2: Permissions opens the permission page at desktop width (1440x900)\nSTEPS:\nStep 1 - Open Settings > Users at 1440x900.\nStep 2 - Open the ••• row menu on a non-archived user.\nStep 3 - Click \"Permissions\".\nEXPECTED RESULT: The permission page for that user opens.\nEVIDENCE: tc08-control-menu-desktop.png, tc08-control-permissions-page.png\nACTUAL RESULT: The permission page opened and the URL changed to the user's id. PASSED.\n\nTEST CASE #3: Browser Back returns to the Users list with the menu closed\nSTEPS:\nStep 1 - Open a user's permission page through ••• > Permissions.\nStep 2 - Press the browser Back button.\nEXPECTED RESULT: The Users list is shown again and the row menu is closed.\nEVIDENCE: tc10-back-to-list.png\nACTUAL RESULT: Back returned to the Users list with no row menu open. PASSED.\n\nTEST CASE #4: Permissions opens in a new tab\nSTEPS:\nStep 1 - Open the ••• row menu on a non-archived user.\nStep 2 - Open \"Permissions\" in a new tab (Ctrl+click).\nEXPECTED RESULT: The permission page opens in the new tab.\nEVIDENCE: tc11-new-tab-permissions.png\nACTUAL RESULT: A new tab opened on the user's permission page. PASSED.\n\nTEST CASE #5: The other row-menu entries still work\nSTEPS:\nStep 1 - On a newly invited user, click ••• > Resend Invitation.\nStep 2 - On an invited user whose 24-hour link has expired, click ••• > Resend Invitation.\nStep 3 - On any non-archived user, click ••• > Edit.\nStep 4 - Click ••• > Disable and confirm.\nStep 5 - On the now-archived user, click ••• > Restore.\nStep 6 - Disable the user again, then click ••• > Delete Permanently and confirm.\nEXPECTED RESULT: Each entry does what it says. Resend on a fresh invite is refused while the link is still valid. Resend on an expired invite sends a new link. Edit opens the Edit User modal without leaving the page. Disable archives the user. Restore returns the user to its previous status. Delete Permanently removes the user.\nEVIDENCE: tc13-resend-fresh-invite-frame.png, tc13b-resend-expired-invite-frame.png, tc08b-edit-modal.png, tc14-disable-dialog.png, tc14-archived.png, tc16-restored.png, tc17-delete-dialog.png, tc17-deleted.png\nACTUAL RESULT: Resend on a fresh invite showed \"Registration link is still valid and was sent to the user via email.\" Resend on an expired invite showed \"Successfully resent verification link.\" Edit opened the modal on the same page. Disable archived the user, Restore returned it to Invited, and Delete Permanently removed it from the list. PASSED.\n\nTEST CASE #6: The row menu on the last row is not clipped at phone width\nSTEPS:\nStep 1 - Set the viewport to 390x844 and open Settings > Users.\nStep 2 - Scroll to the last row and open its ••• menu.\nEXPECTED RESULT: The menu is fully on screen and not cut off by the table or the screen edge.\nEVIDENCE: tc12-last-row-menu-phone.png\nACTUAL RESULT: All four entries rendered fully inside the screen, over the pagination row. PASSED.\n\nTEST CASE #7: Archived users are not offered Permissions\nSTEPS:\nStep 1 - Open Settings > Users.\nStep 2 - Open the ••• menu on an archived user.\nEXPECTED RESULT: \"Permissions\" is not offered.\nEVIDENCE: tc15-archived-menu.png\nACTUAL RESULT: The menu offered only \"Restore\" and \"Delete Permanently\". PASSED.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV-local\nStatus: PASSED\nURL: http://localhost:3000/home/settings/user-control\n\nTEST CASE #1: Permissions opens the permission page at phone width (390x844)\nSTEPS:\nStep 1 - Set the viewport to 390x844 and open Settings > Users.\nStep 2 - Open the ••• row menu on a non-archived user.\nStep 3 - Click \"Permissions\".\nEXPECTED RESULT: The permission page for that user opens and the URL ends with that user's id.\nEVIDENCE: tc08-menu-open-phone.png, tc08-permissions-page.png\nACTUAL RESULT: The menu opened fully on screen, and clicking \"Permissions\" opened the user's \"Access for …\" permission page with the URL ending in the user's id. PASSED.\n\nTEST CASE #2: Permissions opens the permission page at desktop width (1440x900)\nSTEPS:\nStep 1 - Open Settings > Users at 1440x900.\nStep 2 - Open the ••• row menu on a non-archived user.\nStep 3 - Click \"Permissions\".\nEXPECTED RESULT: The permission page for that user opens.\nEVIDENCE: tc08-control-menu-desktop.png, tc08-control-permissions-page.png\nACTUAL RESULT: The permission page opened and the URL changed to the user's id. PASSED.\n\nTEST CASE #3: Browser Back returns to the Users list with the menu closed\nSTEPS:\nStep 1 - Open a user's permission page through ••• > Permissions.\nStep 2 - Press the browser Back button.\nEXPECTED RESULT: The Users list is shown again and the row menu is closed.\nEVIDENCE: tc10-back-to-list.png\nACTUAL RESULT: Back returned to the Users list with no row menu open. PASSED.\n\nTEST CASE #4: Permissions opens in a new tab\nSTEPS:\nStep 1 - Open the ••• row menu on a non-archived user.\nStep 2 - Open \"Permissions\" in a new tab (Ctrl+click).\nEXPECTED RESULT: The permission page opens in the new tab.\nEVIDENCE: tc11-new-tab-permissions.png\nACTUAL RESULT: A new tab opened on the user's permission page. PASSED.\n\nTEST CASE #5: The other row-menu entries still work\nSTEPS:\nStep 1 - On a newly invited user, click ••• > Resend Invitation.\nStep 2 - On an invited user whose 24-hour link has expired, click ••• > Resend Invitation.\nStep 3 - On any non-archived user, click ••• > Edit.\nStep 4 - Click ••• > Disable and confirm.\nStep 5 - On the now-archived user, click ••• > Restore.\nStep 6 - Disable the user again, then click ••• > Delete Permanently and confirm.\nEXPECTED RESULT: Each entry does what it says. Resend on a fresh invite is refused while the link is still valid. Resend on an expired invite sends a new link. Edit opens the Edit User modal without leaving the page. Disable archives the user. Restore returns the user to its previous status. Delete Permanently removes the user.\nEVIDENCE: tc13-resend-fresh-invite-frame.png, tc13b-resend-expired-invite-frame.png, tc08b-edit-modal.png, tc14-disable-dialog.png, tc14-archived.png, tc16-restored.png, tc17-delete-dialog.png, tc17-deleted.png\nACTUAL RESULT: Resend on a fresh invite showed \"Registration link is still valid and was sent to the user via email.\" Resend on an expired invite showed \"Successfully resent verification link.\" Edit opened the modal on the same page. Disable archived the user, Restore returned it to Invited, and Delete Permanently removed it from the list. PASSED.\n\nTEST CASE #6: The row menu on the last row is not clipped at phone width\nSTEPS:\nStep 1 - Set the viewport to 390x844 and open Settings > Users.\nStep 2 - Scroll to the last row and open its ••• menu.\nEXPECTED RESULT: The menu is fully on screen and not cut off by the table or the screen edge.\nEVIDENCE: tc12-last-row-menu-phone.png\nACTUAL RESULT: All four entries rendered fully inside the screen, over the pagination row. PASSED.\n\nTEST CASE #7: Archived users are not offered Permissions\nSTEPS:\nStep 1 - Open Settings > Users.\nStep 2 - Open the ••• menu on an archived user.\nEXPECTED RESULT: \"Permissions\" is not offered.\nEVIDENCE: tc15-archived-menu.png\nACTUAL RESULT: The menu offered only \"Restore\" and \"Delete Permanently\". PASSED.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791293948422",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000132859",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Users"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 6 2026, 7:37PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Users hss been move to IN TESTING \nUpdated: Oct 6 2026, 7:37PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791286669965",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000129752",
+    "comment": [
+      {
+        "text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-10-06 - branch refactor/tw-settings-standard-v3, commit a44b226fa (test only; the fault itself was corrected on dev by PR #8484)\n\nWHERE TO TEST\nEnvironment: dev.\nPage: Settings > Users (/home/settings/user-control).\nPreconditions: a store on a plan that allows extra users, with at least one team member listed who is not archived, so the row menu offers \"Permissions\". Test at both phone width (about 390px) and desktop (1440x900) - the Sep 18 failure happened at both.\n\nTEST CASES\n\n1. Permissions opens the page, phone. At about 390px, open Settings > Users. Open the row menu on a user who is not archived and click \"Permissions\". EXPECTED: the permission page for that user opens and the web address changes to end with that user's id. The menu closing on its own, with the list still on screen, is the failure.\n\n2. Permissions opens the page, desktop. Repeat case 1 at 1440x900. EXPECTED: the same, the permission page opens.\n\n3. Back returns to the list. After case 1 or 2, use the browser Back button. EXPECTED: you return to the Users list, and the row menu is closed.\n\n4. Open in a new tab still works. Right-click \"Permissions\" and choose Open link in new tab. EXPECTED: the permission page opens in the new tab. This was the only way through while the fault was present, so it should keep working.\n\n5. The other menu entries still work. On an invited user, open the row menu and use \"Resend Invitation\". On any user, try the remaining entries. EXPECTED: each one does what it says. These are buttons rather than navigation and must not have been affected.\n\n6. The menu is not clipped, phone. At about 390px, open the row menu on the last row of the table. EXPECTED: the menu is fully on screen and not cut off by the table or the edge of the screen.\n\n7. Archived users. Find an archived user and open the row menu. EXPECTED: \"Permissions\" is not offered, as before.\n\nTEST DATA\nAny non-archived team member on a store that allows extra users. No special data needed.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- Cases 1 to 7 of the Sep 18 run (modal close, modal reset on reopen, menu not clipped on desktop, no extra arrow on the menu button, title tooltip, Add User alignment, pagination) all passed then and were not changed.\n- The permission page content itself is covered by the Store Settings task, not here."
+      }
+    ],
+    "comment_text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-10-06 - branch refactor/tw-settings-standard-v3, commit a44b226fa (test only; the fault itself was corrected on dev by PR #8484)\n\nWHERE TO TEST\nEnvironment: dev.\nPage: Settings > Users (/home/settings/user-control).\nPreconditions: a store on a plan that allows extra users, with at least one team member listed who is not archived, so the row menu offers \"Permissions\". Test at both phone width (about 390px) and desktop (1440x900) - the Sep 18 failure happened at both.\n\nTEST CASES\n\n1. Permissions opens the page, phone. At about 390px, open Settings > Users. Open the row menu on a user who is not archived and click \"Permissions\". EXPECTED: the permission page for that user opens and the web address changes to end with that user's id. The menu closing on its own, with the list still on screen, is the failure.\n\n2. Permissions opens the page, desktop. Repeat case 1 at 1440x900. EXPECTED: the same, the permission page opens.\n\n3. Back returns to the list. After case 1 or 2, use the browser Back button. EXPECTED: you return to the Users list, and the row menu is closed.\n\n4. Open in a new tab still works. Right-click \"Permissions\" and choose Open link in new tab. EXPECTED: the permission page opens in the new tab. This was the only way through while the fault was present, so it should keep working.\n\n5. The other menu entries still work. On an invited user, open the row menu and use \"Resend Invitation\". On any user, try the remaining entries. EXPECTED: each one does what it says. These are buttons rather than navigation and must not have been affected.\n\n6. The menu is not clipped, phone. At about 390px, open the row menu on the last row of the table. EXPECTED: the menu is fully on screen and not cut off by the table or the edge of the screen.\n\n7. Archived users. Find an archived user and open the row menu. EXPECTED: \"Permissions\" is not offered, as before.\n\nTEST DATA\nAny non-archived team member on a store that allows extra users. No special data needed.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- Cases 1 to 7 of the Sep 18 run (modal close, modal reset on reopen, menu not clipped on desktop, no extra arrow on the menu button, title tooltip, Add User alignment, pagination) all passed then and were not changed.\n- The permission page content itself is covered by the Store Settings task, not here.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791249038662",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000129749",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\n\nQA return of Sep 18, cases 8 and 9 (clicking \"Permissions\" in the row menu only closed the menu, the page never changed) has been investigated.\n\nWHAT WAS WRONG\nThe shared dropdown used to cancel the click on any menu entry that had no web address attached. \"Permissions\" is not a plain link, it is an in-app navigation entry, so it has no address of that kind, and the cancel stopped it from going anywhere. The menu closed and nothing else happened. This is why it failed at desktop width too, with nothing being clipped.\n\nWHY NOTHING NEEDED FIXING ON THIS BRANCH\nThat cancel was introduced on the dev branch on Aug 4 and was still there when this was tested on Sep 18. The settings branch has never carried it: it has always limited the cancel to real links only, so \"Permissions\" has worked here throughout. On dev itself the fault was corrected separately on Sep 23 in PR #8484.\n\nSo there is no behaviour change to make here. What was missing was anything stopping it coming back.\n\nEXTRA WORK\n\nAdded a test that opens the row menu, clicks \"Permissions\" and requires the permission page to actually load. The shared dropdown had no test covering in-app navigation at all, so this failure could have returned unnoticed. The test fails if the old cancel is reintroduced.\n\nPULL REQUESTS\n\nNo dev PR needed for the fault itself; dev was already corrected by PR #8484. The new test is committed on refactor/tw-settings-standard-v3 (commit a44b226fa).\n\nHOW IT WAS TESTED\n\nESLint clean. The shared dropdown suite passes at 31 tests including the new one, and 12 test files and 204 tests pass across Users, Payment Settings, Shipping and the dropdown. The new test was confirmed to fail against the old behaviour, so it genuinely guards the case.\n\nCases 1 to 7 of the Sep 18 run were already passing and were not touched.\n\nNEXT STEPS\n\nPlease retest cases 8 and 9 on dev, at both phone and desktop width. Clicking \"Permissions\" should open the permission page for that user.\n\nQA TEST CASES\n\nA QA TEST CASES SUMMARY comment has been added to this task."
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\n\nQA return of Sep 18, cases 8 and 9 (clicking \"Permissions\" in the row menu only closed the menu, the page never changed) has been investigated.\n\nWHAT WAS WRONG\nThe shared dropdown used to cancel the click on any menu entry that had no web address attached. \"Permissions\" is not a plain link, it is an in-app navigation entry, so it has no address of that kind, and the cancel stopped it from going anywhere. The menu closed and nothing else happened. This is why it failed at desktop width too, with nothing being clipped.\n\nWHY NOTHING NEEDED FIXING ON THIS BRANCH\nThat cancel was introduced on the dev branch on Aug 4 and was still there when this was tested on Sep 18. The settings branch has never carried it: it has always limited the cancel to real links only, so \"Permissions\" has worked here throughout. On dev itself the fault was corrected separately on Sep 23 in PR #8484.\n\nSo there is no behaviour change to make here. What was missing was anything stopping it coming back.\n\nEXTRA WORK\n\nAdded a test that opens the row menu, clicks \"Permissions\" and requires the permission page to actually load. The shared dropdown had no test covering in-app navigation at all, so this failure could have returned unnoticed. The test fails if the old cancel is reintroduced.\n\nPULL REQUESTS\n\nNo dev PR needed for the fault itself; dev was already corrected by PR #8484. The new test is committed on refactor/tw-settings-standard-v3 (commit a44b226fa).\n\nHOW IT WAS TESTED\n\nESLint clean. The shared dropdown suite passes at 31 tests including the new one, and 12 test files and 204 tests pass across Users, Payment Settings, Shipping and the dropdown. The new test was confirmed to fail against the old behaviour, so it genuinely guards the case.\n\nCases 1 to 7 of the Sep 18 run were already passing and were not touched.\n\nNEXT STEPS\n\nPlease retest cases 8 and 9 on dev, at both phone and desktop width. Clicking \"Permissions\" should open the permission page for that user.\n\nQA TEST CASES\n\nA QA TEST CASES SUMMARY comment has been added to this task.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791249021004",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000063236",
+    "comment": [
+      {
+        "text": "Env: DEV-local\nStatus: FAILED\nURL: http://localhost:3000/home/settings/user-control\n\nTEST CASE #1: Add New User modal closes from its X (exit) button\nSTEPS:\nOpen Settings > Users.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click \"Add User\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click the X in the modal header.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The modal closes.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc01-modal-open.png, tc01-modal-closed.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The modal closed. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #2: Reopening the modal after closing with X shows empty fields\nSTEPS:\nOpen \"Add User\", type a First Name.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Close the modal with the X.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click \"Add User\" again.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: First Name is empty; the form does not retain the previous entry.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc02-modal-reopened.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: First Name was empty on reopen. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #3: Row actions menu is not clipped by the table (desktop, 1440x900)\nSTEPS:\nOpen Settings > Users.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click the ••• menu on the first row.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The menu renders outside the horizontally scrolling table wrapper and sits fully inside the viewport.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc03-menu-open-desktop.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The menu rendered outside the scrolling wrapper and was fully within the viewport. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #4: The ••• toggle no longer renders a redundant caret\nSTEPS:\nOpen Settings > Users.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Inspect the Actions cell of the first row.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Only the ••• icon renders; no separate chevron beside it.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc04-actions-toggle.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Only the ••• icon rendered. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #5: Page-title (?) tooltip opens on hover\nSTEPS:\nOpen Settings > Users.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Hover the (?) icon beside the \"Users\" title.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The tooltip becomes fully opaque and reads \"View, add and edit admin users and their permissions\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc05-tooltip-hover.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The tooltip went from opacity 0 to opacity 1 on hover. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #6: \"Add User\" is right-aligned at phone width (390x844)\nSTEPS:\nSet the viewport to 390x844 before loading the page.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Open Settings > Users.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The Add User button sits at the right edge of its row, not the left.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc06-add-user-phone.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The button sat in the right half of its row, flush to the right edge. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #7: Pagination stays on one row with a numbered pager at phone width\nSTEPS:\nSet the viewport to 390x844 before loading the page.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Open Settings > Users and scroll to the pagination row.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: \"Display :\" and the page arrows share one row, and the numbered page button is present between the arrows.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc07-pagination-phone.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Both controls shared one row and the page button \"1\" rendered between the arrows. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #8: Row menu \"Permissions\" opens the permission page (phone, 390x844)\nSTEPS:\nSet the viewport to 390x844 before loading the page.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Open Settings > Users, click the ••• menu on a non-archived user.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click \"Permissions\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The menu is fully on screen, and the app navigates to /home/settings/user-control/<storeMemberId>.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc08-menu-open-phone.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The menu was fully on screen, but clicking \"Permissions\" only closed the menu. The page stayed on the Users list and the URL never changed. FAILED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #9: Control - \"Permissions\" at desktop width (1440x900)\nSTEPS:\nOpen Settings > Users at 1440x900.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click the ••• menu on a non-archived user, then click \"Permissions\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The app navigates to /home/settings/user-control/<storeMemberId>.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc08-control-menu-desktop.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Identical failure at desktop width with nothing clipped - the menu closed and the URL never changed. FAILED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #10: Page-title (?) tooltip on a touch device\nSTEPS:\nOpen Settings > Users in a touch-enabled 390x844 session.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Tap the (?) icon beside the \"Users\" title.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The tooltip opens.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc09-tooltip-after-tap.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The tooltip opened on tap. PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nDEFECT: \"Permissions\" menu item never navigates\n\nWhere: prosperna1 - src/components/ui/Dropdown.jsx (Dropdown.Item), as used by src/pages/home/users/UserControl/index.jsx:277-287. Route /home/settings/user-control.\n\nSteps to Recreate:\nOpen Settings > Users as a PARENT user on an upgraded plan.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click the ••• menu on any non-archived user.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click \"Permissions\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "\nExpected Result: The app navigates to /home/settings/user-control/<storeMemberId>.\n\nActual Result: The menu closes and nothing else happens. UserControl renders the item as <Dropdown.Item as={Link} to={...}> - it passes ",
+        "attributes": {}
+      },
+      {
+        "text": "to",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": ", never ",
+        "attributes": {}
+      },
+      {
+        "text": "href",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": ". Dropdown.Item reads its own ",
+        "attributes": {}
+      },
+      {
+        "text": "href",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": " prop (undefined here) and runs ",
+        "attributes": {}
+      },
+      {
+        "text": "if (!href || href === '#' || href.startsWith('#')) e.preventDefault();",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": ", so it calls preventDefault() on every click at this call site. React Router's Link only navigates ",
+        "attributes": {}
+      },
+      {
+        "text": "if (!event.defaultPrevented)",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": ", so navigation is suppressed while close() still runs. Link does put a real href on the anchor, so the item looks like a working link and middle-click still works - which is why it reads as \"the button is dead\". This reproduces at both 390px and 1440px, so it is unrelated to the menu-clipping fix, which is working correctly (cases #3 and #8). Any other ",
+        "attributes": {}
+      },
+      {
+        "text": "Dropdown.Item as={Link} to={...}",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": " call site in the app has the same bug.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV-local\nStatus: FAILED\nURL: http://localhost:3000/home/settings/user-control\n\nTEST CASE #1: Add New User modal closes from its X (exit) button\nSTEPS:\nOpen Settings > Users.\nClick \"Add User\".\nClick the X in the modal header.\nEXPECTED RESULT: The modal closes.\nEVIDENCE: tc01-modal-open.png, tc01-modal-closed.png\nACTUAL RESULT: The modal closed. PASSED.\n\nTEST CASE #2: Reopening the modal after closing with X shows empty fields\nSTEPS:\nOpen \"Add User\", type a First Name.\nClose the modal with the X.\nClick \"Add User\" again.\nEXPECTED RESULT: First Name is empty; the form does not retain the previous entry.\nEVIDENCE: tc02-modal-reopened.png\nACTUAL RESULT: First Name was empty on reopen. PASSED.\n\nTEST CASE #3: Row actions menu is not clipped by the table (desktop, 1440x900)\nSTEPS:\nOpen Settings > Users.\nClick the ••• menu on the first row.\nEXPECTED RESULT: The menu renders outside the horizontally scrolling table wrapper and sits fully inside the viewport.\nEVIDENCE: tc03-menu-open-desktop.png\nACTUAL RESULT: The menu rendered outside the scrolling wrapper and was fully within the viewport. PASSED.\n\nTEST CASE #4: The ••• toggle no longer renders a redundant caret\nSTEPS:\nOpen Settings > Users.\nInspect the Actions cell of the first row.\nEXPECTED RESULT: Only the ••• icon renders; no separate chevron beside it.\nEVIDENCE: tc04-actions-toggle.png\nACTUAL RESULT: Only the ••• icon rendered. PASSED.\n\nTEST CASE #5: Page-title (?) tooltip opens on hover\nSTEPS:\nOpen Settings > Users.\nHover the (?) icon beside the \"Users\" title.\nEXPECTED RESULT: The tooltip becomes fully opaque and reads \"View, add and edit admin users and their permissions\".\nEVIDENCE: tc05-tooltip-hover.png\nACTUAL RESULT: The tooltip went from opacity 0 to opacity 1 on hover. PASSED.\n\nTEST CASE #6: \"Add User\" is right-aligned at phone width (390x844)\nSTEPS:\nSet the viewport to 390x844 before loading the page.\nOpen Settings > Users.\nEXPECTED RESULT: The Add User button sits at the right edge of its row, not the left.\nEVIDENCE: tc06-add-user-phone.png\nACTUAL RESULT: The button sat in the right half of its row, flush to the right edge. PASSED.\n\nTEST CASE #7: Pagination stays on one row with a numbered pager at phone width\nSTEPS:\nSet the viewport to 390x844 before loading the page.\nOpen Settings > Users and scroll to the pagination row.\nEXPECTED RESULT: \"Display :\" and the page arrows share one row, and the numbered page button is present between the arrows.\nEVIDENCE: tc07-pagination-phone.png\nACTUAL RESULT: Both controls shared one row and the page button \"1\" rendered between the arrows. PASSED.\n\nTEST CASE #8: Row menu \"Permissions\" opens the permission page (phone, 390x844)\nSTEPS:\nSet the viewport to 390x844 before loading the page.\nOpen Settings > Users, click the ••• menu on a non-archived user.\nClick \"Permissions\".\nEXPECTED RESULT: The menu is fully on screen, and the app navigates to /home/settings/user-control/<storeMemberId>.\nEVIDENCE: tc08-menu-open-phone.png\nACTUAL RESULT: The menu was fully on screen, but clicking \"Permissions\" only closed the menu. The page stayed on the Users list and the URL never changed. FAILED.\n\nTEST CASE #9: Control - \"Permissions\" at desktop width (1440x900)\nSTEPS:\nOpen Settings > Users at 1440x900.\nClick the ••• menu on a non-archived user, then click \"Permissions\".\nEXPECTED RESULT: The app navigates to /home/settings/user-control/<storeMemberId>.\nEVIDENCE: tc08-control-menu-desktop.png\nACTUAL RESULT: Identical failure at desktop width with nothing clipped - the menu closed and the URL never changed. FAILED.\n\nTEST CASE #10: Page-title (?) tooltip on a touch device\nSTEPS:\nOpen Settings > Users in a touch-enabled 390x844 session.\nTap the (?) icon beside the \"Users\" title.\nEXPECTED RESULT: The tooltip opens.\nEVIDENCE: tc09-tooltip-after-tap.png\nACTUAL RESULT: The tooltip opened on tap. PASSED.\n\nDEFECT: \"Permissions\" menu item never navigates\n\nWhere: prosperna1 - src/components/ui/Dropdown.jsx (Dropdown.Item), as used by src/pages/home/users/UserControl/index.jsx:277-287. Route /home/settings/user-control.\n\nSteps to Recreate:\nOpen Settings > Users as a PARENT user on an upgraded plan.\nClick the ••• menu on any non-archived user.\nClick \"Permissions\".\n\nExpected Result: The app navigates to /home/settings/user-control/<storeMemberId>.\n\nActual Result: The menu closes and nothing else happens. UserControl renders the item as <Dropdown.Item as={Link} to={...}> - it passes to, never href. Dropdown.Item reads its own href prop (undefined here) and runs if (!href || href === '#' || href.startsWith('#')) e.preventDefault();, so it calls preventDefault() on every click at this call site. React Router's Link only navigates if (!event.defaultPrevented), so navigation is suppressed while close() still runs. Link does put a real href on the anchor, so the item looks like a working link and middle-click still works - which is why it reads as \"the button is dead\". This reproduces at both 390px and 1440px, so it is unrelated to the menu-clipping fix, which is working correctly (cases #3 and #8). Any other Dropdown.Item as={Link} to={...} call site in the app has the same bug.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789696254088",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000063167",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Users"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Sep 18 2026, 9:18AM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Users hss been move to IN TESTING \nUpdated: Sep 18 2026, 9:18AM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789694300974",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000048289",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "f589f9db-3b28-45df-80af-9722547d6eaa.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/f589f9db-3b28-45df-80af-9722547d6eaa/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/f589f9db-3b28-45df-80af-9722547d6eaa_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/f589f9db-3b28-45df-80af-9722547d6eaa_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/f589f9db-3b28-45df-80af-9722547d6eaa/image.png",
+          "uploaded": true,
+          "width": 1524,
+          "height": 796
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "f589f9db-3b28-45df-80af-9722547d6eaa.png",
+          "data-attachment": null,
+          "data-natural-width": "1524",
+          "data-natural-height": "796"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-w9hcxzPbKb"
+        }
+      },
+      {
+        "text": "I also fixed the actions menu from clipping through the screen",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-YMdXd9PNJj"
+        }
+      }
+    ],
+    "comment_text": "image.png\nI also fixed the actions menu from clipping through the screen\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789435309566",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000048266",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "f1e30669-cc46-470d-a134-818711dfd542.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/f1e30669-cc46-470d-a134-818711dfd542/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/f1e30669-cc46-470d-a134-818711dfd542_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/f1e30669-cc46-470d-a134-818711dfd542_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/f1e30669-cc46-470d-a134-818711dfd542/image.png",
+          "uploaded": true,
+          "width": 472,
+          "height": 838
+        },
+        "attributes": {
+          "width": "140",
+          "data-id": "f1e30669-cc46-470d-a134-818711dfd542.png",
+          "data-attachment": null,
+          "data-natural-width": "472",
+          "data-natural-height": "838"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-JWZFEs5LjT"
+        }
+      },
+      {
+        "text": "permission button function restored",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ufAbB3CnX_"
+        }
+      }
+    ],
+    "comment_text": "image.png\npermission button function restored\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789434553908",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000032411",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-a1149380-acbe-11f1-857f-154404d9fc80"
+        }
+      },
+      {
+        "text": "Status: FAILED",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-a1149381-acbe-11f1-857f-154404d9fc80"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-a114ba90-acbe-11f1-857f-154404d9fc80"
+        }
+      },
+      {
+        "text": "Permission button is not working",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "frame",
+        "text": "https://t7537039.p.clickup-attachments.com/t7537039/b31e1d27-2930-4cca-b5b2-56d74047a7fa/paste_5f14e65b-3bb3-408d-91da-c163382e7fba.mp4?view=open",
+        "frame": {
+          "id": "b31e1d27-2930-4cca-b5b2-56d74047a7fa.mp4",
+          "service": "clickup_video",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/b31e1d27-2930-4cca-b5b2-56d74047a7fa/paste_5f14e65b-3bb3-408d-91da-c163382e7fba.mp4?view=open",
+          "src": "https://t7537039.p.clickup-attachments.com/t7537039/b31e1d27-2930-4cca-b5b2-56d74047a7fa/paste_5f14e65b-3bb3-408d-91da-c163382e7fba.mp4?view=open",
+          "source": 1
+        },
+        "attributes": {
+          "block-id": "block-b31e1d27-2930-4cca-b5b2-56d74047a7fa.mp4",
+          "data-size": "large",
+          "data-origin": "attachment"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-a114ba91-acbe-11f1-857f-154404d9fc80"
+        }
+      }
+    ],
+    "comment_text": "env: DEV\nStatus: FAILED\n\nPermission button is not working\nhttps://t7537039.p.clickup-attachments.com/t7537039/b31e1d27-2930-4cca-b5b2-56d74047a7fa/paste_5f14e65b-3bb3-408d-91da-c163382e7fba.mp4?view=open\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789007022240",
+    "reply_count": 0
+  },
+  {
+    "id": "90180249247825",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Users"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "READY FOR TESTING"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1d974daa-846f-4f2b-aa92-4d7879d6a360"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 24 2026, 9:36AM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2f823e5f-a650-4c0d-b5b1-fff90b29e6cf"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eb747be5-76e2-450a-80a4-2f28d51dc0ed"
+        }
+      }
+    ],
+    "comment_text": "This Users has been move to READY FOR TESTING\nDate updated: Aug 24 2026, 9:36AM (Asia/Singapore)\nTriggered by: Angelo Kamachi\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787535400043",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248397917",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "9f26a5da-57a1-4e1c-b85d-03746338af59.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/9f26a5da-57a1-4e1c-b85d-03746338af59/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/9f26a5da-57a1-4e1c-b85d-03746338af59_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/9f26a5da-57a1-4e1c-b85d-03746338af59_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/9f26a5da-57a1-4e1c-b85d-03746338af59/image.png",
+          "uploaded": true,
+          "width": 465,
+          "height": 702
+        },
+        "attributes": {
+          "width": "165",
+          "data-id": "9f26a5da-57a1-4e1c-b85d-03746338af59.png",
+          "data-attachment": null,
+          "data-natural-width": "465",
+          "data-natural-height": "702"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7stdrrkWKm"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "9f26a5da-57a1-4e1c-b85d-03746338af59.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/9f26a5da-57a1-4e1c-b85d-03746338af59/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/9f26a5da-57a1-4e1c-b85d-03746338af59_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/9f26a5da-57a1-4e1c-b85d-03746338af59_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/9f26a5da-57a1-4e1c-b85d-03746338af59/image.png",
+          "uploaded": true,
+          "width": 465,
+          "height": 702
+        },
+        "attributes": {
+          "width": "165",
+          "data-id": "9f26a5da-57a1-4e1c-b85d-03746338af59.png",
+          "data-attachment": null,
+          "data-natural-width": "465",
+          "data-natural-height": "702"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-m7-dhgALoo"
+        }
+      },
+      {
+        "text": "pagination fix",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ZIIz17zAK"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\npagination fix\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787193613318",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248396596",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "a0a73a2e-7d21-4275-af06-fa7f409b9e75.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/a0a73a2e-7d21-4275-af06-fa7f409b9e75/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/a0a73a2e-7d21-4275-af06-fa7f409b9e75_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/a0a73a2e-7d21-4275-af06-fa7f409b9e75_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/a0a73a2e-7d21-4275-af06-fa7f409b9e75/image.png",
+          "uploaded": true,
+          "width": 1508,
+          "height": 314
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "a0a73a2e-7d21-4275-af06-fa7f409b9e75.png",
+          "data-attachment": null,
+          "data-natural-width": "1508",
+          "data-natural-height": "314"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1k4Qfl144o"
+        }
+      },
+      {
+        "text": "add user is now to the right",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-QEhqENXAYf"
+        }
+      }
+    ],
+    "comment_text": "image.png\nadd user is now to the right\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787193128286",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248396582",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "7037458e-ba13-4489-9fd6-ef3bee6b49c9.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/7037458e-ba13-4489-9fd6-ef3bee6b49c9/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/7037458e-ba13-4489-9fd6-ef3bee6b49c9/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/7037458e-ba13-4489-9fd6-ef3bee6b49c9_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/7037458e-ba13-4489-9fd6-ef3bee6b49c9/image.png",
+          "uploaded": true,
+          "width": 454,
+          "height": 208
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "7037458e-ba13-4489-9fd6-ef3bee6b49c9.png",
+          "data-attachment": null,
+          "data-natural-width": "454",
+          "data-natural-height": "208"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0P-XD51ezB"
+        }
+      },
+      {
+        "text": "tooltip fixed",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-a6jhDBlHst"
+        }
+      }
+    ],
+    "comment_text": "image.png\ntooltip fixed\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787193113691",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248396556",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "7bec853d-063e-4517-9a06-9b33f143a9dd.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/7bec853d-063e-4517-9a06-9b33f143a9dd/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/7bec853d-063e-4517-9a06-9b33f143a9dd/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/7bec853d-063e-4517-9a06-9b33f143a9dd_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/7bec853d-063e-4517-9a06-9b33f143a9dd/image.png",
+          "uploaded": true,
+          "width": 285,
+          "height": 262
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "7bec853d-063e-4517-9a06-9b33f143a9dd.png",
+          "data-attachment": null,
+          "data-natural-width": "285",
+          "data-natural-height": "262"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-daSQ-e7ad3"
+        }
+      },
+      {
+        "text": "arrow down buttons removed for redundancy",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-kFIWeGdi-o"
+        }
+      }
+    ],
+    "comment_text": "image.png\narrow down buttons removed for redundancy\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787193099516",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248396488",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "f54365a4-c6da-4d89-b02c-74ac0ed8835d.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/f54365a4-c6da-4d89-b02c-74ac0ed8835d/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/f54365a4-c6da-4d89-b02c-74ac0ed8835d_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/f54365a4-c6da-4d89-b02c-74ac0ed8835d_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/f54365a4-c6da-4d89-b02c-74ac0ed8835d/image.png",
+          "uploaded": true,
+          "width": 1522,
+          "height": 806
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "f54365a4-c6da-4d89-b02c-74ac0ed8835d.png",
+          "data-attachment": null,
+          "data-natural-width": "1522",
+          "data-natural-height": "806"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EvgZcgsbYU"
+        }
+      },
+      {
+        "text": "layout issue fixed",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-xVAjlsPpQG"
+        }
+      }
+    ],
+    "comment_text": "image.png\nlayout issue fixed\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787193056359",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248395442",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "4f4285de-1a73-4103-80f4-99043f80ae1a.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/4f4285de-1a73-4103-80f4-99043f80ae1a/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/4f4285de-1a73-4103-80f4-99043f80ae1a_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/4f4285de-1a73-4103-80f4-99043f80ae1a_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/4f4285de-1a73-4103-80f4-99043f80ae1a/image.png",
+          "uploaded": true,
+          "width": 534,
+          "height": 555
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "4f4285de-1a73-4103-80f4-99043f80ae1a.png",
+          "data-attachment": null,
+          "data-natural-width": "534",
+          "data-natural-height": "555"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-mbwAQJp-uv"
+        }
+      },
+      {
+        "text": "exit button now works",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-LAC58vWN8M"
+        }
+      }
+    ],
+    "comment_text": "image.png\nexit button now works\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787192915612",
+    "reply_count": 0
+  },
+  {
+    "id": "90180241541267",
+    "comment": [
+      {
+        "text": "Projected End Date 8/3",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-RUVFZVgN1a"
+        }
+      },
+      {
+        "text": "No subtasks found",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Ig9IqyPC6i",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EIqwdrWNhm"
+        }
+      }
+    ],
+    "comment_text": "Projected End Date 8/3\nNo subtasks found\n\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1785227595709",
+    "reply_count": 0
+  },
+  {
+    "id": "90180234372751",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ibae5Gy6xQ"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "FAILED",
+        "attributes": {
+          "badge-class": "red"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-sRDynO-izW"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EBF3MT_B6V"
+        }
+      },
+      {
+        "text": "The following are the issues under Users:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-rFyzacRFzW"
+        }
+      },
+      {
+        "text": "---",
+        "type": "divider",
+        "divider": true
+      },
+      {
+        "text": "---",
+        "type": "divider",
+        "divider": true
+      },
+      {
+        "text": "Exit button is not working:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-6Reo9F97lS"
+        }
+      },
+      {
+        "text": "https://t7537039.p.clickup-attachments.com/t7537039/764d4ef2-2e7e-40a2-999d-8dcdba6dab19/20260703-1221-34.8487662.mp4?view=open",
+        "type": "frame",
+        "frame": {
+          "id": "764d4ef2-2e7e-40a2-999d-8dcdba6dab19.mp4",
+          "src": "https://t7537039.p.clickup-attachments.com/t7537039/764d4ef2-2e7e-40a2-999d-8dcdba6dab19/20260703-1221-34.8487662.mp4?view=open",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/764d4ef2-2e7e-40a2-999d-8dcdba6dab19/20260703-1221-34.8487662.mp4?view=open",
+          "source": 1,
+          "service": "clickup_video"
+        },
+        "attributes": {
+          "block-id": "block-wSahpoWsBO",
+          "data-size": "large",
+          "data-origin": "attachment"
+        }
+      },
+      {
+        "text": "Layout Issue:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Zt-qplP0JF"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "332538ad-ea0d-4f48-a757-455ff527a155.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/332538ad-ea0d-4f48-a757-455ff527a155/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/332538ad-ea0d-4f48-a757-455ff527a155/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/332538ad-ea0d-4f48-a757-455ff527a155_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/332538ad-ea0d-4f48-a757-455ff527a155_medium.png",
+          "width": 1536,
+          "height": 780
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "332538ad-ea0d-4f48-a757-455ff527a155.png",
+          "data-attachment": "{\"id\":\"332538ad-ea0d-4f48-a757-455ff527a155.png\",\"version\":\"0\",\"date\":1783081412741,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/332538ad-ea0d-4f48-a757-455ff527a155_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/332538ad-ea0d-4f48-a757-455ff527a155_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/332538ad-ea0d-4f48-a757-455ff527a155/image.png\",\"width\":1536,\"height\":780,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/332538ad-ea0d-4f48-a757-455ff527a155/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/332538ad-ea0d-4f48-a757-455ff527a155/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/332538ad-ea0d-4f48-a757-455ff527a155/image.png\"}",
+          "data-natural-width": "1536",
+          "data-natural-height": "780"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-yNqLpCNds_"
+        }
+      },
+      {
+        "text": "Same Function:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Cb90ETGwYW"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "95f789df-8949-48ec-b3d5-db5d229642d1.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/95f789df-8949-48ec-b3d5-db5d229642d1/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/95f789df-8949-48ec-b3d5-db5d229642d1/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/95f789df-8949-48ec-b3d5-db5d229642d1_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/95f789df-8949-48ec-b3d5-db5d229642d1_medium.png",
+          "width": 1536,
+          "height": 776
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "95f789df-8949-48ec-b3d5-db5d229642d1.png",
+          "data-attachment": "{\"id\":\"95f789df-8949-48ec-b3d5-db5d229642d1.png\",\"version\":\"0\",\"date\":1783081490867,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/95f789df-8949-48ec-b3d5-db5d229642d1_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/95f789df-8949-48ec-b3d5-db5d229642d1_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/95f789df-8949-48ec-b3d5-db5d229642d1/image.png\",\"width\":1536,\"height\":776,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/95f789df-8949-48ec-b3d5-db5d229642d1/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/95f789df-8949-48ec-b3d5-db5d229642d1/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/95f789df-8949-48ec-b3d5-db5d229642d1/image.png\"}",
+          "data-natural-width": "1536",
+          "data-natural-height": "776"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-r5tdZYmvJt"
+        }
+      },
+      {
+        "text": "Tooltip is not working, and the \"Add User\" button is on the left.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eQSqXrx2p5"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "aef16713-0004-46b7-bbb4-b329a9406f72.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/aef16713-0004-46b7-bbb4-b329a9406f72/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/aef16713-0004-46b7-bbb4-b329a9406f72/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/aef16713-0004-46b7-bbb4-b329a9406f72_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/aef16713-0004-46b7-bbb4-b329a9406f72_medium.png",
+          "width": 300,
+          "height": 652
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "115",
+          "data-id": "aef16713-0004-46b7-bbb4-b329a9406f72.png",
+          "data-attachment": "{\"id\":\"aef16713-0004-46b7-bbb4-b329a9406f72.png\",\"version\":\"0\",\"date\":1783081673234,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/aef16713-0004-46b7-bbb4-b329a9406f72_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/aef16713-0004-46b7-bbb4-b329a9406f72_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/aef16713-0004-46b7-bbb4-b329a9406f72/image.png\",\"width\":300,\"height\":652,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/aef16713-0004-46b7-bbb4-b329a9406f72/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/aef16713-0004-46b7-bbb4-b329a9406f72/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/aef16713-0004-46b7-bbb4-b329a9406f72/image.png\"}",
+          "data-natural-width": "300",
+          "data-natural-height": "652"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-rR7qS9uI7x"
+        }
+      },
+      {
+        "text": "Pagination:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-LNXcBLqewP"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "ef2a4f16-6942-4a31-aeee-ee96db6877c8.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/ef2a4f16-6942-4a31-aeee-ee96db6877c8/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/ef2a4f16-6942-4a31-aeee-ee96db6877c8/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/ef2a4f16-6942-4a31-aeee-ee96db6877c8_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/ef2a4f16-6942-4a31-aeee-ee96db6877c8_medium.png",
+          "width": 301,
+          "height": 652
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "115",
+          "data-id": "ef2a4f16-6942-4a31-aeee-ee96db6877c8.png",
+          "data-attachment": "{\"id\":\"ef2a4f16-6942-4a31-aeee-ee96db6877c8.png\",\"version\":\"0\",\"date\":1783081707891,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/ef2a4f16-6942-4a31-aeee-ee96db6877c8_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/ef2a4f16-6942-4a31-aeee-ee96db6877c8_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/ef2a4f16-6942-4a31-aeee-ee96db6877c8/image.png\",\"width\":301,\"height\":652,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/ef2a4f16-6942-4a31-aeee-ee96db6877c8/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/ef2a4f16-6942-4a31-aeee-ee96db6877c8/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/ef2a4f16-6942-4a31-aeee-ee96db6877c8/image.png\"}",
+          "data-natural-width": "301",
+          "data-natural-height": "652"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Xs1POmua5w"
+        }
+      },
+      {
+        "text": "Is that intended?",
+        "attributes": {
+          "color-class": "red"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ZXWL5Mrwds"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ZyePbp7qgd"
+        }
+      },
+      {
+        "text": "Kindly fix all the returns.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-91HH0vu6lD"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-wP-2tgNzIP"
+        }
+      },
+      {
+        "text": "Moving this subtask to \"Ready Priority\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-GZNM59J_4V"
+        }
+      },
+      {
+        "text": "cc",
+        "attributes": {}
+      },
+      {
+        "text": "@Angelo Kamachi",
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-tojq-boaUh"
+        }
+      }
+    ],
+    "comment_text": "env: DEV\nStatus: FAILED\n\nThe following are the issues under Users:\n------Exit button is not working:\nhttps://t7537039.p.clickup-attachments.com/t7537039/764d4ef2-2e7e-40a2-999d-8dcdba6dab19/20260703-1221-34.8487662.mp4?view=openLayout Issue:\nimage.png\nSame Function:\nimage.png\nTooltip is not working, and the \"Add User\" button is on the left.\nimage.png\nPagination:\nimage.png\nIs that intended?\n\nKindly fix all the returns.\n\nMoving this subtask to \"Ready Priority\"\ncc@Angelo Kamachi\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1783081750170",
+    "reply_count": 0
+  },
+  {
+    "id": "90180234367760",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Users"
+      },
+      {
+        "text": " has been created ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bf7e6b93-37f7-4ef1-9574-05993b503c8f"
+        }
+      },
+      {
+        "text": "Date: ",
+        "attributes": {}
+      },
+      {
+        "text": "Jul 3 2026, 8:05PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5acb7133-fc27-48ba-9a62-6a27fcef1ac4"
+        }
+      },
+      {
+        "text": "By ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2da5208f-53d3-4f34-b235-72f66cc916c1"
+        }
+      }
+    ],
+    "comment_text": "This task Users has been created \nDate: Jul 3 2026, 8:05PM (Asia/Shanghai)\nBy Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1783080321698",
+    "reply_count": 0
+  }
+]

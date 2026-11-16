@@ -1,28 +1,20 @@
 import { handleAdminUpdateReport } from "@/server/itemlist/handlers";
-import { recordApiCall } from "@/server/usage/tracker";
+import { handleCorsPreflight, withApiGuard } from "@/server/security/guard";
 
 export const dynamic = "force-dynamic";
 
-export async function PATCH(req: Request, { params }: { params: Promise<{ id: string }> }) {
-  const start = Date.now();
+export async function PATCH(
+  req: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
   const { id } = await params;
-  try {
-    const res = await handleAdminUpdateReport(req, id);
-    recordApiCall(`/itemlist/admin/reports/${id}`, "PATCH", Date.now() - start, !res.ok);
-    return res;
-  } catch (err) {
-    recordApiCall(`/itemlist/admin/reports/${id}`, "PATCH", Date.now() - start, true);
-    throw err;
-  }
+  return withApiGuard(
+    req,
+    { endpoint: `/itemlist/admin/reports/${id}`, app: "itemlist" },
+    async () => handleAdminUpdateReport(req, id)
+  );
 }
 
-export async function OPTIONS() {
-  return new Response(null, {
-    status: 204,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "PATCH, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization",
-    },
-  });
+export async function OPTIONS(req: Request) {
+  return handleCorsPreflight(req, "PATCH, OPTIONS");
 }

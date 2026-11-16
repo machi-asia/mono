@@ -1,0 +1,3599 @@
+{
+  "id": "86eyheppd",
+  "custom_id": null,
+  "custom_item_id": 0,
+  "name": "Merchant Side | Images from S3 Bucket to Repository Based",
+  "text_content": "This task is to replace all the affected icons on the marketplace page since the 7/11 attack. These icons have been encrypted and shows as broken",
+  "description": "This task is to replace all the affected icons on the marketplace page since the 7/11 attack. These icons have been encrypted and shows as broken",
+  "markdown_description": "This task is to replace all the affected icons on the marketplace page since the 7/11 attack. These icons have been encrypted and shows as broken",
+  "status": {
+    "id": "sc901807509718_IvWfAzZw",
+    "status": "deployed to prod",
+    "color": "#008844",
+    "orderindex": 12,
+    "type": "closed"
+  },
+  "orderindex": "40061729.05703428400000000000000000000000",
+  "date_created": "1785911212466",
+  "date_updated": "1786105124446",
+  "date_closed": "1786105123983",
+  "date_done": "1786099013854",
+  "archived": false,
+  "creator": {
+    "id": 113539147,
+    "username": "Angelo Kamachi",
+    "color": "#595d66",
+    "email": "angelo.kamachi@prosperna.com",
+    "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+  },
+  "assignees": [
+    {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "color": "#595d66",
+      "initials": "AK",
+      "email": "angelo.kamachi@prosperna.com",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "color": "#e93d82",
+      "initials": "AP",
+      "email": "aira@prosperna.com",
+      "profilePicture": null
+    }
+  ],
+  "group_assignees": [],
+  "watchers": [
+    {
+      "id": -1,
+      "username": "ClickBot",
+      "color": "#827718",
+      "initials": "C",
+      "email": "clickbot@clickup.com",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    {
+      "id": 25568383,
+      "username": "Dennis Velasco",
+      "color": "#04a9f4",
+      "initials": "DV",
+      "email": "dennis@prosperna.com",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+    },
+    {
+      "id": 37590522,
+      "username": "Ian Pelea",
+      "color": "#04a9f4",
+      "initials": "IP",
+      "email": "ian@prosperna.com",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/37590522_IvQ.jpg"
+    },
+    {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "color": "#e93d82",
+      "initials": "AP",
+      "email": "aira@prosperna.com",
+      "profilePicture": null
+    },
+    {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "color": "#595d66",
+      "initials": "AK",
+      "email": "angelo.kamachi@prosperna.com",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    }
+  ],
+  "checklists": [],
+  "tags": [
+    {
+      "name": "qa return",
+      "tag_fg": "#6E56CF",
+      "tag_bg": "#6E56CF",
+      "creator": 25568223
+    }
+  ],
+  "parent": null,
+  "top_level_parent": null,
+  "priority": {
+    "color": "#f50000",
+    "id": "1",
+    "orderindex": "1",
+    "priority": "urgent"
+  },
+  "due_date": null,
+  "start_date": null,
+  "points": null,
+  "time_estimate": null,
+  "time_spent": 0,
+  "custom_fields": [
+    {
+      "id": "74e0ff60-1b19-4c27-b69f-e75bd8ac7292",
+      "name": "Action Items",
+      "type": "text",
+      "type_config": {
+        "ai": {
+          "prompt": "",
+          "source": "action_items"
+        }
+      },
+      "date_created": "1746337659453",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "0be556d3-f5de-455c-b486-f62959d982a9",
+      "name": "Action Items 2",
+      "type": "text",
+      "type_config": {
+        "ai": {
+          "source": "action_items"
+        }
+      },
+      "date_created": "1748240863456",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "a025da22-c65b-4dfe-a324-c7b0a04aa5ae",
+      "name": "Client Name or Page Link",
+      "type": "short_text",
+      "type_config": {},
+      "date_created": "1762239072424",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "756883ad-287a-4520-b178-4ded131e63f4",
+      "name": "Design Request",
+      "type": "tasks",
+      "type_config": {
+        "fields": []
+      },
+      "date_created": "1745478684741",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "f3dc8067-c804-4091-8aeb-0edb722a8d79",
+      "name": "Progress Updates",
+      "type": "text",
+      "type_config": {
+        "ai": {
+          "format": "bullet",
+          "source": "activity",
+          "updateFrom": "24h"
+        }
+      },
+      "date_created": "1746337649929",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "a5c9bbba-f0a6-4fac-9e7d-e29b9a643d9f",
+      "name": "Task duration",
+      "type": "formula",
+      "type_config": {
+        "simple": true,
+        "formula": "TASK_CLOSED - TASK_CREATED",
+        "version": "1.12",
+        "reset_at": 1750896207374,
+        "is_dynamic": false,
+        "return_types": [
+          "number"
+        ],
+        "calculation_state": "ready"
+      },
+      "date_created": "1747805761844",
+      "hide_from_guests": false,
+      "value": "2",
+      "value_richtext": null,
+      "required": false
+    },
+    {
+      "id": "fc490095-1631-4e6c-8fe8-6f210159548b",
+      "name": "💯 Completion Rate",
+      "type": "automatic_progress",
+      "type_config": {
+        "tracking": {
+          "subtasks": true,
+          "checklists": true,
+          "assigned_comments": true
+        },
+        "complete_on": 3,
+        "subtask_rollup": false
+      },
+      "date_created": "1702351138518",
+      "hide_from_guests": false,
+      "value": {
+        "percent_complete": 100
+      },
+      "required": false
+    },
+    {
+      "id": "b38b6af1-ac29-405f-8351-df7c81c266aa",
+      "name": "CH",
+      "type": "drop_down",
+      "type_config": {
+        "sorting": "manual",
+        "options": [
+          {
+            "id": "0a8b6956-e498-42e8-b4b4-35654b6978e6",
+            "name": "Dyne",
+            "color": "#9315c8",
+            "orderindex": 0
+          },
+          {
+            "id": "2b81f2e9-8948-4cf7-adfb-829c6ec3b717",
+            "name": "Alessi",
+            "color": "#AF7E2E",
+            "orderindex": 1
+          },
+          {
+            "id": "fb9cbc80-8157-4d52-a3a4-9a6e47e5c2a5",
+            "name": "Dyne Verified",
+            "color": "#2ecd6f",
+            "orderindex": 2
+          },
+          {
+            "id": "21044a3b-e36f-4c3f-b1bd-34eff512428c",
+            "name": "Alessi Verified",
+            "color": "#2ecd6f",
+            "orderindex": 3
+          }
+        ]
+      },
+      "date_created": "1747767510023",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "f27d0628-067d-45c2-8f7e-1e314189960b",
+      "name": "CH",
+      "type": "drop_down",
+      "type_config": {
+        "sorting": "manual",
+        "options": [
+          {
+            "id": "dcd85999-b329-4a3a-aebb-55a4e236418c",
+            "name": "Dyne",
+            "color": "#FF4081",
+            "orderindex": 0
+          },
+          {
+            "id": "e68b52b9-fe89-42a6-9b85-fc11092ea1fa",
+            "name": "Dyne Verified",
+            "color": "#2ecd6f",
+            "orderindex": 1
+          },
+          {
+            "id": "9c196a0d-f2b5-498c-919a-69d9dcb43397",
+            "name": "Alessi Verified",
+            "color": "#2ecd6f",
+            "orderindex": 2
+          },
+          {
+            "id": "6eace045-0cde-405b-b587-c231dd7726c2",
+            "name": "Alessi",
+            "color": "#7C4DFF",
+            "orderindex": 3
+          }
+        ]
+      },
+      "date_created": "1762243960861",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "06b320b9-965c-4236-b6ee-87f9987d36f3",
+      "name": "P1 Client Type",
+      "type": "drop_down",
+      "type_config": {
+        "default": 0,
+        "sorting": "manual",
+        "placeholder": null,
+        "new_drop_down": true,
+        "options": [
+          {
+            "id": "b40d214f-79cc-4367-b57c-9e9fd6d4138a",
+            "name": "Free",
+            "color": null,
+            "orderindex": 0
+          },
+          {
+            "id": "e56f3f2d-2e85-40a5-84d7-78e72bc99314",
+            "name": "Paid",
+            "color": null,
+            "orderindex": 1
+          },
+          {
+            "id": "c947c067-e031-42a5-b0bb-370ee5381ad8",
+            "name": "All",
+            "color": null,
+            "orderindex": 2
+          }
+        ]
+      },
+      "date_created": "1655361590889",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "e2d5e773-cf70-4a07-9730-be239a993cc8",
+      "name": "Project",
+      "type": "drop_down",
+      "type_config": {
+        "sorting": "manual",
+        "new_drop_down": true,
+        "options": [
+          {
+            "id": "73e9566f-c80c-4408-9e3d-b74b2415eb32",
+            "name": "Prosperna",
+            "color": "#0231E8",
+            "orderindex": 0
+          },
+          {
+            "id": "16be581a-007e-4274-8f03-6b175ef50da5",
+            "name": "Pippify",
+            "color": "#30a46c",
+            "orderindex": 1
+          },
+          {
+            "id": "f5b1886e-505b-49c7-b92e-6e559f69bd5c",
+            "name": "Enterprise",
+            "color": "#81B1FF",
+            "orderindex": 2
+          }
+        ]
+      },
+      "date_created": "1747747397729",
+      "hide_from_guests": false,
+      "value": 0,
+      "value_richtext": null,
+      "required": true
+    },
+    {
+      "id": "65fb6da8-e6ea-44fb-af15-08319a8158fe",
+      "name": "Requestor",
+      "type": "drop_down",
+      "type_config": {
+        "ai": {
+          "prompt": "",
+          "source": "custom_dropdown"
+        },
+        "sorting": "manual",
+        "new_drop_down": true,
+        "options": [
+          {
+            "id": "f2e04d4a-aa9e-4385-a8ce-09ddb23dddb3",
+            "name": "Client direct Support",
+            "color": "#FF4081",
+            "orderindex": 0
+          },
+          {
+            "id": "52d47d61-7e0c-4bd0-97c3-9661a1237d66",
+            "name": "Radley",
+            "color": "#7C4DFF",
+            "orderindex": 1
+          },
+          {
+            "id": "9f57b8fd-3fb6-4df7-8197-e22f99909abf",
+            "name": "Fro",
+            "color": "#f9d900",
+            "orderindex": 2
+          },
+          {
+            "id": "e882f2a4-06e0-41b4-a8b9-cc131e83879b",
+            "name": "Dennis Velasco",
+            "color": "#02BCD4",
+            "orderindex": 3
+          },
+          {
+            "id": "754be9a4-2b49-4c60-ac20-e3fb2c8f6871",
+            "name": "Ken Tio",
+            "color": "#1bbc9c",
+            "orderindex": 4
+          },
+          {
+            "id": "8a455d73-b1ce-49df-bf7f-2202f2e668b2",
+            "name": "Ronnie",
+            "color": "#0231E8",
+            "orderindex": 5
+          },
+          {
+            "id": "c013efcf-28b9-4074-8362-46712ac731db",
+            "name": "Dyne",
+            "color": "#ff7800",
+            "orderindex": 6
+          },
+          {
+            "id": "3eb44a8b-f46a-4b74-8bd6-3031fcb605c8",
+            "name": "Alessi",
+            "color": "#800000",
+            "orderindex": 7
+          },
+          {
+            "id": "a6bf9e1e-764c-4713-809a-88cd5b0b183f",
+            "name": "Alex",
+            "color": "#b6b6ff",
+            "orderindex": 8
+          },
+          {
+            "id": "a92bfe47-a6bd-42cb-9e47-40fc988606d0",
+            "name": "Internal",
+            "color": "#7B60ED",
+            "orderindex": 9
+          }
+        ]
+      },
+      "date_created": "1754289356657",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "1daa67e2-59b5-44ee-9482-6ca5c7888a15",
+      "name": "Requestor",
+      "type": "users",
+      "type_config": {
+        "single_user": false,
+        "include_groups": true,
+        "include_guests": true,
+        "include_team_members": true
+      },
+      "date_created": "1651456557048",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "4d7f64d9-8176-4e92-a4bc-aaa270d1212f",
+      "name": "SLA",
+      "type": "drop_down",
+      "type_config": {
+        "sorting": "manual",
+        "new_drop_down": true,
+        "options": [
+          {
+            "id": "1c6e9615-70f6-4b95-8c08-20419496559a",
+            "name": "sdev support",
+            "color": "#02BCD4",
+            "orderindex": 0
+          },
+          {
+            "id": "8495b9c1-d740-4d7b-8e79-5bce746447c6",
+            "name": " pdev support",
+            "color": "#0b74a3",
+            "orderindex": 1
+          },
+          {
+            "id": "d130411d-544e-484a-8d9b-8354a578eba4",
+            "name": "sdev",
+            "color": "#029eb2",
+            "orderindex": 2
+          },
+          {
+            "id": "b9beab8b-2fc2-44d1-8b67-a2f80f95aae1",
+            "name": "pdev",
+            "color": "#3e567e",
+            "orderindex": 3
+          }
+        ]
+      },
+      "date_created": "1748939552081",
+      "hide_from_guests": false,
+      "value": 3,
+      "value_richtext": null,
+      "required": true
+    },
+    {
+      "id": "3ff9f436-5085-4218-84e4-c738735e9b7a",
+      "name": "Source",
+      "type": "drop_down",
+      "type_config": {
+        "sorting": "manual",
+        "new_drop_down": true,
+        "options": [
+          {
+            "id": "ee3c0361-7a27-4e78-8f25-682e6f4836e7",
+            "name": "External Support",
+            "color": "#934444",
+            "orderindex": 0
+          },
+          {
+            "id": "2d1d1ee5-09ac-4d93-a2c3-dec5cdac5bdd",
+            "name": "Internal Support",
+            "color": "#d47d2f",
+            "orderindex": 1
+          },
+          {
+            "id": "048917ad-ae22-42c2-8403-fa0f6cd70076",
+            "name": "Product Roadmap",
+            "color": "#81B1FF",
+            "orderindex": 2
+          },
+          {
+            "id": "3452edb8-7926-4a77-8a8e-155e0a7e8b59",
+            "name": "Client Request",
+            "color": "#04A9F4",
+            "orderindex": 3
+          }
+        ]
+      },
+      "date_created": "1746330744248",
+      "hide_from_guests": false,
+      "value": 1,
+      "value_richtext": null,
+      "required": true
+    },
+    {
+      "id": "14bf0536-6d1c-42d0-a516-8d110ae6a666",
+      "name": "Type of Work",
+      "type": "drop_down",
+      "type_config": {
+        "sorting": "manual",
+        "new_drop_down": true,
+        "options": [
+          {
+            "id": "624bdb4c-1690-4184-b194-7fc115f4c7a1",
+            "name": "IT Operation Projects",
+            "color": "#7C4DFF",
+            "orderindex": 0
+          },
+          {
+            "id": "2f5f4bcb-c9b1-44ca-a9d3-f8fb6eef0378",
+            "name": "Business Projects",
+            "color": "#04A9F4",
+            "orderindex": 1
+          },
+          {
+            "id": "ce8e2150-a81f-4800-b95b-37b224381817",
+            "name": "Unplanned Work",
+            "color": "#e50000",
+            "orderindex": 2
+          },
+          {
+            "id": "e9cc0588-ebca-48df-a33d-b219bc430aee",
+            "name": "Changes",
+            "color": "#f9d900",
+            "orderindex": 3
+          },
+          {
+            "id": "dfaad5d7-cf02-4290-920f-2720950937d1",
+            "name": "Quaility ",
+            "color": "#04BF7C",
+            "orderindex": 4
+          }
+        ]
+      },
+      "date_created": "1752542906226",
+      "hide_from_guests": false,
+      "value": 2,
+      "value_richtext": null,
+      "required": true
+    },
+    {
+      "id": "abeff65b-23f2-4f31-9bee-ba7f746ca705",
+      "name": "Work Type Category",
+      "type": "labels",
+      "type_config": {
+        "sorting": "manual",
+        "options": [
+          {
+            "id": "4ee9e1df-bcea-4c27-85d4-3a704c4cf244",
+            "label": "New Feature",
+            "color": "#800000",
+            "orderindex": 0
+          },
+          {
+            "id": "44183825-1767-4adf-b092-a55faa04bc0a",
+            "label": "Enhancement",
+            "color": "#AF7E2E",
+            "orderindex": 1
+          },
+          {
+            "id": "78d6ed2b-a472-4e65-b6ff-47585d795d10",
+            "label": "UX/UI Improvement",
+            "color": "#ff7800",
+            "orderindex": 2
+          },
+          {
+            "id": "ba9fd025-0f20-4462-9a57-89bfd52372c8",
+            "label": "UX / UI Improvement",
+            "color": "#3397dd",
+            "orderindex": 3
+          },
+          {
+            "id": "27682845-efa6-4c0f-baca-603f02959525",
+            "label": "Hotfix",
+            "color": "#E65100",
+            "orderindex": 4
+          },
+          {
+            "id": "1fa5d066-5c49-4efc-a54a-a66f485be9c8",
+            "label": "Bug",
+            "color": "#EA80FC",
+            "orderindex": 5
+          },
+          {
+            "id": "34b2394b-fc1a-4a51-ba7c-e6d4ff69e8cb",
+            "label": "QA",
+            "color": "#FF4081",
+            "orderindex": 6
+          },
+          {
+            "id": "0f3ac0e9-dedb-49af-968b-64e490e47f29",
+            "label": "Regression Test",
+            "color": "#fff",
+            "orderindex": 7
+          },
+          {
+            "id": "05215be1-5cbd-44f0-9e4f-5134f2f36c76",
+            "label": "Regression Testing",
+            "color": "#04A9F4",
+            "orderindex": 8
+          },
+          {
+            "id": "ac2c3d01-a86e-4f52-9248-94d4ab1ebf7c",
+            "label": "System Upgrade",
+            "color": "#f900ea",
+            "orderindex": 9
+          },
+          {
+            "id": "9d47dde7-f6c0-47df-96f4-56da3c50d25a",
+            "label": "Website Design",
+            "color": "#bf55ec",
+            "orderindex": 10
+          },
+          {
+            "id": "f5de9426-d114-4b44-83f5-f18465648017",
+            "label": "Website Build",
+            "color": "#0231E8",
+            "orderindex": 11
+          },
+          {
+            "id": "7811696d-d8a3-4fe2-8c36-ef183b4ac66a",
+            "label": "Website Revision",
+            "color": "#bf55ec",
+            "orderindex": 12
+          },
+          {
+            "id": "15254c31-a623-4bba-a6cc-48f8bf74ddf9",
+            "label": "Migration",
+            "color": "#9b59b6",
+            "orderindex": 13
+          },
+          {
+            "id": "a3bd56f3-df39-44fb-98a0-a17ba7bf7a50",
+            "label": "Customer Request",
+            "color": "#E65100",
+            "orderindex": 14
+          },
+          {
+            "id": "7dc9143d-6e3d-4939-978e-d16b4250d68e",
+            "label": "KB Article",
+            "color": "#800000",
+            "orderindex": 15
+          },
+          {
+            "id": "d6e47a9f-df49-412b-95a3-aa35d42eb58c",
+            "label": "Legal Compliance Requirement",
+            "color": "#FF7FAB",
+            "orderindex": 16
+          },
+          {
+            "id": "ea90e260-3b69-4403-bc61-115c353cf2e6",
+            "label": "Technical Debt Cleanup",
+            "color": "#E65100",
+            "orderindex": 17
+          },
+          {
+            "id": "343049ba-4e29-47f0-aad8-9032ebf6d354",
+            "label": "DevOps Automation",
+            "color": "#2ecd6f",
+            "orderindex": 18
+          },
+          {
+            "id": "7bdc0937-3bbd-4876-84c1-19cb302483d8",
+            "label": "Third Party Fix",
+            "color": "#81B1FF",
+            "orderindex": 19
+          },
+          {
+            "id": "9fece4cf-c9d3-4469-b415-963b670abad2",
+            "label": "Research and Development",
+            "color": "#1bbc9c",
+            "orderindex": 20
+          },
+          {
+            "id": "9c9fda2a-0c32-47ff-ba94-d73584788499",
+            "label": "Security Hardening",
+            "color": "#FF7FAB",
+            "orderindex": 21
+          },
+          {
+            "id": "11db5add-21eb-4e3f-9794-b846d220202d",
+            "label": "Infra Change",
+            "color": "#e50000",
+            "orderindex": 22
+          },
+          {
+            "id": "66fbcdc1-6f67-4746-acec-13b73f39ed70",
+            "label": "Rollback",
+            "color": "#FF4081",
+            "orderindex": 23
+          },
+          {
+            "id": "5be860af-4395-4b05-a0bb-c236e16fd6eb",
+            "label": "Cost Reduction",
+            "color": "#AF7E2E",
+            "orderindex": 24
+          },
+          {
+            "id": "767057b4-e9c3-47b7-bf3d-a74d364ae534",
+            "label": "Roadblock",
+            "color": "#b5bcc2",
+            "orderindex": 25
+          },
+          {
+            "id": "f6197485-913e-48ed-8959-8a7d70b43800",
+            "label": "Automation",
+            "color": "#0231E8",
+            "orderindex": 26
+          },
+          {
+            "id": "fcd40756-aa25-47f6-95ed-634bfe26d87c",
+            "label": "Datadog",
+            "color": "#fff",
+            "orderindex": 27
+          },
+          {
+            "id": "ed1739e9-d070-4c67-afa5-03278b91b971",
+            "label": "Account Removal",
+            "color": "#b6b6ff",
+            "orderindex": 28
+          },
+          {
+            "id": "f82abe4b-0ad2-4111-b577-718dcc1e2a5b",
+            "label": "observability",
+            "color": "#aec0f5",
+            "orderindex": 29
+          },
+          {
+            "id": "bc67df3e-b96f-40fe-a40f-095f51fd2acf",
+            "label": "Website Restore",
+            "color": "#96c7f2",
+            "orderindex": 30
+          }
+        ]
+      },
+      "date_created": "1752624111778",
+      "hide_from_guests": false,
+      "value": [
+        "bc67df3e-b96f-40fe-a40f-095f51fd2acf"
+      ],
+      "value_richtext": null,
+      "required": true
+    }
+  ],
+  "dependencies": [],
+  "linked_tasks": [],
+  "locations": [],
+  "team_id": "7537039",
+  "url": "https://app.clickup.com/t/86eyheppd",
+  "sharing": {
+    "public": false,
+    "public_share_expires_on": null,
+    "public_fields": [
+      "assignees",
+      "priority",
+      "due_date",
+      "content",
+      "comments",
+      "activity",
+      "attachments",
+      "customFields",
+      "subtasks",
+      "tags",
+      "checklists",
+      "coverimage"
+    ],
+    "token": null,
+    "seo_optimized": false
+  },
+  "permission_level": "create",
+  "list": {
+    "id": "901807509718",
+    "name": "P1 Delivery",
+    "access": true
+  },
+  "project": {
+    "id": "901813341819",
+    "name": "Shared with me",
+    "hidden": true,
+    "access": false
+  },
+  "folder": {
+    "id": "901813341819",
+    "name": "Shared with me",
+    "hidden": true,
+    "access": false
+  },
+  "space": {
+    "id": "19582303"
+  },
+  "subtasks": [
+    {
+      "id": "86eyhy604",
+      "custom_item_id": 0,
+      "name": "Marketplace",
+      "status": {
+        "status": "deployed to prod",
+        "orderindex": 12,
+        "color": "#008844",
+        "type": "closed"
+      },
+      "orderindex": "10001786002832.96920700000000000000000000000000",
+      "date_created": "1786002832882",
+      "date_updated": "1786104999684",
+      "archived": false,
+      "creator": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "color": "#595d66",
+        "email": "angelo.kamachi@prosperna.com",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "assignees": [
+        {
+          "id": 95622662,
+          "username": "Aira Pilor",
+          "color": "#e93d82",
+          "initials": "AP",
+          "email": "aira@prosperna.com",
+          "profilePicture": null
+        },
+        {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "color": "#595d66",
+          "initials": "AK",
+          "email": "angelo.kamachi@prosperna.com",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      ],
+      "group_assignees": [],
+      "watchers": [
+        {
+          "id": -1,
+          "username": "ClickBot",
+          "color": "#827718",
+          "initials": "C",
+          "email": "clickbot@clickup.com",
+          "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+        },
+        {
+          "id": 37590522,
+          "username": "Ian Pelea",
+          "color": "#04a9f4",
+          "initials": "IP",
+          "email": "ian@prosperna.com",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/37590522_IvQ.jpg"
+        },
+        {
+          "id": 95622662,
+          "username": "Aira Pilor",
+          "color": "#e93d82",
+          "initials": "AP",
+          "email": "aira@prosperna.com",
+          "profilePicture": null
+        },
+        {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "color": "#595d66",
+          "initials": "AK",
+          "email": "angelo.kamachi@prosperna.com",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      ],
+      "checklists": [],
+      "tags": [
+        {
+          "name": "qa return",
+          "tag_fg": "#6E56CF",
+          "tag_bg": "#6E56CF",
+          "creator": 25568223
+        }
+      ],
+      "parent": "86eyheppd",
+      "top_level_parent": "86eyheppd",
+      "priority": {
+        "color": "#f50000",
+        "id": "1",
+        "orderindex": "1",
+        "priority": "urgent"
+      },
+      "due_date": null,
+      "start_date": null,
+      "points": null,
+      "time_estimate": null,
+      "time_spent": 0,
+      "custom_fields": [
+        {
+          "id": "74e0ff60-1b19-4c27-b69f-e75bd8ac7292",
+          "name": "Action Items",
+          "type": "text",
+          "type_config": {
+            "ai": {
+              "prompt": "",
+              "source": "action_items"
+            }
+          },
+          "date_created": "1746337659453",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "0be556d3-f5de-455c-b486-f62959d982a9",
+          "name": "Action Items 2",
+          "type": "text",
+          "type_config": {
+            "ai": {
+              "source": "action_items"
+            }
+          },
+          "date_created": "1748240863456",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "a025da22-c65b-4dfe-a324-c7b0a04aa5ae",
+          "name": "Client Name or Page Link",
+          "type": "short_text",
+          "type_config": {},
+          "date_created": "1762239072424",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "756883ad-287a-4520-b178-4ded131e63f4",
+          "name": "Design Request",
+          "type": "tasks",
+          "type_config": {
+            "fields": []
+          },
+          "date_created": "1745478684741",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "f3dc8067-c804-4091-8aeb-0edb722a8d79",
+          "name": "Progress Updates",
+          "type": "text",
+          "type_config": {
+            "ai": {
+              "format": "bullet",
+              "source": "activity",
+              "updateFrom": "24h"
+            }
+          },
+          "date_created": "1746337649929",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "a5c9bbba-f0a6-4fac-9e7d-e29b9a643d9f",
+          "name": "Task duration",
+          "type": "formula",
+          "type_config": {
+            "simple": true,
+            "formula": "TASK_CLOSED - TASK_CREATED",
+            "version": "1.12",
+            "reset_at": 1750896207374,
+            "is_dynamic": false,
+            "return_types": [
+              "number"
+            ],
+            "calculation_state": "ready"
+          },
+          "date_created": "1747805761844",
+          "hide_from_guests": false,
+          "value": "1",
+          "value_richtext": null,
+          "required": false
+        },
+        {
+          "id": "fc490095-1631-4e6c-8fe8-6f210159548b",
+          "name": "💯 Completion Rate",
+          "type": "automatic_progress",
+          "type_config": {
+            "tracking": {
+              "subtasks": true,
+              "checklists": true,
+              "assigned_comments": true
+            },
+            "complete_on": 3,
+            "subtask_rollup": false
+          },
+          "date_created": "1702351138518",
+          "hide_from_guests": false,
+          "value": {
+            "percent_complete": 100
+          },
+          "required": false
+        },
+        {
+          "id": "b38b6af1-ac29-405f-8351-df7c81c266aa",
+          "name": "CH",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "options": [
+              {
+                "id": "0a8b6956-e498-42e8-b4b4-35654b6978e6",
+                "name": "Dyne",
+                "color": "#9315c8",
+                "orderindex": 0
+              },
+              {
+                "id": "2b81f2e9-8948-4cf7-adfb-829c6ec3b717",
+                "name": "Alessi",
+                "color": "#AF7E2E",
+                "orderindex": 1
+              },
+              {
+                "id": "fb9cbc80-8157-4d52-a3a4-9a6e47e5c2a5",
+                "name": "Dyne Verified",
+                "color": "#2ecd6f",
+                "orderindex": 2
+              },
+              {
+                "id": "21044a3b-e36f-4c3f-b1bd-34eff512428c",
+                "name": "Alessi Verified",
+                "color": "#2ecd6f",
+                "orderindex": 3
+              }
+            ]
+          },
+          "date_created": "1747767510023",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "f27d0628-067d-45c2-8f7e-1e314189960b",
+          "name": "CH",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "options": [
+              {
+                "id": "dcd85999-b329-4a3a-aebb-55a4e236418c",
+                "name": "Dyne",
+                "color": "#FF4081",
+                "orderindex": 0
+              },
+              {
+                "id": "e68b52b9-fe89-42a6-9b85-fc11092ea1fa",
+                "name": "Dyne Verified",
+                "color": "#2ecd6f",
+                "orderindex": 1
+              },
+              {
+                "id": "9c196a0d-f2b5-498c-919a-69d9dcb43397",
+                "name": "Alessi Verified",
+                "color": "#2ecd6f",
+                "orderindex": 2
+              },
+              {
+                "id": "6eace045-0cde-405b-b587-c231dd7726c2",
+                "name": "Alessi",
+                "color": "#7C4DFF",
+                "orderindex": 3
+              }
+            ]
+          },
+          "date_created": "1762243960861",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "06b320b9-965c-4236-b6ee-87f9987d36f3",
+          "name": "P1 Client Type",
+          "type": "drop_down",
+          "type_config": {
+            "default": 0,
+            "sorting": "manual",
+            "placeholder": null,
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "b40d214f-79cc-4367-b57c-9e9fd6d4138a",
+                "name": "Free",
+                "color": null,
+                "orderindex": 0
+              },
+              {
+                "id": "e56f3f2d-2e85-40a5-84d7-78e72bc99314",
+                "name": "Paid",
+                "color": null,
+                "orderindex": 1
+              },
+              {
+                "id": "c947c067-e031-42a5-b0bb-370ee5381ad8",
+                "name": "All",
+                "color": null,
+                "orderindex": 2
+              }
+            ]
+          },
+          "date_created": "1655361590889",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "e2d5e773-cf70-4a07-9730-be239a993cc8",
+          "name": "Project",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "73e9566f-c80c-4408-9e3d-b74b2415eb32",
+                "name": "Prosperna",
+                "color": "#0231E8",
+                "orderindex": 0
+              },
+              {
+                "id": "16be581a-007e-4274-8f03-6b175ef50da5",
+                "name": "Pippify",
+                "color": "#30a46c",
+                "orderindex": 1
+              },
+              {
+                "id": "f5b1886e-505b-49c7-b92e-6e559f69bd5c",
+                "name": "Enterprise",
+                "color": "#81B1FF",
+                "orderindex": 2
+              }
+            ]
+          },
+          "date_created": "1747747397729",
+          "hide_from_guests": false,
+          "value": 0,
+          "value_richtext": null,
+          "required": true
+        },
+        {
+          "id": "65fb6da8-e6ea-44fb-af15-08319a8158fe",
+          "name": "Requestor",
+          "type": "drop_down",
+          "type_config": {
+            "ai": {
+              "prompt": "",
+              "source": "custom_dropdown"
+            },
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "f2e04d4a-aa9e-4385-a8ce-09ddb23dddb3",
+                "name": "Client direct Support",
+                "color": "#FF4081",
+                "orderindex": 0
+              },
+              {
+                "id": "52d47d61-7e0c-4bd0-97c3-9661a1237d66",
+                "name": "Radley",
+                "color": "#7C4DFF",
+                "orderindex": 1
+              },
+              {
+                "id": "9f57b8fd-3fb6-4df7-8197-e22f99909abf",
+                "name": "Fro",
+                "color": "#f9d900",
+                "orderindex": 2
+              },
+              {
+                "id": "e882f2a4-06e0-41b4-a8b9-cc131e83879b",
+                "name": "Dennis Velasco",
+                "color": "#02BCD4",
+                "orderindex": 3
+              },
+              {
+                "id": "754be9a4-2b49-4c60-ac20-e3fb2c8f6871",
+                "name": "Ken Tio",
+                "color": "#1bbc9c",
+                "orderindex": 4
+              },
+              {
+                "id": "8a455d73-b1ce-49df-bf7f-2202f2e668b2",
+                "name": "Ronnie",
+                "color": "#0231E8",
+                "orderindex": 5
+              },
+              {
+                "id": "c013efcf-28b9-4074-8362-46712ac731db",
+                "name": "Dyne",
+                "color": "#ff7800",
+                "orderindex": 6
+              },
+              {
+                "id": "3eb44a8b-f46a-4b74-8bd6-3031fcb605c8",
+                "name": "Alessi",
+                "color": "#800000",
+                "orderindex": 7
+              },
+              {
+                "id": "a6bf9e1e-764c-4713-809a-88cd5b0b183f",
+                "name": "Alex",
+                "color": "#b6b6ff",
+                "orderindex": 8
+              },
+              {
+                "id": "a92bfe47-a6bd-42cb-9e47-40fc988606d0",
+                "name": "Internal",
+                "color": "#7B60ED",
+                "orderindex": 9
+              }
+            ]
+          },
+          "date_created": "1754289356657",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "1daa67e2-59b5-44ee-9482-6ca5c7888a15",
+          "name": "Requestor",
+          "type": "users",
+          "type_config": {
+            "single_user": false,
+            "include_groups": true,
+            "include_guests": true,
+            "include_team_members": true
+          },
+          "date_created": "1651456557048",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "4d7f64d9-8176-4e92-a4bc-aaa270d1212f",
+          "name": "SLA",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "1c6e9615-70f6-4b95-8c08-20419496559a",
+                "name": "sdev support",
+                "color": "#02BCD4",
+                "orderindex": 0
+              },
+              {
+                "id": "8495b9c1-d740-4d7b-8e79-5bce746447c6",
+                "name": " pdev support",
+                "color": "#0b74a3",
+                "orderindex": 1
+              },
+              {
+                "id": "d130411d-544e-484a-8d9b-8354a578eba4",
+                "name": "sdev",
+                "color": "#029eb2",
+                "orderindex": 2
+              },
+              {
+                "id": "b9beab8b-2fc2-44d1-8b67-a2f80f95aae1",
+                "name": "pdev",
+                "color": "#3e567e",
+                "orderindex": 3
+              }
+            ]
+          },
+          "date_created": "1748939552081",
+          "hide_from_guests": false,
+          "required": true
+        },
+        {
+          "id": "3ff9f436-5085-4218-84e4-c738735e9b7a",
+          "name": "Source",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "ee3c0361-7a27-4e78-8f25-682e6f4836e7",
+                "name": "External Support",
+                "color": "#934444",
+                "orderindex": 0
+              },
+              {
+                "id": "2d1d1ee5-09ac-4d93-a2c3-dec5cdac5bdd",
+                "name": "Internal Support",
+                "color": "#d47d2f",
+                "orderindex": 1
+              },
+              {
+                "id": "048917ad-ae22-42c2-8403-fa0f6cd70076",
+                "name": "Product Roadmap",
+                "color": "#81B1FF",
+                "orderindex": 2
+              },
+              {
+                "id": "3452edb8-7926-4a77-8a8e-155e0a7e8b59",
+                "name": "Client Request",
+                "color": "#04A9F4",
+                "orderindex": 3
+              }
+            ]
+          },
+          "date_created": "1746330744248",
+          "hide_from_guests": false,
+          "required": true
+        },
+        {
+          "id": "14bf0536-6d1c-42d0-a516-8d110ae6a666",
+          "name": "Type of Work",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "624bdb4c-1690-4184-b194-7fc115f4c7a1",
+                "name": "IT Operation Projects",
+                "color": "#7C4DFF",
+                "orderindex": 0
+              },
+              {
+                "id": "2f5f4bcb-c9b1-44ca-a9d3-f8fb6eef0378",
+                "name": "Business Projects",
+                "color": "#04A9F4",
+                "orderindex": 1
+              },
+              {
+                "id": "ce8e2150-a81f-4800-b95b-37b224381817",
+                "name": "Unplanned Work",
+                "color": "#e50000",
+                "orderindex": 2
+              },
+              {
+                "id": "e9cc0588-ebca-48df-a33d-b219bc430aee",
+                "name": "Changes",
+                "color": "#f9d900",
+                "orderindex": 3
+              },
+              {
+                "id": "dfaad5d7-cf02-4290-920f-2720950937d1",
+                "name": "Quaility ",
+                "color": "#04BF7C",
+                "orderindex": 4
+              }
+            ]
+          },
+          "date_created": "1752542906226",
+          "hide_from_guests": false,
+          "required": true
+        },
+        {
+          "id": "abeff65b-23f2-4f31-9bee-ba7f746ca705",
+          "name": "Work Type Category",
+          "type": "labels",
+          "type_config": {
+            "sorting": "manual",
+            "options": [
+              {
+                "id": "4ee9e1df-bcea-4c27-85d4-3a704c4cf244",
+                "label": "New Feature",
+                "color": "#800000",
+                "orderindex": 0
+              },
+              {
+                "id": "44183825-1767-4adf-b092-a55faa04bc0a",
+                "label": "Enhancement",
+                "color": "#AF7E2E",
+                "orderindex": 1
+              },
+              {
+                "id": "78d6ed2b-a472-4e65-b6ff-47585d795d10",
+                "label": "UX/UI Improvement",
+                "color": "#ff7800",
+                "orderindex": 2
+              },
+              {
+                "id": "ba9fd025-0f20-4462-9a57-89bfd52372c8",
+                "label": "UX / UI Improvement",
+                "color": "#3397dd",
+                "orderindex": 3
+              },
+              {
+                "id": "27682845-efa6-4c0f-baca-603f02959525",
+                "label": "Hotfix",
+                "color": "#E65100",
+                "orderindex": 4
+              },
+              {
+                "id": "1fa5d066-5c49-4efc-a54a-a66f485be9c8",
+                "label": "Bug",
+                "color": "#EA80FC",
+                "orderindex": 5
+              },
+              {
+                "id": "34b2394b-fc1a-4a51-ba7c-e6d4ff69e8cb",
+                "label": "QA",
+                "color": "#FF4081",
+                "orderindex": 6
+              },
+              {
+                "id": "0f3ac0e9-dedb-49af-968b-64e490e47f29",
+                "label": "Regression Test",
+                "color": "#fff",
+                "orderindex": 7
+              },
+              {
+                "id": "05215be1-5cbd-44f0-9e4f-5134f2f36c76",
+                "label": "Regression Testing",
+                "color": "#04A9F4",
+                "orderindex": 8
+              },
+              {
+                "id": "ac2c3d01-a86e-4f52-9248-94d4ab1ebf7c",
+                "label": "System Upgrade",
+                "color": "#f900ea",
+                "orderindex": 9
+              },
+              {
+                "id": "9d47dde7-f6c0-47df-96f4-56da3c50d25a",
+                "label": "Website Design",
+                "color": "#bf55ec",
+                "orderindex": 10
+              },
+              {
+                "id": "f5de9426-d114-4b44-83f5-f18465648017",
+                "label": "Website Build",
+                "color": "#0231E8",
+                "orderindex": 11
+              },
+              {
+                "id": "7811696d-d8a3-4fe2-8c36-ef183b4ac66a",
+                "label": "Website Revision",
+                "color": "#bf55ec",
+                "orderindex": 12
+              },
+              {
+                "id": "15254c31-a623-4bba-a6cc-48f8bf74ddf9",
+                "label": "Migration",
+                "color": "#9b59b6",
+                "orderindex": 13
+              },
+              {
+                "id": "a3bd56f3-df39-44fb-98a0-a17ba7bf7a50",
+                "label": "Customer Request",
+                "color": "#E65100",
+                "orderindex": 14
+              },
+              {
+                "id": "7dc9143d-6e3d-4939-978e-d16b4250d68e",
+                "label": "KB Article",
+                "color": "#800000",
+                "orderindex": 15
+              },
+              {
+                "id": "d6e47a9f-df49-412b-95a3-aa35d42eb58c",
+                "label": "Legal Compliance Requirement",
+                "color": "#FF7FAB",
+                "orderindex": 16
+              },
+              {
+                "id": "ea90e260-3b69-4403-bc61-115c353cf2e6",
+                "label": "Technical Debt Cleanup",
+                "color": "#E65100",
+                "orderindex": 17
+              },
+              {
+                "id": "343049ba-4e29-47f0-aad8-9032ebf6d354",
+                "label": "DevOps Automation",
+                "color": "#2ecd6f",
+                "orderindex": 18
+              },
+              {
+                "id": "7bdc0937-3bbd-4876-84c1-19cb302483d8",
+                "label": "Third Party Fix",
+                "color": "#81B1FF",
+                "orderindex": 19
+              },
+              {
+                "id": "9fece4cf-c9d3-4469-b415-963b670abad2",
+                "label": "Research and Development",
+                "color": "#1bbc9c",
+                "orderindex": 20
+              },
+              {
+                "id": "9c9fda2a-0c32-47ff-ba94-d73584788499",
+                "label": "Security Hardening",
+                "color": "#FF7FAB",
+                "orderindex": 21
+              },
+              {
+                "id": "11db5add-21eb-4e3f-9794-b846d220202d",
+                "label": "Infra Change",
+                "color": "#e50000",
+                "orderindex": 22
+              },
+              {
+                "id": "66fbcdc1-6f67-4746-acec-13b73f39ed70",
+                "label": "Rollback",
+                "color": "#FF4081",
+                "orderindex": 23
+              },
+              {
+                "id": "5be860af-4395-4b05-a0bb-c236e16fd6eb",
+                "label": "Cost Reduction",
+                "color": "#AF7E2E",
+                "orderindex": 24
+              },
+              {
+                "id": "767057b4-e9c3-47b7-bf3d-a74d364ae534",
+                "label": "Roadblock",
+                "color": "#b5bcc2",
+                "orderindex": 25
+              },
+              {
+                "id": "f6197485-913e-48ed-8959-8a7d70b43800",
+                "label": "Automation",
+                "color": "#0231E8",
+                "orderindex": 26
+              },
+              {
+                "id": "fcd40756-aa25-47f6-95ed-634bfe26d87c",
+                "label": "Datadog",
+                "color": "#fff",
+                "orderindex": 27
+              },
+              {
+                "id": "ed1739e9-d070-4c67-afa5-03278b91b971",
+                "label": "Account Removal",
+                "color": "#b6b6ff",
+                "orderindex": 28
+              },
+              {
+                "id": "f82abe4b-0ad2-4111-b577-718dcc1e2a5b",
+                "label": "observability",
+                "color": "#aec0f5",
+                "orderindex": 29
+              },
+              {
+                "id": "bc67df3e-b96f-40fe-a40f-095f51fd2acf",
+                "label": "Website Restore",
+                "color": "#96c7f2",
+                "orderindex": 30
+              }
+            ]
+          },
+          "date_created": "1752624111778",
+          "hide_from_guests": false,
+          "required": true
+        }
+      ],
+      "dependencies": [],
+      "linked_tasks": [],
+      "locations": [],
+      "url": "https://app.clickup.com/t/86eyhy604"
+    },
+    {
+      "id": "86eyhy6p0",
+      "custom_item_id": 0,
+      "name": "Payment Settings",
+      "status": {
+        "status": "deployed to prod",
+        "orderindex": 12,
+        "color": "#008844",
+        "type": "closed"
+      },
+      "orderindex": "10001786002897.64897300000000000000000000000000",
+      "date_created": "1786002897602",
+      "date_updated": "1786104980611",
+      "archived": false,
+      "creator": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "color": "#595d66",
+        "email": "angelo.kamachi@prosperna.com",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "assignees": [
+        {
+          "id": 95622662,
+          "username": "Aira Pilor",
+          "color": "#e93d82",
+          "initials": "AP",
+          "email": "aira@prosperna.com",
+          "profilePicture": null
+        },
+        {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "color": "#595d66",
+          "initials": "AK",
+          "email": "angelo.kamachi@prosperna.com",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      ],
+      "group_assignees": [],
+      "watchers": [
+        {
+          "id": -1,
+          "username": "ClickBot",
+          "color": "#827718",
+          "initials": "C",
+          "email": "clickbot@clickup.com",
+          "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+        },
+        {
+          "id": 37590522,
+          "username": "Ian Pelea",
+          "color": "#04a9f4",
+          "initials": "IP",
+          "email": "ian@prosperna.com",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/37590522_IvQ.jpg"
+        },
+        {
+          "id": 95622662,
+          "username": "Aira Pilor",
+          "color": "#e93d82",
+          "initials": "AP",
+          "email": "aira@prosperna.com",
+          "profilePicture": null
+        },
+        {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "color": "#595d66",
+          "initials": "AK",
+          "email": "angelo.kamachi@prosperna.com",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      ],
+      "checklists": [],
+      "tags": [],
+      "parent": "86eyheppd",
+      "top_level_parent": "86eyheppd",
+      "due_date": null,
+      "start_date": null,
+      "points": null,
+      "time_estimate": null,
+      "time_spent": 0,
+      "custom_fields": [
+        {
+          "id": "74e0ff60-1b19-4c27-b69f-e75bd8ac7292",
+          "name": "Action Items",
+          "type": "text",
+          "type_config": {
+            "ai": {
+              "prompt": "",
+              "source": "action_items"
+            }
+          },
+          "date_created": "1746337659453",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "0be556d3-f5de-455c-b486-f62959d982a9",
+          "name": "Action Items 2",
+          "type": "text",
+          "type_config": {
+            "ai": {
+              "source": "action_items"
+            }
+          },
+          "date_created": "1748240863456",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "a025da22-c65b-4dfe-a324-c7b0a04aa5ae",
+          "name": "Client Name or Page Link",
+          "type": "short_text",
+          "type_config": {},
+          "date_created": "1762239072424",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "756883ad-287a-4520-b178-4ded131e63f4",
+          "name": "Design Request",
+          "type": "tasks",
+          "type_config": {
+            "fields": []
+          },
+          "date_created": "1745478684741",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "f3dc8067-c804-4091-8aeb-0edb722a8d79",
+          "name": "Progress Updates",
+          "type": "text",
+          "type_config": {
+            "ai": {
+              "format": "bullet",
+              "source": "activity",
+              "updateFrom": "24h"
+            }
+          },
+          "date_created": "1746337649929",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "a5c9bbba-f0a6-4fac-9e7d-e29b9a643d9f",
+          "name": "Task duration",
+          "type": "formula",
+          "type_config": {
+            "simple": true,
+            "formula": "TASK_CLOSED - TASK_CREATED",
+            "version": "1.12",
+            "reset_at": 1750896207374,
+            "is_dynamic": false,
+            "return_types": [
+              "number"
+            ],
+            "calculation_state": "ready"
+          },
+          "date_created": "1747805761844",
+          "hide_from_guests": false,
+          "value": "1",
+          "value_richtext": null,
+          "required": false
+        },
+        {
+          "id": "fc490095-1631-4e6c-8fe8-6f210159548b",
+          "name": "💯 Completion Rate",
+          "type": "automatic_progress",
+          "type_config": {
+            "tracking": {
+              "subtasks": true,
+              "checklists": true,
+              "assigned_comments": true
+            },
+            "complete_on": 3,
+            "subtask_rollup": false
+          },
+          "date_created": "1702351138518",
+          "hide_from_guests": false,
+          "value": {
+            "percent_complete": 100
+          },
+          "required": false
+        },
+        {
+          "id": "b38b6af1-ac29-405f-8351-df7c81c266aa",
+          "name": "CH",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "options": [
+              {
+                "id": "0a8b6956-e498-42e8-b4b4-35654b6978e6",
+                "name": "Dyne",
+                "color": "#9315c8",
+                "orderindex": 0
+              },
+              {
+                "id": "2b81f2e9-8948-4cf7-adfb-829c6ec3b717",
+                "name": "Alessi",
+                "color": "#AF7E2E",
+                "orderindex": 1
+              },
+              {
+                "id": "fb9cbc80-8157-4d52-a3a4-9a6e47e5c2a5",
+                "name": "Dyne Verified",
+                "color": "#2ecd6f",
+                "orderindex": 2
+              },
+              {
+                "id": "21044a3b-e36f-4c3f-b1bd-34eff512428c",
+                "name": "Alessi Verified",
+                "color": "#2ecd6f",
+                "orderindex": 3
+              }
+            ]
+          },
+          "date_created": "1747767510023",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "f27d0628-067d-45c2-8f7e-1e314189960b",
+          "name": "CH",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "options": [
+              {
+                "id": "dcd85999-b329-4a3a-aebb-55a4e236418c",
+                "name": "Dyne",
+                "color": "#FF4081",
+                "orderindex": 0
+              },
+              {
+                "id": "e68b52b9-fe89-42a6-9b85-fc11092ea1fa",
+                "name": "Dyne Verified",
+                "color": "#2ecd6f",
+                "orderindex": 1
+              },
+              {
+                "id": "9c196a0d-f2b5-498c-919a-69d9dcb43397",
+                "name": "Alessi Verified",
+                "color": "#2ecd6f",
+                "orderindex": 2
+              },
+              {
+                "id": "6eace045-0cde-405b-b587-c231dd7726c2",
+                "name": "Alessi",
+                "color": "#7C4DFF",
+                "orderindex": 3
+              }
+            ]
+          },
+          "date_created": "1762243960861",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "06b320b9-965c-4236-b6ee-87f9987d36f3",
+          "name": "P1 Client Type",
+          "type": "drop_down",
+          "type_config": {
+            "default": 0,
+            "sorting": "manual",
+            "placeholder": null,
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "b40d214f-79cc-4367-b57c-9e9fd6d4138a",
+                "name": "Free",
+                "color": null,
+                "orderindex": 0
+              },
+              {
+                "id": "e56f3f2d-2e85-40a5-84d7-78e72bc99314",
+                "name": "Paid",
+                "color": null,
+                "orderindex": 1
+              },
+              {
+                "id": "c947c067-e031-42a5-b0bb-370ee5381ad8",
+                "name": "All",
+                "color": null,
+                "orderindex": 2
+              }
+            ]
+          },
+          "date_created": "1655361590889",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "e2d5e773-cf70-4a07-9730-be239a993cc8",
+          "name": "Project",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "73e9566f-c80c-4408-9e3d-b74b2415eb32",
+                "name": "Prosperna",
+                "color": "#0231E8",
+                "orderindex": 0
+              },
+              {
+                "id": "16be581a-007e-4274-8f03-6b175ef50da5",
+                "name": "Pippify",
+                "color": "#30a46c",
+                "orderindex": 1
+              },
+              {
+                "id": "f5b1886e-505b-49c7-b92e-6e559f69bd5c",
+                "name": "Enterprise",
+                "color": "#81B1FF",
+                "orderindex": 2
+              }
+            ]
+          },
+          "date_created": "1747747397729",
+          "hide_from_guests": false,
+          "value": 0,
+          "value_richtext": null,
+          "required": true
+        },
+        {
+          "id": "65fb6da8-e6ea-44fb-af15-08319a8158fe",
+          "name": "Requestor",
+          "type": "drop_down",
+          "type_config": {
+            "ai": {
+              "prompt": "",
+              "source": "custom_dropdown"
+            },
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "f2e04d4a-aa9e-4385-a8ce-09ddb23dddb3",
+                "name": "Client direct Support",
+                "color": "#FF4081",
+                "orderindex": 0
+              },
+              {
+                "id": "52d47d61-7e0c-4bd0-97c3-9661a1237d66",
+                "name": "Radley",
+                "color": "#7C4DFF",
+                "orderindex": 1
+              },
+              {
+                "id": "9f57b8fd-3fb6-4df7-8197-e22f99909abf",
+                "name": "Fro",
+                "color": "#f9d900",
+                "orderindex": 2
+              },
+              {
+                "id": "e882f2a4-06e0-41b4-a8b9-cc131e83879b",
+                "name": "Dennis Velasco",
+                "color": "#02BCD4",
+                "orderindex": 3
+              },
+              {
+                "id": "754be9a4-2b49-4c60-ac20-e3fb2c8f6871",
+                "name": "Ken Tio",
+                "color": "#1bbc9c",
+                "orderindex": 4
+              },
+              {
+                "id": "8a455d73-b1ce-49df-bf7f-2202f2e668b2",
+                "name": "Ronnie",
+                "color": "#0231E8",
+                "orderindex": 5
+              },
+              {
+                "id": "c013efcf-28b9-4074-8362-46712ac731db",
+                "name": "Dyne",
+                "color": "#ff7800",
+                "orderindex": 6
+              },
+              {
+                "id": "3eb44a8b-f46a-4b74-8bd6-3031fcb605c8",
+                "name": "Alessi",
+                "color": "#800000",
+                "orderindex": 7
+              },
+              {
+                "id": "a6bf9e1e-764c-4713-809a-88cd5b0b183f",
+                "name": "Alex",
+                "color": "#b6b6ff",
+                "orderindex": 8
+              },
+              {
+                "id": "a92bfe47-a6bd-42cb-9e47-40fc988606d0",
+                "name": "Internal",
+                "color": "#7B60ED",
+                "orderindex": 9
+              }
+            ]
+          },
+          "date_created": "1754289356657",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "1daa67e2-59b5-44ee-9482-6ca5c7888a15",
+          "name": "Requestor",
+          "type": "users",
+          "type_config": {
+            "single_user": false,
+            "include_groups": true,
+            "include_guests": true,
+            "include_team_members": true
+          },
+          "date_created": "1651456557048",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "4d7f64d9-8176-4e92-a4bc-aaa270d1212f",
+          "name": "SLA",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "1c6e9615-70f6-4b95-8c08-20419496559a",
+                "name": "sdev support",
+                "color": "#02BCD4",
+                "orderindex": 0
+              },
+              {
+                "id": "8495b9c1-d740-4d7b-8e79-5bce746447c6",
+                "name": " pdev support",
+                "color": "#0b74a3",
+                "orderindex": 1
+              },
+              {
+                "id": "d130411d-544e-484a-8d9b-8354a578eba4",
+                "name": "sdev",
+                "color": "#029eb2",
+                "orderindex": 2
+              },
+              {
+                "id": "b9beab8b-2fc2-44d1-8b67-a2f80f95aae1",
+                "name": "pdev",
+                "color": "#3e567e",
+                "orderindex": 3
+              }
+            ]
+          },
+          "date_created": "1748939552081",
+          "hide_from_guests": false,
+          "required": true
+        },
+        {
+          "id": "3ff9f436-5085-4218-84e4-c738735e9b7a",
+          "name": "Source",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "ee3c0361-7a27-4e78-8f25-682e6f4836e7",
+                "name": "External Support",
+                "color": "#934444",
+                "orderindex": 0
+              },
+              {
+                "id": "2d1d1ee5-09ac-4d93-a2c3-dec5cdac5bdd",
+                "name": "Internal Support",
+                "color": "#d47d2f",
+                "orderindex": 1
+              },
+              {
+                "id": "048917ad-ae22-42c2-8403-fa0f6cd70076",
+                "name": "Product Roadmap",
+                "color": "#81B1FF",
+                "orderindex": 2
+              },
+              {
+                "id": "3452edb8-7926-4a77-8a8e-155e0a7e8b59",
+                "name": "Client Request",
+                "color": "#04A9F4",
+                "orderindex": 3
+              }
+            ]
+          },
+          "date_created": "1746330744248",
+          "hide_from_guests": false,
+          "required": true
+        },
+        {
+          "id": "14bf0536-6d1c-42d0-a516-8d110ae6a666",
+          "name": "Type of Work",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "624bdb4c-1690-4184-b194-7fc115f4c7a1",
+                "name": "IT Operation Projects",
+                "color": "#7C4DFF",
+                "orderindex": 0
+              },
+              {
+                "id": "2f5f4bcb-c9b1-44ca-a9d3-f8fb6eef0378",
+                "name": "Business Projects",
+                "color": "#04A9F4",
+                "orderindex": 1
+              },
+              {
+                "id": "ce8e2150-a81f-4800-b95b-37b224381817",
+                "name": "Unplanned Work",
+                "color": "#e50000",
+                "orderindex": 2
+              },
+              {
+                "id": "e9cc0588-ebca-48df-a33d-b219bc430aee",
+                "name": "Changes",
+                "color": "#f9d900",
+                "orderindex": 3
+              },
+              {
+                "id": "dfaad5d7-cf02-4290-920f-2720950937d1",
+                "name": "Quaility ",
+                "color": "#04BF7C",
+                "orderindex": 4
+              }
+            ]
+          },
+          "date_created": "1752542906226",
+          "hide_from_guests": false,
+          "required": true
+        },
+        {
+          "id": "abeff65b-23f2-4f31-9bee-ba7f746ca705",
+          "name": "Work Type Category",
+          "type": "labels",
+          "type_config": {
+            "sorting": "manual",
+            "options": [
+              {
+                "id": "4ee9e1df-bcea-4c27-85d4-3a704c4cf244",
+                "label": "New Feature",
+                "color": "#800000",
+                "orderindex": 0
+              },
+              {
+                "id": "44183825-1767-4adf-b092-a55faa04bc0a",
+                "label": "Enhancement",
+                "color": "#AF7E2E",
+                "orderindex": 1
+              },
+              {
+                "id": "78d6ed2b-a472-4e65-b6ff-47585d795d10",
+                "label": "UX/UI Improvement",
+                "color": "#ff7800",
+                "orderindex": 2
+              },
+              {
+                "id": "ba9fd025-0f20-4462-9a57-89bfd52372c8",
+                "label": "UX / UI Improvement",
+                "color": "#3397dd",
+                "orderindex": 3
+              },
+              {
+                "id": "27682845-efa6-4c0f-baca-603f02959525",
+                "label": "Hotfix",
+                "color": "#E65100",
+                "orderindex": 4
+              },
+              {
+                "id": "1fa5d066-5c49-4efc-a54a-a66f485be9c8",
+                "label": "Bug",
+                "color": "#EA80FC",
+                "orderindex": 5
+              },
+              {
+                "id": "34b2394b-fc1a-4a51-ba7c-e6d4ff69e8cb",
+                "label": "QA",
+                "color": "#FF4081",
+                "orderindex": 6
+              },
+              {
+                "id": "0f3ac0e9-dedb-49af-968b-64e490e47f29",
+                "label": "Regression Test",
+                "color": "#fff",
+                "orderindex": 7
+              },
+              {
+                "id": "05215be1-5cbd-44f0-9e4f-5134f2f36c76",
+                "label": "Regression Testing",
+                "color": "#04A9F4",
+                "orderindex": 8
+              },
+              {
+                "id": "ac2c3d01-a86e-4f52-9248-94d4ab1ebf7c",
+                "label": "System Upgrade",
+                "color": "#f900ea",
+                "orderindex": 9
+              },
+              {
+                "id": "9d47dde7-f6c0-47df-96f4-56da3c50d25a",
+                "label": "Website Design",
+                "color": "#bf55ec",
+                "orderindex": 10
+              },
+              {
+                "id": "f5de9426-d114-4b44-83f5-f18465648017",
+                "label": "Website Build",
+                "color": "#0231E8",
+                "orderindex": 11
+              },
+              {
+                "id": "7811696d-d8a3-4fe2-8c36-ef183b4ac66a",
+                "label": "Website Revision",
+                "color": "#bf55ec",
+                "orderindex": 12
+              },
+              {
+                "id": "15254c31-a623-4bba-a6cc-48f8bf74ddf9",
+                "label": "Migration",
+                "color": "#9b59b6",
+                "orderindex": 13
+              },
+              {
+                "id": "a3bd56f3-df39-44fb-98a0-a17ba7bf7a50",
+                "label": "Customer Request",
+                "color": "#E65100",
+                "orderindex": 14
+              },
+              {
+                "id": "7dc9143d-6e3d-4939-978e-d16b4250d68e",
+                "label": "KB Article",
+                "color": "#800000",
+                "orderindex": 15
+              },
+              {
+                "id": "d6e47a9f-df49-412b-95a3-aa35d42eb58c",
+                "label": "Legal Compliance Requirement",
+                "color": "#FF7FAB",
+                "orderindex": 16
+              },
+              {
+                "id": "ea90e260-3b69-4403-bc61-115c353cf2e6",
+                "label": "Technical Debt Cleanup",
+                "color": "#E65100",
+                "orderindex": 17
+              },
+              {
+                "id": "343049ba-4e29-47f0-aad8-9032ebf6d354",
+                "label": "DevOps Automation",
+                "color": "#2ecd6f",
+                "orderindex": 18
+              },
+              {
+                "id": "7bdc0937-3bbd-4876-84c1-19cb302483d8",
+                "label": "Third Party Fix",
+                "color": "#81B1FF",
+                "orderindex": 19
+              },
+              {
+                "id": "9fece4cf-c9d3-4469-b415-963b670abad2",
+                "label": "Research and Development",
+                "color": "#1bbc9c",
+                "orderindex": 20
+              },
+              {
+                "id": "9c9fda2a-0c32-47ff-ba94-d73584788499",
+                "label": "Security Hardening",
+                "color": "#FF7FAB",
+                "orderindex": 21
+              },
+              {
+                "id": "11db5add-21eb-4e3f-9794-b846d220202d",
+                "label": "Infra Change",
+                "color": "#e50000",
+                "orderindex": 22
+              },
+              {
+                "id": "66fbcdc1-6f67-4746-acec-13b73f39ed70",
+                "label": "Rollback",
+                "color": "#FF4081",
+                "orderindex": 23
+              },
+              {
+                "id": "5be860af-4395-4b05-a0bb-c236e16fd6eb",
+                "label": "Cost Reduction",
+                "color": "#AF7E2E",
+                "orderindex": 24
+              },
+              {
+                "id": "767057b4-e9c3-47b7-bf3d-a74d364ae534",
+                "label": "Roadblock",
+                "color": "#b5bcc2",
+                "orderindex": 25
+              },
+              {
+                "id": "f6197485-913e-48ed-8959-8a7d70b43800",
+                "label": "Automation",
+                "color": "#0231E8",
+                "orderindex": 26
+              },
+              {
+                "id": "fcd40756-aa25-47f6-95ed-634bfe26d87c",
+                "label": "Datadog",
+                "color": "#fff",
+                "orderindex": 27
+              },
+              {
+                "id": "ed1739e9-d070-4c67-afa5-03278b91b971",
+                "label": "Account Removal",
+                "color": "#b6b6ff",
+                "orderindex": 28
+              },
+              {
+                "id": "f82abe4b-0ad2-4111-b577-718dcc1e2a5b",
+                "label": "observability",
+                "color": "#aec0f5",
+                "orderindex": 29
+              },
+              {
+                "id": "bc67df3e-b96f-40fe-a40f-095f51fd2acf",
+                "label": "Website Restore",
+                "color": "#96c7f2",
+                "orderindex": 30
+              }
+            ]
+          },
+          "date_created": "1752624111778",
+          "hide_from_guests": false,
+          "required": true
+        }
+      ],
+      "dependencies": [],
+      "linked_tasks": [],
+      "locations": [],
+      "url": "https://app.clickup.com/t/86eyhy6p0"
+    },
+    {
+      "id": "86eyhy744",
+      "custom_item_id": 0,
+      "name": "Themes",
+      "status": {
+        "status": "deployed to prod",
+        "orderindex": 12,
+        "color": "#008844",
+        "type": "closed"
+      },
+      "orderindex": "10001786002940.69185500000000000000000000000000",
+      "date_created": "1786002940618",
+      "date_updated": "1786105119931",
+      "archived": false,
+      "creator": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "color": "#595d66",
+        "email": "angelo.kamachi@prosperna.com",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "assignees": [
+        {
+          "id": 95622662,
+          "username": "Aira Pilor",
+          "color": "#e93d82",
+          "initials": "AP",
+          "email": "aira@prosperna.com",
+          "profilePicture": null
+        },
+        {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "color": "#595d66",
+          "initials": "AK",
+          "email": "angelo.kamachi@prosperna.com",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      ],
+      "group_assignees": [],
+      "watchers": [
+        {
+          "id": -1,
+          "username": "ClickBot",
+          "color": "#827718",
+          "initials": "C",
+          "email": "clickbot@clickup.com",
+          "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+        },
+        {
+          "id": 37590522,
+          "username": "Ian Pelea",
+          "color": "#04a9f4",
+          "initials": "IP",
+          "email": "ian@prosperna.com",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/37590522_IvQ.jpg"
+        },
+        {
+          "id": 95622662,
+          "username": "Aira Pilor",
+          "color": "#e93d82",
+          "initials": "AP",
+          "email": "aira@prosperna.com",
+          "profilePicture": null
+        },
+        {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "color": "#595d66",
+          "initials": "AK",
+          "email": "angelo.kamachi@prosperna.com",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      ],
+      "checklists": [],
+      "tags": [
+        {
+          "name": "qa return",
+          "tag_fg": "#6E56CF",
+          "tag_bg": "#6E56CF",
+          "creator": 25568223
+        }
+      ],
+      "parent": "86eyheppd",
+      "top_level_parent": "86eyheppd",
+      "priority": {
+        "color": "#f50000",
+        "id": "1",
+        "orderindex": "1",
+        "priority": "urgent"
+      },
+      "due_date": null,
+      "start_date": null,
+      "points": null,
+      "time_estimate": null,
+      "time_spent": 0,
+      "custom_fields": [
+        {
+          "id": "74e0ff60-1b19-4c27-b69f-e75bd8ac7292",
+          "name": "Action Items",
+          "type": "text",
+          "type_config": {
+            "ai": {
+              "prompt": "",
+              "source": "action_items"
+            }
+          },
+          "date_created": "1746337659453",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "0be556d3-f5de-455c-b486-f62959d982a9",
+          "name": "Action Items 2",
+          "type": "text",
+          "type_config": {
+            "ai": {
+              "source": "action_items"
+            }
+          },
+          "date_created": "1748240863456",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "a025da22-c65b-4dfe-a324-c7b0a04aa5ae",
+          "name": "Client Name or Page Link",
+          "type": "short_text",
+          "type_config": {},
+          "date_created": "1762239072424",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "756883ad-287a-4520-b178-4ded131e63f4",
+          "name": "Design Request",
+          "type": "tasks",
+          "type_config": {
+            "fields": []
+          },
+          "date_created": "1745478684741",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "f3dc8067-c804-4091-8aeb-0edb722a8d79",
+          "name": "Progress Updates",
+          "type": "text",
+          "type_config": {
+            "ai": {
+              "format": "bullet",
+              "source": "activity",
+              "updateFrom": "24h"
+            }
+          },
+          "date_created": "1746337649929",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "a5c9bbba-f0a6-4fac-9e7d-e29b9a643d9f",
+          "name": "Task duration",
+          "type": "formula",
+          "type_config": {
+            "simple": true,
+            "formula": "TASK_CLOSED - TASK_CREATED",
+            "version": "1.12",
+            "reset_at": 1750896207374,
+            "is_dynamic": false,
+            "return_types": [
+              "number"
+            ],
+            "calculation_state": "ready"
+          },
+          "date_created": "1747805761844",
+          "hide_from_guests": false,
+          "value": "1",
+          "value_richtext": null,
+          "required": false
+        },
+        {
+          "id": "fc490095-1631-4e6c-8fe8-6f210159548b",
+          "name": "💯 Completion Rate",
+          "type": "automatic_progress",
+          "type_config": {
+            "tracking": {
+              "subtasks": true,
+              "checklists": true,
+              "assigned_comments": true
+            },
+            "complete_on": 3,
+            "subtask_rollup": false
+          },
+          "date_created": "1702351138518",
+          "hide_from_guests": false,
+          "value": {
+            "percent_complete": 100
+          },
+          "required": false
+        },
+        {
+          "id": "b38b6af1-ac29-405f-8351-df7c81c266aa",
+          "name": "CH",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "options": [
+              {
+                "id": "0a8b6956-e498-42e8-b4b4-35654b6978e6",
+                "name": "Dyne",
+                "color": "#9315c8",
+                "orderindex": 0
+              },
+              {
+                "id": "2b81f2e9-8948-4cf7-adfb-829c6ec3b717",
+                "name": "Alessi",
+                "color": "#AF7E2E",
+                "orderindex": 1
+              },
+              {
+                "id": "fb9cbc80-8157-4d52-a3a4-9a6e47e5c2a5",
+                "name": "Dyne Verified",
+                "color": "#2ecd6f",
+                "orderindex": 2
+              },
+              {
+                "id": "21044a3b-e36f-4c3f-b1bd-34eff512428c",
+                "name": "Alessi Verified",
+                "color": "#2ecd6f",
+                "orderindex": 3
+              }
+            ]
+          },
+          "date_created": "1747767510023",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "f27d0628-067d-45c2-8f7e-1e314189960b",
+          "name": "CH",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "options": [
+              {
+                "id": "dcd85999-b329-4a3a-aebb-55a4e236418c",
+                "name": "Dyne",
+                "color": "#FF4081",
+                "orderindex": 0
+              },
+              {
+                "id": "e68b52b9-fe89-42a6-9b85-fc11092ea1fa",
+                "name": "Dyne Verified",
+                "color": "#2ecd6f",
+                "orderindex": 1
+              },
+              {
+                "id": "9c196a0d-f2b5-498c-919a-69d9dcb43397",
+                "name": "Alessi Verified",
+                "color": "#2ecd6f",
+                "orderindex": 2
+              },
+              {
+                "id": "6eace045-0cde-405b-b587-c231dd7726c2",
+                "name": "Alessi",
+                "color": "#7C4DFF",
+                "orderindex": 3
+              }
+            ]
+          },
+          "date_created": "1762243960861",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "06b320b9-965c-4236-b6ee-87f9987d36f3",
+          "name": "P1 Client Type",
+          "type": "drop_down",
+          "type_config": {
+            "default": 0,
+            "sorting": "manual",
+            "placeholder": null,
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "b40d214f-79cc-4367-b57c-9e9fd6d4138a",
+                "name": "Free",
+                "color": null,
+                "orderindex": 0
+              },
+              {
+                "id": "e56f3f2d-2e85-40a5-84d7-78e72bc99314",
+                "name": "Paid",
+                "color": null,
+                "orderindex": 1
+              },
+              {
+                "id": "c947c067-e031-42a5-b0bb-370ee5381ad8",
+                "name": "All",
+                "color": null,
+                "orderindex": 2
+              }
+            ]
+          },
+          "date_created": "1655361590889",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "e2d5e773-cf70-4a07-9730-be239a993cc8",
+          "name": "Project",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "73e9566f-c80c-4408-9e3d-b74b2415eb32",
+                "name": "Prosperna",
+                "color": "#0231E8",
+                "orderindex": 0
+              },
+              {
+                "id": "16be581a-007e-4274-8f03-6b175ef50da5",
+                "name": "Pippify",
+                "color": "#30a46c",
+                "orderindex": 1
+              },
+              {
+                "id": "f5b1886e-505b-49c7-b92e-6e559f69bd5c",
+                "name": "Enterprise",
+                "color": "#81B1FF",
+                "orderindex": 2
+              }
+            ]
+          },
+          "date_created": "1747747397729",
+          "hide_from_guests": false,
+          "value": 0,
+          "value_richtext": null,
+          "required": true
+        },
+        {
+          "id": "65fb6da8-e6ea-44fb-af15-08319a8158fe",
+          "name": "Requestor",
+          "type": "drop_down",
+          "type_config": {
+            "ai": {
+              "prompt": "",
+              "source": "custom_dropdown"
+            },
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "f2e04d4a-aa9e-4385-a8ce-09ddb23dddb3",
+                "name": "Client direct Support",
+                "color": "#FF4081",
+                "orderindex": 0
+              },
+              {
+                "id": "52d47d61-7e0c-4bd0-97c3-9661a1237d66",
+                "name": "Radley",
+                "color": "#7C4DFF",
+                "orderindex": 1
+              },
+              {
+                "id": "9f57b8fd-3fb6-4df7-8197-e22f99909abf",
+                "name": "Fro",
+                "color": "#f9d900",
+                "orderindex": 2
+              },
+              {
+                "id": "e882f2a4-06e0-41b4-a8b9-cc131e83879b",
+                "name": "Dennis Velasco",
+                "color": "#02BCD4",
+                "orderindex": 3
+              },
+              {
+                "id": "754be9a4-2b49-4c60-ac20-e3fb2c8f6871",
+                "name": "Ken Tio",
+                "color": "#1bbc9c",
+                "orderindex": 4
+              },
+              {
+                "id": "8a455d73-b1ce-49df-bf7f-2202f2e668b2",
+                "name": "Ronnie",
+                "color": "#0231E8",
+                "orderindex": 5
+              },
+              {
+                "id": "c013efcf-28b9-4074-8362-46712ac731db",
+                "name": "Dyne",
+                "color": "#ff7800",
+                "orderindex": 6
+              },
+              {
+                "id": "3eb44a8b-f46a-4b74-8bd6-3031fcb605c8",
+                "name": "Alessi",
+                "color": "#800000",
+                "orderindex": 7
+              },
+              {
+                "id": "a6bf9e1e-764c-4713-809a-88cd5b0b183f",
+                "name": "Alex",
+                "color": "#b6b6ff",
+                "orderindex": 8
+              },
+              {
+                "id": "a92bfe47-a6bd-42cb-9e47-40fc988606d0",
+                "name": "Internal",
+                "color": "#7B60ED",
+                "orderindex": 9
+              }
+            ]
+          },
+          "date_created": "1754289356657",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "1daa67e2-59b5-44ee-9482-6ca5c7888a15",
+          "name": "Requestor",
+          "type": "users",
+          "type_config": {
+            "single_user": false,
+            "include_groups": true,
+            "include_guests": true,
+            "include_team_members": true
+          },
+          "date_created": "1651456557048",
+          "hide_from_guests": false,
+          "required": false
+        },
+        {
+          "id": "4d7f64d9-8176-4e92-a4bc-aaa270d1212f",
+          "name": "SLA",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "1c6e9615-70f6-4b95-8c08-20419496559a",
+                "name": "sdev support",
+                "color": "#02BCD4",
+                "orderindex": 0
+              },
+              {
+                "id": "8495b9c1-d740-4d7b-8e79-5bce746447c6",
+                "name": " pdev support",
+                "color": "#0b74a3",
+                "orderindex": 1
+              },
+              {
+                "id": "d130411d-544e-484a-8d9b-8354a578eba4",
+                "name": "sdev",
+                "color": "#029eb2",
+                "orderindex": 2
+              },
+              {
+                "id": "b9beab8b-2fc2-44d1-8b67-a2f80f95aae1",
+                "name": "pdev",
+                "color": "#3e567e",
+                "orderindex": 3
+              }
+            ]
+          },
+          "date_created": "1748939552081",
+          "hide_from_guests": false,
+          "required": true
+        },
+        {
+          "id": "3ff9f436-5085-4218-84e4-c738735e9b7a",
+          "name": "Source",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "ee3c0361-7a27-4e78-8f25-682e6f4836e7",
+                "name": "External Support",
+                "color": "#934444",
+                "orderindex": 0
+              },
+              {
+                "id": "2d1d1ee5-09ac-4d93-a2c3-dec5cdac5bdd",
+                "name": "Internal Support",
+                "color": "#d47d2f",
+                "orderindex": 1
+              },
+              {
+                "id": "048917ad-ae22-42c2-8403-fa0f6cd70076",
+                "name": "Product Roadmap",
+                "color": "#81B1FF",
+                "orderindex": 2
+              },
+              {
+                "id": "3452edb8-7926-4a77-8a8e-155e0a7e8b59",
+                "name": "Client Request",
+                "color": "#04A9F4",
+                "orderindex": 3
+              }
+            ]
+          },
+          "date_created": "1746330744248",
+          "hide_from_guests": false,
+          "required": true
+        },
+        {
+          "id": "14bf0536-6d1c-42d0-a516-8d110ae6a666",
+          "name": "Type of Work",
+          "type": "drop_down",
+          "type_config": {
+            "sorting": "manual",
+            "new_drop_down": true,
+            "options": [
+              {
+                "id": "624bdb4c-1690-4184-b194-7fc115f4c7a1",
+                "name": "IT Operation Projects",
+                "color": "#7C4DFF",
+                "orderindex": 0
+              },
+              {
+                "id": "2f5f4bcb-c9b1-44ca-a9d3-f8fb6eef0378",
+                "name": "Business Projects",
+                "color": "#04A9F4",
+                "orderindex": 1
+              },
+              {
+                "id": "ce8e2150-a81f-4800-b95b-37b224381817",
+                "name": "Unplanned Work",
+                "color": "#e50000",
+                "orderindex": 2
+              },
+              {
+                "id": "e9cc0588-ebca-48df-a33d-b219bc430aee",
+                "name": "Changes",
+                "color": "#f9d900",
+                "orderindex": 3
+              },
+              {
+                "id": "dfaad5d7-cf02-4290-920f-2720950937d1",
+                "name": "Quaility ",
+                "color": "#04BF7C",
+                "orderindex": 4
+              }
+            ]
+          },
+          "date_created": "1752542906226",
+          "hide_from_guests": false,
+          "required": true
+        },
+        {
+          "id": "abeff65b-23f2-4f31-9bee-ba7f746ca705",
+          "name": "Work Type Category",
+          "type": "labels",
+          "type_config": {
+            "sorting": "manual",
+            "options": [
+              {
+                "id": "4ee9e1df-bcea-4c27-85d4-3a704c4cf244",
+                "label": "New Feature",
+                "color": "#800000",
+                "orderindex": 0
+              },
+              {
+                "id": "44183825-1767-4adf-b092-a55faa04bc0a",
+                "label": "Enhancement",
+                "color": "#AF7E2E",
+                "orderindex": 1
+              },
+              {
+                "id": "78d6ed2b-a472-4e65-b6ff-47585d795d10",
+                "label": "UX/UI Improvement",
+                "color": "#ff7800",
+                "orderindex": 2
+              },
+              {
+                "id": "ba9fd025-0f20-4462-9a57-89bfd52372c8",
+                "label": "UX / UI Improvement",
+                "color": "#3397dd",
+                "orderindex": 3
+              },
+              {
+                "id": "27682845-efa6-4c0f-baca-603f02959525",
+                "label": "Hotfix",
+                "color": "#E65100",
+                "orderindex": 4
+              },
+              {
+                "id": "1fa5d066-5c49-4efc-a54a-a66f485be9c8",
+                "label": "Bug",
+                "color": "#EA80FC",
+                "orderindex": 5
+              },
+              {
+                "id": "34b2394b-fc1a-4a51-ba7c-e6d4ff69e8cb",
+                "label": "QA",
+                "color": "#FF4081",
+                "orderindex": 6
+              },
+              {
+                "id": "0f3ac0e9-dedb-49af-968b-64e490e47f29",
+                "label": "Regression Test",
+                "color": "#fff",
+                "orderindex": 7
+              },
+              {
+                "id": "05215be1-5cbd-44f0-9e4f-5134f2f36c76",
+                "label": "Regression Testing",
+                "color": "#04A9F4",
+                "orderindex": 8
+              },
+              {
+                "id": "ac2c3d01-a86e-4f52-9248-94d4ab1ebf7c",
+                "label": "System Upgrade",
+                "color": "#f900ea",
+                "orderindex": 9
+              },
+              {
+                "id": "9d47dde7-f6c0-47df-96f4-56da3c50d25a",
+                "label": "Website Design",
+                "color": "#bf55ec",
+                "orderindex": 10
+              },
+              {
+                "id": "f5de9426-d114-4b44-83f5-f18465648017",
+                "label": "Website Build",
+                "color": "#0231E8",
+                "orderindex": 11
+              },
+              {
+                "id": "7811696d-d8a3-4fe2-8c36-ef183b4ac66a",
+                "label": "Website Revision",
+                "color": "#bf55ec",
+                "orderindex": 12
+              },
+              {
+                "id": "15254c31-a623-4bba-a6cc-48f8bf74ddf9",
+                "label": "Migration",
+                "color": "#9b59b6",
+                "orderindex": 13
+              },
+              {
+                "id": "a3bd56f3-df39-44fb-98a0-a17ba7bf7a50",
+                "label": "Customer Request",
+                "color": "#E65100",
+                "orderindex": 14
+              },
+              {
+                "id": "7dc9143d-6e3d-4939-978e-d16b4250d68e",
+                "label": "KB Article",
+                "color": "#800000",
+                "orderindex": 15
+              },
+              {
+                "id": "d6e47a9f-df49-412b-95a3-aa35d42eb58c",
+                "label": "Legal Compliance Requirement",
+                "color": "#FF7FAB",
+                "orderindex": 16
+              },
+              {
+                "id": "ea90e260-3b69-4403-bc61-115c353cf2e6",
+                "label": "Technical Debt Cleanup",
+                "color": "#E65100",
+                "orderindex": 17
+              },
+              {
+                "id": "343049ba-4e29-47f0-aad8-9032ebf6d354",
+                "label": "DevOps Automation",
+                "color": "#2ecd6f",
+                "orderindex": 18
+              },
+              {
+                "id": "7bdc0937-3bbd-4876-84c1-19cb302483d8",
+                "label": "Third Party Fix",
+                "color": "#81B1FF",
+                "orderindex": 19
+              },
+              {
+                "id": "9fece4cf-c9d3-4469-b415-963b670abad2",
+                "label": "Research and Development",
+                "color": "#1bbc9c",
+                "orderindex": 20
+              },
+              {
+                "id": "9c9fda2a-0c32-47ff-ba94-d73584788499",
+                "label": "Security Hardening",
+                "color": "#FF7FAB",
+                "orderindex": 21
+              },
+              {
+                "id": "11db5add-21eb-4e3f-9794-b846d220202d",
+                "label": "Infra Change",
+                "color": "#e50000",
+                "orderindex": 22
+              },
+              {
+                "id": "66fbcdc1-6f67-4746-acec-13b73f39ed70",
+                "label": "Rollback",
+                "color": "#FF4081",
+                "orderindex": 23
+              },
+              {
+                "id": "5be860af-4395-4b05-a0bb-c236e16fd6eb",
+                "label": "Cost Reduction",
+                "color": "#AF7E2E",
+                "orderindex": 24
+              },
+              {
+                "id": "767057b4-e9c3-47b7-bf3d-a74d364ae534",
+                "label": "Roadblock",
+                "color": "#b5bcc2",
+                "orderindex": 25
+              },
+              {
+                "id": "f6197485-913e-48ed-8959-8a7d70b43800",
+                "label": "Automation",
+                "color": "#0231E8",
+                "orderindex": 26
+              },
+              {
+                "id": "fcd40756-aa25-47f6-95ed-634bfe26d87c",
+                "label": "Datadog",
+                "color": "#fff",
+                "orderindex": 27
+              },
+              {
+                "id": "ed1739e9-d070-4c67-afa5-03278b91b971",
+                "label": "Account Removal",
+                "color": "#b6b6ff",
+                "orderindex": 28
+              },
+              {
+                "id": "f82abe4b-0ad2-4111-b577-718dcc1e2a5b",
+                "label": "observability",
+                "color": "#aec0f5",
+                "orderindex": 29
+              },
+              {
+                "id": "bc67df3e-b96f-40fe-a40f-095f51fd2acf",
+                "label": "Website Restore",
+                "color": "#96c7f2",
+                "orderindex": 30
+              }
+            ]
+          },
+          "date_created": "1752624111778",
+          "hide_from_guests": false,
+          "required": true
+        }
+      ],
+      "dependencies": [],
+      "linked_tasks": [],
+      "locations": [],
+      "url": "https://app.clickup.com/t/86eyhy744"
+    }
+  ],
+  "attachments": [
+    {
+      "id": "f4fbf209-be82-45c1-807c-167a6bbffff6.png",
+      "date": "1786099267920",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/f4fbf209-be82-45c1-807c-167a6bbffff6_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9mNGZiZjIwOS1iZTgyLTQ1YzEtODA3Yy0xNjdhNmJiZmZmZjZfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJoejBXIn0.QunnUDlEav5JjsvIDgm-WlJj6G7sNV6LWdU4mG1zBY4",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/f4fbf209-be82-45c1-807c-167a6bbffff6_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9mNGZiZjIwOS1iZTgyLTQ1YzEtODA3Yy0xNjdhNmJiZmZmZjZfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiVm1WMyJ9.SmNPig0bSKWaBiRWYymf1_ABpME_FYM_HI4hcBpq6Cg",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/f4fbf209-be82-45c1-807c-167a6bbffff6/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9mNGZiZjIwOS1iZTgyLTQ1YzEtODA3Yy0xNjdhNmJiZmZmZjYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJUYjJhIn0.2oL9OJZq3KinZWAjo2_pIvAcWba1GwUZzQs-YuF0n6g",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244860968",
+      "size": 235497,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 95622662,
+        "username": "Aira Pilor",
+        "email": "aira@prosperna.com",
+        "initials": "AP",
+        "color": "#e93d82",
+        "profilePicture": null
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/f4fbf209-be82-45c1-807c-167a6bbffff6/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9mNGZiZjIwOS1iZTgyLTQ1YzEtODA3Yy0xNjdhNmJiZmZmZjYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ5eWtRIn0.KGukubNWZKs4du9SR60p0H6D0qiU5A43tuDJhSQhLVM",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 1536,
+      "height": 782,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/f4fbf209-be82-45c1-807c-167a6bbffff6/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9mNGZiZjIwOS1iZTgyLTQ1YzEtODA3Yy0xNjdhNmJiZmZmZjYvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiQXVudiJ9.1ZQxTURSLdUfv3pPuUtbsufWccUKXZAg5MdlIOlRVTo",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/f4fbf209-be82-45c1-807c-167a6bbffff6/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9mNGZiZjIwOS1iZTgyLTQ1YzEtODA3Yy0xNjdhNmJiZmZmZjYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJHZ1VxIn0.QfcWfglzvsaO1lFVdEOL_JIGw-vmv_7Hf9oPyOYrgp0"
+    },
+    {
+      "id": "cb7596e9-57fc-40e1-93a0-f736ece6ec3f.mp4",
+      "date": "1786099014621",
+      "title": "20260807-1032-24.3698018.mp4",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "mp4",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/cb7596e9-57fc-40e1-93a0-f736ece6ec3f_small.jpg?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9jYjc1OTZlOS01N2ZjLTQwZTEtOTNhMC1mNzM2ZWNlNmVjM2Zfc21hbGwuanBnIiwibWF4VXNhZ2UiOjEsInJhbmQiOiIxZ1NvIn0.QMJXyNKpdE7JJXsJgss4div_JZ2X90HFqdxItWwHzgo",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/cb7596e9-57fc-40e1-93a0-f736ece6ec3f_medium.jpg?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9jYjc1OTZlOS01N2ZjLTQwZTEtOTNhMC1mNzM2ZWNlNmVjM2ZfbWVkaXVtLmpwZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiSDNlOCJ9.cLgb-Ms76nn4HcSlttiTHxB6-WmcJFVnjcU6xTWCR0Q",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/cb7596e9-57fc-40e1-93a0-f736ece6ec3f_large.jpg?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9jYjc1OTZlOS01N2ZjLTQwZTEtOTNhMC1mNzM2ZWNlNmVjM2ZfbGFyZ2UuanBnIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJqeWc5In0.vJsatNjx3HRjiX4jb8pv-1JdA2FDd0vXqEbOcgnUyog",
+      "is_folder": null,
+      "mimetype": "video/mp4",
+      "hidden": false,
+      "parent_id": "90180244860968",
+      "size": 79411924,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 95622662,
+        "username": "Aira Pilor",
+        "email": "aira@prosperna.com",
+        "initials": "AP",
+        "color": "#e93d82",
+        "profilePicture": null
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/cb7596e9-57fc-40e1-93a0-f736ece6ec3f/20260807-1032-24.3698018.mp4?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9jYjc1OTZlOS01N2ZjLTQwZTEtOTNhMC1mNzM2ZWNlNmVjM2YvMjAyNjA4MDctMTAzMi0yNC4zNjk4MDE4Lm1wNCIsIm1heFVzYWdlIjoxLCJyYW5kIjoicTdURyJ9.uZEmey_0MxLGzmt_iSiFEeCgOW3AxRHXN-KWp0RZYiI",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 1918,
+      "height": 970,
+      "duration": 222208,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/cb7596e9-57fc-40e1-93a0-f736ece6ec3f/20260807-1032-24.3698018.mp4?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9jYjc1OTZlOS01N2ZjLTQwZTEtOTNhMC1mNzM2ZWNlNmVjM2YvMjAyNjA4MDctMTAzMi0yNC4zNjk4MDE4Lm1wND92aWV3PW9wZW4iLCJtYXhVc2FnZSI6MSwicmFuZCI6Ik5KTW8ifQ.wbem3bBVYq9zBPmWlWbiyDytygzuzi7ps1MXneoBZPQ",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/cb7596e9-57fc-40e1-93a0-f736ece6ec3f/20260807-1032-24.3698018.mp4?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9jYjc1OTZlOS01N2ZjLTQwZTEtOTNhMC1mNzM2ZWNlNmVjM2YvMjAyNjA4MDctMTAzMi0yNC4zNjk4MDE4Lm1wNCIsIm1heFVzYWdlIjoxLCJyYW5kIjoicWlxRiJ9.CD9N9hXVrK9CyGhKbTd5ZtcVwW3Wb0cuYtPuMNzmMIE"
+    },
+    {
+      "id": "3e040251-0a69-491d-a86c-8088240507f4.png",
+      "date": "1785999591684",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/3e040251-0a69-491d-a86c-8088240507f4_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zZTA0MDI1MS0wYTY5LTQ5MWQtYTg2Yy04MDg4MjQwNTA3ZjRfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJueXVsIn0.9SfLyMJ793Td2u-rqY4SSS0IwXV9m18qgufkdxol8fw",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/3e040251-0a69-491d-a86c-8088240507f4_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zZTA0MDI1MS0wYTY5LTQ5MWQtYTg2Yy04MDg4MjQwNTA3ZjRfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiSXpySyJ9.L3lHUBQizDXNHmis0Ev6PWbAtVng4PYY4EWo2v96YVI",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/3e040251-0a69-491d-a86c-8088240507f4/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zZTA0MDI1MS0wYTY5LTQ5MWQtYTg2Yy04MDg4MjQwNTA3ZjQvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ1emlRIn0.L0A2fx88Z3RXda1j9Bi2hJ6r6Prk-xqnEMSivG7iPQA",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244381218",
+      "size": 326627,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/3e040251-0a69-491d-a86c-8088240507f4/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zZTA0MDI1MS0wYTY5LTQ5MWQtYTg2Yy04MDg4MjQwNTA3ZjQvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ5NHppIn0.BS3NOhkuxdPLG-OAlsow2ON3ZiFKOjsvr3bNh-oklZY",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 816,
+      "height": 855,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/3e040251-0a69-491d-a86c-8088240507f4/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zZTA0MDI1MS0wYTY5LTQ5MWQtYTg2Yy04MDg4MjQwNTA3ZjQvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiUGdPSyJ9.9qQCUEFRTtidc-P5pSYfgXC6HZdPwDmoG4fblhpfRzs",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/3e040251-0a69-491d-a86c-8088240507f4/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zZTA0MDI1MS0wYTY5LTQ5MWQtYTg2Yy04MDg4MjQwNTA3ZjQvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJEbkhRIn0.7mMRFxdNz8ySAM-GadAbvrzL_TJ5dUeM9kMndX5vVa0"
+    },
+    {
+      "id": "c1fb7a0c-080b-4a19-8e31-4f41bb401838.png",
+      "date": "1785999511916",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/c1fb7a0c-080b-4a19-8e31-4f41bb401838_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9jMWZiN2EwYy0wODBiLTRhMTktOGUzMS00ZjQxYmI0MDE4Mzhfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJNdGw2In0.QdB4IXsqFI7kGaQPofe1BqUx9wIb0Hqqbb2EU1vaBu4",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/c1fb7a0c-080b-4a19-8e31-4f41bb401838_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9jMWZiN2EwYy0wODBiLTRhMTktOGUzMS00ZjQxYmI0MDE4MzhfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiT0pXeSJ9.7nR5kB8Qmp1fqiDo2GGUM3XOsTDEZRvrUBTZCEsLG_4",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/c1fb7a0c-080b-4a19-8e31-4f41bb401838/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9jMWZiN2EwYy0wODBiLTRhMTktOGUzMS00ZjQxYmI0MDE4MzgvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJTN00wIn0.y5NDm0VCee6CD9SjU_wcAXh16378ocuy32f-KKuXk4o",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244381218",
+      "size": 409335,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/c1fb7a0c-080b-4a19-8e31-4f41bb401838/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9jMWZiN2EwYy0wODBiLTRhMTktOGUzMS00ZjQxYmI0MDE4MzgvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJmamkwIn0.OOnMH43ph77aSXTHJzEIKsF0HVDH8-Nb5vytDnWcbt8",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 813,
+      "height": 828,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/c1fb7a0c-080b-4a19-8e31-4f41bb401838/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9jMWZiN2EwYy0wODBiLTRhMTktOGUzMS00ZjQxYmI0MDE4MzgvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiMDZWZSJ9.0GxJIx539tuOWpsKv03f7Y0MynnVHPcVSFn-i_TVbzo",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/c1fb7a0c-080b-4a19-8e31-4f41bb401838/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9jMWZiN2EwYy0wODBiLTRhMTktOGUzMS00ZjQxYmI0MDE4MzgvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJGZjlVIn0.btea3DtSqX73-gJE3x80lRId3K6FdEozrAZWflqUlfc"
+    },
+    {
+      "id": "809e3d98-724f-4f8d-a826-e391d9351331.png",
+      "date": "1785998188256",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/809e3d98-724f-4f8d-a826-e391d9351331_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS84MDllM2Q5OC03MjRmLTRmOGQtYTgyNi1lMzkxZDkzNTEzMzFfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJPQlVJIn0.B9n_7uuqfoVERRgU-vv3_hZwsE8xBSMO3HptheO6zbc",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/809e3d98-724f-4f8d-a826-e391d9351331_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS84MDllM2Q5OC03MjRmLTRmOGQtYTgyNi1lMzkxZDkzNTEzMzFfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiMnlvSSJ9.McP03CP1IMAz1HVsZfBG9qr6K5qUBEjBb2cia_sCKd8",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/809e3d98-724f-4f8d-a826-e391d9351331/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS84MDllM2Q5OC03MjRmLTRmOGQtYTgyNi1lMzkxZDkzNTEzMzEvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ1Qm5qIn0.LYZdi2HkFvIpTYeU1LT0T080poRcaJacUr4fSr8sDpQ",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244381218",
+      "size": 466832,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/809e3d98-724f-4f8d-a826-e391d9351331/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS84MDllM2Q5OC03MjRmLTRmOGQtYTgyNi1lMzkxZDkzNTEzMzEvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJEbHJpIn0.8pKoFyOrNtoVc_mI1GOeJPCVDY_aLAxQy3aNiDDOj4w",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 805,
+      "height": 853,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/809e3d98-724f-4f8d-a826-e391d9351331/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS84MDllM2Q5OC03MjRmLTRmOGQtYTgyNi1lMzkxZDkzNTEzMzEvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiVFh4NiJ9.hKbUcYFu4WSxmlKp5pEJq-VWJcjmHFCA0mZtmwRAzs0",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/809e3d98-724f-4f8d-a826-e391d9351331/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS84MDllM2Q5OC03MjRmLTRmOGQtYTgyNi1lMzkxZDkzNTEzMzEvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiIycW9XIn0.Eu2i2-5bmCHCOPCsA3StO_bTXf8sJs_9m_DksDiSe2s"
+    },
+    {
+      "id": "6be66107-97d4-4b17-be74-bf8f09ae16dc.png",
+      "date": "1785998154444",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/6be66107-97d4-4b17-be74-bf8f09ae16dc_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82YmU2NjEwNy05N2Q0LTRiMTctYmU3NC1iZjhmMDlhZTE2ZGNfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJIUkNWIn0.5L04KpURQfGvnl0lFLBeRonN2WJv5VHEca9LJ4A1YnY",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/6be66107-97d4-4b17-be74-bf8f09ae16dc_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82YmU2NjEwNy05N2Q0LTRiMTctYmU3NC1iZjhmMDlhZTE2ZGNfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoibk5TNSJ9.e4ce8t7RVTB1uln-KTHZziXc-q5fCKMjMbvl_e0MTxQ",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/6be66107-97d4-4b17-be74-bf8f09ae16dc/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82YmU2NjEwNy05N2Q0LTRiMTctYmU3NC1iZjhmMDlhZTE2ZGMvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJEb0FkIn0.TQPJziXWy0axUezUgMLp6u2pFtKfTUBRZ3v6MmAET40",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244381218",
+      "size": 319656,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/6be66107-97d4-4b17-be74-bf8f09ae16dc/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82YmU2NjEwNy05N2Q0LTRiMTctYmU3NC1iZjhmMDlhZTE2ZGMvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJPeGpiIn0.YeaqbjqYxQ8_GpTbAa0pkPGD7UBmFDc3GQzJCGULG0c",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 811,
+      "height": 853,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/6be66107-97d4-4b17-be74-bf8f09ae16dc/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82YmU2NjEwNy05N2Q0LTRiMTctYmU3NC1iZjhmMDlhZTE2ZGMvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiT2lVUSJ9.uuNeUlEniHcCya_WqvqJ35tVpcUm7RFmuubHwktibP8",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/6be66107-97d4-4b17-be74-bf8f09ae16dc/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82YmU2NjEwNy05N2Q0LTRiMTctYmU3NC1iZjhmMDlhZTE2ZGMvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJkR1BtIn0.RXx1Rh2aswlPnW_F9uODOMKYVNe85RdxIo03iwUkUbc"
+    },
+    {
+      "id": "d4155940-39c4-4eb5-97ea-22ecfb24f52f.png",
+      "date": "1785998130812",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/d4155940-39c4-4eb5-97ea-22ecfb24f52f_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9kNDE1NTk0MC0zOWM0LTRlYjUtOTdlYS0yMmVjZmIyNGY1MmZfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ1Mll1In0.0-QLzoOZBw9lNKnMJtk4muZhZUMmLR7BTQ7xL1MZnwc",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/d4155940-39c4-4eb5-97ea-22ecfb24f52f_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9kNDE1NTk0MC0zOWM0LTRlYjUtOTdlYS0yMmVjZmIyNGY1MmZfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiOGp1TiJ9.rWOM1EVmLR0HzJH_Sxf_Tlv-Bscc3xg8a9DhPFN1tLY",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/d4155940-39c4-4eb5-97ea-22ecfb24f52f/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9kNDE1NTk0MC0zOWM0LTRlYjUtOTdlYS0yMmVjZmIyNGY1MmYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJRVERyIn0.SXW4lsd6cz5j7_DxwMJP0OoDHSvpNZE-vu9HkQM7Df4",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244381218",
+      "size": 498341,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/d4155940-39c4-4eb5-97ea-22ecfb24f52f/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9kNDE1NTk0MC0zOWM0LTRlYjUtOTdlYS0yMmVjZmIyNGY1MmYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ2VkVNIn0.QBGtWn4DJqAer5_XcnbmXtruscDb6tugqI2XkLysHfE",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 806,
+      "height": 850,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/d4155940-39c4-4eb5-97ea-22ecfb24f52f/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9kNDE1NTk0MC0zOWM0LTRlYjUtOTdlYS0yMmVjZmIyNGY1MmYvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoib0wzUyJ9.37LnOX--LRIF5-CaYpQl55Tp5TbJ4ZBlRT9C_PNJcsw",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/d4155940-39c4-4eb5-97ea-22ecfb24f52f/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9kNDE1NTk0MC0zOWM0LTRlYjUtOTdlYS0yMmVjZmIyNGY1MmYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJuc3EyIn0.85zFaeDYQsSjQXNkxpV4YhhxoEl79oKPt23NXhCcx3E"
+    },
+    {
+      "id": "33c09933-f6a1-4602-a9d0-ee1b50b4420e.png",
+      "date": "1785998049589",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/33c09933-f6a1-4602-a9d0-ee1b50b4420e_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zM2MwOTkzMy1mNmExLTQ2MDItYTlkMC1lZTFiNTBiNDQyMGVfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJZZ051In0.-zTps8FMmj9j8OHsU4IaDnaVogyyBvubSQDaHC22HKQ",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/33c09933-f6a1-4602-a9d0-ee1b50b4420e_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zM2MwOTkzMy1mNmExLTQ2MDItYTlkMC1lZTFiNTBiNDQyMGVfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiVU85UiJ9.teLC2hzi5xWPkIHuioncaxP500c9uc_wvsiQFibCAS4",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/33c09933-f6a1-4602-a9d0-ee1b50b4420e/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zM2MwOTkzMy1mNmExLTQ2MDItYTlkMC1lZTFiNTBiNDQyMGUvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJDU3FOIn0.8HThPa5MxITrVnVsWlM93rpG7NI2mrnvZDsguF0m--U",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244381218",
+      "size": 355521,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/33c09933-f6a1-4602-a9d0-ee1b50b4420e/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zM2MwOTkzMy1mNmExLTQ2MDItYTlkMC1lZTFiNTBiNDQyMGUvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiIxUWNCIn0.inkH4u17dZiJ89MdIbcYHVHNwIa70jIqgsIFAcqHZdw",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 812,
+      "height": 824,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/33c09933-f6a1-4602-a9d0-ee1b50b4420e/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zM2MwOTkzMy1mNmExLTQ2MDItYTlkMC1lZTFiNTBiNDQyMGUvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiQlpGYSJ9.9VZa7ZCfUWpPBE0cfSMYqriLH4GtBNXJn3KeQupK0dw",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/33c09933-f6a1-4602-a9d0-ee1b50b4420e/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zM2MwOTkzMy1mNmExLTQ2MDItYTlkMC1lZTFiNTBiNDQyMGUvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJZU3lqIn0.Oj_pht-bdHnwuUUWyC50hGE35ZudLurMDOWLEdaasig"
+    },
+    {
+      "id": "5912c591-4900-4653-a683-f726a85c02c5.png",
+      "date": "1785998017199",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/5912c591-4900-4653-a683-f726a85c02c5_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS81OTEyYzU5MS00OTAwLTQ2NTMtYTY4My1mNzI2YTg1YzAyYzVfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiI3V2NYIn0.Aq0c0-TG-dFV_eJo-nGVgBT5qZ6rHyCGRJ1rBT1h3G8",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/5912c591-4900-4653-a683-f726a85c02c5_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS81OTEyYzU5MS00OTAwLTQ2NTMtYTY4My1mNzI2YTg1YzAyYzVfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiZWNvRyJ9.Z4A7yFCXv-FPlVnq-Pzmg3JL1Rxv5CkaduX0eCzH7k4",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/5912c591-4900-4653-a683-f726a85c02c5/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS81OTEyYzU5MS00OTAwLTQ2NTMtYTY4My1mNzI2YTg1YzAyYzUvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJYT0d5In0.g9ut4hFbkNSdfrHPxN8PIZbUj3Z8RD8dtu7MGOCGg-A",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244381218",
+      "size": 353672,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/5912c591-4900-4653-a683-f726a85c02c5/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS81OTEyYzU5MS00OTAwLTQ2NTMtYTY4My1mNzI2YTg1YzAyYzUvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiIyalpkIn0.FpCzbxGN9Ugpk6b5U8aNY2jJmXWV-ivKqo-Mug2P0Yo",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 816,
+      "height": 854,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/5912c591-4900-4653-a683-f726a85c02c5/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS81OTEyYzU5MS00OTAwLTQ2NTMtYTY4My1mNzI2YTg1YzAyYzUvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiVHRlRiJ9.dbaty73g_HPp5uSY3hd3UUgjjKFdTIgW_3XYyNNH4II",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/5912c591-4900-4653-a683-f726a85c02c5/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS81OTEyYzU5MS00OTAwLTQ2NTMtYTY4My1mNzI2YTg1YzAyYzUvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJod09hIn0.VWpginLsuA7-dqVU_Dc7sqkZD2jw7FdHAAJsq9dRGk4"
+    },
+    {
+      "id": "d5083c8f-2960-47b3-b7b7-fb284746d485.png",
+      "date": "1785998012717",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/d5083c8f-2960-47b3-b7b7-fb284746d485_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9kNTA4M2M4Zi0yOTYwLTQ3YjMtYjdiNy1mYjI4NDc0NmQ0ODVfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJDZWUyIn0.NK4AqKO_o2_aJuERvtTIGgcfcXJHJ75wZdzeXbIcz-A",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/d5083c8f-2960-47b3-b7b7-fb284746d485_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9kNTA4M2M4Zi0yOTYwLTQ3YjMtYjdiNy1mYjI4NDc0NmQ0ODVfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiUnlySiJ9.NfB4aWv623eHx8IiD4Z2u0S8vPlqGSW9wuKdFIHY-K8",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/d5083c8f-2960-47b3-b7b7-fb284746d485/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9kNTA4M2M4Zi0yOTYwLTQ3YjMtYjdiNy1mYjI4NDc0NmQ0ODUvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJjVjh5In0.oTZw5AblRzbIjvg8HXELovJ8-Jqm536WWySUkIuDwp4",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244381218",
+      "size": 309511,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/d5083c8f-2960-47b3-b7b7-fb284746d485/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9kNTA4M2M4Zi0yOTYwLTQ3YjMtYjdiNy1mYjI4NDc0NmQ0ODUvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ0QmdpIn0.HWbspQKKCBa3g_jDX-UJVTdglvcnAQiltWe7zEYZJmE",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 827,
+      "height": 826,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/d5083c8f-2960-47b3-b7b7-fb284746d485/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9kNTA4M2M4Zi0yOTYwLTQ3YjMtYjdiNy1mYjI4NDc0NmQ0ODUvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiblY2eCJ9.hbkkc2rSGv2wHDjF4sPm_TRXVF2nzcJgS42T5ZHDTXI",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/d5083c8f-2960-47b3-b7b7-fb284746d485/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9kNTA4M2M4Zi0yOTYwLTQ3YjMtYjdiNy1mYjI4NDc0NmQ0ODUvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJtTEJ1In0.levDb3E-ecW6oQYPIqqb_Z3TavtpXkhln9rgtcvC2vU"
+    },
+    {
+      "id": "1964c179-03ff-42f9-a147-70ab4f457066.png",
+      "date": "1785997912897",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/1964c179-03ff-42f9-a147-70ab4f457066_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8xOTY0YzE3OS0wM2ZmLTQyZjktYTE0Ny03MGFiNGY0NTcwNjZfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJtN1BZIn0.NJfOFD0fcAp6CBxwL-3WBg3eFo5HlkklNci8f2-5Wyg",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/1964c179-03ff-42f9-a147-70ab4f457066_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8xOTY0YzE3OS0wM2ZmLTQyZjktYTE0Ny03MGFiNGY0NTcwNjZfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiY1BSWSJ9.WFkHHHnXDnH66Ea5FYqOcEQZw88X_s83hWq12AN31l8",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/1964c179-03ff-42f9-a147-70ab4f457066/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8xOTY0YzE3OS0wM2ZmLTQyZjktYTE0Ny03MGFiNGY0NTcwNjYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJDMnV6In0.kcSsXeMCo9wqxKunQjDBRWHDzI_vp59bLIO36Hf01ME",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244381218",
+      "size": 325043,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/1964c179-03ff-42f9-a147-70ab4f457066/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8xOTY0YzE3OS0wM2ZmLTQyZjktYTE0Ny03MGFiNGY0NTcwNjYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJkRHB0In0.wjkjd3seHP8hHHingjWqY3Ugf7djTbviMFDw0W0kCQU",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 821,
+      "height": 864,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/1964c179-03ff-42f9-a147-70ab4f457066/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8xOTY0YzE3OS0wM2ZmLTQyZjktYTE0Ny03MGFiNGY0NTcwNjYvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoieE9kcyJ9.2O7nQ5P2E1lGoQG71Rn8gTxnekZj0yTnF3tvk4z1AwQ",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/1964c179-03ff-42f9-a147-70ab4f457066/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8xOTY0YzE3OS0wM2ZmLTQyZjktYTE0Ny03MGFiNGY0NTcwNjYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJCcVAzIn0.AYdNOBAk8kXLyhLOSg1bWcVktRbggIxDOuHP6c3htK8"
+    },
+    {
+      "id": "7b3587c8-5c39-4c6a-9a70-3e1c8688806b.png",
+      "date": "1785916589215",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/7b3587c8-5c39-4c6a-9a70-3e1c8688806b_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS83YjM1ODdjOC01YzM5LTRjNmEtOWE3MC0zZTFjODY4ODgwNmJfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ1Rlc1In0.DuidBwKO4X0grNUqBjSg_1Mq0W6xLIXfdXkJBikVZkc",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/7b3587c8-5c39-4c6a-9a70-3e1c8688806b_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS83YjM1ODdjOC01YzM5LTRjNmEtOWE3MC0zZTFjODY4ODgwNmJfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoia3JtaCJ9.req-4z1wUqxnZNpu75vg_Yxfyx9ifMS1RlBmeH19Hms",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/7b3587c8-5c39-4c6a-9a70-3e1c8688806b/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS83YjM1ODdjOC01YzM5LTRjNmEtOWE3MC0zZTFjODY4ODgwNmIvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJWMEhBIn0.E02ra-UnAM2JpDDWkLYaLHGektCCQMjznk1_Gg6dFCM",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244049806",
+      "size": 20924,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/7b3587c8-5c39-4c6a-9a70-3e1c8688806b/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS83YjM1ODdjOC01YzM5LTRjNmEtOWE3MC0zZTFjODY4ODgwNmIvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ4TWZjIn0.hz-c-MBQbb8GXlRWHQBC7A6RGfMmNvbpH1HrWz98Ky8",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 340,
+      "height": 313,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/7b3587c8-5c39-4c6a-9a70-3e1c8688806b/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS83YjM1ODdjOC01YzM5LTRjNmEtOWE3MC0zZTFjODY4ODgwNmIvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiZnZkSCJ9.P5LMUrHuTiGUb-rrJikkQXg7_r5-_1nuhPBaZGyMO6s",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/7b3587c8-5c39-4c6a-9a70-3e1c8688806b/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS83YjM1ODdjOC01YzM5LTRjNmEtOWE3MC0zZTFjODY4ODgwNmIvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJTM1BqIn0.Z-W46AutasAkqf5tqo6-0ck49Kd6SUFN_joXLmX25sY"
+    },
+    {
+      "id": "0b5acbf4-041b-4d62-8ce5-6f0731bbac74.png",
+      "date": "1785911380992",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/0b5acbf4-041b-4d62-8ce5-6f0731bbac74_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8wYjVhY2JmNC0wNDFiLTRkNjItOGNlNS02ZjA3MzFiYmFjNzRfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJTV0l5In0.dNi2aOUtcGSDF-3jxjKqfwe80M4PC3Q2bX745R1goOs",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/0b5acbf4-041b-4d62-8ce5-6f0731bbac74_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8wYjVhY2JmNC0wNDFiLTRkNjItOGNlNS02ZjA3MzFiYmFjNzRfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoialFjaSJ9.fiyG74D9LDhu61bTyoQoeLxWeNHUG1UHr4zJqK621XM",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/0b5acbf4-041b-4d62-8ce5-6f0731bbac74/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8wYjVhY2JmNC0wNDFiLTRkNjItOGNlNS02ZjA3MzFiYmFjNzQvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJGQkt5In0.BIX3vZE_jId5EtgKG0bWIYYzy9Erb56OIlhlgHFrJqA",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244019336",
+      "size": 125815,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/0b5acbf4-041b-4d62-8ce5-6f0731bbac74/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8wYjVhY2JmNC0wNDFiLTRkNjItOGNlNS02ZjA3MzFiYmFjNzQvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJKd0ZjIn0.QxC4RE4cveQA9KumiPdsqz2t4A7NSpSimh62hu7L9uA",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 1459,
+      "height": 705,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/0b5acbf4-041b-4d62-8ce5-6f0731bbac74/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8wYjVhY2JmNC0wNDFiLTRkNjItOGNlNS02ZjA3MzFiYmFjNzQvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoic0NqMiJ9.7z_nKVN0Q4y8Rj6uET8KGKKY5DV5wG6S4MOwYGQ61Z0",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/0b5acbf4-041b-4d62-8ce5-6f0731bbac74/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8wYjVhY2JmNC0wNDFiLTRkNjItOGNlNS02ZjA3MzFiYmFjNzQvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiIxTzRaIn0.sFb6cmgIhdEnpH0BKzcFrFfkWa3XEgfzDhqcXZev628"
+    },
+    {
+      "id": "6eacb695-e3ac-4029-8429-fd277c33be67.png",
+      "date": "1785911364118",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/6eacb695-e3ac-4029-8429-fd277c33be67_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82ZWFjYjY5NS1lM2FjLTQwMjktODQyOS1mZDI3N2MzM2JlNjdfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiI4dXU0In0.oppSOs284HU27xZ6_AyE7DIjuHdhlDGpCeByQpN7_gg",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/6eacb695-e3ac-4029-8429-fd277c33be67_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82ZWFjYjY5NS1lM2FjLTQwMjktODQyOS1mZDI3N2MzM2JlNjdfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoicmtXRSJ9.ALzIZigMNLrQrICCbzNxHC89HdE9EdjYuG_VDhZ93tA",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/6eacb695-e3ac-4029-8429-fd277c33be67/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82ZWFjYjY5NS1lM2FjLTQwMjktODQyOS1mZDI3N2MzM2JlNjcvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJYdWhxIn0.moBFj2adToweCzFz_h0SW16-76vjV0v-WBeGk5HMNOc",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180244019336",
+      "size": 126756,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/6eacb695-e3ac-4029-8429-fd277c33be67/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82ZWFjYjY5NS1lM2FjLTQwMjktODQyOS1mZDI3N2MzM2JlNjcvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJjUVY4In0.uRhNyHvolNQoyEW0El94YztoENzYcWTjKwcY5ISHmi0",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 1470,
+      "height": 683,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/6eacb695-e3ac-4029-8429-fd277c33be67/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82ZWFjYjY5NS1lM2FjLTQwMjktODQyOS1mZDI3N2MzM2JlNjcvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoibnV6YyJ9.8AWNYzqkjkKuS38rydNERqlVP494SmHwhvn8QVZ6uxk",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/6eacb695-e3ac-4029-8429-fd277c33be67/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTkzMDEsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82ZWFjYjY5NS1lM2FjLTQwMjktODQyOS1mZDI3N2MzM2JlNjcvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiI3b3l3In0.z3hX4A3VL__K1DtEWDvMeswtaflYmnMFv4dSPI1mJTk"
+    }
+  ]
+}

@@ -1,0 +1,796 @@
+[
+  {
+    "id": "1100740000010913",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Merchant Side | Settings | Small Text Fixes to Order Management and Product Review Settings Tab"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "DEPLOYED TO PROD"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-75d1b135-d5be-47d1-a9d2-501bdd8b8545"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Sep 3 2026, 8:34AM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5a1b8ffc-2b89-4a11-b521-246fa8a6d99c"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-78f34e8e-7c2a-451e-a19f-49c86ae1f9ae"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-472b9029-7982-493a-b4d7-1c2a195548e7"
+        }
+      }
+    ],
+    "comment_text": "This Merchant Side | Settings | Small Text Fixes to Order Management and Product Review Settings Tab has been move to DEPLOYED TO PROD\nDate updated: Sep 3 2026, 8:34AM (Asia/Singapore)\nTriggered by: Angelo Kamachi\n\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788478570047",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788395649676",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000008225",
+    "comment": [
+      {
+        "text": "PRODUCTION PR READY FOR REVIEW\n\n"
+      },
+      {
+        "user": {
+          "id": 37590522,
+          "username": "Ian Pelea",
+          "email": "ian@prosperna.com",
+          "initials": "IP",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/37590522_IvQ.jpg"
+        },
+        "type": "tag",
+        "text": "@Ian Pelea"
+      },
+      {
+        "text": " the main PR is open and waiting for your review - merging it deploys to production.\n\nMAIN PR: https://github.com/Prosperna/prosperna1/pull/8168\nSTAGING PR: https://github.com/Prosperna/prosperna1/pull/8154\nDEV PR (merged, QA-approved): https://github.com/Prosperna/prosperna1/pull/8143\nREPO/BRANCH: prosperna1 / refactor/settings-text\n\nScope: display text only. Two Store Settings section titles renamed - Order Settings to Order Management, and Product Review Settings to Product Reviews. No behavior, saving, validation, or permission logic touched.\n"
+      }
+    ],
+    "comment_text": "PRODUCTION PR READY FOR REVIEW\n\n the main PR is open and waiting for your review - merging it deploys to production.\n\nMAIN PR: https://github.com/Prosperna/prosperna1/pull/8168\nSTAGING PR: https://github.com/Prosperna/prosperna1/pull/8154\nDEV PR (merged, QA-approved): https://github.com/Prosperna/prosperna1/pull/8143\nREPO/BRANCH: prosperna1 / refactor/settings-text\n\nScope: display text only. Two Store Settings section titles renamed - Order Settings to Order Management, and Product Review Settings to Product Reviews. No behavior, saving, validation, or permission logic touched.\n@Ian Pelea",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788393572866",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788328841600",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000005317",
+    "comment": [
+      {
+        "text": "PROMOTED TO STAGING\n\nThe dev PR was merged, so this change is now promoted to staging.\n\nSTAGING PR: https://github.com/Prosperna/prosperna1/pull/8154\nDEV PR (merged): https://github.com/Prosperna/prosperna1/pull/8143\nREPO/BRANCH: prosperna1 / refactor/settings-text-staging\n\nNote on branching: staging is currently 264 commits behind main, so opening the staging PR from the main-based branch would have pulled 687 unrelated files into staging. A dedicated staging branch was cut from origin/staging instead and only this change's commit was cherry-picked onto it. The diff against staging is exactly the two title lines.\n\nVerification: eslint clean on both changed files. No unit tests to run since neither component has a test file. Diff against staging confirmed to contain only the two renamed titles.\n\nNEXT STEPS\n\n1. Staging PR 8154 needs review and merge.\n2. The main PR for the production deploy has NOT been opened yet - it will be raised separately once staging is confirmed.\n3. Test cases for verifying this change are in the QA TEST CASES SUMMARY comment: https://app.clickup.com/t/86ey5tpwr?comment=1100740000004435\n4. No ops, config, or data work needed - this is display text only."
+      }
+    ],
+    "comment_text": "PROMOTED TO STAGING\n\nThe dev PR was merged, so this change is now promoted to staging.\n\nSTAGING PR: https://github.com/Prosperna/prosperna1/pull/8154\nDEV PR (merged): https://github.com/Prosperna/prosperna1/pull/8143\nREPO/BRANCH: prosperna1 / refactor/settings-text-staging\n\nNote on branching: staging is currently 264 commits behind main, so opening the staging PR from the main-based branch would have pulled 687 unrelated files into staging. A dedicated staging branch was cut from origin/staging instead and only this change's commit was cherry-picked onto it. The diff against staging is exactly the two title lines.\n\nVerification: eslint clean on both changed files. No unit tests to run since neither component has a test file. Diff against staging confirmed to contain only the two renamed titles.\n\nNEXT STEPS\n\n1. Staging PR 8154 needs review and merge.\n2. The main PR for the production deploy has NOT been opened yet - it will be raised separately once staging is confirmed.\n3. Test cases for verifying this change are in the QA TEST CASES SUMMARY comment: https://app.clickup.com/t/86ey5tpwr?comment=1100740000004435\n4. No ops, config, or data work needed - this is display text only.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788393575667",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788245736302",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000004659",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Merchant Side | Settings | Small Text Fixes to Order Management and Product Review Settings Tab"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7774e130-bf56-467b-9d1a-3971afce0fce"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Sep 1 2026, 9:57AM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fcf1bfa1-92df-420d-bc36-a6111d7c79f3"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e62af9f7-0865-4e25-b8f0-2c363c784893"
+        }
+      }
+    ],
+    "comment_text": "This task Merchant Side | Settings | Small Text Fixes to Order Management and Product Review Settings Tab has been move to PASSED TESTING \nDate updated: Sep 1 2026, 9:57AM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788393577370",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788227861408",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000004657",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Merchant Side | Settings | Small Text Fixes to Order Management and Product Review Settings Tab"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Sep 1 2026, 9:57AM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Merchant Side | Settings | Small Text Fixes to Order Management and Product Review Settings Tab hss been move to IN TESTING \nUpdated: Sep 1 2026, 9:57AM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788393579325",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788227856828",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000004656",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-LmALh4xh8X"
+        }
+      },
+      {
+        "text": "url: ",
+        "attributes": {}
+      },
+      {
+        "text": "https://prodev.prosperna.ph/home/settings/store",
+        "attributes": {
+          "link": "https://prodev.prosperna.ph/home/settings/store"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-685WeO-k3g"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED",
+        "attributes": {
+          "badge-class": "green"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7L5Ow2Q_D6"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-x77ARBgMk4"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "fdc61553-cede-40f9-baec-526e909146aa.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/fdc61553-cede-40f9-baec-526e909146aa/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/fdc61553-cede-40f9-baec-526e909146aa_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/fdc61553-cede-40f9-baec-526e909146aa_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/fdc61553-cede-40f9-baec-526e909146aa/image.png",
+          "uploaded": true,
+          "width": 1535,
+          "height": 773
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "fdc61553-cede-40f9-baec-526e909146aa.png",
+          "data-attachment": null,
+          "data-natural-width": "1535",
+          "data-natural-height": "773"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-S_omkDwDtq"
+        }
+      },
+      {
+        "text": "Verified that the requested text changes have been implemented.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-r-GmyOIUV-"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-vvxsVCAimW"
+        }
+      },
+      {
+        "text": "Moving this task to \"Ready for Deployment\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-6GW0uf-OOH"
+        }
+      },
+      {
+        "text": "cc ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "env: DEV\nurl: https://prodev.prosperna.ph/home/settings/store\nStatus: PASSED\n\nimage.png\nVerified that the requested text changes have been implemented.\n\nMoving this task to \"Ready for Deployment\"\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788393582453",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788227853826",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000004435",
+    "comment": [
+      {
+        "text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-09-01 - https://github.com/Prosperna/prosperna1/pull/8143\n\nWHERE TO TEST\n\nEnvironment: dev\nPage: Store Settings, reached from the left sidebar gear icon. URL path /home/settings/store\nPreconditions: log in as a merchant. Both sections are visible on any plan - on a free plan they show a crown upgrade icon beside the title, which is existing behavior and not part of this change.\n\nTEST CASES\n\n1. Order Management section title\n   Setup: log in as a merchant and open Store Settings.\n   Steps: scroll to the section containing the \"Edit Orders\" toggle. You can also click \"Order Management\" in the settings sidebar to jump to it.\n   EXPECTED: the section heading reads exactly \"Order Management\". It must NOT read \"Order Settings\" anywhere on the page.\n\n2. Product Reviews section title\n   Setup: same as above.\n   Steps: scroll to the section containing the \"Auto-Publish Product Reviews\" and \"Manually Publish Product Reviews\" radio options.\n   EXPECTED: the section heading reads exactly \"Product Reviews\". It must NOT read \"Product Review Settings\" anywhere on the page.\n\n3. Titles match the sidebar labels\n   Setup: same as above.\n   Steps: compare each section heading against its entry in the Store Settings sidebar navigation.\n   EXPECTED: the sidebar already reads \"Order Management\" and \"Product Reviews\", and the section headings now match them word for word.\n\n4. Nothing else on either section changed\n   Setup: same as above.\n   Steps: in the Order Management section, toggle \"Edit Orders\" and click Save. In the Product Reviews section, switch between \"Auto-Publish Product Reviews\" and \"Manually Publish Product Reviews\", change the star rating dropdown, and save.\n   EXPECTED: every control behaves exactly as it did before. Settings save successfully and persist after a page refresh. Only the two headings changed.\n\n5. Help tooltip beside the Product Reviews title\n   Setup: same as above.\n   Steps: click or hover the round question-mark icon next to the \"Product Reviews\" heading.\n   EXPECTED: the tooltip still opens and still reads \"Manage review approval and display settings to build trust and boost purchase confidence.\" The tooltip text was not part of this change.\n\n6. Free-plan crown icon still shows\n   Setup: log in as a merchant on a free or non-upgraded plan.\n   Steps: open Store Settings and look at both section headings.\n   EXPECTED: the crown upgrade icon still appears beside both renamed titles, positioned the same as before.\n\nTEST DATA\n\nNo special test data needed. Any merchant account on dev with access to Store Settings is enough. To cover test case 6, a non-upgraded or free-plan merchant account is needed - if one is not available on dev, ask a developer to point you to one.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n\n- Display text only. No behavior, saving, validation, or permission logic was touched.\n- The sidebar navigation labels were already correct before this change and were not modified.\n- The crown upgrade icon and the upgrade prompt on non-upgraded plans are existing behavior - do not flag them as new.\n- The visual styling of these two sections on dev already differs from production because of a separate ongoing Tailwind refactor that landed on dev earlier. That styling difference is not part of this task - do not flag it.\n- Other Store Settings sections were not touched and their titles are unchanged."
+      }
+    ],
+    "comment_text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-09-01 - https://github.com/Prosperna/prosperna1/pull/8143\n\nWHERE TO TEST\n\nEnvironment: dev\nPage: Store Settings, reached from the left sidebar gear icon. URL path /home/settings/store\nPreconditions: log in as a merchant. Both sections are visible on any plan - on a free plan they show a crown upgrade icon beside the title, which is existing behavior and not part of this change.\n\nTEST CASES\n\n1. Order Management section title\n   Setup: log in as a merchant and open Store Settings.\n   Steps: scroll to the section containing the \"Edit Orders\" toggle. You can also click \"Order Management\" in the settings sidebar to jump to it.\n   EXPECTED: the section heading reads exactly \"Order Management\". It must NOT read \"Order Settings\" anywhere on the page.\n\n2. Product Reviews section title\n   Setup: same as above.\n   Steps: scroll to the section containing the \"Auto-Publish Product Reviews\" and \"Manually Publish Product Reviews\" radio options.\n   EXPECTED: the section heading reads exactly \"Product Reviews\". It must NOT read \"Product Review Settings\" anywhere on the page.\n\n3. Titles match the sidebar labels\n   Setup: same as above.\n   Steps: compare each section heading against its entry in the Store Settings sidebar navigation.\n   EXPECTED: the sidebar already reads \"Order Management\" and \"Product Reviews\", and the section headings now match them word for word.\n\n4. Nothing else on either section changed\n   Setup: same as above.\n   Steps: in the Order Management section, toggle \"Edit Orders\" and click Save. In the Product Reviews section, switch between \"Auto-Publish Product Reviews\" and \"Manually Publish Product Reviews\", change the star rating dropdown, and save.\n   EXPECTED: every control behaves exactly as it did before. Settings save successfully and persist after a page refresh. Only the two headings changed.\n\n5. Help tooltip beside the Product Reviews title\n   Setup: same as above.\n   Steps: click or hover the round question-mark icon next to the \"Product Reviews\" heading.\n   EXPECTED: the tooltip still opens and still reads \"Manage review approval and display settings to build trust and boost purchase confidence.\" The tooltip text was not part of this change.\n\n6. Free-plan crown icon still shows\n   Setup: log in as a merchant on a free or non-upgraded plan.\n   Steps: open Store Settings and look at both section headings.\n   EXPECTED: the crown upgrade icon still appears beside both renamed titles, positioned the same as before.\n\nTEST DATA\n\nNo special test data needed. Any merchant account on dev with access to Store Settings is enough. To cover test case 6, a non-upgraded or free-plan merchant account is needed - if one is not available on dev, ask a developer to point you to one.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n\n- Display text only. No behavior, saving, validation, or permission logic was touched.\n- The sidebar navigation labels were already correct before this change and were not modified.\n- The crown upgrade icon and the upgrade prompt on non-upgraded plans are existing behavior - do not flag them as new.\n- The visual styling of these two sections on dev already differs from production because of a separate ongoing Tailwind refactor that landed on dev earlier. That styling difference is not part of this task - do not flag it.\n- Other Store Settings sections were not touched and their titles are unchanged.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788222733811",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788222163119",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000004434",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\n\nBoth text changes from the task description and screenshot are done.\n\n1. Changed the section title \"Order Settings\" to \"Order Management\".\n2. Changed the section title \"Product Review Settings\" to \"Product Reviews\".\n\nBoth titles now match their corresponding labels in the Store Settings sidebar navigation.\n\nFiles changed:\n- src/pages/home/StoreSettings/components/OrderSettings/index.jsx\n- src/pages/home/StoreSettings/components/ProductReview/index.jsx\n\nEXTRA WORK\n\nNone beyond the task scope. One thing worth noting: there is another \"Order Settings\" occurrence in src/constants/services.js, but it is a code comment labeling an API constant, not text the merchant ever sees. It was intentionally left alone.\n\nPULL REQUESTS\n\nRepo: prosperna1\nDev PR: https://github.com/Prosperna/prosperna1/pull/8143\nBranch: refactor/settings-text-dev1 (cherry-pick branch off dev)\n\nNote on branching: dev already carries the Tailwind refactor of these two components while main still has the older Bootstrap version, so the cherry-pick onto dev conflicted. It was resolved in favor of dev's newer structure with only the two title renames re-applied on top. The main-based branch refactor/settings-text is held for the staging and main promotion after QA approval.\n\nHOW IT WAS TESTED\n\n- Ran eslint with autofix on both changed files - clean, no issues.\n- No targeted unit tests to run: neither component has a test file, and no test or translation file asserts the old title strings.\n- Verified the diff against dev contains only the two title lines and nothing else.\n\nNEXT STEPS\n\n1. QA to validate on dev once PR 8143 is merged - see the QA TEST CASES SUMMARY comment linked below.\n2. After QA approval, promotion PRs to staging and main will be opened from the main-based branch.\n3. No ops, config, or data work needed - this is display text only.\n\nQA TEST CASES\n\nQA TEST CASES SUMMARY comment created for this PR: https://app.clickup.com/t/86ey5tpwr?comment=1100740000004435"
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\n\nBoth text changes from the task description and screenshot are done.\n\n1. Changed the section title \"Order Settings\" to \"Order Management\".\n2. Changed the section title \"Product Review Settings\" to \"Product Reviews\".\n\nBoth titles now match their corresponding labels in the Store Settings sidebar navigation.\n\nFiles changed:\n- src/pages/home/StoreSettings/components/OrderSettings/index.jsx\n- src/pages/home/StoreSettings/components/ProductReview/index.jsx\n\nEXTRA WORK\n\nNone beyond the task scope. One thing worth noting: there is another \"Order Settings\" occurrence in src/constants/services.js, but it is a code comment labeling an API constant, not text the merchant ever sees. It was intentionally left alone.\n\nPULL REQUESTS\n\nRepo: prosperna1\nDev PR: https://github.com/Prosperna/prosperna1/pull/8143\nBranch: refactor/settings-text-dev1 (cherry-pick branch off dev)\n\nNote on branching: dev already carries the Tailwind refactor of these two components while main still has the older Bootstrap version, so the cherry-pick onto dev conflicted. It was resolved in favor of dev's newer structure with only the two title renames re-applied on top. The main-based branch refactor/settings-text is held for the staging and main promotion after QA approval.\n\nHOW IT WAS TESTED\n\n- Ran eslint with autofix on both changed files - clean, no issues.\n- No targeted unit tests to run: neither component has a test file, and no test or translation file asserts the old title strings.\n- Verified the diff against dev contains only the two title lines and nothing else.\n\nNEXT STEPS\n\n1. QA to validate on dev once PR 8143 is merged - see the QA TEST CASES SUMMARY comment linked below.\n2. After QA approval, promotion PRs to staging and main will be opened from the main-based branch.\n3. No ops, config, or data work needed - this is display text only.\n\nQA TEST CASES\n\nQA TEST CASES SUMMARY comment created for this PR: https://app.clickup.com/t/86ey5tpwr?comment=1100740000004435",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788222741371",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788222141584",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000004423",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "f23473e0-cd75-4fe2-b84c-466cbf8e2b13.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/f23473e0-cd75-4fe2-b84c-466cbf8e2b13_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/f23473e0-cd75-4fe2-b84c-466cbf8e2b13_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/f23473e0-cd75-4fe2-b84c-466cbf8e2b13_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/f23473e0-cd75-4fe2-b84c-466cbf8e2b13/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "f23473e0-cd75-4fe2-b84c-466cbf8e2b13.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-QW9HgiJZhD"
+        }
+      }
+    ],
+    "comment_text": "image.png\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788222786958",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788221930424",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000004246",
+    "comment": [
+      {
+        "text": "Sure boss!",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-c53303f0-a58e-11f1-99de-d95243f19708"
+        }
+      }
+    ],
+    "comment_text": "Sure boss!\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788216972004",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788216803229",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000004245",
+    "comment": [
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      },
+      {
+        "text": " Can you please do this small text fix?",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-A_1ZBGAOY2"
+        }
+      }
+    ],
+    "comment_text": "@Angelo Kamachi Can you please do this small text fix?\n",
+    "user": {
+      "id": 25568383,
+      "username": "Dennis Velasco",
+      "email": "dennis@prosperna.com",
+      "color": "#04a9f4",
+      "initials": "DV",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "thumbs_up",
+        "date": "1788216801691",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      }
+    ],
+    "date": "1788216759764",
+    "reply_count": 0
+  },
+  {
+    "id": "90180243299487",
+    "comment": [
+      {
+        "text": "Checking on this",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Z-7F1eWs-q"
+        }
+      }
+    ],
+    "comment_text": "Checking on this\n",
+    "user": {
+      "id": 32155790,
+      "username": "Dyne",
+      "email": "dyne@prosperna.com",
+      "color": "#388d3c",
+      "initials": "D",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/32155790_clz.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788216728828",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1785745593741",
+    "reply_count": 0
+  },
+  {
+    "id": "90180234937905",
+    "comment": [
+      {
+        "type": "tag",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        },
+        "text": "@Dennis Velasco"
+      },
+      {
+        "text": "  please help assign this task",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-n29bXcLoCH"
+        }
+      }
+    ],
+    "comment_text": "@Dennis Velasco  please help assign this task\n",
+    "user": {
+      "id": 32155790,
+      "username": "Dyne",
+      "email": "dyne@prosperna.com",
+      "color": "#388d3c",
+      "initials": "D",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/32155790_clz.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788216728017",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1783333879716",
+    "reply_count": 0
+  }
+]

@@ -1,0 +1,147 @@
+.pres-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 20px 140px;
+  box-sizing: border-box;
+}
+
+.pres-hero {
+  margin-bottom: 32px;
+}
+
+.pres-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill, 999px);
+  background: rgb(212 175 55 / 15%);
+  border: 1px solid rgb(212 175 55 / 40%);
+  color: var(--color-primary, #d4af37);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+.pres-hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--color-text, #f6f1e6);
+}
+
+.pres-hero p {
+  margin: 0;
+  max-width: 780px;
+  color: var(--color-text-muted, #a8a29e);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* Interactive Control Bar */
+.pres-controls {
+  position: sticky;
+  top: 12px;
+  z-index: 40;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  margin-bottom: 40px;
+  border-radius: var(--radius-md, 12px);
+  background: var(--color-surface-glass, rgb(22 20 15 / 85%));
+  border: 1px solid var(--color-border, #2a271f);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-2, 0 8px 24px rgb(0 0 0 / 50%));
+}
+
+.pres-control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--color-text, #f6f1e6);
+}
+
+.pres-control-label {
+  font-weight: 600;
+  color: var(--color-text-muted, #a8a29e);
+}
+
+.pres-select,
+.pres-btn {
+  padding: 6px 12px;
+  border-radius: var(--radius-sm, 6px);
+  background: var(--color-surface-2, #1d1a14);
+  border: 1px solid var(--color-border, #2a271f);
+  color: var(--color-text, #f6f1e6);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pres-btn[data-active="true"] {
+  background: var(--color-primary, #d4af37);
+  color: var(--color-primary-contrast, #14110a);
+  border-color: var(--color-primary, #d4af37);
+}
+
+/* Showcase Section Block */
+.pres-section {
+  border: 1px solid var(--color-border, #2a271f);
+  border-radius: var(--radius-lg, 20px);
+  padding: 28px;
+  margin-bottom: 48px;
+  background: var(--color-surface, #16140f);
+  box-sizing: border-box;
+}
+
+.pres-section-header {
+  margin-bottom: 20px;
+}
+
+.pres-section-header h2 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text, #f6f1e6);
+}
+
+.pres-section-header p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted, #a8a29e);
+}
+
+.pres-stage-card {
+  width: 100%;
+  height: 100%;
+  min-height: 56vh;
+  border-radius: 18px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 16px 40px rgb(0 0 0 / 35%);
+}
+
+.pres-stage-card h3 {
+  margin: 0 0 10px;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 800;
+}
+
+.pres-stage-card p {
+  margin: 0;
+  max-width: 520px;
+  font-size: 1.02rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}

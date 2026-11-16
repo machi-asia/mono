@@ -1,5 +1,6 @@
 import type { SyncEventPayload } from "../types";
 import { sendSyncEvent } from "./dress";
+import { getSyncEventsUrl } from "./endpoints";
 
 export type TransportProtocol = "udp-webrtc" | "sse";
 
@@ -47,7 +48,7 @@ export class WebRTCUDPTransport implements SyncTransport {
     this.isDestroyed = false;
 
     // First establish signaling via SSE stream
-    const signalingUrl = this.options.signalingUrl || "/api/sync/events";
+    const signalingUrl = this.options.signalingUrl || getSyncEventsUrl();
     const url = `${signalingUrl}?roomId=${encodeURIComponent(
       this.options.roomId
     )}&userId=${encodeURIComponent(this.options.userId)}&userName=${encodeURIComponent(
@@ -246,7 +247,7 @@ export class WebRTCUDPTransport implements SyncTransport {
   }
 
   private sendSignal(signalPayload: Record<string, unknown>) {
-    const signalingUrl = this.options.signalingUrl || "/api/sync/events";
+    const signalingUrl = this.options.signalingUrl || getSyncEventsUrl();
     const evt: SyncEventPayload = {
       eventId: `sig_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
       roomId: this.options.roomId,
@@ -277,7 +278,7 @@ export class WebRTCUDPTransport implements SyncTransport {
     }
 
     // Fallback if DataChannel still negotiating: route to batched HTTP endpoint to avoid connection pool exhaustion
-    const signalingUrl = this.options.signalingUrl || "/api/sync/events";
+    const signalingUrl = this.options.signalingUrl || getSyncEventsUrl();
     sendSyncEvent(event.phase, event.inputType, event.trigger, {
       actionId: event.actionId,
       payload: event.payload,

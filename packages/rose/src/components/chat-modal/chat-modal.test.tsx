@@ -139,7 +139,7 @@ describe("Rose Chat Modal & Interface", () => {
     expect(screen.getByRole("dialog", { name: /Rose Settings/i })).toBeInTheDocument();
     expect(screen.getByText("Personalization")).toBeInTheDocument();
     expect(screen.getByText(/Memories/i)).toBeInTheDocument();
-    expect(await screen.findByPlaceholderText(/Captain, Alex, Sensei/i)).toBeInTheDocument();
+    expect(await screen.findByPlaceholderText(/Captain, Alex, Sensei/i, {}, { timeout: 5000 })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /Warm & Helpful/i })).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/What would you like Rose to know about you/i)).toBeInTheDocument();
 

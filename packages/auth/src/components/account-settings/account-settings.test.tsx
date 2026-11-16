@@ -13,6 +13,9 @@ vi.mock("../../client", () => ({
     from: () => ({
       select: () => ({
         order: () => Promise.resolve({ data: [], error: null }),
+        eq: () => ({
+          order: () => Promise.resolve({ data: [], error: null }),
+        }),
       }),
       insert: () => ({
         select: () => ({
@@ -118,6 +121,16 @@ describe("AccountSettings", () => {
     expect(screen.getByRole("button", { name: "Upload custom picture from Media Library" })).toBeInTheDocument();
     expect(screen.getByText("Custom Picture")).toBeInTheDocument();
     expect(screen.getByText("Use Media Library to upload a custom profile picture")).toBeInTheDocument();
+  });
+
+  it("shows Usage & Quotas tab in the sidebar and switches to it", () => {
+    render(<AccountSettings open={true} onClose={() => {}} />);
+    const usageTab = screen.getByRole("button", { name: "Usage & Quotas" });
+    expect(usageTab).toBeInTheDocument();
+
+    fireEvent.click(usageTab);
+    expect(screen.getByText("API Usage & Quotas")).toBeInTheDocument();
+    expect(screen.getByText("API Gateway Requests")).toBeInTheDocument();
   });
 
   it("shows all security sub-navigation items when switching to Security", () => {
@@ -299,5 +312,3 @@ describe("AccountSettings", () => {
     expect(screen.getByText(/Your personal cloud media repository/i)).toBeInTheDocument();
   });
 });
-
-

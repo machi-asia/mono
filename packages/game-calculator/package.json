@@ -24,8 +24,7 @@
     "./styles.css": "./src/styles.css"
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "lint:style": "echo skip",
     "typecheck": "tsc --noEmit",

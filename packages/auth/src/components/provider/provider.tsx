@@ -2,10 +2,12 @@
 
 import { createContext, useContext, useEffect, useState, useCallback, type ReactNode } from "react";
 import type { AuthChangeEvent, Session, User } from "@supabase/supabase-js";
+import { isValidUserRole, resolveSafeRoleFromUser } from "@mono/database";
 import { createClient } from "../../client";
 import type { AuthContextValue, AuthState, SavedAccount, UserRole } from "../../types";
 import { ToastProvider } from "@mono/components";
 import { getAuthRedirectUrl } from "../../utils/redirect";
+import { UsageProvider } from "../usage/usage-provider";
 
 export const AuthContext = createContext<AuthContextValue | null>(null);
 
@@ -33,13 +35,7 @@ function persistAccounts(accounts: SavedAccount[]) {
 }
 
 function resolveUserRole(user: User | null): UserRole {
-  if (!user) return "guest";
-  if (user.is_anonymous) return "guest";
-  const metaRole = (user.app_metadata?.role || user.user_metadata?.role) as UserRole | undefined;
-  if (metaRole && ["guest", "member", "pro", "admin"].includes(metaRole)) {
-    return metaRole;
-  }
-  return "member";
+  return resolveSafeRoleFromUser(user);
 }
 
 function extractAccountInfo(session: any): SavedAccount | null {
@@ -245,7 +241,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         .eq("user_id", state.user.id)
         .maybeSingle();
 
-      const newRole = ((data as any)?.role as UserRole) || resolveUserRole(state.user);
+      const dbRole = (data as any)?.role;
+      const newRole = isValidUserRole(dbRole) ? dbRole : resolveUserRole(state.user);
       setState((prev) => ({ ...prev, role: newRole }));
       return newRole;
     } catch {
@@ -270,7 +267,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           refreshRole,
         }}
       >
-        {children}
+        <UsageProvider>{children}</UsageProvider>
       </AuthContext.Provider>
     </ToastProvider>
   );

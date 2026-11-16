@@ -285,5 +285,11 @@
         "service": "machi-asia"
       }
     }
+  ],
+  "crons": [
+    {
+      "path": "/cron/github-repos",
+      "schedule": "0 0 * * *"
+    }
   ]
 }

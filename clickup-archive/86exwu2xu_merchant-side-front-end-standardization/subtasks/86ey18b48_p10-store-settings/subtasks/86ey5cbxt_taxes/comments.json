@@ -1,0 +1,1880 @@
+[
+  {
+    "id": "1100740000256738",
+    "comment": [
+      {
+        "text": "Env: DEV\nStatus: PASSED\nURL: https://prodev.prosperna.com/home/settings/store?ref_key=taxes\n\nTEST CASE #1: A saved State/Province can be read on small phones\nSTEPS:\nOpen Store Settings > Taxes on a US store with a saved Alabama tax, and turn on tax collection.\nLook at the saved row's State/Province at 390px, 360px and 320px.\nEXPECTED RESULT: The state name stays readable at every width.\nEVIDENCE: r23-tax-390-saved-row.png, r23-tax-360-saved-row.png, r23-tax-320-saved-row.png\nACTUAL RESULT: PASSED. \"Alabama (AL)\" shows in full: on 1 line at 390px and 360px, and on 2 lines at 320px (before, \"Alab…\" at 360px and only a sliver at 320px).\n\nTEST CASE #2: The longest state name on a new row\nSTEPS:\nOn the same page, click \"Add State/Province Tax\".\nPick the longest name in the list, \"District of Columbia (DC)\". Do not save.\nLook at it at 390px, 360px and 320px.\nEXPECTED RESULT: A long name wraps to 2 lines and then ends in \"…\", so you can still tell which state it is.\nEVIDENCE: r23-tax-390-unsaved-longest.png, r23-tax-360-unsaved-longest.png, r23-tax-320-unsaved-longest.png\nACTUAL RESULT: PASSED. 1 line at 390px, 2 lines at 360px, and \"District of / Columbia…\" at 320px.\n\nTEST CASE #3: The Taxes rows still fit their box\nSTEPS:\nOpen Taxes with tax collection on and add an unsaved row.\nCheck the dropdowns, Create Override and \"Add State/Province Tax\" at 1440px, 768px, 390px, 375px, 360px and 320px.\nEXPECTED RESULT: Nothing goes past its row's box, and the page does not scroll sideways.\nEVIDENCE: tx-r9-01-320-saved-row.png, tx-r9-01-320-unsaved-row.png, tx-r9-01-360-saved-row.png\nACTUAL RESULT: PASSED.\n\nTax collection was turned back off afterwards.\n\nTask link: https://app.clickup.com/t/86ey5cbxt\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV\nStatus: PASSED\nURL: https://prodev.prosperna.com/home/settings/store?ref_key=taxes\n\nTEST CASE #1: A saved State/Province can be read on small phones\nSTEPS:\nOpen Store Settings > Taxes on a US store with a saved Alabama tax, and turn on tax collection.\nLook at the saved row's State/Province at 390px, 360px and 320px.\nEXPECTED RESULT: The state name stays readable at every width.\nEVIDENCE: r23-tax-390-saved-row.png, r23-tax-360-saved-row.png, r23-tax-320-saved-row.png\nACTUAL RESULT: PASSED. \"Alabama (AL)\" shows in full: on 1 line at 390px and 360px, and on 2 lines at 320px (before, \"Alab…\" at 360px and only a sliver at 320px).\n\nTEST CASE #2: The longest state name on a new row\nSTEPS:\nOn the same page, click \"Add State/Province Tax\".\nPick the longest name in the list, \"District of Columbia (DC)\". Do not save.\nLook at it at 390px, 360px and 320px.\nEXPECTED RESULT: A long name wraps to 2 lines and then ends in \"…\", so you can still tell which state it is.\nEVIDENCE: r23-tax-390-unsaved-longest.png, r23-tax-360-unsaved-longest.png, r23-tax-320-unsaved-longest.png\nACTUAL RESULT: PASSED. 1 line at 390px, 2 lines at 360px, and \"District of / Columbia…\" at 320px.\n\nTEST CASE #3: The Taxes rows still fit their box\nSTEPS:\nOpen Taxes with tax collection on and add an unsaved row.\nCheck the dropdowns, Create Override and \"Add State/Province Tax\" at 1440px, 768px, 390px, 375px, 360px and 320px.\nEXPECTED RESULT: Nothing goes past its row's box, and the page does not scroll sideways.\nEVIDENCE: tx-r9-01-320-saved-row.png, tx-r9-01-320-unsaved-row.png, tx-r9-01-360-saved-row.png\nACTUAL RESULT: PASSED.\n\nTax collection was turned back off afterwards.\n\nTask link: https://app.clickup.com/t/86ey5cbxt\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1794214145711",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000249354",
+    "comment": [
+      {
+        "text": "Env: DEV\nStatus: PASSED\nURL: https://prodev.prosperna.com/home/settings/store?ref_key=taxes",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 2
+        }
+      },
+      {
+        "text": "TEST CASE #1: Tax rows fit their box on small phones\nSTEPS:\nOpen Settings > Store > Taxes on a US store and turn on tax collection.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click Add State/Province Tax so there are saved rows and a new, unsaved row.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "View the Taxes section at 1440px, 768px, 390px, 375px, 360px and 320px wide, in Chromium and WebKit (Safari's engine).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The Select Location and State/Province dropdowns, both kinds of \"Create Override\" button and \"Add State/Province Tax\" stay inside their box at every width, the page does not scroll sideways, and \"Tax Overrides\" stays on one row with its button at 1440px and 768px.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tx-r9-01-360-saved-row.png, tx-r9-01-320-saved-row.png, tx-r9-01-320-unsaved-row.png, tx-r9-01-320-select-location.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: PASSED. Everything is inside its box at all six widths in both browsers (closest is 25px inside), nothing scrolls sideways, and the title row only wraps below 768px.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "type": "divider",
+        "attributes": {},
+        "divider": true
+      },
+      {
+        "text": "\nTEST CASE #2: Disabled Create Override (regression)\nSTEPS:\nOpen Taxes with tax collection on and click Add State/Province Tax.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Hover, then tap, the disabled \"Create Override\" on the new row.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The button is solid black, does nothing when clicked, and explains itself on hover and tap.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc19-create-override-tooltip-hover.png, tc19-create-override-tooltip-after-tap.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "type": "divider",
+        "attributes": {},
+        "divider": true
+      },
+      {
+        "text": "\nTEST CASE #3: Override switches line up with their titles on a phone (regression)\nSTEPS:\nOpen Taxes at 390px with tax collection on.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Look at the three \"Allow Tax Overrides / Charge Taxes\" switches.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Each switch sits level with its row title.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc20-taxes-toggles-mobile.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: PASSED.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "type": "divider",
+        "attributes": {},
+        "divider": true
+      },
+      {
+        "text": "\nTask link: https://app.clickup.com/t/86ey5cbxt\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV\nStatus: PASSED\nURL: https://prodev.prosperna.com/home/settings/store?ref_key=taxes\nTEST CASE #1: Tax rows fit their box on small phones\nSTEPS:\nOpen Settings > Store > Taxes on a US store and turn on tax collection.\nClick Add State/Province Tax so there are saved rows and a new, unsaved row.\nView the Taxes section at 1440px, 768px, 390px, 375px, 360px and 320px wide, in Chromium and WebKit (Safari's engine).\nEXPECTED RESULT: The Select Location and State/Province dropdowns, both kinds of \"Create Override\" button and \"Add State/Province Tax\" stay inside their box at every width, the page does not scroll sideways, and \"Tax Overrides\" stays on one row with its button at 1440px and 768px.\nEVIDENCE: tx-r9-01-360-saved-row.png, tx-r9-01-320-saved-row.png, tx-r9-01-320-unsaved-row.png, tx-r9-01-320-select-location.png\nACTUAL RESULT: PASSED. Everything is inside its box at all six widths in both browsers (closest is 25px inside), nothing scrolls sideways, and the title row only wraps below 768px.\n\nTEST CASE #2: Disabled Create Override (regression)\nSTEPS:\nOpen Taxes with tax collection on and click Add State/Province Tax.\nHover, then tap, the disabled \"Create Override\" on the new row.\nEXPECTED RESULT: The button is solid black, does nothing when clicked, and explains itself on hover and tap.\nEVIDENCE: tc19-create-override-tooltip-hover.png, tc19-create-override-tooltip-after-tap.png\nACTUAL RESULT: PASSED.\n\nTEST CASE #3: Override switches line up with their titles on a phone (regression)\nSTEPS:\nOpen Taxes at 390px with tax collection on.\nLook at the three \"Allow Tax Overrides / Charge Taxes\" switches.\nEXPECTED RESULT: Each switch sits level with its row title.\nEVIDENCE: tc20-taxes-toggles-mobile.png\nACTUAL RESULT: PASSED.\n\nTask link: https://app.clickup.com/t/86ey5cbxt\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1793942421964",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000248772",
+    "comment": [
+      {
+        "text": "Env: DEV\nStatus: FAILED\nURL: https://prodev.prosperna.com/home/settings/store?ref_key=taxes",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 2
+        }
+      },
+      {
+        "text": "TEST CASE #1: Tax rows fit their box on small phones\nSTEPS:\nOpen Settings > Store > Taxes on a US store and turn on tax collection.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click Add Tax so there is a saved row and a new, unsaved row.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "View the Taxes section at 390px, 375px, 360px and 320px wide.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The State/Province dropdown and both \"Create Override\" buttons stay inside their row's box at every width.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: audit-390-inert-vs-saved.png, audit-375-inert-vs-saved.png, audit-360-inert-vs-saved.png, audit-320-inert-vs-saved.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: FAILED. At 390px and 375px everything fits. At 360px the State/Province dropdown and both \"Create Override\" buttons run 8px past the right edge of the row's box, and at 320px 48px past it.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "type": "divider",
+        "attributes": {},
+        "divider": true
+      },
+      {
+        "text": "\nTask link: https://app.clickup.com/t/86ey5cbxt\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV\nStatus: FAILED\nURL: https://prodev.prosperna.com/home/settings/store?ref_key=taxes\nTEST CASE #1: Tax rows fit their box on small phones\nSTEPS:\nOpen Settings > Store > Taxes on a US store and turn on tax collection.\nClick Add Tax so there is a saved row and a new, unsaved row.\nView the Taxes section at 390px, 375px, 360px and 320px wide.\nEXPECTED RESULT: The State/Province dropdown and both \"Create Override\" buttons stay inside their row's box at every width.\nEVIDENCE: audit-390-inert-vs-saved.png, audit-375-inert-vs-saved.png, audit-360-inert-vs-saved.png, audit-320-inert-vs-saved.png\nACTUAL RESULT: FAILED. At 390px and 375px everything fits. At 360px the State/Province dropdown and both \"Create Override\" buttons run 8px past the right edge of the row's box, and at 320px 48px past it.\n\nTask link: https://app.clickup.com/t/86ey5cbxt\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1793933226478",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000235479",
+    "comment": [
+      {
+        "text": "Browser check (Playwright)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 1,
+          "block-id": "block-x3SHGs0I0Y"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Qcfl23UuDz"
+        }
+      },
+      {
+        "text": "The real TaxCollectionItem and ToggleSwitch components were rendered with the app's real SCSS and Tailwind CSS in a temporary page (no login or backend needed) and measured in Chromium. The temporary page was deleted afterwards and nothing from this check is in the repository.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-JGy8iivgWI"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-jRgz_L4emg"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lc7cDtUqoU"
+        }
+      },
+      {
+        "type": "table-embed",
+        "table-embed": {
+          "rows": [
+            {
+              "insert": {
+                "id": "row-g9dydp"
+              }
+            },
+            {
+              "insert": {
+                "id": "row-wi0dny"
+              }
+            },
+            {
+              "insert": {
+                "id": "row-xqlzpp"
+              }
+            },
+            {
+              "insert": {
+                "id": "row-n7z6f1"
+              }
+            }
+          ],
+          "cells": {
+            "1:1": {
+              "content": [
+                {
+                  "insert": " \nCase\n ",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n"
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "1:2": {
+              "content": [
+                {
+                  "insert": " \nCheck\n ",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n"
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "1:3": {
+              "content": [
+                {
+                  "insert": " \nResult\n ",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n"
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "2:1": {
+              "content": [
+                {
+                  "insert": " \n19\n ",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n"
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "2:2": {
+              "content": [
+                {
+                  "insert": " \nUnsaved row button colour; click does nothing\n ",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n"
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "2:3": {
+              "content": [
+                {
+                  "insert": " \nPass. Black (rgb 0,0,0) with white text, same as the saved rows. Clicking fired 0 override events at every width; a saved row fired 1.\n ",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n"
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "3:1": {
+              "content": [
+                {
+                  "insert": " \n20\n ",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n"
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "3:2": {
+              "content": [
+                {
+                  "insert": " \nEach switch beside its row title\n ",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n"
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "3:3": {
+              "content": [
+                {
+                  "insert": " \nPass. All three switches on the same line as their titles at 1440, 768, 390, 375 and 320px, right-aligned, no sideways scroll.\n ",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n"
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "4:1": {
+              "content": [
+                {
+                  "insert": " \n21\n ",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n"
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "4:2": {
+              "content": [
+                {
+                  "insert": " \nUnsaved button matches the saved rows and fits its box\n ",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n"
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            },
+            "4:3": {
+              "content": [
+                {
+                  "insert": " \nPass. Identical size, font (14.4px), padding and wrapping to the saved rows, no overflow. At 320px both wrap onto two lines.\n ",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n"
+                }
+              ],
+              "attributes": {
+                "colspan": "1",
+                "rowspan": "1"
+              }
+            }
+          },
+          "columns": [
+            {
+              "insert": {
+                "id": "column-4lc9pa"
+              },
+              "attributes": {
+                "width": "124"
+              }
+            },
+            {
+              "insert": {
+                "id": "column-r2n9hy"
+              },
+              "attributes": {
+                "width": "202"
+              }
+            },
+            {
+              "insert": {
+                "id": "column-j3fj3d"
+              },
+              "attributes": {
+                "width": "579"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gzjzTahITI"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-A2yXnNdDL4"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-RCJ37LICPf"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-3i4TuAURs-"
+        }
+      },
+      {
+        "text": "Limit of this check: the test page is not nested as deeply as the real Taxes card, so it does not reproduce the exact 8px and 23px overflow. It shows the unsaved and saved buttons now render identically, which was the cause. Confirm on the real dev page after the build is deployed.",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-E0q9KfJ7Xc"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-a5NbNfKU-0"
+        }
+      },
+      {
+        "text": "Screenshots",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 1,
+          "block-id": "block-1eC6BYh3x9"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lUH3koHXCz"
+        }
+      },
+      {
+        "text": "Each \"rows\" image shows three tax rows: two saved rows, then the unsaved row at the bottom. The unsaved row's \"Create Override\" should look the same as the saved rows'.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0mQoSpdrfl"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-nMds5M70Kl"
+        }
+      },
+      {
+        "text": "Tax rows and Create Override",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 2,
+          "block-id": "block-3lCNRXZoEt"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-4FUqCZwz0Z"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "7a8fff94-72f0-4c08-abad-c9ceb7e2320d.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/7a8fff94-72f0-4c08-abad-c9ceb7e2320d/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/7a8fff94-72f0-4c08-abad-c9ceb7e2320d/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/7a8fff94-72f0-4c08-abad-c9ceb7e2320d/7a8fff94-72f0-4c08-abad-c9ceb7e2320d_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/7a8fff94-72f0-4c08-abad-c9ceb7e2320d/image.png",
+          "width": 600,
+          "height": 278
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "600",
+          "height": "278",
+          "data-id": "7a8fff94-72f0-4c08-abad-c9ceb7e2320d.png",
+          "data-attachment": null
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-LFWTbykzW4"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-f3E1p0oPXx"
+        }
+      },
+      {
+        "text": "Rows at 1440px wide",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-03tb-swhM9"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-wnQglJU8o7"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "ca39e4f7-1dcd-4e08-989c-0cc31b96127d.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/ca39e4f7-1dcd-4e08-989c-0cc31b96127d/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/ca39e4f7-1dcd-4e08-989c-0cc31b96127d/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/ca39e4f7-1dcd-4e08-989c-0cc31b96127d/ca39e4f7-1dcd-4e08-989c-0cc31b96127d_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/ca39e4f7-1dcd-4e08-989c-0cc31b96127d/ca39e4f7-1dcd-4e08-989c-0cc31b96127d_medium.png",
+          "width": 540,
+          "height": 484
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "540",
+          "height": "484",
+          "data-id": "ca39e4f7-1dcd-4e08-989c-0cc31b96127d.png",
+          "data-attachment": null
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-FDIVI8dm97"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Tm8cc8Dl72"
+        }
+      },
+      {
+        "text": "Rows at 768px wide",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_VFynG1mZP"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-D3i5-Gj1uT"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "2f46683e-1fdc-4340-9df4-380d29edae38.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/2f46683e-1fdc-4340-9df4-380d29edae38/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/2f46683e-1fdc-4340-9df4-380d29edae38/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/2f46683e-1fdc-4340-9df4-380d29edae38/2f46683e-1fdc-4340-9df4-380d29edae38_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/2f46683e-1fdc-4340-9df4-380d29edae38/2f46683e-1fdc-4340-9df4-380d29edae38_medium.png",
+          "width": 190,
+          "height": 520
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "190",
+          "height": "520",
+          "data-id": "2f46683e-1fdc-4340-9df4-380d29edae38.png",
+          "data-attachment": null
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-cxUELeONPz"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-F1qz_SZaVu"
+        }
+      },
+      {
+        "text": "Rows at 390px wide",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-FpIr5Mudcf"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-NhOjVGjVf2"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "6de1d513-0220-4649-a8b5-27fef9481047.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/6de1d513-0220-4649-a8b5-27fef9481047/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/6de1d513-0220-4649-a8b5-27fef9481047/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/6de1d513-0220-4649-a8b5-27fef9481047/6de1d513-0220-4649-a8b5-27fef9481047_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/6de1d513-0220-4649-a8b5-27fef9481047/6de1d513-0220-4649-a8b5-27fef9481047_medium.png",
+          "width": 182,
+          "height": 520
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "182",
+          "height": "520",
+          "data-id": "6de1d513-0220-4649-a8b5-27fef9481047.png",
+          "data-attachment": null,
+          "data-natural-width": "182",
+          "data-natural-height": "520"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-SAwYg9E7sD"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-8GeQmbSmQo"
+        }
+      },
+      {
+        "text": "Rows at 375px wide",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-4pCVBEi2_f"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-dMUnV7XtzP"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "e516c556-0577-4bec-823b-8716c6eb12f5.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/e516c556-0577-4bec-823b-8716c6eb12f5/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/e516c556-0577-4bec-823b-8716c6eb12f5/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/e516c556-0577-4bec-823b-8716c6eb12f5/e516c556-0577-4bec-823b-8716c6eb12f5_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/e516c556-0577-4bec-823b-8716c6eb12f5/e516c556-0577-4bec-823b-8716c6eb12f5_medium.png",
+          "width": 141,
+          "height": 520
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "141",
+          "height": "520",
+          "data-id": "e516c556-0577-4bec-823b-8716c6eb12f5.png",
+          "data-attachment": null,
+          "data-natural-width": "141",
+          "data-natural-height": "520"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7SlJfY8ziR"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-mUoeLGii6_"
+        }
+      },
+      {
+        "text": "Rows at 320px wide (both buttons wrap onto two lines)",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-rMk-GvZp8c"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-XE4-DBMD_W"
+        }
+      },
+      {
+        "text": "Override switches",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 2,
+          "block-id": "block-2LFoqVPDdV"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-jQbFgVnNmt"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "8e72673c-d1da-4467-ac36-375e07d20362.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/8e72673c-d1da-4467-ac36-375e07d20362/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/8e72673c-d1da-4467-ac36-375e07d20362/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/8e72673c-d1da-4467-ac36-375e07d20362/8e72673c-d1da-4467-ac36-375e07d20362_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/8e72673c-d1da-4467-ac36-375e07d20362/image.png",
+          "width": 600,
+          "height": 97
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "600",
+          "height": "97",
+          "data-id": "8e72673c-d1da-4467-ac36-375e07d20362.png",
+          "data-attachment": null,
+          "data-natural-width": "600",
+          "data-natural-height": "97"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ZlGlVGzrLv"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--p3STIC5bF"
+        }
+      },
+      {
+        "text": "Switches at 1440px wide",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-GpnoWbiOfH"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-zI0fKjpoBX"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "509b85f6-0865-4fb4-8cb9-921f6312a959.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/509b85f6-0865-4fb4-8cb9-921f6312a959/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/509b85f6-0865-4fb4-8cb9-921f6312a959/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/509b85f6-0865-4fb4-8cb9-921f6312a959/509b85f6-0865-4fb4-8cb9-921f6312a959_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/509b85f6-0865-4fb4-8cb9-921f6312a959/image.png",
+          "width": 540,
+          "height": 183
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "540",
+          "height": "183",
+          "data-id": "509b85f6-0865-4fb4-8cb9-921f6312a959.png",
+          "data-attachment": null,
+          "data-natural-width": "540",
+          "data-natural-height": "183"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-tNrrxzvMTW"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-c2h_imuF7_"
+        }
+      },
+      {
+        "text": "Switches at 768px wide",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EnnWZtF4Of"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_7fYCMAn45"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "60acfa3b-07a5-41f6-9fbc-f85fbfd6139f.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/60acfa3b-07a5-41f6-9fbc-f85fbfd6139f/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/60acfa3b-07a5-41f6-9fbc-f85fbfd6139f/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/60acfa3b-07a5-41f6-9fbc-f85fbfd6139f/60acfa3b-07a5-41f6-9fbc-f85fbfd6139f_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/60acfa3b-07a5-41f6-9fbc-f85fbfd6139f/60acfa3b-07a5-41f6-9fbc-f85fbfd6139f_medium.png",
+          "width": 308,
+          "height": 335
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "308",
+          "height": "335",
+          "data-id": "60acfa3b-07a5-41f6-9fbc-f85fbfd6139f.png",
+          "data-attachment": null,
+          "data-natural-width": "308",
+          "data-natural-height": "335"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-BrHvNONUSC"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-v17zNVNCEm"
+        }
+      },
+      {
+        "text": "Switches at 390px wide, each beside its title",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eDfKew3Yg1"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-vlRt50Fd1w"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "e31a8d86-5a96-48b7-ba24-0a4134a72251.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/e31a8d86-5a96-48b7-ba24-0a4134a72251/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/e31a8d86-5a96-48b7-ba24-0a4134a72251/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/e31a8d86-5a96-48b7-ba24-0a4134a72251/e31a8d86-5a96-48b7-ba24-0a4134a72251_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/e31a8d86-5a96-48b7-ba24-0a4134a72251/e31a8d86-5a96-48b7-ba24-0a4134a72251_medium.png",
+          "width": 294,
+          "height": 334
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "294",
+          "height": "334",
+          "data-id": "e31a8d86-5a96-48b7-ba24-0a4134a72251.png",
+          "data-attachment": null,
+          "data-natural-width": "294",
+          "data-natural-height": "334"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--ElFrCk7BY"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-b1t_FSt5Bi"
+        }
+      },
+      {
+        "text": "Switches at 375px wide",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--kZ6Ek_rYB"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-9GphikImjL"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "a6535198-ee8c-4713-907a-9498eee324b9.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/a6535198-ee8c-4713-907a-9498eee324b9/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/a6535198-ee8c-4713-907a-9498eee324b9/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/a6535198-ee8c-4713-907a-9498eee324b9/a6535198-ee8c-4713-907a-9498eee324b9_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/a6535198-ee8c-4713-907a-9498eee324b9/a6535198-ee8c-4713-907a-9498eee324b9_medium.png",
+          "width": 245,
+          "height": 411
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "245",
+          "height": "411",
+          "data-id": "a6535198-ee8c-4713-907a-9498eee324b9.png",
+          "data-attachment": null,
+          "data-natural-width": "245",
+          "data-natural-height": "411"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eLKWHRNIGt"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_5CDGf_Az2"
+        }
+      },
+      {
+        "text": "Switches at 320px wide",
+        "attributes": {
+          "italic": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-WLGaAbhXXw"
+        }
+      }
+    ],
+    "comment_text": "Browser check (Playwright)\n\nThe real TaxCollectionItem and ToggleSwitch components were rendered with the app's real SCSS and Tailwind CSS in a temporary page (no login or backend needed) and measured in Chromium. The temporary page was deleted afterwards and nothing from this check is in the repository.\n\n\nCase Check Result\n19 Unsaved row button colour; click does nothing Pass. Black (rgb 0,0,0) with white text, same as the saved rows. Clicking fired 0 override events at every width; a saved row fired 1.\n20 Each switch beside its row title Pass. All three switches on the same line as their titles at 1440, 768, 390, 375 and 320px, right-aligned, no sideways scroll.\n21 Unsaved button matches the saved rows and fits its box Pass. Identical size, font (14.4px), padding and wrapping to the saved rows, no overflow. At 320px both wrap onto two lines.\n\n\n\nLimit of this check: the test page is not nested as deeply as the real Taxes card, so it does not reproduce the exact 8px and 23px overflow. It shows the unsaved and saved buttons now render identically, which was the cause. Confirm on the real dev page after the build is deployed.\n\nScreenshots\n\nEach \"rows\" image shows three tax rows: two saved rows, then the unsaved row at the bottom. The unsaved row's \"Create Override\" should look the same as the saved rows'.\n\nTax rows and Create Override\n\nimage.png\n\nRows at 1440px wide\n\nimage.png\n\nRows at 768px wide\n\nimage.png\n\nRows at 390px wide\n\nimage.png\n\nRows at 375px wide\n\nimage.png\n\nRows at 320px wide (both buttons wrap onto two lines)\n\nOverride switches\n\nimage.png\n\nSwitches at 1440px wide\n\nimage.png\n\nSwitches at 768px wide\n\nimage.png\n\nSwitches at 390px wide, each beside its title\n\nimage.png\n\nSwitches at 375px wide\n\nimage.png\n\nSwitches at 320px wide\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1793692328354",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000235128",
+    "comment": [
+      {
+        "text": "Env: DEV\nStatus: FAILED\nURL: https://prodev.prosperna.com/home/settings/store?ref_key=taxes\n\nTEST CASE #1: Unsaved row's \"Create Override\" color (case 19)\nSTEPS:\nStep 1 - With tax collection on, add a second state/province tax row without saving it.\nStep 2 - Compare its \"Create Override\" with the saved rows' \"Create Override\".\nEXPECTED RESULT: Same solid black as the other buttons in the section, and clicking it does nothing until the row is saved.\nEVIDENCE: tc19-create-override-desktop.png\nACTUAL RESULT: Solid black, the same as the saved rows' buttons. Clicking it does nothing. A saved row's \"Create Override\" still opens the Tax Override window. PASSED.\n\nTEST CASE #2: Override switch alignment on mobile (case 20)\nSTEPS:\nStep 1 - With tax collection on, view the three override switches on a phone.\nEXPECTED RESULT: Each switch lines up with its row title, not under the description.\nEVIDENCE: tc20-taxes-switches-mobile.png\nACTUAL RESULT: All three switches sit beside their titles, from 320px phones up to desktop. PASSED.\n\nTEST CASE #3: Unsaved row's \"Create Override\" fits its box on mobile\nSTEPS:\nStep 1 - With tax collection on, add a second state/province tax row without saving it.\nStep 2 - View the Taxes section on a phone (390px and 375px wide).\nEXPECTED RESULT: The button stays inside its box, like the saved rows' \"Create Override\".\nEVIDENCE: create-override-390.png, create-override-375.png\nACTUAL RESULT: The unsaved row's button runs past the right edge of its box: 8px at 390px and 23px at 375px. The saved rows' button wraps its text onto two lines and stays inside. The unsaved row's button is also smaller, with a smaller font and less padding, so the two \"Create Override\" buttons don't match. FAILED.\n\nTask link: https://app.clickup.com/t/86ey5cbxt\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV\nStatus: FAILED\nURL: https://prodev.prosperna.com/home/settings/store?ref_key=taxes\n\nTEST CASE #1: Unsaved row's \"Create Override\" color (case 19)\nSTEPS:\nStep 1 - With tax collection on, add a second state/province tax row without saving it.\nStep 2 - Compare its \"Create Override\" with the saved rows' \"Create Override\".\nEXPECTED RESULT: Same solid black as the other buttons in the section, and clicking it does nothing until the row is saved.\nEVIDENCE: tc19-create-override-desktop.png\nACTUAL RESULT: Solid black, the same as the saved rows' buttons. Clicking it does nothing. A saved row's \"Create Override\" still opens the Tax Override window. PASSED.\n\nTEST CASE #2: Override switch alignment on mobile (case 20)\nSTEPS:\nStep 1 - With tax collection on, view the three override switches on a phone.\nEXPECTED RESULT: Each switch lines up with its row title, not under the description.\nEVIDENCE: tc20-taxes-switches-mobile.png\nACTUAL RESULT: All three switches sit beside their titles, from 320px phones up to desktop. PASSED.\n\nTEST CASE #3: Unsaved row's \"Create Override\" fits its box on mobile\nSTEPS:\nStep 1 - With tax collection on, add a second state/province tax row without saving it.\nStep 2 - View the Taxes section on a phone (390px and 375px wide).\nEXPECTED RESULT: The button stays inside its box, like the saved rows' \"Create Override\".\nEVIDENCE: create-override-390.png, create-override-375.png\nACTUAL RESULT: The unsaved row's button runs past the right edge of its box: 8px at 390px and 23px at 375px. The saved rows' button wraps its text onto two lines and stays inside. The unsaved row's button is also smaller, with a smaller font and less padding, so the two \"Create Override\" buttons don't match. FAILED.\n\nTask link: https://app.clickup.com/t/86ey5cbxt\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1793690607920",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000131821",
+    "comment": [
+      {
+        "text": "Env: DEV-local\nStatus: PASSED\nURL: http://localhost:3000/home/settings/store?ref_key=taxes\n\nTEST CASE #1: Section title \"i\" tooltip - desktop (case 1)\nSTEPS:\nStep 1 - Open Settings > Store Settings at desktop width.\nStep 2 - Hover the \"i\" icon beside \"Taxes\".\nEXPECTED RESULT: Black icon aligned with the title; tooltip opens without covering the title or being cut off.\nEVIDENCE: tc01-taxes-tooltip-open.png\nACTUAL RESULT: As expected. PASSED.\n\nTEST CASE #2: Section title tooltip on mobile - tap (case 2)\nSTEPS:\nStep 1 - Open Settings > Store Settings on a phone.\nStep 2 - Tap the \"i\" icon beside \"Taxes\" and wait.\nEXPECTED RESULT: Opens on tap and does not close itself.\nEVIDENCE: tc02-taxes-after-tap.png\nACTUAL RESULT: Opens on tap and stays open. PASSED.\n\nTEST CASE #3: Mobile view - section layout\nSTEPS:\nStep 1 - Open Settings > Store Settings at 390px wide on a touch device.\nStep 2 - Scroll to the Taxes card.\nEXPECTED RESULT: The card fits the phone screen; nothing runs past the edge.\nEVIDENCE: mobile-taxes.png\nACTUAL RESULT: As expected. PASSED.\n\nTEST CASE #4: Disabled \"Create Override\" (case 19)\nSTEPS:\nStep 1 - With tax collection on, add a second state/province tax row without saving it.\nStep 2 - Hover the greyed-out \"Create Override\" on desktop, then tap it on a phone.\nEXPECTED RESULT: The button is the same solid black as \"Add Tax\", and a tooltip explains it must be saved first.\nEVIDENCE: tc19-create-override-tooltip-hover.png, tc19-create-override-tooltip-after-tap.png\nACTUAL RESULT: Same shade as \"Add Tax\"; the tooltip opens on both hover and tap. PASSED.\n\nTEST CASE #5: Override toggle alignment on mobile (case 20)\nSTEPS:\nStep 1 - With tax collection on, view the three override toggles at phone width.\nEXPECTED RESULT: Each toggle lines up with its row title, not the middle of the description.\nEVIDENCE: tc20-taxes-toggles-mobile.png\nACTUAL RESULT: All three toggles sit level with their titles. PASSED.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV-local\nStatus: PASSED\nURL: http://localhost:3000/home/settings/store?ref_key=taxes\n\nTEST CASE #1: Section title \"i\" tooltip - desktop (case 1)\nSTEPS:\nStep 1 - Open Settings > Store Settings at desktop width.\nStep 2 - Hover the \"i\" icon beside \"Taxes\".\nEXPECTED RESULT: Black icon aligned with the title; tooltip opens without covering the title or being cut off.\nEVIDENCE: tc01-taxes-tooltip-open.png\nACTUAL RESULT: As expected. PASSED.\n\nTEST CASE #2: Section title tooltip on mobile - tap (case 2)\nSTEPS:\nStep 1 - Open Settings > Store Settings on a phone.\nStep 2 - Tap the \"i\" icon beside \"Taxes\" and wait.\nEXPECTED RESULT: Opens on tap and does not close itself.\nEVIDENCE: tc02-taxes-after-tap.png\nACTUAL RESULT: Opens on tap and stays open. PASSED.\n\nTEST CASE #3: Mobile view - section layout\nSTEPS:\nStep 1 - Open Settings > Store Settings at 390px wide on a touch device.\nStep 2 - Scroll to the Taxes card.\nEXPECTED RESULT: The card fits the phone screen; nothing runs past the edge.\nEVIDENCE: mobile-taxes.png\nACTUAL RESULT: As expected. PASSED.\n\nTEST CASE #4: Disabled \"Create Override\" (case 19)\nSTEPS:\nStep 1 - With tax collection on, add a second state/province tax row without saving it.\nStep 2 - Hover the greyed-out \"Create Override\" on desktop, then tap it on a phone.\nEXPECTED RESULT: The button is the same solid black as \"Add Tax\", and a tooltip explains it must be saved first.\nEVIDENCE: tc19-create-override-tooltip-hover.png, tc19-create-override-tooltip-after-tap.png\nACTUAL RESULT: Same shade as \"Add Tax\"; the tooltip opens on both hover and tap. PASSED.\n\nTEST CASE #5: Override toggle alignment on mobile (case 20)\nSTEPS:\nStep 1 - With tax collection on, view the three override toggles at phone width.\nEXPECTED RESULT: Each toggle lines up with its row title, not the middle of the description.\nEVIDENCE: tc20-taxes-toggles-mobile.png\nACTUAL RESULT: All three toggles sit level with their titles. PASSED.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791273875439",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247768324",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "f8f14c15-427d-4a3d-ba44-39e0cdc1f13c.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/f8f14c15-427d-4a3d-ba44-39e0cdc1f13c/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/f8f14c15-427d-4a3d-ba44-39e0cdc1f13c_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/f8f14c15-427d-4a3d-ba44-39e0cdc1f13c_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/f8f14c15-427d-4a3d-ba44-39e0cdc1f13c/image.png",
+          "uploaded": true,
+          "width": 323,
+          "height": 519
+        },
+        "attributes": {
+          "width": "155",
+          "data-id": "f8f14c15-427d-4a3d-ba44-39e0cdc1f13c.png",
+          "data-attachment": "{\"id\":\"f8f14c15-427d-4a3d-ba44-39e0cdc1f13c.png\",\"version\":\"0\",\"date\":1787035244113,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/f8f14c15-427d-4a3d-ba44-39e0cdc1f13c_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/f8f14c15-427d-4a3d-ba44-39e0cdc1f13c_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/f8f14c15-427d-4a3d-ba44-39e0cdc1f13c/image.png\",\"width\":323,\"height\":519,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/f8f14c15-427d-4a3d-ba44-39e0cdc1f13c/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/f8f14c15-427d-4a3d-ba44-39e0cdc1f13c/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/f8f14c15-427d-4a3d-ba44-39e0cdc1f13c/image.png\"}",
+          "data-natural-width": "323",
+          "data-natural-height": "519"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-R1Vxv3GgQg"
+        }
+      },
+      {
+        "text": "non clipping buttons",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-aLbnh6EgVe"
+        }
+      }
+    ],
+    "comment_text": "image.png\nnon clipping buttons\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787035248385",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247768275",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "33520b91-401f-4ded-a9c2-f0e2939e2790.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/33520b91-401f-4ded-a9c2-f0e2939e2790/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/33520b91-401f-4ded-a9c2-f0e2939e2790_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/33520b91-401f-4ded-a9c2-f0e2939e2790_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/33520b91-401f-4ded-a9c2-f0e2939e2790/image.png",
+          "uploaded": true,
+          "width": 362,
+          "height": 697
+        },
+        "attributes": {
+          "width": "129",
+          "data-id": "33520b91-401f-4ded-a9c2-f0e2939e2790.png",
+          "data-attachment": "{\"id\":\"33520b91-401f-4ded-a9c2-f0e2939e2790.png\",\"version\":\"0\",\"date\":1787035228053,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/33520b91-401f-4ded-a9c2-f0e2939e2790_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/33520b91-401f-4ded-a9c2-f0e2939e2790_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/33520b91-401f-4ded-a9c2-f0e2939e2790/image.png\",\"width\":362,\"height\":697,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/33520b91-401f-4ded-a9c2-f0e2939e2790/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/33520b91-401f-4ded-a9c2-f0e2939e2790/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/33520b91-401f-4ded-a9c2-f0e2939e2790/image.png\"}",
+          "data-natural-width": "362",
+          "data-natural-height": "697"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-vTrpMjLNdf"
+        }
+      },
+      {
+        "text": "better mobile responsiveness",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-yOsEPqchrj"
+        }
+      }
+    ],
+    "comment_text": "image.png\nbetter mobile responsiveness\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787035233427",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247768177",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "beb5fce8-5493-41a4-8576-575674b63a00.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/beb5fce8-5493-41a4-8576-575674b63a00/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/beb5fce8-5493-41a4-8576-575674b63a00_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/beb5fce8-5493-41a4-8576-575674b63a00_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/beb5fce8-5493-41a4-8576-575674b63a00/image.png",
+          "uploaded": true,
+          "width": 822,
+          "height": 372
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "beb5fce8-5493-41a4-8576-575674b63a00.png",
+          "data-attachment": "{\"id\":\"beb5fce8-5493-41a4-8576-575674b63a00.png\",\"version\":\"0\",\"date\":1787035202196,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/beb5fce8-5493-41a4-8576-575674b63a00_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/beb5fce8-5493-41a4-8576-575674b63a00_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/beb5fce8-5493-41a4-8576-575674b63a00/image.png\",\"width\":822,\"height\":372,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/beb5fce8-5493-41a4-8576-575674b63a00/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/beb5fce8-5493-41a4-8576-575674b63a00/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/beb5fce8-5493-41a4-8576-575674b63a00/image.png\"}",
+          "data-natural-width": "822",
+          "data-natural-height": "372"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--CImOaOlFL"
+        }
+      },
+      {
+        "text": "button color changes",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Zt93XtokNB"
+        }
+      }
+    ],
+    "comment_text": "image.png\nbutton color changes\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787035205619",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247765150",
+    "comment": [
+      {
+        "text": "tooltip fixed",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--4349Zw50b"
+        }
+      }
+    ],
+    "comment_text": "tooltip fixed\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787035001990",
+    "reply_count": 0
+  },
+  {
+    "id": "90180234362747",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-9LXc67-7Ie"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "FAILED",
+        "attributes": {
+          "badge-class": "red"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-021q_sjVT0"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fmdLhhL1G1"
+        }
+      },
+      {
+        "text": "The following are the issues under Taxes:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2lwjfUwvSC"
+        }
+      },
+      {
+        "type": "divider",
+        "text": "---",
+        "divider": true
+      },
+      {
+        "type": "divider",
+        "text": "---",
+        "divider": true
+      },
+      {
+        "text": "Tooltip Icon & Layout:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-8BD_G7yd6f"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "da772aec-4b3b-498b-83b6-5092b0828256.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/da772aec-4b3b-498b-83b6-5092b0828256/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/da772aec-4b3b-498b-83b6-5092b0828256_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/da772aec-4b3b-498b-83b6-5092b0828256_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/da772aec-4b3b-498b-83b6-5092b0828256/image.png",
+          "uploaded": true,
+          "width": 1535,
+          "height": 772
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "da772aec-4b3b-498b-83b6-5092b0828256.png",
+          "data-attachment": "{\"id\":\"da772aec-4b3b-498b-83b6-5092b0828256.png\",\"version\":\"0\",\"date\":1783078936654,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/da772aec-4b3b-498b-83b6-5092b0828256_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/da772aec-4b3b-498b-83b6-5092b0828256_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/da772aec-4b3b-498b-83b6-5092b0828256/image.png\",\"width\":1535,\"height\":772,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/da772aec-4b3b-498b-83b6-5092b0828256/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/da772aec-4b3b-498b-83b6-5092b0828256/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/da772aec-4b3b-498b-83b6-5092b0828256/image.png\"}",
+          "data-natural-width": "1535",
+          "data-natural-height": "772"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-zq9iagO-UO"
+        }
+      },
+      {
+        "text": "Hover Effect:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-yCUUjx1BQr"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb/image.png",
+          "uploaded": true,
+          "width": 1531,
+          "height": 776
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb.png",
+          "data-attachment": "{\"id\":\"4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb.png\",\"version\":\"0\",\"date\":1783079021022,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb/image.png\",\"width\":1531,\"height\":776,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/4de4d787-3c09-4f9c-ae2b-6eec3ef2fdcb/image.png\"}",
+          "data-natural-width": "1531",
+          "data-natural-height": "776"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-6TD6x1m1N4"
+        }
+      },
+      {
+        "text": "Layout:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7rHyjHSeaQ"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "aa92aa4d-521b-40f9-bef9-53d9b304d672.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/aa92aa4d-521b-40f9-bef9-53d9b304d672/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/aa92aa4d-521b-40f9-bef9-53d9b304d672_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/aa92aa4d-521b-40f9-bef9-53d9b304d672_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/aa92aa4d-521b-40f9-bef9-53d9b304d672/image.png",
+          "uploaded": true,
+          "width": 301,
+          "height": 647
+        },
+        "attributes": {
+          "width": "116",
+          "data-id": "aa92aa4d-521b-40f9-bef9-53d9b304d672.png",
+          "data-attachment": "{\"id\":\"aa92aa4d-521b-40f9-bef9-53d9b304d672.png\",\"version\":\"0\",\"date\":1783079424894,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/aa92aa4d-521b-40f9-bef9-53d9b304d672_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/aa92aa4d-521b-40f9-bef9-53d9b304d672_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/aa92aa4d-521b-40f9-bef9-53d9b304d672/image.png\",\"width\":301,\"height\":647,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/aa92aa4d-521b-40f9-bef9-53d9b304d672/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/aa92aa4d-521b-40f9-bef9-53d9b304d672/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/aa92aa4d-521b-40f9-bef9-53d9b304d672/image.png\"}",
+          "data-natural-width": "301",
+          "data-natural-height": "647"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-efLDosx8c7"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "3b4e55c5-ae8b-4206-9262-5f28f971da96.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/3b4e55c5-ae8b-4206-9262-5f28f971da96/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/3b4e55c5-ae8b-4206-9262-5f28f971da96_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/3b4e55c5-ae8b-4206-9262-5f28f971da96_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/3b4e55c5-ae8b-4206-9262-5f28f971da96/image.png",
+          "uploaded": true,
+          "width": 297,
+          "height": 652
+        },
+        "attributes": {
+          "width": "113",
+          "data-id": "3b4e55c5-ae8b-4206-9262-5f28f971da96.png",
+          "data-attachment": "{\"id\":\"3b4e55c5-ae8b-4206-9262-5f28f971da96.png\",\"version\":\"0\",\"date\":1783079456612,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/3b4e55c5-ae8b-4206-9262-5f28f971da96_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/3b4e55c5-ae8b-4206-9262-5f28f971da96_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/3b4e55c5-ae8b-4206-9262-5f28f971da96/image.png\",\"width\":297,\"height\":652,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/3b4e55c5-ae8b-4206-9262-5f28f971da96/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/3b4e55c5-ae8b-4206-9262-5f28f971da96/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/3b4e55c5-ae8b-4206-9262-5f28f971da96/image.png\"}",
+          "data-natural-width": "297",
+          "data-natural-height": "652"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Lb1wv6CSzF"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-QaFBa7j60-"
+        }
+      },
+      {
+        "text": "Kindly fix all the returns.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-L1ir0Qklz_"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fng5Pr6uqP"
+        }
+      },
+      {
+        "text": "Moving this subtask to \"Ready Priority\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-DNtZG17bwl"
+        }
+      },
+      {
+        "text": "cc",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "env: DEV\nStatus: FAILED\n\nThe following are the issues under Taxes:\n------Tooltip Icon & Layout:\nimage.png\nHover Effect:\nimage.png\nLayout:\nimage.png\nimage.png\n\nKindly fix all the returns.\n\nMoving this subtask to \"Ready Priority\"\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1783079510376",
+    "reply_count": 0
+  },
+  {
+    "id": "90180234358612",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Taxes"
+      },
+      {
+        "text": " has been created ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bf7e6b93-37f7-4ef1-9574-05993b503c8f"
+        }
+      },
+      {
+        "text": "Date: ",
+        "attributes": {}
+      },
+      {
+        "text": "Jul 3 2026, 7:28PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5acb7133-fc27-48ba-9a62-6a27fcef1ac4"
+        }
+      },
+      {
+        "text": "By ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2da5208f-53d3-4f34-b235-72f66cc916c1"
+        }
+      }
+    ],
+    "comment_text": "This task Taxes has been created \nDate: Jul 3 2026, 7:28PM (Asia/Shanghai)\nBy Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1783078136744",
+    "reply_count": 0
+  }
+]

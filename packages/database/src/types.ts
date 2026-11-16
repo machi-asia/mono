@@ -15,7 +15,12 @@ export interface UserRoleRecord {
   updated_at: string;
 }
 
-export type UsageMetric = "requests" | "ai_tokens" | "turns" | "storage_bytes";
+export type CoreUsageMetric = "requests" | "ai_tokens" | "turns" | "storage_bytes";
+export type BuiltInUsageMetric =
+  | CoreUsageMetric
+  | "blueprint_exports"
+  | "voice_minutes";
+export type UsageMetric = BuiltInUsageMetric | (string & {});
 export type UsagePeriodType = "daily" | "monthly";
 
 export interface UserUsageRecord {
@@ -91,6 +96,12 @@ export interface IssueReportRecord {
   created_at: string;
 }
 
+export interface KeepaliveHeartbeatRecord {
+  id: string;
+  source: string;
+  pinged_at: string;
+}
+
 export interface Database {
   public: {
     Tables: {
@@ -149,9 +160,24 @@ export interface Database {
         };
         Update: Partial<Omit<IssueReportRecord, "id">>;
       };
+      keepalive_heartbeats: {
+        Row: KeepaliveHeartbeatRecord;
+        Insert: {
+          id?: string;
+          source?: string;
+          pinged_at?: string;
+        };
+        Update: Partial<Omit<KeepaliveHeartbeatRecord, "id">>;
+      };
     };
     Views: Record<string, never>;
     Functions: {
+      record_keepalive_heartbeat: {
+        Args: {
+          p_source?: string;
+        };
+        Returns: string;
+      };
       increment_user_usage: {
         Args: {
           p_user_id: string;

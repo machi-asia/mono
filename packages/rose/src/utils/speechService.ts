@@ -8,6 +8,8 @@
  * Cleans markdown formatting, callouts/admonitions, wikilinks, code blocks,
  * badges, and emotion tags from text so Rose speaks natural, fluent sentences.
  */
+import { getRoseTranscribeEndpoint } from "./endpoints";
+
 export function cleanTextForSpeech(text: string | null | undefined): string {
   if (!text || typeof text !== "string") return "";
 
@@ -459,7 +461,7 @@ export async function transcribeAudioBlob(
   audioBlob: Blob,
   options: TranscribeAudioOptions = {}
 ): Promise<TranscribeAudioResult> {
-  const endpoint = options.apiEndpoint || "/api/rose/transcribe";
+  const endpoint = options.apiEndpoint || getRoseTranscribeEndpoint();
 
   const formData = new FormData();
   formData.append("audio", audioBlob, "recording.webm");
@@ -518,7 +520,7 @@ export function createFasterWhisperRecorder({
   onError,
   onEnd,
   lang,
-  apiEndpoint = "/api/rose/transcribe",
+  apiEndpoint = getRoseTranscribeEndpoint(),
 }: FasterWhisperRecorderOptions): SpeechRecognitionController | null {
   if (!isMediaRecorderSupported()) {
     if (onError) {

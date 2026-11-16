@@ -6,6 +6,7 @@ import { useAuth } from "../provider/provider";
 import {
   User,
   Shield,
+  Activity,
   Palette,
   Image as ImageIcon,
   Lock,
@@ -23,9 +24,10 @@ import { PrivacySection } from "./privacy-section";
 import { DisplaySection } from "./display-section";
 import { MediaSection } from "./media-section";
 import { SupportSection } from "./support-section";
+import { UsageSection } from "./usage-section";
 import "./account-settings.css";
 
-export type TopLevelTab = "profile" | "security" | "display" | "media" | "privacy" | "support";
+export type TopLevelTab = "profile" | "security" | "usage" | "display" | "media" | "privacy" | "support";
 
 interface AccountSettingsProps {
   open: boolean;
@@ -111,6 +113,17 @@ export function AccountSettings({ open, onClose, initialTab = "profile" }: Accou
             </button>
             <button
               type="button"
+              className={`auth-settings-tab${activeTopTab === "usage" ? " auth-settings-tab--active" : ""}`}
+              aria-current={activeTopTab === "usage" ? "page" : undefined}
+              onClick={() => setActiveTopTab("usage")}
+              title="Usage & Quotas"
+              aria-label="Usage & Quotas"
+            >
+              <Activity size={18} className="auth-settings-tab-icon" />
+              <span className="auth-settings-tab-label">Usage & Quotas</span>
+            </button>
+            <button
+              type="button"
               className={`auth-settings-tab${activeTopTab === "display" ? " auth-settings-tab--active" : ""}`}
               aria-current={activeTopTab === "display" ? "page" : undefined}
               onClick={() => setActiveTopTab("display")}
@@ -186,6 +199,10 @@ export function AccountSettings({ open, onClose, initialTab = "profile" }: Accou
                   {activeSection === "mfa" && <MFASection />}
                 </div>
               </>
+            ) : activeTopTab === "usage" ? (
+              <div className="auth-security-panel auth-usage-panel">
+                <UsageSection user={user} />
+              </div>
             ) : activeTopTab === "display" ? (
               <div className="auth-security-panel auth-display-panel">
                 <DisplaySection />
@@ -338,4 +355,3 @@ function PasskeysSection() {
     </section>
   );
 }
-

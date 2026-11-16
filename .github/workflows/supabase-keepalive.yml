@@ -1,0 +1,33 @@
+name: Supabase Weekly Keep-Alive
+
+on:
+  schedule:
+    # Runs every Monday at 03:00 UTC to prevent Supabase project inactivity pausing
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    name: Ping Supabase REST, Auth & Keep-Alive Endpoint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Machi Asia Keep-Alive Cron Endpoint
+        run: |
+          echo "Pinging Machi Asia API keep-alive endpoint..."
+          curl -fsS --retry 3 --max-time 20 "https://api.machi.asia/cron/supabase-keepalive?source=github_actions" || true
+
+      - name: Ping Supabase Auth & REST API Directly
+        env:
+          SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || 'https://zyatzdkapdqngwyhiqqn.supabase.co' }}
+          SUPABASE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || secrets.SUPABASE_PUBLISHABLE_KEY || '' }}
+        run: |
+          echo "Pinging Supabase Auth health endpoint (${SUPABASE_URL}/auth/v1/health)..."
+          curl -fsS --retry 3 --max-time 20 "${SUPABASE_URL}/auth/v1/health" || true
+
+          if [ -n "${SUPABASE_KEY}" ]; then
+            echo "Querying Supabase PostgREST keepalive_heartbeats..."
+            curl -fsS --retry 3 --max-time 20 \
+              "${SUPABASE_URL}/rest/v1/keepalive_heartbeats?select=id&limit=1" \
+              -H "apikey: ${SUPABASE_KEY}" \
+              -H "Authorization: Bearer ${SUPABASE_KEY}"
+          fi

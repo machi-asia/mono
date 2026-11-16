@@ -12,14 +12,20 @@ export const ROSE_EMOTIONS: Record<string, string> = {
 
 export function extractEmotion(text: string): { cleanText: string; emotion: string } {
   if (!text) return { cleanText: "", emotion: "happy" };
-  const match = text.match(/<emotion>(.*?)<\/emotion>/);
+  let emotion = "happy";
+  const match = text.match(/<emotion>(.*?)<\/emotion>/i);
   if (match) {
-    const emotion = match[1].trim().toLowerCase();
-    const cleanText = text.replace(/<emotion>.*?<\/emotion>/g, "").trim();
-    return {
-      cleanText,
-      emotion: ROSE_EMOTIONS[emotion] ? emotion : "happy",
-    };
+    const candidate = match[1].trim().toLowerCase();
+    if (ROSE_EMOTIONS[candidate]) {
+      emotion = candidate;
+    }
   }
-  return { cleanText: text, emotion: "happy" };
+
+  // Strip both complete and trailing incomplete <emotion... tags so they never show in UI
+  const cleanText = text
+    .replace(/<emotion>[\s\S]*?<\/emotion>/gi, "")
+    .replace(/<emotion[\s\S]*?$/gi, "")
+    .trim();
+
+  return { cleanText, emotion };
 }

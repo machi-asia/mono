@@ -1,0 +1,2097 @@
+[
+  {
+    "id": "1100740000165830",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Payment Settings"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7774e130-bf56-467b-9d1a-3971afce0fce"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 15 2026, 8:30AM (Asia/Manila)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fcf1bfa1-92df-420d-bc36-a6111d7c79f3"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e62af9f7-0865-4e25-b8f0-2c363c784893"
+        }
+      }
+    ],
+    "comment_text": "This task Payment Settings has been move to PASSED TESTING \nDate updated: Oct 15 2026, 8:30AM (Asia/Manila)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792024240249",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000165818",
+    "comment": [
+      {
+        "text": "Env: DEV (deployed)\nStatus: PASSED\nURL: https://prodev.prosperna.ph/home/settings/payments\n\nTEST CASE #1: Busy state while disconnecting Stripe\nSTEPS:\nStep 1 - On a store with Stripe connected, open Settings > Payments and click Manage on the Stripe card.\nStep 2 - Click the on/off toggle, then click Disconnect.\nStep 3 - While the disconnect request is still running, check the toggle, the Disconnect button and the page button.\nEXPECTED RESULT: The toggle is dimmed and cannot be clicked, the Disconnect button shows a spinner, and the page button reads \"Disconnecting...\".\nEVIDENCE: TC01-stripe-disconnect-busy.mp4, TC01-stripe-busy-state.png\nACTUAL RESULT: The toggle is dimmed (50%) and disabled, the dialog's Disconnect button shows a spinner, and the page button reads \"Disconnecting...\".\n\nTEST CASE #2: Stripe matches Xendit\nSTEPS:\nStep 1 - On a store with Xendit connected, open Settings > Payments and click Manage on the Xendit card.\nStep 2 - Click the toggle, then click Disconnect, and check the same controls while the request runs.\nStep 3 - Compare with case 1.\nEXPECTED RESULT: Both providers behave identically while the request is in flight.\nEVIDENCE: TC02-xendit-disconnect-busy.mp4, TC02-xendit-busy-state.png\nACTUAL RESULT: Xendit shows the same busy state as Stripe: toggle dimmed (50%) and disabled, spinner on Disconnect, page button \"Disconnecting...\".\n\nTEST CASE #3: Busy state while connecting Stripe\nSTEPS:\nStep 1 - Open the Stripe page while Stripe is not connected.\nStep 2 - Click \"Connect with Stripe\", then \"Authorize & Connect\".\nStep 3 - While the connect request is still running, check the controls.\nEXPECTED RESULT: The controls are dimmed and not clickable until the request finishes.\nEVIDENCE: TC03-stripe-connect-busy.mp4, TC03-stripe-connect-busy.png, TC03-stripe-connect-recovered.png\nACTUAL RESULT: The page button reads \"Connecting...\" and is disabled, and \"Authorize & Connect\" shows a spinner and is disabled. A second click sent no extra request, and the button returned to \"Connect with Stripe\" once the request ended. The not-connected state was simulated in the browser. The on/off toggle only renders for a connected provider, so the Connect button carries the busy state here.\n\nTEST CASE #4: The toggle cannot be double-clicked\nSTEPS:\nStep 1 - On Stripe (and again on Xendit), click the toggle, then click Disconnect.\nStep 2 - While the request is running, click the toggle again, twice.\nEXPECTED RESULT: Nothing happens. The click is ignored while busy.\nEVIDENCE: TC04-stripe-click-while-busy.mp4, TC04-xendit-click-while-busy.mp4, TC04-stripe-click-while-busy.png, TC04-xendit-click-while-busy.png\nACTUAL RESULT: Only one disconnect request was sent and the toggle stayed on, dimmed and disabled. The first click landed on the dialog's background and closed the confirmation while the request kept running; the second click on the toggle did nothing.\n\nTEST CASE #5: It recovers afterwards\nSTEPS:\nStep 1 - On Stripe (and again on Xendit), click the toggle, then click Disconnect.\nStep 2 - Let the disconnect finish.\nStep 3 - Check the Payment Settings page, then open Manage on the provider again.\nEXPECTED RESULT: The busy state clears, the button returns to its normal label, and the card shows the provider as disconnected.\nEVIDENCE: TC05-stripe-recovers.mp4, TC05-xendit-recovers.mp4, TC05-stripe-not-connected.png, TC05-xendit-not-connected.png\nACTUAL RESULT: The page returned to Payment Settings with the card reading \"Not Connected\", and Xendit showed \"Xendit routing has been disabled for this merchant.\" Manage then offered an enabled \"Connect with Stripe\" / \"Connect with Xendit\" button, with no busy labels and no toggle left behind. The disconnect response was simulated, so neither provider was actually disconnected.\n\nTEST CASE #6: Cancelling is unaffected\nSTEPS:\nStep 1 - On Stripe (and again on Xendit), click the toggle to open the confirmation.\nStep 2 - Click Cancel.\nEXPECTED RESULT: The dialog closes, the provider stays connected, and nothing is left dimmed or stuck.\nEVIDENCE: TC06-stripe-cancel.mp4, TC06-xendit-cancel.mp4, TC06-stripe-cancel-dialog.png, TC06-xendit-cancel-dialog.png\nACTUAL RESULT: The confirmation opened with Cancel and Disconnect, Cancel closed it, and both providers stayed connected with the toggle on.\n\nTEST CASE #7: Toggle colour\nSTEPS:\nStep 1 - Open Manage on a connected Stripe and on a connected Xendit.\nStep 2 - Read the toggle colour when on.\nEXPECTED RESULT: Black on both.\nEVIDENCE: TC07-stripe-toggle-black.mp4, TC07-xendit-toggle-black.mp4, TC07-stripe-toggle-on.png, TC07-xendit-toggle-on.png\nACTUAL RESULT: Both toggles are black (#000000).\n\nTEST CASE #8: Matches Store Settings\nSTEPS:\nStep 1 - Read the Stripe provider toggle colour.\nStep 2 - Open Settings > Store Settings and read an ON toggle (Display Store Address).\nEXPECTED RESULT: The same black.\nEVIDENCE: TC08-matches-store-settings.mp4, TC08-store-settings-toggle-on.png\nACTUAL RESULT: Both read #000000.\n\nTEST CASE #9: Off state\nSTEPS:\nStep 1 - Open Settings > Store Settings and find a toggle that is off (Multi-Currency).\nStep 2 - Read its colour and knob position.\nEXPECTED RESULT: Grey with the knob on the left, unchanged.\nEVIDENCE: TC09-off-state.mp4, TC09-toggle-off-state.png\nACTUAL RESULT: Grey (#ced4da) with the knob on the left. The provider toggle's knob sits on the right when on.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV (deployed)\nStatus: PASSED\nURL: https://prodev.prosperna.ph/home/settings/payments\n\nTEST CASE #1: Busy state while disconnecting Stripe\nSTEPS:\nStep 1 - On a store with Stripe connected, open Settings > Payments and click Manage on the Stripe card.\nStep 2 - Click the on/off toggle, then click Disconnect.\nStep 3 - While the disconnect request is still running, check the toggle, the Disconnect button and the page button.\nEXPECTED RESULT: The toggle is dimmed and cannot be clicked, the Disconnect button shows a spinner, and the page button reads \"Disconnecting...\".\nEVIDENCE: TC01-stripe-disconnect-busy.mp4, TC01-stripe-busy-state.png\nACTUAL RESULT: The toggle is dimmed (50%) and disabled, the dialog's Disconnect button shows a spinner, and the page button reads \"Disconnecting...\".\n\nTEST CASE #2: Stripe matches Xendit\nSTEPS:\nStep 1 - On a store with Xendit connected, open Settings > Payments and click Manage on the Xendit card.\nStep 2 - Click the toggle, then click Disconnect, and check the same controls while the request runs.\nStep 3 - Compare with case 1.\nEXPECTED RESULT: Both providers behave identically while the request is in flight.\nEVIDENCE: TC02-xendit-disconnect-busy.mp4, TC02-xendit-busy-state.png\nACTUAL RESULT: Xendit shows the same busy state as Stripe: toggle dimmed (50%) and disabled, spinner on Disconnect, page button \"Disconnecting...\".\n\nTEST CASE #3: Busy state while connecting Stripe\nSTEPS:\nStep 1 - Open the Stripe page while Stripe is not connected.\nStep 2 - Click \"Connect with Stripe\", then \"Authorize & Connect\".\nStep 3 - While the connect request is still running, check the controls.\nEXPECTED RESULT: The controls are dimmed and not clickable until the request finishes.\nEVIDENCE: TC03-stripe-connect-busy.mp4, TC03-stripe-connect-busy.png, TC03-stripe-connect-recovered.png\nACTUAL RESULT: The page button reads \"Connecting...\" and is disabled, and \"Authorize & Connect\" shows a spinner and is disabled. A second click sent no extra request, and the button returned to \"Connect with Stripe\" once the request ended. The not-connected state was simulated in the browser. The on/off toggle only renders for a connected provider, so the Connect button carries the busy state here.\n\nTEST CASE #4: The toggle cannot be double-clicked\nSTEPS:\nStep 1 - On Stripe (and again on Xendit), click the toggle, then click Disconnect.\nStep 2 - While the request is running, click the toggle again, twice.\nEXPECTED RESULT: Nothing happens. The click is ignored while busy.\nEVIDENCE: TC04-stripe-click-while-busy.mp4, TC04-xendit-click-while-busy.mp4, TC04-stripe-click-while-busy.png, TC04-xendit-click-while-busy.png\nACTUAL RESULT: Only one disconnect request was sent and the toggle stayed on, dimmed and disabled. The first click landed on the dialog's background and closed the confirmation while the request kept running; the second click on the toggle did nothing.\n\nTEST CASE #5: It recovers afterwards\nSTEPS:\nStep 1 - On Stripe (and again on Xendit), click the toggle, then click Disconnect.\nStep 2 - Let the disconnect finish.\nStep 3 - Check the Payment Settings page, then open Manage on the provider again.\nEXPECTED RESULT: The busy state clears, the button returns to its normal label, and the card shows the provider as disconnected.\nEVIDENCE: TC05-stripe-recovers.mp4, TC05-xendit-recovers.mp4, TC05-stripe-not-connected.png, TC05-xendit-not-connected.png\nACTUAL RESULT: The page returned to Payment Settings with the card reading \"Not Connected\", and Xendit showed \"Xendit routing has been disabled for this merchant.\" Manage then offered an enabled \"Connect with Stripe\" / \"Connect with Xendit\" button, with no busy labels and no toggle left behind. The disconnect response was simulated, so neither provider was actually disconnected.\n\nTEST CASE #6: Cancelling is unaffected\nSTEPS:\nStep 1 - On Stripe (and again on Xendit), click the toggle to open the confirmation.\nStep 2 - Click Cancel.\nEXPECTED RESULT: The dialog closes, the provider stays connected, and nothing is left dimmed or stuck.\nEVIDENCE: TC06-stripe-cancel.mp4, TC06-xendit-cancel.mp4, TC06-stripe-cancel-dialog.png, TC06-xendit-cancel-dialog.png\nACTUAL RESULT: The confirmation opened with Cancel and Disconnect, Cancel closed it, and both providers stayed connected with the toggle on.\n\nTEST CASE #7: Toggle colour\nSTEPS:\nStep 1 - Open Manage on a connected Stripe and on a connected Xendit.\nStep 2 - Read the toggle colour when on.\nEXPECTED RESULT: Black on both.\nEVIDENCE: TC07-stripe-toggle-black.mp4, TC07-xendit-toggle-black.mp4, TC07-stripe-toggle-on.png, TC07-xendit-toggle-on.png\nACTUAL RESULT: Both toggles are black (#000000).\n\nTEST CASE #8: Matches Store Settings\nSTEPS:\nStep 1 - Read the Stripe provider toggle colour.\nStep 2 - Open Settings > Store Settings and read an ON toggle (Display Store Address).\nEXPECTED RESULT: The same black.\nEVIDENCE: TC08-matches-store-settings.mp4, TC08-store-settings-toggle-on.png\nACTUAL RESULT: Both read #000000.\n\nTEST CASE #9: Off state\nSTEPS:\nStep 1 - Open Settings > Store Settings and find a toggle that is off (Multi-Currency).\nStep 2 - Read its colour and knob position.\nEXPECTED RESULT: Grey with the knob on the left, unchanged.\nEVIDENCE: TC09-off-state.mp4, TC09-toggle-off-state.png\nACTUAL RESULT: Grey (#ced4da) with the knob on the left. The provider toggle's knob sits on the right when on.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792023871326",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000162988",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Payment Settings"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 14 2026, 3:58PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Payment Settings hss been move to IN TESTING \nUpdated: Oct 14 2026, 3:58PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791964692168",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000139964",
+    "comment": [
+      {
+        "text": "## Fix for the 7 Oct return — Stripe busy state\n\n**Commit:** `11c601c79` on `refactor/tw-settings-standard-v3`\n**Not on dev yet** — please hold the retest until it lands; we will comment here when it does.\n\nCases 1 to 6 and 9 passed, and the toggle colour is confirmed black on both Stripe and Xendit. Case 7 was the only failure and is fixed.\n\n### Case 7 — no busy state while disconnecting Stripe\n\nYour note was exactly right. The page asks each provider's connect and disconnect actions whether they are still running, and uses that to dim the toggle and change the button to \"Disconnecting...\". For Stripe it was asking by the wrong name, so the answer was always empty and the page concluded nothing was in progress. Xendit was asking correctly, which is why only Stripe was affected.\n\nStripe is now asked the same way Xendit is, so the busy state applies to both.\n\nNothing else about the flow changed — the confirmation dialog, the disconnect itself and the toggle colour are untouched.\n\n---\n\n## QA TEST CASES\n\n### Where to test\n- **Environment:** dev, once this is promoted.\n- **Page:** Settings → Payments → Manage on a connected provider.\n- **Accounts:** a store with Stripe connected, and one with Xendit connected, as used in the 7 Oct run.\n\n### The fix\n\n**1. Busy state while disconnecting Stripe.** On Payment Settings → Stripe, click the toggle, then click Disconnect. While the request is still running, look at the toggle and the buttons.\n**Expected:** the toggle is dimmed and cannot be clicked, the Disconnect button shows a spinner, and the page button reads \"Disconnecting...\". This is what was missing.\n\n**2. Stripe matches Xendit.** Do the same on the Xendit store and compare the two.\n**Expected:** both behave identically while the request is in flight.\n\n**3. Busy state while connecting Stripe.** Start connecting Stripe on a store where it is not connected, and watch the toggle while the request runs.\n**Expected:** it is dimmed and not clickable until the request finishes.\n\n**4. The toggle cannot be double-clicked.** While a disconnect is running, try clicking the toggle again.\n**Expected:** nothing happens — the click is ignored while busy.\n\n**5. It recovers afterwards.** Let the disconnect finish.\n**Expected:** the busy state clears, the button returns to its normal label, and the card shows the provider as disconnected.\n\n**6. Cancelling is unaffected.** Click the toggle to open the confirmation, then click Cancel.\n**Expected:** the dialog closes, the provider stays connected, and nothing is left dimmed or stuck.\n\n### Confirming the earlier fixes still hold\n\n**7. Toggle colour.** On a connected Stripe and a connected Xendit, read the toggle colour when on.\n**Expected:** black on both.\n\n**8. Matches Store Settings.** Compare against an ON toggle in Settings → Store Settings.\n**Expected:** the same black.\n\n**9. Off state.** Find a toggle that is off.\n**Expected:** grey with the knob on the left, unchanged.\n\n### Out of scope / known behaviour\n- Only the busy state changed. The confirmation dialog, the disconnect itself and the toggle colour are unchanged.\n- The green \"Connected\" badge on the provider cards keeps its colour; it is a different element from the toggle.\n- Case 9 of the 7 Oct run noted no other provider is connected on either test store, so Stripe and Xendit remain the only toggles available to test."
+      }
+    ],
+    "comment_text": "## Fix for the 7 Oct return — Stripe busy state\n\n**Commit:** `11c601c79` on `refactor/tw-settings-standard-v3`\n**Not on dev yet** — please hold the retest until it lands; we will comment here when it does.\n\nCases 1 to 6 and 9 passed, and the toggle colour is confirmed black on both Stripe and Xendit. Case 7 was the only failure and is fixed.\n\n### Case 7 — no busy state while disconnecting Stripe\n\nYour note was exactly right. The page asks each provider's connect and disconnect actions whether they are still running, and uses that to dim the toggle and change the button to \"Disconnecting...\". For Stripe it was asking by the wrong name, so the answer was always empty and the page concluded nothing was in progress. Xendit was asking correctly, which is why only Stripe was affected.\n\nStripe is now asked the same way Xendit is, so the busy state applies to both.\n\nNothing else about the flow changed — the confirmation dialog, the disconnect itself and the toggle colour are untouched.\n\n---\n\n## QA TEST CASES\n\n### Where to test\n- **Environment:** dev, once this is promoted.\n- **Page:** Settings → Payments → Manage on a connected provider.\n- **Accounts:** a store with Stripe connected, and one with Xendit connected, as used in the 7 Oct run.\n\n### The fix\n\n**1. Busy state while disconnecting Stripe.** On Payment Settings → Stripe, click the toggle, then click Disconnect. While the request is still running, look at the toggle and the buttons.\n**Expected:** the toggle is dimmed and cannot be clicked, the Disconnect button shows a spinner, and the page button reads \"Disconnecting...\". This is what was missing.\n\n**2. Stripe matches Xendit.** Do the same on the Xendit store and compare the two.\n**Expected:** both behave identically while the request is in flight.\n\n**3. Busy state while connecting Stripe.** Start connecting Stripe on a store where it is not connected, and watch the toggle while the request runs.\n**Expected:** it is dimmed and not clickable until the request finishes.\n\n**4. The toggle cannot be double-clicked.** While a disconnect is running, try clicking the toggle again.\n**Expected:** nothing happens — the click is ignored while busy.\n\n**5. It recovers afterwards.** Let the disconnect finish.\n**Expected:** the busy state clears, the button returns to its normal label, and the card shows the provider as disconnected.\n\n**6. Cancelling is unaffected.** Click the toggle to open the confirmation, then click Cancel.\n**Expected:** the dialog closes, the provider stays connected, and nothing is left dimmed or stuck.\n\n### Confirming the earlier fixes still hold\n\n**7. Toggle colour.** On a connected Stripe and a connected Xendit, read the toggle colour when on.\n**Expected:** black on both.\n\n**8. Matches Store Settings.** Compare against an ON toggle in Settings → Store Settings.\n**Expected:** the same black.\n\n**9. Off state.** Find a toggle that is off.\n**Expected:** grey with the knob on the left, unchanged.\n\n### Out of scope / known behaviour\n- Only the busy state changed. The confirmation dialog, the disconnect itself and the toggle colour are unchanged.\n- The green \"Connected\" badge on the provider cards keeps its colour; it is a different element from the toggle.\n- Case 9 of the 7 Oct run noted no other provider is connected on either test store, so Stripe and Xendit remain the only toggles available to test.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791422151090",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000136353",
+    "comment": [
+      {
+        "text": "Env: DEV (deployed)\nStatus: FAILED\nURL: https://prodev.prosperna.ph/home/settings/payments\n\nTEST CASE #1: Connected-provider toggle is black when on (Stripe)\nSTEPS:\nStep 1 - Log in to a store with Stripe connected.\nStep 2 - Open Settings > Payments and click Manage on the Stripe card.\nStep 3 - Read the colour of the on/off toggle at the top right of the card.\nEXPECTED RESULT: The toggle is black when on, not green.\nEVIDENCE: TC01-stripe-toggle-black.mp4, TC01-stripe-toggle-on.png\nACTUAL RESULT: The toggle is black (#000000) when on.\n\nTEST CASE #2: Connected-provider toggle is black when on (Xendit)\nSTEPS:\nStep 1 - Log in to a store with Xendit connected.\nStep 2 - Open Settings > Payments and click Manage on the Xendit card.\nStep 3 - Read the colour of the on/off toggle.\nEXPECTED RESULT: The toggle is black when on, not green.\nEVIDENCE: TC02-xendit-toggle-black.mp4, TC01-xendit-toggle-on.png\nACTUAL RESULT: The toggle is black (#000000) when on.\n\nTEST CASE #3: Provider toggle matches the toggles in Store Settings\nSTEPS:\nStep 1 - On the Stripe store, read the provider toggle colour on Payment Settings > Stripe.\nStep 2 - Open Settings > Store Settings and read an ON toggle there (Display Store Address).\nStep 3 - Compare the two colours.\nEXPECTED RESULT: Both toggles are the same black.\nEVIDENCE: TC03-matches-store-settings.mp4, TC02-store-settings-toggle-on.png\nACTUAL RESULT: Both read #000000. The payment toggle no longer stands out.\n\nTEST CASE #4: Off state is unchanged\nSTEPS:\nStep 1 - Open Settings > Store Settings and find a toggle that is off (Multi-Currency).\nStep 2 - Read its colour and knob position.\nStep 3 - Compare with the provider toggle's knob position when on.\nEXPECTED RESULT: Off is the usual grey with the knob on the left; on has the knob on the right.\nEVIDENCE: TC04-off-state.mp4, TC03-toggle-off-state.png\nACTUAL RESULT: Off is grey (#ced4da) with the knob on the left. The provider toggle's knob sits on the right when on.\n\nTEST CASE #5: Clicking the toggle opens the disconnect confirmation (Stripe)\nSTEPS:\nStep 1 - On Payment Settings > Stripe, click the on/off toggle.\nStep 2 - Check the dialog, then click Cancel.\nEXPECTED RESULT: The \"Disconnect Stripe?\" confirmation opens with Cancel and Disconnect, and Cancel leaves Stripe connected.\nEVIDENCE: TC05-stripe-disconnect-confirmation.mp4, TC04-stripe-disconnect-confirmation.png\nACTUAL RESULT: The confirmation opened as before, and Cancel closed it with Stripe still connected.\n\nTEST CASE #6: Clicking the toggle opens the disconnect confirmation (Xendit)\nSTEPS:\nStep 1 - On Payment Settings > Xendit, click the on/off toggle.\nStep 2 - Check the dialog, then click Cancel.\nEXPECTED RESULT: The \"Disconnect Xendit?\" confirmation opens with Cancel and Disconnect, and Cancel leaves Xendit connected.\nEVIDENCE: TC06-xendit-disconnect-confirmation.mp4, TC04-xendit-disconnect-confirmation.png\nACTUAL RESULT: The confirmation opened as before, and Cancel closed it with Xendit still connected.\n\nTEST CASE #7: Busy state while disconnecting (Stripe)\nSTEPS:\nStep 1 - On Payment Settings > Stripe, click the toggle, then click Disconnect.\nStep 2 - While the disconnect request is still pending, look at the toggle and the buttons.\nEXPECTED RESULT: The toggle is dimmed and cannot be clicked, as it is on Xendit.\nEVIDENCE: TC07-stripe-busy-state.mp4, TC05-stripe-busy-state.png\nACTUAL RESULT: The toggle stays at full colour and clickable. Disconnect shows no loading state, and \"Disconnect Stripe account\" never changes to \"Disconnecting...\". The Stripe hooks still return isPending, but the page reads isConnecting / isDisconnecting, so the busy flag is always off for Stripe.\n\nTEST CASE #8: Busy state while disconnecting (Xendit)\nSTEPS:\nStep 1 - On Payment Settings > Xendit, click the toggle, then click Disconnect.\nStep 2 - While the disconnect request is still pending, look at the toggle and the buttons.\nEXPECTED RESULT: The toggle is dimmed and cannot be clicked.\nEVIDENCE: TC08-xendit-busy-state.mp4, TC05-xendit-busy-state.png\nACTUAL RESULT: The toggle is dimmed (50%) and disabled, Disconnect shows a spinner, and the page button reads \"Disconnecting...\".\n\nTEST CASE #9: Other connected providers\nSTEPS:\nStep 1 - On both stores, open Settings > Payments and list every provider shown as Connected.\nStep 2 - Open Manage on any other connected provider that uses the same on/off toggle and read its colour.\nEXPECTED RESULT: Any other connected provider's toggle is black too.\nEVIDENCE: TC09-other-providers-stripe-store.mp4, TC09-other-providers-xendit-store.mp4\nACTUAL RESULT: Neither store has another provider using this toggle connected (PayPal, PayMongo, Deluxe and Xendit BYO are not connected), so Stripe and Xendit are the only toggles on dev, and both are black.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV (deployed)\nStatus: FAILED\nURL: https://prodev.prosperna.ph/home/settings/payments\n\nTEST CASE #1: Connected-provider toggle is black when on (Stripe)\nSTEPS:\nStep 1 - Log in to a store with Stripe connected.\nStep 2 - Open Settings > Payments and click Manage on the Stripe card.\nStep 3 - Read the colour of the on/off toggle at the top right of the card.\nEXPECTED RESULT: The toggle is black when on, not green.\nEVIDENCE: TC01-stripe-toggle-black.mp4, TC01-stripe-toggle-on.png\nACTUAL RESULT: The toggle is black (#000000) when on.\n\nTEST CASE #2: Connected-provider toggle is black when on (Xendit)\nSTEPS:\nStep 1 - Log in to a store with Xendit connected.\nStep 2 - Open Settings > Payments and click Manage on the Xendit card.\nStep 3 - Read the colour of the on/off toggle.\nEXPECTED RESULT: The toggle is black when on, not green.\nEVIDENCE: TC02-xendit-toggle-black.mp4, TC01-xendit-toggle-on.png\nACTUAL RESULT: The toggle is black (#000000) when on.\n\nTEST CASE #3: Provider toggle matches the toggles in Store Settings\nSTEPS:\nStep 1 - On the Stripe store, read the provider toggle colour on Payment Settings > Stripe.\nStep 2 - Open Settings > Store Settings and read an ON toggle there (Display Store Address).\nStep 3 - Compare the two colours.\nEXPECTED RESULT: Both toggles are the same black.\nEVIDENCE: TC03-matches-store-settings.mp4, TC02-store-settings-toggle-on.png\nACTUAL RESULT: Both read #000000. The payment toggle no longer stands out.\n\nTEST CASE #4: Off state is unchanged\nSTEPS:\nStep 1 - Open Settings > Store Settings and find a toggle that is off (Multi-Currency).\nStep 2 - Read its colour and knob position.\nStep 3 - Compare with the provider toggle's knob position when on.\nEXPECTED RESULT: Off is the usual grey with the knob on the left; on has the knob on the right.\nEVIDENCE: TC04-off-state.mp4, TC03-toggle-off-state.png\nACTUAL RESULT: Off is grey (#ced4da) with the knob on the left. The provider toggle's knob sits on the right when on.\n\nTEST CASE #5: Clicking the toggle opens the disconnect confirmation (Stripe)\nSTEPS:\nStep 1 - On Payment Settings > Stripe, click the on/off toggle.\nStep 2 - Check the dialog, then click Cancel.\nEXPECTED RESULT: The \"Disconnect Stripe?\" confirmation opens with Cancel and Disconnect, and Cancel leaves Stripe connected.\nEVIDENCE: TC05-stripe-disconnect-confirmation.mp4, TC04-stripe-disconnect-confirmation.png\nACTUAL RESULT: The confirmation opened as before, and Cancel closed it with Stripe still connected.\n\nTEST CASE #6: Clicking the toggle opens the disconnect confirmation (Xendit)\nSTEPS:\nStep 1 - On Payment Settings > Xendit, click the on/off toggle.\nStep 2 - Check the dialog, then click Cancel.\nEXPECTED RESULT: The \"Disconnect Xendit?\" confirmation opens with Cancel and Disconnect, and Cancel leaves Xendit connected.\nEVIDENCE: TC06-xendit-disconnect-confirmation.mp4, TC04-xendit-disconnect-confirmation.png\nACTUAL RESULT: The confirmation opened as before, and Cancel closed it with Xendit still connected.\n\nTEST CASE #7: Busy state while disconnecting (Stripe)\nSTEPS:\nStep 1 - On Payment Settings > Stripe, click the toggle, then click Disconnect.\nStep 2 - While the disconnect request is still pending, look at the toggle and the buttons.\nEXPECTED RESULT: The toggle is dimmed and cannot be clicked, as it is on Xendit.\nEVIDENCE: TC07-stripe-busy-state.mp4, TC05-stripe-busy-state.png\nACTUAL RESULT: The toggle stays at full colour and clickable. Disconnect shows no loading state, and \"Disconnect Stripe account\" never changes to \"Disconnecting...\". The Stripe hooks still return isPending, but the page reads isConnecting / isDisconnecting, so the busy flag is always off for Stripe.\n\nTEST CASE #8: Busy state while disconnecting (Xendit)\nSTEPS:\nStep 1 - On Payment Settings > Xendit, click the toggle, then click Disconnect.\nStep 2 - While the disconnect request is still pending, look at the toggle and the buttons.\nEXPECTED RESULT: The toggle is dimmed and cannot be clicked.\nEVIDENCE: TC08-xendit-busy-state.mp4, TC05-xendit-busy-state.png\nACTUAL RESULT: The toggle is dimmed (50%) and disabled, Disconnect shows a spinner, and the page button reads \"Disconnecting...\".\n\nTEST CASE #9: Other connected providers\nSTEPS:\nStep 1 - On both stores, open Settings > Payments and list every provider shown as Connected.\nStep 2 - Open Manage on any other connected provider that uses the same on/off toggle and read its colour.\nEXPECTED RESULT: Any other connected provider's toggle is black too.\nEVIDENCE: TC09-other-providers-stripe-store.mp4, TC09-other-providers-xendit-store.mp4\nACTUAL RESULT: Neither store has another provider using this toggle connected (PayPal, PayMongo, Deluxe and Xendit BYO are not connected), so Stripe and Xendit are the only toggles on dev, and both are black.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791355398340",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000135354",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Payment Settings"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 7 2026, 9:43AM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Payment Settings hss been move to IN TESTING \nUpdated: Oct 7 2026, 9:43AM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791337440355",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000135170",
+    "comment": [
+      {
+        "text": "TEST CASES - Payment provider toggle colour (run once it reaches dev)\n\nWHERE TO TEST\nEnvironment: dev, once commit 3626e2a33 is promoted. Please do not run these before then - the change is not on dev, so the toggle will still read green and the result would be the same as Oct 6.\nPage: Settings > Payments, then Manage on a connected provider card.\nAccounts: a store with at least one provider connected. Stripe and Xendit were both used last round and both are fine.\n\nTEST CASES\n\n1. Toggle is black when on - Stripe. Open Settings > Payments on a store with Stripe connected and click Manage on the Stripe card. Read the on/off toggle at the top right. EXPECTED: black. It read #0bcf97 green on Oct 6.\n\n2. Toggle is black when on - Xendit. Same on a store with Xendit connected. EXPECTED: black.\n\n3. It matches Store Settings. Read the provider toggle, then open Settings > Store Settings and read an ON toggle there, for example Display Store Address. EXPECTED: the same black. The payment toggle should no longer stand out against the rest.\n\n4. Off state unchanged. Find a toggle that is off. EXPECTED: the usual grey with the knob to the left. Only the on colour changed, so anything different here is a fault.\n\n5. Disconnecting still works. On a connected provider, click the toggle. EXPECTED: the disconnect confirmation appears exactly as before. Confirm it and check the provider disconnects properly. This was a colour change only and must not have altered the flow.\n\n6. Busy state. While a connect or disconnect is running, look at the toggle. EXPECTED: dimmed and not clickable, as before.\n\n7. Other providers. If the store has PayPal or another provider connected, check its toggle too. EXPECTED: black, same as the rest.\n\nTEST DATA\nAny store with a connected provider on dev. No special data needed.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- The green \"Connected\" badge on these cards keeps its colour. That is intentional and is not the same element as the toggle.\n- Buttons and status pills on the provider cards are unchanged.\n- The grey off state is unchanged and is not a fault."
+      }
+    ],
+    "comment_text": "TEST CASES - Payment provider toggle colour (run once it reaches dev)\n\nWHERE TO TEST\nEnvironment: dev, once commit 3626e2a33 is promoted. Please do not run these before then - the change is not on dev, so the toggle will still read green and the result would be the same as Oct 6.\nPage: Settings > Payments, then Manage on a connected provider card.\nAccounts: a store with at least one provider connected. Stripe and Xendit were both used last round and both are fine.\n\nTEST CASES\n\n1. Toggle is black when on - Stripe. Open Settings > Payments on a store with Stripe connected and click Manage on the Stripe card. Read the on/off toggle at the top right. EXPECTED: black. It read #0bcf97 green on Oct 6.\n\n2. Toggle is black when on - Xendit. Same on a store with Xendit connected. EXPECTED: black.\n\n3. It matches Store Settings. Read the provider toggle, then open Settings > Store Settings and read an ON toggle there, for example Display Store Address. EXPECTED: the same black. The payment toggle should no longer stand out against the rest.\n\n4. Off state unchanged. Find a toggle that is off. EXPECTED: the usual grey with the knob to the left. Only the on colour changed, so anything different here is a fault.\n\n5. Disconnecting still works. On a connected provider, click the toggle. EXPECTED: the disconnect confirmation appears exactly as before. Confirm it and check the provider disconnects properly. This was a colour change only and must not have altered the flow.\n\n6. Busy state. While a connect or disconnect is running, look at the toggle. EXPECTED: dimmed and not clickable, as before.\n\n7. Other providers. If the store has PayPal or another provider connected, check its toggle too. EXPECTED: black, same as the rest.\n\nTEST DATA\nAny store with a connected provider on dev. No special data needed.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- The green \"Connected\" badge on these cards keeps its colour. That is intentional and is not the same element as the toggle.\n- Buttons and status pills on the provider cards are unchanged.\n- The grey off state is unchanged and is not a fault.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791332731047",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000135169",
+    "comment": [
+      {
+        "text": "ABOUT THE OCT 6 RETURN - the fix was not on dev yet\n\nShort version: nothing new is broken. The toggle really is still green on dev, because the fix had not been put there to test. That is on us, not on the testing.\n\nWHAT HAPPENED\n\nThe fix was made on Oct 6 and committed to the settings branch, refactor/tw-settings-standard-v3 (commit 3626e2a33). It was never sent to dev, and the earlier comment said so under PULL REQUESTS. The Oct 6 retest was run against https://prodev.prosperna.ph, which is dev, so it was reading the unchanged code.\n\nChecked again today to be sure rather than assume: dev still has the toggle set to the secondary colour, which is the green you measured at #0bcf97. The settings branch has it set to the primary colour, which is black. So the measurement was correct and the conclusion - that it still stands out next to the Store Settings toggles - was correct too.\n\nWHAT THE FIX ACTUALLY IS\n\nThe connected-provider toggle was the only switch left on these pages still using the secondary colour, which paints green when on. Every other toggle across Store Settings, Shipping and Users already used the black one. It now uses the same black. Nothing else about it changed: it turns on and off the same way, the off state is still grey, and the disconnect confirmation is untouched.\n\nWHAT HAPPENS NEXT\n\nThis needs to go to dev before it can be retested. We will add a comment here the moment it lands, with the branch it went out on. Please hold the retest until then - running it again now will produce the same green result for the same reason.\n\nApologies for the wasted round. Test cases are in the next comment so they are ready when it is."
+      }
+    ],
+    "comment_text": "ABOUT THE OCT 6 RETURN - the fix was not on dev yet\n\nShort version: nothing new is broken. The toggle really is still green on dev, because the fix had not been put there to test. That is on us, not on the testing.\n\nWHAT HAPPENED\n\nThe fix was made on Oct 6 and committed to the settings branch, refactor/tw-settings-standard-v3 (commit 3626e2a33). It was never sent to dev, and the earlier comment said so under PULL REQUESTS. The Oct 6 retest was run against https://prodev.prosperna.ph, which is dev, so it was reading the unchanged code.\n\nChecked again today to be sure rather than assume: dev still has the toggle set to the secondary colour, which is the green you measured at #0bcf97. The settings branch has it set to the primary colour, which is black. So the measurement was correct and the conclusion - that it still stands out next to the Store Settings toggles - was correct too.\n\nWHAT THE FIX ACTUALLY IS\n\nThe connected-provider toggle was the only switch left on these pages still using the secondary colour, which paints green when on. Every other toggle across Store Settings, Shipping and Users already used the black one. It now uses the same black. Nothing else about it changed: it turns on and off the same way, the off state is still grey, and the disconnect confirmation is untouched.\n\nWHAT HAPPENS NEXT\n\nThis needs to go to dev before it can be retested. We will add a comment here the moment it lands, with the branch it went out on. Please hold the retest until then - running it again now will produce the same green result for the same reason.\n\nApologies for the wasted round. Test cases are in the next comment so they are ready when it is.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791332709135",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000133457",
+    "comment": [
+      {
+        "text": "Env: DEV (deployed)\nStatus: FAILED\nURL: https://prodev.prosperna.ph/home/settings/payments\n\nTEST CASE #1: Connected-provider toggle is black when on (Stripe)\nSTEPS:\nStep 1 - Log in to a store with Stripe connected.\nStep 2 - Open Settings > Payments and click Manage on the Stripe card.\nStep 3 - Read the colour of the on/off toggle at the top right of the card.\nEXPECTED RESULT: The toggle is black when on, not green.\nEVIDENCE: TC01-stripe-toggle-on.png\nACTUAL RESULT: The toggle is still green (#0bcf97).\n\nTEST CASE #2: Connected-provider toggle is black when on (Xendit)\nSTEPS:\nStep 1 - Log in to a store with Xendit connected.\nStep 2 - Open Settings > Payments and click Manage on the Xendit card.\nStep 3 - Read the colour of the on/off toggle.\nEXPECTED RESULT: The toggle is black when on, not green.\nEVIDENCE: TC01-xendit-toggle-on.png\nACTUAL RESULT: The toggle is still green (#0bcf97).\n\nTEST CASE #3: Provider toggle matches the toggles in Store Settings\nSTEPS:\nStep 1 - On the Stripe store, read the provider toggle colour on Payment Settings > Stripe.\nStep 2 - Open Settings > Store Settings and read an ON toggle there (Display Store Address).\nStep 3 - Compare the two colours.\nEXPECTED RESULT: Both toggles are the same black.\nEVIDENCE: TC02-store-settings-toggle-on.png, TC01-stripe-toggle-on.png\nACTUAL RESULT: Store Settings toggles are black (#000000) but the payment provider toggle is green (#0bcf97), so it still stands out.\n\nTEST CASE #4: Off state is unchanged\nSTEPS:\nStep 1 - Open Settings > Store Settings and find a toggle that is off.\nStep 2 - Read its colour and knob position.\nStep 3 - Compare with the provider toggle's knob position when on.\nEXPECTED RESULT: Off is the usual grey with the knob on the left; on has the knob on the right.\nEVIDENCE: TC03-toggle-off-state.png\nACTUAL RESULT: Off is grey (#ced4da) with the knob on the left; the provider toggle's knob sits on the right when on.\n\nTEST CASE #5: Clicking the toggle opens the disconnect confirmation (Stripe)\nSTEPS:\nStep 1 - On Payment Settings > Stripe, click the on/off toggle.\nStep 2 - Check the dialog, then click Cancel.\nEXPECTED RESULT: The \"Disconnect Stripe?\" confirmation opens with Cancel and Disconnect, and Cancel leaves Stripe connected.\nEVIDENCE: TC04-stripe-disconnect-confirmation.png\nACTUAL RESULT: The confirmation opened as before, and Cancel closed it with Stripe still connected.\n\nTEST CASE #6: Clicking the toggle opens the disconnect confirmation (Xendit)\nSTEPS:\nStep 1 - On Payment Settings > Xendit, click the on/off toggle.\nStep 2 - Check the dialog, then click Cancel.\nEXPECTED RESULT: The \"Disconnect Xendit?\" confirmation opens with Cancel and Disconnect, and Cancel leaves Xendit connected.\nEVIDENCE: TC04-xendit-disconnect-confirmation.png\nACTUAL RESULT: The confirmation opened as before, and Cancel closed it with Xendit still connected.\n\nTEST CASE #7: Busy state while disconnecting (Stripe)\nSTEPS:\nStep 1 - On Payment Settings > Stripe, click the toggle, then click Disconnect.\nStep 2 - While the disconnect request is still pending, look at the toggle and the buttons.\nEXPECTED RESULT: The toggle is dimmed and cannot be clicked, as it is on Xendit.\nEVIDENCE: TC05-stripe-busy-state.png\nACTUAL RESULT: The toggle stays at full colour and clickable. The Disconnect button shows no loading state and can be clicked again, and \"Disconnect Stripe account\" never changes to \"Disconnecting...\". The page reads isConnecting / isDisconnecting from the Stripe hooks, but those fields don't exist on what useMutation returns (it is isPending), so the busy flag is always off for Stripe.\n\nTEST CASE #8: Busy state while disconnecting (Xendit)\nSTEPS:\nStep 1 - On Payment Settings > Xendit, click the toggle, then click Disconnect.\nStep 2 - While the disconnect request is still pending, look at the toggle and the buttons.\nEXPECTED RESULT: The toggle is dimmed and cannot be clicked.\nEVIDENCE: TC05-xendit-busy-state.png\nACTUAL RESULT: The toggle is dimmed (50%) and disabled, the Disconnect button shows a spinner, and the page button reads \"Disconnecting...\".\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV (deployed)\nStatus: FAILED\nURL: https://prodev.prosperna.ph/home/settings/payments\n\nTEST CASE #1: Connected-provider toggle is black when on (Stripe)\nSTEPS:\nStep 1 - Log in to a store with Stripe connected.\nStep 2 - Open Settings > Payments and click Manage on the Stripe card.\nStep 3 - Read the colour of the on/off toggle at the top right of the card.\nEXPECTED RESULT: The toggle is black when on, not green.\nEVIDENCE: TC01-stripe-toggle-on.png\nACTUAL RESULT: The toggle is still green (#0bcf97).\n\nTEST CASE #2: Connected-provider toggle is black when on (Xendit)\nSTEPS:\nStep 1 - Log in to a store with Xendit connected.\nStep 2 - Open Settings > Payments and click Manage on the Xendit card.\nStep 3 - Read the colour of the on/off toggle.\nEXPECTED RESULT: The toggle is black when on, not green.\nEVIDENCE: TC01-xendit-toggle-on.png\nACTUAL RESULT: The toggle is still green (#0bcf97).\n\nTEST CASE #3: Provider toggle matches the toggles in Store Settings\nSTEPS:\nStep 1 - On the Stripe store, read the provider toggle colour on Payment Settings > Stripe.\nStep 2 - Open Settings > Store Settings and read an ON toggle there (Display Store Address).\nStep 3 - Compare the two colours.\nEXPECTED RESULT: Both toggles are the same black.\nEVIDENCE: TC02-store-settings-toggle-on.png, TC01-stripe-toggle-on.png\nACTUAL RESULT: Store Settings toggles are black (#000000) but the payment provider toggle is green (#0bcf97), so it still stands out.\n\nTEST CASE #4: Off state is unchanged\nSTEPS:\nStep 1 - Open Settings > Store Settings and find a toggle that is off.\nStep 2 - Read its colour and knob position.\nStep 3 - Compare with the provider toggle's knob position when on.\nEXPECTED RESULT: Off is the usual grey with the knob on the left; on has the knob on the right.\nEVIDENCE: TC03-toggle-off-state.png\nACTUAL RESULT: Off is grey (#ced4da) with the knob on the left; the provider toggle's knob sits on the right when on.\n\nTEST CASE #5: Clicking the toggle opens the disconnect confirmation (Stripe)\nSTEPS:\nStep 1 - On Payment Settings > Stripe, click the on/off toggle.\nStep 2 - Check the dialog, then click Cancel.\nEXPECTED RESULT: The \"Disconnect Stripe?\" confirmation opens with Cancel and Disconnect, and Cancel leaves Stripe connected.\nEVIDENCE: TC04-stripe-disconnect-confirmation.png\nACTUAL RESULT: The confirmation opened as before, and Cancel closed it with Stripe still connected.\n\nTEST CASE #6: Clicking the toggle opens the disconnect confirmation (Xendit)\nSTEPS:\nStep 1 - On Payment Settings > Xendit, click the on/off toggle.\nStep 2 - Check the dialog, then click Cancel.\nEXPECTED RESULT: The \"Disconnect Xendit?\" confirmation opens with Cancel and Disconnect, and Cancel leaves Xendit connected.\nEVIDENCE: TC04-xendit-disconnect-confirmation.png\nACTUAL RESULT: The confirmation opened as before, and Cancel closed it with Xendit still connected.\n\nTEST CASE #7: Busy state while disconnecting (Stripe)\nSTEPS:\nStep 1 - On Payment Settings > Stripe, click the toggle, then click Disconnect.\nStep 2 - While the disconnect request is still pending, look at the toggle and the buttons.\nEXPECTED RESULT: The toggle is dimmed and cannot be clicked, as it is on Xendit.\nEVIDENCE: TC05-stripe-busy-state.png\nACTUAL RESULT: The toggle stays at full colour and clickable. The Disconnect button shows no loading state and can be clicked again, and \"Disconnect Stripe account\" never changes to \"Disconnecting...\". The page reads isConnecting / isDisconnecting from the Stripe hooks, but those fields don't exist on what useMutation returns (it is isPending), so the busy flag is always off for Stripe.\n\nTEST CASE #8: Busy state while disconnecting (Xendit)\nSTEPS:\nStep 1 - On Payment Settings > Xendit, click the toggle, then click Disconnect.\nStep 2 - While the disconnect request is still pending, look at the toggle and the buttons.\nEXPECTED RESULT: The toggle is dimmed and cannot be clicked.\nEVIDENCE: TC05-xendit-busy-state.png\nACTUAL RESULT: The toggle is dimmed (50%) and disabled, the Disconnect button shows a spinner, and the page button reads \"Disconnecting...\".\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791293549975",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000133306",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Payment Settings"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 6 2026, 8:56PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Payment Settings hss been move to IN TESTING \nUpdated: Oct 6 2026, 8:56PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791291369984",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000129742",
+    "comment": [
+      {
+        "text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-10-06 - branch refactor/tw-settings-standard-v3, commit 3626e2a33 (no dev PR yet)\n\nWHERE TO TEST\nEnvironment: dev, once the fix is promoted there.\nPage: Settings > Payments (/home/settings/payments).\nPreconditions: a store with at least one payment provider already connected, so the on/off toggle is shown. A second store with no provider connected is useful for case 4.\n\nTEST CASES\n\n1. Toggle colour when on. Open Settings > Payments on a store with a connected provider. Look at the on/off toggle on that provider's card. EXPECTED: the toggle is black when on. It must not be green.\n\n2. Toggle colour matches the rest of settings. Open Settings > Store Settings and look at any toggle there, for example Display Add to Cart Button. Compare it with the payment provider toggle. EXPECTED: both read as the same black. No provider toggle is a different colour from the others.\n\n3. Off state. On the provider card, note the toggle when the provider is not connected or the switch is off. EXPECTED: the off state is the usual grey with the knob to the left. Only the on colour changed.\n\n4. Disconnecting still works. On a connected provider, click the toggle. EXPECTED: the disconnect confirmation appears exactly as before. Confirm it and check the provider disconnects. The change was colour only and must not alter this flow.\n\n5. Busy state. While a connect or disconnect is in progress, look at the toggle. EXPECTED: it is dimmed and cannot be clicked, as before.\n\nTEST DATA\nNo special data. Any store with a connected provider (Xendit, PayMongo or PayPal on dev) is enough.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- Only the connected-provider toggle on Payment Settings changed. Badges, buttons and status pills on these cards keep their existing colours, including the green \"Connected\" badge, which is intentional.\n- The grey off state is unchanged and is not a bug."
+      }
+    ],
+    "comment_text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-10-06 - branch refactor/tw-settings-standard-v3, commit 3626e2a33 (no dev PR yet)\n\nWHERE TO TEST\nEnvironment: dev, once the fix is promoted there.\nPage: Settings > Payments (/home/settings/payments).\nPreconditions: a store with at least one payment provider already connected, so the on/off toggle is shown. A second store with no provider connected is useful for case 4.\n\nTEST CASES\n\n1. Toggle colour when on. Open Settings > Payments on a store with a connected provider. Look at the on/off toggle on that provider's card. EXPECTED: the toggle is black when on. It must not be green.\n\n2. Toggle colour matches the rest of settings. Open Settings > Store Settings and look at any toggle there, for example Display Add to Cart Button. Compare it with the payment provider toggle. EXPECTED: both read as the same black. No provider toggle is a different colour from the others.\n\n3. Off state. On the provider card, note the toggle when the provider is not connected or the switch is off. EXPECTED: the off state is the usual grey with the knob to the left. Only the on colour changed.\n\n4. Disconnecting still works. On a connected provider, click the toggle. EXPECTED: the disconnect confirmation appears exactly as before. Confirm it and check the provider disconnects. The change was colour only and must not alter this flow.\n\n5. Busy state. While a connect or disconnect is in progress, look at the toggle. EXPECTED: it is dimmed and cannot be clicked, as before.\n\nTEST DATA\nNo special data. Any store with a connected provider (Xendit, PayMongo or PayPal on dev) is enough.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- Only the connected-provider toggle on Payment Settings changed. Badges, buttons and status pills on these cards keep their existing colours, including the green \"Connected\" badge, which is intentional.\n- The grey off state is unchanged and is not a bug.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791248969577",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000129739",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\n\nQA return of Sep 18 (\"Please make the toggle black at all\") is fixed.\n\nWHAT WAS WRONG\nThe connected-provider toggle on Payment Settings was the only switch left on these pages using the secondary colour, which paints green when it is on. Every other toggle across Store Settings, Shipping and Users is already black, so this one stood out.\n\nHOW IT WAS FIXED\nThe toggle now uses the same black used by the rest of the settings toggles. Nothing else about it changed: it turns on and off the same way, and the off state is still the usual grey.\n\nPULL REQUESTS\n\nNo dev PR yet. The fix is committed on refactor/tw-settings-standard-v3 (commit 3626e2a33). Say the word and it goes out on a -dev branch to dev like the others.\n\nHOW IT WAS TESTED\n\nESLint clean. 12 test files and 204 tests pass across Payment Settings, Shipping, Users and the shared dropdown.\n\nColour is a visual result, so the tests confirm the component still works but not the shade itself. That needs an eye on it once it is on dev.\n\nNEXT STEPS\n\nOnce this reaches dev, please confirm the toggle reads black and not green, on a connected provider.\n\nQA TEST CASES\n\nA QA TEST CASES SUMMARY comment has been added to this task."
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\n\nQA return of Sep 18 (\"Please make the toggle black at all\") is fixed.\n\nWHAT WAS WRONG\nThe connected-provider toggle on Payment Settings was the only switch left on these pages using the secondary colour, which paints green when it is on. Every other toggle across Store Settings, Shipping and Users is already black, so this one stood out.\n\nHOW IT WAS FIXED\nThe toggle now uses the same black used by the rest of the settings toggles. Nothing else about it changed: it turns on and off the same way, and the off state is still the usual grey.\n\nPULL REQUESTS\n\nNo dev PR yet. The fix is committed on refactor/tw-settings-standard-v3 (commit 3626e2a33). Say the word and it goes out on a -dev branch to dev like the others.\n\nHOW IT WAS TESTED\n\nESLint clean. 12 test files and 204 tests pass across Payment Settings, Shipping, Users and the shared dropdown.\n\nColour is a visual result, so the tests confirm the component still works but not the shade itself. That needs an eye on it once it is on dev.\n\nNEXT STEPS\n\nOnce this reaches dev, please confirm the toggle reads black and not green, on a connected provider.\n\nQA TEST CASES\n\nA QA TEST CASES SUMMARY comment has been added to this task.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791248952686",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000064480",
+    "comment": [
+      {
+        "text": "Please make the toggle black at all.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-yibaGWyL5W"
+        }
+      }
+    ],
+    "comment_text": "Please make the toggle black at all.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789718471711",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000064413",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Payment Settings"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7774e130-bf56-467b-9d1a-3971afce0fce"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Sep 18 2026, 3:45PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fcf1bfa1-92df-420d-bc36-a6111d7c79f3"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e62af9f7-0865-4e25-b8f0-2c363c784893"
+        }
+      }
+    ],
+    "comment_text": "This task Payment Settings has been move to PASSED TESTING \nDate updated: Sep 18 2026, 3:45PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789717530567",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000064342",
+    "comment": [
+      {
+        "text": "Env: DEV-local (prosperna1 ",
+        "attributes": {}
+      },
+      {
+        "text": "dev",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": " @ 30161faec), Chromium + WebKit\nStatus: PASSED\nURL: http://localhost:3000/home/settings/payments\n\nTEST CASE #1: \"Disconnect Xendit account\" text overflow (QA return 1)\nSTEPS:\nOpen Payment Settings on a store with a connected Xendit account.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click Manage on the Xendit card.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Set the viewport to a phone width (390 x 844).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Measure the \"Disconnect Xendit account\" button's text against its own box.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The label fits inside the button and the button sits inside the viewport. Below the 640px breakpoint the two action buttons stack, which is what gives the long label enough width.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: TC01-disconnect-xendit-390px.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The label fits — text width 174px inside a 326px button, no clipping, and the button's right edge is inside 390px. Verified on Chromium and on WebKit, the engine behind iOS Safari, where the issue was originally seen.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #2: Action buttons at and above the 640px breakpoint (control)\nSTEPS:\nOn the same Xendit Manage page, set the viewport to 390px and record both buttons.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Resize to 1280px and record them again.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Stacked at 390px; side by side on one right-aligned row at 1280px, with Disconnect to the right of Xendit Dashboard.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: TC02a-action-row-stacked-390px.png, TC02b-action-row-inline-1280px.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Stacked at 390px, side by side and right-aligned at 1280px. The phone fix did not change the desktop layout.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #3: Bank Transfer shipping-method toggles (QA return 2)\nSTEPS:\nOpen Payment Settings > Bank Transfer > Manage on a store with at least one activated shipping method.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Set the viewport to 390 x 844.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Measure each Shipping Methods toggle against its own label.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Every toggle shares its label's row and is right-aligned, rather than dropping onto its own full-width line below it.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: TC03-bank-transfer-toggles-390px.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: All 5 toggles (Standard Delivery, Same Day Delivery, Manual Shipping by Customer, Manual Shipping by Merchant, Store Pickup) sit inline and right-aligned. None dropped to its own line, on Chromium or WebKit. Note the toggles only render for shipping methods the store has actually activated — on a store with none configured the page shows \"Activate a shipping method first\" instead, which is why no switches were visible during the earlier check.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #4: Cash on Delivery shipping-method toggles\nSTEPS:\nOpen Payment Settings > Cash on Delivery > Manage at 390 x 844.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Measure each Shipping Methods toggle against its own label.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Same as case 3 — every toggle inline and right-aligned.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: TC04-cod-toggles-390px.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: All toggles sit inline and right-aligned, on Chromium and WebKit.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #5: Cash on Pickup toggle\nSTEPS:\nOpen Payment Settings > Cash on Pickup > Manage at 390 x 844.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Measure the \"Enable Cash on Pickup\" toggle against its label block.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Cash on Pickup has a single combined toggle and no Shipping Methods list. That toggle sits inline with its label.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: TC04b-cop-toggle-390px.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The single toggle sits inline and right-aligned against its label block.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #6: Toggle layout at desktop width (control)\nSTEPS:\nOpen Payment Settings > Bank Transfer > Manage at 1280 x 900.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Measure each Shipping Methods toggle against its label.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Toggles remain on the row, right-aligned — the phone fix must not have changed the desktop layout.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: TC05-bank-transfer-toggles-1280px.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: All toggles remain inline and right-aligned at 1280px.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #7: Gateway status colour coding at desktop (QA return 3)\nSTEPS:\nOpen Payment Settings at 1440 x 900.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Read the painted background colour of each status pill.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Connected and Not Connected render in visibly different shades — Connected green, Not Connected light.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: TC06-status-badges-1440px.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Connected renders green with white text; Not Connected renders as a light outlined pill. Clearly distinct, matching the approved design, on Chromium and WebKit.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #8: Pending status shade\nSTEPS:\nOpen Payment Settings at 1440 x 900 on a store whose Xendit account is pending.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Read the Pending pill's colour and compare it with the other pills.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Pending renders amber and differs from both Connected and Not Connected.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: TC07-pending-badge-1440px.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Pending renders amber and is distinct from every other pill on the page.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #9: Gateway status colour coding on a phone\nSTEPS:\nOpen Payment Settings at 390 x 844.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Confirm the status pills render and read their colours.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The status pills are visible and colour-coded at phone width, since the original report was raised on a phone.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: TC08-status-badges-390px.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: All 10 pills render at 390px, with Connected green and Not Connected light — the same colour coding as desktop.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      }
+    ],
+    "comment_text": "Env: DEV-local (prosperna1 dev @ 30161faec), Chromium + WebKit\nStatus: PASSED\nURL: http://localhost:3000/home/settings/payments\n\nTEST CASE #1: \"Disconnect Xendit account\" text overflow (QA return 1)\nSTEPS:\nOpen Payment Settings on a store with a connected Xendit account.\nClick Manage on the Xendit card.\nSet the viewport to a phone width (390 x 844).\nMeasure the \"Disconnect Xendit account\" button's text against its own box.\nEXPECTED RESULT: The label fits inside the button and the button sits inside the viewport. Below the 640px breakpoint the two action buttons stack, which is what gives the long label enough width.\nEVIDENCE: TC01-disconnect-xendit-390px.png\nACTUAL RESULT: The label fits — text width 174px inside a 326px button, no clipping, and the button's right edge is inside 390px. Verified on Chromium and on WebKit, the engine behind iOS Safari, where the issue was originally seen.\n\nTEST CASE #2: Action buttons at and above the 640px breakpoint (control)\nSTEPS:\nOn the same Xendit Manage page, set the viewport to 390px and record both buttons.\nResize to 1280px and record them again.\nEXPECTED RESULT: Stacked at 390px; side by side on one right-aligned row at 1280px, with Disconnect to the right of Xendit Dashboard.\nEVIDENCE: TC02a-action-row-stacked-390px.png, TC02b-action-row-inline-1280px.png\nACTUAL RESULT: Stacked at 390px, side by side and right-aligned at 1280px. The phone fix did not change the desktop layout.\n\nTEST CASE #3: Bank Transfer shipping-method toggles (QA return 2)\nSTEPS:\nOpen Payment Settings > Bank Transfer > Manage on a store with at least one activated shipping method.\nSet the viewport to 390 x 844.\nMeasure each Shipping Methods toggle against its own label.\nEXPECTED RESULT: Every toggle shares its label's row and is right-aligned, rather than dropping onto its own full-width line below it.\nEVIDENCE: TC03-bank-transfer-toggles-390px.png\nACTUAL RESULT: All 5 toggles (Standard Delivery, Same Day Delivery, Manual Shipping by Customer, Manual Shipping by Merchant, Store Pickup) sit inline and right-aligned. None dropped to its own line, on Chromium or WebKit. Note the toggles only render for shipping methods the store has actually activated — on a store with none configured the page shows \"Activate a shipping method first\" instead, which is why no switches were visible during the earlier check.\n\nTEST CASE #4: Cash on Delivery shipping-method toggles\nSTEPS:\nOpen Payment Settings > Cash on Delivery > Manage at 390 x 844.\nMeasure each Shipping Methods toggle against its own label.\nEXPECTED RESULT: Same as case 3 — every toggle inline and right-aligned.\nEVIDENCE: TC04-cod-toggles-390px.png\nACTUAL RESULT: All toggles sit inline and right-aligned, on Chromium and WebKit.\n\nTEST CASE #5: Cash on Pickup toggle\nSTEPS:\nOpen Payment Settings > Cash on Pickup > Manage at 390 x 844.\nMeasure the \"Enable Cash on Pickup\" toggle against its label block.\nEXPECTED RESULT: Cash on Pickup has a single combined toggle and no Shipping Methods list. That toggle sits inline with its label.\nEVIDENCE: TC04b-cop-toggle-390px.png\nACTUAL RESULT: The single toggle sits inline and right-aligned against its label block.\n\nTEST CASE #6: Toggle layout at desktop width (control)\nSTEPS:\nOpen Payment Settings > Bank Transfer > Manage at 1280 x 900.\nMeasure each Shipping Methods toggle against its label.\nEXPECTED RESULT: Toggles remain on the row, right-aligned — the phone fix must not have changed the desktop layout.\nEVIDENCE: TC05-bank-transfer-toggles-1280px.png\nACTUAL RESULT: All toggles remain inline and right-aligned at 1280px.\n\nTEST CASE #7: Gateway status colour coding at desktop (QA return 3)\nSTEPS:\nOpen Payment Settings at 1440 x 900.\nRead the painted background colour of each status pill.\nEXPECTED RESULT: Connected and Not Connected render in visibly different shades — Connected green, Not Connected light.\nEVIDENCE: TC06-status-badges-1440px.png\nACTUAL RESULT: Connected renders green with white text; Not Connected renders as a light outlined pill. Clearly distinct, matching the approved design, on Chromium and WebKit.\n\nTEST CASE #8: Pending status shade\nSTEPS:\nOpen Payment Settings at 1440 x 900 on a store whose Xendit account is pending.\nRead the Pending pill's colour and compare it with the other pills.\nEXPECTED RESULT: Pending renders amber and differs from both Connected and Not Connected.\nEVIDENCE: TC07-pending-badge-1440px.png\nACTUAL RESULT: Pending renders amber and is distinct from every other pill on the page.\n\nTEST CASE #9: Gateway status colour coding on a phone\nSTEPS:\nOpen Payment Settings at 390 x 844.\nConfirm the status pills render and read their colours.\nEXPECTED RESULT: The status pills are visible and colour-coded at phone width, since the original report was raised on a phone.\nEVIDENCE: TC08-status-badges-390px.png\nACTUAL RESULT: All 10 pills render at 390px, with Connected green and Not Connected light — the same colour coding as desktop.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789716782389",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000064116",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Payment Settings"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Sep 18 2026, 2:30PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Payment Settings hss been move to IN TESTING \nUpdated: Sep 18 2026, 2:30PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789713059815",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000048256",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "12020389-1cb3-463b-b337-f2e89e94a6aa.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/12020389-1cb3-463b-b337-f2e89e94a6aa/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/12020389-1cb3-463b-b337-f2e89e94a6aa_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/12020389-1cb3-463b-b337-f2e89e94a6aa_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/12020389-1cb3-463b-b337-f2e89e94a6aa/image.png",
+          "uploaded": true,
+          "width": 422,
+          "height": 856
+        },
+        "attributes": {
+          "width": "123",
+          "data-id": "12020389-1cb3-463b-b337-f2e89e94a6aa.png",
+          "data-attachment": null,
+          "data-natural-width": "422",
+          "data-natural-height": "856"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-YKIjVUZW_G"
+        }
+      },
+      {
+        "text": "color coding restored",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-vT3BBObUXH"
+        }
+      }
+    ],
+    "comment_text": "image.png\ncolor coding restored\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789434322303",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000048249",
+    "comment": [
+      {
+        "text": "yeah, please coordinate to kuya ian on what to do for this to proceed? ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-db8c0a80-b0a0-11f1-a1fb-b13dce8991ee"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-db8c0a81-b0a0-11f1-a1fb-b13dce8991ee"
+        }
+      },
+      {
+        "type": "tag",
+        "text": "@Angelo Kamachi",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      },
+      {
+        "text": "",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-db8c0a82-b0a0-11f1-a1fb-b13dce8991ee"
+        }
+      }
+    ],
+    "comment_text": "yeah, please coordinate to kuya ian on what to do for this to proceed? \n\n@Angelo Kamachi \n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1789434065187",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      }
+    ],
+    "date": "1789434035175",
+    "reply_count": 1
+  },
+  {
+    "id": "1100740000048192",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "af43a6ce-94d5-424e-aee0-6fcbce5f6a12.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/af43a6ce-94d5-424e-aee0-6fcbce5f6a12_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/af43a6ce-94d5-424e-aee0-6fcbce5f6a12_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/af43a6ce-94d5-424e-aee0-6fcbce5f6a12_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/af43a6ce-94d5-424e-aee0-6fcbce5f6a12/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "af43a6ce-94d5-424e-aee0-6fcbce5f6a12.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_HeX1VD6Tw"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-x3O4fhxk8D"
+        }
+      },
+      {
+        "text": "unable to find switches in Bank Transfer",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-VfY0OV59H1"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Kr6wKZ_4Sz"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "d000c893-6baf-46cf-98d1-39d878b0f129.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/d000c893-6baf-46cf-98d1-39d878b0f129_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/d000c893-6baf-46cf-98d1-39d878b0f129_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/d000c893-6baf-46cf-98d1-39d878b0f129_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/d000c893-6baf-46cf-98d1-39d878b0f129/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "d000c893-6baf-46cf-98d1-39d878b0f129.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-QDRX_-9oPe"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0s19tTNZ10"
+        }
+      },
+      {
+        "text": "I checked prod and I dont think I see it in prod as well",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-iZ65azXxB7"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-PpKztRhkuG"
+        }
+      },
+      {
+        "text": "Could it be an experimental feature not yet released?",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ZwCuMvseRT"
+        }
+      }
+    ],
+    "comment_text": "image.png\n\nunable to find switches in Bank Transfer\n\nimage.png\n\nI checked prod and I dont think I see it in prod as well\n\nCould it be an experimental feature not yet released?\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789433935988",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000048162",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "4ffae23b-2d9a-47eb-8953-d6293fcdea3d.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/4ffae23b-2d9a-47eb-8953-d6293fcdea3d/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/4ffae23b-2d9a-47eb-8953-d6293fcdea3d_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/4ffae23b-2d9a-47eb-8953-d6293fcdea3d_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/4ffae23b-2d9a-47eb-8953-d6293fcdea3d/image.png",
+          "uploaded": true,
+          "width": 447,
+          "height": 871
+        },
+        "attributes": {
+          "width": "128",
+          "data-id": "4ffae23b-2d9a-47eb-8953-d6293fcdea3d.png",
+          "data-attachment": null,
+          "data-natural-width": "447",
+          "data-natural-height": "871"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-hZ5u4oMwq4"
+        }
+      },
+      {
+        "text": "text no longer clipping",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-wM9SvAAz_o"
+        }
+      }
+    ],
+    "comment_text": "image.png\ntext no longer clipping\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789432928027",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000032524",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-f2eedf90-acc2-11f1-857f-154404d9fc80"
+        }
+      },
+      {
+        "text": "Status: FAILED",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-f2eedf91-acc2-11f1-857f-154404d9fc80"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-f2eedf92-acc2-11f1-857f-154404d9fc80"
+        }
+      },
+      {
+        "text": "ISSUE: ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-f2eedf93-acc2-11f1-857f-154404d9fc80"
+        }
+      },
+      {
+        "text": "“Disconnect Xendit Account” text overflow",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "The toggle buttons looks little messy",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "All the status of payments are in the same shade (connected, not connected, pending, and coming soon)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "attachment",
+        "text": "paste_e795e1fd-2509-45c1-ab61-6963deadf073.png",
+        "attachment": {
+          "id": "fab8fe9e-881f-47db-a8af-752c630663dd.png",
+          "date": "1789008872979",
+          "title": "paste_e795e1fd-2509-45c1-ab61-6963deadf073.png",
+          "type": 2,
+          "source": 1,
+          "version": 0,
+          "extension": "png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/fab8fe9e-881f-47db-a8af-752c630663dd_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/fab8fe9e-881f-47db-a8af-752c630663dd_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/fab8fe9e-881f-47db-a8af-752c630663dd_large.png",
+          "is_folder": null,
+          "mimetype": "image/png",
+          "hidden": false,
+          "parent_id": "1100740000032524",
+          "size": 374168,
+          "total_comments": 0,
+          "resolved_comments": 0,
+          "user": {
+            "id": 95622662,
+            "username": "Aira Pilor",
+            "email": "aira@prosperna.com",
+            "initials": "AP",
+            "color": "#e93d82",
+            "profilePicture": null
+          },
+          "deleted": false,
+          "orientation": "1",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/fab8fe9e-881f-47db-a8af-752c630663dd/paste_e795e1fd-2509-45c1-ab61-6963deadf073.png",
+          "parent_comment_type": 1,
+          "parent_comment_parent": "86ey5cunu",
+          "email_data": null,
+          "workspace_id": 7537039,
+          "width": 1179,
+          "height": 2556,
+          "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/fab8fe9e-881f-47db-a8af-752c630663dd/paste_e795e1fd-2509-45c1-ab61-6963deadf073.png?view=open",
+          "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/fab8fe9e-881f-47db-a8af-752c630663dd/paste_e795e1fd-2509-45c1-ab61-6963deadf073.png"
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "fab8fe9e-881f-47db-a8af-752c630663dd.png",
+          "data-attachment": null,
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "type": "attachment",
+        "text": "paste_97e3a49e-3319-4529-b5a4-f3288bb75a18.png",
+        "attachment": {
+          "id": "83e5fd48-fb1e-4fc3-9774-e77928a3bd64.png",
+          "date": "1789008872873",
+          "title": "paste_97e3a49e-3319-4529-b5a4-f3288bb75a18.png",
+          "type": 2,
+          "source": 1,
+          "version": 0,
+          "extension": "png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/83e5fd48-fb1e-4fc3-9774-e77928a3bd64_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/83e5fd48-fb1e-4fc3-9774-e77928a3bd64_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/83e5fd48-fb1e-4fc3-9774-e77928a3bd64_large.png",
+          "is_folder": null,
+          "mimetype": "image/png",
+          "hidden": false,
+          "parent_id": "1100740000032524",
+          "size": 203553,
+          "total_comments": 0,
+          "resolved_comments": 0,
+          "user": {
+            "id": 95622662,
+            "username": "Aira Pilor",
+            "email": "aira@prosperna.com",
+            "initials": "AP",
+            "color": "#e93d82",
+            "profilePicture": null
+          },
+          "deleted": false,
+          "orientation": "1",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/83e5fd48-fb1e-4fc3-9774-e77928a3bd64/paste_97e3a49e-3319-4529-b5a4-f3288bb75a18.png",
+          "parent_comment_type": 1,
+          "parent_comment_parent": "86ey5cunu",
+          "email_data": null,
+          "workspace_id": 7537039,
+          "width": 1179,
+          "height": 2556,
+          "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/83e5fd48-fb1e-4fc3-9774-e77928a3bd64/paste_97e3a49e-3319-4529-b5a4-f3288bb75a18.png?view=open",
+          "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/83e5fd48-fb1e-4fc3-9774-e77928a3bd64/paste_97e3a49e-3319-4529-b5a4-f3288bb75a18.png"
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "83e5fd48-fb1e-4fc3-9774-e77928a3bd64.png",
+          "data-attachment": null,
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "type": "attachment",
+        "text": "paste_a6ad1510-8b86-4667-9cfb-19514ab4178d.png",
+        "attachment": {
+          "id": "2c7c968e-05d4-4576-a7fa-1c0453957a95.png",
+          "date": "1789008872875",
+          "title": "paste_a6ad1510-8b86-4667-9cfb-19514ab4178d.png",
+          "type": 2,
+          "source": 1,
+          "version": 0,
+          "extension": "png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/2c7c968e-05d4-4576-a7fa-1c0453957a95_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/2c7c968e-05d4-4576-a7fa-1c0453957a95_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/2c7c968e-05d4-4576-a7fa-1c0453957a95_large.png",
+          "is_folder": null,
+          "mimetype": "image/png",
+          "hidden": false,
+          "parent_id": "1100740000032524",
+          "size": 256192,
+          "total_comments": 0,
+          "resolved_comments": 0,
+          "user": {
+            "id": 95622662,
+            "username": "Aira Pilor",
+            "email": "aira@prosperna.com",
+            "initials": "AP",
+            "color": "#e93d82",
+            "profilePicture": null
+          },
+          "deleted": false,
+          "orientation": "1",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/2c7c968e-05d4-4576-a7fa-1c0453957a95/paste_a6ad1510-8b86-4667-9cfb-19514ab4178d.png",
+          "parent_comment_type": 1,
+          "parent_comment_parent": "86ey5cunu",
+          "email_data": null,
+          "workspace_id": 7537039,
+          "width": 1179,
+          "height": 2556,
+          "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/2c7c968e-05d4-4576-a7fa-1c0453957a95/paste_a6ad1510-8b86-4667-9cfb-19514ab4178d.png?view=open",
+          "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/2c7c968e-05d4-4576-a7fa-1c0453957a95/paste_a6ad1510-8b86-4667-9cfb-19514ab4178d.png"
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "2c7c968e-05d4-4576-a7fa-1c0453957a95.png",
+          "data-attachment": null,
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-f2eedf96-acc2-11f1-857f-154404d9fc80"
+        }
+      }
+    ],
+    "comment_text": "env: DEV\nStatus: FAILED\n\nISSUE: \n“Disconnect Xendit Account” text overflow\nThe toggle buttons looks little messy\nAll the status of payments are in the same shade (connected, not connected, pending, and coming soon)\npaste_e795e1fd-2509-45c1-ab61-6963deadf073.pngpaste_97e3a49e-3319-4529-b5a4-f3288bb75a18.pngpaste_a6ad1510-8b86-4667-9cfb-19514ab4178d.png\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789008873612",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248223899",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "8eb1568e-e4c3-4762-8019-c0d32d2ff4ca.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/8eb1568e-e4c3-4762-8019-c0d32d2ff4ca_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/8eb1568e-e4c3-4762-8019-c0d32d2ff4ca_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/8eb1568e-e4c3-4762-8019-c0d32d2ff4ca_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/8eb1568e-e4c3-4762-8019-c0d32d2ff4ca/image.png",
+          "uploaded": true,
+          "width": 1821,
+          "height": 682
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "8eb1568e-e4c3-4762-8019-c0d32d2ff4ca.png",
+          "data-attachment": null,
+          "data-natural-width": "1821",
+          "data-natural-height": "682"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-8vMnskoMu4"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "68c5c3a9-9667-421d-b788-3a9f7bed7496.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/68c5c3a9-9667-421d-b788-3a9f7bed7496/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/68c5c3a9-9667-421d-b788-3a9f7bed7496_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/68c5c3a9-9667-421d-b788-3a9f7bed7496_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/68c5c3a9-9667-421d-b788-3a9f7bed7496/image.png",
+          "uploaded": true,
+          "width": 828,
+          "height": 313
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "68c5c3a9-9667-421d-b788-3a9f7bed7496.png",
+          "data-attachment": null,
+          "data-natural-width": "828",
+          "data-natural-height": "313"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ceG9h9U781"
+        }
+      },
+      {
+        "text": "fixed design",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EfL1kwYsyZ"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\nfixed design\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787152153522",
+    "reply_count": 0
+  },
+  {
+    "id": "90180241541048",
+    "comment": [
+      {
+        "text": "Projected End Date 8/3",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_zdJlh-Zcn"
+        }
+      },
+      {
+        "text": "No subtasks found",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-SIM07WHb0G",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-rl7FIh3hB0"
+        }
+      }
+    ],
+    "comment_text": "Projected End Date 8/3\nNo subtasks found\n\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1785227561864",
+    "reply_count": 0
+  },
+  {
+    "id": "90180234367245",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-9mJgKLOnP9"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "FAILED",
+        "attributes": {
+          "badge-class": "red"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-MUBre-9kV_"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_p5-LxYySm"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-3qxte-tskF"
+        }
+      },
+      {
+        "text": "Kindly make the Payment Settings like this:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-GL9CG36oSo"
+        }
+      },
+      {
+        "type": "divider",
+        "text": "---",
+        "divider": true
+      },
+      {
+        "type": "divider",
+        "text": "---",
+        "divider": true
+      },
+      {
+        "text": "CLOSED:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--EDLo_GHPG"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "8b033dc0-fb99-4502-bba3-81d080119761.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/8b033dc0-fb99-4502-bba3-81d080119761/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/8b033dc0-fb99-4502-bba3-81d080119761_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/8b033dc0-fb99-4502-bba3-81d080119761_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/8b033dc0-fb99-4502-bba3-81d080119761/image.png",
+          "uploaded": true,
+          "width": 1600,
+          "height": 794
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "8b033dc0-fb99-4502-bba3-81d080119761.png",
+          "data-attachment": "{\"id\":\"8b033dc0-fb99-4502-bba3-81d080119761.png\",\"version\":\"0\",\"date\":1783080142812,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/8b033dc0-fb99-4502-bba3-81d080119761_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/8b033dc0-fb99-4502-bba3-81d080119761_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/8b033dc0-fb99-4502-bba3-81d080119761/image.png\",\"width\":1600,\"height\":794,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/8b033dc0-fb99-4502-bba3-81d080119761/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/8b033dc0-fb99-4502-bba3-81d080119761/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/8b033dc0-fb99-4502-bba3-81d080119761/image.png\"}",
+          "data-natural-width": "1600",
+          "data-natural-height": "794"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1PAFqLBBzC"
+        }
+      },
+      {
+        "text": "OPEN:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gAS0dzyQFt"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "7457469c-33f6-4094-a8ea-1da8a64d3010.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/7457469c-33f6-4094-a8ea-1da8a64d3010/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/7457469c-33f6-4094-a8ea-1da8a64d3010_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/7457469c-33f6-4094-a8ea-1da8a64d3010_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/7457469c-33f6-4094-a8ea-1da8a64d3010/image.png",
+          "uploaded": true,
+          "width": 1586,
+          "height": 764
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "7457469c-33f6-4094-a8ea-1da8a64d3010.png",
+          "data-attachment": "{\"id\":\"7457469c-33f6-4094-a8ea-1da8a64d3010.png\",\"version\":\"0\",\"date\":1783080175948,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/7457469c-33f6-4094-a8ea-1da8a64d3010_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/7457469c-33f6-4094-a8ea-1da8a64d3010_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/7457469c-33f6-4094-a8ea-1da8a64d3010/image.png\",\"width\":1586,\"height\":764,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/7457469c-33f6-4094-a8ea-1da8a64d3010/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/7457469c-33f6-4094-a8ea-1da8a64d3010/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/7457469c-33f6-4094-a8ea-1da8a64d3010/image.png\"}",
+          "data-natural-width": "1586",
+          "data-natural-height": "764"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-iuQqGNFaM4"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-GbSJH8yidh"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-RgCn2-T8VW"
+        }
+      },
+      {
+        "text": "Moving this subtask to \"Ready Priority\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-a0w6Yu5x9h"
+        }
+      },
+      {
+        "text": "cc",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "env: DEV\nStatus: FAILED\n\n\nKindly make the Payment Settings like this:\n------CLOSED:\nimage.png\nOPEN:\nimage.png\n\n\nMoving this subtask to \"Ready Priority\"\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1783080215044",
+    "reply_count": 0
+  },
+  {
+    "id": "90180234365443",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Payment Settings"
+      },
+      {
+        "text": " has been created ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bf7e6b93-37f7-4ef1-9574-05993b503c8f"
+        }
+      },
+      {
+        "text": "Date: ",
+        "attributes": {}
+      },
+      {
+        "text": "Jul 3 2026, 8:00PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5acb7133-fc27-48ba-9a62-6a27fcef1ac4"
+        }
+      },
+      {
+        "text": "By ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2da5208f-53d3-4f34-b235-72f66cc916c1"
+        }
+      }
+    ],
+    "comment_text": "This task Payment Settings has been created \nDate: Jul 3 2026, 8:00PM (Asia/Shanghai)\nBy Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1783080031912",
+    "reply_count": 0
+  }
+]

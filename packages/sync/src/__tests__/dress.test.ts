@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
+import { getSyncEventsUrl } from "../utils/endpoints";
 import { dressSyncFunction, flushSyncEvents } from "../utils/dress";
 import { syncRegistry } from "../utils/registry";
 
@@ -129,7 +130,7 @@ describe("dressSyncFunction", () => {
 
     expect(fetchMock).toHaveBeenCalledTimes(1);
     const [endpoint, reqInit] = fetchMock.mock.calls[0];
-    expect(endpoint).toBe("/api/sync/events");
+    expect(endpoint).toBe(getSyncEventsUrl({ forceLocal: true }));
     const sentEvents = JSON.parse(reqInit.body);
     expect(Array.isArray(sentEvents)).toBe(true);
     expect(sentEvents.length).toBe(3);

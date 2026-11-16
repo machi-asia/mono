@@ -1,0 +1,2639 @@
+[
+  {
+    "id": "1100740000087049",
+    "comment": [
+      {
+        "text": "Approved to mark this task as DEPLOYED to PROD",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-VXxSpJYPfL"
+        }
+      }
+    ],
+    "comment_text": "Approved to mark this task as DEPLOYED to PROD\n",
+    "user": {
+      "id": 25568383,
+      "username": "Dennis Velasco",
+      "email": "dennis@prosperna.com",
+      "color": "#04a9f4",
+      "initials": "DV",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1790225414285",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000082160",
+    "comment": [
+      {
+        "text": "Store Name: GO NEGOSYO",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-KRBzhmOebA"
+        }
+      },
+      {
+        "text": "url: ",
+        "attributes": {}
+      },
+      {
+        "text": "https://gonegosyo.prosperna.com/",
+        "attributes": {
+          "link": "https://gonegosyo.prosperna.com/"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-U5QKkH7vKD"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED",
+        "attributes": {
+          "badge-class": "green"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-z51d8yuNhZ"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0V3NGJlXGX"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-zGDANSZ_6j"
+        }
+      },
+      {
+        "text": "No more issue found.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Uen26k0Qg3"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-qGReD2xqyg"
+        }
+      },
+      {
+        "text": "We can now close this task.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-9YORQXofcK"
+        }
+      },
+      {
+        "text": "cc ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "Store Name: GO NEGOSYO\nurl: https://gonegosyo.prosperna.com/\nStatus: PASSED\n\n\nNo more issue found.\n\nWe can now close this task.\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1790225397525",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1790131237552",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000082139",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "73a13de4-de77-4077-9552-33bb79acc1ad.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/73a13de4-de77-4077-9552-33bb79acc1ad/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/73a13de4-de77-4077-9552-33bb79acc1ad_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/73a13de4-de77-4077-9552-33bb79acc1ad_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/73a13de4-de77-4077-9552-33bb79acc1ad/image.png",
+          "uploaded": true,
+          "width": 1165,
+          "height": 308
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "73a13de4-de77-4077-9552-33bb79acc1ad.png",
+          "data-attachment": null,
+          "data-natural-width": "1165",
+          "data-natural-height": "308"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Wih00kikLW"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "502aa8d5-1e07-4d22-8e35-182e24c7aa5b.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/502aa8d5-1e07-4d22-8e35-182e24c7aa5b/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/502aa8d5-1e07-4d22-8e35-182e24c7aa5b_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/502aa8d5-1e07-4d22-8e35-182e24c7aa5b_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/502aa8d5-1e07-4d22-8e35-182e24c7aa5b/image.png",
+          "uploaded": true,
+          "width": 1146,
+          "height": 270
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "502aa8d5-1e07-4d22-8e35-182e24c7aa5b.png",
+          "data-attachment": null,
+          "data-natural-width": "1146",
+          "data-natural-height": "270"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-4XkkVCJFFn"
+        }
+      },
+      {
+        "text": "button linking fixed",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lOBRQOzC-7"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\nbutton linking fixed\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1790225417041",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1790131034071",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000079245",
+    "comment": [
+      {
+        "text": "Store Name: GO NEGOSYO",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-K53Y4PHLdg"
+        }
+      },
+      {
+        "text": "url: ",
+        "attributes": {}
+      },
+      {
+        "text": "https://gonegosyo.prosperna.com/",
+        "attributes": {
+          "link": "https://gonegosyo.prosperna.com/"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-u84otLPeLf"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "FAILED",
+        "attributes": {
+          "badge-class": "red"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-NXQCHwEwtW"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-wrBcqfERni"
+        }
+      },
+      {
+        "text": "ISSUE:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-XR-6fWVO6o"
+        }
+      },
+      {
+        "text": "Buttons that redirect customers to page 404",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          },
+          "block-id": "block-b1Jq54dm5H"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "4331fa6e-7547-4ae7-8d16-699279b979a9.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/4331fa6e-7547-4ae7-8d16-699279b979a9/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/4331fa6e-7547-4ae7-8d16-699279b979a9/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/4331fa6e-7547-4ae7-8d16-699279b979a9_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/4331fa6e-7547-4ae7-8d16-699279b979a9_medium.png",
+          "width": 1535,
+          "height": 786
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "4331fa6e-7547-4ae7-8d16-699279b979a9.png",
+          "data-natural-width": "1535",
+          "data-natural-height": "786"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-UmmVuq80Wg"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "c66b2e6e-6f20-4dc8-8d81-f07481488dcb.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/c66b2e6e-6f20-4dc8-8d81-f07481488dcb/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/c66b2e6e-6f20-4dc8-8d81-f07481488dcb/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/c66b2e6e-6f20-4dc8-8d81-f07481488dcb_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/c66b2e6e-6f20-4dc8-8d81-f07481488dcb_medium.png",
+          "width": 1535,
+          "height": 776
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "c66b2e6e-6f20-4dc8-8d81-f07481488dcb.png",
+          "data-natural-width": "1535",
+          "data-natural-height": "776"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--XUakQHWH-"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-FQ62RzyoBU"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-VJgrJC9QWP"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-MVNWddYPBM"
+        }
+      },
+      {
+        "text": "WEBSITE PERFORMANCE:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5ISkZAPNSE"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-IQfajQ6iVS"
+        }
+      },
+      {
+        "text": "HOME → 92%",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          },
+          "block-id": "block-mWXh8b_D8v"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "780d1222-31c6-42a3-9e93-39cfcf1e6d28.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/780d1222-31c6-42a3-9e93-39cfcf1e6d28/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/780d1222-31c6-42a3-9e93-39cfcf1e6d28/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/780d1222-31c6-42a3-9e93-39cfcf1e6d28_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/780d1222-31c6-42a3-9e93-39cfcf1e6d28_medium.png",
+          "width": 1535,
+          "height": 772
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "780d1222-31c6-42a3-9e93-39cfcf1e6d28.png",
+          "data-natural-width": "1535",
+          "data-natural-height": "772"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-yIaxLLs2s_"
+        }
+      },
+      {
+        "text": "LMS → 100%",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          },
+          "block-id": "block-GFrmleKV7I"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "86cea932-512a-42cd-9fd0-8908780828a3.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/86cea932-512a-42cd-9fd0-8908780828a3/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/86cea932-512a-42cd-9fd0-8908780828a3/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/86cea932-512a-42cd-9fd0-8908780828a3_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/86cea932-512a-42cd-9fd0-8908780828a3_medium.png",
+          "width": 1535,
+          "height": 777
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "86cea932-512a-42cd-9fd0-8908780828a3.png",
+          "data-natural-width": "1535",
+          "data-natural-height": "777"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-nhMuQbHqa9"
+        }
+      },
+      {
+        "text": "GET INVOLVED → 100%",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          },
+          "block-id": "block-s1eDE7_YwK"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "1c769f9a-f485-43f2-bc64-fd5ce5cefc11.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/1c769f9a-f485-43f2-bc64-fd5ce5cefc11/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/1c769f9a-f485-43f2-bc64-fd5ce5cefc11/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/1c769f9a-f485-43f2-bc64-fd5ce5cefc11_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/1c769f9a-f485-43f2-bc64-fd5ce5cefc11_medium.png",
+          "width": 1535,
+          "height": 768
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "1c769f9a-f485-43f2-bc64-fd5ce5cefc11.png",
+          "data-natural-width": "1535",
+          "data-natural-height": "768"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-rxIXaHj--z"
+        }
+      },
+      {
+        "text": "CONTACT → 100%",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          },
+          "block-id": "block-EjSXOCWHza"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "609fa084-fef2-41a7-a413-c2452e77306c.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/609fa084-fef2-41a7-a413-c2452e77306c/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/609fa084-fef2-41a7-a413-c2452e77306c/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/609fa084-fef2-41a7-a413-c2452e77306c_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/609fa084-fef2-41a7-a413-c2452e77306c_medium.png",
+          "width": 1535,
+          "height": 777
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "609fa084-fef2-41a7-a413-c2452e77306c.png",
+          "data-natural-width": "1535",
+          "data-natural-height": "777"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-84I2xHbEjD"
+        }
+      },
+      {
+        "text": "WHAT WE DO → 92%",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          },
+          "block-id": "block-W1LgTlnfQj"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "b7f8942c-dcb8-469e-8bd2-c8aecc7b20d6.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/b7f8942c-dcb8-469e-8bd2-c8aecc7b20d6/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/b7f8942c-dcb8-469e-8bd2-c8aecc7b20d6/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/b7f8942c-dcb8-469e-8bd2-c8aecc7b20d6_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/b7f8942c-dcb8-469e-8bd2-c8aecc7b20d6_medium.png",
+          "width": 1535,
+          "height": 773
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "b7f8942c-dcb8-469e-8bd2-c8aecc7b20d6.png",
+          "data-natural-width": "1535",
+          "data-natural-height": "773"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-dmRFi-BNFL"
+        }
+      },
+      {
+        "text": "WHERE WE WORK → 100%",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          },
+          "block-id": "block-Qji2nwW36a"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "766e7e6f-b747-465b-8561-f22f76766634.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/766e7e6f-b747-465b-8561-f22f76766634/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/766e7e6f-b747-465b-8561-f22f76766634/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/766e7e6f-b747-465b-8561-f22f76766634_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/766e7e6f-b747-465b-8561-f22f76766634_medium.png",
+          "width": 1535,
+          "height": 777
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "766e7e6f-b747-465b-8561-f22f76766634.png",
+          "data-natural-width": "1535",
+          "data-natural-height": "777"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-kN0Pgg8Zbj"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Sj8kIAb_U_"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ob2LJTIkb9"
+        }
+      },
+      {
+        "text": "Moving this task to \"Waiting for Client Review\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-PKJkhzMb65"
+        }
+      },
+      {
+        "text": "cc ",
+        "attributes": {}
+      },
+      {
+        "text": "@Angelo Kamachi",
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-LPPS9Wo4yn"
+        }
+      }
+    ],
+    "comment_text": "Store Name: GO NEGOSYO\nurl: https://gonegosyo.prosperna.com/\nStatus: FAILED\n\nISSUE:\nButtons that redirect customers to page 404\nimage.png\nimage.png\n\n\n\nWEBSITE PERFORMANCE:\n\nHOME → 92%\nimage.png\nLMS → 100%\nimage.png\nGET INVOLVED → 100%\nimage.png\nCONTACT → 100%\nimage.png\nWHAT WE DO → 92%\nimage.png\nWHERE WE WORK → 100%\nimage.png\n\n\nMoving this task to \"Waiting for Client Review\"\ncc @Angelo Kamachi\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1790225418737",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1790066155025",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000077616",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "4121b93d-b814-4e24-af30-7c9475a77ccc.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/4121b93d-b814-4e24-af30-7c9475a77ccc_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/4121b93d-b814-4e24-af30-7c9475a77ccc_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/4121b93d-b814-4e24-af30-7c9475a77ccc_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/4121b93d-b814-4e24-af30-7c9475a77ccc/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "4121b93d-b814-4e24-af30-7c9475a77ccc.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gFmztEBw30"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "13f2fb00-6252-424c-b6d3-90ec5addac12.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/13f2fb00-6252-424c-b6d3-90ec5addac12_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/13f2fb00-6252-424c-b6d3-90ec5addac12_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/13f2fb00-6252-424c-b6d3-90ec5addac12_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/13f2fb00-6252-424c-b6d3-90ec5addac12/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "13f2fb00-6252-424c-b6d3-90ec5addac12.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-FW2f5vKpXb"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "ce11a4fd-1c97-42f8-a4f8-3dd552017cd6.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/ce11a4fd-1c97-42f8-a4f8-3dd552017cd6_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/ce11a4fd-1c97-42f8-a4f8-3dd552017cd6_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/ce11a4fd-1c97-42f8-a4f8-3dd552017cd6_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/ce11a4fd-1c97-42f8-a4f8-3dd552017cd6/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "ce11a4fd-1c97-42f8-a4f8-3dd552017cd6.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gvo2Vtt51U"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "5a7f1eef-b7a5-4fa8-8936-c594b7132336.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/5a7f1eef-b7a5-4fa8-8936-c594b7132336_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/5a7f1eef-b7a5-4fa8-8936-c594b7132336_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/5a7f1eef-b7a5-4fa8-8936-c594b7132336_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/5a7f1eef-b7a5-4fa8-8936-c594b7132336/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "5a7f1eef-b7a5-4fa8-8936-c594b7132336.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-34E8N_poWq"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "0bec475e-0e50-42f1-8a38-b8d30a71efb8.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/0bec475e-0e50-42f1-8a38-b8d30a71efb8_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/0bec475e-0e50-42f1-8a38-b8d30a71efb8_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/0bec475e-0e50-42f1-8a38-b8d30a71efb8_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/0bec475e-0e50-42f1-8a38-b8d30a71efb8/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "0bec475e-0e50-42f1-8a38-b8d30a71efb8.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-LKsCySS6St"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-09NTyiPv3H"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-PxvTOjTNTj"
+        }
+      },
+      {
+        "text": "All pages now have consistent header size and layout",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ZaVj-TZdRR"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\nimage.png\nimage.png\nimage.png\n\n\nAll pages now have consistent header size and layout\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1790225422351",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1790040309776",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000077515",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "bf019eac-66ba-4367-ae08-84fb984a7ba8.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/bf019eac-66ba-4367-ae08-84fb984a7ba8/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/bf019eac-66ba-4367-ae08-84fb984a7ba8/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/bf019eac-66ba-4367-ae08-84fb984a7ba8_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/bf019eac-66ba-4367-ae08-84fb984a7ba8/image.png",
+          "uploaded": true,
+          "width": 533,
+          "height": 179
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "bf019eac-66ba-4367-ae08-84fb984a7ba8.png",
+          "data-attachment": null,
+          "data-natural-width": "533",
+          "data-natural-height": "179"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-94deSLoG84"
+        }
+      },
+      {
+        "text": "links changed to /about-us",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ZkiRu59sbw"
+        }
+      }
+    ],
+    "comment_text": "image.png\nlinks changed to /about-us\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1790225424688",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1790036435589",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000077511",
+    "comment": [
+      {
+        "text": "Missing pages issue, according to last week's SNT, the pages not found in figma will be disregarded in favor of keeping the basic form link",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-sl7hSuKrbq"
+        }
+      }
+    ],
+    "comment_text": "Missing pages issue, according to last week's SNT, the pages not found in figma will be disregarded in favor of keeping the basic form link\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1790225425621",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1790036007304",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000077509",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "db09ee96-7abb-40f5-a8fa-36e336d75774.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/db09ee96-7abb-40f5-a8fa-36e336d75774/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/db09ee96-7abb-40f5-a8fa-36e336d75774_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/db09ee96-7abb-40f5-a8fa-36e336d75774_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/db09ee96-7abb-40f5-a8fa-36e336d75774/image.png",
+          "uploaded": true,
+          "width": 614,
+          "height": 103
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "db09ee96-7abb-40f5-a8fa-36e336d75774.png",
+          "data-attachment": null,
+          "data-natural-width": "614",
+          "data-natural-height": "103"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-IR378ErnVx"
+        }
+      },
+      {
+        "text": "home unpublished",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eQHcYyW-1t"
+        }
+      }
+    ],
+    "comment_text": "image.png\nhome unpublished\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1790225427474",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1790035953616",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000075441",
+    "comment": [
+      {
+        "text": "Store Name: GO NEGOSYO",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7MvQBGh77X"
+        }
+      },
+      {
+        "text": "url: ",
+        "attributes": {}
+      },
+      {
+        "text": "https://gonegosyo.prosperna.com/",
+        "attributes": {
+          "link": "https://gonegosyo.prosperna.com/"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-z8CPIM-7q4"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "FAILED",
+        "attributes": {
+          "badge-class": "red"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-SIpp44X5qg"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-3kqPT7rufr"
+        }
+      },
+      {
+        "text": "ISSUE:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-D84wZWhesF"
+        }
+      },
+      {
+        "text": "All the \"Learn More\" and \"Real All Success Stories\" are all redirecting to ",
+        "attributes": {}
+      },
+      {
+        "text": "/about ",
+        "attributes": {
+          "color-class": "red",
+          "bold": true
+        }
+      },
+      {
+        "text": "which is currently unpublished, therefor return 404. But we currently have a link of ",
+        "attributes": {}
+      },
+      {
+        "text": "/about-us",
+        "attributes": {
+          "color-class": "red",
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-DORIDCTa0k",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Missing Pages:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e9VbnrJJqf",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "link_preview",
+        "link_preview": {
+          "entity": "task-comment:7537039%2Fz93r0b2552/1100740000050064/",
+          "url": "https://app.clickup.com/t/7537039/z93r0b2552?comment=1100740000050064"
+        },
+        "text": "Task Comment preview 1100740000050064"
+      },
+      {
+        "text": "There are 2 Home Page:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-TflIDQvHRM",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "1dc5de8a-6a37-495c-acd7-aa85b4db1134.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/1dc5de8a-6a37-495c-acd7-aa85b4db1134_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/1dc5de8a-6a37-495c-acd7-aa85b4db1134_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/1dc5de8a-6a37-495c-acd7-aa85b4db1134_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/1dc5de8a-6a37-495c-acd7-aa85b4db1134/image.png",
+          "uploaded": true,
+          "width": 1918,
+          "height": 946
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "1dc5de8a-6a37-495c-acd7-aa85b4db1134.png",
+          "data-attachment": null,
+          "data-natural-width": "1918",
+          "data-natural-height": "946"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ZGMjaJ9ZTf"
+        }
+      },
+      {
+        "text": "The background of every page name does not have the same height.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-jgZb1HIm__",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "frame",
+        "frame": {
+          "id": "ecffa11b-13bf-4059-8bb6-f2f5f85d2f5b.mp4",
+          "service": "clickup_video",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/ecffa11b-13bf-4059-8bb6-f2f5f85d2f5b/20260921-1130-33.7721410.mp4?view=open",
+          "src": "https://t7537039.p.clickup-attachments.com/t7537039/ecffa11b-13bf-4059-8bb6-f2f5f85d2f5b/20260921-1130-33.7721410.mp4?view=open",
+          "source": 1
+        },
+        "text": "https://t7537039.p.clickup-attachments.com/t7537039/ecffa11b-13bf-4059-8bb6-f2f5f85d2f5b/20260921-1130-33.7721410.mp4?view=open",
+        "attributes": {
+          "block-id": "block-c4PTDU5N67",
+          "data-size": "large",
+          "data-origin": "attachment"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-wr1UtaLkB-"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-L1tV4w5D8H"
+        }
+      },
+      {
+        "text": "Moving this task to \"Ready for Development\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Jp8SE4EeBr"
+        }
+      },
+      {
+        "text": "cc ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "Store Name: GO NEGOSYO\nurl: https://gonegosyo.prosperna.com/\nStatus: FAILED\n\nISSUE:\nAll the \"Learn More\" and \"Real All Success Stories\" are all redirecting to /about which is currently unpublished, therefor return 404. But we currently have a link of /about-us\nMissing Pages:\nTask Comment preview 1100740000050064There are 2 Home Page:\nimage.png\nThe background of every page name does not have the same height.\nhttps://t7537039.p.clickup-attachments.com/t7537039/ecffa11b-13bf-4059-8bb6-f2f5f85d2f5b/20260921-1130-33.7721410.mp4?view=open\n\nMoving this task to \"Ready for Development\"\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1790225428893",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1789990342166",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000050176",
+    "comment": [
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "02080f67-c0e9-44a5-a13f-db1ddebd35a6.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/02080f67-c0e9-44a5-a13f-db1ddebd35a6/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/02080f67-c0e9-44a5-a13f-db1ddebd35a6/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/02080f67-c0e9-44a5-a13f-db1ddebd35a6_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/02080f67-c0e9-44a5-a13f-db1ddebd35a6_medium.png",
+          "width": 1041,
+          "height": 1012
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "02080f67-c0e9-44a5-a13f-db1ddebd35a6.png",
+          "data-natural-width": "1041",
+          "data-natural-height": "1012"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-9ofC7ajU5X"
+        }
+      },
+      {
+        "text": "new BanKo page was made in respect to figma",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-V4_s-SYhCg"
+        }
+      }
+    ],
+    "comment_text": "image.png\nnew BanKo page was made in respect to figma\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1790225432072",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1789454036863",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000050064",
+    "comment": [
+      {
+        "text": "@Angelo Kamachi",
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      },
+      {
+        "text": " - I spoke to the client and here's what you need to fix:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-U3FMChZaWa"
+        }
+      },
+      {
+        "text": "On this page (",
+        "attributes": {}
+      },
+      {
+        "text": "https://gonegosyo.prosperna.com/lms",
+        "attributes": {
+          "link": "https://gonegosyo.prosperna.com/lms"
+        }
+      },
+      {
+        "text": "):",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "ordered"
+          },
+          "block-id": "block-5PfIkCeLNE"
+        }
+      },
+      {
+        "text": "Under the \"ACCESS TO MONEY\" section, link the SIGN UP HERE button to the \"Our Partners > Money\" page in the Figma (",
+        "attributes": {}
+      },
+      {
+        "text": "",
+        "type": "link_mention",
+        "link_mention": {
+          "url": "https://www.figma.com/design/Ad1mdZE9Vq0LG93TrFfjyF/GONegosyo?node-id=2008-3&t=9BdYw5xQdKQZI12a-0"
+        }
+      },
+      {
+        "text": ") Note that you still need to create this page.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "ordered"
+          },
+          "indent": 1,
+          "block-id": "block-BuNgrGi91e"
+        }
+      },
+      {
+        "text": "On the \"Money\" page link the \"GET STARTED\" button under the \"BanKo\" tile to the \"BanKo\" page in the Figma (",
+        "attributes": {}
+      },
+      {
+        "text": "",
+        "type": "link_mention",
+        "link_mention": {
+          "url": "https://www.figma.com/design/Ad1mdZE9Vq0LG93TrFfjyF/GONegosyo?node-id=2008-3&t=9BdYw5xQdKQZI12a-0"
+        }
+      },
+      {
+        "text": ") Note that you still need to create this page.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "ordered"
+          },
+          "indent": 2,
+          "block-id": "block-FyaCK53WQV"
+        }
+      },
+      {
+        "text": "Under the \"ACCESS TO MARKETS\" section, link the SIGN UP HERE button to the \"Our Partners > Market\" page in the Figma (",
+        "attributes": {}
+      },
+      {
+        "text": "",
+        "type": "link_mention",
+        "link_mention": {
+          "url": "https://www.figma.com/design/Ad1mdZE9Vq0LG93TrFfjyF/GONegosyo?node-id=2008-3&t=9BdYw5xQdKQZI12a-0"
+        }
+      },
+      {
+        "text": ") Note that you still need to create this page.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "ordered"
+          },
+          "indent": 1,
+          "block-id": "block-BxzBrUCxlo"
+        }
+      },
+      {
+        "text": "Under the \"ACCESS TO MENTORING\" section, link the SIGN UP HERE button to the \"Our Partners > Mentor\" page in the Figma (",
+        "attributes": {}
+      },
+      {
+        "text": "",
+        "type": "link_mention",
+        "link_mention": {
+          "url": "https://www.figma.com/design/Ad1mdZE9Vq0LG93TrFfjyF/GONegosyo?node-id=2008-3&t=9BdYw5xQdKQZI12a-0"
+        }
+      },
+      {
+        "text": ") Note that you still need to create this page.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "ordered"
+          },
+          "indent": 1,
+          "block-id": "block-INC8NItddQ"
+        }
+      },
+      {
+        "text": "In the footer, replace the broken images for the location pin, telephone icon and email icon as shown in the footer of the Figma (",
+        "attributes": {}
+      },
+      {
+        "text": "",
+        "type": "link_mention",
+        "link_mention": {
+          "url": "https://www.figma.com/design/Ad1mdZE9Vq0LG93TrFfjyF/GONegosyo?node-id=2008-3&t=9BdYw5xQdKQZI12a-0"
+        }
+      },
+      {
+        "text": ").",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "ordered"
+          },
+          "block-id": "block-URlnRfGogE"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-osSPDbjyHk"
+        }
+      },
+      {
+        "text": "Watch the attached demo video that displays how these missing pages are supposed to look.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ln7jQ-1fhL"
+        }
+      },
+      {
+        "text": "https://t7537039.p.clickup-attachments.com/t7537039/f5597c44-972c-4434-8254-091fe115de61/GONEGOSYOFINAL3.mp4?view=open",
+        "type": "frame",
+        "frame": {
+          "id": "f5597c44-972c-4434-8254-091fe115de61.mp4",
+          "src": "https://t7537039.p.clickup-attachments.com/t7537039/f5597c44-972c-4434-8254-091fe115de61/GONEGOSYOFINAL3.mp4?view=open",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/f5597c44-972c-4434-8254-091fe115de61/GONEGOSYOFINAL3.mp4?view=open",
+          "source": 1,
+          "service": "clickup_video"
+        },
+        "attributes": {
+          "block-id": "block-2ZljyOMCtZ",
+          "data-size": "large",
+          "data-origin": "attachment"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ln7jQ-1fhL"
+        }
+      }
+    ],
+    "comment_text": "@Angelo Kamachi - I spoke to the client and here's what you need to fix:\nOn this page (https://gonegosyo.prosperna.com/lms):\nUnder the \"ACCESS TO MONEY\" section, link the SIGN UP HERE button to the \"Our Partners > Money\" page in the Figma () Note that you still need to create this page.\nOn the \"Money\" page link the \"GET STARTED\" button under the \"BanKo\" tile to the \"BanKo\" page in the Figma () Note that you still need to create this page.\nUnder the \"ACCESS TO MARKETS\" section, link the SIGN UP HERE button to the \"Our Partners > Market\" page in the Figma () Note that you still need to create this page.\nUnder the \"ACCESS TO MENTORING\" section, link the SIGN UP HERE button to the \"Our Partners > Mentor\" page in the Figma () Note that you still need to create this page.\nIn the footer, replace the broken images for the location pin, telephone icon and email icon as shown in the footer of the Figma ().\n\nWatch the attached demo video that displays how these missing pages are supposed to look.\nhttps://t7537039.p.clickup-attachments.com/t7537039/f5597c44-972c-4434-8254-091fe115de61/GONEGOSYOFINAL3.mp4?view=open\n",
+    "user": {
+      "id": 25568383,
+      "username": "Dennis Velasco",
+      "email": "dennis@prosperna.com",
+      "color": "#04a9f4",
+      "initials": "DV",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1789452180395",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      }
+    ],
+    "date": "1789451961651",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000045199",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "e26d8c02-aed9-4b14-9325-f5e365db3573.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/e26d8c02-aed9-4b14-9325-f5e365db3573_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/e26d8c02-aed9-4b14-9325-f5e365db3573_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/e26d8c02-aed9-4b14-9325-f5e365db3573_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/e26d8c02-aed9-4b14-9325-f5e365db3573/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "e26d8c02-aed9-4b14-9325-f5e365db3573.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-G0_G0fZp6c"
+        }
+      },
+      {
+        "text": "the images here ma'am, I have sent an email to boss for the client's support",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fr4yFQuTJ1"
+        }
+      }
+    ],
+    "comment_text": "image.png\nthe images here ma'am, I have sent an email to boss for the client's support\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1789451484538",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1789373336657",
+    "reply_count": 1
+  },
+  {
+    "id": "1100740000045186",
+    "comment": [
+      {
+        "text": "@Angelo Kamachi",
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      },
+      {
+        "text": " what do you need from us?",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5_2TeoJ0V7"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-haJniilSJs"
+        }
+      },
+      {
+        "text": "pending feedback from client via ",
+        "attributes": {}
+      },
+      {
+        "text": "@Dennis Velasco",
+        "type": "tag",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "comment_text": "@Angelo Kamachi what do you need from us?\n\npending feedback from client via @Dennis Velasco",
+    "user": {
+      "id": 32155790,
+      "username": "Dyne",
+      "email": "dyne@prosperna.com",
+      "color": "#388d3c",
+      "initials": "D",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/32155790_clz.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789373271026",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000025468",
+    "comment": [
+      {
+        "text": "12 + 7 + 16 + 28 + 4 + 2 + 15 = 84",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0Q_bKMTx2f"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-aW45oEL5hy"
+        }
+      },
+      {
+        "text": "Go Negosyo was found to have 84 Partners, will be prioritizing top 10 in platinum to be placed here",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-UPegn_dYUm"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "d13fdd2a-61ce-4d1b-97e9-41bf07c3cea2.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/d13fdd2a-61ce-4d1b-97e9-41bf07c3cea2/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/d13fdd2a-61ce-4d1b-97e9-41bf07c3cea2/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/d13fdd2a-61ce-4d1b-97e9-41bf07c3cea2_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/d13fdd2a-61ce-4d1b-97e9-41bf07c3cea2_medium.png",
+          "width": 1526,
+          "height": 562
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "300",
+          "data-id": "d13fdd2a-61ce-4d1b-97e9-41bf07c3cea2.png",
+          "data-natural-width": "1526",
+          "data-natural-height": "562"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-oLSVmX5TLj"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "48db4167-2568-4510-bd02-771b886e6796.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/48db4167-2568-4510-bd02-771b886e6796/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/48db4167-2568-4510-bd02-771b886e6796/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/48db4167-2568-4510-bd02-771b886e6796_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/48db4167-2568-4510-bd02-771b886e6796_medium.png",
+          "width": 949,
+          "height": 522
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "48db4167-2568-4510-bd02-771b886e6796.png",
+          "data-attachment": "{\"id\":\"48db4167-2568-4510-bd02-771b886e6796.png\",\"version\":\"0\",\"date\":1788861080570,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/48db4167-2568-4510-bd02-771b886e6796_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/48db4167-2568-4510-bd02-771b886e6796_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/48db4167-2568-4510-bd02-771b886e6796/image.png\",\"width\":949,\"height\":522,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/48db4167-2568-4510-bd02-771b886e6796/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/48db4167-2568-4510-bd02-771b886e6796/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/48db4167-2568-4510-bd02-771b886e6796/image.png\",\"size\":100410}",
+          "data-natural-width": "949",
+          "data-natural-height": "522"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-6e1398jEoU"
+        }
+      }
+    ],
+    "comment_text": "12 + 7 + 16 + 28 + 4 + 2 + 15 = 84\n\nGo Negosyo was found to have 84 Partners, will be prioritizing top 10 in platinum to be placed here\nimage.png\nimage.png\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788949108072",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788860799654",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000025443",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "71be9034-69d0-4da9-a340-9829ba0e394a.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/71be9034-69d0-4da9-a340-9829ba0e394a_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/71be9034-69d0-4da9-a340-9829ba0e394a_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/71be9034-69d0-4da9-a340-9829ba0e394a_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/71be9034-69d0-4da9-a340-9829ba0e394a/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "71be9034-69d0-4da9-a340-9829ba0e394a.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-k7a0TQaKMJ"
+        }
+      },
+      {
+        "text": "contact auto links to LMS (intended)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EBS9pQohFj"
+        }
+      }
+    ],
+    "comment_text": "image.png\ncontact auto links to LMS (intended)\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788949114165",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788860581703",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000025437",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "569e6d1d-df34-412b-8f8f-e9a36dddfb27.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/569e6d1d-df34-412b-8f8f-e9a36dddfb27_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/569e6d1d-df34-412b-8f8f-e9a36dddfb27_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/569e6d1d-df34-412b-8f8f-e9a36dddfb27_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/569e6d1d-df34-412b-8f8f-e9a36dddfb27/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "569e6d1d-df34-412b-8f8f-e9a36dddfb27.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-MJ3892z0IZ"
+        }
+      },
+      {
+        "text": "get involved restored",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-awualq5u-7"
+        }
+      }
+    ],
+    "comment_text": "image.png\nget involved restored\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788870244694",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788860531124",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000025432",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "10f0eb0d-b1c9-40ce-81ad-353cfddb7213.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/10f0eb0d-b1c9-40ce-81ad-353cfddb7213_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/10f0eb0d-b1c9-40ce-81ad-353cfddb7213_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/10f0eb0d-b1c9-40ce-81ad-353cfddb7213_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/10f0eb0d-b1c9-40ce-81ad-353cfddb7213/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "10f0eb0d-b1c9-40ce-81ad-353cfddb7213.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-NHjq8DFjjR"
+        }
+      },
+      {
+        "text": "LMS restored",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-mNKpnr0yRb"
+        }
+      }
+    ],
+    "comment_text": "image.png\nLMS restored\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788870247995",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788860502652",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000025431",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "ea734115-afa2-4076-8f4a-d412f0c29ffb.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/ea734115-afa2-4076-8f4a-d412f0c29ffb_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/ea734115-afa2-4076-8f4a-d412f0c29ffb_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/ea734115-afa2-4076-8f4a-d412f0c29ffb_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/ea734115-afa2-4076-8f4a-d412f0c29ffb/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "ea734115-afa2-4076-8f4a-d412f0c29ffb.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-6y19StMd8n"
+        }
+      },
+      {
+        "text": "assets missing from source",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-FbRCpjbszR"
+        }
+      }
+    ],
+    "comment_text": "image.png\nassets missing from source\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788949118848",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788860486360",
+    "reply_count": 1
+  },
+  {
+    "id": "1100740000025430",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "16a5479d-2cc9-41c8-a0f5-b891713a73a8.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/16a5479d-2cc9-41c8-a0f5-b891713a73a8_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/16a5479d-2cc9-41c8-a0f5-b891713a73a8_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/16a5479d-2cc9-41c8-a0f5-b891713a73a8_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/16a5479d-2cc9-41c8-a0f5-b891713a73a8/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "16a5479d-2cc9-41c8-a0f5-b891713a73a8.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-rihCudtSy6"
+        }
+      },
+      {
+        "text": "where we work restored",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-b3Ei-cD66B"
+        }
+      }
+    ],
+    "comment_text": "image.png\nwhere we work restored\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788870251162",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788860465757",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000025428",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "881293b6-2e5d-4906-80b9-d36ec489b154.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/881293b6-2e5d-4906-80b9-d36ec489b154_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/881293b6-2e5d-4906-80b9-d36ec489b154_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/881293b6-2e5d-4906-80b9-d36ec489b154_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/881293b6-2e5d-4906-80b9-d36ec489b154/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "881293b6-2e5d-4906-80b9-d36ec489b154.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_P00xsG0eV"
+        }
+      },
+      {
+        "text": "assets missing from source",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Z2j-hg_mU8"
+        }
+      }
+    ],
+    "comment_text": "image.png\nassets missing from source\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788870253927",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788860443091",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000025424",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "3f07a46e-927c-4186-b4f3-f3a0558faf3e.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/3f07a46e-927c-4186-b4f3-f3a0558faf3e_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/3f07a46e-927c-4186-b4f3-f3a0558faf3e_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/3f07a46e-927c-4186-b4f3-f3a0558faf3e_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/3f07a46e-927c-4186-b4f3-f3a0558faf3e/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 984
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "3f07a46e-927c-4186-b4f3-f3a0558faf3e.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "984"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-njeUNB-iPM"
+        }
+      },
+      {
+        "text": "what we do restored",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-dd169FMKsl"
+        }
+      }
+    ],
+    "comment_text": "image.png\nwhat we do restored\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788870256354",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788860365390",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000025421",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "b0608e1b-932b-49c8-81a0-2d5103cd163c.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/b0608e1b-932b-49c8-81a0-2d5103cd163c_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/b0608e1b-932b-49c8-81a0-2d5103cd163c_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/b0608e1b-932b-49c8-81a0-2d5103cd163c_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/b0608e1b-932b-49c8-81a0-2d5103cd163c/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "b0608e1b-932b-49c8-81a0-2d5103cd163c.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-TRQSh6TKUG"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "6a6e20b2-382a-43b2-96fa-e24c8c02d9e9.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/6a6e20b2-382a-43b2-96fa-e24c8c02d9e9_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/6a6e20b2-382a-43b2-96fa-e24c8c02d9e9_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/6a6e20b2-382a-43b2-96fa-e24c8c02d9e9_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/6a6e20b2-382a-43b2-96fa-e24c8c02d9e9/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "6a6e20b2-382a-43b2-96fa-e24c8c02d9e9.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-hift81I1AO"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "e9c64750-6a92-4867-8e32-9e6f223d7105.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/e9c64750-6a92-4867-8e32-9e6f223d7105_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/e9c64750-6a92-4867-8e32-9e6f223d7105_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/e9c64750-6a92-4867-8e32-9e6f223d7105_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/e9c64750-6a92-4867-8e32-9e6f223d7105/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "e9c64750-6a92-4867-8e32-9e6f223d7105.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-QJ-_us-1Ap"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "b6276799-b6a5-46de-a79c-64e47c33ab66.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/b6276799-b6a5-46de-a79c-64e47c33ab66_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/b6276799-b6a5-46de-a79c-64e47c33ab66_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/b6276799-b6a5-46de-a79c-64e47c33ab66_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/b6276799-b6a5-46de-a79c-64e47c33ab66/image.png",
+          "uploaded": true,
+          "width": 1919,
+          "height": 1079
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "b6276799-b6a5-46de-a79c-64e47c33ab66.png",
+          "data-attachment": null,
+          "data-natural-width": "1919",
+          "data-natural-height": "1079"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-46gJujZAjk"
+        }
+      },
+      {
+        "text": "Home page restored",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-xEG6-fLkPG"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\nimage.png\nimage.png\nHome page restored\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788870264060",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788860338014",
+    "reply_count": 0
+  }
+]

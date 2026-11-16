@@ -1,4 +1,5 @@
 export { syncRegistry, registerSyncAction } from "./registry";
+export { getSyncEventsUrl, getSyncRoomsUrl } from "./endpoints";
 export {
   dressSyncFunction,
   userOnPress,

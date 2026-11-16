@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
 import { ArrowLeft, Layers, Flag } from "lucide-react";
+import { resolveHref } from "@mono/app-config";
 import type { GameDataset } from "../types/data";
 import { ReportIssueModal } from "./report-issue-modal";
 
@@ -13,20 +13,27 @@ interface GameHeaderProps {
 
 export function GameHeader({ dataset, onReportIssue }: GameHeaderProps) {
   const [isReportOpen, setIsReportOpen] = useState(false);
-  const homeUrl = dataset.homeUrl || "/";
+  const [clientMounted, setClientMounted] = useState(false);
+
+  useEffect(() => {
+    setClientMounted(true);
+  }, []);
+
+  const rawHomeUrl = dataset.homeUrl || "/";
+  const homeUrl = clientMounted ? resolveHref(rawHomeUrl) : rawHomeUrl;
 
   return (
     <>
       <header className="bg-transparent border-b border-zinc-800/40 sticky top-0 z-40 backdrop-blur-md">
         <div className="w-full px-3 sm:px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link
+            <a
               href={homeUrl}
               className="flex items-center gap-1.5 text-xs font-medium text-zinc-400 hover:text-white transition-colors bg-white/[0.04] hover:bg-white/[0.08] rounded-lg px-2.5 py-1.5"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
               Home Directory
-            </Link>
+            </a>
             <div className="h-4 w-px bg-zinc-800/60" />
             <div className="flex items-center gap-2">
               <div className="flex h-7 w-7 items-center justify-center rounded-md bg-indigo-600/20 text-indigo-400">

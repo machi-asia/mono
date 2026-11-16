@@ -6,7 +6,7 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 
 | App | Description |
 |-----|-------------|
-| `api` | Centralized API microservice, interactive API Explorer playground (`/`), realtime SSE sync hub, and organizational usage tracking |
+| `api` | Centralized API microservice, interactive API Explorer playground (`/`), realtime SSE sync hub, `withApiGuard` security & rate-limit wrapper, and organizational usage tracking |
 | `machi-asia` | Home site — showcase and subscription billing hub for all Machi Asia products |
 | `rose` | Custom AI companion application |
 | `calculator` | Multi-game production calculator with interactive recipe tree graph (styled throughput edge labels) and factory rate planner, a sortable item catalog (name/category carets) in gallery or list view, and per-item last-updated tracking |
@@ -22,21 +22,33 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 
 | Package | Description |
 |---------|-------------|
-| `api-client` | Typed API client SDK configured via `NEXT_PUBLIC_API_URL` for communicating with `apps/api` |
-| `app-config` | Shared application metadata, route registry, and Supabase client configuration for ItemList |
-| `auth` | Centralized authentication via Supabase — auth provider, session management, middleware, data & privacy registry |
-| `database` | Centralized data/store via Supabase — client creation, types, queries |
-| `components` | Shared UI components + design system — tokens, theme, layout primitives (`Row`/`Col`/`Card`), and functional elements |
+| `api-client` | Typed API client SDK configured via `@mono/app-config` with auth token management, standardized error envelopes, and real-time quota lock detection for communicating with `apps/api` |
+| `app-config` | Canonical environment, endpoint URL, Supabase credential, and CORS origin allowlist resolver across all Machi Asia and ItemList apps |
+| `auth` | Centralized authentication, navigation, privacy registry, and modular usage quota suite via Supabase — `AuthProvider`, `<AuthNavbar />`, `<MonoAppShell />`, `useApiClient`, `getUserProfileInfo`, `UsageProvider`, `useUsage`, `<UsageTracker />`, `<UsageGate />`, `registerPrivacyDisclosure`, `usePrivacyConsent`, safe role verification (`resolveSafeRoleFromUser`), and Account Settings (Profile, Security, Usage & Quotas, Media Library, Support, Data & Privacy) |
+| `database` | Centralized data/store via Supabase — client creation, declarative SQL migrations, RLS policies, dynamic metric registry (`USAGE_METRICS_REGISTRY`, `registerUsageMetric`), atomic API usage & 4-tier quota enforcement (`user_usages`, `increment_user_usage` RPC, `recordAndCheckUsage`), and role queries |
+| `components` | Shared UI components + design system — tokens, theme, layout primitives (`Row`/`Col`/`Card`), scroll sections, Framer Motion presentation scrollytelling suite (`PresentationDeck`, `PresentationPinnedSection`, `PresentationHorizontal`, `PresentationZoom`, `PresentationCardStack`, `PresentationSplit`, `PresentationParallax`), and functional elements |
 | `game-calculator` | Shared recipe graph engine, Dagre dependency layout, issue reporting modals, and calculator views |
-| `rose` | Client UI components, voice mode overlay, settings modals, and usage bars for Rose AI companion |
+| `rose` | Client UI components, voice mode overlay, settings modals, usage bars, and server-side AI agent engine (`@mono/rose/agent`) for the Rose AI companion |
 | `sync` | Realtime input dressing (`dressSyncFunction`), action registry, and WebRTC/SSE client transports |
+
+## Unified API Security, Usage & Quota Architecture
+
+All API usage tracking, rate-limiting, and quota locking are consolidated in `@mono/database` and enforced across `apps/api` via `withApiGuard`:
+
+- **4-Tier Role Quota Matrix (`ROLE_QUOTAS`)**: Enforces daily and monthly caps across 4 metrics (`requests`, `turns`, `ai_tokens`, `storage_bytes`) for `guest`, `member`, `pro`, and `admin` roles.
+- **Atomic Database Enforcement + Server-Only Usage Lockdown**: `recordAndCheckUsage()` executes the atomic Postgres `increment_user_usage` RPC (`packages/database/migrations/20261107000000_core_tables_quotas_and_rls.sql` and `20261109000000_lockdown_usage_and_rls_security.sql`) using `createServiceClient()` on the server and falls back to an in-memory fail-closed ledger (`FALLBACK_USAGE_LEDGER`) if the database is temporarily unreachable. Browser clients cannot mutate `public.user_usages` (client `INSERT`/`UPDATE` RLS policies are dropped, `increment_user_usage` RPC is restricted to `service_role` and rejects negative increments, `POST /usage/track` strips client limit overrides, `UsageProvider` routes all reads/writes through `apps/api` without `localStorage` caching, and `assertServerOnlyExecution` blocks browser execution of privileged `@mono/database` helpers).
+- **Hardened Request Identity & Anti-Spoofing (`resolveRequestAuth`)**: Rejects unverified `x-user-id` headers in production (`NODE_ENV === "production"`), requiring verified Supabase JWTs (including anonymous auth sessions for guests) or deterministic IP-based guest buckets (`toDeterministicUuid`), never trusts `user_metadata.role` for privilege escalation (`admin`/`pro`), derives `reporter_hash` server-side on `POST /itemlist/reports`, and binds sender identity while blocking forged `server_player_state` triggers on `POST /sync/events`.
+- **Centralized Gateway Guard (`withApiGuard`)**: Wraps all `apps/api` route handlers with CORS origin allowlist validation (`isAllowedOrigin` from `@mono/app-config`), per-route quota locking (`429 QUOTA_EXCEEDED`), role authorization (`requireRoles`), and telemetry tracking.
+- **Client SDK, Plug-and-Play Usage Components & Account Visibility**: `@mono/api-client` tracks locked metrics and surfaces quota lock callbacks (`onQuotaLocked`, `usage.track`, `usage.getSnapshot`), while `@mono/auth` provides plug-and-play modular building blocks (`UsageProvider`, `useUsage`, `<UsageTracker metric="..." />`, `<UsageGate metric="..." minRole="..." mode="overlay | banner | disable | render" />`, `<MonoAppShell />`, `<AuthNavbar />`, `useApiClient`, `getUserProfileInfo`, `registerPrivacyDisclosure`, and `usePrivacyConsent`) and a live **Usage & Quotas** dashboard inside Account Settings. Any component can track or gate a custom metric key on the fly via `@mono/database`'s `USAGE_METRICS_REGISTRY` and `registerUsageMetric()` without requiring database schema migrations.
+- **Localhost Link Resolution (`resolveHref` / `resolveAppHref` / `useResolvedHref`)**: All shared navigation and link primitives (`Link`, `Navbar`, `Footer`, `MarkdownRenderer` in `@mono/components`, `GameHeader` in `@mono/game-calculator`, and app hubs) use `@mono/app-config`'s `resolveHref()` wrapper to automatically rewrite Machi Asia (`*.machi.asia`, `*.machi-asia.com`) and ItemList (`*.itemlist.online`) domain links to their local `http://localhost:<devPort>` equivalents when running locally.
+- **Weekly Supabase Keep-Alive Cron Jobs**: Prevents Supabase free-tier inactivity pausing (`0 3 * * 1`, every Monday at 03:00 UTC) across three redundant layers: (1) Vercel Cron (`vercel.json` -> `GET /cron/supabase-keepalive` on `apps/api`), (2) GitHub Actions scheduled workflow (`.github/workflows/supabase-keepalive.yml`), and (3) Postgres `pg_cron` (`weekly-supabase-keepalive` job calling `public.record_keepalive_heartbeat` into `public.keepalive_heartbeats` in `packages/database/migrations/20261109010000_supabase_keepalive_cron.sql`).
 
 ## Conventions
 
 - **All apps and packages are Next.js-based.**
 - **Packages export components, functions, and more** — no page routes, no business logic outside packages.
 - **`/packages/auth`** owns all authentication (Supabase Auth).
-- **`/packages/database`** owns all data access and state (Supabase Database/Storage).
+- **`/packages/database`** owns all data access, migrations, RLS policies, and API quota state (Supabase Database/Storage).
 - **Every app must use the `AuthProvider`** from `/packages/auth`. Users must be logged in (guest or authenticated) to access any website.
 - **Every app must have these tools**: `eslint`, `stylelint`, `typecheck`, `vitest`.
 - **`.env.sample` files** must list every env key used by an app/package. Every time code references an env key, it must be added to the corresponding `.env.sample`.
@@ -191,10 +203,11 @@ mono/
 │   └── rose/           # Custom AI agent companion (Next.js)
 ├── packages/
 │   ├── api-client/     # Standardized typed API client
+│   ├── app-config/     # Shared app/route/env/CORS configuration
 │   ├── auth/           # Authentication & privacy registry (pure components/hooks)
 │   ├── components/     # Shared UI components & design system tokens
-│   ├── database/       # Data/store layer & type definitions
-│   ├── rose/           # Rose AI client components & speech utils
+│   ├── database/       # Data/store layer, SQL migrations, & quota engine
+│   ├── rose/           # Rose AI client components, speech utils, & agent engine
 │   └── sync/           # Realtime DRESS input & client transports
 ├── docs/
 │   ├── adr/            # Architecture Decision Records

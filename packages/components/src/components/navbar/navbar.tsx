@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, type ReactNode } from "react";
 import { LogOut } from "lucide-react";
+import { resolveHref } from "@mono/app-config";
 import { useMotionMount } from "../motion/motion";
 import "./navbar.css";
 
@@ -74,6 +75,11 @@ export function Navbar({
   className = "",
   style,
 }: NavbarProps) {
+  const [clientMounted, setClientMounted] = useState(false);
+  useEffect(() => {
+    setClientMounted(true);
+  }, []);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { mounted, entered } = useMotionMount(menuOpen, NAVBAR_DURATION);
@@ -214,6 +220,11 @@ export function Navbar({
             const activeClass = link.active ? "m-navbar-link--active" : "";
             const linkClass = `m-navbar-link ${activeClass}`.trim();
             const itemKey = link.href || `${link.label}-${idx}`;
+            const resolvedHref = link.href
+              ? clientMounted
+                ? resolveHref(link.href)
+                : link.href
+              : undefined;
 
             return (
               <li key={itemKey} role={variant === "tabs" ? "presentation" : undefined}>
@@ -231,7 +242,7 @@ export function Navbar({
                   </button>
                 ) : (
                   <a
-                    href={link.href}
+                    href={resolvedHref}
                     className={linkClass}
                     onClick={link.onClick}
                     onMouseEnter={(e) => updateIndicatorToElement(e.currentTarget)}
@@ -413,6 +424,11 @@ export function Navbar({
                   const activeClass = link.active ? "m-navbar-mobile-link--active" : "";
                   const linkClass = `m-navbar-mobile-link ${activeClass}`.trim();
                   const itemKey = link.href || `${link.label}-${idx}`;
+                  const resolvedHref = link.href
+                    ? clientMounted
+                      ? resolveHref(link.href)
+                      : link.href
+                    : undefined;
 
                   return (
                     <li key={itemKey}>
@@ -427,7 +443,7 @@ export function Navbar({
                         </button>
                       ) : (
                         <a
-                          href={link.href}
+                          href={resolvedHref}
                           className={linkClass}
                           onClick={(e) => {
                             setMobileOpen(false);

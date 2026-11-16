@@ -24,6 +24,7 @@ describe("ApiClient", () => {
 
   it("calls rose.getSettings with correct headers", async () => {
     const mockFetch = vi.fn().mockResolvedValue({
+      status: 200,
       json: () => Promise.resolve({ persona: "friendly" }),
     });
     global.fetch = mockFetch;
@@ -46,6 +47,7 @@ describe("ApiClient", () => {
 
   it("calls sync.sendEvents with correct payload", async () => {
     const mockFetch = vi.fn().mockResolvedValue({
+      status: 200,
       json: () => Promise.resolve({ success: true, count: 1 }),
     });
     global.fetch = mockFetch;
@@ -63,6 +65,7 @@ describe("ApiClient", () => {
 
   it("calls usage.getMetrics", async () => {
     const mockFetch = vi.fn().mockResolvedValue({
+      status: 200,
       json: () => Promise.resolve({ status: "healthy", totalRequests: 10 }),
     });
     global.fetch = mockFetch;
@@ -80,6 +83,7 @@ describe("ApiClient", () => {
   it("calls itemlist.getOverrides with gameId", async () => {
     const mockFetch = vi.fn().mockResolvedValue({
       ok: true,
+      status: 200,
       json: () => Promise.resolve([{ item_id: "cogwheel", reporter_count: 3 }]),
     });
     global.fetch = mockFetch;
@@ -97,6 +101,7 @@ describe("ApiClient", () => {
   it("calls itemlist.submitReport with payload", async () => {
     const mockFetch = vi.fn().mockResolvedValue({
       ok: true,
+      status: 201,
       json: () => Promise.resolve({ success: true }),
     });
     global.fetch = mockFetch;
@@ -121,6 +126,7 @@ describe("ApiClient", () => {
   it("calls itemlist.admin.getReports and updateReportStatus with auth headers", async () => {
     const mockFetch = vi.fn().mockResolvedValue({
       ok: true,
+      status: 200,
       json: () => Promise.resolve([{ id: "rep1", status: "pending" }]),
     });
     global.fetch = mockFetch;
@@ -142,6 +148,7 @@ describe("ApiClient", () => {
 
     mockFetch.mockResolvedValueOnce({
       ok: true,
+      status: 200,
       json: () => Promise.resolve({ success: true }),
     });
 
@@ -155,5 +162,71 @@ describe("ApiClient", () => {
       },
       body: JSON.stringify({ status: "resolved" }),
     });
+  });
+
+  it("tracks quota lock state when a 429 response is returned", async () => {
+    const onQuotaLocked = vi.fn();
+    const mockFetch = vi.fn().mockResolvedValue({
+      ok: false,
+      status: 429,
+      headers: { get: () => "60" },
+      json: () =>
+        Promise.resolve({
+          error: { code: "usage_limit_exceeded", message: "Daily quota reached" },
+          usage: { exceededType: "daily" },
+        }),
+    });
+    global.fetch = mockFetch;
+
+    const client = new ApiClient({
+      baseUrl: "http://localhost:3005",
+      onQuotaLocked,
+    });
+
+    await client.rose.getUsage();
+    expect(client.getQuotaStatus().locked).toBe(true);
+    expect(client.getQuotaStatus().exceededType).toBe("daily");
+    expect(onQuotaLocked).toHaveBeenCalledTimes(1);
+
+    client.clearQuotaLock();
+    expect(client.getQuotaStatus().locked).toBe(false);
+  });
+
+  it("calls usage.track and usage.getSnapshot for modular component usage", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: () =>
+        Promise.resolve({
+          ok: true,
+          allowed: true,
+          quota: {
+            locked: false,
+            allowed: true,
+            metric: "blueprint_exports",
+            dailyUsed: 1,
+            dailyLimit: 25,
+          },
+        }),
+    });
+    global.fetch = mockFetch;
+
+    const client = new ApiClient({ baseUrl: "http://localhost:3005" });
+    const trackRes = await client.usage.track({ metric: "blueprint_exports", amount: 1 });
+    expect(trackRes.ok).toBe(true);
+    expect(mockFetch).toHaveBeenCalledWith("http://localhost:3005/usage/track", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ metric: "blueprint_exports", amount: 1 }),
+    });
+
+    await client.usage.getSnapshot(["blueprint_exports", "turns"]);
+    expect(mockFetch).toHaveBeenCalledWith(
+      "http://localhost:3005/usage/track?metrics=blueprint_exports%2Cturns",
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   });
 });

@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import { extractEmotion, ROSE_EMOTIONS } from "./roseEmotions";
 import { getToolByName, TOOLS } from "./tools";
 import { askQuestionTool } from "./tools/askQuestion";
@@ -181,6 +181,41 @@ describe("Rose Agent Core", () => {
       const parsed = JSON.parse(res);
       expect(parsed.error).toBeDefined();
     });
+
+    it("webSearch returns results with imageUrl support", async () => {
+      const fakeFetch = vi.spyOn(globalThis, "fetch").mockImplementation(async (input: any) => {
+        const url = String(input);
+        if (url.includes("action=query")) {
+          return {
+            ok: true,
+            json: async () => ({
+              query: {
+                search: [{ title: "Mapua University", snippet: "Private research university" }],
+              },
+            }),
+          } as any;
+        }
+        if (url.includes("api/rest_v1/page/summary")) {
+          return {
+            ok: true,
+            json: async () => ({
+              thumbnail: { source: "https://example.com/logo.png" },
+            }),
+          } as any;
+        }
+        return { ok: false } as any;
+      });
+
+      try {
+        const res = await webSearchTool.execute({ query: "Mapua University", numResults: 1 });
+        const parsed = JSON.parse(res);
+        expect(parsed.query).toBe("Mapua University");
+        expect(parsed.results[0].title).toBe("Mapua University");
+        expect(parsed.results[0].imageUrl).toBe("https://example.com/logo.png");
+      } finally {
+        fakeFetch.mockRestore();
+      }
+    });
   });
 
   describe("Command Registry", () => {
@@ -212,7 +247,7 @@ describe("Rose Agent Core", () => {
         { publicKey: "pk-test", secretKey: "sk-test", baseUrl: "https://test.langfuse.com" }
       );
       expect(trace.isEnabled()).toBe(true);
-      expect(trace.traceId).toContain("rose-trace-");
+      expect(trace.traceId).toMatch(/^[0-9a-f]{32}$/);
     });
   });
 

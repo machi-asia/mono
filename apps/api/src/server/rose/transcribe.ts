@@ -1,10 +1,13 @@
 import { NextResponse } from "next/server";
+import { recordAndCheckUsage } from "@mono/database";
+import { resolveRequestAuth } from "../security/guard";
+
+const MAX_AUDIO_BYTES = 25 * 1024 * 1024; // 25 MB max audio payload
 
 /**
  * Handles speech-to-text audio transcription requests using faster-whisper-ts.
- * Accepts multipart/form-data with an 'audio' file or base64 JSON payload.
- * Gracefully reports unsupported native platform/missing model if native CTranslate2
- * binary is unavailable, prompting client fallback to Web Speech API.
+ * Accepts multipart/form-data with an 'audio' or 'file' field, or a base64 JSON payload.
+ * Enforces API request quotas and payload size bounds.
  */
 export async function handleRoseTranscribe(req: Request): Promise<Response> {
   if (req.method !== "POST") {
@@ -15,6 +18,39 @@ export async function handleRoseTranscribe(req: Request): Promise<Response> {
   }
 
   try {
+    const auth = await resolveRequestAuth(req);
+    const quota = await recordAndCheckUsage({
+      userId: auth.userId,
+      app: "rose",
+      metric: "requests",
+      amount: 1,
+      role: auth.role,
+      clientOverride: auth.supabaseClient,
+    });
+
+    if (!quota.allowed) {
+      return NextResponse.json(
+        {
+          error: {
+            code: "rate_limit_exceeded",
+            message: "Audio transcription rate limit exceeded.",
+          },
+          quota: {
+            locked: true,
+            metric: "requests",
+            role: auth.role,
+            dailyUsed: quota.dailyCount,
+            dailyLimit: quota.dailyLimit,
+            monthlyUsed: quota.monthlyCount,
+            monthlyLimit: quota.monthlyLimit,
+            remaining: 0,
+            exceededType: quota.exceededType,
+          },
+        },
+        { status: 429 }
+      );
+    }
+
     let audioBuffer: Buffer | null = null;
     let language: string | undefined = undefined;
 
@@ -22,7 +58,7 @@ export async function handleRoseTranscribe(req: Request): Promise<Response> {
 
     if (contentType.includes("multipart/form-data")) {
       const formData = await req.formData();
-      const audioFile = formData.get("audio");
+      const audioFile = formData.get("audio") || formData.get("file");
       language = (formData.get("language") as string) || undefined;
 
       if (audioFile && typeof audioFile === "object" && "arrayBuffer" in audioFile) {
@@ -41,6 +77,18 @@ export async function handleRoseTranscribe(req: Request): Promise<Response> {
       return NextResponse.json(
         { error: { code: "bad_request", message: "Audio payload is required." } },
         { status: 400 }
+      );
+    }
+
+    if (audioBuffer.length > MAX_AUDIO_BYTES) {
+      return NextResponse.json(
+        {
+          error: {
+            code: "payload_too_large",
+            message: "Audio payload exceeds maximum allowed size of 25 MB.",
+          },
+        },
+        { status: 413 }
       );
     }
 
@@ -70,6 +118,7 @@ export async function handleRoseTranscribe(req: Request): Promise<Response> {
         return NextResponse.json({
           ok: true,
           transcript: transcriptText,
+          text: transcriptText,
           provider: "faster-whisper",
         });
       }
@@ -111,7 +160,8 @@ export async function handleRoseTranscribe(req: Request): Promise<Response> {
       {
         error: {
           code: "transcription_error",
-          message: err instanceof Error ? err.message : "Failed to process audio transcription.",
+          message:
+            err instanceof Error ? err.message : "Failed to process audio transcription.",
         },
       },
       { status: 500 }

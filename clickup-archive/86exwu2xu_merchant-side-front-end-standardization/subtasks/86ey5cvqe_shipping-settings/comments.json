@@ -1,0 +1,2462 @@
+[
+  {
+    "id": "1100740000169184",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Shipping Settings"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7774e130-bf56-467b-9d1a-3971afce0fce"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 15 2026, 11:37PM (Asia/Manila)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fcf1bfa1-92df-420d-bc36-a6111d7c79f3"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e62af9f7-0865-4e25-b8f0-2c363c784893"
+        }
+      }
+    ],
+    "comment_text": "This task Shipping Settings has been move to PASSED TESTING \nDate updated: Oct 15 2026, 11:37PM (Asia/Manila)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792078674823",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000169126",
+    "comment": [
+      {
+        "text": "Env: DEV\nStatus: PASSED\nURL: https://prodev.prosperna.com\n\nTEST CASE #1: Disconnect wraps below on a phone\nSTEPS:\nStep 1 - On a store with its own Lalamove API keys connected, open Settings > Shipping at 390px wide.\nStep 2 - Look at the grey connected strip.\nEXPECTED RESULT: The badge, sentence and public key use the full strip width; Disconnect sits below them.\nEVIDENCE: r5-tc01-phone-390-disconnect-below.png, r5-tc01-phone-390-disconnect-below-safari.png\nACTUAL RESULT: Disconnect sits below the text, which uses the full width of the strip. The sentence takes 2 lines and the key 2 lines. Same in Chrome and Safari.\n\nTEST CASE #2: Disconnect still works on a phone\nSTEPS:\nStep 1 - At 390px, tap Disconnect.\nStep 2 - Tap Cancel on the dialog.\nEXPECTED RESULT: The confirmation opens; Cancel leaves the account connected.\nEVIDENCE: tc05-phone-390-disconnect-confirm.png, tc05-phone-390-disconnect-confirm-safari.png\nACTUAL RESULT: The confirmation opened and Cancel left the account connected. Same in Chrome and Safari.\n\nTEST CASE #3: Narrowest phone\nSTEPS:\nStep 1 - Repeat case 1 at 320px wide.\nEXPECTED RESULT: Everything stays inside the strip, no sideways scroll.\nEVIDENCE: r5-tc03-phone-320-strip.png, r5-tc03-phone-320-strip-safari.png\nACTUAL RESULT: Everything stays inside the strip and the page does not scroll sideways. Same in Chrome and Safari.\n\nTEST CASE #4: Tablet unchanged\nSTEPS:\nStep 1 - Open the card at 768px wide.\nEXPECTED RESULT: Text on the left, Disconnect to the right on the same row, nothing cropped.\nEVIDENCE: r5-tc04-tablet-768-strip.png\nACTUAL RESULT: Text on the left, Disconnect on the right on the same row, nothing cropped.\n\nTEST CASE #5: Desktop unchanged\nSTEPS:\nStep 1 - Open the card at 1280px wide.\nEXPECTED RESULT: Badge, sentence and key each on one line, Disconnect on the right.\nEVIDENCE: tc06-desktop-1280-strip.png\nACTUAL RESULT: Displays as expected, each on one line with Disconnect on the right.\n\nTEST CASE #6: The sentence is complete (previous case 1)\nSTEPS:\nStep 1 - At 390px, read the line beside the green \"Connected\" badge.\nEXPECTED RESULT: \"Your API keys are verified and in use.\" is fully readable, nothing cut off.\nEVIDENCE: tc01-phone-390-connected-strip.png, tc01-phone-390-connected-strip-safari.png\nACTUAL RESULT: The whole sentence is readable inside the strip. Same in Chrome and Safari.\n\nTEST CASE #7: The sentence drops below the badge (previous case 2)\nSTEPS:\nStep 1 - At 390px, look at how the badge and the sentence sit together.\nEXPECTED RESULT: The sentence moves under the badge; the badge keeps its pill shape.\nEVIDENCE: tc02-phone-390-strip.png, tc02-phone-390-strip-safari.png\nACTUAL RESULT: The sentence sits under the badge and the badge keeps its shape. Same in Chrome and Safari.\n\nTEST CASE #8: The public key is fully readable (previous case 3)\nSTEPS:\nStep 1 - At 390px, read the \"Public key:\" line.\nEXPECTED RESULT: The whole key is visible; wrapping is allowed, running past the edge is not.\nEVIDENCE: tc03-phone-390-public-key.png, tc03-phone-390-public-key-safari.png\nACTUAL RESULT: The whole key is visible inside the strip over 2 lines. Same in Chrome and Safari.\n\nTEST CASE #9: Nothing escapes the grey strip (previous case 4)\nSTEPS:\nStep 1 - At 390px, look at the grey strip as a whole.\nEXPECTED RESULT: All of its contents sit inside it.\nEVIDENCE: tc04-phone-390-strip-contents.png, tc04-phone-390-strip-contents-safari.png\nACTUAL RESULT: All text and the button stay inside the strip. Same in Chrome and Safari.\n\nTEST CASE #10: Disconnect is reachable (previous case 5)\nSTEPS:\nStep 1 - At 390px, tap the centre of Disconnect.\nStep 2 - Tap Cancel.\nEXPECTED RESULT: The button is fully visible and not covered; the tap opens the confirmation.\nEVIDENCE: tc05-phone-390-disconnect.png\nACTUAL RESULT: The tap landed on the button and opened the confirmation; Cancel left the account connected.\n\nTEST CASE #11: Desktop control (previous case 6)\nSTEPS:\nStep 1 - Open the card at 1280px wide.\nEXPECTED RESULT: Badge, sentence and key each on one line, Disconnect on the right.\nEVIDENCE: tc06-desktop-1280-strip.png\nACTUAL RESULT: Displays as expected.\n\nTEST CASE #12: In-between width (previous case 7)\nSTEPS:\nStep 1 - Open the card at 768px wide.\nEXPECTED RESULT: The strip reads cleanly, nothing cropped.\nEVIDENCE: tc07-tablet-768-strip.png\nACTUAL RESULT: Sentence and key each on one line, nothing cropped.\n\nTEST CASE #13: The rest of the card (previous case 8)\nSTEPS:\nStep 1 - At 390px, scroll through the whole Lalamove card.\nEXPECTED RESULT: The heading, the paragraph and \"Delivery status updates\" are fully readable; no sideways scroll.\nEVIDENCE: tc08-phone-390-whole-card.png\nACTUAL RESULT: All fully readable and the page does not scroll sideways.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV\nStatus: PASSED\nURL: https://prodev.prosperna.com\n\nTEST CASE #1: Disconnect wraps below on a phone\nSTEPS:\nStep 1 - On a store with its own Lalamove API keys connected, open Settings > Shipping at 390px wide.\nStep 2 - Look at the grey connected strip.\nEXPECTED RESULT: The badge, sentence and public key use the full strip width; Disconnect sits below them.\nEVIDENCE: r5-tc01-phone-390-disconnect-below.png, r5-tc01-phone-390-disconnect-below-safari.png\nACTUAL RESULT: Disconnect sits below the text, which uses the full width of the strip. The sentence takes 2 lines and the key 2 lines. Same in Chrome and Safari.\n\nTEST CASE #2: Disconnect still works on a phone\nSTEPS:\nStep 1 - At 390px, tap Disconnect.\nStep 2 - Tap Cancel on the dialog.\nEXPECTED RESULT: The confirmation opens; Cancel leaves the account connected.\nEVIDENCE: tc05-phone-390-disconnect-confirm.png, tc05-phone-390-disconnect-confirm-safari.png\nACTUAL RESULT: The confirmation opened and Cancel left the account connected. Same in Chrome and Safari.\n\nTEST CASE #3: Narrowest phone\nSTEPS:\nStep 1 - Repeat case 1 at 320px wide.\nEXPECTED RESULT: Everything stays inside the strip, no sideways scroll.\nEVIDENCE: r5-tc03-phone-320-strip.png, r5-tc03-phone-320-strip-safari.png\nACTUAL RESULT: Everything stays inside the strip and the page does not scroll sideways. Same in Chrome and Safari.\n\nTEST CASE #4: Tablet unchanged\nSTEPS:\nStep 1 - Open the card at 768px wide.\nEXPECTED RESULT: Text on the left, Disconnect to the right on the same row, nothing cropped.\nEVIDENCE: r5-tc04-tablet-768-strip.png\nACTUAL RESULT: Text on the left, Disconnect on the right on the same row, nothing cropped.\n\nTEST CASE #5: Desktop unchanged\nSTEPS:\nStep 1 - Open the card at 1280px wide.\nEXPECTED RESULT: Badge, sentence and key each on one line, Disconnect on the right.\nEVIDENCE: tc06-desktop-1280-strip.png\nACTUAL RESULT: Displays as expected, each on one line with Disconnect on the right.\n\nTEST CASE #6: The sentence is complete (previous case 1)\nSTEPS:\nStep 1 - At 390px, read the line beside the green \"Connected\" badge.\nEXPECTED RESULT: \"Your API keys are verified and in use.\" is fully readable, nothing cut off.\nEVIDENCE: tc01-phone-390-connected-strip.png, tc01-phone-390-connected-strip-safari.png\nACTUAL RESULT: The whole sentence is readable inside the strip. Same in Chrome and Safari.\n\nTEST CASE #7: The sentence drops below the badge (previous case 2)\nSTEPS:\nStep 1 - At 390px, look at how the badge and the sentence sit together.\nEXPECTED RESULT: The sentence moves under the badge; the badge keeps its pill shape.\nEVIDENCE: tc02-phone-390-strip.png, tc02-phone-390-strip-safari.png\nACTUAL RESULT: The sentence sits under the badge and the badge keeps its shape. Same in Chrome and Safari.\n\nTEST CASE #8: The public key is fully readable (previous case 3)\nSTEPS:\nStep 1 - At 390px, read the \"Public key:\" line.\nEXPECTED RESULT: The whole key is visible; wrapping is allowed, running past the edge is not.\nEVIDENCE: tc03-phone-390-public-key.png, tc03-phone-390-public-key-safari.png\nACTUAL RESULT: The whole key is visible inside the strip over 2 lines. Same in Chrome and Safari.\n\nTEST CASE #9: Nothing escapes the grey strip (previous case 4)\nSTEPS:\nStep 1 - At 390px, look at the grey strip as a whole.\nEXPECTED RESULT: All of its contents sit inside it.\nEVIDENCE: tc04-phone-390-strip-contents.png, tc04-phone-390-strip-contents-safari.png\nACTUAL RESULT: All text and the button stay inside the strip. Same in Chrome and Safari.\n\nTEST CASE #10: Disconnect is reachable (previous case 5)\nSTEPS:\nStep 1 - At 390px, tap the centre of Disconnect.\nStep 2 - Tap Cancel.\nEXPECTED RESULT: The button is fully visible and not covered; the tap opens the confirmation.\nEVIDENCE: tc05-phone-390-disconnect.png\nACTUAL RESULT: The tap landed on the button and opened the confirmation; Cancel left the account connected.\n\nTEST CASE #11: Desktop control (previous case 6)\nSTEPS:\nStep 1 - Open the card at 1280px wide.\nEXPECTED RESULT: Badge, sentence and key each on one line, Disconnect on the right.\nEVIDENCE: tc06-desktop-1280-strip.png\nACTUAL RESULT: Displays as expected.\n\nTEST CASE #12: In-between width (previous case 7)\nSTEPS:\nStep 1 - Open the card at 768px wide.\nEXPECTED RESULT: The strip reads cleanly, nothing cropped.\nEVIDENCE: tc07-tablet-768-strip.png\nACTUAL RESULT: Sentence and key each on one line, nothing cropped.\n\nTEST CASE #13: The rest of the card (previous case 8)\nSTEPS:\nStep 1 - At 390px, scroll through the whole Lalamove card.\nEXPECTED RESULT: The heading, the paragraph and \"Delivery status updates\" are fully readable; no sideways scroll.\nEVIDENCE: tc08-phone-390-whole-card.png\nACTUAL RESULT: All fully readable and the page does not scroll sideways.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792077664126",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000162983",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Shipping Settings"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 14 2026, 3:57PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Shipping Settings hss been move to IN TESTING \nUpdated: Oct 14 2026, 3:57PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791964671784",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000151803",
+    "comment": [
+      {
+        "text": "QA RETURN FIX: Lalamove connected strip on a phone (test case #9)\n\nWHAT WAS FIXED\nAt 390px the Disconnect button stayed beside the text and squeezed the sentence and public key into a 60px column.\n\nHOW\nThe text column in the connected strip now has a minimum width of 16rem before it sits beside Disconnect. When the strip is narrower than that, the row wraps and Disconnect moves to its own line below the text, so the sentence and key use the full width of the strip. Desktop and tablet layouts are unchanged.\n\nBRANCH: refactor/tw-settings-standard-v3-dev8 (into dev). Feature branch: refactor/tw-settings-standard-v3.\n\nHOW IT WAS TESTED\n- ESLint on the changed files\n- Vitest: TooltipIcon, LalamoveConnect and all Store Settings tests (432 passed)\n- New tests cover the tap sequence on the \"?\" tooltip: a tap opens it, a second tap closes it\n\nNEW QA TEST CASES\nWHERE: Settings > Shipping, Lalamove card, on a store with its own Lalamove API keys connected.\n1. Disconnect wraps below on a phone\nSTEPS: Open the page at 390px wide. Look at the grey connected strip.\nEXPECTED: The badge, sentence and public key use the full strip width; Disconnect sits below them. The sentence is no longer broken over 6 lines.\n2. Disconnect still works on a phone\nSTEPS: At 390px tap Disconnect, then Cancel.\nEXPECTED: The confirmation opens; Cancel leaves the account connected.\n3. Narrowest phone\nSTEPS: Repeat case 1 at 320px wide.\nEXPECTED: Everything stays inside the strip, no sideways scroll.\n4. Tablet unchanged\nSTEPS: Open at 768px.\nEXPECTED: Text on the left, Disconnect to the right on the same row, nothing cropped.\n5. Desktop unchanged\nSTEPS: Open at 1280px.\nEXPECTED: Badge, sentence and key each on one line, Disconnect on the right.\n6. Previously passed cases 1 to 8 still pass."
+      }
+    ],
+    "comment_text": "QA RETURN FIX: Lalamove connected strip on a phone (test case #9)\n\nWHAT WAS FIXED\nAt 390px the Disconnect button stayed beside the text and squeezed the sentence and public key into a 60px column.\n\nHOW\nThe text column in the connected strip now has a minimum width of 16rem before it sits beside Disconnect. When the strip is narrower than that, the row wraps and Disconnect moves to its own line below the text, so the sentence and key use the full width of the strip. Desktop and tablet layouts are unchanged.\n\nBRANCH: refactor/tw-settings-standard-v3-dev8 (into dev). Feature branch: refactor/tw-settings-standard-v3.\n\nHOW IT WAS TESTED\n- ESLint on the changed files\n- Vitest: TooltipIcon, LalamoveConnect and all Store Settings tests (432 passed)\n- New tests cover the tap sequence on the \"?\" tooltip: a tap opens it, a second tap closes it\n\nNEW QA TEST CASES\nWHERE: Settings > Shipping, Lalamove card, on a store with its own Lalamove API keys connected.\n1. Disconnect wraps below on a phone\nSTEPS: Open the page at 390px wide. Look at the grey connected strip.\nEXPECTED: The badge, sentence and public key use the full strip width; Disconnect sits below them. The sentence is no longer broken over 6 lines.\n2. Disconnect still works on a phone\nSTEPS: At 390px tap Disconnect, then Cancel.\nEXPECTED: The confirmation opens; Cancel leaves the account connected.\n3. Narrowest phone\nSTEPS: Repeat case 1 at 320px wide.\nEXPECTED: Everything stays inside the strip, no sideways scroll.\n4. Tablet unchanged\nSTEPS: Open at 768px.\nEXPECTED: Text on the left, Disconnect to the right on the same row, nothing cropped.\n5. Desktop unchanged\nSTEPS: Open at 1280px.\nEXPECTED: Badge, sentence and key each on one line, Disconnect on the right.\n6. Previously passed cases 1 to 8 still pass.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791765303445",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000146487",
+    "comment": [
+      {
+        "text": "Env: DEV\nStatus: FAILED\nURL: https://prodev.prosperna.ph\n\nTEST CASE #1: The sentence is complete\nSTEPS:\nOn a store with its own Lalamove API keys connected, open Settings > Shipping at 390px wide.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Read the line beside the green \"Connected\" badge.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The full sentence \"Your API keys are verified and in use.\" is readable, with nothing cut off at the right edge.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc01-phone-390-sentence.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The whole sentence is shown inside the grey strip and nothing is cut off. Same result in Chrome and Safari (WebKit).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #2: The sentence drops below the badge\nSTEPS:\nAt 390px, look at how the \"Connected\" badge and the sentence sit together.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: When they cannot fit side by side, the sentence moves onto its own line under the badge, and the badge keeps its pill shape.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc02-phone-390-badge-and-sentence.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The sentence sits below the badge, and the badge keeps its pill shape.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #3: The public key is fully readable\nSTEPS:\nAt 390px, read the \"Public key:\" line.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The whole key is visible. Wrapping onto several lines is allowed, but it must not run past the right edge.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc03-phone-390-public-key.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The whole key is visible inside the strip, wrapping over several lines.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #4: Nothing escapes the grey strip\nSTEPS:\nAt 390px, look at the grey strip as a whole.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: All of its contents sit inside it.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc04-phone-390-strip.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: All text and the button stay inside the strip's edges.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #5: Disconnect is still reachable\nSTEPS:\nAt 390px, find the Disconnect button on the strip.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Tap its centre.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Press Cancel on the dialog.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The button is fully visible and not covered, and tapping it opens the disconnect confirmation.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc05-phone-390-disconnect-confirm.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The button is fully visible and the tap landed on it. The \"Disconnect Lalamove account\" confirmation opened, and Cancel left the account connected.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #6: Desktop is unchanged (control)\nSTEPS:\nOpen the same card at 1280px wide.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Badge, sentence and key each on one line, with Disconnect to the right.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc06-desktop-1280-strip.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Displays as expected, on one line with Disconnect on the right.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #7: In-between width\nSTEPS:\nOpen the card at 768px wide.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The strip reads cleanly, with nothing cropped.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc07-tablet-768-strip.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The sentence and key each fit on one line, Disconnect sits to the right, and nothing is cropped.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #8: The rest of the card\nSTEPS:\nAt 390px, scroll through the whole Lalamove card.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The heading \"Connect your own Lalamove account\", the paragraph above the strip and the \"Delivery status updates\" section are fully readable, with nothing cut off at the right.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc08-phone-390-card.png, tc08-phone-390-status-updates.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: All of them are fully readable, and the page does not scroll sideways.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #9: The text uses the strip's width on a phone\nWHERE: Settings > Shipping, Lalamove card, connected strip. src/pages/home/Shipping/components/LalamoveConnect.jsx:156 (",
+        "attributes": {}
+      },
+      {
+        "text": "tw:min-w-0 tw:flex-1",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": "), commit f5fa168e9f, Machi, 2026-10-06.\nSTEPS:\nOn a store with its own Lalamove API keys connected, open Settings > Shipping at 390px wide.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Look at the connected strip.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: When the text cannot fit beside Disconnect, Disconnect moves below it so the sentence and key can use the strip's width.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: control-as-deployed.png, tc02-phone-390-badge-and-sentence-safari.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Disconnect stays beside the text, which is squeezed into a 60px column inside a 236px strip. The sentence runs over 6 lines and the public key over 7. Same in Chrome and Safari (WebKit).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      }
+    ],
+    "comment_text": "Env: DEV\nStatus: FAILED\nURL: https://prodev.prosperna.ph\n\nTEST CASE #1: The sentence is complete\nSTEPS:\nOn a store with its own Lalamove API keys connected, open Settings > Shipping at 390px wide.\nRead the line beside the green \"Connected\" badge.\nEXPECTED RESULT: The full sentence \"Your API keys are verified and in use.\" is readable, with nothing cut off at the right edge.\nEVIDENCE: tc01-phone-390-sentence.png\nACTUAL RESULT: The whole sentence is shown inside the grey strip and nothing is cut off. Same result in Chrome and Safari (WebKit).\n\nTEST CASE #2: The sentence drops below the badge\nSTEPS:\nAt 390px, look at how the \"Connected\" badge and the sentence sit together.\nEXPECTED RESULT: When they cannot fit side by side, the sentence moves onto its own line under the badge, and the badge keeps its pill shape.\nEVIDENCE: tc02-phone-390-badge-and-sentence.png\nACTUAL RESULT: The sentence sits below the badge, and the badge keeps its pill shape.\n\nTEST CASE #3: The public key is fully readable\nSTEPS:\nAt 390px, read the \"Public key:\" line.\nEXPECTED RESULT: The whole key is visible. Wrapping onto several lines is allowed, but it must not run past the right edge.\nEVIDENCE: tc03-phone-390-public-key.png\nACTUAL RESULT: The whole key is visible inside the strip, wrapping over several lines.\n\nTEST CASE #4: Nothing escapes the grey strip\nSTEPS:\nAt 390px, look at the grey strip as a whole.\nEXPECTED RESULT: All of its contents sit inside it.\nEVIDENCE: tc04-phone-390-strip.png\nACTUAL RESULT: All text and the button stay inside the strip's edges.\n\nTEST CASE #5: Disconnect is still reachable\nSTEPS:\nAt 390px, find the Disconnect button on the strip.\nTap its centre.\nPress Cancel on the dialog.\nEXPECTED RESULT: The button is fully visible and not covered, and tapping it opens the disconnect confirmation.\nEVIDENCE: tc05-phone-390-disconnect-confirm.png\nACTUAL RESULT: The button is fully visible and the tap landed on it. The \"Disconnect Lalamove account\" confirmation opened, and Cancel left the account connected.\n\nTEST CASE #6: Desktop is unchanged (control)\nSTEPS:\nOpen the same card at 1280px wide.\nEXPECTED RESULT: Badge, sentence and key each on one line, with Disconnect to the right.\nEVIDENCE: tc06-desktop-1280-strip.png\nACTUAL RESULT: Displays as expected, on one line with Disconnect on the right.\n\nTEST CASE #7: In-between width\nSTEPS:\nOpen the card at 768px wide.\nEXPECTED RESULT: The strip reads cleanly, with nothing cropped.\nEVIDENCE: tc07-tablet-768-strip.png\nACTUAL RESULT: The sentence and key each fit on one line, Disconnect sits to the right, and nothing is cropped.\n\nTEST CASE #8: The rest of the card\nSTEPS:\nAt 390px, scroll through the whole Lalamove card.\nEXPECTED RESULT: The heading \"Connect your own Lalamove account\", the paragraph above the strip and the \"Delivery status updates\" section are fully readable, with nothing cut off at the right.\nEVIDENCE: tc08-phone-390-card.png, tc08-phone-390-status-updates.png\nACTUAL RESULT: All of them are fully readable, and the page does not scroll sideways.\n\nTEST CASE #9: The text uses the strip's width on a phone\nWHERE: Settings > Shipping, Lalamove card, connected strip. src/pages/home/Shipping/components/LalamoveConnect.jsx:156 (tw:min-w-0 tw:flex-1), commit f5fa168e9f, Machi, 2026-10-06.\nSTEPS:\nOn a store with its own Lalamove API keys connected, open Settings > Shipping at 390px wide.\nLook at the connected strip.\nEXPECTED RESULT: When the text cannot fit beside Disconnect, Disconnect moves below it so the sentence and key can use the strip's width.\nEVIDENCE: control-as-deployed.png, tc02-phone-390-badge-and-sentence-safari.png\nACTUAL RESULT: Disconnect stays beside the text, which is squeezed into a 60px column inside a 236px strip. The sentence runs over 6 lines and the public key over 7. Same in Chrome and Safari (WebKit).\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791530495392",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000135356",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Shipping Settings"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 7 2026, 9:44AM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Shipping Settings hss been move to IN TESTING \nUpdated: Oct 7 2026, 9:44AM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791337441950",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000135172",
+    "comment": [
+      {
+        "text": "TEST CASES - Lalamove connected strip on a phone (run once it reaches dev)\n\nWHERE TO TEST\nEnvironment: dev, once commit 8a960a070 is promoted. Please do not run these before then - the change is not on dev, so the text will still crop exactly as on Oct 6.\nPage: Settings > Shipping, the Lalamove card, in the \"connect your own account\" state.\nDevices: a real phone or a 390px wide window. The original report was iPhone Safari, so Safari is the one that matters most.\nPreconditions: a store on a paid plan with its own Lalamove API keys connected, so the grey strip with the green \"Connected\" badge is showing.\n\nTEST CASES\n\n1. The sentence is complete. At 390px, read the line beside the green \"Connected\" badge. EXPECTED: the full sentence \"Your API keys are verified and in use.\" is readable. Nothing is cut off at the right edge and no word ends part way through. On Oct 6 it stopped at \"are veri\".\n\n2. The sentence drops below the badge. Look at how the badge and sentence sit together at 390px. EXPECTED: when they cannot fit side by side, the sentence moves onto its own line under the badge. The badge keeps its pill shape and is not squashed or stretched.\n\n3. The public key is fully readable. Read the \"Public key:\" line. EXPECTED: the whole key is visible. It is allowed to wrap onto two or more lines - that is expected, not a fault. What must not happen is it running past the right edge with the end hidden.\n\n4. Nothing escapes the grey strip. Look at the grey box as a whole. EXPECTED: all of its contents sit inside it. No text overlaps the edge or spills outside.\n\n5. Disconnect is still reachable. Find the Disconnect button on the strip and tap its centre. EXPECTED: it is fully visible, not pushed off the card or covered by text, and tapping opens the disconnect confirmation.\n\n6. Desktop unchanged (control). Open the same card on a desktop window. EXPECTED: badge, sentence and key on one line with Disconnect to the right, exactly as before. The phone fix must not have moved anything here.\n\n7. In-between width. Try about 768px. EXPECTED: reads cleanly at this width too, wrapping if it needs to, with nothing cropped.\n\n8. The rest of the card. Scroll the whole Lalamove card on a phone. EXPECTED: the heading \"Connect your own Lalamove account\", the paragraph above and the \"Delivery status updates\" section below are all fully readable with nothing cut off at the right.\n\nTEST DATA\nA connected BYO Lalamove account is required - this strip only exists in the connected state. The key shown is the public key and is safe to display. If no test store has one connected, a developer will need to connect sandbox keys first.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- The public key wrapping onto more than one line on a narrow screen is expected and correct.\n- The green \"Connected\" badge keeps its colour.\n- The Prosperna-managed Lalamove option, shown when you have not connected your own keys, is a different strip and was not changed."
+      }
+    ],
+    "comment_text": "TEST CASES - Lalamove connected strip on a phone (run once it reaches dev)\n\nWHERE TO TEST\nEnvironment: dev, once commit 8a960a070 is promoted. Please do not run these before then - the change is not on dev, so the text will still crop exactly as on Oct 6.\nPage: Settings > Shipping, the Lalamove card, in the \"connect your own account\" state.\nDevices: a real phone or a 390px wide window. The original report was iPhone Safari, so Safari is the one that matters most.\nPreconditions: a store on a paid plan with its own Lalamove API keys connected, so the grey strip with the green \"Connected\" badge is showing.\n\nTEST CASES\n\n1. The sentence is complete. At 390px, read the line beside the green \"Connected\" badge. EXPECTED: the full sentence \"Your API keys are verified and in use.\" is readable. Nothing is cut off at the right edge and no word ends part way through. On Oct 6 it stopped at \"are veri\".\n\n2. The sentence drops below the badge. Look at how the badge and sentence sit together at 390px. EXPECTED: when they cannot fit side by side, the sentence moves onto its own line under the badge. The badge keeps its pill shape and is not squashed or stretched.\n\n3. The public key is fully readable. Read the \"Public key:\" line. EXPECTED: the whole key is visible. It is allowed to wrap onto two or more lines - that is expected, not a fault. What must not happen is it running past the right edge with the end hidden.\n\n4. Nothing escapes the grey strip. Look at the grey box as a whole. EXPECTED: all of its contents sit inside it. No text overlaps the edge or spills outside.\n\n5. Disconnect is still reachable. Find the Disconnect button on the strip and tap its centre. EXPECTED: it is fully visible, not pushed off the card or covered by text, and tapping opens the disconnect confirmation.\n\n6. Desktop unchanged (control). Open the same card on a desktop window. EXPECTED: badge, sentence and key on one line with Disconnect to the right, exactly as before. The phone fix must not have moved anything here.\n\n7. In-between width. Try about 768px. EXPECTED: reads cleanly at this width too, wrapping if it needs to, with nothing cropped.\n\n8. The rest of the card. Scroll the whole Lalamove card on a phone. EXPECTED: the heading \"Connect your own Lalamove account\", the paragraph above and the \"Delivery status updates\" section below are all fully readable with nothing cut off at the right.\n\nTEST DATA\nA connected BYO Lalamove account is required - this strip only exists in the connected state. The key shown is the public key and is safe to display. If no test store has one connected, a developer will need to connect sandbox keys first.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- The public key wrapping onto more than one line on a narrow screen is expected and correct.\n- The green \"Connected\" badge keeps its colour.\n- The Prosperna-managed Lalamove option, shown when you have not connected your own keys, is a different strip and was not changed.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791332778602",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000135171",
+    "comment": [
+      {
+        "text": "FIX: Lalamove connected status strip overflows on narrow viewports\n\nFILE: src/pages/home/Shipping/components/LalamoveConnect.jsx\nCOMMIT: 8a960a070 (branch refactor/tw-settings-standard-v3)\nON DEV VIA: PR #8748 (refactor/tw-settings-standard-v3-dev6)\n\nSYMPTOM\nAt 390px the status strip overflows its card to the right. The sentence clips at \"are veri\"; connection.pubKey clips mid-token. Measured overflow approx 100px past the card edge.\n\nMARKUP BEFORE\n\n  <div class=\"d-flex flex-wrap align-items-start justify-content-between gap-3 bg-table rounded-3 p-3\">\n    <div>                                          <- text column, flex item\n      <div class=\"d-flex align-items-center gap-2 mb-1\">\n        <span class=\"badge bg-success\">Connected</span>\n        <span class=\"text-sm fw-semi-bold text-black\">Your API keys are verified and in use.</span>\n      </div>\n      <div class=\"text-sm text-muted\">\n        Public key: <span class=\"font-monospace\">{connection?.pubKey}</span>\n      </div>\n    </div>\n    <AppButton>Disconnect</AppButton>\n  </div>\n\nROOT CAUSE - three independent faults\n\n1. Text column cannot shrink.\n   The column is a flex item of the outer .d-flex. Per CSS Flexbox, a flex item's min-width computes to auto, which floors its used width at min-content (effectively max-content here, since the children below cannot wrap). The column therefore never shrinks to the card width; it keeps its content width and overflows. The outer flex-wrap does not help: the column is a single item, so there is no wrap opportunity between it and the button until the column itself can shrink.\n\n2. Badge row cannot wrap.\n   The inner row is .d-flex with no wrap utility, so flex-wrap resolves to its initial value nowrap. The badge and the sentence are therefore locked on one line, and that line's width is what sets the column's max-content width in fault 1.\n\n3. pubKey has no break opportunity.\n   connection.pubKey is a single token with no spaces or hyphens (pk_test_8c95f6e1841041d9c5...). With the initial overflow-wrap: normal, the UA has no soft wrap opportunity inside the token, so it renders on one line regardless of container width.\n\nDIFF\n\n  - <div>\n  + <div class=\"tw:min-w-0 tw:flex-1\">\n\n  -   <div class=\"d-flex align-items-center gap-2 mb-1\">\n  +   <div class=\"d-flex flex-wrap align-items-center gap-2 mb-1\">\n\n  -   <div class=\"text-sm text-muted\">\n  +   <div class=\"text-sm text-muted text-break\">\n  -     <span class=\"font-monospace\">{connection?.pubKey}</span>\n  +     <span class=\"font-monospace text-break\">{connection?.pubKey}</span>\n\nWHAT EACH DECLARATION DOES\n\n  tw:min-w-0   -> min-width: 0\n                 Overrides the auto floor from fault 1 so the column may shrink below its content width.\n  tw:flex-1    -> flex: 1 1 0%\n                 flex-basis 0 plus grow, so the column is sized by available space rather than content, and shrink is permitted.\n  flex-wrap    -> flex-wrap: wrap (Bootstrap utility)\n                 Gives the badge/sentence row a wrap opportunity; the sentence drops to a second line when the row no longer fits.\n  text-break   -> word-wrap: break-word; word-break: break-word (Bootstrap utility, _utilities.scss \"word-wrap\" key)\n                 Creates a break opportunity inside pubKey so it wraps instead of overflowing.\n\nFaults 1 and 2 are coupled: fixing either alone is insufficient. min-w-0 without flex-wrap lets the column shrink but the nowrap row then overflows the column. flex-wrap without min-w-0 permits wrapping but the column never shrinks to a width that forces it.\n\nNOT CHANGED\n- Desktop layout: at >=768px the column's content fits, so min-width:0 and the wrap utilities are never exercised. No visual delta.\n- .badge bg-success keeps its colour; it is a separate element from the status text.\n- The Prosperna-managed Lalamove strip (shown when BYO keys are not connected) is a different branch of this component and was not touched.\n- Disconnect button markup unchanged; it regains its position as a consequence of the column shrinking, not by its own change.\n\nVERIFICATION\nESLint clean. 9 test files / 93 tests pass on the affected components (the existing LalamoveConnect suite included). Layout overflow is not observable in jsdom - no test asserts the fix. Confirmation requires a 390px viewport; see the test-case comment on this task."
+      }
+    ],
+    "comment_text": "FIX: Lalamove connected status strip overflows on narrow viewports\n\nFILE: src/pages/home/Shipping/components/LalamoveConnect.jsx\nCOMMIT: 8a960a070 (branch refactor/tw-settings-standard-v3)\nON DEV VIA: PR #8748 (refactor/tw-settings-standard-v3-dev6)\n\nSYMPTOM\nAt 390px the status strip overflows its card to the right. The sentence clips at \"are veri\"; connection.pubKey clips mid-token. Measured overflow approx 100px past the card edge.\n\nMARKUP BEFORE\n\n  <div class=\"d-flex flex-wrap align-items-start justify-content-between gap-3 bg-table rounded-3 p-3\">\n    <div>                                          <- text column, flex item\n      <div class=\"d-flex align-items-center gap-2 mb-1\">\n        <span class=\"badge bg-success\">Connected</span>\n        <span class=\"text-sm fw-semi-bold text-black\">Your API keys are verified and in use.</span>\n      </div>\n      <div class=\"text-sm text-muted\">\n        Public key: <span class=\"font-monospace\">{connection?.pubKey}</span>\n      </div>\n    </div>\n    <AppButton>Disconnect</AppButton>\n  </div>\n\nROOT CAUSE - three independent faults\n\n1. Text column cannot shrink.\n   The column is a flex item of the outer .d-flex. Per CSS Flexbox, a flex item's min-width computes to auto, which floors its used width at min-content (effectively max-content here, since the children below cannot wrap). The column therefore never shrinks to the card width; it keeps its content width and overflows. The outer flex-wrap does not help: the column is a single item, so there is no wrap opportunity between it and the button until the column itself can shrink.\n\n2. Badge row cannot wrap.\n   The inner row is .d-flex with no wrap utility, so flex-wrap resolves to its initial value nowrap. The badge and the sentence are therefore locked on one line, and that line's width is what sets the column's max-content width in fault 1.\n\n3. pubKey has no break opportunity.\n   connection.pubKey is a single token with no spaces or hyphens (pk_test_8c95f6e1841041d9c5...). With the initial overflow-wrap: normal, the UA has no soft wrap opportunity inside the token, so it renders on one line regardless of container width.\n\nDIFF\n\n  - <div>\n  + <div class=\"tw:min-w-0 tw:flex-1\">\n\n  -   <div class=\"d-flex align-items-center gap-2 mb-1\">\n  +   <div class=\"d-flex flex-wrap align-items-center gap-2 mb-1\">\n\n  -   <div class=\"text-sm text-muted\">\n  +   <div class=\"text-sm text-muted text-break\">\n  -     <span class=\"font-monospace\">{connection?.pubKey}</span>\n  +     <span class=\"font-monospace text-break\">{connection?.pubKey}</span>\n\nWHAT EACH DECLARATION DOES\n\n  tw:min-w-0   -> min-width: 0\n                 Overrides the auto floor from fault 1 so the column may shrink below its content width.\n  tw:flex-1    -> flex: 1 1 0%\n                 flex-basis 0 plus grow, so the column is sized by available space rather than content, and shrink is permitted.\n  flex-wrap    -> flex-wrap: wrap (Bootstrap utility)\n                 Gives the badge/sentence row a wrap opportunity; the sentence drops to a second line when the row no longer fits.\n  text-break   -> word-wrap: break-word; word-break: break-word (Bootstrap utility, _utilities.scss \"word-wrap\" key)\n                 Creates a break opportunity inside pubKey so it wraps instead of overflowing.\n\nFaults 1 and 2 are coupled: fixing either alone is insufficient. min-w-0 without flex-wrap lets the column shrink but the nowrap row then overflows the column. flex-wrap without min-w-0 permits wrapping but the column never shrinks to a width that forces it.\n\nNOT CHANGED\n- Desktop layout: at >=768px the column's content fits, so min-width:0 and the wrap utilities are never exercised. No visual delta.\n- .badge bg-success keeps its colour; it is a separate element from the status text.\n- The Prosperna-managed Lalamove strip (shown when BYO keys are not connected) is a different branch of this component and was not touched.\n- Disconnect button markup unchanged; it regains its position as a consequence of the column shrinking, not by its own change.\n\nVERIFICATION\nESLint clean. 9 test files / 93 tests pass on the affected components (the existing LalamoveConnect suite included). Layout overflow is not observable in jsdom - no test asserts the fix. Confirmation requires a 390px viewport; see the test-case comment on this task.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791332750815",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000133453",
+    "comment": [
+      {
+        "text": "Env: DEV\nStatus: FAILED\nURL: https://prodev.prosperna.com\n\nTEST CASE #1: Connected strip on a phone\nSTEPS:\nStep 1 - On a store with its own Lalamove API keys connected, open Settings > Shipping at 390px wide (touch device).\nStep 2 - Read the line beside the green \"Connected\" badge.\nEXPECTED RESULT: The full sentence \"Your API keys are verified and in use.\" is readable; nothing is cut off at the right edge.\nEVIDENCE: tc01-phone-390-connected-strip.png\nACTUAL RESULT: The sentence is still cut off after \"are veri\". It runs about 100px past the card's right edge, the same as the Sep 18 return.\n\nTEST CASE #2: Public key on a phone\nSTEPS:\nStep 1 - At 390px, open the Lalamove card in the connected state.\nStep 2 - Read the \"Public key:\" line.\nEXPECTED RESULT: The whole key is readable, wrapping onto more than one line if needed, and does not run past the right edge.\nEVIDENCE: tc02-phone-390-public-key.png\nACTUAL RESULT: The key does not wrap. It runs off the right edge of the card and the end of the key is hidden.\n\nTEST CASE #3: Wrapping is tidy\nSTEPS:\nStep 1 - At 390px, look at how the \"Connected\" badge and the sentence sit together.\nEXPECTED RESULT: When they do not fit on one line, the sentence drops below the badge; the badge keeps its shape.\nEVIDENCE: tc03-phone-390-strip.png\nACTUAL RESULT: The badge keeps its shape, but the sentence stays beside it instead of dropping below, and overflows the grey strip.\n\nTEST CASE #4: Disconnect button still reachable\nSTEPS:\nStep 1 - At 390px, find the Disconnect button on the connected strip.\nStep 2 - Tap its centre.\nEXPECTED RESULT: The button is fully visible and tappable, not pushed off the card or covered by text.\nEVIDENCE: tc04-phone-390-disconnect.png\nACTUAL RESULT: The button is fully visible inside the strip and a tap at its centre lands on it.\n\nTEST CASE #5: Desktop is unchanged (control)\nSTEPS:\nStep 1 - Open the same card at 1280px wide.\nEXPECTED RESULT: Badge, sentence and key each sit on one line, with Disconnect to the right.\nEVIDENCE: tc05-desktop-1280-strip.png\nACTUAL RESULT: Displays as expected on one line with Disconnect on the right.\n\nTEST CASE #6: Tablet width\nSTEPS:\nStep 1 - Open the card at 768px wide (touch device).\nEXPECTED RESULT: The strip reads cleanly with nothing cropped.\nEVIDENCE: tc06-tablet-768-strip.png\nACTUAL RESULT: The sentence and key fit inside the strip; Disconnect wraps below them. Nothing is cropped.\n\nTEST CASE #7: Rest of the card\nSTEPS:\nStep 1 - At 390px, view the whole Lalamove card.\nEXPECTED RESULT: The heading, the explanatory paragraph and the \"Delivery status updates\" section are fully readable; the page does not scroll sideways.\nEVIDENCE: tc07-phone-390-whole-card.png\nACTUAL RESULT: All three are fully readable and the page does not scroll sideways.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV\nStatus: FAILED\nURL: https://prodev.prosperna.com\n\nTEST CASE #1: Connected strip on a phone\nSTEPS:\nStep 1 - On a store with its own Lalamove API keys connected, open Settings > Shipping at 390px wide (touch device).\nStep 2 - Read the line beside the green \"Connected\" badge.\nEXPECTED RESULT: The full sentence \"Your API keys are verified and in use.\" is readable; nothing is cut off at the right edge.\nEVIDENCE: tc01-phone-390-connected-strip.png\nACTUAL RESULT: The sentence is still cut off after \"are veri\". It runs about 100px past the card's right edge, the same as the Sep 18 return.\n\nTEST CASE #2: Public key on a phone\nSTEPS:\nStep 1 - At 390px, open the Lalamove card in the connected state.\nStep 2 - Read the \"Public key:\" line.\nEXPECTED RESULT: The whole key is readable, wrapping onto more than one line if needed, and does not run past the right edge.\nEVIDENCE: tc02-phone-390-public-key.png\nACTUAL RESULT: The key does not wrap. It runs off the right edge of the card and the end of the key is hidden.\n\nTEST CASE #3: Wrapping is tidy\nSTEPS:\nStep 1 - At 390px, look at how the \"Connected\" badge and the sentence sit together.\nEXPECTED RESULT: When they do not fit on one line, the sentence drops below the badge; the badge keeps its shape.\nEVIDENCE: tc03-phone-390-strip.png\nACTUAL RESULT: The badge keeps its shape, but the sentence stays beside it instead of dropping below, and overflows the grey strip.\n\nTEST CASE #4: Disconnect button still reachable\nSTEPS:\nStep 1 - At 390px, find the Disconnect button on the connected strip.\nStep 2 - Tap its centre.\nEXPECTED RESULT: The button is fully visible and tappable, not pushed off the card or covered by text.\nEVIDENCE: tc04-phone-390-disconnect.png\nACTUAL RESULT: The button is fully visible inside the strip and a tap at its centre lands on it.\n\nTEST CASE #5: Desktop is unchanged (control)\nSTEPS:\nStep 1 - Open the same card at 1280px wide.\nEXPECTED RESULT: Badge, sentence and key each sit on one line, with Disconnect to the right.\nEVIDENCE: tc05-desktop-1280-strip.png\nACTUAL RESULT: Displays as expected on one line with Disconnect on the right.\n\nTEST CASE #6: Tablet width\nSTEPS:\nStep 1 - Open the card at 768px wide (touch device).\nEXPECTED RESULT: The strip reads cleanly with nothing cropped.\nEVIDENCE: tc06-tablet-768-strip.png\nACTUAL RESULT: The sentence and key fit inside the strip; Disconnect wraps below them. Nothing is cropped.\n\nTEST CASE #7: Rest of the card\nSTEPS:\nStep 1 - At 390px, view the whole Lalamove card.\nEXPECTED RESULT: The heading, the explanatory paragraph and the \"Delivery status updates\" section are fully readable; the page does not scroll sideways.\nEVIDENCE: tc07-phone-390-whole-card.png\nACTUAL RESULT: All three are fully readable and the page does not scroll sideways.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791293503921",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000133292",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Shipping Settings"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 6 2026, 8:53PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Shipping Settings hss been move to IN TESTING \nUpdated: Oct 6 2026, 8:53PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791291221692",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000129747",
+    "comment": [
+      {
+        "text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-10-06 - branch refactor/tw-settings-standard-v3, commit 8a960a070 (no dev PR yet)\n\nWHERE TO TEST\nEnvironment: dev, once the fix is promoted there.\nPage: Settings > Shipping, the Lalamove card, with \"Connect your own Lalamove account\" connected.\nPreconditions: a store on a paid plan, with your own Lalamove API keys connected so the green \"Connected\" strip is shown. A real phone or a browser window about 390px wide. The original report was on iPhone Safari.\n\nTEST CASES\n\n1. Connected strip on a phone. At roughly 390px wide, open the Lalamove card with your own keys connected. Read the line beside the green \"Connected\" badge. EXPECTED: the full sentence \"Your API keys are verified and in use.\" is readable. Nothing is cut off at the right edge, and no word ends mid-letter.\n\n2. Public key on a phone. On the same strip, look at the \"Public key:\" line. EXPECTED: the whole key is readable. It may wrap onto more than one line, which is fine. It must not run past the right edge or disappear under it.\n\n3. Wrapping is tidy. Still at phone width, check how the badge and sentence sit. EXPECTED: when they do not fit on one line, the sentence drops neatly below the badge. The badge keeps its shape and is not squashed or stretched.\n\n4. Disconnect button still reachable. On the same strip at phone width, find the Disconnect button. EXPECTED: it is fully visible and tappable, not pushed off the card or overlapped by the text.\n\n5. Desktop is unchanged (control). Open the same card on a desktop window. EXPECTED: the badge, sentence and key sit as they did before, on one line, with Disconnect to the right. The phone fix must not change the desktop layout.\n\n6. Tablet width. Try roughly 768px wide. EXPECTED: the strip reads cleanly at this in-between width too, wrapping if needed, with nothing cropped.\n\n7. Rest of the card. Scroll the whole Lalamove card on a phone. EXPECTED: the heading \"Connect your own Lalamove account\", the explanatory paragraph and the \"Delivery status updates\" section below are all fully readable, with nothing cut off at the right.\n\nTEST DATA\nA connected BYO Lalamove account is required. The key shown is the public key, which is safe to display. If no test account has one connected, a developer will need to connect sandbox keys, since this strip only appears in the connected state.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- The public key wrapping onto two lines on a narrow screen is expected and is not a bug.\n- The green \"Connected\" badge keeps its colour.\n- The Prosperna-managed Lalamove option, when you have not connected your own keys, shows a different strip and was not changed."
+      }
+    ],
+    "comment_text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-10-06 - branch refactor/tw-settings-standard-v3, commit 8a960a070 (no dev PR yet)\n\nWHERE TO TEST\nEnvironment: dev, once the fix is promoted there.\nPage: Settings > Shipping, the Lalamove card, with \"Connect your own Lalamove account\" connected.\nPreconditions: a store on a paid plan, with your own Lalamove API keys connected so the green \"Connected\" strip is shown. A real phone or a browser window about 390px wide. The original report was on iPhone Safari.\n\nTEST CASES\n\n1. Connected strip on a phone. At roughly 390px wide, open the Lalamove card with your own keys connected. Read the line beside the green \"Connected\" badge. EXPECTED: the full sentence \"Your API keys are verified and in use.\" is readable. Nothing is cut off at the right edge, and no word ends mid-letter.\n\n2. Public key on a phone. On the same strip, look at the \"Public key:\" line. EXPECTED: the whole key is readable. It may wrap onto more than one line, which is fine. It must not run past the right edge or disappear under it.\n\n3. Wrapping is tidy. Still at phone width, check how the badge and sentence sit. EXPECTED: when they do not fit on one line, the sentence drops neatly below the badge. The badge keeps its shape and is not squashed or stretched.\n\n4. Disconnect button still reachable. On the same strip at phone width, find the Disconnect button. EXPECTED: it is fully visible and tappable, not pushed off the card or overlapped by the text.\n\n5. Desktop is unchanged (control). Open the same card on a desktop window. EXPECTED: the badge, sentence and key sit as they did before, on one line, with Disconnect to the right. The phone fix must not change the desktop layout.\n\n6. Tablet width. Try roughly 768px wide. EXPECTED: the strip reads cleanly at this in-between width too, wrapping if needed, with nothing cropped.\n\n7. Rest of the card. Scroll the whole Lalamove card on a phone. EXPECTED: the heading \"Connect your own Lalamove account\", the explanatory paragraph and the \"Delivery status updates\" section below are all fully readable, with nothing cut off at the right.\n\nTEST DATA\nA connected BYO Lalamove account is required. The key shown is the public key, which is safe to display. If no test account has one connected, a developer will need to connect sandbox keys, since this strip only appears in the connected state.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- The public key wrapping onto two lines on a narrow screen is expected and is not a bug.\n- The green \"Connected\" badge keeps its colour.\n- The Prosperna-managed Lalamove option, when you have not connected your own keys, shows a different strip and was not changed.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791249003490",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000129744",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\n\nQA return of Sep 18 (the text after \"are veri\" is cropped) is fixed.\n\nWHAT WAS WRONG\nOn the Lalamove card, once your own API keys are connected, the status strip shows a green \"Connected\" badge, the sentence \"Your API keys are verified and in use.\" and the public key below it. On a phone that whole block was held at the width it wanted rather than the width available, and the badge and sentence were locked onto a single line that could not wrap. The sentence ran off the right edge mid-word, and the public key, being one long unbroken string, ran off as well.\n\nHOW IT WAS FIXED\nThe block is now allowed to shrink to the width of the card, the badge and sentence wrap onto a second line when there is not enough room, and the public key breaks instead of running past the edge. Nothing moved on desktop, where there was already enough width.\n\nPULL REQUESTS\n\nNo dev PR yet. The fix is committed on refactor/tw-settings-standard-v3 (commit 8a960a070). Happy to send it to dev on a -dev branch on your go-ahead.\n\nHOW IT WAS TESTED\n\nESLint clean. 12 test files and 204 tests pass across Shipping, Payment Settings, Users and the shared dropdown, including the existing Lalamove tests.\n\nText wrapping is a visual result the test environment cannot show, so this needs a real phone or a narrow browser window to confirm.\n\nNEXT STEPS\n\nOnce on dev, please retest on a phone-width window with your own Lalamove keys connected, which is the state in the screenshot.\n\nQA TEST CASES\n\nA QA TEST CASES SUMMARY comment has been added to this task."
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\n\nQA return of Sep 18 (the text after \"are veri\" is cropped) is fixed.\n\nWHAT WAS WRONG\nOn the Lalamove card, once your own API keys are connected, the status strip shows a green \"Connected\" badge, the sentence \"Your API keys are verified and in use.\" and the public key below it. On a phone that whole block was held at the width it wanted rather than the width available, and the badge and sentence were locked onto a single line that could not wrap. The sentence ran off the right edge mid-word, and the public key, being one long unbroken string, ran off as well.\n\nHOW IT WAS FIXED\nThe block is now allowed to shrink to the width of the card, the badge and sentence wrap onto a second line when there is not enough room, and the public key breaks instead of running past the edge. Nothing moved on desktop, where there was already enough width.\n\nPULL REQUESTS\n\nNo dev PR yet. The fix is committed on refactor/tw-settings-standard-v3 (commit 8a960a070). Happy to send it to dev on a -dev branch on your go-ahead.\n\nHOW IT WAS TESTED\n\nESLint clean. 12 test files and 204 tests pass across Shipping, Payment Settings, Users and the shared dropdown, including the existing Lalamove tests.\n\nText wrapping is a visual result the test environment cannot show, so this needs a real phone or a narrow browser window to confirm.\n\nNEXT STEPS\n\nOnce on dev, please retest on a phone-width window with your own Lalamove keys connected, which is the state in the screenshot.\n\nQA TEST CASES\n\nA QA TEST CASES SUMMARY comment has been added to this task.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791248983770",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000063993",
+    "comment": [
+      {
+        "text": "ISSUE:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-JAHVZDSt-P"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-PUBvYueZg0"
+        }
+      },
+      {
+        "text": "The remaining text after \"are veri\" is cropped.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-VSBQBxZO7R"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "540d4448-877a-41a6-b7f3-e60871d2c01a.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/540d4448-877a-41a6-b7f3-e60871d2c01a_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/540d4448-877a-41a6-b7f3-e60871d2c01a_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/540d4448-877a-41a6-b7f3-e60871d2c01a_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/540d4448-877a-41a6-b7f3-e60871d2c01a/image.png",
+          "uploaded": true,
+          "width": 1179,
+          "height": 2556
+        },
+        "attributes": {
+          "width": "115",
+          "data-id": "540d4448-877a-41a6-b7f3-e60871d2c01a.png",
+          "data-attachment": null,
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-xZaQKu4xBe"
+        }
+      }
+    ],
+    "comment_text": "ISSUE:\n\nThe remaining text after \"are veri\" is cropped.\nimage.png\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789710907906",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000063988",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Shipping Settings"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7774e130-bf56-467b-9d1a-3971afce0fce"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Sep 18 2026, 1:52PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fcf1bfa1-92df-420d-bc36-a6111d7c79f3"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e62af9f7-0865-4e25-b8f0-2c363c784893"
+        }
+      }
+    ],
+    "comment_text": "This task Shipping Settings has been move to PASSED TESTING \nDate updated: Sep 18 2026, 1:52PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789710754539",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000063941",
+    "comment": [
+      {
+        "text": "Env: DEV-local\nStatus: PASSED\nURL: http://localhost:3000\n\nTEST CASE #1: Rates tab opens on Standard Delivery (mobile)\nSTEPS:\nLog in as a merchant on a paid (PRO) plan and set the viewport to 375px wide.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Open Shipping Settings and Manage the Standard Delivery card.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Tap the \"Rates\" tab.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The Rates panel opens and the Settings panel is hidden.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: standard-01-settings-active.png, standard-02-rates-active.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The Rates panel opened on a single tap and showed Store Location, Who Pays for Shipping, Shipping Fee Calculation and Additional Shipping Fee. Settings became inactive.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #2: Rates tab opens on Same Day Delivery (mobile)\nSTEPS:\nAt 375px, open Shipping Settings and Manage the Same Day Delivery card.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Tap the \"Rates\" tab.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The Rates panel opens and the Settings panel is hidden.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: sameday-sched-01-settings-active.png, sameday-sched-02-rates-active.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The Rates panel opened on a single tap and the Settings panel was hidden.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #3: Rates tab opens on Manual Shipping by Merchant (mobile)\nSTEPS:\nAt 375px, open Shipping Settings and Manage the Manual Shipping by Merchant card.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Tap the \"Rates\" tab.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The Rates panel opens and the Settings panel is hidden.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: own-booking-merchant-01-settings-active.png, own-booking-merchant-02-rates-active.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The Rates panel opened on a single tap and the Settings panel was hidden.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #4: Store Pickup shows no Rates tab\nSTEPS:\nAt 375px, open Shipping Settings and Manage the Store Pickup card.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Read the tab strip.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Only a \"Settings\" tab is offered; Store Pickup has no rates to set.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: pickup-tabs.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Only \"Settings\" was present, as intended.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #5: Manual Shipping by Customer shows no Rates tab\nSTEPS:\nAt 375px, open Shipping Settings and Manage the Manual Shipping by Customer card.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Read the tab strip.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Only a \"Settings\" tab is offered; the customer books and pays their own courier.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: own-booking-tabs.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Only \"Settings\" was present, as intended.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #6: Rates tab opens at desktop width\nSTEPS:\nAt 1280px, open Shipping Settings and Manage the Standard Delivery card.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click the \"Rates\" tab.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The Rates panel opens, confirming the fix is not limited to one viewport.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc06-desktop-rates-active.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The Rates panel opened at desktop width as well.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #7: Switching back to Settings works and the active tab is highlighted\nSTEPS:\nAt 375px, open Standard Delivery and tap \"Rates\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Tap \"Settings\" again.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The panel switches both ways, and the selected tab is the highlighted one.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc07-01-rates-selected.png, tc07-02-settings-reselected.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Both switches worked, and the highlight moved with the selection each time.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #8: The tab strip no longer emits an invalid DOM attribute\nSTEPS:\nAt 375px, open Standard Delivery.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Inspect the tab strip list element.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: No \"defaultactivekey\" attribute is written onto the element.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc08-tab-strip.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The attribute was absent.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #9: The other migrated tab strip still works\nSTEPS:\nOpen Design Settings, the only other page using the same migrated tab components.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click the \"Social Media\" tab.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The Social Media panel opens, showing the shared change broke nothing else.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc09-01-design-settings-default.png, tc09-02-design-settings-switched.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: The panel switched correctly.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #10: Guest Checkout tooltip on the Shipping Settings list (mobile)\nSTEPS:\nAt 375px, open Shipping Settings.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Hover the info icon beside \"Guest Checkout\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The tooltip shows its text, readable, and stays within the screen.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc10-guest-checkout-popover.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: It showed \"Enable your customers to checkout without creating an account.\" in white on a dark background, fully inside the 375px viewport. The empty white box reported in the first round is gone.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #11: No horizontal scrolling on any method page (mobile)\nSTEPS:\nAt 375px, open each of the five method pages in turn.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Measure the page width against the viewport width.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: No method page scrolls sideways.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc11-standard.png, tc11-sameday-sched.png, tc11-own-booking.png, tc11-own-booking-merchant.png, tc11-pickup.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: All five pages fitted the viewport exactly, with no horizontal scroll.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #12: State/Province control on the Rates panel (mobile)\nSTEPS:\nAt 375px, open Standard Delivery and tap \"Rates\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Locate the State/Province control.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: It renders on screen and is not cut off at the right edge.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc12-state-province.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: It rendered fully inside the 375px viewport.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #13: The Merchant option has its own tooltip\nSTEPS:\nAt 375px, open Standard Delivery and tap \"Rates\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Hover the icon beside the \"Merchant\" option under \"Who Pays for Shipping?\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: A tooltip specific to the Merchant option appears, separate from the heading's own tooltip.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc13-merchant-tooltip.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: It showed its own text about deducting shipping fees from the merchant's net income, distinct from the heading tooltip.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      }
+    ],
+    "comment_text": "Env: DEV-local\nStatus: PASSED\nURL: http://localhost:3000\n\nTEST CASE #1: Rates tab opens on Standard Delivery (mobile)\nSTEPS:\nLog in as a merchant on a paid (PRO) plan and set the viewport to 375px wide.\nOpen Shipping Settings and Manage the Standard Delivery card.\nTap the \"Rates\" tab.\nEXPECTED RESULT: The Rates panel opens and the Settings panel is hidden.\nEVIDENCE: standard-01-settings-active.png, standard-02-rates-active.png\nACTUAL RESULT: The Rates panel opened on a single tap and showed Store Location, Who Pays for Shipping, Shipping Fee Calculation and Additional Shipping Fee. Settings became inactive.\n\nTEST CASE #2: Rates tab opens on Same Day Delivery (mobile)\nSTEPS:\nAt 375px, open Shipping Settings and Manage the Same Day Delivery card.\nTap the \"Rates\" tab.\nEXPECTED RESULT: The Rates panel opens and the Settings panel is hidden.\nEVIDENCE: sameday-sched-01-settings-active.png, sameday-sched-02-rates-active.png\nACTUAL RESULT: The Rates panel opened on a single tap and the Settings panel was hidden.\n\nTEST CASE #3: Rates tab opens on Manual Shipping by Merchant (mobile)\nSTEPS:\nAt 375px, open Shipping Settings and Manage the Manual Shipping by Merchant card.\nTap the \"Rates\" tab.\nEXPECTED RESULT: The Rates panel opens and the Settings panel is hidden.\nEVIDENCE: own-booking-merchant-01-settings-active.png, own-booking-merchant-02-rates-active.png\nACTUAL RESULT: The Rates panel opened on a single tap and the Settings panel was hidden.\n\nTEST CASE #4: Store Pickup shows no Rates tab\nSTEPS:\nAt 375px, open Shipping Settings and Manage the Store Pickup card.\nRead the tab strip.\nEXPECTED RESULT: Only a \"Settings\" tab is offered; Store Pickup has no rates to set.\nEVIDENCE: pickup-tabs.png\nACTUAL RESULT: Only \"Settings\" was present, as intended.\n\nTEST CASE #5: Manual Shipping by Customer shows no Rates tab\nSTEPS:\nAt 375px, open Shipping Settings and Manage the Manual Shipping by Customer card.\nRead the tab strip.\nEXPECTED RESULT: Only a \"Settings\" tab is offered; the customer books and pays their own courier.\nEVIDENCE: own-booking-tabs.png\nACTUAL RESULT: Only \"Settings\" was present, as intended.\n\nTEST CASE #6: Rates tab opens at desktop width\nSTEPS:\nAt 1280px, open Shipping Settings and Manage the Standard Delivery card.\nClick the \"Rates\" tab.\nEXPECTED RESULT: The Rates panel opens, confirming the fix is not limited to one viewport.\nEVIDENCE: tc06-desktop-rates-active.png\nACTUAL RESULT: The Rates panel opened at desktop width as well.\n\nTEST CASE #7: Switching back to Settings works and the active tab is highlighted\nSTEPS:\nAt 375px, open Standard Delivery and tap \"Rates\".\nTap \"Settings\" again.\nEXPECTED RESULT: The panel switches both ways, and the selected tab is the highlighted one.\nEVIDENCE: tc07-01-rates-selected.png, tc07-02-settings-reselected.png\nACTUAL RESULT: Both switches worked, and the highlight moved with the selection each time.\n\nTEST CASE #8: The tab strip no longer emits an invalid DOM attribute\nSTEPS:\nAt 375px, open Standard Delivery.\nInspect the tab strip list element.\nEXPECTED RESULT: No \"defaultactivekey\" attribute is written onto the element.\nEVIDENCE: tc08-tab-strip.png\nACTUAL RESULT: The attribute was absent.\n\nTEST CASE #9: The other migrated tab strip still works\nSTEPS:\nOpen Design Settings, the only other page using the same migrated tab components.\nClick the \"Social Media\" tab.\nEXPECTED RESULT: The Social Media panel opens, showing the shared change broke nothing else.\nEVIDENCE: tc09-01-design-settings-default.png, tc09-02-design-settings-switched.png\nACTUAL RESULT: The panel switched correctly.\n\nTEST CASE #10: Guest Checkout tooltip on the Shipping Settings list (mobile)\nSTEPS:\nAt 375px, open Shipping Settings.\nHover the info icon beside \"Guest Checkout\".\nEXPECTED RESULT: The tooltip shows its text, readable, and stays within the screen.\nEVIDENCE: tc10-guest-checkout-popover.png\nACTUAL RESULT: It showed \"Enable your customers to checkout without creating an account.\" in white on a dark background, fully inside the 375px viewport. The empty white box reported in the first round is gone.\n\nTEST CASE #11: No horizontal scrolling on any method page (mobile)\nSTEPS:\nAt 375px, open each of the five method pages in turn.\nMeasure the page width against the viewport width.\nEXPECTED RESULT: No method page scrolls sideways.\nEVIDENCE: tc11-standard.png, tc11-sameday-sched.png, tc11-own-booking.png, tc11-own-booking-merchant.png, tc11-pickup.png\nACTUAL RESULT: All five pages fitted the viewport exactly, with no horizontal scroll.\n\nTEST CASE #12: State/Province control on the Rates panel (mobile)\nSTEPS:\nAt 375px, open Standard Delivery and tap \"Rates\".\nLocate the State/Province control.\nEXPECTED RESULT: It renders on screen and is not cut off at the right edge.\nEVIDENCE: tc12-state-province.png\nACTUAL RESULT: It rendered fully inside the 375px viewport.\n\nTEST CASE #13: The Merchant option has its own tooltip\nSTEPS:\nAt 375px, open Standard Delivery and tap \"Rates\".\nHover the icon beside the \"Merchant\" option under \"Who Pays for Shipping?\".\nEXPECTED RESULT: A tooltip specific to the Merchant option appears, separate from the heading's own tooltip.\nEVIDENCE: tc13-merchant-tooltip.png\nACTUAL RESULT: It showed its own text about deducting shipping fees from the merchant's net income, distinct from the heading tooltip.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789709282979",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000063783",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Shipping Settings"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Sep 18 2026, 12:37PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Shipping Settings hss been move to IN TESTING \nUpdated: Sep 18 2026, 12:37PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789706238778",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000048261",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "0a363272-55f5-4492-a1c3-b51e788e51a2.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/0a363272-55f5-4492-a1c3-b51e788e51a2/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/0a363272-55f5-4492-a1c3-b51e788e51a2_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/0a363272-55f5-4492-a1c3-b51e788e51a2_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/0a363272-55f5-4492-a1c3-b51e788e51a2/image.png",
+          "uploaded": true,
+          "width": 428,
+          "height": 861
+        },
+        "attributes": {
+          "width": "124",
+          "data-id": "0a363272-55f5-4492-a1c3-b51e788e51a2.png",
+          "data-attachment": null,
+          "data-natural-width": "428",
+          "data-natural-height": "861"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-DxlKcSeHGm"
+        }
+      },
+      {
+        "text": "navbar was broken when swapped bootstrap navbar with headless, fixed logic",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-sbofgcAhu3"
+        }
+      }
+    ],
+    "comment_text": "image.png\nnavbar was broken when swapped bootstrap navbar with headless, fixed logic\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789434445225",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000032426",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2e18bc20-acbf-11f1-857f-154404d9fc80"
+        }
+      },
+      {
+        "text": "Status: FAILED",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2e18bc21-acbf-11f1-857f-154404d9fc80"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2e18bc22-acbf-11f1-857f-154404d9fc80"
+        }
+      },
+      {
+        "text": "Issue: ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2e18bc23-acbf-11f1-857f-154404d9fc80"
+        }
+      },
+      {
+        "text": "Cannot go to Rates section on every card.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "attachment",
+        "text": "paste_ba434c60-2c3b-4a4e-850f-ec5950798578.png",
+        "attachment": {
+          "id": "120136c4-c8e1-424e-aab9-77f744759280.png",
+          "date": "1789007254204",
+          "title": "paste_ba434c60-2c3b-4a4e-850f-ec5950798578.png",
+          "type": 2,
+          "source": 1,
+          "version": 0,
+          "extension": "png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/120136c4-c8e1-424e-aab9-77f744759280_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/120136c4-c8e1-424e-aab9-77f744759280_medium.png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/120136c4-c8e1-424e-aab9-77f744759280_large.png",
+          "is_folder": null,
+          "mimetype": "image/png",
+          "hidden": false,
+          "parent_id": "1100740000032426",
+          "size": 456346,
+          "total_comments": 0,
+          "resolved_comments": 0,
+          "user": {
+            "id": 95622662,
+            "username": "Aira Pilor",
+            "email": "aira@prosperna.com",
+            "initials": "AP",
+            "color": "#e93d82",
+            "profilePicture": null
+          },
+          "deleted": false,
+          "orientation": "1",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/120136c4-c8e1-424e-aab9-77f744759280/paste_ba434c60-2c3b-4a4e-850f-ec5950798578.png",
+          "parent_comment_type": 1,
+          "parent_comment_parent": "86ey5cvqe",
+          "email_data": null,
+          "workspace_id": 7537039,
+          "width": 1179,
+          "height": 2556,
+          "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/120136c4-c8e1-424e-aab9-77f744759280/paste_ba434c60-2c3b-4a4e-850f-ec5950798578.png?view=open",
+          "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/120136c4-c8e1-424e-aab9-77f744759280/paste_ba434c60-2c3b-4a4e-850f-ec5950798578.png"
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "120136c4-c8e1-424e-aab9-77f744759280.png",
+          "data-attachment": null,
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2e18bc24-acbf-11f1-857f-154404d9fc80"
+        }
+      }
+    ],
+    "comment_text": "env: DEV\nStatus: FAILED\n\nIssue: \nCannot go to Rates section on every card.\npaste_ba434c60-2c3b-4a4e-850f-ec5950798578.png\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789007254695",
+    "reply_count": 0
+  },
+  {
+    "id": "90180249247801",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Shipping Settings"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "READY FOR TESTING"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1d974daa-846f-4f2b-aa92-4d7879d6a360"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 24 2026, 9:36AM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2f823e5f-a650-4c0d-b5b1-fff90b29e6cf"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eb747be5-76e2-450a-80a4-2f28d51dc0ed"
+        }
+      }
+    ],
+    "comment_text": "This Shipping Settings has been move to READY FOR TESTING\nDate updated: Aug 24 2026, 9:36AM (Asia/Singapore)\nTriggered by: Angelo Kamachi\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787535386793",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248394399",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "552a08bb-48de-4805-be8e-fe03125c307e.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/552a08bb-48de-4805-be8e-fe03125c307e/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/552a08bb-48de-4805-be8e-fe03125c307e_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/552a08bb-48de-4805-be8e-fe03125c307e_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/552a08bb-48de-4805-be8e-fe03125c307e/image.png",
+          "uploaded": true,
+          "width": 404,
+          "height": 779
+        },
+        "attributes": {
+          "width": "129",
+          "data-id": "552a08bb-48de-4805-be8e-fe03125c307e.png",
+          "data-attachment": null,
+          "data-natural-width": "404",
+          "data-natural-height": "779"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-8ISRY2N7da"
+        }
+      },
+      {
+        "text": "connect your own account mobile fix",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-CfQ48T2EMd"
+        }
+      }
+    ],
+    "comment_text": "image.png\nconnect your own account mobile fix\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787192453104",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248394355",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "b937877e-8b9a-42a8-859a-997aff7caa28.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/b937877e-8b9a-42a8-859a-997aff7caa28/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/b937877e-8b9a-42a8-859a-997aff7caa28_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/b937877e-8b9a-42a8-859a-997aff7caa28_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/b937877e-8b9a-42a8-859a-997aff7caa28/image.png",
+          "uploaded": true,
+          "width": 433,
+          "height": 852
+        },
+        "attributes": {
+          "width": "127",
+          "data-id": "b937877e-8b9a-42a8-859a-997aff7caa28.png",
+          "data-attachment": null,
+          "data-natural-width": "433",
+          "data-natural-height": "852"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--1brcZaZ6e"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "13be288f-62bb-4032-a110-50f31b060b04.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/13be288f-62bb-4032-a110-50f31b060b04/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/13be288f-62bb-4032-a110-50f31b060b04_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/13be288f-62bb-4032-a110-50f31b060b04_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/13be288f-62bb-4032-a110-50f31b060b04/image.png",
+          "uploaded": true,
+          "width": 427,
+          "height": 859
+        },
+        "attributes": {
+          "width": "124",
+          "data-id": "13be288f-62bb-4032-a110-50f31b060b04.png",
+          "data-attachment": null,
+          "data-natural-width": "427",
+          "data-natural-height": "859"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-LgKB6JSIfE"
+        }
+      },
+      {
+        "text": "lalamove mobile fix",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7K05ilXzhc"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\nlalamove mobile fix\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787192431045",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248394077",
+    "comment": [
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "8355eda2-240a-4103-9ba4-750440bce3b9.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/8355eda2-240a-4103-9ba4-750440bce3b9/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/8355eda2-240a-4103-9ba4-750440bce3b9/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/8355eda2-240a-4103-9ba4-750440bce3b9_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/8355eda2-240a-4103-9ba4-750440bce3b9_medium.png",
+          "width": 424,
+          "height": 860
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "123",
+          "data-id": "8355eda2-240a-4103-9ba4-750440bce3b9.png",
+          "data-natural-width": "424",
+          "data-natural-height": "860"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-3ySL1xSdwA"
+        }
+      },
+      {
+        "text": "store pickup mobile fix",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ue_BldXKG2"
+        }
+      }
+    ],
+    "comment_text": "image.png\nstore pickup mobile fix\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787192388188",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248393560",
+    "comment": [
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "36d2552c-a8cd-47d7-9ba4-1fdbc01c04dd.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/36d2552c-a8cd-47d7-9ba4-1fdbc01c04dd/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/36d2552c-a8cd-47d7-9ba4-1fdbc01c04dd/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/36d2552c-a8cd-47d7-9ba4-1fdbc01c04dd_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/36d2552c-a8cd-47d7-9ba4-1fdbc01c04dd_medium.png",
+          "width": 425,
+          "height": 861
+        },
+        "attributes": {
+          "alt": "image.png",
+          "width": "123",
+          "data-id": "36d2552c-a8cd-47d7-9ba4-1fdbc01c04dd.png",
+          "data-natural-width": "425",
+          "data-natural-height": "861"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5p44AsoISA"
+        }
+      },
+      {
+        "text": "image.png",
+        "type": "image",
+        "image": {
+          "id": "bf26bc74-9b04-4e99-bc7b-f6761a89a4fe.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/bf26bc74-9b04-4e99-bc7b-f6761a89a4fe/image.png",
+          "name": "image.png",
+          "type": "png",
+          "title": "image.png",
+          "uploaded": true,
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/bf26bc74-9b04-4e99-bc7b-f6761a89a4fe/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/bf26bc74-9b04-4e99-bc7b-f6761a89a4fe_small.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/bf26bc74-9b04-4e99-bc7b-f6761a89a4fe_medium.png",
+          "width": 430,
+          "height": 865
+        },
+        "attributes": {
+          "width": "124",
+          "data-id": "bf26bc74-9b04-4e99-bc7b-f6761a89a4fe.png",
+          "data-attachment": "{\"id\":\"bf26bc74-9b04-4e99-bc7b-f6761a89a4fe.png\",\"version\":\"0\",\"date\":1787192370153,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/bf26bc74-9b04-4e99-bc7b-f6761a89a4fe_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/bf26bc74-9b04-4e99-bc7b-f6761a89a4fe_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/bf26bc74-9b04-4e99-bc7b-f6761a89a4fe/image.png\",\"width\":430,\"height\":865,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/bf26bc74-9b04-4e99-bc7b-f6761a89a4fe/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/bf26bc74-9b04-4e99-bc7b-f6761a89a4fe/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/bf26bc74-9b04-4e99-bc7b-f6761a89a4fe/image.png\",\"size\":59692}",
+          "data-natural-width": "430",
+          "data-natural-height": "865"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2kr-BE1ZSA"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-qZ9zo4bmi0"
+        }
+      },
+      {
+        "text": "ship by merchant mobile fix",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-a6QZzJvp6B"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\n\nship by merchant mobile fix\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787192361104",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248392796",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "bc2ab08b-afe7-4d43-a3be-5a62db9f5025.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/bc2ab08b-afe7-4d43-a3be-5a62db9f5025/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/bc2ab08b-afe7-4d43-a3be-5a62db9f5025_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/bc2ab08b-afe7-4d43-a3be-5a62db9f5025_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/bc2ab08b-afe7-4d43-a3be-5a62db9f5025/image.png",
+          "uploaded": true,
+          "width": 425,
+          "height": 858
+        },
+        "attributes": {
+          "width": "123",
+          "data-id": "bc2ab08b-afe7-4d43-a3be-5a62db9f5025.png",
+          "data-attachment": null,
+          "data-natural-width": "425",
+          "data-natural-height": "858"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ui7Y7QYUTN"
+        }
+      },
+      {
+        "text": "ship by customer mobile fix",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-c7Pt3Y0UMT"
+        }
+      }
+    ],
+    "comment_text": "image.png\nship by customer mobile fix\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787192342734",
+    "reply_count": 0
+  },
+  {
+    "id": "90180248392770",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "5c56a993-62e9-4a99-9534-abd92f91cf3c.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/5c56a993-62e9-4a99-9534-abd92f91cf3c/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/5c56a993-62e9-4a99-9534-abd92f91cf3c_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/5c56a993-62e9-4a99-9534-abd92f91cf3c_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/5c56a993-62e9-4a99-9534-abd92f91cf3c/image.png",
+          "uploaded": true,
+          "width": 447,
+          "height": 866
+        },
+        "attributes": {
+          "width": "129",
+          "data-id": "5c56a993-62e9-4a99-9534-abd92f91cf3c.png",
+          "data-attachment": null,
+          "data-natural-width": "447",
+          "data-natural-height": "866"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-xYVClCdiff"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "fd2794ba-fa1f-498d-a673-5731c3953860.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/fd2794ba-fa1f-498d-a673-5731c3953860/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/fd2794ba-fa1f-498d-a673-5731c3953860_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/fd2794ba-fa1f-498d-a673-5731c3953860_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/fd2794ba-fa1f-498d-a673-5731c3953860/image.png",
+          "uploaded": true,
+          "width": 424,
+          "height": 863
+        },
+        "attributes": {
+          "width": "122",
+          "data-id": "fd2794ba-fa1f-498d-a673-5731c3953860.png",
+          "data-attachment": null,
+          "data-natural-width": "424",
+          "data-natural-height": "863"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-hBqiIDz3CO"
+        }
+      },
+      {
+        "text": "same day delivery mobile fix",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1BIDF8LgaM"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\nsame day delivery mobile fix\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787192320882",
+    "reply_count": 0
+  }
+]

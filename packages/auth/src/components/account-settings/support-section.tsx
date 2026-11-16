@@ -139,8 +139,8 @@ export function SupportSection({ user }: SupportSectionProps) {
         },
       };
 
-      const { data, error: insertError } = await supabase
-        .from("support_tickets")
+      const { data, error: insertError } = await (supabase
+        .from("support_tickets") as any)
         .insert(payload)
         .select()
         .single();
@@ -300,4 +300,3 @@ export function SupportSection({ user }: SupportSectionProps) {
     </section>
   );
 }
-

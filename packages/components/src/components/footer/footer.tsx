@@ -1,6 +1,7 @@
 "use client";
 
-import { type ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
+import { resolveHref } from "@mono/app-config";
 import "./footer.css";
 
 export interface FooterLink {
@@ -15,16 +16,24 @@ export interface FooterProps {
 }
 
 export function Footer({ links = [], copyright, children }: FooterProps) {
+  const [clientMounted, setClientMounted] = useState(false);
+  useEffect(() => {
+    setClientMounted(true);
+  }, []);
+
   return (
     <footer className="m-footer" data-mono="footer">
       <div className="m-footer-inner">
         {links.length > 0 ? (
           <ul className="m-footer-links">
-            {links.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="m-footer-link">{link.label}</a>
-              </li>
-            ))}
+            {links.map((link) => {
+              const resolvedHref = clientMounted ? resolveHref(link.href) : link.href;
+              return (
+                <li key={link.href}>
+                  <a href={resolvedHref} className="m-footer-link">{link.label}</a>
+                </li>
+              );
+            })}
           </ul>
         ) : null}
         {children ? <div className="m-footer-extra">{children}</div> : null}

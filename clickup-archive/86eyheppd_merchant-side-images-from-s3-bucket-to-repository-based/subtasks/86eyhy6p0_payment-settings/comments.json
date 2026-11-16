@@ -1,0 +1,790 @@
+[
+  {
+    "id": "90180244884368",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Payment Settings"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "DEPLOYED TO PROD"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-75d1b135-d5be-47d1-a9d2-501bdd8b8545"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 7 2026, 8:16PM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5a1b8ffc-2b89-4a11-b521-246fa8a6d99c"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-78f34e8e-7c2a-451e-a19f-49c86ae1f9ae"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-472b9029-7982-493a-b4d7-1c2a195548e7"
+        }
+      }
+    ],
+    "comment_text": "This Payment Settings has been move to DEPLOYED TO PROD\nDate updated: Aug 7 2026, 8:16PM (Asia/Singapore)\nTriggered by: Angelo Kamachi\n\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786104980611",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244805303",
+    "comment": [
+      {
+        "text": "PRODUCTION PR READY FOR REVIEW\n\n"
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 37590522,
+          "username": "Ian Pelea",
+          "email": "ian@prosperna.com",
+          "initials": "IP",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/37590522_IvQ.jpg"
+        },
+        "text": "@Ian Pelea"
+      },
+      {
+        "text": " the main PR is open and waiting for your review ? merging it deploys to production.\n\nMAIN PR: https://github.com/Prosperna/prosperna1/pull/7743\nSTAGING PR: https://github.com/Prosperna/prosperna1/pull/7742\nDEV PRs (merged, QA-approved): https://github.com/Prosperna/prosperna1/pull/7726, https://github.com/Prosperna/prosperna1/pull/7737\nREPO/BRANCH: prosperna1 / fix/payment-settings-image\n"
+      }
+    ],
+    "comment_text": "PRODUCTION PR READY FOR REVIEW\n\n the main PR is open and waiting for your review ? merging it deploys to production.\n\nMAIN PR: https://github.com/Prosperna/prosperna1/pull/7743\nSTAGING PR: https://github.com/Prosperna/prosperna1/pull/7742\nDEV PRs (merged, QA-approved): https://github.com/Prosperna/prosperna1/pull/7726, https://github.com/Prosperna/prosperna1/pull/7737\nREPO/BRANCH: prosperna1 / fix/payment-settings-image\n@Ian Pelea",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786090086935",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244797477",
+    "comment": [
+      {
+        "text": "PROMOTED TO STAGING\nPer QA approval on dev, opened a staging promotion PR bundling everything from dev PRs #7726 and #7737: https://github.com/Prosperna/prosperna1/pull/7742 (branch fix/payment-settings-image-staging, targeting staging).\n\nCherry-picked from the original fix/payment-settings-image branch onto current origin/staging - clean, no conflicts. Lint clean, all 14 targeted tests pass.\n\nNEXT STEPS: staging PR review/merge, then main promotion PR after that."
+      }
+    ],
+    "comment_text": "PROMOTED TO STAGING\nPer QA approval on dev, opened a staging promotion PR bundling everything from dev PRs #7726 and #7737: https://github.com/Prosperna/prosperna1/pull/7742 (branch fix/payment-settings-image-staging, targeting staging).\n\nCherry-picked from the original fix/payment-settings-image branch onto current origin/staging - clean, no conflicts. Lint clean, all 14 targeted tests pass.\n\nNEXT STEPS: staging PR review/merge, then main promotion PR after that.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786088666731",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244795424",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Id6wjjvX33"
+        }
+      },
+      {
+        "text": "url: ",
+        "attributes": {}
+      },
+      {
+        "text": "https://prodev.prosperna.ph/home/settings/payments",
+        "attributes": {
+          "link": "https://prodev.prosperna.ph/home/settings/payments"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-hv9Cw6D_jv"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED",
+        "attributes": {
+          "bold": true,
+          "badge-class": "green"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-qA94z_aa0l"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-t4raJd36_9"
+        }
+      },
+      {
+        "text": "US Account:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bbGyJwaJxi"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "614d23e5-f13e-4eb2-8107-34670f5b2c78.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/614d23e5-f13e-4eb2-8107-34670f5b2c78/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/614d23e5-f13e-4eb2-8107-34670f5b2c78_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/614d23e5-f13e-4eb2-8107-34670f5b2c78_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/614d23e5-f13e-4eb2-8107-34670f5b2c78/image.png",
+          "uploaded": true,
+          "width": 987,
+          "height": 321
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "614d23e5-f13e-4eb2-8107-34670f5b2c78.png",
+          "data-attachment": "{\"id\":\"614d23e5-f13e-4eb2-8107-34670f5b2c78.png\",\"version\":\"0\",\"date\":1786088061139,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/614d23e5-f13e-4eb2-8107-34670f5b2c78_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/614d23e5-f13e-4eb2-8107-34670f5b2c78_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/614d23e5-f13e-4eb2-8107-34670f5b2c78/image.png\",\"width\":987,\"height\":321,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/614d23e5-f13e-4eb2-8107-34670f5b2c78/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/614d23e5-f13e-4eb2-8107-34670f5b2c78/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/614d23e5-f13e-4eb2-8107-34670f5b2c78/image.png\"}",
+          "data-natural-width": "987",
+          "data-natural-height": "321"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1abZrh2AZV"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lkUhn6t1cH"
+        }
+      },
+      {
+        "text": "PH Account:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-mk8NWAdqII"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "82d4e03c-1309-4d65-b259-e81193676288.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/82d4e03c-1309-4d65-b259-e81193676288/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/82d4e03c-1309-4d65-b259-e81193676288_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/82d4e03c-1309-4d65-b259-e81193676288_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/82d4e03c-1309-4d65-b259-e81193676288/image.png",
+          "uploaded": true,
+          "width": 1467,
+          "height": 517
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "82d4e03c-1309-4d65-b259-e81193676288.png",
+          "data-attachment": "{\"id\":\"82d4e03c-1309-4d65-b259-e81193676288.png\",\"version\":\"0\",\"date\":1786088125810,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/82d4e03c-1309-4d65-b259-e81193676288_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/82d4e03c-1309-4d65-b259-e81193676288_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/82d4e03c-1309-4d65-b259-e81193676288/image.png\",\"width\":1467,\"height\":517,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/82d4e03c-1309-4d65-b259-e81193676288/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/82d4e03c-1309-4d65-b259-e81193676288/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/82d4e03c-1309-4d65-b259-e81193676288/image.png\"}",
+          "data-natural-width": "1467",
+          "data-natural-height": "517"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-TbG4duFBnd"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-g-KqeiNDf9"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eAjA2ScgWy"
+        }
+      },
+      {
+        "text": "Endorsing this now to code review.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ggFuyS1A7j"
+        }
+      },
+      {
+        "text": "|cc ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "env: DEV\nurl: https://prodev.prosperna.ph/home/settings/payments\nStatus: PASSED\n\nUS Account:\nimage.png\n\nPH Account:\nimage.png\n\n\nEndorsing this now to code review.\n|cc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1786088364660",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      }
+    ],
+    "date": "1786088330571",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244795413",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Payment Settings"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7774e130-bf56-467b-9d1a-3971afce0fce"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 7 2026, 3:38PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fcf1bfa1-92df-420d-bc36-a6111d7c79f3"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e62af9f7-0865-4e25-b8f0-2c363c784893"
+        }
+      }
+    ],
+    "comment_text": "This task Payment Settings has been move to PASSED TESTING \nDate updated: Aug 7 2026, 3:38PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786088328073",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244795409",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Payment Settings"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 7 2026, 3:38PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Payment Settings hss been move to IN TESTING \nUpdated: Aug 7 2026, 3:38PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786088327050",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244735396",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Payment Settings"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "READY FOR TESTING"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1d974daa-846f-4f2b-aa92-4d7879d6a360"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 7 2026, 12:21PM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2f823e5f-a650-4c0d-b5b1-fff90b29e6cf"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-eb747be5-76e2-450a-80a4-2f28d51dc0ed"
+        }
+      }
+    ],
+    "comment_text": "This Payment Settings has been move to READY FOR TESTING\nDate updated: Aug 7 2026, 12:21PM (Asia/Singapore)\nTriggered by: Angelo Kamachi\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786076497032",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244732338",
+    "comment": [
+      {
+        "text": "CORRECTION: PR #7726 was actually merged into dev BEFORE the two follow-up commits (PayMongo PNG swap, Manage-view logo fix) were pushed to that same branch - pushing to a branch after its PR is merged does not retroactively include those commits. So those two fixes never made it into dev.\n\nOpened a new PR to carry them over: https://github.com/Prosperna/prosperna1/pull/7737 (branch fix/payment-settings-image-dev2, targeting dev).\n\nHOW IT WAS TESTED\n- npx eslint --fix on all touched files - clean.\n- All 14 tests across ItemCard and PaymentProviderSettings test files pass.\n\nThe QA TEST CASES SUMMARY comment already covers cases 8 and 9 for the Manage-view fix, so no further QA doc changes needed - just noting the fix now lives in a separate PR (#7737) rather than #7726."
+      }
+    ],
+    "comment_text": "CORRECTION: PR #7726 was actually merged into dev BEFORE the two follow-up commits (PayMongo PNG swap, Manage-view logo fix) were pushed to that same branch - pushing to a branch after its PR is merged does not retroactively include those commits. So those two fixes never made it into dev.\n\nOpened a new PR to carry them over: https://github.com/Prosperna/prosperna1/pull/7737 (branch fix/payment-settings-image-dev2, targeting dev).\n\nHOW IT WAS TESTED\n- npx eslint --fix on all touched files - clean.\n- All 14 tests across ItemCard and PaymentProviderSettings test files pass.\n\nThe QA TEST CASES SUMMARY comment already covers cases 8 and 9 for the Manage-view fix, so no further QA doc changes needed - just noting the fix now lives in a separate PR (#7737) rather than #7726.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786075318908",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244725831",
+    "comment": [
+      {
+        "text": "UPDATE ON PR #7726\nFound the same broken-image issue also happens in the expanded Manage/detail view (PaymentProviderSettings) when you click Manage on a gateway card - it was rendering the API logo directly instead of the local one. Fixed the same way and pushed to the same PR.\n\nAlso swapped the PayMongo icon from a generated SVG to a provided real brand PNG.\n\nExtracted the gateway id -> logo mapping into a shared gatewayLogos.js so both the card list and the detail view stay in sync going forward.\n\nHOW IT WAS TESTED\n- npx eslint --fix on all touched files - clean.\n- Added a second test file for PaymentProviderSettings mirroring the ItemCard coverage. All 14 tests across both files pass.\n\nQA TEST CASES line updated with cases 8 and 9 covering the Manage/detail view."
+      }
+    ],
+    "comment_text": "UPDATE ON PR #7726\nFound the same broken-image issue also happens in the expanded Manage/detail view (PaymentProviderSettings) when you click Manage on a gateway card - it was rendering the API logo directly instead of the local one. Fixed the same way and pushed to the same PR.\n\nAlso swapped the PayMongo icon from a generated SVG to a provided real brand PNG.\n\nExtracted the gateway id -> logo mapping into a shared gatewayLogos.js so both the card list and the detail view stay in sync going forward.\n\nHOW IT WAS TESTED\n- npx eslint --fix on all touched files - clean.\n- Added a second test file for PaymentProviderSettings mirroring the ItemCard coverage. All 14 tests across both files pass.\n\nQA TEST CASES line updated with cases 8 and 9 covering the Manage/detail view.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786073623076",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244691990",
+    "comment": [
+      {
+        "text": "QA TEST CASES SUMMARY\nLAST UPDATED: Aug 7 2026 - https://github.com/Prosperna/prosperna1/pull/7726\n\nWHERE TO TEST\nDev environment, Payment Settings page (Settings > Payments), AND the expanded Manage view you reach by clicking Manage on any gateway card. Applies to both US and PH merchant stores since gateway cards differ by market.\n\nTEST CASES\n1. PH store - Direct Transfer card\n   Setup: log into a PH-market store, go to Payment Settings.\n   Steps: locate the Direct Transfer card.\n   EXPECTED: a real icon shows in the top-left of the card (no broken-image icon).\n\n2. PH store - Payment Link via Email card\n   Setup: same PH store, Payment Settings page.\n   Steps: locate the Payment Link via Email card.\n   EXPECTED: a real icon shows in the top-left of the card (no broken-image icon).\n\n3. PH store - PayMongo card\n   Steps: locate the PayMongo card (marked Coming Soon).\n   EXPECTED: shows the real PayMongo icon (provided brand asset), not the old placeholder glyph.\n\n4. PH store - Xendit card\n   Steps: locate the Xendit card.\n   EXPECTED: unchanged - still shows its existing icon correctly.\n\n5. US store - Stripe card\n   Setup: log into a US-market store, go to Payment Settings.\n   Steps: locate the Stripe card.\n   EXPECTED: shows the real Stripe logo (not the old placeholder glyph).\n\n6. US store - PayPal card\n   Steps: locate the PayPal card (marked Coming Soon).\n   EXPECTED: shows the real PayPal logo (not the old placeholder glyph).\n\n7. Card interactions unaffected\n   Steps: click Manage on any connected/connectable gateway card.\n   EXPECTED: navigates to the provider settings page as before - this change only touches the logo shown on the card, not card behavior.\n\n8. (updated for PR #7726) Manage/detail view logo - Direct Transfer and Payment Link via Email\n   Setup: PH store, Payment Settings page.\n   Steps: click Manage on the Direct Transfer card, then go back and click Manage on the Payment Link via Email card.\n   EXPECTED: the large logo at the top of the expanded detail view shows a real icon, not a broken-image icon (this was broken before this fix - the API-provided logo URL 404s for these two).\n\n9. (updated for PR #7726) Manage/detail view logo - Xendit and Stripe\n   Setup: PH store for Xendit, US store for Stripe.\n   Steps: click Manage on the Xendit card (PH) and on the Stripe card (US).\n   EXPECTED: the large logo at the top of the expanded detail view shows the correct icon for each, matching the icon shown on the card in the list.\n\nTEST DATA\nNo special test data needed - any PH-market store and any US-market store account will show all the relevant cards. No specific store/order IDs required.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- The new icons are simplified/generated brand-style icons, not pixel-perfect reproductions of the official logos (except Stripe, PayPal, and PayMongo, which use the real provided brand assets) - flag only if an icon looks visually broken or wrong, not if it is a simplified version of a brand mark.\n- The Accepted Payment Methods row (Visa/Mastercard/Amex/etc icons) shown on the Stripe detail view is unchanged and out of scope for this fix.\n- Connect/disconnect flows, statuses, and descriptions for each gateway are unchanged and out of scope for this fix."
+      }
+    ],
+    "comment_text": "QA TEST CASES SUMMARY\nLAST UPDATED: Aug 7 2026 - https://github.com/Prosperna/prosperna1/pull/7726\n\nWHERE TO TEST\nDev environment, Payment Settings page (Settings > Payments), AND the expanded Manage view you reach by clicking Manage on any gateway card. Applies to both US and PH merchant stores since gateway cards differ by market.\n\nTEST CASES\n1. PH store - Direct Transfer card\n   Setup: log into a PH-market store, go to Payment Settings.\n   Steps: locate the Direct Transfer card.\n   EXPECTED: a real icon shows in the top-left of the card (no broken-image icon).\n\n2. PH store - Payment Link via Email card\n   Setup: same PH store, Payment Settings page.\n   Steps: locate the Payment Link via Email card.\n   EXPECTED: a real icon shows in the top-left of the card (no broken-image icon).\n\n3. PH store - PayMongo card\n   Steps: locate the PayMongo card (marked Coming Soon).\n   EXPECTED: shows the real PayMongo icon (provided brand asset), not the old placeholder glyph.\n\n4. PH store - Xendit card\n   Steps: locate the Xendit card.\n   EXPECTED: unchanged - still shows its existing icon correctly.\n\n5. US store - Stripe card\n   Setup: log into a US-market store, go to Payment Settings.\n   Steps: locate the Stripe card.\n   EXPECTED: shows the real Stripe logo (not the old placeholder glyph).\n\n6. US store - PayPal card\n   Steps: locate the PayPal card (marked Coming Soon).\n   EXPECTED: shows the real PayPal logo (not the old placeholder glyph).\n\n7. Card interactions unaffected\n   Steps: click Manage on any connected/connectable gateway card.\n   EXPECTED: navigates to the provider settings page as before - this change only touches the logo shown on the card, not card behavior.\n\n8. (updated for PR #7726) Manage/detail view logo - Direct Transfer and Payment Link via Email\n   Setup: PH store, Payment Settings page.\n   Steps: click Manage on the Direct Transfer card, then go back and click Manage on the Payment Link via Email card.\n   EXPECTED: the large logo at the top of the expanded detail view shows a real icon, not a broken-image icon (this was broken before this fix - the API-provided logo URL 404s for these two).\n\n9. (updated for PR #7726) Manage/detail view logo - Xendit and Stripe\n   Setup: PH store for Xendit, US store for Stripe.\n   Steps: click Manage on the Xendit card (PH) and on the Stripe card (US).\n   EXPECTED: the large logo at the top of the expanded detail view shows the correct icon for each, matching the icon shown on the card in the list.\n\nTEST DATA\nNo special test data needed - any PH-market store and any US-market store account will show all the relevant cards. No specific store/order IDs required.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- The new icons are simplified/generated brand-style icons, not pixel-perfect reproductions of the official logos (except Stripe, PayPal, and PayMongo, which use the real provided brand assets) - flag only if an icon looks visually broken or wrong, not if it is a simplified version of a brand mark.\n- The Accepted Payment Methods row (Visa/Mastercard/Amex/etc icons) shown on the Stripe detail view is unchanged and out of scope for this fix.\n- Connect/disconnect flows, statuses, and descriptions for each gateway are unchanged and out of scope for this fix.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786062379101",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244691972",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\nPayment Settings gateway cards now render logos from local bundled assets keyed by gateway.id, instead of the API/S3-hosted logo URL (which was broken for Direct Transfer and Payment Link via Email, and low-quality placeholders for PayMongo/PayPal/Stripe).\n- Stripe and PayPal: use the provided real brand PNGs.\n- PayMongo, Direct Transfer, Payment Link via Email: new generated SVG icons (Direct Transfer and Payment Link via Email previously had no working icon at all - their API logo URLs 404 against S3).\n- Xendit: unchanged, already had a proper logo.\n- Any gateway id not covered locally still falls back to the API-provided logo, so nothing breaks if a new gateway is added server-side.\n\nEXTRA WORK\nNone beyond the icon fix and its test coverage.\n\nPULL REQUESTS\nDev PR: https://github.com/Prosperna/prosperna1/pull/7726 (branch fix/payment-settings-image-dev1, targeting dev)\n\nHOW IT WAS TESTED\n- npx eslint --fix on all touched files - clean.\n- Added a vitest + React Testing Library test (ItemCard/__tests__/index.test.jsx) asserting each gateway id (stripe, paypal, paymongo, xendit, direct-transfer, payment-link-email) renders its correct local logo, and that an unmapped id falls back to the API logo. All 7 cases pass.\n\nNEXT STEPS\n- QA validation on dev.\n- After approval, promote to staging and main from the original branch fix/payment-settings-image.\n- QA test cases summary posted separately on this task."
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\nPayment Settings gateway cards now render logos from local bundled assets keyed by gateway.id, instead of the API/S3-hosted logo URL (which was broken for Direct Transfer and Payment Link via Email, and low-quality placeholders for PayMongo/PayPal/Stripe).\n- Stripe and PayPal: use the provided real brand PNGs.\n- PayMongo, Direct Transfer, Payment Link via Email: new generated SVG icons (Direct Transfer and Payment Link via Email previously had no working icon at all - their API logo URLs 404 against S3).\n- Xendit: unchanged, already had a proper logo.\n- Any gateway id not covered locally still falls back to the API-provided logo, so nothing breaks if a new gateway is added server-side.\n\nEXTRA WORK\nNone beyond the icon fix and its test coverage.\n\nPULL REQUESTS\nDev PR: https://github.com/Prosperna/prosperna1/pull/7726 (branch fix/payment-settings-image-dev1, targeting dev)\n\nHOW IT WAS TESTED\n- npx eslint --fix on all touched files - clean.\n- Added a vitest + React Testing Library test (ItemCard/__tests__/index.test.jsx) asserting each gateway id (stripe, paypal, paymongo, xendit, direct-transfer, payment-link-email) renders its correct local logo, and that an unmapped id falls back to the API logo. All 7 cases pass.\n\nNEXT STEPS\n- QA validation on dev.\n- After approval, promote to staging and main from the original branch fix/payment-settings-image.\n- QA test cases summary posted separately on this task.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786062362806",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244690109",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "511d6dc8-abdf-4f88-af48-5d5e1bf30055.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/511d6dc8-abdf-4f88-af48-5d5e1bf30055_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/511d6dc8-abdf-4f88-af48-5d5e1bf30055_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/511d6dc8-abdf-4f88-af48-5d5e1bf30055_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/511d6dc8-abdf-4f88-af48-5d5e1bf30055/image.png",
+          "uploaded": true,
+          "width": 1818,
+          "height": 457
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "511d6dc8-abdf-4f88-af48-5d5e1bf30055.png",
+          "data-attachment": "{\"id\":\"511d6dc8-abdf-4f88-af48-5d5e1bf30055.png\",\"version\":\"0\",\"date\":1786061819997,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/511d6dc8-abdf-4f88-af48-5d5e1bf30055_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/511d6dc8-abdf-4f88-af48-5d5e1bf30055_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/511d6dc8-abdf-4f88-af48-5d5e1bf30055_large.png\",\"width\":1818,\"height\":457,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/511d6dc8-abdf-4f88-af48-5d5e1bf30055/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/511d6dc8-abdf-4f88-af48-5d5e1bf30055/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/511d6dc8-abdf-4f88-af48-5d5e1bf30055/image.png\"}",
+          "data-natural-width": "1818",
+          "data-natural-height": "457"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-m_YkkloZjC"
+        }
+      },
+      {
+        "text": "US",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-DVL9VcjpBo"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "dd33df91-8b56-4eac-bf1d-5cfd74ec1f33.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/dd33df91-8b56-4eac-bf1d-5cfd74ec1f33_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/dd33df91-8b56-4eac-bf1d-5cfd74ec1f33_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/dd33df91-8b56-4eac-bf1d-5cfd74ec1f33_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/dd33df91-8b56-4eac-bf1d-5cfd74ec1f33/image.png",
+          "uploaded": true,
+          "width": 1797,
+          "height": 650
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "dd33df91-8b56-4eac-bf1d-5cfd74ec1f33.png",
+          "data-attachment": "{\"id\":\"dd33df91-8b56-4eac-bf1d-5cfd74ec1f33.png\",\"version\":\"0\",\"date\":1786061838072,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/dd33df91-8b56-4eac-bf1d-5cfd74ec1f33_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/dd33df91-8b56-4eac-bf1d-5cfd74ec1f33_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/dd33df91-8b56-4eac-bf1d-5cfd74ec1f33_large.png\",\"width\":1797,\"height\":650,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/dd33df91-8b56-4eac-bf1d-5cfd74ec1f33/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/dd33df91-8b56-4eac-bf1d-5cfd74ec1f33/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/dd33df91-8b56-4eac-bf1d-5cfd74ec1f33/image.png\"}",
+          "data-natural-width": "1797",
+          "data-natural-height": "650"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-u62HneGJIi"
+        }
+      },
+      {
+        "text": "PH",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1Gq42fK6Iv"
+        }
+      }
+    ],
+    "comment_text": "image.png\nUS\nimage.png\nPH\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786061841170",
+    "reply_count": 0
+  },
+  {
+    "id": "90180244410226",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Payment Settings"
+      },
+      {
+        "text": " has been created ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bf7e6b93-37f7-4ef1-9574-05993b503c8f"
+        }
+      },
+      {
+        "text": "Date: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aug 6 2026, 3:54PM (Asia/Singapore)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5acb7133-fc27-48ba-9a62-6a27fcef1ac4"
+        }
+      },
+      {
+        "text": "By ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2da5208f-53d3-4f34-b235-72f66cc916c1"
+        }
+      }
+    ],
+    "comment_text": "This task Payment Settings has been created \nDate: Aug 6 2026, 3:54PM (Asia/Singapore)\nBy Angelo Kamachi\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786002899358",
+    "reply_count": 0
+  }
+]

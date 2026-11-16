@@ -1,0 +1,577 @@
+[
+  {
+    "id": "1100740000027908",
+    "comment": [
+      {
+        "text": "Store Name: Ocean of Youth",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-RIVabCBOl1"
+        }
+      },
+      {
+        "text": "url: ",
+        "attributes": {}
+      },
+      {
+        "text": "https://oceanofyouth.prosperna.com/",
+        "attributes": {
+          "link": "https://oceanofyouth.prosperna.com/"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7vC8Gbn7yU"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED",
+        "attributes": {
+          "badge-class": "green"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ZlEFuzNTlT"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-3gErlZroBQ"
+        }
+      },
+      {
+        "text": "All pages are migrated except:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-IT_uPpiC5r"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "0a2edd7d-bdde-4136-ad16-4ca4d03f67a6.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/0a2edd7d-bdde-4136-ad16-4ca4d03f67a6/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/0a2edd7d-bdde-4136-ad16-4ca4d03f67a6_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/0a2edd7d-bdde-4136-ad16-4ca4d03f67a6_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/0a2edd7d-bdde-4136-ad16-4ca4d03f67a6/image.png",
+          "uploaded": true,
+          "width": 1535,
+          "height": 778
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "0a2edd7d-bdde-4136-ad16-4ca4d03f67a6.png",
+          "data-attachment": null,
+          "data-natural-width": "1535",
+          "data-natural-height": "778"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-JzeUBGxmIi"
+        }
+      },
+      {
+        "text": "Intended as per AI dev.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-M2IcVFhrYx"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-OqHhONbvlp"
+        }
+      },
+      {
+        "text": "Website Performance:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-jtMA8wvjZc"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-uSVgtiseEg"
+        }
+      },
+      {
+        "text": "HOME → 92%",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e61M1SC1dF",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "2ceb0ac3-5050-4182-afd0-9bb288a28bec.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/2ceb0ac3-5050-4182-afd0-9bb288a28bec/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/2ceb0ac3-5050-4182-afd0-9bb288a28bec_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/2ceb0ac3-5050-4182-afd0-9bb288a28bec_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/2ceb0ac3-5050-4182-afd0-9bb288a28bec/image.png",
+          "uploaded": true,
+          "width": 1535,
+          "height": 772
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "2ceb0ac3-5050-4182-afd0-9bb288a28bec.png",
+          "data-attachment": null,
+          "data-natural-width": "1535",
+          "data-natural-height": "772"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-GUxaCB8Cvf"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-kAw5GCTFXD"
+        }
+      },
+      {
+        "text": "ABOUT US → 92%",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ZxWUcsONf6",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "5bf9e8ed-6b34-4623-b9c1-d58c203a397e.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/5bf9e8ed-6b34-4623-b9c1-d58c203a397e/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/5bf9e8ed-6b34-4623-b9c1-d58c203a397e_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/5bf9e8ed-6b34-4623-b9c1-d58c203a397e_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/5bf9e8ed-6b34-4623-b9c1-d58c203a397e/image.png",
+          "uploaded": true,
+          "width": 1535,
+          "height": 777
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "5bf9e8ed-6b34-4623-b9c1-d58c203a397e.png",
+          "data-attachment": null,
+          "data-natural-width": "1535",
+          "data-natural-height": "777"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-KQbaVEPydn"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1ddbIwQyQu"
+        }
+      },
+      {
+        "text": "SERVICES → 92%",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-g7zVtN_2xT",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "d4a4e625-6236-46f9-a41c-d9a2d18031e5.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/d4a4e625-6236-46f9-a41c-d9a2d18031e5/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/d4a4e625-6236-46f9-a41c-d9a2d18031e5_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/d4a4e625-6236-46f9-a41c-d9a2d18031e5_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/d4a4e625-6236-46f9-a41c-d9a2d18031e5/image.png",
+          "uploaded": true,
+          "width": 1535,
+          "height": 775
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "d4a4e625-6236-46f9-a41c-d9a2d18031e5.png",
+          "data-attachment": null,
+          "data-natural-width": "1535",
+          "data-natural-height": "775"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-iPhZQjPlzF"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-BDVjYEvY_8"
+        }
+      },
+      {
+        "text": "PRODUCTS → 92%",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_sZF6BVCAR",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "ffe6fd75-8f5f-44ff-a37a-4c5a17355ead.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/ffe6fd75-8f5f-44ff-a37a-4c5a17355ead/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/ffe6fd75-8f5f-44ff-a37a-4c5a17355ead_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/ffe6fd75-8f5f-44ff-a37a-4c5a17355ead_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/ffe6fd75-8f5f-44ff-a37a-4c5a17355ead/image.png",
+          "uploaded": true,
+          "width": 1535,
+          "height": 778
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "ffe6fd75-8f5f-44ff-a37a-4c5a17355ead.png",
+          "data-attachment": null,
+          "data-natural-width": "1535",
+          "data-natural-height": "778"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-UZ2akT-szv"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-pmd-fD5MST"
+        }
+      },
+      {
+        "text": "Contacts → 92%",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-j-HqDBkzr_",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "ae2c0246-e985-49dd-83d3-9b0a9a6479d2.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/ae2c0246-e985-49dd-83d3-9b0a9a6479d2/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/ae2c0246-e985-49dd-83d3-9b0a9a6479d2_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/ae2c0246-e985-49dd-83d3-9b0a9a6479d2_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/ae2c0246-e985-49dd-83d3-9b0a9a6479d2/image.png",
+          "uploaded": true,
+          "width": 1535,
+          "height": 786
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "ae2c0246-e985-49dd-83d3-9b0a9a6479d2.png",
+          "data-attachment": null,
+          "data-natural-width": "1535",
+          "data-natural-height": "786"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-zLWSpXBNPq"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7NF8NA2Sx8"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EIvvj5umJm"
+        }
+      },
+      {
+        "text": "We can now close this task.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0BM2R7KbRH"
+        }
+      },
+      {
+        "text": "cc ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "Store Name: Ocean of Youth\nurl: https://oceanofyouth.prosperna.com/\nStatus: PASSED\n\nAll pages are migrated except:\nimage.png\nIntended as per AI dev.\n\nWebsite Performance:\n\nHOME → 92%\nimage.png\n\nABOUT US → 92%\nimage.png\n\nSERVICES → 92%\nimage.png\n\nPRODUCTS → 92%\nimage.png\n\nContacts → 92%\nimage.png\n\n\nWe can now close this task.\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1788919517158",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000019612",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "fa2d4df7-16a1-4b97-9751-ce233ae18bd1.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/fa2d4df7-16a1-4b97-9751-ce233ae18bd1_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/fa2d4df7-16a1-4b97-9751-ce233ae18bd1_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/fa2d4df7-16a1-4b97-9751-ce233ae18bd1_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/fa2d4df7-16a1-4b97-9751-ce233ae18bd1/image.png",
+          "uploaded": true,
+          "width": 1771,
+          "height": 823
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "fa2d4df7-16a1-4b97-9751-ce233ae18bd1.png",
+          "data-attachment": null,
+          "data-natural-width": "1771",
+          "data-natural-height": "823"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-tRhWHIFMgs"
+        }
+      },
+      {
+        "text": "All pages have been migrated and legacy pages have been unpublished. System pages such as contact us and single product pages have been ignored",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-BG7MYtxCPw"
+        }
+      }
+    ],
+    "comment_text": "image.png\nAll pages have been migrated and legacy pages have been unpublished. System pages such as contact us and single product pages have been ignored\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788870372858",
+        "user": {
+          "id": 25568383,
+          "username": "Dennis Velasco",
+          "email": "dennis@prosperna.com",
+          "initials": "DV",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+        }
+      }
+    ],
+    "date": "1788742551265",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000014134",
+    "comment": [
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      },
+      {
+        "text": " Could you please do this migration to Max AI?",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EZhdMF_FIE"
+        }
+      },
+      {
+        "text": "cc: ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 32155790,
+          "username": "Dyne",
+          "email": "dyne@prosperna.com",
+          "initials": "D",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/32155790_clz.jpg"
+        },
+        "text": "@Dyne"
+      },
+      {
+        "text": " and ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 37594562,
+          "username": "Fro Oliva",
+          "email": "fro@prosperna.com",
+          "initials": "FO",
+          "profilePicture": null
+        },
+        "text": "@Fro Oliva"
+      }
+    ],
+    "comment_text": "@Angelo Kamachi Could you please do this migration to Max AI?\ncc: @Dyne and @Fro Oliva",
+    "user": {
+      "id": 25568383,
+      "username": "Dennis Velasco",
+      "email": "dennis@prosperna.com",
+      "color": "#04a9f4",
+      "initials": "DV",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/25568383_r5F.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [
+      {
+        "reaction": "1F44D",
+        "date": "1788479842621",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        }
+      }
+    ],
+    "date": "1788477568806",
+    "reply_count": 0
+  }
+]

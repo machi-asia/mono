@@ -194,11 +194,22 @@ export function extractToolCallsFromText(rawText: string): {
 
     if (name === "askQuestion") {
       const q = (args as any).question;
-      const opts = (args as any).options;
-      if (q && Array.isArray(opts)) {
+      const opts = (args as any).options || (args as any).choices;
+      if (Array.isArray(opts)) {
         optionsPayload = {
-          question: String(q).trim(),
-          options: opts.map((opt: unknown) => String(opt).trim()).filter(Boolean),
+          question: q ? String(q).trim() : "What's on your mind?",
+          options: opts
+            .map((opt: unknown) => {
+              if (typeof opt === "string") return opt.trim();
+              if (opt && typeof opt === "object") {
+                const obj = opt as Record<string, unknown>;
+                const val = obj.title ?? obj.label ?? obj.text ?? obj.name ?? obj.value;
+                if (val != null) return String(val).trim();
+                return JSON.stringify(opt);
+              }
+              return String(opt ?? "").trim();
+            })
+            .filter(Boolean),
           allowMultiple: Boolean((args as any).allowMultiple),
         };
       }
@@ -220,7 +231,7 @@ export function extractToolCallsFromText(rawText: string): {
         const toolName = nameMatch[1];
         if (toolName === "askQuestion") {
           const qMatch = trimmed.match(/"question"\s*:\s*"([^"]+)"/);
-          const optsMatch = trimmed.match(/"options"\s*:\s*\[([\s\S]*?)\]/);
+          const optsMatch = trimmed.match(/"(?:options|choices)"\s*:\s*\[([\s\S]*?)\]/);
           if (qMatch && optsMatch) {
             const question = qMatch[1];
             const options = Array.from(optsMatch[1].matchAll(/"([^"]+)"/g)).map((m: any) => m[1]);
@@ -315,7 +326,7 @@ export function extractToolCallsFromText(rawText: string): {
         const toolName = keyMatch[1];
         if (toolName === "askQuestion") {
           const qMatch = candidateJson.match(/"question"\s*:\s*"([^"]+)"/);
-          const optsMatch = candidateJson.match(/"options"\s*:\s*\[([\s\S]*?)\]/);
+          const optsMatch = candidateJson.match(/"(?:options|choices)"\s*:\s*\[([\s\S]*?)\]/);
           if (qMatch && optsMatch) {
             const question = qMatch[1];
             const options = Array.from(optsMatch[1].matchAll(/"([^"]+)"/g)).map((m: any) => m[1]);
@@ -367,6 +378,7 @@ export function extractToolCallsFromText(rawText: string): {
 export type AgentStreamEvent =
   | { type: "trace"; trace: string; tool?: string; description?: string; emotion?: string }
   | { type: "delta"; text: string }
+  | { type: "thinking"; text: string }
   | {
       type: "done";
       text: string;
@@ -394,7 +406,7 @@ export function sanitizeHistory(history: ChatMessage[]): GeminiContent[] {
           const parsed = typeof rawContent === "string" ? JSON.parse(rawContent) : part.functionResponse.response;
           if (Array.isArray(parsed?.results)) {
             formattedContent = `Web Search Results for "${parsed.query || ""}":\n` +
-              parsed.results.map((r: any, idx: number) => `${idx + 1}. ${r.title} (${r.url})\n   ${r.snippet}`).join("\n");
+              parsed.results.map((r: any, idx: number) => `${idx + 1}. ${r.title} (${r.url})\n   ${r.snippet}${r.imageUrl ? `\n   Image URL: ${r.imageUrl}` : ""}`).join("\n");
           }
         } catch {
           // ignore
@@ -477,6 +489,7 @@ export async function* runAgentChatStream(
   let loopCount = 0;
   const maxLoops = 8;
   let accumulatedText = "";
+  let accumulatedThinking = "";
   let optionsPayload: RunAgentResult["optionsPayload"] = undefined;
   let lastErrorMessage = "";
   const useOllamaProvider = shouldUseOllamaProvider();
@@ -549,10 +562,21 @@ export async function* runAgentChatStream(
         if (chunk.functionCall) {
           currentTurnFunctionCalls.push(chunk.functionCall);
         }
+        if (chunk.thinkingChunk) {
+          accumulatedThinking += chunk.thinkingChunk;
+          yield { type: "thinking", text: chunk.thinkingChunk };
+        }
         if (chunk.textChunk) {
           currentTurnText += chunk.textChunk;
-          accumulatedText += chunk.textChunk;
-          yield { type: "delta", text: chunk.textChunk };
+          const hasToolSignature =
+            currentTurnText.includes('"action":') ||
+            currentTurnText.includes('"action_input":') ||
+            currentTurnText.includes("```json") ||
+            currentTurnText.includes("<emotion>");
+          if (!hasToolSignature) {
+            accumulatedText += chunk.textChunk;
+            yield { type: "delta", text: chunk.textChunk };
+          }
         }
       }
       if (geminiGenId) {
@@ -599,6 +623,7 @@ export async function* runAgentChatStream(
     }
 
     if (currentTurnFunctionCalls.length > 0) {
+      accumulatedText = "";
       activeHistory.push({
         role: "model",
         parts: currentTurnFunctionCalls.map((fc) => ({ functionCall: fc })),
@@ -630,29 +655,29 @@ export async function* runAgentChatStream(
 
         if (fnName === "webSearch") {
           const q = (fnArgs as any)?.query;
-          toolDescription = q ? `Searching the web for "${q}"` : "Searching the web";
+          toolDescription = q ? `Browsing the library for "${q}"` : "Browsing the archives in the library";
           toolEmotion = "researching";
         } else if (fnName === "askQuestion") {
-          toolDescription = "Formulating options";
+          toolDescription = "Pondering clarifying questions for you";
           toolEmotion = "thinking";
         } else if (fnName === "recall") {
-          const i = (fnArgs as any)?.index;
-          toolDescription = i ? `Recalling memory index "${i}"` : "Recalling from memory";
+          const i = (fnArgs as any)?.index || (fnArgs as any)?.key || (fnArgs as any)?.query;
+          toolDescription = i ? `Flipping through diary entries on "${i}"` : "Flipping through diary";
           toolEmotion = "thinking";
         } else if (fnName === "learn") {
-          const i = (fnArgs as any)?.index;
-          toolDescription = i ? `Learning memory index "${i}"` : "Learning a new memory";
+          const i = (fnArgs as any)?.index || (fnArgs as any)?.key || (fnArgs as any)?.topic;
+          toolDescription = i ? `Writing a new entry on "${i}" in diary` : "Writing a new keepsake in diary";
           toolEmotion = "bright";
         } else if (fnName === "remember" || fnName === "rememberTool") {
-          const c = (fnArgs as any)?.description || (fnArgs as any)?.content;
-          toolDescription = c ? `Updating memory: "${c.slice(0, 40)}${c.length > 40 ? "..." : ""}"` : "Updating long-term memory";
+          const c = (fnArgs as any)?.description || (fnArgs as any)?.content || (fnArgs as any)?.index;
+          toolDescription = c ? `Updating diary entry on "${c.slice(0, 35)}${c.length > 35 ? "..." : ""}"` : "Updating diary";
           toolEmotion = "bright";
         } else if (fnName === "forget") {
-          const i = (fnArgs as any)?.index;
-          toolDescription = i ? `Forgetting memory index "${i}"` : "Forgetting a memory";
+          const i = (fnArgs as any)?.index || (fnArgs as any)?.key;
+          toolDescription = i ? `Gently setting aside diary notes on "${i}"` : "Setting aside old diary notes";
           toolEmotion = "thinking";
         } else {
-          toolDescription = `Executing ${fnName}`;
+          toolDescription = `Consulting notes: ${fnName}`;
           toolEmotion = "thinking";
         }
 
@@ -717,11 +742,11 @@ export async function* runAgentChatStream(
       let synthesizedText = "";
 
       if (executedToolResults.length > 0 && (groqApiKey || useOllamaProvider)) {
-        addTrace(useOllamaProvider ? "processing with local Ollama" : "processing with Groq");
+        addTrace("Reading through references & writing my answer");
         yield {
           type: "trace",
-          trace: useOllamaProvider ? "processing with local Ollama" : "processing with Groq",
-          description: useOllamaProvider ? "Processing tool data with local Ollama" : "Processing tool data with Groq",
+          trace: "Reading through references & writing my answer",
+          description: "Reading through references & writing my answer",
           emotion: "thinking",
         };
 
@@ -774,7 +799,7 @@ export async function* runAgentChatStream(
               resultsText = parsed.results
                 .map(
                   (r: any, idx: number) =>
-                    `Source [${idx + 1}]: "${r.title || "Page"}" (${r.url})\nDetails: ${r.snippet}`
+                    `Source [${idx + 1}]: "${r.title || "Page"}" (${r.url})\nDetails: ${r.snippet}${r.imageUrl ? `\nImage URL: ${r.imageUrl}` : ""}`
                 )
                 .join("\n\n");
             }
@@ -790,6 +815,7 @@ ${resultsText || "No search results returned."}
 Task:
 Carefully analyze and understand these search findings. Provide a brief, well-structured, and documented summary answering the user's inquiry: "${newMessageText}".
 - Highlight key facts, historical background, official names, and dates.
+- If relevant images, portraits, photos, or diagrams are explicitly provided in search findings with an Image URL, embed them with ![Caption](image_url). NEVER invent or fabricate image URLs that are not in the search results findings.
 - Cite and link to the relevant sources where appropriate using Markdown links.
 - Format with Obsidian Markdown (headings, callout notes, highlights).
 - End with <emotion>bright</emotion> or <emotion>researching</emotion>.`;
@@ -799,11 +825,11 @@ Carefully analyze and understand these search findings. Provide a brief, well-st
             parts: [{ text: followUpInstruction }],
           });
 
-          addTrace("synthesizing findings");
+          addTrace("Gathering all findings & drafting answer");
           yield {
             type: "trace",
-            trace: "synthesizing findings",
-            description: "Synthesizing findings",
+            trace: "Gathering all findings & drafting answer",
+            description: "Gathering all findings & drafting answer",
             emotion: "thinking",
           };
 
@@ -862,14 +888,24 @@ Carefully analyze and understand these search findings. Provide a brief, well-st
       }
 
       if (optionsPayload) {
+        // When optionsPayload is returned from askQuestion, preserve the introductory/clarifying text
+        // (if any was generated before the options tool call) instead of replacing it solely with the question.
+        const introText = currentTurnText.trim();
+        const cleanIntro = introText
+          ? extractEmotion(extractToolCallsFromText(introText).cleanText).cleanText
+          : "";
+        const combinedText = cleanIntro && cleanIntro !== optionsPayload.question
+          ? (cleanIntro.endsWith(":") || cleanIntro.endsWith("?") ? cleanIntro : `${cleanIntro}\n\n${optionsPayload.question}`)
+          : optionsPayload.question;
+
         activeHistory.push({
           role: "model",
-          parts: [{ text: optionsPayload.question }],
+          parts: [{ text: combinedText }],
         });
 
         yield {
           type: "done",
-          text: optionsPayload.question,
+          text: combinedText,
           emotion: "happy",
           traces,
           optionsPayload,
@@ -894,7 +930,10 @@ Carefully analyze and understand these search findings. Provide a brief, well-st
 
   if (!accumulatedText.trim()) {
     const errorDetails =
-      lastErrorMessage || "The AI model returned an empty response. Please check your connection or API configuration.";
+      lastErrorMessage ||
+      (accumulatedThinking.trim()
+        ? "The AI model finished its thinking phase without producing a final response. Try increasing max tokens or retrying."
+        : "The AI model returned an empty response. Please check your connection or API configuration.");
     const errorFallback = formatErrorCallout("System Error", errorDetails);
     const { cleanText, emotion } = extractEmotion(errorFallback);
     yield {
@@ -1019,6 +1058,21 @@ The chat interface is powered by an Obsidian-flavored MarkdownRenderer from @mon
 8. Footnotes & Inline Code:
    - Use [^1] and [^1]: Note for citations or definitions.
    - Use \`inline code\` for identifiers, paths, functions, and commands.
+
+9. Embedded Images (ENCOURAGED):
+   - Whenever you browse web search results or find relevant public images, photos, portraits, logos, diagrams, or site artwork provided in the search findings, YOU ARE ENCOURAGED to embed them directly in your response using markdown syntax:
+     ![Descriptive Caption](image_url)
+   - CRITICAL: Only use actual, verified Image URLs explicitly provided in the search results findings or memory. NEVER hallucinate or guess external image URLs (e.g., do not make up URLs like "https://assets.bloomberg.com/..." or "https://cdn.vox-cdn.com/..."). If no verified image URL is available in the findings, simply omit the image markdown.
+   - Images are automatically scaled to fit smoothly in the chat interface with rounded borders and responsive sizing. Always include a meaningful caption.
+
+10. Interactive Graphs, Diagrams & Math Formulas:
+   - Whenever the user asks for a chart, graph, plot, trend, or visual comparison, you MUST output an interactive SVG chart using a \`\`\`chart fenced code block with valid JSON (do NOT just output a table or text):
+     \`\`\`chart
+     {"type":"line","title":"Comparison","data":[{"label":"2020","value":40},{"label":"2021","value":75}]}
+     \`\`\`
+     Supported \`type\` values: \`"bar"\`, \`"line"\`, \`"area"\`, \`"pie"\`, \`"donut"\`. Every \`value\` MUST be a plain number (e.g. \`40\` or \`0.05\`), never a string or range.
+   - For flowcharts, architectures, sequences, timelines, or mindmaps, use a \`\`\`mermaid fenced code block.
+   - For mathematical formulas, use LaTeX: \`$...$\` for inline math and \`$$...$$\` for display math blocks.
 
 Emotion Output Rule:
 At the very end of your final response, append an emotion tag in the format <emotion>EMOTION_NAME</emotion>.
@@ -1282,29 +1336,29 @@ export async function runAgentChat(
 
         if (fnName === "webSearch") {
           const q = (fnArgs as any)?.query;
-          toolDescription = q ? `Searching the web for "${q}"` : "Searching the web";
+          toolDescription = q ? `Browsing the library for "${q}"` : "Browsing the archives in the library";
           toolEmotion = "researching";
         } else if (fnName === "askQuestion") {
-          toolDescription = "Formulating options";
+          toolDescription = "Pondering clarifying questions for you";
           toolEmotion = "thinking";
         } else if (fnName === "recall") {
-          const i = (fnArgs as any)?.index;
-          toolDescription = i ? `Recalling memory index "${i}"` : "Recalling from memory";
+          const i = (fnArgs as any)?.index || (fnArgs as any)?.key || (fnArgs as any)?.query;
+          toolDescription = i ? `Flipping through diary entries on "${i}"` : "Flipping through diary";
           toolEmotion = "thinking";
         } else if (fnName === "learn") {
-          const i = (fnArgs as any)?.index;
-          toolDescription = i ? `Learning memory index "${i}"` : "Learning a new memory";
+          const i = (fnArgs as any)?.index || (fnArgs as any)?.key || (fnArgs as any)?.topic;
+          toolDescription = i ? `Writing a new entry on "${i}" in diary` : "Writing a new keepsake in diary";
           toolEmotion = "bright";
         } else if (fnName === "remember" || fnName === "rememberTool") {
-          const c = (fnArgs as any)?.description || (fnArgs as any)?.content;
-          toolDescription = c ? `Updating memory: "${c.slice(0, 40)}${c.length > 40 ? "..." : ""}"` : "Updating long-term memory";
+          const c = (fnArgs as any)?.description || (fnArgs as any)?.content || (fnArgs as any)?.index;
+          toolDescription = c ? `Updating diary entry on "${c.slice(0, 35)}${c.length > 35 ? "..." : ""}"` : "Updating diary";
           toolEmotion = "bright";
         } else if (fnName === "forget") {
-          const i = (fnArgs as any)?.index;
-          toolDescription = i ? `Forgetting memory index "${i}"` : "Forgetting a memory";
+          const i = (fnArgs as any)?.index || (fnArgs as any)?.key;
+          toolDescription = i ? `Gently setting aside diary notes on "${i}"` : "Setting aside old diary notes";
           toolEmotion = "thinking";
         } else {
-          toolDescription = `Executing ${fnName}`;
+          toolDescription = `Consulting notes: ${fnName}`;
           toolEmotion = "thinking";
         }
 
@@ -1361,7 +1415,7 @@ export async function runAgentChat(
       let synthText = "";
 
       if (executedToolResults.length > 0 && (groqApiKey || useOllamaProvider)) {
-        addTrace(useOllamaProvider ? "processing with local Ollama" : "processing with Groq", "thinking");
+        addTrace("Reading through references & writing my answer", "thinking");
         const synthModel = useOllamaProvider
           ? `ollama:${await getOllamaModelLabel()}`
           : process.env.GROQ_MODEL || "qwen/qwen3.8-27b";
@@ -1396,7 +1450,7 @@ export async function runAgentChat(
               resultsText = parsed.results
                 .map(
                   (r: any, idx: number) =>
-                    `Source [${idx + 1}]: "${r.title || "Page"}" (${r.url})\nDetails: ${r.snippet}`
+                    `Source [${idx + 1}]: "${r.title || "Page"}" (${r.url})\nDetails: ${r.snippet}${r.imageUrl ? `\nImage URL: ${r.imageUrl}` : ""}`
                 )
                 .join("\n\n");
             }
@@ -1421,7 +1475,7 @@ Carefully analyze and understand these search findings. Provide a brief, well-st
             parts: [{ text: followUpInstruction }],
           });
 
-          addTrace("synthesizing findings", "thinking");
+          addTrace("Gathering all findings & drafting answer", "thinking");
           const sanitized = sanitizeHistory(activeHistory);
           try {
             const synthResponse = useOllamaProvider

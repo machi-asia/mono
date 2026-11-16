@@ -12,6 +12,7 @@ import {
   registerSyncTransportSink,
 } from "../utils/dress";
 import { WebRTCUDPTransport, TransportProtocol } from "../utils/transport";
+import { getSyncEventsUrl } from "../utils/endpoints";
 
 export interface UseSyncRoomOptions {
   roomId: string;
@@ -36,7 +37,7 @@ export function useSyncRoom(options: UseSyncRoomOptions) {
          })())
       : "guest",
     userName = "Guest",
-    eventsUrl = "/api/sync/events",
+    eventsUrl = getSyncEventsUrl(),
     preferUdp = true,
     autoConnect = true,
     onEventReceived,

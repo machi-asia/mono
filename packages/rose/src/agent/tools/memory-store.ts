@@ -1,4 +1,9 @@
 import {
+  resolveSupabaseUrl,
+  resolveSupabaseServerKey,
+  resolveSupabasePublishableKey,
+} from "@mono/app-config";
+import {
   createMemory,
   getMemoryByIndex,
   updateMemoryByIndex,
@@ -21,19 +26,50 @@ export interface MemoryUpdatePayload {
   newCategory?: string;
 }
 
+export interface MemoryToolExecutionContext {
+  userId: string;
+  client?: any;
+}
+
 const LOCAL_STORE = new Map<string, MemoryEntry>();
 
-let currentExecutionUserId = "00000000-0000-0000-0000-000000000001";
+const DEFAULT_USER_ID = "00000000-0000-0000-0000-000000000001";
+let currentExecutionUserId = DEFAULT_USER_ID;
 let currentExecutionClient: any = null;
 
+// Stack of execution contexts so nested/scoped runs restore cleanly
+const contextStack: MemoryToolExecutionContext[] = [];
+
 export function setMemoryToolContext(userId: string, client?: any) {
-  currentExecutionUserId = userId || "00000000-0000-0000-0000-000000000001";
+  currentExecutionUserId = userId || DEFAULT_USER_ID;
   currentExecutionClient = client || null;
 }
 
 export function clearMemoryToolContext() {
-  currentExecutionUserId = "00000000-0000-0000-0000-000000000001";
-  currentExecutionClient = null;
+  const prev = contextStack.pop();
+  if (prev) {
+    currentExecutionUserId = prev.userId || DEFAULT_USER_ID;
+    currentExecutionClient = prev.client || null;
+  } else {
+    currentExecutionUserId = DEFAULT_USER_ID;
+    currentExecutionClient = null;
+  }
+}
+
+export async function runWithMemoryToolContext<T>(
+  context: MemoryToolExecutionContext,
+  fn: () => Promise<T>
+): Promise<T> {
+  contextStack.push({
+    userId: currentExecutionUserId,
+    client: currentExecutionClient,
+  });
+  setMemoryToolContext(context.userId, context.client);
+  try {
+    return await fn();
+  } finally {
+    clearMemoryToolContext();
+  }
 }
 
 export function parseImportance(value: unknown): MemoryImportance {
@@ -49,19 +85,28 @@ function localKey(userId: string, index: string): string {
   return `${userId}:${index}`;
 }
 
-function resolveSupabaseClient() {
-  let supabase = currentExecutionClient;
-  const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const secretKey = process.env.SUPABASE_SECRET_KEY;
+function resolveSupabaseClient(explicitClient?: any) {
+  let supabase = explicitClient ?? currentExecutionClient;
+  const supabaseUrl = resolveSupabaseUrl();
+  const secretKey =
+    typeof process !== "undefined" ? process.env?.SUPABASE_SECRET_KEY : undefined;
 
   if (secretKey && supabaseUrl) {
     supabase = createSupabaseClient(supabaseUrl, secretKey);
   } else if (!supabase) {
-    const supabaseKey =
-      process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
-      process.env.SUPABASE_PUBLISHABLE_KEY;
-    if (supabaseUrl && supabaseKey) {
-      supabase = createSupabaseClient(supabaseUrl, supabaseKey);
+    const hasEnvConfig =
+      typeof process !== "undefined" &&
+      Boolean(
+        process.env?.SUPABASE_URL ||
+          process.env?.NEXT_PUBLIC_SUPABASE_URL ||
+          process.env?.SUPABASE_PUBLISHABLE_KEY ||
+          process.env?.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+      );
+    if (hasEnvConfig) {
+      const supabaseKey = resolveSupabaseServerKey() || resolveSupabasePublishableKey();
+      if (supabaseUrl && supabaseKey) {
+        supabase = createSupabaseClient(supabaseUrl, supabaseKey);
+      }
     }
   }
 
@@ -87,11 +132,12 @@ function toEntry(record: {
 export async function memoryDbCreate(
   indexInput: string,
   description: string,
-  importance: MemoryImportance
+  importance: MemoryImportance,
+  ctx?: MemoryToolExecutionContext
 ): Promise<MemoryEntry> {
-  const userId = currentExecutionUserId;
+  const userId = ctx?.userId || currentExecutionUserId;
   const category = normalizeIndex(indexInput);
-  const client = resolveSupabaseClient();
+  const client = resolveSupabaseClient(ctx?.client);
 
   if (client) {
     const record = await createMemory(client, {
@@ -118,11 +164,12 @@ export async function memoryDbCreate(
 }
 
 export async function memoryDbRead(
-  indexInput: string
+  indexInput: string,
+  ctx?: MemoryToolExecutionContext
 ): Promise<MemoryEntry | null> {
-  const userId = currentExecutionUserId;
+  const userId = ctx?.userId || currentExecutionUserId;
   const category = normalizeIndex(indexInput);
-  const client = resolveSupabaseClient();
+  const client = resolveSupabaseClient(ctx?.client);
 
   if (client) {
     const record = await getMemoryByIndex(client, userId, category);
@@ -134,11 +181,12 @@ export async function memoryDbRead(
 
 export async function memoryDbUpdate(
   indexInput: string,
-  payload: MemoryUpdatePayload
+  payload: MemoryUpdatePayload,
+  ctx?: MemoryToolExecutionContext
 ): Promise<MemoryEntry> {
-  const userId = currentExecutionUserId;
+  const userId = ctx?.userId || currentExecutionUserId;
   const category = normalizeIndex(indexInput);
-  const client = resolveSupabaseClient();
+  const client = resolveSupabaseClient(ctx?.client);
 
   if (client) {
     const record = await updateMemoryByIndex(client, {
@@ -180,10 +228,13 @@ export async function memoryDbUpdate(
   return next;
 }
 
-export async function memoryDbDelete(indexInput: string): Promise<boolean> {
-  const userId = currentExecutionUserId;
+export async function memoryDbDelete(
+  indexInput: string,
+  ctx?: MemoryToolExecutionContext
+): Promise<boolean> {
+  const userId = ctx?.userId || currentExecutionUserId;
   const category = normalizeIndex(indexInput);
-  const client = resolveSupabaseClient();
+  const client = resolveSupabaseClient(ctx?.client);
 
   if (client) {
     return deleteMemoryByIndex(client, userId, category);

@@ -2,8 +2,9 @@
 
 import { useState, useEffect, type FormEvent } from "react";
 import type { User, UserIdentity } from "@supabase/supabase-js";
-import { User as UserIcon, Image as ImageIcon, Settings, RefreshCw, ExternalLink, FolderOpen } from "lucide-react";
+import { User as UserIcon, Image as ImageIcon, Settings } from "lucide-react";
 import { MediaLibrary, type MediaItem } from "@mono/components";
+import { resolveSafeRoleFromUser } from "@mono/database";
 import { createClient } from "../../client";
 import { GoogleIcon } from "../icons/google";
 import { GithubIcon } from "../icons/github";
@@ -23,6 +24,7 @@ export interface AvatarOption {
 
 export function ProfileSection({ user }: ProfileSectionProps) {
   const meta = user.user_metadata ?? {};
+  const safeRole = resolveSafeRoleFromUser(user);
   const currentName =
     meta.display_name ||
     meta.full_name ||
@@ -40,7 +42,6 @@ export function ProfileSection({ user }: ProfileSectionProps) {
 
   const [displayName, setDisplayName] = useState(currentName);
   const [activeAvatar, setActiveAvatar] = useState(currentAvatar);
-  const [customUrl, setCustomUrl] = useState("");
   const [savingName, setSavingName] = useState(false);
   const [updatingAvatar, setUpdatingAvatar] = useState(false);
   const [nameSuccess, setNameSuccess] = useState(false);
@@ -241,18 +242,6 @@ export function ProfileSection({ user }: ProfileSectionProps) {
     }
   }
 
-  async function handleApplyCustomUrl(e: FormEvent) {
-    e.preventDefault();
-    e.stopPropagation();
-    const trimmed = customUrl.trim();
-    if (!trimmed || !/^https?:\/\//i.test(trimmed)) {
-      setAvatarError("Please enter a valid image URL starting with http:// or https://");
-      return;
-    }
-    await handleSelectAvatar(trimmed);
-    setCustomUrl("");
-  }
-
   return (
     <section className="auth-settings-section auth-profile-section">
       <div className="auth-profile-header">
@@ -286,7 +275,7 @@ export function ProfileSection({ user }: ProfileSectionProps) {
           <p className="auth-profile-email">{user.email || "No email on file"}</p>
           <div className="auth-profile-badges">
             <span className="auth-profile-badge auth-profile-badge--role">
-              {((user.app_metadata?.role || user.user_metadata?.role || (user.is_anonymous ? "guest" : "member")) as string).toUpperCase()}
+              {safeRole.toUpperCase()}
             </span>
             <span className="auth-profile-badge">
               {user.is_anonymous ? "Guest Account" : "Verified Account"}
@@ -383,9 +372,7 @@ export function ProfileSection({ user }: ProfileSectionProps) {
             variant="popup"
             userId={user.id}
             connected={true}
-            role={
-              (user.app_metadata?.role || user.user_metadata?.role || (user.is_anonymous ? "guest" : "member")) as "guest" | "member" | "pro" | "admin"
-            }
+            role={safeRole}
             allowedTypes={["image"]}
             modalTitle="Choose Profile Picture"
             trigger={
@@ -423,4 +410,3 @@ export function ProfileSection({ user }: ProfileSectionProps) {
     </section>
   );
 }
-

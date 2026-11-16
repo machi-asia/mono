@@ -1,0 +1,2481 @@
+[
+  {
+    "id": "1100740000171181",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Marketplace Page"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "DEPLOYED TO PROD"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-75d1b135-d5be-47d1-a9d2-501bdd8b8545"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 16 2026, 2:57PM (Asia/Manila)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5a1b8ffc-2b89-4a11-b521-246fa8a6d99c"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-78f34e8e-7c2a-451e-a19f-49c86ae1f9ae"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-472b9029-7982-493a-b4d7-1c2a195548e7"
+        }
+      }
+    ],
+    "comment_text": "This Marketplace Page has been move to DEPLOYED TO PROD\nDate updated: Oct 16 2026, 2:57PM (Asia/Manila)\nTriggered by: Angelo Kamachi\n\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792133838571",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000170863",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Marketplace Page"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7774e130-bf56-467b-9d1a-3971afce0fce"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 16 2026, 1:14PM (Asia/Manila)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fcf1bfa1-92df-420d-bc36-a6111d7c79f3"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e62af9f7-0865-4e25-b8f0-2c363c784893"
+        }
+      }
+    ],
+    "comment_text": "This task Marketplace Page has been move to PASSED TESTING \nDate updated: Oct 16 2026, 1:14PM (Asia/Manila)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792127664960",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000170848",
+    "comment": [
+      {
+        "text": "Env: Staging\nStatus: PASSED\nURL: https://prostage.prosperna.ph/home/marketplace\nTask link: https://app.clickup.com/t/86ey1p7bp\n\nTEST CASE #1: Pressing Escape on \"Add a New Credit Card\" closes only that dialog\nSTEPS:\nStep 1 - Go to Marketplace and open the add-on checkout (Order Summary).\nStep 2 - Set PAYMENT TERMS to Annually.\nStep 3 - Set Payment Type to Credit Card Payment, then click \"Add a New Credit Card\".\nStep 4 - Press Escape.\nEXPECTED RESULT: Only the \"Add a New Credit Card\" dialog closes. The Order Summary stays open on the checkout page with Annually still selected.\nEVIDENCE: r3-1-add-card-open-before-escape.png, r3-1-after-escape.png, r3-1-term-kept-after-escape.png\nACTUAL RESULT: Passed. Only the add-card dialog closed. The Order Summary stayed open on the checkout page with Annually (₱17,940.00/year) still selected.\n\nTEST CASE #2: Pressing Escape on the Order Summary alone still closes the checkout\nSTEPS:\nStep 1 - Open the checkout and the \"Add a New Credit Card\" dialog.\nStep 2 - Press Escape to close the add-card dialog.\nStep 3 - Press Escape again.\nEXPECTED RESULT: The first Escape closes only the add-card dialog. The second Escape closes the Order Summary and returns to Marketplace.\nEVIDENCE: r3-2-checkout-only.png, r3-2-after-second-escape.png\nACTUAL RESULT: Passed. The second Escape closed the checkout and returned to the Marketplace page.\n\nTEST CASE #3: The add-card dialog's X and Close buttons still close it\nSTEPS:\nStep 1 - Open the checkout, choose Credit Card Payment and click \"Add a New Credit Card\".\nStep 2 - Click the X in the dialog header.\nStep 3 - Reopen the dialog and click Close.\nEXPECTED RESULT: Both buttons close the dialog, and the Order Summary stays open each time.\nEVIDENCE: ex1-add-card-dialog.png, ex1-after-x-close.png, ex1-after-button-close.png\nACTUAL RESULT: Passed. The X and Close buttons both closed the dialog, and the Order Summary stayed open.\n\nTEST CASE #4: Pressing Escape on the Cancel Subscription warning closes only the warning\nSTEPS:\nStep 1 - Go to Marketplace and open the My Apps tab.\nStep 2 - Open an installed app's ⋮ menu and click Deactivate.\nStep 3 - With the Cancel Subscription warning open, press Escape.\nStep 4 - Reload the page and open My Apps again.\nEXPECTED RESULT: The warning closes, nothing is deactivated, and the same apps are still listed after the reload.\nEVIDENCE: r3-4-warning-before-escape.png, r3-4-after-escape.png\nACTUAL RESULT: Passed. The warning closed and the app stayed installed. My Apps listed the same apps after the reload.\n\nTEST CASE #5: Pressing Escape dismisses the payment success pop-up\nSTEPS:\nStep 1 - Return to Marketplace after a successful add-on payment (link_payment=success).\nStep 2 - With the Success pop-up showing, press Escape.\nEXPECTED RESULT: The Success pop-up closes and the Marketplace page shows.\nEVIDENCE: ex3-success-popup.png, ex3-after-escape.png\nACTUAL RESULT: Passed. The Success pop-up closed and the Marketplace page showed.\n\nTEST CASE #6: The app-card ⋮ menu button looks and works the same\nSTEPS:\nStep 1 - Go to Marketplace and open the My Apps tab.\nStep 2 - Look at the ⋮ button on an installed app card.\nStep 3 - Click it.\nEXPECTED RESULT: The button looks the same as before (size, padding, colour, border, corners). Clicking it opens the app's menu, and the menu is linked to the button for screen readers.\nEVIDENCE: r3-6-card-trigger.png, r3-6-menu-open.png\nACTUAL RESULT: Passed. The button's size, padding, colours, border and corners match the previous version exactly. It opens the menu (Deactivate), and the menu is labelled by the button.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: Staging\nStatus: PASSED\nURL: https://prostage.prosperna.ph/home/marketplace\nTask link: https://app.clickup.com/t/86ey1p7bp\n\nTEST CASE #1: Pressing Escape on \"Add a New Credit Card\" closes only that dialog\nSTEPS:\nStep 1 - Go to Marketplace and open the add-on checkout (Order Summary).\nStep 2 - Set PAYMENT TERMS to Annually.\nStep 3 - Set Payment Type to Credit Card Payment, then click \"Add a New Credit Card\".\nStep 4 - Press Escape.\nEXPECTED RESULT: Only the \"Add a New Credit Card\" dialog closes. The Order Summary stays open on the checkout page with Annually still selected.\nEVIDENCE: r3-1-add-card-open-before-escape.png, r3-1-after-escape.png, r3-1-term-kept-after-escape.png\nACTUAL RESULT: Passed. Only the add-card dialog closed. The Order Summary stayed open on the checkout page with Annually (₱17,940.00/year) still selected.\n\nTEST CASE #2: Pressing Escape on the Order Summary alone still closes the checkout\nSTEPS:\nStep 1 - Open the checkout and the \"Add a New Credit Card\" dialog.\nStep 2 - Press Escape to close the add-card dialog.\nStep 3 - Press Escape again.\nEXPECTED RESULT: The first Escape closes only the add-card dialog. The second Escape closes the Order Summary and returns to Marketplace.\nEVIDENCE: r3-2-checkout-only.png, r3-2-after-second-escape.png\nACTUAL RESULT: Passed. The second Escape closed the checkout and returned to the Marketplace page.\n\nTEST CASE #3: The add-card dialog's X and Close buttons still close it\nSTEPS:\nStep 1 - Open the checkout, choose Credit Card Payment and click \"Add a New Credit Card\".\nStep 2 - Click the X in the dialog header.\nStep 3 - Reopen the dialog and click Close.\nEXPECTED RESULT: Both buttons close the dialog, and the Order Summary stays open each time.\nEVIDENCE: ex1-add-card-dialog.png, ex1-after-x-close.png, ex1-after-button-close.png\nACTUAL RESULT: Passed. The X and Close buttons both closed the dialog, and the Order Summary stayed open.\n\nTEST CASE #4: Pressing Escape on the Cancel Subscription warning closes only the warning\nSTEPS:\nStep 1 - Go to Marketplace and open the My Apps tab.\nStep 2 - Open an installed app's ⋮ menu and click Deactivate.\nStep 3 - With the Cancel Subscription warning open, press Escape.\nStep 4 - Reload the page and open My Apps again.\nEXPECTED RESULT: The warning closes, nothing is deactivated, and the same apps are still listed after the reload.\nEVIDENCE: r3-4-warning-before-escape.png, r3-4-after-escape.png\nACTUAL RESULT: Passed. The warning closed and the app stayed installed. My Apps listed the same apps after the reload.\n\nTEST CASE #5: Pressing Escape dismisses the payment success pop-up\nSTEPS:\nStep 1 - Return to Marketplace after a successful add-on payment (link_payment=success).\nStep 2 - With the Success pop-up showing, press Escape.\nEXPECTED RESULT: The Success pop-up closes and the Marketplace page shows.\nEVIDENCE: ex3-success-popup.png, ex3-after-escape.png\nACTUAL RESULT: Passed. The Success pop-up closed and the Marketplace page showed.\n\nTEST CASE #6: The app-card ⋮ menu button looks and works the same\nSTEPS:\nStep 1 - Go to Marketplace and open the My Apps tab.\nStep 2 - Look at the ⋮ button on an installed app card.\nStep 3 - Click it.\nEXPECTED RESULT: The button looks the same as before (size, padding, colour, border, corners). Clicking it opens the app's menu, and the menu is linked to the button for screen readers.\nEVIDENCE: r3-6-card-trigger.png, r3-6-menu-open.png\nACTUAL RESULT: Passed. The button's size, padding, colours, border and corners match the previous version exactly. It opens the menu (Deactivate), and the menu is labelled by the button.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792127135411",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000170702",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Marketplace Page"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 16 2026, 12:22PM (Asia/Manila)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Marketplace Page hss been move to IN TESTING \nUpdated: Oct 16 2026, 12:22PM (Asia/Manila)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792124577149",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000170186",
+    "comment": [
+      {
+        "text": "Ready to test in staging environment for final fixes",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Zb1rhGP83C"
+        }
+      }
+    ],
+    "comment_text": "Ready to test in staging environment for final fixes\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792113319206",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000167105",
+    "comment": [
+      {
+        "text": "PRODUCTION PR READY FOR REVIEW\n\n"
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 37590522,
+          "username": "Ian Pelea",
+          "email": "ian@prosperna.com",
+          "initials": "IP",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/37590522_IvQ.jpg"
+        },
+        "text": "@Ian Pelea"
+      },
+      {
+        "text": " the main PR for the Marketplace Bootstrap-to-Tailwind migration is open and waiting for your review. Merging it deploys to production.\n\nMAIN PR: https://github.com/Prosperna/prosperna1/pull/8971\nSTAGING PRs (merged, QA smoke test passed): https://github.com/Prosperna/prosperna1/pull/8910, https://github.com/Prosperna/prosperna1/pull/8936\nDEV PR (latest, merged): https://github.com/Prosperna/prosperna1/pull/8935\nREPO/BRANCH: prosperna1 / refactor/tw-marketplace-standard (squashed to one commit on main; 81 Marketplace-scoped files, byte-identical to staging)\n"
+      }
+    ],
+    "comment_text": "PRODUCTION PR READY FOR REVIEW\n\n the main PR for the Marketplace Bootstrap-to-Tailwind migration is open and waiting for your review. Merging it deploys to production.\n\nMAIN PR: https://github.com/Prosperna/prosperna1/pull/8971\nSTAGING PRs (merged, QA smoke test passed): https://github.com/Prosperna/prosperna1/pull/8910, https://github.com/Prosperna/prosperna1/pull/8936\nDEV PR (latest, merged): https://github.com/Prosperna/prosperna1/pull/8935\nREPO/BRANCH: prosperna1 / refactor/tw-marketplace-standard (squashed to one commit on main; 81 Marketplace-scoped files, byte-identical to staging)\n@Ian Pelea",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792046941654",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000166898",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Marketplace Page"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7774e130-bf56-467b-9d1a-3971afce0fce"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 15 2026, 1:54PM (Asia/Manila)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fcf1bfa1-92df-420d-bc36-a6111d7c79f3"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e62af9f7-0865-4e25-b8f0-2c363c784893"
+        }
+      }
+    ],
+    "comment_text": "This task Marketplace Page has been move to PASSED TESTING \nDate updated: Oct 15 2026, 1:54PM (Asia/Manila)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792043665174",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000166881",
+    "comment": [
+      {
+        "text": "Env: Staging\nStatus: PASSED\nURL: https://prostage.prosperna.ph/home/marketplace\n\nTEST CASE #1: Lalamove modal screenshot has no stray navigation arrows\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Prosperna Shipping - Lalamove.\nStep 3 - Look at the overview screenshot.\nEXPECTED RESULT: The image shows only the product screenshot, with no < > arrow graphic baked into it.\nEVIDENCE: tc01-lalamove-overview.png\nACTUAL RESULT: Passed. The overview screenshot has no arrows.\n\nTEST CASE #2: \"Temporarily Closed\" app card is fully inactive\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Find the \"Temporarily Closed\" card and compare it to a normal card.\nStep 3 - Click its action button.\nEXPECTED RESULT: Icon, title, description and price are dimmed to about half strength; the button is greyed out and disabled, and clicking it does nothing.\nEVIDENCE: tc02-inactive-card.png\nACTUAL RESULT: Passed. Staging's app list has no \"Temporarily Closed\" app, so one was added to the list for this check. Its content renders dimmed, the button is disabled, and clicking it does not navigate.\n\nTEST CASE #3: Every other app card still opens normally\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Blogs, Custom Fonts, Wholesale, QR Code Menu, Menu View and Order Scheduling.\nEXPECTED RESULT: Every one opens its modal as before.\nEVIDENCE: tc03-blogs.png, tc03-custom-fonts.png, tc03-wholesale.png, tc03-qrMenu.png, tc03-menu-view.png, tc03-order-scheduling.png\nACTUAL RESULT: Passed, 6 of 6.\n\nTEST CASE #4: Country-restricted app badge still displays correctly\nSTEPS:\nStep 1 - Log in to a US-market store and go to Marketplace.\nStep 2 - Find an app marked unavailable in your country.\nStep 3 - Check the badge shape, colour and text.\nEXPECTED RESULT: Same pill-shaped grey badge reading \"Not available in your country.\"\nEVIDENCE: tc04-country-badge.png\nACTUAL RESULT: Passed. No app on staging is country-restricted, so one restricted app was added to the list for this check. The badge reads \"Not available in your country.\" with its usual pill shape and colour.\n\nTEST CASE #5: Lazada / Shopee integration setup modal spacing\nSTEPS:\nStep 1 - Go to Marketplace with a store that has a connected Lazada or Shopee account.\nStep 2 - Open the Lazada or Shopee setup modal.\nStep 3 - Check the spacing between the Seller ID / Shop ID field, the Account field and the Deactivate button.\nEXPECTED RESULT: About 24px between the fields, as on main; the Deactivate button keeps its wide side padding.\nEVIDENCE: tc05-marketplace-loaded.png\nACTUAL RESULT: Passed. The fields' spacing classes now resolve to 24px top and bottom on staging, the same as main's spacing, and the Deactivate button's side padding is 72px, as on main. Measured from staging's live stylesheet; the setup modal itself only opens for a store with a connected Lazada or Shopee account.\n\nTEST CASE #6: App logo size inside the modal\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Click \"Learn More\" on Prosperna Shipping - J&T.\nStep 3 - Compare the card logo with the logo in the modal.\nEXPECTED RESULT: The logo sits fully inside its round holder and does not cover the title, the \"Powered by\" line or the X button.\nEVIDENCE: tc06-jnt-modal-logo.png\nACTUAL RESULT: Passed. The J&T logo now sits inside its round holder and covers nothing.\n\nTEST CASE #7: Logo proportions are not distorted\nSTEPS:\nStep 1 - Open the Prosperna Shipping - J&T modal.\nStep 2 - Look closely at the logo.\nEXPECTED RESULT: The logo keeps its normal shape and is not stretched or squashed.\nEVIDENCE: tc07-jnt-logo-proportions.png\nACTUAL RESULT: Passed. The logo keeps its natural proportions.\n\nTEST CASE #8: Other app modals unaffected\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Blogs, Custom Fonts, Geolocation, Wholesale, QR Code Menu, Menu View, Announcements, Order Scheduling and Custom Delivery Date.\nEXPECTED RESULT: Every logo sits inside its circle; none is smaller, blurry or off-centre.\nEVIDENCE: tc08-blogs-logo.png, tc08-custom-fonts-logo.png, tc08-marketplace-geolocation-logo.png, tc08-wholesale-logo.png, tc08-qrMenu-logo.png, tc08-menu-view-logo.png, tc08-announcements-logo.png, tc08-order-scheduling-logo.png, tc08-customDeliveryDate-logo.png\nACTUAL RESULT: Passed, 9 of 9.\n\nTEST CASE #9: Lazada and Shopee integration panel logos\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open the Lazada modal, then the Shopee modal.\nStep 3 - Look at the platform logo.\nEXPECTED RESULT: Same size and position as before, inside its holder.\nEVIDENCE: tc09-lazada-panel-logo.png, tc09-shopee-panel-logo.png\nACTUAL RESULT: Passed. Both logos sit inside their holders and no longer cover the modal header.\n\nTEST CASE #10: App cards on the marketplace grid\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Scan the logos on all app cards before opening anything.\nEXPECTED RESULT: Every card logo fits its holder.\nEVIDENCE: tc10-grid-logos.png\nACTUAL RESULT: Passed.\n\nTEST CASE #11: Additional Fee modal copy\nSTEPS:\nStep 1 - Go to Marketplace and open the Additional Fee card.\nStep 2 - Read the line under the app title and subtitle.\nEXPECTED RESULT: Shows only \"FREE\" in green; the \"(Available for LAUNCH, GROW, and SCALE plans only.)\" text is gone.\nEVIDENCE: tc11-additional-fee-copy.png\nACTUAL RESULT: Passed.\n\nTEST CASE #12: Additional Fee modal carousel layout\nSTEPS:\nStep 1 - Open the Additional Fee modal, Overview tab.\nStep 2 - Look at the screenshot area under the tabs.\nEXPECTED RESULT: The image area stretches the full width of the modal.\nEVIDENCE: tc12-additional-fee-carousel.png\nACTUAL RESULT: Passed.\n\nTEST CASE #13: Multi-currency modal copy\nSTEPS:\nStep 1 - Log in to a US-market store and go to Marketplace.\nStep 2 - Open the Multi-currency card.\nStep 3 - Read the line under the app title and subtitle.\nEXPECTED RESULT: Shows only \"FREE\" in green; the \"No extra fee on any plan-use Store Settings to connect Stripe and finish setup.\" sentence is gone.\nEVIDENCE: tc13-multi-currency-copy.png\nACTUAL RESULT: Passed.\n\nTEST CASE #14: Loading skeleton shows the active tab underline\nSTEPS:\nStep 1 - Go to Marketplace with a slowed network so the modal stays in its loading state.\nStep 2 - Open \"Learn More\" on an app card and look at the grey placeholder.\nEXPECTED RESULT: The placeholder's first tab shows a dark underline, like the loaded Overview tab.\nEVIDENCE: tc14-skeleton-tab-underline.png, tc14-loaded-tab-underline.png\nACTUAL RESULT: Passed. The first placeholder tab has the dark underline, matching the loaded Overview tab.\n\nTEST CASE #15: Screenshot carousel buttons are announced by a screen reader\nSTEPS:\nStep 1 - Open an app modal whose overview has more than one screenshot.\nStep 2 - Tab to the left arrow, the right arrow and each dot.\nStep 3 - Click Next, a dot and Previous.\nEXPECTED RESULT: Buttons are named \"Previous slide\", \"Next slide\" and \"Go to slide 1\", \"Go to slide 2\", etc.; the current dot is marked as current; clicking still changes the screenshot.\nEVIDENCE: tc15-lbc-slide1.png, tc15-lbc-slide2.png\nACTUAL RESULT: Passed. No app modal on staging has more than one screenshot, so a three-screenshot carousel was supplied for this check. All buttons carry the expected names, the current dot is marked, and Next, the dots and Previous all change the slide.\n\nTEST CASE #16: \"Add a New Credit Card\" dialog opens on top of the checkout panel\nSTEPS:\nStep 1 - On a store that bills through Stripe, go to Marketplace and open the checkout (Order Summary) for a paid add-on.\nStep 2 - Set Payment Type to \"Credit Card Payment\".\nStep 3 - Click \"Add a New Credit Card\".\nStep 4 - Click the X; reopen the dialog and click Close.\nEXPECTED RESULT: The dialog opens in front of the Order Summary panel with the panel dimmed behind it; the X and Close both close it, and the Order Summary is still there afterwards.\nEVIDENCE: ex1-checkout-order-summary.png, ex1-checkout-card-list.png, ex1-add-card-dialog.png, ex1-after-x-close.png, ex1-after-button-close.png\nACTUAL RESULT: Passed. The dialog opens in front of the Order Summary, which is dimmed behind it. The X and Close each close the dialog and leave the Order Summary open. Checked on Stripe only: no store can open the Xendit card form while the Xendit recurring flag is off. Nothing was paid.\n\nTEST CASE #17: Cancel Subscription warning (staging smoke)\nSTEPS:\nStep 1 - Go to Marketplace > My Apps.\nStep 2 - Open the menu on an installed app and choose Deactivate.\nStep 3 - Click \"Do Not Cancel\".\nEXPECTED RESULT: The warning opens with its confirm button disabled until CANCEL is typed; \"Do Not Cancel\" closes it and the app stays installed.\nEVIDENCE: ex2-my-apps.png, ex2-cancel-warning.png\nACTUAL RESULT: Passed.\n\nTEST CASE #18: Payment success popup (staging smoke)\nSTEPS:\nStep 1 - Return to Marketplace from a completed add-on payment.\nEXPECTED RESULT: The \"Success\" popup renders and closes.\nEVIDENCE: ex3-success-popup.png\nACTUAL RESULT: Passed.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: Staging\nStatus: PASSED\nURL: https://prostage.prosperna.ph/home/marketplace\n\nTEST CASE #1: Lalamove modal screenshot has no stray navigation arrows\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Prosperna Shipping - Lalamove.\nStep 3 - Look at the overview screenshot.\nEXPECTED RESULT: The image shows only the product screenshot, with no < > arrow graphic baked into it.\nEVIDENCE: tc01-lalamove-overview.png\nACTUAL RESULT: Passed. The overview screenshot has no arrows.\n\nTEST CASE #2: \"Temporarily Closed\" app card is fully inactive\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Find the \"Temporarily Closed\" card and compare it to a normal card.\nStep 3 - Click its action button.\nEXPECTED RESULT: Icon, title, description and price are dimmed to about half strength; the button is greyed out and disabled, and clicking it does nothing.\nEVIDENCE: tc02-inactive-card.png\nACTUAL RESULT: Passed. Staging's app list has no \"Temporarily Closed\" app, so one was added to the list for this check. Its content renders dimmed, the button is disabled, and clicking it does not navigate.\n\nTEST CASE #3: Every other app card still opens normally\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Blogs, Custom Fonts, Wholesale, QR Code Menu, Menu View and Order Scheduling.\nEXPECTED RESULT: Every one opens its modal as before.\nEVIDENCE: tc03-blogs.png, tc03-custom-fonts.png, tc03-wholesale.png, tc03-qrMenu.png, tc03-menu-view.png, tc03-order-scheduling.png\nACTUAL RESULT: Passed, 6 of 6.\n\nTEST CASE #4: Country-restricted app badge still displays correctly\nSTEPS:\nStep 1 - Log in to a US-market store and go to Marketplace.\nStep 2 - Find an app marked unavailable in your country.\nStep 3 - Check the badge shape, colour and text.\nEXPECTED RESULT: Same pill-shaped grey badge reading \"Not available in your country.\"\nEVIDENCE: tc04-country-badge.png\nACTUAL RESULT: Passed. No app on staging is country-restricted, so one restricted app was added to the list for this check. The badge reads \"Not available in your country.\" with its usual pill shape and colour.\n\nTEST CASE #5: Lazada / Shopee integration setup modal spacing\nSTEPS:\nStep 1 - Go to Marketplace with a store that has a connected Lazada or Shopee account.\nStep 2 - Open the Lazada or Shopee setup modal.\nStep 3 - Check the spacing between the Seller ID / Shop ID field, the Account field and the Deactivate button.\nEXPECTED RESULT: About 24px between the fields, as on main; the Deactivate button keeps its wide side padding.\nEVIDENCE: tc05-marketplace-loaded.png\nACTUAL RESULT: Passed. The fields' spacing classes now resolve to 24px top and bottom on staging, the same as main's spacing, and the Deactivate button's side padding is 72px, as on main. Measured from staging's live stylesheet; the setup modal itself only opens for a store with a connected Lazada or Shopee account.\n\nTEST CASE #6: App logo size inside the modal\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Click \"Learn More\" on Prosperna Shipping - J&T.\nStep 3 - Compare the card logo with the logo in the modal.\nEXPECTED RESULT: The logo sits fully inside its round holder and does not cover the title, the \"Powered by\" line or the X button.\nEVIDENCE: tc06-jnt-modal-logo.png\nACTUAL RESULT: Passed. The J&T logo now sits inside its round holder and covers nothing.\n\nTEST CASE #7: Logo proportions are not distorted\nSTEPS:\nStep 1 - Open the Prosperna Shipping - J&T modal.\nStep 2 - Look closely at the logo.\nEXPECTED RESULT: The logo keeps its normal shape and is not stretched or squashed.\nEVIDENCE: tc07-jnt-logo-proportions.png\nACTUAL RESULT: Passed. The logo keeps its natural proportions.\n\nTEST CASE #8: Other app modals unaffected\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Blogs, Custom Fonts, Geolocation, Wholesale, QR Code Menu, Menu View, Announcements, Order Scheduling and Custom Delivery Date.\nEXPECTED RESULT: Every logo sits inside its circle; none is smaller, blurry or off-centre.\nEVIDENCE: tc08-blogs-logo.png, tc08-custom-fonts-logo.png, tc08-marketplace-geolocation-logo.png, tc08-wholesale-logo.png, tc08-qrMenu-logo.png, tc08-menu-view-logo.png, tc08-announcements-logo.png, tc08-order-scheduling-logo.png, tc08-customDeliveryDate-logo.png\nACTUAL RESULT: Passed, 9 of 9.\n\nTEST CASE #9: Lazada and Shopee integration panel logos\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open the Lazada modal, then the Shopee modal.\nStep 3 - Look at the platform logo.\nEXPECTED RESULT: Same size and position as before, inside its holder.\nEVIDENCE: tc09-lazada-panel-logo.png, tc09-shopee-panel-logo.png\nACTUAL RESULT: Passed. Both logos sit inside their holders and no longer cover the modal header.\n\nTEST CASE #10: App cards on the marketplace grid\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Scan the logos on all app cards before opening anything.\nEXPECTED RESULT: Every card logo fits its holder.\nEVIDENCE: tc10-grid-logos.png\nACTUAL RESULT: Passed.\n\nTEST CASE #11: Additional Fee modal copy\nSTEPS:\nStep 1 - Go to Marketplace and open the Additional Fee card.\nStep 2 - Read the line under the app title and subtitle.\nEXPECTED RESULT: Shows only \"FREE\" in green; the \"(Available for LAUNCH, GROW, and SCALE plans only.)\" text is gone.\nEVIDENCE: tc11-additional-fee-copy.png\nACTUAL RESULT: Passed.\n\nTEST CASE #12: Additional Fee modal carousel layout\nSTEPS:\nStep 1 - Open the Additional Fee modal, Overview tab.\nStep 2 - Look at the screenshot area under the tabs.\nEXPECTED RESULT: The image area stretches the full width of the modal.\nEVIDENCE: tc12-additional-fee-carousel.png\nACTUAL RESULT: Passed.\n\nTEST CASE #13: Multi-currency modal copy\nSTEPS:\nStep 1 - Log in to a US-market store and go to Marketplace.\nStep 2 - Open the Multi-currency card.\nStep 3 - Read the line under the app title and subtitle.\nEXPECTED RESULT: Shows only \"FREE\" in green; the \"No extra fee on any plan-use Store Settings to connect Stripe and finish setup.\" sentence is gone.\nEVIDENCE: tc13-multi-currency-copy.png\nACTUAL RESULT: Passed.\n\nTEST CASE #14: Loading skeleton shows the active tab underline\nSTEPS:\nStep 1 - Go to Marketplace with a slowed network so the modal stays in its loading state.\nStep 2 - Open \"Learn More\" on an app card and look at the grey placeholder.\nEXPECTED RESULT: The placeholder's first tab shows a dark underline, like the loaded Overview tab.\nEVIDENCE: tc14-skeleton-tab-underline.png, tc14-loaded-tab-underline.png\nACTUAL RESULT: Passed. The first placeholder tab has the dark underline, matching the loaded Overview tab.\n\nTEST CASE #15: Screenshot carousel buttons are announced by a screen reader\nSTEPS:\nStep 1 - Open an app modal whose overview has more than one screenshot.\nStep 2 - Tab to the left arrow, the right arrow and each dot.\nStep 3 - Click Next, a dot and Previous.\nEXPECTED RESULT: Buttons are named \"Previous slide\", \"Next slide\" and \"Go to slide 1\", \"Go to slide 2\", etc.; the current dot is marked as current; clicking still changes the screenshot.\nEVIDENCE: tc15-lbc-slide1.png, tc15-lbc-slide2.png\nACTUAL RESULT: Passed. No app modal on staging has more than one screenshot, so a three-screenshot carousel was supplied for this check. All buttons carry the expected names, the current dot is marked, and Next, the dots and Previous all change the slide.\n\nTEST CASE #16: \"Add a New Credit Card\" dialog opens on top of the checkout panel\nSTEPS:\nStep 1 - On a store that bills through Stripe, go to Marketplace and open the checkout (Order Summary) for a paid add-on.\nStep 2 - Set Payment Type to \"Credit Card Payment\".\nStep 3 - Click \"Add a New Credit Card\".\nStep 4 - Click the X; reopen the dialog and click Close.\nEXPECTED RESULT: The dialog opens in front of the Order Summary panel with the panel dimmed behind it; the X and Close both close it, and the Order Summary is still there afterwards.\nEVIDENCE: ex1-checkout-order-summary.png, ex1-checkout-card-list.png, ex1-add-card-dialog.png, ex1-after-x-close.png, ex1-after-button-close.png\nACTUAL RESULT: Passed. The dialog opens in front of the Order Summary, which is dimmed behind it. The X and Close each close the dialog and leave the Order Summary open. Checked on Stripe only: no store can open the Xendit card form while the Xendit recurring flag is off. Nothing was paid.\n\nTEST CASE #17: Cancel Subscription warning (staging smoke)\nSTEPS:\nStep 1 - Go to Marketplace > My Apps.\nStep 2 - Open the menu on an installed app and choose Deactivate.\nStep 3 - Click \"Do Not Cancel\".\nEXPECTED RESULT: The warning opens with its confirm button disabled until CANCEL is typed; \"Do Not Cancel\" closes it and the app stays installed.\nEVIDENCE: ex2-my-apps.png, ex2-cancel-warning.png\nACTUAL RESULT: Passed.\n\nTEST CASE #18: Payment success popup (staging smoke)\nSTEPS:\nStep 1 - Return to Marketplace from a completed add-on payment.\nEXPECTED RESULT: The \"Success\" popup renders and closes.\nEVIDENCE: ex3-success-popup.png\nACTUAL RESULT: Passed.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792043357398",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000166054",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Marketplace Page"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 15 2026, 10:03AM (Asia/Manila)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Marketplace Page hss been move to IN TESTING \nUpdated: Oct 15 2026, 10:03AM (Asia/Manila)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792029829035",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000165969",
+    "comment": [
+      {
+        "text": "Marketplace Tailwind Migration: Issues, Fixes and Bootstrap-Free Verification",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 2,
+          "block-id": "block-ltjJ7apuru"
+        }
+      },
+      {
+        "text": "Environment: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "Staging",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-usymeFOOr5"
+        }
+      },
+      {
+        "text": "Staging PR: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "https://github.com/Prosperna/prosperna1/pull/8936",
+        "attributes": {
+          "link": "https://github.com/Prosperna/prosperna1/pull/8936"
+        }
+      },
+      {
+        "text": " (merged 2026-10-15)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-J8TjfSen71"
+        }
+      },
+      {
+        "text": "Result: ",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "Marketplace on staging renders no Bootstrap. Below is every issue raised in code review and in QA, how each was fixed, and how the result was verified.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-zZ4st26ctY"
+        }
+      },
+      {
+        "text": "1. Issues from code review (staging PRs #8555 to #8910)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 3,
+          "block-id": "block-hCHxzsBXYX"
+        }
+      },
+      {
+        "text": "Issue",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-MimYMBViy-",
+          "table-cell-line": {
+            "row": "row-1-0",
+            "cell": "cell-1-0-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Cause",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-L0cJ9mUIsZ",
+          "table-cell-line": {
+            "row": "row-1-0",
+            "cell": "cell-1-0-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Fix",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-XKOwT2Acky",
+          "table-cell-line": {
+            "row": "row-1-0",
+            "cell": "cell-1-0-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Removed \"FREE\" caption constant re-added",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-9ErSW8y4ve",
+          "table-cell-line": {
+            "row": "row-1-1",
+            "cell": "cell-1-1-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Promotion cut carried a constant QA had removed",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-xepo-XFvKV",
+          "table-cell-line": {
+            "row": "row-1-1",
+            "cell": "cell-1-1-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Constant removed; file matches dev",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-SwuFf07-Fl",
+          "table-cell-line": {
+            "row": "row-1-1",
+            "cell": "cell-1-1-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Loading skeleton tab had no underline",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-NZgtiFu3vQ",
+          "table-cell-line": {
+            "row": "row-1-2",
+            "cell": "cell-1-2-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Tailwind classes written variant-first (data-[x]:tw:)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-smEt7fA6yx",
+          "table-cell-line": {
+            "row": "row-1-2",
+            "cell": "cell-1-2-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Prefix written first (tw:data-[x]:)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-xX2LrfDnY4",
+          "table-cell-line": {
+            "row": "row-1-2",
+            "cell": "cell-1-2-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Carousel buttons had no accessible names",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ur6XCCDDGz",
+          "table-cell-line": {
+            "row": "row-1-3",
+            "cell": "cell-1-3-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Arrow and dot buttons had no labels",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gL2NS4ZuXm",
+          "table-cell-line": {
+            "row": "row-1-3",
+            "cell": "cell-1-3-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "aria-label on each, aria-current on the active dot",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-a-OZFa3LOz",
+          "table-cell-line": {
+            "row": "row-1-3",
+            "cell": "cell-1-3-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Shared AppButton rewrite broke other pages",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Ui3GJc2uZg",
+          "table-cell-line": {
+            "row": "row-1-4",
+            "cell": "cell-1-4-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "AppButton is used by about 437 buttons app-wide",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-tHWWLov5Hx",
+          "table-cell-line": {
+            "row": "row-1-4",
+            "cell": "cell-1-4-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "AppButton left unchanged; Marketplace got its own MarketplaceButton",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-w8Xt9km-gA",
+          "table-cell-line": {
+            "row": "row-1-4",
+            "cell": "cell-1-4-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "App grid showed the wrong cards per row",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-A1JivoXyH3",
+          "table-cell-line": {
+            "row": "row-1-5",
+            "cell": "cell-1-5-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Tailwind sorts px and arbitrary breakpoints before rem ones",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-CiE0ore0xh",
+          "table-cell-line": {
+            "row": "row-1-5",
+            "cell": "cell-1-5-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "All Marketplace breakpoints written as fixed px values",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-u_9-SHXfOu",
+          "table-cell-line": {
+            "row": "row-1-5",
+            "cell": "cell-1-5-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Card button smaller than staging",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-E8IiHf80fp",
+          "table-cell-line": {
+            "row": "row-1-6",
+            "cell": "cell-1-6-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Bootstrap .btn sizing not carried over",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lgtJKfX7BE",
+          "table-cell-line": {
+            "row": "row-1-6",
+            "cell": "cell-1-6-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "MarketplaceButton uses the theme's .btn sizing",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-oxLdju12Fl",
+          "table-cell-line": {
+            "row": "row-1-6",
+            "cell": "cell-1-6-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Weight 500 not applying on several buttons",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ALXag7DJlC",
+          "table-cell-line": {
+            "row": "row-1-7",
+            "cell": "cell-1-7-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Base font-normal outranked font-medium",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lQiQYDy9mO",
+          "table-cell-line": {
+            "row": "row-1-7",
+            "cell": "cell-1-7-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "The button drops its default when the page sets its own",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lJ__KjodUA",
+          "table-cell-line": {
+            "row": "row-1-7",
+            "cell": "cell-1-7-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Component copies drifted from the originals",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-yKAyKqQRFT",
+          "table-cell-line": {
+            "row": "row-1-8",
+            "cell": "cell-1-8-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "7 sizing/colour mismatches (padding, chips, labels)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-4MJnptz3Hz",
+          "table-cell-line": {
+            "row": "row-1-8",
+            "cell": "cell-1-8-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Each matched to the theme values",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gYcQDTwhTg",
+          "table-cell-line": {
+            "row": "row-1-8",
+            "cell": "cell-1-8-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Type scale smaller than staging",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-f0z8iaNn_R",
+          "table-cell-line": {
+            "row": "row-1-9",
+            "cell": "cell-1-9-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Tailwind's text sizes differ from the app theme's",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-p2FGyypHGL",
+          "table-cell-line": {
+            "row": "row-1-9",
+            "cell": "cell-1-9-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Matched to the theme: 1.5rem / 1rem / 0.875rem, weight 500",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-cy4plVDuGe",
+          "table-cell-line": {
+            "row": "row-1-9",
+            "cell": "cell-1-9-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Disabled chips at weight 400",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-m1Lwg00AC9",
+          "table-cell-line": {
+            "row": "row-1-10",
+            "cell": "cell-1-10-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Shared ui/Button base outranked font-medium",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-vBybWSj-on",
+          "table-cell-line": {
+            "row": "row-1-10",
+            "cell": "cell-1-10-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "font-medium! on the four chips",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-czaLz4DEwv",
+          "table-cell-line": {
+            "row": "row-1-10",
+            "cell": "cell-1-10-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-A4uY0AU5XB"
+        }
+      },
+      {
+        "text": "2. Issues from QA (staging smoke test, 2026-10-14)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 3,
+          "block-id": "block-97ivWbwoWY"
+        }
+      },
+      {
+        "text": "Test case",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-SdOesokhj3",
+          "table-cell-line": {
+            "row": "row-2-0",
+            "cell": "cell-2-0-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Cause",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-KVjLIUyr-6",
+          "table-cell-line": {
+            "row": "row-2-0",
+            "cell": "cell-2-0-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Fix",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-r0xclszWPF",
+          "table-cell-line": {
+            "row": "row-2-0",
+            "cell": "cell-2-0-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "#6, #9: J&T, Lazada and Shopee logos overflow the modal",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-o-fDvHZez1",
+          "table-cell-line": {
+            "row": "row-2-1",
+            "cell": "cell-2-1-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "The fix from PR #8122 was dropped when the branch was cut down to Marketplace-only files (it lives in a shared stylesheet)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2C19ld70fD",
+          "table-cell-line": {
+            "row": "row-2-1",
+            "cell": "cell-2-1-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Fix restored on the branch and promoted (PR #8936)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-14ojQRml9E",
+          "table-cell-line": {
+            "row": "row-2-1",
+            "cell": "cell-2-1-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "#17: \"Add a New Credit Card\" opens behind the checkout panel",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-G2l7nKnvuB",
+          "table-cell-line": {
+            "row": "row-2-2",
+            "cell": "cell-2-2-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Checkout panel was above the dialog (z-index 1055 vs 1050)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-vIRRXrCRXt",
+          "table-cell-line": {
+            "row": "row-2-2",
+            "cell": "cell-2-2-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Dialog raised above the panel and dims it, as on main",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-JVI6QkMvOl",
+          "table-cell-line": {
+            "row": "row-2-2",
+            "cell": "cell-2-2-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "#5: Lazada/Shopee setup fields 12px apart",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-8uhxpxzLdB",
+          "table-cell-line": {
+            "row": "row-2-3",
+            "cell": "cell-2-3-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Tailwind spacing is half the theme's Bootstrap spacing",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-3ugxP9Sluz",
+          "table-cell-line": {
+            "row": "row-2-3",
+            "cell": "cell-2-3-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Spacing set to 24px, as on main",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-3nNWc_aEr-",
+          "table-cell-line": {
+            "row": "row-2-3",
+            "cell": "cell-2-3-2",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-FHtz5d8yj4"
+        }
+      },
+      {
+        "text": "3. How \"no Bootstrap\" was verified (run against staging's own files)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 3,
+          "block-id": "block-nRdWbAnDDu"
+        }
+      },
+      {
+        "text": "Check",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-oSaSvy_amO",
+          "table-cell-line": {
+            "row": "row-3-0",
+            "cell": "cell-3-0-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Result",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-lzRgkTbKQl",
+          "table-cell-line": {
+            "row": "row-3-0",
+            "cell": "cell-3-0-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "react-bootstrap imports in everything Marketplace loads",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-AUfSlLvLrY",
+          "table-cell-line": {
+            "row": "row-3-1",
+            "cell": "cell-3-1-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "0 of 164 files (includes the shared files it pulls in)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gkbHarELqi",
+          "table-cell-line": {
+            "row": "row-3-1",
+            "cell": "cell-3-1-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Bootstrap class names in what Marketplace renders",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-3h0LmSjEi2",
+          "table-cell-line": {
+            "row": "row-3-2",
+            "cell": "cell-3-2-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "0 (the 2 hits are a code comment and a custom class)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gXHUjFv8HH",
+          "table-cell-line": {
+            "row": "row-3-2",
+            "cell": "cell-3-2-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Marketplace stylesheets targeting Bootstrap classes",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-MY15oCov01",
+          "table-cell-line": {
+            "row": "row-3-3",
+            "cell": "cell-3-3-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "0",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Pma8gtdvjB",
+          "table-cell-line": {
+            "row": "row-3-3",
+            "cell": "cell-3-3-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "Bundle check (reviewer built the page with esbuild)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Kvd40x1saa",
+          "table-cell-line": {
+            "row": "row-3-4",
+            "cell": "cell-3-4-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "0 react-bootstrap modules out of 13,586",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-hpXWYlYBzu",
+          "table-cell-line": {
+            "row": "row-3-4",
+            "cell": "cell-3-4-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "\"react-bootstrap\" text inside Marketplace files",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gKOhWnd-na",
+          "table-cell-line": {
+            "row": "row-3-5",
+            "cell": "cell-3-5-0",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "3 hits, all code comments, no imports",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-NyFHqeK5wF",
+          "table-cell-line": {
+            "row": "row-3-5",
+            "cell": "cell-3-5-1",
+            "colspan": "1",
+            "rowspan": "1"
+          }
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fP_u-NjPiU"
+        }
+      },
+      {
+        "text": "How it was reached without touching other pages:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0tmwkE9_xW"
+        }
+      },
+      {
+        "text": "Shared components Marketplace used (upgrade popup, checkout card list and add-card dialog, confirmation dialog, form field, help tooltip, radio chips, page title) got Marketplace-only Tailwind copies. The shared originals are unchanged, so no other page is affected.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          },
+          "block-id": "block-Cd2JJKW1hi"
+        }
+      },
+      {
+        "text": "Each copy is tested side by side against its original (76 tests), including the payment payload, which is identical.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          },
+          "block-id": "block--C5yKrXTGa"
+        }
+      },
+      {
+        "text": "A style test resolves the real compiled CSS and fails if any class written on a Marketplace button is silently overridden.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          },
+          "block-id": "block-zZeHepAIdX"
+        }
+      },
+      {
+        "text": "4. Intentionally left on Bootstrap",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 3,
+          "block-id": "block-i-RJCKSx-P"
+        }
+      },
+      {
+        "text": "AppButton",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " (shared button): converting it affects every page, so it is a separate task after this cleanup. Marketplace no longer uses it.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          },
+          "block-id": "block-Wocj4rqQ1y"
+        }
+      },
+      {
+        "text": "Senior/PWD app",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": ": a new feature built after the migration. It exists only on dev and is not part of this task.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          },
+          "block-id": "block-s6g9DR7lEs"
+        }
+      },
+      {
+        "text": "Process change",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 3,
+          "block-id": "block-Ab2TQbqc2A"
+        }
+      },
+      {
+        "text": "The QA #6/#9 regression happened because a fix was lost between dev and staging. Every fix is now made on the main Marketplace branch first and then copied to the dev and staging branches, with a file-by-file match check before any PR is opened.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-_ReGWV-JIZ"
+        }
+      }
+    ],
+    "comment_text": "Marketplace Tailwind Migration: Issues, Fixes and Bootstrap-Free Verification\nEnvironment: Staging\nStaging PR: https://github.com/Prosperna/prosperna1/pull/8936 (merged 2026-10-15)\nResult: Marketplace on staging renders no Bootstrap. Below is every issue raised in code review and in QA, how each was fixed, and how the result was verified.\n1. Issues from code review (staging PRs #8555 to #8910)\nIssue\nCause\nFix\nRemoved \"FREE\" caption constant re-added\nPromotion cut carried a constant QA had removed\nConstant removed; file matches dev\nLoading skeleton tab had no underline\nTailwind classes written variant-first (data-[x]:tw:)\nPrefix written first (tw:data-[x]:)\nCarousel buttons had no accessible names\nArrow and dot buttons had no labels\naria-label on each, aria-current on the active dot\nShared AppButton rewrite broke other pages\nAppButton is used by about 437 buttons app-wide\nAppButton left unchanged; Marketplace got its own MarketplaceButton\nApp grid showed the wrong cards per row\nTailwind sorts px and arbitrary breakpoints before rem ones\nAll Marketplace breakpoints written as fixed px values\nCard button smaller than staging\nBootstrap .btn sizing not carried over\nMarketplaceButton uses the theme's .btn sizing\nWeight 500 not applying on several buttons\nBase font-normal outranked font-medium\nThe button drops its default when the page sets its own\nComponent copies drifted from the originals\n7 sizing/colour mismatches (padding, chips, labels)\nEach matched to the theme values\nType scale smaller than staging\nTailwind's text sizes differ from the app theme's\nMatched to the theme: 1.5rem / 1rem / 0.875rem, weight 500\nDisabled chips at weight 400\nShared ui/Button base outranked font-medium\nfont-medium! on the four chips\n\n2. Issues from QA (staging smoke test, 2026-10-14)\nTest case\nCause\nFix\n#6, #9: J&T, Lazada and Shopee logos overflow the modal\nThe fix from PR #8122 was dropped when the branch was cut down to Marketplace-only files (it lives in a shared stylesheet)\nFix restored on the branch and promoted (PR #8936)\n#17: \"Add a New Credit Card\" opens behind the checkout panel\nCheckout panel was above the dialog (z-index 1055 vs 1050)\nDialog raised above the panel and dims it, as on main\n#5: Lazada/Shopee setup fields 12px apart\nTailwind spacing is half the theme's Bootstrap spacing\nSpacing set to 24px, as on main\n\n3. How \"no Bootstrap\" was verified (run against staging's own files)\nCheck\nResult\nreact-bootstrap imports in everything Marketplace loads\n0 of 164 files (includes the shared files it pulls in)\nBootstrap class names in what Marketplace renders\n0 (the 2 hits are a code comment and a custom class)\nMarketplace stylesheets targeting Bootstrap classes\n0\nBundle check (reviewer built the page with esbuild)\n0 react-bootstrap modules out of 13,586\n\"react-bootstrap\" text inside Marketplace files\n3 hits, all code comments, no imports\n\nHow it was reached without touching other pages:\nShared components Marketplace used (upgrade popup, checkout card list and add-card dialog, confirmation dialog, form field, help tooltip, radio chips, page title) got Marketplace-only Tailwind copies. The shared originals are unchanged, so no other page is affected.\nEach copy is tested side by side against its original (76 tests), including the payment payload, which is identical.\nA style test resolves the real compiled CSS and fails if any class written on a Marketplace button is silently overridden.\n4. Intentionally left on Bootstrap\nAppButton (shared button): converting it affects every page, so it is a separate task after this cleanup. Marketplace no longer uses it.\nSenior/PWD app: a new feature built after the migration. It exists only on dev and is not part of this task.\nProcess change\nThe QA #6/#9 regression happened because a fix was lost between dev and staging. Every fix is now made on the main Marketplace branch first and then copied to the dev and staging branches, with a file-by-file match check before any PR is opened.\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792027477152",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000165853",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\n\nFixed the 4 failures from the 2026-10-14 staging smoke test:\n1. Test cases 6 and 9 (app logos too big in the J&T, Lazada and Shopee modals): the fix from PR #8122 was on dev, but it was dropped from the Marketplace branch when the branch was cleaned down to Marketplace-only files, because it lives in a shared stylesheet. It is restored on the branch and included in the staging PR.\n2. Test case 17 (\"Add a New Credit Card\" opening behind the checkout panel): the dialog now opens in front of the panel, with the panel dimmed behind it, for both Stripe and Xendit stores.\n3. Test case 5 (Lazada/Shopee setup field spacing): the gap between the fields is back to 24px, as on main.\n\nEXTRA WORK\n\n- The workflow now requires every fix to be made on the main Marketplace branch first and then copied to the dev and staging branches, with a check that every file matches before a PR is opened, so a fix can no longer go missing between dev and staging.\n\nPULL REQUESTS\n\n- prosperna1 dev PR (merged): https://github.com/Prosperna/prosperna1/pull/8935 (branch refactor/tw-marketplace-standard-dev17)\n- prosperna1 staging PR (in review): https://github.com/Prosperna/prosperna1/pull/8936 (branch refactor/tw-marketplace-standard-staging21)\n\nHOW IT WAS TESTED\n\n- ESLint on changed files: clean\n- Marketplace tests: 362 passed on the staging branch, 346 passed on the dev branch\n- New automated checks: the dialog sits above the checkout panel (Stripe and Xendit), and the field spacing is 24px. Both fail if the fix is removed.\n\nNEXT STEPS\n\n- Staging PR #8936 needs code review, then QA can re-run test cases 5, 6, 9 and the \"Add a New Credit Card\" check (new case 16 in the summary) on staging.\n\nQA TEST CASES\n\nThe QA TEST CASES SUMMARY comment was updated for this PR (case 5 updated, 6 and 9 marked for re-test, case 16 added): https://app.clickup.com/t/86ey1p7bp?comment=1100740000082177\n"
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\n\nFixed the 4 failures from the 2026-10-14 staging smoke test:\n1. Test cases 6 and 9 (app logos too big in the J&T, Lazada and Shopee modals): the fix from PR #8122 was on dev, but it was dropped from the Marketplace branch when the branch was cleaned down to Marketplace-only files, because it lives in a shared stylesheet. It is restored on the branch and included in the staging PR.\n2. Test case 17 (\"Add a New Credit Card\" opening behind the checkout panel): the dialog now opens in front of the panel, with the panel dimmed behind it, for both Stripe and Xendit stores.\n3. Test case 5 (Lazada/Shopee setup field spacing): the gap between the fields is back to 24px, as on main.\n\nEXTRA WORK\n\n- The workflow now requires every fix to be made on the main Marketplace branch first and then copied to the dev and staging branches, with a check that every file matches before a PR is opened, so a fix can no longer go missing between dev and staging.\n\nPULL REQUESTS\n\n- prosperna1 dev PR (merged): https://github.com/Prosperna/prosperna1/pull/8935 (branch refactor/tw-marketplace-standard-dev17)\n- prosperna1 staging PR (in review): https://github.com/Prosperna/prosperna1/pull/8936 (branch refactor/tw-marketplace-standard-staging21)\n\nHOW IT WAS TESTED\n\n- ESLint on changed files: clean\n- Marketplace tests: 362 passed on the staging branch, 346 passed on the dev branch\n- New automated checks: the dialog sits above the checkout panel (Stripe and Xendit), and the field spacing is 24px. Both fail if the fix is removed.\n\nNEXT STEPS\n\n- Staging PR #8936 needs code review, then QA can re-run test cases 5, 6, 9 and the \"Add a New Credit Card\" check (new case 16 in the summary) on staging.\n\nQA TEST CASES\n\nThe QA TEST CASES SUMMARY comment was updated for this PR (case 5 updated, 6 and 9 marked for re-test, case 16 added): https://app.clickup.com/t/86ey1p7bp?comment=1100740000082177\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1792025005403",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000162716",
+    "comment": [
+      {
+        "text": "Env: Staging\nStatus: FAILED\nURL: https://prostage.prosperna.ph/home/marketplace\n\nTEST CASE #1: Lalamove modal screenshot has no stray navigation arrows\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Prosperna Shipping - Lalamove.\nStep 3 - Look at the overview screenshot.\nEXPECTED RESULT: The image shows only the product screenshot, with no < > arrow graphic baked into it.\nEVIDENCE: tc01-lalamove-overview.png\nACTUAL RESULT: Passed. The modal serves the fixed screenshot with no arrows.\n\nTEST CASE #2: \"Temporarily Closed\" app card is fully inactive\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Find the \"Temporarily Closed\" card and compare it to a normal card.\nStep 3 - Click its action button.\nEXPECTED RESULT: Icon, title, description and price are dimmed to about half strength; the button is greyed out and disabled, and clicking it does nothing.\nEVIDENCE: tc02-inactive-card.png\nACTUAL RESULT: Passed. Staging's app list has no \"Temporarily Closed\" app, so one was added to the list for this check. Its icon, title, description and price render at opacity 0.55, the button is disabled, and clicking it does not navigate.\n\nTEST CASE #3: Every other app card still opens normally\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Blogs, Custom Fonts, Wholesale, QR Code Menu, Menu View and Order Scheduling.\nEXPECTED RESULT: Every one opens its modal as before.\nEVIDENCE: tc03-blogs.png, tc03-custom-fonts.png, tc03-wholesale.png, tc03-qrMenu.png, tc03-menu-view.png, tc03-order-scheduling.png\nACTUAL RESULT: Passed, 6 of 6.\n\nTEST CASE #4: Country-restricted app badge still displays correctly\nSTEPS:\nStep 1 - Log in to a US-market store and go to Marketplace.\nStep 2 - Find an app marked unavailable in your country.\nStep 3 - Check the badge shape, colour and text.\nEXPECTED RESULT: Same pill-shaped grey badge reading \"Not available in your country.\"\nEVIDENCE: tc04-country-badge.png\nACTUAL RESULT: Passed. No app on staging is country-restricted (every app's country list is empty), so one restricted app was added to the list for this check. The badge reads \"Not available in your country.\" and the removed CSS class changes none of its styles.\n\nTEST CASE #5: Lazada / Shopee integration setup modal spacing\nSTEPS:\nStep 1 - Go to Marketplace with a store that has a connected Lazada or Shopee account.\nStep 2 - Open the Lazada or Shopee setup modal.\nStep 3 - Check the spacing between the Seller ID / Shop ID field, the Account field and the Deactivate button.\nEXPECTED RESULT: Fields and button keep the same spacing as on main.\nEVIDENCE: tc05-marketplace-loaded.png\nACTUAL RESULT: Failed. The Deactivate button now matches main (72px side padding). The field spacing does not: the fields use tw:pb-3 / tw:pt-3, which is 12px on staging, while main's pb-3 / pt-3 is 24px, so the gap between the fields is halved (IntegrationsApp/index.jsx). Measured on staging; the modal itself only opens for a store with a connected Lazada or Shopee account.\n\nTEST CASE #6: App logo size inside the modal\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Click \"Learn More\" on Prosperna Shipping - J&T.\nStep 3 - Compare the card logo with the logo in the modal.\nEXPECTED RESULT: The logo sits fully inside its round holder and does not cover the title, the \"Powered by\" line or the X button.\nEVIDENCE: tc06-jnt-modal-logo.png\nACTUAL RESULT: Failed. The J&T logo renders at 512x266 over a 100x100 holder and covers the modal header and title. The fix from PR #8122 (the .featured-icon img rule in src/assets/scss/custom/components/utilities/_helper.scss) is on dev but was not included in the staging promotion #8910.\n\nTEST CASE #7: Logo proportions are not distorted\nSTEPS:\nStep 1 - Open the Prosperna Shipping - J&T modal.\nStep 2 - Look closely at the logo.\nEXPECTED RESULT: The logo keeps its normal shape and is not stretched or squashed.\nEVIDENCE: tc07-jnt-logo-proportions.png\nACTUAL RESULT: Passed. The logo keeps its natural proportions (it is oversized, see #6, but not distorted).\n\nTEST CASE #8: Other app modals unaffected\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Blogs, Custom Fonts, Geolocation, Wholesale, QR Code Menu, Menu View, Announcements, Order Scheduling and Custom Delivery Date.\nEXPECTED RESULT: Every logo sits inside its circle; none is smaller, blurry or off-centre.\nEVIDENCE: tc08-blogs-logo.png, tc08-custom-fonts-logo.png, tc08-marketplace-geolocation-logo.png, tc08-wholesale-logo.png, tc08-qrMenu-logo.png, tc08-menu-view-logo.png, tc08-announcements-logo.png, tc08-order-scheduling-logo.png, tc08-customDeliveryDate-logo.png\nACTUAL RESULT: Passed, 9 of 9.\n\nTEST CASE #9: Lazada and Shopee integration panel logos\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open the Lazada modal, then the Shopee modal.\nStep 3 - Look at the platform logo.\nEXPECTED RESULT: Same size and position as before, inside its holder.\nEVIDENCE: tc09-lazada-panel-logo.png, tc09-shopee-panel-logo.png\nACTUAL RESULT: Failed. The Lazada logo renders at 736x736 and the Shopee logo at 1024x1024 over a 100x100 holder, covering the modal header. Same cause as #6.\n\nTEST CASE #10: App cards on the marketplace grid\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Scan the logos on all app cards before opening anything.\nEXPECTED RESULT: Every card logo fits its holder.\nEVIDENCE: tc10-grid-logos.png\nACTUAL RESULT: Passed.\n\nTEST CASE #11: Additional Fee modal copy\nSTEPS:\nStep 1 - Go to Marketplace and open the Additional Fee card.\nStep 2 - Read the line under the app title and subtitle.\nEXPECTED RESULT: Shows only \"FREE\" in green; the \"(Available for LAUNCH, GROW, and SCALE plans only.)\" text is gone.\nEVIDENCE: tc11-additional-fee-copy.png\nACTUAL RESULT: Passed.\n\nTEST CASE #12: Additional Fee modal carousel layout\nSTEPS:\nStep 1 - Open the Additional Fee modal, Overview tab.\nStep 2 - Look at the screenshot area under the tabs.\nEXPECTED RESULT: The image area stretches the full width of the modal.\nEVIDENCE: tc12-additional-fee-carousel.png\nACTUAL RESULT: Passed.\n\nTEST CASE #13: Multi-currency modal copy\nSTEPS:\nStep 1 - Log in to a US-market store and go to Marketplace.\nStep 2 - Open the Multi-currency card.\nStep 3 - Read the line under the app title and subtitle.\nEXPECTED RESULT: Shows only \"FREE\" in green; the \"No extra fee on any plan-use Store Settings to connect Stripe and finish setup.\" sentence is gone.\nEVIDENCE: tc13-multi-currency-copy.png\nACTUAL RESULT: Passed.\n\nTEST CASE #14: Loading skeleton shows the active tab underline\nSTEPS:\nStep 1 - Go to Marketplace with a slowed network so the modal stays in its loading state.\nStep 2 - Open \"Learn More\" on Blogs and look at the grey placeholder.\nEXPECTED RESULT: The placeholder's first tab shows a dark underline, like the loaded Overview tab.\nEVIDENCE: tc14-skeleton-tab-underline.png, tc14-loaded-tab-underline.png\nACTUAL RESULT: Passed. The first placeholder tab has a 2px black underline, matching the loaded Overview tab; the second tab has none.\n\nTEST CASE #15: Screenshot carousel buttons are announced by a screen reader\nSTEPS:\nStep 1 - Open an app modal whose overview has more than one screenshot.\nStep 2 - Tab to the left arrow, the right arrow and each dot.\nStep 3 - Click Next, a dot and Previous.\nEXPECTED RESULT: Buttons are named \"Previous slide\", \"Next slide\" and \"Go to slide 1\", \"Go to slide 2\", etc.; the current dot is marked as current; clicking still changes the screenshot.\nEVIDENCE: tc15-lbc-slide1.png, tc15-lbc-slide2.png\nACTUAL RESULT: Passed. No app modal on staging currently has more than one screenshot, so a three-screenshot carousel was supplied for this check (placeholder images). All buttons carry the expected names, Tab moves from Previous to Next, the current dot is marked, and Next, the dots and Previous all change the slide.\n\nTEST CASE #16: Checkout page renders (staging promotion smoke)\nSTEPS:\nStep 1 - Go to Marketplace and open the add-on checkout (Order Summary).\nStep 2 - Set Payment Type to \"Credit Card Payment\".\nEXPECTED RESULT: Order Summary, payment terms, totals and the saved-card list render.\nEVIDENCE: ex1-checkout-order-summary.png, ex1-checkout-card-list.png\nACTUAL RESULT: Passed. Nothing was paid.\n\nTEST CASE #17: \"Add a New Credit Card\" dialog from checkout can be closed\nSTEPS:\nStep 1 - On a store that bills through Stripe, open the add-on checkout.\nStep 2 - Set Payment Type to \"Credit Card Payment\".\nStep 3 - Click \"Add a New Credit Card\".\nStep 4 - Click Close on the dialog that opens.\nEXPECTED RESULT: The dialog opens on top of the Order Summary panel and its Close button works, as on main.\nEVIDENCE: ex1-add-card-dialog.png\nACTUAL RESULT: Failed. The dialog opens behind the Order Summary panel, dimmed, with its Close button covered by the panel, so it cannot be clicked. The checkout panel now sits at z-index 1055 (Checkout.jsx) and the dialog at 1050 (components/ui/Modal.jsx); on main the dialog was above the panel.\n\nTEST CASE #18: Cancel Subscription warning (staging promotion smoke)\nSTEPS:\nStep 1 - Go to Marketplace > My Apps.\nStep 2 - Open the menu on an installed app and choose Deactivate.\nStep 3 - Click \"Do Not Cancel\".\nEXPECTED RESULT: The warning opens with its confirm button disabled until CANCEL is typed; \"Do Not Cancel\" closes it and the app stays installed.\nEVIDENCE: ex2-cancel-warning.png\nACTUAL RESULT: Passed.\n\nTEST CASE #19: Payment success popup (staging promotion smoke)\nSTEPS:\nStep 1 - Return to Marketplace from a completed add-on payment.\nEXPECTED RESULT: The \"Success\" popup renders and closes.\nEVIDENCE: ex3-success-popup.png\nACTUAL RESULT: Passed.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: Staging\nStatus: FAILED\nURL: https://prostage.prosperna.ph/home/marketplace\n\nTEST CASE #1: Lalamove modal screenshot has no stray navigation arrows\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Prosperna Shipping - Lalamove.\nStep 3 - Look at the overview screenshot.\nEXPECTED RESULT: The image shows only the product screenshot, with no < > arrow graphic baked into it.\nEVIDENCE: tc01-lalamove-overview.png\nACTUAL RESULT: Passed. The modal serves the fixed screenshot with no arrows.\n\nTEST CASE #2: \"Temporarily Closed\" app card is fully inactive\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Find the \"Temporarily Closed\" card and compare it to a normal card.\nStep 3 - Click its action button.\nEXPECTED RESULT: Icon, title, description and price are dimmed to about half strength; the button is greyed out and disabled, and clicking it does nothing.\nEVIDENCE: tc02-inactive-card.png\nACTUAL RESULT: Passed. Staging's app list has no \"Temporarily Closed\" app, so one was added to the list for this check. Its icon, title, description and price render at opacity 0.55, the button is disabled, and clicking it does not navigate.\n\nTEST CASE #3: Every other app card still opens normally\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Blogs, Custom Fonts, Wholesale, QR Code Menu, Menu View and Order Scheduling.\nEXPECTED RESULT: Every one opens its modal as before.\nEVIDENCE: tc03-blogs.png, tc03-custom-fonts.png, tc03-wholesale.png, tc03-qrMenu.png, tc03-menu-view.png, tc03-order-scheduling.png\nACTUAL RESULT: Passed, 6 of 6.\n\nTEST CASE #4: Country-restricted app badge still displays correctly\nSTEPS:\nStep 1 - Log in to a US-market store and go to Marketplace.\nStep 2 - Find an app marked unavailable in your country.\nStep 3 - Check the badge shape, colour and text.\nEXPECTED RESULT: Same pill-shaped grey badge reading \"Not available in your country.\"\nEVIDENCE: tc04-country-badge.png\nACTUAL RESULT: Passed. No app on staging is country-restricted (every app's country list is empty), so one restricted app was added to the list for this check. The badge reads \"Not available in your country.\" and the removed CSS class changes none of its styles.\n\nTEST CASE #5: Lazada / Shopee integration setup modal spacing\nSTEPS:\nStep 1 - Go to Marketplace with a store that has a connected Lazada or Shopee account.\nStep 2 - Open the Lazada or Shopee setup modal.\nStep 3 - Check the spacing between the Seller ID / Shop ID field, the Account field and the Deactivate button.\nEXPECTED RESULT: Fields and button keep the same spacing as on main.\nEVIDENCE: tc05-marketplace-loaded.png\nACTUAL RESULT: Failed. The Deactivate button now matches main (72px side padding). The field spacing does not: the fields use tw:pb-3 / tw:pt-3, which is 12px on staging, while main's pb-3 / pt-3 is 24px, so the gap between the fields is halved (IntegrationsApp/index.jsx). Measured on staging; the modal itself only opens for a store with a connected Lazada or Shopee account.\n\nTEST CASE #6: App logo size inside the modal\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Click \"Learn More\" on Prosperna Shipping - J&T.\nStep 3 - Compare the card logo with the logo in the modal.\nEXPECTED RESULT: The logo sits fully inside its round holder and does not cover the title, the \"Powered by\" line or the X button.\nEVIDENCE: tc06-jnt-modal-logo.png\nACTUAL RESULT: Failed. The J&T logo renders at 512x266 over a 100x100 holder and covers the modal header and title. The fix from PR #8122 (the .featured-icon img rule in src/assets/scss/custom/components/utilities/_helper.scss) is on dev but was not included in the staging promotion #8910.\n\nTEST CASE #7: Logo proportions are not distorted\nSTEPS:\nStep 1 - Open the Prosperna Shipping - J&T modal.\nStep 2 - Look closely at the logo.\nEXPECTED RESULT: The logo keeps its normal shape and is not stretched or squashed.\nEVIDENCE: tc07-jnt-logo-proportions.png\nACTUAL RESULT: Passed. The logo keeps its natural proportions (it is oversized, see #6, but not distorted).\n\nTEST CASE #8: Other app modals unaffected\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Blogs, Custom Fonts, Geolocation, Wholesale, QR Code Menu, Menu View, Announcements, Order Scheduling and Custom Delivery Date.\nEXPECTED RESULT: Every logo sits inside its circle; none is smaller, blurry or off-centre.\nEVIDENCE: tc08-blogs-logo.png, tc08-custom-fonts-logo.png, tc08-marketplace-geolocation-logo.png, tc08-wholesale-logo.png, tc08-qrMenu-logo.png, tc08-menu-view-logo.png, tc08-announcements-logo.png, tc08-order-scheduling-logo.png, tc08-customDeliveryDate-logo.png\nACTUAL RESULT: Passed, 9 of 9.\n\nTEST CASE #9: Lazada and Shopee integration panel logos\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open the Lazada modal, then the Shopee modal.\nStep 3 - Look at the platform logo.\nEXPECTED RESULT: Same size and position as before, inside its holder.\nEVIDENCE: tc09-lazada-panel-logo.png, tc09-shopee-panel-logo.png\nACTUAL RESULT: Failed. The Lazada logo renders at 736x736 and the Shopee logo at 1024x1024 over a 100x100 holder, covering the modal header. Same cause as #6.\n\nTEST CASE #10: App cards on the marketplace grid\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Scan the logos on all app cards before opening anything.\nEXPECTED RESULT: Every card logo fits its holder.\nEVIDENCE: tc10-grid-logos.png\nACTUAL RESULT: Passed.\n\nTEST CASE #11: Additional Fee modal copy\nSTEPS:\nStep 1 - Go to Marketplace and open the Additional Fee card.\nStep 2 - Read the line under the app title and subtitle.\nEXPECTED RESULT: Shows only \"FREE\" in green; the \"(Available for LAUNCH, GROW, and SCALE plans only.)\" text is gone.\nEVIDENCE: tc11-additional-fee-copy.png\nACTUAL RESULT: Passed.\n\nTEST CASE #12: Additional Fee modal carousel layout\nSTEPS:\nStep 1 - Open the Additional Fee modal, Overview tab.\nStep 2 - Look at the screenshot area under the tabs.\nEXPECTED RESULT: The image area stretches the full width of the modal.\nEVIDENCE: tc12-additional-fee-carousel.png\nACTUAL RESULT: Passed.\n\nTEST CASE #13: Multi-currency modal copy\nSTEPS:\nStep 1 - Log in to a US-market store and go to Marketplace.\nStep 2 - Open the Multi-currency card.\nStep 3 - Read the line under the app title and subtitle.\nEXPECTED RESULT: Shows only \"FREE\" in green; the \"No extra fee on any plan-use Store Settings to connect Stripe and finish setup.\" sentence is gone.\nEVIDENCE: tc13-multi-currency-copy.png\nACTUAL RESULT: Passed.\n\nTEST CASE #14: Loading skeleton shows the active tab underline\nSTEPS:\nStep 1 - Go to Marketplace with a slowed network so the modal stays in its loading state.\nStep 2 - Open \"Learn More\" on Blogs and look at the grey placeholder.\nEXPECTED RESULT: The placeholder's first tab shows a dark underline, like the loaded Overview tab.\nEVIDENCE: tc14-skeleton-tab-underline.png, tc14-loaded-tab-underline.png\nACTUAL RESULT: Passed. The first placeholder tab has a 2px black underline, matching the loaded Overview tab; the second tab has none.\n\nTEST CASE #15: Screenshot carousel buttons are announced by a screen reader\nSTEPS:\nStep 1 - Open an app modal whose overview has more than one screenshot.\nStep 2 - Tab to the left arrow, the right arrow and each dot.\nStep 3 - Click Next, a dot and Previous.\nEXPECTED RESULT: Buttons are named \"Previous slide\", \"Next slide\" and \"Go to slide 1\", \"Go to slide 2\", etc.; the current dot is marked as current; clicking still changes the screenshot.\nEVIDENCE: tc15-lbc-slide1.png, tc15-lbc-slide2.png\nACTUAL RESULT: Passed. No app modal on staging currently has more than one screenshot, so a three-screenshot carousel was supplied for this check (placeholder images). All buttons carry the expected names, Tab moves from Previous to Next, the current dot is marked, and Next, the dots and Previous all change the slide.\n\nTEST CASE #16: Checkout page renders (staging promotion smoke)\nSTEPS:\nStep 1 - Go to Marketplace and open the add-on checkout (Order Summary).\nStep 2 - Set Payment Type to \"Credit Card Payment\".\nEXPECTED RESULT: Order Summary, payment terms, totals and the saved-card list render.\nEVIDENCE: ex1-checkout-order-summary.png, ex1-checkout-card-list.png\nACTUAL RESULT: Passed. Nothing was paid.\n\nTEST CASE #17: \"Add a New Credit Card\" dialog from checkout can be closed\nSTEPS:\nStep 1 - On a store that bills through Stripe, open the add-on checkout.\nStep 2 - Set Payment Type to \"Credit Card Payment\".\nStep 3 - Click \"Add a New Credit Card\".\nStep 4 - Click Close on the dialog that opens.\nEXPECTED RESULT: The dialog opens on top of the Order Summary panel and its Close button works, as on main.\nEVIDENCE: ex1-add-card-dialog.png\nACTUAL RESULT: Failed. The dialog opens behind the Order Summary panel, dimmed, with its Close button covered by the panel, so it cannot be clicked. The checkout panel now sits at z-index 1055 (Checkout.jsx) and the dialog at 1050 (components/ui/Modal.jsx); on main the dialog was above the panel.\n\nTEST CASE #18: Cancel Subscription warning (staging promotion smoke)\nSTEPS:\nStep 1 - Go to Marketplace > My Apps.\nStep 2 - Open the menu on an installed app and choose Deactivate.\nStep 3 - Click \"Do Not Cancel\".\nEXPECTED RESULT: The warning opens with its confirm button disabled until CANCEL is typed; \"Do Not Cancel\" closes it and the app stays installed.\nEVIDENCE: ex2-cancel-warning.png\nACTUAL RESULT: Passed.\n\nTEST CASE #19: Payment success popup (staging promotion smoke)\nSTEPS:\nStep 1 - Return to Marketplace from a completed add-on payment.\nEXPECTED RESULT: The \"Success\" popup renders and closes.\nEVIDENCE: ex3-success-popup.png\nACTUAL RESULT: Passed.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791961377263",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000161845",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Marketplace Page"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 14 2026, 11:21AM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Marketplace Page hss been move to IN TESTING \nUpdated: Oct 14 2026, 11:21AM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791948091812",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000161705",
+    "comment": [
+      {
+        "text": "Code review has passed",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-hwTIF5qnQL"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5OXUTzetIH"
+        }
+      },
+      {
+        "text": "Ready to test in staging for final smoke testing",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Kpl6ipki4h"
+        }
+      },
+      {
+        "text": "cc: ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 95622662,
+          "username": "Aira Pilor",
+          "email": "aira@prosperna.com",
+          "initials": "AP",
+          "profilePicture": null
+        },
+        "text": "@Aira Pilor"
+      }
+    ],
+    "comment_text": "Code review has passed\n\nReady to test in staging for final smoke testing\ncc: @Aira Pilor",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791945862259",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000142390",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\n\nBrought two review fixes to dev that came out of the staging promotion reviews (staging PRs #8555 and #8623):\n1. The gray loading placeholder in the Marketplace app modals now shows the underline under its active tab. Two styling classes were written in an order Tailwind ignores, so the underline was never drawn.\n2. The screenshot carousel's arrow and dot buttons now have names a screen reader can announce (\"Previous slide\", \"Next slide\", \"Go to slide N\").\n\nEXTRA WORK\n\n- Fixed the same class-order issue in the shared button component (AppButton) on the Marketplace branch. Dev already had this fix and also supports rendering the button as a link, so the dev version will be used for staging instead of the branch's older copy.\n- Descoped refactor/tw-marketplace-standard so it only differs from main in Marketplace files and the files Marketplace uses.\n\nPULL REQUESTS\n\n- prosperna1 dev PR: https://github.com/Prosperna/prosperna1/pull/8798 (branch refactor/tw-marketplace-standard-dev8)\n\nHOW IT WAS TESTED\n\n- ESLint on both changed files: clean\n- Marketplace test suite: 12 files, 196/196 passing\n- Merge check against current dev: no conflicts\n\nNEXT STEPS\n\n- QA to validate test cases 14 and 15 on dev.\n- After that, the staging promotion will be re-cut with dev's AppButton so the Marketplace pages carry no Bootstrap at all, and opened for Ian's review.\n\nQA TEST CASES\n\nThe QA TEST CASES SUMMARY comment was updated for this PR (cases 14 and 15 added): https://app.clickup.com/t/86ey1p7bp?comment=1100740000082177\n"
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\n\nBrought two review fixes to dev that came out of the staging promotion reviews (staging PRs #8555 and #8623):\n1. The gray loading placeholder in the Marketplace app modals now shows the underline under its active tab. Two styling classes were written in an order Tailwind ignores, so the underline was never drawn.\n2. The screenshot carousel's arrow and dot buttons now have names a screen reader can announce (\"Previous slide\", \"Next slide\", \"Go to slide N\").\n\nEXTRA WORK\n\n- Fixed the same class-order issue in the shared button component (AppButton) on the Marketplace branch. Dev already had this fix and also supports rendering the button as a link, so the dev version will be used for staging instead of the branch's older copy.\n- Descoped refactor/tw-marketplace-standard so it only differs from main in Marketplace files and the files Marketplace uses.\n\nPULL REQUESTS\n\n- prosperna1 dev PR: https://github.com/Prosperna/prosperna1/pull/8798 (branch refactor/tw-marketplace-standard-dev8)\n\nHOW IT WAS TESTED\n\n- ESLint on both changed files: clean\n- Marketplace test suite: 12 files, 196/196 passing\n- Merge check against current dev: no conflicts\n\nNEXT STEPS\n\n- QA to validate test cases 14 and 15 on dev.\n- After that, the staging promotion will be re-cut with dev's AppButton so the Marketplace pages carry no Bootstrap at all, and opened for Ian's review.\n\nQA TEST CASES\n\nThe QA TEST CASES SUMMARY comment was updated for this PR (cases 14 and 15 added): https://app.clickup.com/t/86ey1p7bp?comment=1100740000082177\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791445992903",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000085463",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Marketplace Page"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "PASSED TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-7774e130-bf56-467b-9d1a-3971afce0fce"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Sep 24 2026, 12:36AM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fcf1bfa1-92df-420d-bc36-a6111d7c79f3"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e62af9f7-0865-4e25-b8f0-2c363c784893"
+        }
+      }
+    ],
+    "comment_text": "This task Marketplace Page has been move to PASSED TESTING \nDate updated: Sep 24 2026, 12:36AM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1790181371118",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000085435",
+    "comment": [
+      {
+        "text": "env: DEV\nStatus: PASSED\nurl: http://localhost:3000/home/marketplace (dev branch run locally; deployed DEV sits behind the ALB gate)\n\nTEST CASE #1: Lalamove modal screenshot has no stray navigation arrows\nSTEPS:\nStep 1 - Log in and go to Marketplace.\nStep 2 - Open \"Learn More\" on Prosperna Shipping - Lalamove.\nStep 3 - Look at the overview screenshot.\nEXPECTED RESULT: The image shows only the product screenshot, with no left/right (< >) arrow graphic baked into the image.\nEVIDENCE: tc01-lalamove-overview.png\nACTUAL RESULT: Passed. The modal serves the post-fix asset (1,280,089 bytes); the earlier file with the arrows baked in was 710,802 bytes.\n\nTEST CASE #2: \"Temporarily Closed\" app card is fully inactive\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Find the \"Temporarily Closed\" card and compare it to a normal card.\nStep 3 - Click its action button.\nEXPECTED RESULT: Icon, title, description and price appear dimmed at about half strength; the action button is greyed out and disabled, and clicking it does nothing.\nEVIDENCE: tc02-inactive-card.png\nACTUAL RESULT: Passed. Icon, title, description and price all render at opacity 0.55, the button is disabled, and clicking it does not navigate.\n\nTEST CASE #3: Every other app card still opens normally\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Blogs, Custom Fonts, Wholesale, QR Code Menu, Menu View and Order Scheduling.\nEXPECTED RESULT: Every one still opens its modal as before; only genuinely dead-end cards are dimmed and disabled.\nEVIDENCE: tc03-blogs.png (one capture per app)\nACTUAL RESULT: Passed, 6 of 6. Each modal opened and rendered its content.\n\nTEST CASE #4: Country-restricted app badge still displays correctly\nSTEPS:\nStep 1 - Log in to a US-market store and go to Marketplace.\nStep 2 - Find an app marked unavailable in your country.\nStep 3 - Check the badge shape, colour and text.\nEXPECTED RESULT: Unchanged from before, same pill-shaped grey badge with the message.\nEVIDENCE: tc04-country-badge.png\nACTUAL RESULT: Passed. The badge reads \"Not available in your country.\" and restoring the removed CSS class changes none of its computed styles, so the cleanup is inert as intended. This case needs a US-market store: on a PH store all 17 apps are available in PH, so no badge renders.\n\nTEST CASE #5: Lazada / Shopee integration setup modal spacing\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open the Lazada or Shopee setup modal.\nStep 3 - Check spacing between the Seller ID / Shop ID field, the Account field, and the Deactivate button.\nEXPECTED RESULT: Fields and button keep the same spacing and alignment as before.\nEVIDENCE: tc05-marketplace-loaded.png\nACTUAL RESULT: NOT VERIFIED. The setup modal cannot be opened on any of our test stores, so its rendered spacing could not be compared. The control that opens it only renders when the card carries an activated_app record, which none of our stores has. Measured separately in the running app, the swapped classes do resolve to different values (pb-3/pt-3 24px vs tw:pb-3/tw:pt-3 12px; px-5 72px vs tw:px-5 20px), so this is worth a look when a store with a connected Lazada or Shopee account is available.\n\nTEST CASE #6: App logo size inside the modal\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Click \"Learn More\" on Prosperna Shipping - J&T.\nStep 3 - Compare the card logo with the logo in the modal.\nEXPECTED RESULT: The logo sits fully inside its round holder and does not cover the title, the \"Powered by\" line or the X close button.\nEVIDENCE: tc06-jnt-modal-logo.png\nACTUAL RESULT: Passed. The logo's rendered box stays entirely within its holder.\n\nTEST CASE #7: Logo proportions are not distorted\nSTEPS:\nStep 1 - Open the Prosperna Shipping - J&T modal.\nStep 2 - Look closely at the logo.\nEXPECTED RESULT: The logo keeps its normal shape, with space above and below rather than being stretched or squashed.\nEVIDENCE: tc07-jnt-logo-proportions.png\nACTUAL RESULT: Passed. The logo renders with object-fit contain, so its painted proportions match the source image.\n\nTEST CASE #8: Other app modals unaffected\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Blogs, Custom Fonts, Geolocation, Wholesale, QR Code Menu, Menu View, Announcements, Order Scheduling and Custom Delivery Date.\nEXPECTED RESULT: Every logo sits inside its circle; none became smaller, blurry or off-centre.\nEVIDENCE: tc08-blogs-logo.png (one capture per app)\nACTUAL RESULT: Passed, 9 of 9. Every logo fits its holder and none is distorted.\n\nTEST CASE #9: Lazada and Shopee integration panel logos\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open the Lazada modal, then the Shopee modal.\nStep 3 - Look at the small platform logo.\nEXPECTED RESULT: Unchanged from before, same size and position.\nEVIDENCE: tc09-lazada-panel-logo.png\nACTUAL RESULT: Passed for both. Each panel logo fits its holder and keeps its proportions. Minor note, not a defect and no merchant impact: the Shopee modal's screen-reader title reads \"Lazada App\" (LazadaApp.jsx:165, the shared component both routes render). Nothing visible is affected; flagging only for a future cleanup.\n\nTEST CASE #10: App cards on the marketplace grid\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Scan the logos on all app cards before opening anything.\nEXPECTED RESULT: Unchanged from before; the card logos were already correct and must stay that way.\nEVIDENCE: tc10-grid-logos.png\nACTUAL RESULT: Passed. Every card logo on the grid fits its holder, none distorted.\n\nTEST CASE #11: Additional Fee modal copy\nSTEPS:\nStep 1 - Go to Marketplace and open the Additional Fee card.\nStep 2 - Read the line under the app title and subtitle.\nEXPECTED RESULT: Shows only \"FREE\" in green; the old \"(Available for LAUNCH, GROW, and SCALE plans only.)\" text is gone.\nEVIDENCE: tc11-additional-fee-copy.png\nACTUAL RESULT: Passed. Only \"FREE\" is shown, rendered in green, and the plan caption is absent.\n\nTEST CASE #12: Additional Fee modal carousel layout\nSTEPS:\nStep 1 - Open the Additional Fee modal, Overview tab.\nStep 2 - Look at the screenshot area under the tabs.\nEXPECTED RESULT: The image area stretches the full width of the modal, with no large empty white gap to its right.\nEVIDENCE: tc12-additional-fee-carousel.png\nACTUAL RESULT: Passed. The image spans effectively the full width of its panel.\n\nTEST CASE #13: Multi-currency modal copy\nSTEPS:\nStep 1 - Log in to a US-market store and go to Marketplace.\nStep 2 - Open the Multi-currency card.\nStep 3 - Read the line under the app title and subtitle.\nEXPECTED RESULT: Shows only \"FREE\" in green; the \"No extra fee on any plan-use Store Settings to connect Stripe and finish setup.\" sentence is gone.\nEVIDENCE: tc13-multi-currency-copy.png\nACTUAL RESULT: Passed. Only \"FREE\" is shown and both removed sentences are absent. This modal is US-merchant only; any other store is redirected back to the marketplace grid.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "env: DEV\nStatus: PASSED\nurl: http://localhost:3000/home/marketplace (dev branch run locally; deployed DEV sits behind the ALB gate)\n\nTEST CASE #1: Lalamove modal screenshot has no stray navigation arrows\nSTEPS:\nStep 1 - Log in and go to Marketplace.\nStep 2 - Open \"Learn More\" on Prosperna Shipping - Lalamove.\nStep 3 - Look at the overview screenshot.\nEXPECTED RESULT: The image shows only the product screenshot, with no left/right (< >) arrow graphic baked into the image.\nEVIDENCE: tc01-lalamove-overview.png\nACTUAL RESULT: Passed. The modal serves the post-fix asset (1,280,089 bytes); the earlier file with the arrows baked in was 710,802 bytes.\n\nTEST CASE #2: \"Temporarily Closed\" app card is fully inactive\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Find the \"Temporarily Closed\" card and compare it to a normal card.\nStep 3 - Click its action button.\nEXPECTED RESULT: Icon, title, description and price appear dimmed at about half strength; the action button is greyed out and disabled, and clicking it does nothing.\nEVIDENCE: tc02-inactive-card.png\nACTUAL RESULT: Passed. Icon, title, description and price all render at opacity 0.55, the button is disabled, and clicking it does not navigate.\n\nTEST CASE #3: Every other app card still opens normally\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Blogs, Custom Fonts, Wholesale, QR Code Menu, Menu View and Order Scheduling.\nEXPECTED RESULT: Every one still opens its modal as before; only genuinely dead-end cards are dimmed and disabled.\nEVIDENCE: tc03-blogs.png (one capture per app)\nACTUAL RESULT: Passed, 6 of 6. Each modal opened and rendered its content.\n\nTEST CASE #4: Country-restricted app badge still displays correctly\nSTEPS:\nStep 1 - Log in to a US-market store and go to Marketplace.\nStep 2 - Find an app marked unavailable in your country.\nStep 3 - Check the badge shape, colour and text.\nEXPECTED RESULT: Unchanged from before, same pill-shaped grey badge with the message.\nEVIDENCE: tc04-country-badge.png\nACTUAL RESULT: Passed. The badge reads \"Not available in your country.\" and restoring the removed CSS class changes none of its computed styles, so the cleanup is inert as intended. This case needs a US-market store: on a PH store all 17 apps are available in PH, so no badge renders.\n\nTEST CASE #5: Lazada / Shopee integration setup modal spacing\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open the Lazada or Shopee setup modal.\nStep 3 - Check spacing between the Seller ID / Shop ID field, the Account field, and the Deactivate button.\nEXPECTED RESULT: Fields and button keep the same spacing and alignment as before.\nEVIDENCE: tc05-marketplace-loaded.png\nACTUAL RESULT: NOT VERIFIED. The setup modal cannot be opened on any of our test stores, so its rendered spacing could not be compared. The control that opens it only renders when the card carries an activated_app record, which none of our stores has. Measured separately in the running app, the swapped classes do resolve to different values (pb-3/pt-3 24px vs tw:pb-3/tw:pt-3 12px; px-5 72px vs tw:px-5 20px), so this is worth a look when a store with a connected Lazada or Shopee account is available.\n\nTEST CASE #6: App logo size inside the modal\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Click \"Learn More\" on Prosperna Shipping - J&T.\nStep 3 - Compare the card logo with the logo in the modal.\nEXPECTED RESULT: The logo sits fully inside its round holder and does not cover the title, the \"Powered by\" line or the X close button.\nEVIDENCE: tc06-jnt-modal-logo.png\nACTUAL RESULT: Passed. The logo's rendered box stays entirely within its holder.\n\nTEST CASE #7: Logo proportions are not distorted\nSTEPS:\nStep 1 - Open the Prosperna Shipping - J&T modal.\nStep 2 - Look closely at the logo.\nEXPECTED RESULT: The logo keeps its normal shape, with space above and below rather than being stretched or squashed.\nEVIDENCE: tc07-jnt-logo-proportions.png\nACTUAL RESULT: Passed. The logo renders with object-fit contain, so its painted proportions match the source image.\n\nTEST CASE #8: Other app modals unaffected\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open \"Learn More\" on Blogs, Custom Fonts, Geolocation, Wholesale, QR Code Menu, Menu View, Announcements, Order Scheduling and Custom Delivery Date.\nEXPECTED RESULT: Every logo sits inside its circle; none became smaller, blurry or off-centre.\nEVIDENCE: tc08-blogs-logo.png (one capture per app)\nACTUAL RESULT: Passed, 9 of 9. Every logo fits its holder and none is distorted.\n\nTEST CASE #9: Lazada and Shopee integration panel logos\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Open the Lazada modal, then the Shopee modal.\nStep 3 - Look at the small platform logo.\nEXPECTED RESULT: Unchanged from before, same size and position.\nEVIDENCE: tc09-lazada-panel-logo.png\nACTUAL RESULT: Passed for both. Each panel logo fits its holder and keeps its proportions. Minor note, not a defect and no merchant impact: the Shopee modal's screen-reader title reads \"Lazada App\" (LazadaApp.jsx:165, the shared component both routes render). Nothing visible is affected; flagging only for a future cleanup.\n\nTEST CASE #10: App cards on the marketplace grid\nSTEPS:\nStep 1 - Go to Marketplace.\nStep 2 - Scan the logos on all app cards before opening anything.\nEXPECTED RESULT: Unchanged from before; the card logos were already correct and must stay that way.\nEVIDENCE: tc10-grid-logos.png\nACTUAL RESULT: Passed. Every card logo on the grid fits its holder, none distorted.\n\nTEST CASE #11: Additional Fee modal copy\nSTEPS:\nStep 1 - Go to Marketplace and open the Additional Fee card.\nStep 2 - Read the line under the app title and subtitle.\nEXPECTED RESULT: Shows only \"FREE\" in green; the old \"(Available for LAUNCH, GROW, and SCALE plans only.)\" text is gone.\nEVIDENCE: tc11-additional-fee-copy.png\nACTUAL RESULT: Passed. Only \"FREE\" is shown, rendered in green, and the plan caption is absent.\n\nTEST CASE #12: Additional Fee modal carousel layout\nSTEPS:\nStep 1 - Open the Additional Fee modal, Overview tab.\nStep 2 - Look at the screenshot area under the tabs.\nEXPECTED RESULT: The image area stretches the full width of the modal, with no large empty white gap to its right.\nEVIDENCE: tc12-additional-fee-carousel.png\nACTUAL RESULT: Passed. The image spans effectively the full width of its panel.\n\nTEST CASE #13: Multi-currency modal copy\nSTEPS:\nStep 1 - Log in to a US-market store and go to Marketplace.\nStep 2 - Open the Multi-currency card.\nStep 3 - Read the line under the app title and subtitle.\nEXPECTED RESULT: Shows only \"FREE\" in green; the \"No extra fee on any plan-use Store Settings to connect Stripe and finish setup.\" sentence is gone.\nEVIDENCE: tc13-multi-currency-copy.png\nACTUAL RESULT: Passed. Only \"FREE\" is shown and both removed sentences are absent. This modal is US-merchant only; any other store is redirected back to the marketplace grid.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1790180873802",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000083668",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Marketplace Page"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Sep 23 2026, 4:32PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Marketplace Page hss been move to IN TESTING \nUpdated: Sep 23 2026, 4:32PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1790152368543",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000082177",
+    "comment": [
+      {
+        "text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-10-15, dev PR https://github.com/Prosperna/prosperna1/pull/8935 (merged), staging PR https://github.com/Prosperna/prosperna1/pull/8936\n\nWHERE TO TEST\nEnvironment: dev\nPage: Marketplace (home/marketplace)\nNo special plan precondition needed to open any of these modals or cards.\n\nTEST CASES\n\n1. Lalamove modal screenshot has no stray navigation arrows (new for PR #8159)\nSetup: Marketplace page.\nSteps: Open \"Learn More\" on Prosperna Shipping - Lalamove. Look at the overview screenshot.\nExpected: The image shows only the product screenshot. No left/right (< >) arrow graphic baked into the image itself. This is the fix for the QA return \"Remove the arrow (< >) on images that have no next image.\"\n\n2. \"Temporarily Closed\" app card is fully inactive (new for PR #8159)\nSetup: Marketplace page, look for any app card titled \"Temporarily Closed\" (or any app the API returns with no detail page behind it).\nSteps: Compare the card to a normal active app card. Click its \"Learn More\" / action button.\nExpected: The card's icon, title, description, and price text all appear noticeably dimmed (about half-strength) compared to a normal card. The action button is visibly grayed out and disabled — clicking it does nothing (no navigation, no modal). This is the fix for the QA return \"Make the 'Temporarily Closed' totally grayed out since clicking it changes nothing.\"\n\n3. Every other app card still opens normally (regression check, new for PR #8159)\nSetup: Marketplace page.\nSteps: Click \"Learn More\" on several normal apps (Blogs, Custom Fonts, Wholesale, QR Code Menu, Menu View, Order Scheduling).\nExpected: Every one still opens its modal as before. Only genuinely dead-end cards (like Temporarily Closed) are dimmed/disabled.\n\n4. Country-restricted app badge still displays correctly (new for PR #8479)\nSetup: Marketplace page, find an app card marked unavailable in your country (shows a \"Not available in your country.\" badge in the top-right of the card).\nSteps: Look at the badge's shape, color, and text.\nExpected: Unchanged from before — same pill-shaped gray badge with the message. This checks a code cleanup (removed a redundant, inactive CSS class name) that should have zero visible effect.\n\n5. Lazada / Shopee integration setup modal spacing (new for PR #8479, updated for PR #8935)\nSetup: Marketplace page, open the Lazada or Shopee integration card so the \"Connect Your Lazada/Shopee Account\" setup modal appears.\nSteps: Look at the vertical spacing between the Seller ID / Shop ID field, the Account field, and the Deactivate/Connect button (only visible once already connected, for Deactivate).\nExpected: Fields and button keep the same spacing and alignment as on main: about 24px between the fields (it was 12px on staging before PR #8935). The Deactivate button keeps its wide side padding.\n\n6. App logo size inside the modal (from PR #8122, confirmed passed 2026-09-10; failed on staging 2026-10-14, re-test after staging PR #8936)\nSetup: Log in, go to Marketplace.\nSteps: Click \"Learn More\" on Prosperna Shipping - J&T. Compare the logo on the card before clicking with the logo in the modal that opens.\nExpected: The logo sits fully inside its round holder at the top left of the modal. It does not grow, does not cover the app title or the \"Powered by\" line, and does not overlap the X close button.\n\n7. Logo proportions are not distorted (from PR #8122, confirmed passed 2026-09-10)\nSetup: Same modal.\nSteps: Look closely at the J&T logo.\nExpected: The logo keeps its normal shape. A wide logo shows with space above and below it rather than being stretched tall or squashed flat.\n\n8. Other app modals unaffected (regression check, from PR #8122)\nSetup: Marketplace page.\nSteps: Open \"Learn More\" on several other apps: Blogs, Custom Fonts, Geolocation, Wholesale, QR Code Menu, Menu View, Announcements, Order Scheduling, Custom Delivery Date.\nExpected: Every logo sits inside its circle. None became smaller, blurry, or off-centre compared to before.\n\n9. Lazada and Shopee integration panel logos (regression check, from PR #8122; failed on staging 2026-10-14, re-test after staging PR #8936)\nSetup: Marketplace page.\nSteps: Open the Lazada modal, then the Shopee modal, and look at the small platform logo.\nExpected: Unchanged from before, same size and position.\n\n10. App cards on the marketplace grid (regression check, from PR #8122)\nSetup: Marketplace page, before opening anything.\nSteps: Scan the logos on all the app cards in the grid.\nExpected: Unchanged from before. The card logos were already correct and must stay that way.\n\n11. Additional Fee modal copy (from PR #7581, confirmed passed)\nSetup: Marketplace, open the Additional Fee app card.\nSteps: Read the line under the app title/subtitle.\nExpected: Shows only \"FREE\" in green. The old \"(Available for LAUNCH, GROW, and SCALE plans only.)\" text next to it is gone.\n\n12. Additional Fee modal carousel layout (from PR #7581, confirmed passed)\nSetup: Same modal, Overview tab.\nSteps: Look at the screenshot area under the tabs.\nExpected: The image area stretches the full width of the modal, no large empty white gap to its right.\n\n13. Multi-currency modal copy (from PR #7581, confirmed passed)\nSetup: Marketplace, open the Multi-currency app card.\nSteps: Read the line under the app title/subtitle.\nExpected: Shows only \"FREE\" in green. The \"No extra fee on any plan-use Store Settings to connect Stripe and finish setup.\" sentence is gone.\n\n14. Loading skeleton shows the active tab underline (new for PR #8798)\nSetup: Marketplace page. In the browser dev tools, set Network throttling to \"Slow 3G\" so the modal stays in its loading state for a few seconds.\nSteps: Open \"Learn More\" on any app card and look at the gray placeholder while it loads.\nExpected: The placeholder's tab row shows a dark underline under the first tab, like the real Overview tab does once the modal loads. Before this fix there was no underline at all.\n\n15. Screenshot carousel buttons are announced by a screen reader (new for PR #8798)\nSetup: Marketplace page, any app whose modal has more than one screenshot. Turn on a screen reader (NVDA on Windows or VoiceOver on Mac), or inspect the buttons in dev tools.\nSteps: Tab to the left arrow, the right arrow and each dot under the screenshot.\nExpected: They are announced as \"Previous slide\", \"Next slide\" and \"Go to slide 1\", \"Go to slide 2\", etc. The dot for the screenshot currently shown is marked as current. Clicking them still changes the screenshot exactly as before.\n\n16. \"Add a New Credit Card\" dialog opens on top of the checkout panel (new for PR #8935)\nSetup: A store that bills through Stripe, and one that bills through Xendit if available. Go to Marketplace and open the checkout (Order Summary) for a paid add-on.\nSteps: Set Payment Type to \"Credit Card Payment\", click \"Add a New Credit Card\", then click Close (the X) and, if shown, Cancel.\nExpected: The dialog opens in front of the Order Summary panel, with the panel dimmed behind it. Close and Cancel both work, and the Order Summary is still there afterwards. Do not complete a payment.\n\nTEST DATA\nNo special test data needed. Any dev account can open every modal/card listed above. Prosperna Shipping - J&T is the clearest case for tests 6 and 7 because its logo file is the largest. Any app the API currently returns with no detail route (e.g. \"Temporarily Closed\") works for test 2 — ask the dev if none is visible in your test store's current app list.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n\n- Lazada and Shopee modals still show \"Prosperna Pro or Premium subscription plan.\" under Requirements instead of \"Grow and Scale.\" Confirmed multiple times: this text lives in the marketplace database, not in any code, so it cannot be changed by a PR and needs a database content update by whoever administers the marketplace app records.\n- PRs #8159 and #8479 touch styling/CSS-class and dead-click behavior only. No wording, pricing, or checkout/billing behavior is touched by either.\n- PR #8798 changes only the loading placeholder's tab underline and adds screen reader labels to the carousel buttons. Nothing changes visually on the loaded modal.\n"
+      }
+    ],
+    "comment_text": "QA TEST CASES SUMMARY\nLAST UPDATED: 2026-10-15, dev PR https://github.com/Prosperna/prosperna1/pull/8935 (merged), staging PR https://github.com/Prosperna/prosperna1/pull/8936\n\nWHERE TO TEST\nEnvironment: dev\nPage: Marketplace (home/marketplace)\nNo special plan precondition needed to open any of these modals or cards.\n\nTEST CASES\n\n1. Lalamove modal screenshot has no stray navigation arrows (new for PR #8159)\nSetup: Marketplace page.\nSteps: Open \"Learn More\" on Prosperna Shipping - Lalamove. Look at the overview screenshot.\nExpected: The image shows only the product screenshot. No left/right (< >) arrow graphic baked into the image itself. This is the fix for the QA return \"Remove the arrow (< >) on images that have no next image.\"\n\n2. \"Temporarily Closed\" app card is fully inactive (new for PR #8159)\nSetup: Marketplace page, look for any app card titled \"Temporarily Closed\" (or any app the API returns with no detail page behind it).\nSteps: Compare the card to a normal active app card. Click its \"Learn More\" / action button.\nExpected: The card's icon, title, description, and price text all appear noticeably dimmed (about half-strength) compared to a normal card. The action button is visibly grayed out and disabled — clicking it does nothing (no navigation, no modal). This is the fix for the QA return \"Make the 'Temporarily Closed' totally grayed out since clicking it changes nothing.\"\n\n3. Every other app card still opens normally (regression check, new for PR #8159)\nSetup: Marketplace page.\nSteps: Click \"Learn More\" on several normal apps (Blogs, Custom Fonts, Wholesale, QR Code Menu, Menu View, Order Scheduling).\nExpected: Every one still opens its modal as before. Only genuinely dead-end cards (like Temporarily Closed) are dimmed/disabled.\n\n4. Country-restricted app badge still displays correctly (new for PR #8479)\nSetup: Marketplace page, find an app card marked unavailable in your country (shows a \"Not available in your country.\" badge in the top-right of the card).\nSteps: Look at the badge's shape, color, and text.\nExpected: Unchanged from before — same pill-shaped gray badge with the message. This checks a code cleanup (removed a redundant, inactive CSS class name) that should have zero visible effect.\n\n5. Lazada / Shopee integration setup modal spacing (new for PR #8479, updated for PR #8935)\nSetup: Marketplace page, open the Lazada or Shopee integration card so the \"Connect Your Lazada/Shopee Account\" setup modal appears.\nSteps: Look at the vertical spacing between the Seller ID / Shop ID field, the Account field, and the Deactivate/Connect button (only visible once already connected, for Deactivate).\nExpected: Fields and button keep the same spacing and alignment as on main: about 24px between the fields (it was 12px on staging before PR #8935). The Deactivate button keeps its wide side padding.\n\n6. App logo size inside the modal (from PR #8122, confirmed passed 2026-09-10; failed on staging 2026-10-14, re-test after staging PR #8936)\nSetup: Log in, go to Marketplace.\nSteps: Click \"Learn More\" on Prosperna Shipping - J&T. Compare the logo on the card before clicking with the logo in the modal that opens.\nExpected: The logo sits fully inside its round holder at the top left of the modal. It does not grow, does not cover the app title or the \"Powered by\" line, and does not overlap the X close button.\n\n7. Logo proportions are not distorted (from PR #8122, confirmed passed 2026-09-10)\nSetup: Same modal.\nSteps: Look closely at the J&T logo.\nExpected: The logo keeps its normal shape. A wide logo shows with space above and below it rather than being stretched tall or squashed flat.\n\n8. Other app modals unaffected (regression check, from PR #8122)\nSetup: Marketplace page.\nSteps: Open \"Learn More\" on several other apps: Blogs, Custom Fonts, Geolocation, Wholesale, QR Code Menu, Menu View, Announcements, Order Scheduling, Custom Delivery Date.\nExpected: Every logo sits inside its circle. None became smaller, blurry, or off-centre compared to before.\n\n9. Lazada and Shopee integration panel logos (regression check, from PR #8122; failed on staging 2026-10-14, re-test after staging PR #8936)\nSetup: Marketplace page.\nSteps: Open the Lazada modal, then the Shopee modal, and look at the small platform logo.\nExpected: Unchanged from before, same size and position.\n\n10. App cards on the marketplace grid (regression check, from PR #8122)\nSetup: Marketplace page, before opening anything.\nSteps: Scan the logos on all the app cards in the grid.\nExpected: Unchanged from before. The card logos were already correct and must stay that way.\n\n11. Additional Fee modal copy (from PR #7581, confirmed passed)\nSetup: Marketplace, open the Additional Fee app card.\nSteps: Read the line under the app title/subtitle.\nExpected: Shows only \"FREE\" in green. The old \"(Available for LAUNCH, GROW, and SCALE plans only.)\" text next to it is gone.\n\n12. Additional Fee modal carousel layout (from PR #7581, confirmed passed)\nSetup: Same modal, Overview tab.\nSteps: Look at the screenshot area under the tabs.\nExpected: The image area stretches the full width of the modal, no large empty white gap to its right.\n\n13. Multi-currency modal copy (from PR #7581, confirmed passed)\nSetup: Marketplace, open the Multi-currency app card.\nSteps: Read the line under the app title/subtitle.\nExpected: Shows only \"FREE\" in green. The \"No extra fee on any plan-use Store Settings to connect Stripe and finish setup.\" sentence is gone.\n\n14. Loading skeleton shows the active tab underline (new for PR #8798)\nSetup: Marketplace page. In the browser dev tools, set Network throttling to \"Slow 3G\" so the modal stays in its loading state for a few seconds.\nSteps: Open \"Learn More\" on any app card and look at the gray placeholder while it loads.\nExpected: The placeholder's tab row shows a dark underline under the first tab, like the real Overview tab does once the modal loads. Before this fix there was no underline at all.\n\n15. Screenshot carousel buttons are announced by a screen reader (new for PR #8798)\nSetup: Marketplace page, any app whose modal has more than one screenshot. Turn on a screen reader (NVDA on Windows or VoiceOver on Mac), or inspect the buttons in dev tools.\nSteps: Tab to the left arrow, the right arrow and each dot under the screenshot.\nExpected: They are announced as \"Previous slide\", \"Next slide\" and \"Go to slide 1\", \"Go to slide 2\", etc. The dot for the screenshot currently shown is marked as current. Clicking them still changes the screenshot exactly as before.\n\n16. \"Add a New Credit Card\" dialog opens on top of the checkout panel (new for PR #8935)\nSetup: A store that bills through Stripe, and one that bills through Xendit if available. Go to Marketplace and open the checkout (Order Summary) for a paid add-on.\nSteps: Set Payment Type to \"Credit Card Payment\", click \"Add a New Credit Card\", then click Close (the X) and, if shown, Cancel.\nExpected: The dialog opens in front of the Order Summary panel, with the panel dimmed behind it. Close and Cancel both work, and the Order Summary is still there afterwards. Do not complete a payment.\n\nTEST DATA\nNo special test data needed. Any dev account can open every modal/card listed above. Prosperna Shipping - J&T is the clearest case for tests 6 and 7 because its logo file is the largest. Any app the API currently returns with no detail route (e.g. \"Temporarily Closed\") works for test 2 — ask the dev if none is visible in your test store's current app list.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n\n- Lazada and Shopee modals still show \"Prosperna Pro or Premium subscription plan.\" under Requirements instead of \"Grow and Scale.\" Confirmed multiple times: this text lives in the marketplace database, not in any code, so it cannot be changed by a PR and needs a database content update by whoever administers the marketplace app records.\n- PRs #8159 and #8479 touch styling/CSS-class and dead-click behavior only. No wording, pricing, or checkout/billing behavior is touched by either.\n- PR #8798 changes only the loading placeholder's tab underline and adds screen reader labels to the carousel buttons. Nothing changes visually on the loaded modal.\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1790131571692",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000032581",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e126fec0-acc5-11f1-a6d9-c78ca7a851d9"
+        }
+      },
+      {
+        "text": "Status: PASSED",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e126fec1-acc5-11f1-a6d9-c78ca7a851d9"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e126fec2-acc5-11f1-a6d9-c78ca7a851d9"
+        }
+      },
+      {
+        "text": "No more issues found. ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e126fec3-acc5-11f1-a6d9-c78ca7a851d9"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e126fec4-acc5-11f1-a6d9-c78ca7a851d9"
+        }
+      },
+      {
+        "text": "We can now deploy these changes to “STAGING”",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e126fec5-acc5-11f1-a6d9-c78ca7a851d9"
+        }
+      },
+      {
+        "text": "cc ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      },
+      {
+        "text": "",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-e126fec6-acc5-11f1-a6d9-c78ca7a851d9"
+        }
+      }
+    ],
+    "comment_text": "env: DEV\nStatus: PASSED\n\nNo more issues found. \n\nWe can now deploy these changes to “STAGING”\ncc @Angelo Kamachi \n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789010131349",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000006489",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "5b76e390-473e-49b9-b66c-9721de0323fb.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/5b76e390-473e-49b9-b66c-9721de0323fb/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/5b76e390-473e-49b9-b66c-9721de0323fb_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/5b76e390-473e-49b9-b66c-9721de0323fb_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/5b76e390-473e-49b9-b66c-9721de0323fb/image.png",
+          "uploaded": true,
+          "width": 1071,
+          "height": 932
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "5b76e390-473e-49b9-b66c-9721de0323fb.png",
+          "data-attachment": null,
+          "data-natural-width": "1071",
+          "data-natural-height": "932"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-IRkXM7uo-7"
+        }
+      },
+      {
+        "text": "removed the leftover arrows",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-RXMS-vP5xb"
+        }
+      }
+    ],
+    "comment_text": "image.png\nremoved the leftover arrows\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1788270496198",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000006464",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "63d1efcd-0b45-4641-a54a-3b3b637963d6.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/63d1efcd-0b45-4641-a54a-3b3b637963d6/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/63d1efcd-0b45-4641-a54a-3b3b637963d6_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/63d1efcd-0b45-4641-a54a-3b3b637963d6_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/63d1efcd-0b45-4641-a54a-3b3b637963d6/image.png",
+          "uploaded": true,
+          "width": 662,
+          "height": 306
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "63d1efcd-0b45-4641-a54a-3b3b637963d6.png",
+          "data-attachment": null,
+          "data-natural-width": "662",
+          "data-natural-height": "306"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fJX6t0Q2p7"
+        }
+      },
+      {
+        "text": "logo expanding bug fixed",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-mzd2eWGieJ"
+        }
+      }
+    ],
+    "comment_text": "image.png\nlogo expanding bug fixed\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1788270130511",
+    "reply_count": 0
+  },
+  {
+    "id": "90180250575945",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\n\nAddressing return 1 from the latest QA comment: \"Clicking 'Learn More' makes the app icon bigger.\"\n\nThe app logo in the marketplace modals was rendering at its original image size instead of being fitted into the round icon holder. On the app cards the logo looked fine, but opening the modal put it in a larger holder with no size limit on the image itself, so any logo whose source file happens to be large painted at full size and spilled over the modal header. Prosperna Shipping - J&T was the worst case, with the logo covering the title and the close button.\n\nThe image is now constrained to the icon holder in all marketplace modals, and it keeps its proportions instead of being stretched or squashed.\n\nFixed once in the shared icon-holder style rather than per modal. All 13 marketplace modals (Shipping, Lazada, Shopee, Blogs, Custom Fonts, Geolocation, Wholesale, QR Menu, Menu View, Announcements, Additional Fee, Order Scheduling, Multi-currency) use the same holder, so a per-modal fix would have left most of them still broken the next time an app logo is swapped for a bigger file.\n\nNOT INCLUDED\n\nThe other two returns in the same QA comment are NOT in this PR and are still open:\n- Remove the arrow (< >) on images that have no next image\n- Make \"Temporary Closed\" totally grayed out since clicking it changes nothing\n\nAlso still unresolved, as previously discussed on this task: the Lazada and Shopee Requirements text showing \"Pro or Premium\" instead of \"Grow and Scale.\" This was re-checked from scratch this week across every backend repo, and the earlier conclusion holds. The marketplace app descriptions are not in any codebase, they are rows in the marketplace database that the API just reads back. There is no seed file, fixture, or hardcoded copy anywhere for a developer to edit. Renaming that text is a database content update, not a code change, so it cannot ship through a PR. It needs whoever administers the marketplace app records to update them.\n\nPULL REQUESTS\n\nprosperna1 / fix/marketplace-modal-icon-size-dev1\nhttps://github.com/Prosperna/prosperna1/pull/8122 (base: dev)\n\nHOW IT WAS TESTED\n\n- Stylelint on the changed file, clean.\n- Styling-only change, no JavaScript touched, so no unit tests apply.\n- Checked the one place that already set its own logo size (Lazada/Shopee integration panel) and confirmed it still renders at the same size as before.\n- Confirmed no other icon holder in the app previously relied on the logo overflowing, so nothing else shifts.\n\nNEXT STEPS\n\n1. QA to re-verify return 1 on dev once this PR merges: open several marketplace app modals, especially Prosperna Shipping - J&T, and confirm the logo sits inside its circle.\n2. Returns 2 and 3 (carousel arrows, Temporary Closed state) still to be done and will follow in a separate PR.\n3. Staging and main promotion after QA approval.\n4. The Lazada/Shopee plan naming needs a decision on who updates the marketplace database records, since it cannot be fixed in code.\n\nQA TEST CASES\n\nThe QA TEST CASES SUMMARY comment on this task has been updated for this PR: https://app.clickup.com/t/86ey1p7bp?comment=90180241961228"
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\n\nAddressing return 1 from the latest QA comment: \"Clicking 'Learn More' makes the app icon bigger.\"\n\nThe app logo in the marketplace modals was rendering at its original image size instead of being fitted into the round icon holder. On the app cards the logo looked fine, but opening the modal put it in a larger holder with no size limit on the image itself, so any logo whose source file happens to be large painted at full size and spilled over the modal header. Prosperna Shipping - J&T was the worst case, with the logo covering the title and the close button.\n\nThe image is now constrained to the icon holder in all marketplace modals, and it keeps its proportions instead of being stretched or squashed.\n\nFixed once in the shared icon-holder style rather than per modal. All 13 marketplace modals (Shipping, Lazada, Shopee, Blogs, Custom Fonts, Geolocation, Wholesale, QR Menu, Menu View, Announcements, Additional Fee, Order Scheduling, Multi-currency) use the same holder, so a per-modal fix would have left most of them still broken the next time an app logo is swapped for a bigger file.\n\nNOT INCLUDED\n\nThe other two returns in the same QA comment are NOT in this PR and are still open:\n- Remove the arrow (< >) on images that have no next image\n- Make \"Temporary Closed\" totally grayed out since clicking it changes nothing\n\nAlso still unresolved, as previously discussed on this task: the Lazada and Shopee Requirements text showing \"Pro or Premium\" instead of \"Grow and Scale.\" This was re-checked from scratch this week across every backend repo, and the earlier conclusion holds. The marketplace app descriptions are not in any codebase, they are rows in the marketplace database that the API just reads back. There is no seed file, fixture, or hardcoded copy anywhere for a developer to edit. Renaming that text is a database content update, not a code change, so it cannot ship through a PR. It needs whoever administers the marketplace app records to update them.\n\nPULL REQUESTS\n\nprosperna1 / fix/marketplace-modal-icon-size-dev1\nhttps://github.com/Prosperna/prosperna1/pull/8122 (base: dev)\n\nHOW IT WAS TESTED\n\n- Stylelint on the changed file, clean.\n- Styling-only change, no JavaScript touched, so no unit tests apply.\n- Checked the one place that already set its own logo size (Lazada/Shopee integration panel) and confirmed it still renders at the same size as before.\n- Confirmed no other icon holder in the app previously relied on the logo overflowing, so nothing else shifts.\n\nNEXT STEPS\n\n1. QA to re-verify return 1 on dev once this PR merges: open several marketplace app modals, especially Prosperna Shipping - J&T, and confirm the logo sits inside its circle.\n2. Returns 2 and 3 (carousel arrows, Temporary Closed state) still to be done and will follow in a separate PR.\n3. Staging and main promotion after QA approval.\n4. The Lazada/Shopee plan naming needs a decision on who updates the marketplace database records, since it cannot be fixed in code.\n\nQA TEST CASES\n\nThe QA TEST CASES SUMMARY comment on this task has been updated for this PR: https://app.clickup.com/t/86ey1p7bp?comment=90180241961228",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787877269542",
+    "reply_count": 0
+  },
+  {
+    "id": "90180250186107",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-VqP4aBPJ6o"
+        }
+      },
+      {
+        "text": "url: ",
+        "attributes": {}
+      },
+      {
+        "text": "https://prodev.prosperna.ph/home/marketplace",
+        "attributes": {
+          "link": "https://prodev.prosperna.ph/home/marketplace"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Hk6-tGnwEZ"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "FAILED",
+        "attributes": {
+          "bold": true,
+          "badge-class": "red"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block--eEWYGPGBc"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-uUsHdcLspx"
+        }
+      },
+      {
+        "text": "ISSUES:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-M4ihB-EG8a"
+        }
+      },
+      {
+        "text": "Clicking \"Learn More\" makes the app icon bigger.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-cwOV3W82F7",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Remove the arrow ( < > ) on images that have no next image",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-CV8r5JsaZd",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Make the \"Temporary Closed\" totally Grayed out since clicking it changes nothing",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-feLSejHM3Q",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "type": "frame",
+        "frame": {
+          "id": "074a6508-2b07-4401-8ab5-b64be593b201.mp4",
+          "service": "clickup_video",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/074a6508-2b07-4401-8ab5-b64be593b201/20260827-0130-05.1841857.mp4?view=open",
+          "src": "https://t7537039.p.clickup-attachments.com/t7537039/074a6508-2b07-4401-8ab5-b64be593b201/20260827-0130-05.1841857.mp4?view=open",
+          "source": 1
+        },
+        "text": "https://t7537039.p.clickup-attachments.com/t7537039/074a6508-2b07-4401-8ab5-b64be593b201/20260827-0130-05.1841857.mp4?view=open",
+        "attributes": {
+          "block-id": "block-ciYjW8wjLC",
+          "data-size": "large",
+          "data-origin": "attachment"
+        }
+      },
+      {
+        "text": "Provide explanation on what will we do on this task - ",
+        "attributes": {}
+      },
+      {
+        "type": "task_mention",
+        "task_mention": {
+          "task_id": "86eyf2a1r",
+          "team_id": "7537039"
+        },
+        "text": "86eyf2a1r"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-T2LDiRmNKa",
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-K52-HtJnUW"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d-Pzvlg2E_"
+        }
+      },
+      {
+        "text": "Moving this task to \"Ready Priority\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ISsnyMo5NV"
+        }
+      },
+      {
+        "text": "cc ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "env: DEV\nurl: https://prodev.prosperna.ph/home/marketplace\nStatus: FAILED\n\nISSUES:\nClicking \"Learn More\" makes the app icon bigger.\nRemove the arrow ( < > ) on images that have no next image\nMake the \"Temporary Closed\" totally Grayed out since clicking it changes nothing\nhttps://t7537039.p.clickup-attachments.com/t7537039/074a6508-2b07-4401-8ab5-b64be593b201/20260827-0130-05.1841857.mp4?view=openProvide explanation on what will we do on this task - 86eyf2a1r\n\n\nMoving this task to \"Ready Priority\"\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787794511196",
+    "reply_count": 0
+  },
+  {
+    "id": "90180249877242",
+    "comment": [
+      {
+        "text": "I have set this to be ready for testing to QA the final changes for code review",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Xjq-v0NLsp"
+        }
+      }
+    ],
+    "comment_text": "I have set this to be ready for testing to QA the final changes for code review\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787709283782",
+    "reply_count": 0
+  }
+]

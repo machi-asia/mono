@@ -1,0 +1,1263 @@
+{
+  "id": "86ey5e892",
+  "custom_id": null,
+  "custom_item_id": 0,
+  "name": "All Pages",
+  "text_content": "",
+  "description": "",
+  "markdown_description": "",
+  "status": {
+    "id": "sc901807509718_IvWfAzZw",
+    "status": "deployed to prod",
+    "color": "#008844",
+    "orderindex": 12,
+    "type": "closed"
+  },
+  "orderindex": "39948880.00000000000000000000000000000000",
+  "date_created": "1783087997858",
+  "date_updated": "1793425169839",
+  "date_closed": "1793425168639",
+  "date_done": "1786581951282",
+  "archived": false,
+  "creator": {
+    "id": 95622662,
+    "username": "Aira Pilor",
+    "color": "#e93d82",
+    "email": "aira@prosperna.com",
+    "profilePicture": null
+  },
+  "assignees": [
+    {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "color": "#595d66",
+      "initials": "AK",
+      "email": "angelo.kamachi@prosperna.com",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "color": "#e93d82",
+      "initials": "AP",
+      "email": "aira@prosperna.com",
+      "profilePicture": null
+    }
+  ],
+  "group_assignees": [],
+  "watchers": [
+    {
+      "id": -1,
+      "username": "ClickBot",
+      "color": "#827718",
+      "initials": "C",
+      "email": "clickbot@clickup.com",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    {
+      "id": 37590522,
+      "username": "Ian Pelea",
+      "color": "#04a9f4",
+      "initials": "IP",
+      "email": "ian@prosperna.com",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/37590522_IvQ.jpg"
+    },
+    {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "color": "#e93d82",
+      "initials": "AP",
+      "email": "aira@prosperna.com",
+      "profilePicture": null
+    },
+    {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "color": "#595d66",
+      "initials": "AK",
+      "email": "angelo.kamachi@prosperna.com",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    }
+  ],
+  "checklists": [],
+  "tags": [],
+  "parent": "86ey1p7dy",
+  "top_level_parent": "86exwu2xu",
+  "priority": null,
+  "due_date": null,
+  "start_date": "1783627200000",
+  "points": null,
+  "time_estimate": null,
+  "time_spent": 0,
+  "custom_fields": [
+    {
+      "id": "74e0ff60-1b19-4c27-b69f-e75bd8ac7292",
+      "name": "Action Items",
+      "type": "text",
+      "type_config": {
+        "ai": {
+          "prompt": "",
+          "source": "action_items"
+        }
+      },
+      "date_created": "1746337659453",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "0be556d3-f5de-455c-b486-f62959d982a9",
+      "name": "Action Items 2",
+      "type": "text",
+      "type_config": {
+        "ai": {
+          "source": "action_items"
+        }
+      },
+      "date_created": "1748240863456",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "a025da22-c65b-4dfe-a324-c7b0a04aa5ae",
+      "name": "Client Name or Page Link",
+      "type": "short_text",
+      "type_config": {},
+      "date_created": "1762239072424",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "756883ad-287a-4520-b178-4ded131e63f4",
+      "name": "Design Request",
+      "type": "tasks",
+      "type_config": {
+        "fields": []
+      },
+      "date_created": "1745478684741",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "f3dc8067-c804-4091-8aeb-0edb722a8d79",
+      "name": "Progress Updates",
+      "type": "text",
+      "type_config": {
+        "ai": {
+          "format": "bullet",
+          "source": "activity",
+          "updateFrom": "24h"
+        }
+      },
+      "date_created": "1746337649929",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "a5c9bbba-f0a6-4fac-9e7d-e29b9a643d9f",
+      "name": "Task duration",
+      "type": "formula",
+      "type_config": {
+        "simple": true,
+        "formula": "TASK_CLOSED - TASK_CREATED",
+        "version": "1.12",
+        "reset_at": 1750896207374,
+        "is_dynamic": false,
+        "return_types": [
+          "number"
+        ],
+        "calculation_state": "ready"
+      },
+      "date_created": "1747805761844",
+      "hide_from_guests": false,
+      "value": "120",
+      "value_richtext": null,
+      "required": false
+    },
+    {
+      "id": "fc490095-1631-4e6c-8fe8-6f210159548b",
+      "name": "💯 Completion Rate",
+      "type": "automatic_progress",
+      "type_config": {
+        "tracking": {
+          "subtasks": true,
+          "checklists": true,
+          "assigned_comments": true
+        },
+        "complete_on": 3,
+        "subtask_rollup": false
+      },
+      "date_created": "1702351138518",
+      "hide_from_guests": false,
+      "value": {
+        "percent_complete": 100
+      },
+      "required": false
+    },
+    {
+      "id": "b38b6af1-ac29-405f-8351-df7c81c266aa",
+      "name": "CH",
+      "type": "drop_down",
+      "type_config": {
+        "sorting": "manual",
+        "options": [
+          {
+            "id": "0a8b6956-e498-42e8-b4b4-35654b6978e6",
+            "name": "Dyne",
+            "color": "#9315c8",
+            "orderindex": 0
+          },
+          {
+            "id": "2b81f2e9-8948-4cf7-adfb-829c6ec3b717",
+            "name": "Alessi",
+            "color": "#AF7E2E",
+            "orderindex": 1
+          },
+          {
+            "id": "fb9cbc80-8157-4d52-a3a4-9a6e47e5c2a5",
+            "name": "Dyne Verified",
+            "color": "#2ecd6f",
+            "orderindex": 2
+          },
+          {
+            "id": "21044a3b-e36f-4c3f-b1bd-34eff512428c",
+            "name": "Alessi Verified",
+            "color": "#2ecd6f",
+            "orderindex": 3
+          }
+        ]
+      },
+      "date_created": "1747767510023",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "f27d0628-067d-45c2-8f7e-1e314189960b",
+      "name": "CH",
+      "type": "drop_down",
+      "type_config": {
+        "sorting": "manual",
+        "options": [
+          {
+            "id": "dcd85999-b329-4a3a-aebb-55a4e236418c",
+            "name": "Dyne",
+            "color": "#FF4081",
+            "orderindex": 0
+          },
+          {
+            "id": "e68b52b9-fe89-42a6-9b85-fc11092ea1fa",
+            "name": "Dyne Verified",
+            "color": "#2ecd6f",
+            "orderindex": 1
+          },
+          {
+            "id": "9c196a0d-f2b5-498c-919a-69d9dcb43397",
+            "name": "Alessi Verified",
+            "color": "#2ecd6f",
+            "orderindex": 2
+          },
+          {
+            "id": "6eace045-0cde-405b-b587-c231dd7726c2",
+            "name": "Alessi",
+            "color": "#7C4DFF",
+            "orderindex": 3
+          }
+        ]
+      },
+      "date_created": "1762243960861",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "06b320b9-965c-4236-b6ee-87f9987d36f3",
+      "name": "P1 Client Type",
+      "type": "drop_down",
+      "type_config": {
+        "default": 0,
+        "sorting": "manual",
+        "placeholder": null,
+        "new_drop_down": true,
+        "options": [
+          {
+            "id": "b40d214f-79cc-4367-b57c-9e9fd6d4138a",
+            "name": "Free",
+            "color": null,
+            "orderindex": 0
+          },
+          {
+            "id": "e56f3f2d-2e85-40a5-84d7-78e72bc99314",
+            "name": "Paid",
+            "color": null,
+            "orderindex": 1
+          },
+          {
+            "id": "c947c067-e031-42a5-b0bb-370ee5381ad8",
+            "name": "All",
+            "color": null,
+            "orderindex": 2
+          }
+        ]
+      },
+      "date_created": "1655361590889",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "e2d5e773-cf70-4a07-9730-be239a993cc8",
+      "name": "Project",
+      "type": "drop_down",
+      "type_config": {
+        "sorting": "manual",
+        "new_drop_down": true,
+        "options": [
+          {
+            "id": "73e9566f-c80c-4408-9e3d-b74b2415eb32",
+            "name": "Prosperna",
+            "color": "#0231E8",
+            "orderindex": 0
+          },
+          {
+            "id": "16be581a-007e-4274-8f03-6b175ef50da5",
+            "name": "Pippify",
+            "color": "#30a46c",
+            "orderindex": 1
+          },
+          {
+            "id": "f5b1886e-505b-49c7-b92e-6e559f69bd5c",
+            "name": "Enterprise",
+            "color": "#81B1FF",
+            "orderindex": 2
+          }
+        ]
+      },
+      "date_created": "1747747397729",
+      "hide_from_guests": false,
+      "value": 0,
+      "value_richtext": null,
+      "required": true
+    },
+    {
+      "id": "65fb6da8-e6ea-44fb-af15-08319a8158fe",
+      "name": "Requestor",
+      "type": "drop_down",
+      "type_config": {
+        "ai": {
+          "prompt": "",
+          "source": "custom_dropdown"
+        },
+        "sorting": "manual",
+        "new_drop_down": true,
+        "options": [
+          {
+            "id": "f2e04d4a-aa9e-4385-a8ce-09ddb23dddb3",
+            "name": "Client direct Support",
+            "color": "#FF4081",
+            "orderindex": 0
+          },
+          {
+            "id": "52d47d61-7e0c-4bd0-97c3-9661a1237d66",
+            "name": "Radley",
+            "color": "#7C4DFF",
+            "orderindex": 1
+          },
+          {
+            "id": "9f57b8fd-3fb6-4df7-8197-e22f99909abf",
+            "name": "Fro",
+            "color": "#f9d900",
+            "orderindex": 2
+          },
+          {
+            "id": "e882f2a4-06e0-41b4-a8b9-cc131e83879b",
+            "name": "Dennis Velasco",
+            "color": "#02BCD4",
+            "orderindex": 3
+          },
+          {
+            "id": "754be9a4-2b49-4c60-ac20-e3fb2c8f6871",
+            "name": "Ken Tio",
+            "color": "#1bbc9c",
+            "orderindex": 4
+          },
+          {
+            "id": "8a455d73-b1ce-49df-bf7f-2202f2e668b2",
+            "name": "Ronnie",
+            "color": "#0231E8",
+            "orderindex": 5
+          },
+          {
+            "id": "c013efcf-28b9-4074-8362-46712ac731db",
+            "name": "Dyne",
+            "color": "#ff7800",
+            "orderindex": 6
+          },
+          {
+            "id": "3eb44a8b-f46a-4b74-8bd6-3031fcb605c8",
+            "name": "Alessi",
+            "color": "#800000",
+            "orderindex": 7
+          },
+          {
+            "id": "a6bf9e1e-764c-4713-809a-88cd5b0b183f",
+            "name": "Alex",
+            "color": "#b6b6ff",
+            "orderindex": 8
+          },
+          {
+            "id": "a92bfe47-a6bd-42cb-9e47-40fc988606d0",
+            "name": "Internal",
+            "color": "#7B60ED",
+            "orderindex": 9
+          }
+        ]
+      },
+      "date_created": "1754289356657",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "1daa67e2-59b5-44ee-9482-6ca5c7888a15",
+      "name": "Requestor",
+      "type": "users",
+      "type_config": {
+        "single_user": false,
+        "include_groups": true,
+        "include_guests": true,
+        "include_team_members": true
+      },
+      "date_created": "1651456557048",
+      "hide_from_guests": false,
+      "required": false
+    },
+    {
+      "id": "4d7f64d9-8176-4e92-a4bc-aaa270d1212f",
+      "name": "SLA",
+      "type": "drop_down",
+      "type_config": {
+        "sorting": "manual",
+        "new_drop_down": true,
+        "options": [
+          {
+            "id": "1c6e9615-70f6-4b95-8c08-20419496559a",
+            "name": "sdev support",
+            "color": "#02BCD4",
+            "orderindex": 0
+          },
+          {
+            "id": "8495b9c1-d740-4d7b-8e79-5bce746447c6",
+            "name": " pdev support",
+            "color": "#0b74a3",
+            "orderindex": 1
+          },
+          {
+            "id": "d130411d-544e-484a-8d9b-8354a578eba4",
+            "name": "sdev",
+            "color": "#029eb2",
+            "orderindex": 2
+          },
+          {
+            "id": "b9beab8b-2fc2-44d1-8b67-a2f80f95aae1",
+            "name": "pdev",
+            "color": "#3e567e",
+            "orderindex": 3
+          }
+        ]
+      },
+      "date_created": "1748939552081",
+      "hide_from_guests": false,
+      "required": true
+    },
+    {
+      "id": "3ff9f436-5085-4218-84e4-c738735e9b7a",
+      "name": "Source",
+      "type": "drop_down",
+      "type_config": {
+        "sorting": "manual",
+        "new_drop_down": true,
+        "options": [
+          {
+            "id": "ee3c0361-7a27-4e78-8f25-682e6f4836e7",
+            "name": "External Support",
+            "color": "#934444",
+            "orderindex": 0
+          },
+          {
+            "id": "2d1d1ee5-09ac-4d93-a2c3-dec5cdac5bdd",
+            "name": "Internal Support",
+            "color": "#d47d2f",
+            "orderindex": 1
+          },
+          {
+            "id": "048917ad-ae22-42c2-8403-fa0f6cd70076",
+            "name": "Product Roadmap",
+            "color": "#81B1FF",
+            "orderindex": 2
+          },
+          {
+            "id": "3452edb8-7926-4a77-8a8e-155e0a7e8b59",
+            "name": "Client Request",
+            "color": "#04A9F4",
+            "orderindex": 3
+          }
+        ]
+      },
+      "date_created": "1746330744248",
+      "hide_from_guests": false,
+      "required": true
+    },
+    {
+      "id": "14bf0536-6d1c-42d0-a516-8d110ae6a666",
+      "name": "Type of Work",
+      "type": "drop_down",
+      "type_config": {
+        "sorting": "manual",
+        "new_drop_down": true,
+        "options": [
+          {
+            "id": "624bdb4c-1690-4184-b194-7fc115f4c7a1",
+            "name": "IT Operation Projects",
+            "color": "#7C4DFF",
+            "orderindex": 0
+          },
+          {
+            "id": "2f5f4bcb-c9b1-44ca-a9d3-f8fb6eef0378",
+            "name": "Business Projects",
+            "color": "#04A9F4",
+            "orderindex": 1
+          },
+          {
+            "id": "ce8e2150-a81f-4800-b95b-37b224381817",
+            "name": "Unplanned Work",
+            "color": "#e50000",
+            "orderindex": 2
+          },
+          {
+            "id": "e9cc0588-ebca-48df-a33d-b219bc430aee",
+            "name": "Changes",
+            "color": "#f9d900",
+            "orderindex": 3
+          },
+          {
+            "id": "dfaad5d7-cf02-4290-920f-2720950937d1",
+            "name": "Quaility ",
+            "color": "#04BF7C",
+            "orderindex": 4
+          }
+        ]
+      },
+      "date_created": "1752542906226",
+      "hide_from_guests": false,
+      "required": true
+    },
+    {
+      "id": "abeff65b-23f2-4f31-9bee-ba7f746ca705",
+      "name": "Work Type Category",
+      "type": "labels",
+      "type_config": {
+        "sorting": "manual",
+        "options": [
+          {
+            "id": "4ee9e1df-bcea-4c27-85d4-3a704c4cf244",
+            "label": "New Feature",
+            "color": "#800000",
+            "orderindex": 0
+          },
+          {
+            "id": "44183825-1767-4adf-b092-a55faa04bc0a",
+            "label": "Enhancement",
+            "color": "#AF7E2E",
+            "orderindex": 1
+          },
+          {
+            "id": "78d6ed2b-a472-4e65-b6ff-47585d795d10",
+            "label": "UX/UI Improvement",
+            "color": "#ff7800",
+            "orderindex": 2
+          },
+          {
+            "id": "ba9fd025-0f20-4462-9a57-89bfd52372c8",
+            "label": "UX / UI Improvement",
+            "color": "#3397dd",
+            "orderindex": 3
+          },
+          {
+            "id": "27682845-efa6-4c0f-baca-603f02959525",
+            "label": "Hotfix",
+            "color": "#E65100",
+            "orderindex": 4
+          },
+          {
+            "id": "1fa5d066-5c49-4efc-a54a-a66f485be9c8",
+            "label": "Bug",
+            "color": "#EA80FC",
+            "orderindex": 5
+          },
+          {
+            "id": "34b2394b-fc1a-4a51-ba7c-e6d4ff69e8cb",
+            "label": "QA",
+            "color": "#FF4081",
+            "orderindex": 6
+          },
+          {
+            "id": "0f3ac0e9-dedb-49af-968b-64e490e47f29",
+            "label": "Regression Test",
+            "color": "#fff",
+            "orderindex": 7
+          },
+          {
+            "id": "05215be1-5cbd-44f0-9e4f-5134f2f36c76",
+            "label": "Regression Testing",
+            "color": "#04A9F4",
+            "orderindex": 8
+          },
+          {
+            "id": "ac2c3d01-a86e-4f52-9248-94d4ab1ebf7c",
+            "label": "System Upgrade",
+            "color": "#f900ea",
+            "orderindex": 9
+          },
+          {
+            "id": "9d47dde7-f6c0-47df-96f4-56da3c50d25a",
+            "label": "Website Design",
+            "color": "#bf55ec",
+            "orderindex": 10
+          },
+          {
+            "id": "f5de9426-d114-4b44-83f5-f18465648017",
+            "label": "Website Build",
+            "color": "#0231E8",
+            "orderindex": 11
+          },
+          {
+            "id": "7811696d-d8a3-4fe2-8c36-ef183b4ac66a",
+            "label": "Website Revision",
+            "color": "#bf55ec",
+            "orderindex": 12
+          },
+          {
+            "id": "15254c31-a623-4bba-a6cc-48f8bf74ddf9",
+            "label": "Migration",
+            "color": "#9b59b6",
+            "orderindex": 13
+          },
+          {
+            "id": "a3bd56f3-df39-44fb-98a0-a17ba7bf7a50",
+            "label": "Customer Request",
+            "color": "#E65100",
+            "orderindex": 14
+          },
+          {
+            "id": "7dc9143d-6e3d-4939-978e-d16b4250d68e",
+            "label": "KB Article",
+            "color": "#800000",
+            "orderindex": 15
+          },
+          {
+            "id": "d6e47a9f-df49-412b-95a3-aa35d42eb58c",
+            "label": "Legal Compliance Requirement",
+            "color": "#FF7FAB",
+            "orderindex": 16
+          },
+          {
+            "id": "ea90e260-3b69-4403-bc61-115c353cf2e6",
+            "label": "Technical Debt Cleanup",
+            "color": "#E65100",
+            "orderindex": 17
+          },
+          {
+            "id": "343049ba-4e29-47f0-aad8-9032ebf6d354",
+            "label": "DevOps Automation",
+            "color": "#2ecd6f",
+            "orderindex": 18
+          },
+          {
+            "id": "7bdc0937-3bbd-4876-84c1-19cb302483d8",
+            "label": "Third Party Fix",
+            "color": "#81B1FF",
+            "orderindex": 19
+          },
+          {
+            "id": "9fece4cf-c9d3-4469-b415-963b670abad2",
+            "label": "Research and Development",
+            "color": "#1bbc9c",
+            "orderindex": 20
+          },
+          {
+            "id": "9c9fda2a-0c32-47ff-ba94-d73584788499",
+            "label": "Security Hardening",
+            "color": "#FF7FAB",
+            "orderindex": 21
+          },
+          {
+            "id": "11db5add-21eb-4e3f-9794-b846d220202d",
+            "label": "Infra Change",
+            "color": "#e50000",
+            "orderindex": 22
+          },
+          {
+            "id": "66fbcdc1-6f67-4746-acec-13b73f39ed70",
+            "label": "Rollback",
+            "color": "#FF4081",
+            "orderindex": 23
+          },
+          {
+            "id": "5be860af-4395-4b05-a0bb-c236e16fd6eb",
+            "label": "Cost Reduction",
+            "color": "#AF7E2E",
+            "orderindex": 24
+          },
+          {
+            "id": "767057b4-e9c3-47b7-bf3d-a74d364ae534",
+            "label": "Roadblock",
+            "color": "#b5bcc2",
+            "orderindex": 25
+          },
+          {
+            "id": "f6197485-913e-48ed-8959-8a7d70b43800",
+            "label": "Automation",
+            "color": "#0231E8",
+            "orderindex": 26
+          },
+          {
+            "id": "fcd40756-aa25-47f6-95ed-634bfe26d87c",
+            "label": "Datadog",
+            "color": "#fff",
+            "orderindex": 27
+          },
+          {
+            "id": "ed1739e9-d070-4c67-afa5-03278b91b971",
+            "label": "Account Removal",
+            "color": "#b6b6ff",
+            "orderindex": 28
+          },
+          {
+            "id": "f82abe4b-0ad2-4111-b577-718dcc1e2a5b",
+            "label": "observability",
+            "color": "#aec0f5",
+            "orderindex": 29
+          },
+          {
+            "id": "bc67df3e-b96f-40fe-a40f-095f51fd2acf",
+            "label": "Website Restore",
+            "color": "#96c7f2",
+            "orderindex": 30
+          }
+        ]
+      },
+      "date_created": "1752624111778",
+      "hide_from_guests": false,
+      "required": true
+    }
+  ],
+  "dependencies": [],
+  "linked_tasks": [],
+  "locations": [],
+  "team_id": "7537039",
+  "url": "https://app.clickup.com/t/86ey5e892",
+  "sharing": {
+    "public": false,
+    "public_share_expires_on": null,
+    "public_fields": [
+      "assignees",
+      "priority",
+      "due_date",
+      "content",
+      "comments",
+      "activity",
+      "attachments",
+      "customFields",
+      "subtasks",
+      "tags",
+      "checklists",
+      "coverimage"
+    ],
+    "token": null,
+    "seo_optimized": false
+  },
+  "permission_level": "create",
+  "list": {
+    "id": "901807509718",
+    "name": "P1 Delivery",
+    "access": true
+  },
+  "project": {
+    "id": "901813341819",
+    "name": "Shared with me",
+    "hidden": true,
+    "access": false
+  },
+  "folder": {
+    "id": "901813341819",
+    "name": "Shared with me",
+    "hidden": true,
+    "access": false
+  },
+  "space": {
+    "id": "19582303"
+  },
+  "attachments": [
+    {
+      "id": "fe1bda97-726b-467a-a8c3-0931d01a0adb.png",
+      "date": "1786176396224",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/fe1bda97-726b-467a-a8c3-0931d01a0adb_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9mZTFiZGE5Ny03MjZiLTQ2N2EtYThjMy0wOTMxZDAxYTBhZGJfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJPYnZnIn0.JBaD2KFg4959MRAkNmQIeUvcaL9NzMR2prllT989vz4",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/fe1bda97-726b-467a-a8c3-0931d01a0adb_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9mZTFiZGE5Ny03MjZiLTQ2N2EtYThjMy0wOTMxZDAxYTBhZGJfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiVVJtSCJ9.BcdcsyO76VwhfVXGEdtNTqWYJ4gtQ23od4g64yst-0g",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/fe1bda97-726b-467a-a8c3-0931d01a0adb/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9mZTFiZGE5Ny03MjZiLTQ2N2EtYThjMy0wOTMxZDAxYTBhZGIvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJaZ3ZJIn0.82aHajKBMoQPXiQCxWqL23TRWK_zR-DWu8a8Ts3A29Y",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180245069717",
+      "size": 18535,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/fe1bda97-726b-467a-a8c3-0931d01a0adb/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9mZTFiZGE5Ny03MjZiLTQ2N2EtYThjMy0wOTMxZDAxYTBhZGIvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ2cGVhIn0.t-OGnMHIJfGqU6RIYqVvUqs--JiOcGKt6MNIyqUzeDM",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 377,
+      "height": 339,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/fe1bda97-726b-467a-a8c3-0931d01a0adb/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9mZTFiZGE5Ny03MjZiLTQ2N2EtYThjMy0wOTMxZDAxYTBhZGIvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiTEFpaiJ9.VDO5yShBMaXa-0H580yKOT17lS5muals15U_QrJBatk",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/fe1bda97-726b-467a-a8c3-0931d01a0adb/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9mZTFiZGE5Ny03MjZiLTQ2N2EtYThjMy0wOTMxZDAxYTBhZGIvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJrYkx0In0.ZmtBDP8oUGAQrgIFbTJLzHL7z3ztpKP46tTG512St00"
+    },
+    {
+      "id": "37d7223f-d1c1-44fe-9aad-de8bac4eb116.png",
+      "date": "1786176279458",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/37d7223f-d1c1-44fe-9aad-de8bac4eb116_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zN2Q3MjIzZi1kMWMxLTQ0ZmUtOWFhZC1kZThiYWM0ZWIxMTZfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJpZTF6In0.4eokTtSZ-R0_N5YGd68nH85qFx-8c8YFb32n5MyXUz0",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/37d7223f-d1c1-44fe-9aad-de8bac4eb116/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zN2Q3MjIzZi1kMWMxLTQ0ZmUtOWFhZC1kZThiYWM0ZWIxMTYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ4MGh4In0.ol6FM2G3ZCkXm2eQtjE35z79OonbUjbKjnMNFI0DPUA",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/37d7223f-d1c1-44fe-9aad-de8bac4eb116/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zN2Q3MjIzZi1kMWMxLTQ0ZmUtOWFhZC1kZThiYWM0ZWIxMTYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJSNjlPIn0.TLb9nneyyxWpvZTQVjYCUk_sgAGphTDX35na8Pe4I8U",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180245069512",
+      "size": 9827,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/37d7223f-d1c1-44fe-9aad-de8bac4eb116/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zN2Q3MjIzZi1kMWMxLTQ0ZmUtOWFhZC1kZThiYWM0ZWIxMTYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiI5YVpqIn0.VeVcrt47uIJG0327Y8FKfj3th48NH_CEs3G8JEAnKfc",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 164,
+      "height": 123,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/37d7223f-d1c1-44fe-9aad-de8bac4eb116/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zN2Q3MjIzZi1kMWMxLTQ0ZmUtOWFhZC1kZThiYWM0ZWIxMTYvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiUEMzZCJ9.xOZLR7oynVTY4wzj8sJI6hq-V74wWuonk-z0ZNO93yo",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/37d7223f-d1c1-44fe-9aad-de8bac4eb116/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zN2Q3MjIzZi1kMWMxLTQ0ZmUtOWFhZC1kZThiYWM0ZWIxMTYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJsSnFyIn0.Mhis-iHnrFvK20jyze8rkpRVROgwx8SfdzQQl_Lz9TA"
+    },
+    {
+      "id": "45fc31aa-eba7-4832-a2e7-f658f75176ce.png",
+      "date": "1786176023957",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/45fc31aa-eba7-4832-a2e7-f658f75176ce_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS80NWZjMzFhYS1lYmE3LTQ4MzItYTJlNy1mNjU4Zjc1MTc2Y2Vfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJZUzRLIn0.NBPtzUV4KyFrPiAjTxGfVroCZbAOjGl5F2EEOaGXdMw",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/45fc31aa-eba7-4832-a2e7-f658f75176ce_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS80NWZjMzFhYS1lYmE3LTQ4MzItYTJlNy1mNjU4Zjc1MTc2Y2VfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiNFpQViJ9.4bfX2nY6qbGMEJaO7NLZIO4OJ3c0zTU7v6Mb5bDHq8o",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/45fc31aa-eba7-4832-a2e7-f658f75176ce/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS80NWZjMzFhYS1lYmE3LTQ4MzItYTJlNy1mNjU4Zjc1MTc2Y2UvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJrWXVUIn0.XTU0GoKgJo-99D8OhdNLKdvJFt0d5akRJ-wiyIe-8Aw",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180245069215",
+      "size": 55984,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/45fc31aa-eba7-4832-a2e7-f658f75176ce/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS80NWZjMzFhYS1lYmE3LTQ4MzItYTJlNy1mNjU4Zjc1MTc2Y2UvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJxYXNvIn0.tQqpG5nf0UA4Dz8WKw3HIAHUxR0SwJPHNc9VzB5NH9M",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 440,
+      "height": 860,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/45fc31aa-eba7-4832-a2e7-f658f75176ce/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS80NWZjMzFhYS1lYmE3LTQ4MzItYTJlNy1mNjU4Zjc1MTc2Y2UvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiaXVoeSJ9.Eb8orrAKGRhney3mWlNSI8vX6rV2u7BU8C1uN3A1FhY",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/45fc31aa-eba7-4832-a2e7-f658f75176ce/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS80NWZjMzFhYS1lYmE3LTQ4MzItYTJlNy1mNjU4Zjc1MTc2Y2UvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJNa0R6In0.PRE4IVLaJBePaR5_bvHPWU6twY01exrEQaow3h-wzJc"
+    },
+    {
+      "id": "bb767015-f763-46d5-a828-3cc5e6131c0a.png",
+      "date": "1785895329024",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/bb767015-f763-46d5-a828-3cc5e6131c0a_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9iYjc2NzAxNS1mNzYzLTQ2ZDUtYTgyOC0zY2M1ZTYxMzFjMGFfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJHQTRxIn0.s8vDJY0hbd292Y9cQg7s2G265oSMC_1bXiDuBBI6Mz8",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/bb767015-f763-46d5-a828-3cc5e6131c0a_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9iYjc2NzAxNS1mNzYzLTQ2ZDUtYTgyOC0zY2M1ZTYxMzFjMGFfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoidUdRcyJ9.JUhn6pnbkbLTSTYE1WzpqSDkyUFKK-pp_ngK2emVI1U",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/bb767015-f763-46d5-a828-3cc5e6131c0a_large.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9iYjc2NzAxNS1mNzYzLTQ2ZDUtYTgyOC0zY2M1ZTYxMzFjMGFfbGFyZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJyMmtqIn0.ns7PQPMeyglrpFRZMd8LoD7k2jvctHAZ7xi2usb0BGE",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180243946996",
+      "size": 417138,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 95622662,
+        "username": "Aira Pilor",
+        "email": "aira@prosperna.com",
+        "initials": "AP",
+        "color": "#e93d82",
+        "profilePicture": null
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/bb767015-f763-46d5-a828-3cc5e6131c0a/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9iYjc2NzAxNS1mNzYzLTQ2ZDUtYTgyOC0zY2M1ZTYxMzFjMGEvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ2VkNUIn0.KAOVdyLIwnHgvgypoE6ryx6SDYDJtT99kATwVrWDV6o",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 1179,
+      "height": 2556,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/bb767015-f763-46d5-a828-3cc5e6131c0a/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9iYjc2NzAxNS1mNzYzLTQ2ZDUtYTgyOC0zY2M1ZTYxMzFjMGEvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoieE9aZSJ9.dH8jOfdmE-B1-U4e8d8vZeupBQlS-KxrzMzxJc5JC_U",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/bb767015-f763-46d5-a828-3cc5e6131c0a/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9iYjc2NzAxNS1mNzYzLTQ2ZDUtYTgyOC0zY2M1ZTYxMzFjMGEvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJLcUJRIn0.u-KhHern7Tvv3Ir4Czrz-TnX_69Vxo2bbpaSUneCZcY"
+    },
+    {
+      "id": "222d2cb1-ffb8-441c-a218-51f8e4642c5f.png",
+      "date": "1785895310186",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/222d2cb1-ffb8-441c-a218-51f8e4642c5f_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8yMjJkMmNiMS1mZmI4LTQ0MWMtYTIxOC01MWY4ZTQ2NDJjNWZfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJZNmowIn0.qUzBdwqaTjaUD6pnq5iUTMxKaL4bJSeDp4lo8mtr86Y",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/222d2cb1-ffb8-441c-a218-51f8e4642c5f_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8yMjJkMmNiMS1mZmI4LTQ0MWMtYTIxOC01MWY4ZTQ2NDJjNWZfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoienFuQiJ9.3Wyw153fURvNqWosgVIEIh26ZzMOEfxLqSib2Ojr1W8",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/222d2cb1-ffb8-441c-a218-51f8e4642c5f_large.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8yMjJkMmNiMS1mZmI4LTQ0MWMtYTIxOC01MWY4ZTQ2NDJjNWZfbGFyZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ0enB3In0.mSL0bUjJ2TgWMP--dYfyJ09kk4-Zn2JKuDeFEuH8JZQ",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180243946996",
+      "size": 302850,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 95622662,
+        "username": "Aira Pilor",
+        "email": "aira@prosperna.com",
+        "initials": "AP",
+        "color": "#e93d82",
+        "profilePicture": null
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/222d2cb1-ffb8-441c-a218-51f8e4642c5f/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8yMjJkMmNiMS1mZmI4LTQ0MWMtYTIxOC01MWY4ZTQ2NDJjNWYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJoVWJKIn0.wQwH3yMtAgUkNNxSTSm9Rv7ZQI9ilF0dhh-CPBdDEQo",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 1179,
+      "height": 2556,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/222d2cb1-ffb8-441c-a218-51f8e4642c5f/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8yMjJkMmNiMS1mZmI4LTQ0MWMtYTIxOC01MWY4ZTQ2NDJjNWYvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiNXVuOSJ9.hNm8WhEmuSVUGBzj7yBrv1KEa5p6KtkaChx4WR2EyZ0",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/222d2cb1-ffb8-441c-a218-51f8e4642c5f/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8yMjJkMmNiMS1mZmI4LTQ0MWMtYTIxOC01MWY4ZTQ2NDJjNWYvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJqM1VXIn0.a6hP5PkDkYjKVHzEzOvEXaqPt8llpO66ojg5GCpDFjo"
+    },
+    {
+      "id": "3f54ee1b-4d15-40e5-9a44-57d2780bdd29.png",
+      "date": "1785895279338",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/3f54ee1b-4d15-40e5-9a44-57d2780bdd29_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zZjU0ZWUxYi00ZDE1LTQwZTUtOWE0NC01N2QyNzgwYmRkMjlfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiI4SUpTIn0.O6n_Y6VkYAagIFTxY7h_kW9SmRlMEAX9WRkOGrKnEfE",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/3f54ee1b-4d15-40e5-9a44-57d2780bdd29_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zZjU0ZWUxYi00ZDE1LTQwZTUtOWE0NC01N2QyNzgwYmRkMjlfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiYWo4VCJ9.a4rriZIGRdoQ4PqaLEyksimzkuj57h3QOlAxStwrXFY",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/3f54ee1b-4d15-40e5-9a44-57d2780bdd29_large.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zZjU0ZWUxYi00ZDE1LTQwZTUtOWE0NC01N2QyNzgwYmRkMjlfbGFyZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJsNWlGIn0.z-1ecymW0tgIfsNgWtzUOUGc5eqH2uysfV8LUBu0Lg4",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180243946996",
+      "size": 496018,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 95622662,
+        "username": "Aira Pilor",
+        "email": "aira@prosperna.com",
+        "initials": "AP",
+        "color": "#e93d82",
+        "profilePicture": null
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/3f54ee1b-4d15-40e5-9a44-57d2780bdd29/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zZjU0ZWUxYi00ZDE1LTQwZTUtOWE0NC01N2QyNzgwYmRkMjkvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJlSmdZIn0.POrnp1XKXtxZDaMYmwpbl_YzuxAkfYnM17Br7Tjurqw",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 1179,
+      "height": 2556,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/3f54ee1b-4d15-40e5-9a44-57d2780bdd29/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zZjU0ZWUxYi00ZDE1LTQwZTUtOWE0NC01N2QyNzgwYmRkMjkvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoialdZViJ9.b94aKwu72g3wzloT3A0R7vEl8ql4zbqH655hUSmIK9U",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/3f54ee1b-4d15-40e5-9a44-57d2780bdd29/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8zZjU0ZWUxYi00ZDE1LTQwZTUtOWE0NC01N2QyNzgwYmRkMjkvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJiZ3BpIn0.uLptDMM1LdA1YkL8hJ3vuY5sHGNK_feH0LLNVo-idGM"
+    },
+    {
+      "id": "12ef07f2-d897-436e-aac8-ac5503d52256.mp4",
+      "date": "1785895126984",
+      "title": "20260805-0157-28.0210811.mp4",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "mp4",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/12ef07f2-d897-436e-aac8-ac5503d52256_small.jpg?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8xMmVmMDdmMi1kODk3LTQzNmUtYWFjOC1hYzU1MDNkNTIyNTZfc21hbGwuanBnIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJjaWI3In0.x5t37HX8Jms4Wdlhkr4yMLkBzLt3quw1tnK9EZQsqqk",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/12ef07f2-d897-436e-aac8-ac5503d52256_medium.jpg?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8xMmVmMDdmMi1kODk3LTQzNmUtYWFjOC1hYzU1MDNkNTIyNTZfbWVkaXVtLmpwZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiazFKWSJ9.ZqPToPIEjGfMDyroeWv_pdwJLzRoalaGaT8W9OviI1k",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/12ef07f2-d897-436e-aac8-ac5503d52256_large.jpg?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8xMmVmMDdmMi1kODk3LTQzNmUtYWFjOC1hYzU1MDNkNTIyNTZfbGFyZ2UuanBnIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJNRnNsIn0.09Lq32VENLKbvQbNDddJxATclhx9N-66VL362Q0g8d4",
+      "is_folder": null,
+      "mimetype": "video/mp4",
+      "hidden": false,
+      "parent_id": "90180243946996",
+      "size": 10901396,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 95622662,
+        "username": "Aira Pilor",
+        "email": "aira@prosperna.com",
+        "initials": "AP",
+        "color": "#e93d82",
+        "profilePicture": null
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/12ef07f2-d897-436e-aac8-ac5503d52256/20260805-0157-28.0210811.mp4?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8xMmVmMDdmMi1kODk3LTQzNmUtYWFjOC1hYzU1MDNkNTIyNTYvMjAyNjA4MDUtMDE1Ny0yOC4wMjEwODExLm1wNCIsIm1heFVzYWdlIjoxLCJyYW5kIjoiN2k3aiJ9.HTxr4OqtFFqZDdChSHSvT_yq0VPgOAuCWS9h8HsQ88g",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 1918,
+      "height": 966,
+      "duration": 55967,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/12ef07f2-d897-436e-aac8-ac5503d52256/20260805-0157-28.0210811.mp4?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8xMmVmMDdmMi1kODk3LTQzNmUtYWFjOC1hYzU1MDNkNTIyNTYvMjAyNjA4MDUtMDE1Ny0yOC4wMjEwODExLm1wND92aWV3PW9wZW4iLCJtYXhVc2FnZSI6MSwicmFuZCI6Ik9LSTEifQ.YWj7Oqne7Q-TNyNwR1DX9Qg_quUvJnw4pUZRNSgy3as",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/12ef07f2-d897-436e-aac8-ac5503d52256/20260805-0157-28.0210811.mp4?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8xMmVmMDdmMi1kODk3LTQzNmUtYWFjOC1hYzU1MDNkNTIyNTYvMjAyNjA4MDUtMDE1Ny0yOC4wMjEwODExLm1wNCIsIm1heFVzYWdlIjoxLCJyYW5kIjoiN21XayJ9.UVIAvYuqJuZGD4vXlIQPnVOFg4P9VDIiLZNZFHZwIvw"
+    },
+    {
+      "id": "2d16638a-da19-4815-8e52-04a83e8cc877.png",
+      "date": "1785398936328",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/2d16638a-da19-4815-8e52-04a83e8cc877_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8yZDE2NjM4YS1kYTE5LTQ4MTUtOGU1Mi0wNGE4M2U4Y2M4Nzdfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJoV1BTIn0.BBmfMbXhfP9ZSxrJFpxhzAlAkg4Txg6iHfaeuAXCPT0",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/2d16638a-da19-4815-8e52-04a83e8cc877_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8yZDE2NjM4YS1kYTE5LTQ4MTUtOGU1Mi0wNGE4M2U4Y2M4NzdfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiQlJUcSJ9.3yNHHfiWwbE_TkJKc5WieQ2_ZBZ5Qg2lf0crRZWa8bI",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/2d16638a-da19-4815-8e52-04a83e8cc877/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8yZDE2NjM4YS1kYTE5LTQ4MTUtOGU1Mi0wNGE4M2U4Y2M4NzcvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiIyejlKIn0.A4EC0p8zIKVDhbElyOjj4xELZYlri67dpIk_hmLdYlg",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180242244880",
+      "size": 61325,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/2d16638a-da19-4815-8e52-04a83e8cc877/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8yZDE2NjM4YS1kYTE5LTQ4MTUtOGU1Mi0wNGE4M2U4Y2M4NzcvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJLT0d2In0.2Sqe1iERf612-dFv0xeHR54Z5QAt0hp_IQ9ks0fUD2E",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 453,
+      "height": 902,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/2d16638a-da19-4815-8e52-04a83e8cc877/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8yZDE2NjM4YS1kYTE5LTQ4MTUtOGU1Mi0wNGE4M2U4Y2M4NzcvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiSmgweiJ9.JwGK8pu0H8aerf_NYuN4-SdageVONTRFvZtrTDBYLB8",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/2d16638a-da19-4815-8e52-04a83e8cc877/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8yZDE2NjM4YS1kYTE5LTQ4MTUtOGU1Mi0wNGE4M2U4Y2M4NzcvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJqc2RhIn0.H8jNyMTTUARwdg3OwEGUJLJqciKPsHmgDeCnomFmBQE"
+    },
+    {
+      "id": "9a718619-f576-4ec4-bc6f-d5e64cb03bf8.png",
+      "date": "1785398780196",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/9a718619-f576-4ec4-bc6f-d5e64cb03bf8_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS85YTcxODYxOS1mNTc2LTRlYzQtYmM2Zi1kNWU2NGNiMDNiZjhfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJpa0ZXIn0.uEVOmVfqTw-eX2e2Toik6nhUQu-uAAm5w2M467-Vdew",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/9a718619-f576-4ec4-bc6f-d5e64cb03bf8_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS85YTcxODYxOS1mNTc2LTRlYzQtYmM2Zi1kNWU2NGNiMDNiZjhfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiUHAyUyJ9.I7FtZ1oQGVStADrVrWc8sGdYZNBwA-gxL57dwkgaHaM",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/9a718619-f576-4ec4-bc6f-d5e64cb03bf8/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS85YTcxODYxOS1mNTc2LTRlYzQtYmM2Zi1kNWU2NGNiMDNiZjgvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJBU3JtIn0.dBbIAb0YErx9UICOZ38FJWJewBsj-0vG9rx4A2F8DJ8",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180242243353",
+      "size": 25049,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 113539147,
+        "username": "Angelo Kamachi",
+        "email": "angelo.kamachi@prosperna.com",
+        "initials": "AK",
+        "color": "#595d66",
+        "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/9a718619-f576-4ec4-bc6f-d5e64cb03bf8/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS85YTcxODYxOS1mNTc2LTRlYzQtYmM2Zi1kNWU2NGNiMDNiZjgvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJyRG1kIn0.ccB04boHGsFo6p2UtqqwjVCPGyzNpJoLNnBhRyZc_SE",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 731,
+      "height": 651,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/9a718619-f576-4ec4-bc6f-d5e64cb03bf8/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS85YTcxODYxOS1mNTc2LTRlYzQtYmM2Zi1kNWU2NGNiMDNiZjgvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiWWtqbiJ9.tKje1uQD9hYCIyKgrKsT6wea5aAK58v8ex7OZHSbjok",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/9a718619-f576-4ec4-bc6f-d5e64cb03bf8/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS85YTcxODYxOS1mNTc2LTRlYzQtYmM2Zi1kNWU2NGNiMDNiZjgvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJCdlBlIn0.s31t3XAKZ1Pqi8tHbKQs9PdUFkequ7i6j6oLTK_WFGk"
+    },
+    {
+      "id": "64e64f76-ec48-4ad3-84c4-cc0cde7ef83a.mp4",
+      "date": "1783089750279",
+      "title": "9f819209-bdfa-428a-aecc-3288741c5edc (1).mp4",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "mp4",
+      "thumbnail_small": null,
+      "thumbnail_medium": null,
+      "thumbnail_large": null,
+      "is_folder": null,
+      "mimetype": "video/mp4",
+      "hidden": false,
+      "parent_id": "90180234415526",
+      "size": 1644495,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 95622662,
+        "username": "Aira Pilor",
+        "email": "aira@prosperna.com",
+        "initials": "AP",
+        "color": "#e93d82",
+        "profilePicture": null
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/64e64f76-ec48-4ad3-84c4-cc0cde7ef83a/9f819209-bdfa-428a-aecc-3288741c5edc%20(1).mp4?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82NGU2NGY3Ni1lYzQ4LTRhZDMtODRjNC1jYzBjZGU3ZWY4M2EvOWY4MTkyMDktYmRmYS00MjhhLWFlY2MtMzI4ODc0MWM1ZWRjJTIwKDEpLm1wNCIsIm1heFVzYWdlIjoxLCJyYW5kIjoiNWJ4YyJ9.-xte3jgXqP_baQcIaUzNeg32hv0Ufdv-1cq1FBHt2To",
+      "email_data": null,
+      "workspace_id": null,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/64e64f76-ec48-4ad3-84c4-cc0cde7ef83a/9f819209-bdfa-428a-aecc-3288741c5edc%20(1).mp4?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82NGU2NGY3Ni1lYzQ4LTRhZDMtODRjNC1jYzBjZGU3ZWY4M2EvOWY4MTkyMDktYmRmYS00MjhhLWFlY2MtMzI4ODc0MWM1ZWRjJTIwKDEpLm1wND92aWV3PW9wZW4iLCJtYXhVc2FnZSI6MSwicmFuZCI6IkJSOWsifQ.PpSZ_fDHQfB1Uw0ZGLy_71x6pO5K9lXBaqa5AdmnetE",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/64e64f76-ec48-4ad3-84c4-cc0cde7ef83a/9f819209-bdfa-428a-aecc-3288741c5edc%20(1).mp4?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS82NGU2NGY3Ni1lYzQ4LTRhZDMtODRjNC1jYzBjZGU3ZWY4M2EvOWY4MTkyMDktYmRmYS00MjhhLWFlY2MtMzI4ODc0MWM1ZWRjJTIwKDEpLm1wNCIsIm1heFVzYWdlIjoxLCJyYW5kIjoiMFZxZyJ9.-jbAYmmCQJh7rNsAyR72752JOKXRZJNFNzasn6etMWU"
+    },
+    {
+      "id": "843a6faf-c6ff-4cda-ac50-c48b375d240b.png",
+      "date": "1783089695318",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/843a6faf-c6ff-4cda-ac50-c48b375d240b_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS84NDNhNmZhZi1jNmZmLTRjZGEtYWM1MC1jNDhiMzc1ZDI0MGJfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiI3SlNDIn0.8lYx4HYcskjw61w1qZgHgdW9SO6gTVdQsyddcPEKFdo",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/843a6faf-c6ff-4cda-ac50-c48b375d240b_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS84NDNhNmZhZi1jNmZmLTRjZGEtYWM1MC1jNDhiMzc1ZDI0MGJfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiMW4zRyJ9.yLLPAgEcNdrgjF5frA0tnIuV3APqT_KukUYmd2K1tQI",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/843a6faf-c6ff-4cda-ac50-c48b375d240b_large.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS84NDNhNmZhZi1jNmZmLTRjZGEtYWM1MC1jNDhiMzc1ZDI0MGJfbGFyZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJDR0RoIn0.RvJH2kjP9UehwSfqPfmCE5QGhKNxYiEAbVnVd8pozII",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180234415526",
+      "size": 364870,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 95622662,
+        "username": "Aira Pilor",
+        "email": "aira@prosperna.com",
+        "initials": "AP",
+        "color": "#e93d82",
+        "profilePicture": null
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/843a6faf-c6ff-4cda-ac50-c48b375d240b/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS84NDNhNmZhZi1jNmZmLTRjZGEtYWM1MC1jNDhiMzc1ZDI0MGIvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJuczFZIn0.xQJiggtls-rLeSDhK0pTDgZnHMjMMGo79mxgxydeMNM",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 944,
+      "height": 2046,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/843a6faf-c6ff-4cda-ac50-c48b375d240b/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS84NDNhNmZhZi1jNmZmLTRjZGEtYWM1MC1jNDhiMzc1ZDI0MGIvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiUXg3MiJ9.NGYGAm91FQQAGlA638oyz8NMqYJJDpJM75E0A888Dx8",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/843a6faf-c6ff-4cda-ac50-c48b375d240b/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS84NDNhNmZhZi1jNmZmLTRjZGEtYWM1MC1jNDhiMzc1ZDI0MGIvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiIzSUJ1In0.3mG1Xi8QQrlvI-duAeB6sfWve8bCfWTu0Uk2D__6HU4"
+    },
+    {
+      "id": "05a10dab-e29a-43b8-840e-14ea238c07f8.png",
+      "date": "1783088438743",
+      "title": "image.png",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "png",
+      "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/05a10dab-e29a-43b8-840e-14ea238c07f8_small.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8wNWExMGRhYi1lMjlhLTQzYjgtODQwZS0xNGVhMjM4YzA3Zjhfc21hbGwucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJrNlk2In0.Orz6NKkx3o1cetjhyV9GVeDepP1kt-5FcAwZUhzLzuQ",
+      "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/05a10dab-e29a-43b8-840e-14ea238c07f8_medium.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8wNWExMGRhYi1lMjlhLTQzYjgtODQwZS0xNGVhMjM4YzA3ZjhfbWVkaXVtLnBuZyIsIm1heFVzYWdlIjoxLCJyYW5kIjoiTFYwcyJ9.6LOnIbnElJ5hrgEEgLeBsuPVZGrMQO1oyC3IpUHOWVQ",
+      "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/05a10dab-e29a-43b8-840e-14ea238c07f8/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8wNWExMGRhYi1lMjlhLTQzYjgtODQwZS0xNGVhMjM4YzA3ZjgvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJ5TWpTIn0.6y1_l1-77UGv49MSXSs5Gd_5k0CsWKURBn2XnM3_KIg",
+      "is_folder": null,
+      "mimetype": "image/png",
+      "hidden": false,
+      "parent_id": "90180234415526",
+      "size": 146912,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 95622662,
+        "username": "Aira Pilor",
+        "email": "aira@prosperna.com",
+        "initials": "AP",
+        "color": "#e93d82",
+        "profilePicture": null
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/05a10dab-e29a-43b8-840e-14ea238c07f8/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8wNWExMGRhYi1lMjlhLTQzYjgtODQwZS0xNGVhMjM4YzA3ZjgvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJZMnVwIn0.mh67RNLjR238ntoAmPUaepb_WQnt3KAUMt38ypF2pGw",
+      "email_data": null,
+      "workspace_id": null,
+      "width": 1536,
+      "height": 781,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/05a10dab-e29a-43b8-840e-14ea238c07f8/image.png?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8wNWExMGRhYi1lMjlhLTQzYjgtODQwZS0xNGVhMjM4YzA3ZjgvaW1hZ2UucG5nP3ZpZXc9b3BlbiIsIm1heFVzYWdlIjoxLCJyYW5kIjoiQll5ayJ9.FsR3qJAB3zsGg6ah-hJkpvOWL2gxL8Iu7K62pyLAPhA",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/05a10dab-e29a-43b8-840e-14ea238c07f8/image.png?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS8wNWExMGRhYi1lMjlhLTQzYjgtODQwZS0xNGVhMjM4YzA3ZjgvaW1hZ2UucG5nIiwibWF4VXNhZ2UiOjEsInJhbmQiOiJaR1pCIn0.VNSVaTQT9ESWPQPjeg2nWFBf3qcMqp0IcWuNbu171hw"
+    },
+    {
+      "id": "b61973cb-c486-4810-b65a-e39d4030c07c.mp4",
+      "date": "1783088341574",
+      "title": "20260703-1418-16.0111768.mp4",
+      "type": 2,
+      "source": 1,
+      "version": 0,
+      "extension": "mp4",
+      "thumbnail_small": null,
+      "thumbnail_medium": null,
+      "thumbnail_large": null,
+      "is_folder": null,
+      "mimetype": "video/mp4",
+      "hidden": false,
+      "parent_id": "90180234415526",
+      "size": 502958,
+      "total_comments": 0,
+      "resolved_comments": 0,
+      "user": {
+        "id": 95622662,
+        "username": "Aira Pilor",
+        "email": "aira@prosperna.com",
+        "initials": "AP",
+        "color": "#e93d82",
+        "profilePicture": null
+      },
+      "deleted": false,
+      "orientation": null,
+      "url": "https://t7537039.p.clickup-attachments.com/t7537039/b61973cb-c486-4810-b65a-e39d4030c07c/20260703-1418-16.0111768.mp4?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9iNjE5NzNjYi1jNDg2LTQ4MTAtYjY1YS1lMzlkNDAzMGMwN2MvMjAyNjA3MDMtMTQxOC0xNi4wMTExNzY4Lm1wNCIsIm1heFVzYWdlIjoxLCJyYW5kIjoiS0ZCWiJ9.2cztJinT2vMDSWzF0k91Orn8-NHuW6VQw8DYNT8FNfs",
+      "email_data": null,
+      "workspace_id": null,
+      "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/b61973cb-c486-4810-b65a-e39d4030c07c/20260703-1418-16.0111768.mp4?view=open&authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9iNjE5NzNjYi1jNDg2LTQ4MTAtYjY1YS1lMzlkNDAzMGMwN2MvMjAyNjA3MDMtMTQxOC0xNi4wMTExNzY4Lm1wND92aWV3PW9wZW4iLCJtYXhVc2FnZSI6MSwicmFuZCI6Im9TZkEifQ.krSA95986tO_QrH1lVJo_nyPPFxKGzWjoBgshI4Gx4Y",
+      "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/b61973cb-c486-4810-b65a-e39d4030c07c/20260703-1418-16.0111768.mp4?authz_token=eyJhbGciOiJIUzI1NiIsImtpZCI6ImVwb2NoOjIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOi0xLCJleHAiOjE3OTQ4MTk0NDYsInN1YiI6Imh0dHBzOi8vdDc1MzcwMzkucC5jbGlja3VwLWF0dGFjaG1lbnRzLmNvbS90NzUzNzAzOS9iNjE5NzNjYi1jNDg2LTQ4MTAtYjY1YS1lMzlkNDAzMGMwN2MvMjAyNjA3MDMtMTQxOC0xNi4wMTExNzY4Lm1wNCIsIm1heFVzYWdlIjoxLCJyYW5kIjoiYWRtSCJ9.SBJ40L-RWan4zTGx2nUE9hEGqe_3Zy51F4wEwUX9Gwg"
+    }
+  ]
+}

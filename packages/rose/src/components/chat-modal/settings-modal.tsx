@@ -3,6 +3,7 @@
 import { useState, useEffect, type FormEvent } from "react";
 import { X, Sliders, Brain, Check, AlertCircle, Sparkles } from "lucide-react";
 import { Tooltip, Button, Navbar, Dropdown, Skeleton, SkeletonButton } from "@mono/components";
+import { getRoseApiBasePath } from "../../utils/endpoints";
 import { RoseMemoriesTab, type RoseMemoryItem } from "./settings-memories";
 
 export type { RoseMemoryItem };
@@ -37,7 +38,7 @@ const LOCAL_STORAGE_PERSONALIZATION_KEY = "mono_rose_local_personalization";
 export function RoseSettingsModal({
   isOpen,
   onClose,
-  apiBasePath = "/api/rose",
+  apiBasePath = getRoseApiBasePath(),
 }: RoseSettingsModalProps) {
   const [activeTab, setActiveTab] = useState<"personalization" | "memories">("personalization");
   const [isLoading, setIsLoading] = useState(false);
@@ -63,6 +64,7 @@ export function RoseSettingsModal({
           setNickname(data.personalization.nickname || "");
           setTone(data.personalization.tone || "Warm & Helpful");
         }
+        setIsLoading(false);
         return;
       }
     } catch {

@@ -4,8 +4,10 @@ import { render, screen } from "@testing-library/react";
 import CreatePage from "../app/page";
 
 describe("Create App Page", () => {
-  it("renders Create calculator with title", () => {
+  it("renders Create calculator with title and resolves Home link to localhost:3010 locally", () => {
     render(<CreatePage />);
     expect(screen.getByText("Create Calculator")).toBeInTheDocument();
+    const homeLink = screen.getByTitle("Return to Home Directory");
+    expect(homeLink).toHaveAttribute("href", "http://localhost:3010");
   });
 });

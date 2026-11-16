@@ -1,17 +1,58 @@
-import { createClient } from "./client";
-import type { UserRole, UserRoleRecord } from "./types";
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { assertServerOnlyExecution, createClient, createServiceClient } from "./client";
+import type { Database, UserRole } from "./types";
 
 /**
  * Default fallback role when no profile or metadata is present.
  */
 export const DEFAULT_USER_ROLE: UserRole = "member";
 
+const VALID_ROLES: UserRole[] = ["guest", "member", "pro", "admin"];
+
+export function isValidUserRole(role: unknown): role is UserRole {
+  return typeof role === "string" && VALID_ROLES.includes(role as UserRole);
+}
+
 /**
- * Fetches the current user's role from the database or session metadata.
+ * Resolves a UserRole from a Supabase user object safely:
+ * - Never trusts user_metadata for "admin" or "pro" privilege escalation.
+ * - Uses app_metadata.role if valid.
+ * - Returns "guest" for anonymous users or null users.
  */
-export async function getUserRole(userId?: string): Promise<UserRole> {
+export function resolveSafeRoleFromUser(user: {
+  id?: string;
+  is_anonymous?: boolean;
+  app_metadata?: Record<string, unknown>;
+  user_metadata?: Record<string, unknown>;
+  roles?: string[];
+} | null | undefined): UserRole {
+  if (!user) return "guest";
+  if (user.is_anonymous) return "guest";
+
+  if (Array.isArray(user.roles)) {
+    if (user.roles.includes("admin")) return "admin";
+    if (user.roles.includes("pro")) return "pro";
+    if (user.roles.includes("guest") || user.roles.includes("anon")) return "guest";
+    if (user.roles.includes("member")) return "member";
+  }
+
+  const appRole = user.app_metadata?.role;
+  if (isValidUserRole(appRole)) {
+    return appRole;
+  }
+
+  return DEFAULT_USER_ROLE;
+}
+
+/**
+ * Fetches the current user's role from the database or verified app_metadata.
+ */
+export async function getUserRole(
+  userId?: string,
+  clientOverride?: SupabaseClient<Database>
+): Promise<UserRole> {
   try {
-    const supabase = createClient();
+    const supabase = clientOverride || createClient();
     let targetUserId = userId;
 
     if (!targetUserId) {
@@ -22,9 +63,11 @@ export async function getUserRole(userId?: string): Promise<UserRole> {
       if (user.is_anonymous) return "guest";
       targetUserId = user.id;
 
-      // Check fast path from user/app metadata
-      const metaRole = (user.app_metadata?.role || user.user_metadata?.role) as UserRole | undefined;
-      if (metaRole) return metaRole;
+      // Check fast path from server-controlled app_metadata
+      const appRole = user.app_metadata?.role;
+      if (isValidUserRole(appRole)) {
+        return appRole;
+      }
     }
 
     const { data, error } = await supabase
@@ -37,7 +80,8 @@ export async function getUserRole(userId?: string): Promise<UserRole> {
       return DEFAULT_USER_ROLE;
     }
 
-    return (data as { role: UserRole }).role || DEFAULT_USER_ROLE;
+    const dbRole = (data as { role: UserRole }).role;
+    return isValidUserRole(dbRole) ? dbRole : DEFAULT_USER_ROLE;
   } catch {
     return DEFAULT_USER_ROLE;
   }
@@ -45,13 +89,16 @@ export async function getUserRole(userId?: string): Promise<UserRole> {
 
 /**
  * Admin function to update a user's role in the database.
+ * Strictly server-only — throws if invoked in a browser environment.
  */
 export async function updateUserRole(
   userId: string,
   role: UserRole,
+  clientOverride?: SupabaseClient<Database>
 ): Promise<{ success: boolean; error: Error | null }> {
+  assertServerOnlyExecution("updateUserRole");
   try {
-    const supabase = createClient();
+    const supabase = clientOverride || createServiceClient();
     const payload = {
       user_id: userId,
       role,

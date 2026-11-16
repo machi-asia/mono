@@ -1,16 +1,11 @@
 import { NextResponse } from "next/server";
 import { getRoseUsage } from "./usage-calc";
-import { getAuthUser } from "./chat";
+import { resolveRequestAuth } from "../security/guard";
 
 export async function handleRoseUsage(req: Request): Promise<Response> {
   try {
-    const authResult = await getAuthUser(req);
-    const user = authResult?.user;
-    const clientOverride = authResult?.supabaseClient;
-    const userId = user?.id || "00000000-0000-0000-0000-000000000001";
-    const userRoles = (user as any)?.roles || (user?.is_anonymous ? ["guest"] : []);
-
-    const usage = await getRoseUsage(userId, userRoles, clientOverride);
+    const auth = await resolveRequestAuth(req);
+    const usage = await getRoseUsage(auth.userId, auth.roles, auth.supabaseClient);
     return NextResponse.json(usage);
   } catch (err: unknown) {
     console.error("[RoseServer] Usage fetch error:", err);

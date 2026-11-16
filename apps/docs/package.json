@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack -p 3002",
+    "dev": "next dev -p 3002",
     "build": "next build",
     "build:mobile": "cross-env STATIC_EXPORT=true next build",
     "cap:sync": "cap sync",
@@ -26,6 +26,7 @@
     "@mono/components": "*",
     "@mono/rose": "*",
     "@otakit/capacitor-updater": "^3.2.0",
+    "framer-motion": "^14.0.0",
     "lucide-react": "^1.40.0",
     "next": "latest",
     "next-themes": "^0.4.6",

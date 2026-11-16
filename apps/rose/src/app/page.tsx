@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { RoseChat, RoseChatModalProvider } from "@mono/rose";
+import "./page.css";
 
 export const metadata: Metadata = {
   title: "Chat with Rose",
@@ -9,11 +10,11 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
+    <main className="m-rose-page-wrapper">
       <RoseChatModalProvider>
         <RoseChat
-          title="Rose"
-          subtitle="Custom AI agent application"
+          variant="floating"
+          showHeader={false}
           showUsage={true}
         />
       </RoseChatModalProvider>

@@ -1,4 +1,9 @@
 export {
+  getRoseApiBasePath,
+  getRoseTranscribeEndpoint,
+} from "./endpoints";
+
+export {
   cleanTextForSpeech,
   isSpeechSynthesisSupported,
   isSpeechRecognitionSupported,

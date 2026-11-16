@@ -1,0 +1,609 @@
+[
+  {
+    "id": "1100740000131822",
+    "comment": [
+      {
+        "text": "Env: DEV-local\nStatus: PASSED\nURL: http://localhost:3000/home/settings/store?ref_key=additional_fee\n\nTEST CASE #1: Section title \"i\" tooltip - desktop (case 1)\nSTEPS:\nStep 1 - Open Settings > Store Settings at desktop width.\nStep 2 - Hover the \"i\" icon beside \"Additional Fees\".\nEXPECTED RESULT: Black icon aligned with the title; tooltip opens without covering the title or being cut off.\nEVIDENCE: tc01-additional_fee-tooltip-open.png\nACTUAL RESULT: As expected. PASSED.\n\nTEST CASE #2: Section title tooltip on mobile - tap (case 2)\nSTEPS:\nStep 1 - Open Settings > Store Settings on a phone.\nStep 2 - Tap the \"i\" icon beside \"Additional Fees\" and wait.\nEXPECTED RESULT: Opens on tap and does not close itself.\nEVIDENCE: tc02-additional_fee-after-tap.png\nACTUAL RESULT: Opens on tap and stays open. PASSED.\n\nTEST CASE #3: Mobile view - section layout\nSTEPS:\nStep 1 - Open Settings > Store Settings at 390px wide on a touch device.\nStep 2 - Scroll to the Additional Fees card.\nEXPECTED RESULT: The card fits the phone screen; nothing runs past the edge.\nEVIDENCE: mobile-additional_fee.png\nACTUAL RESULT: As expected. PASSED.\n\nTEST CASE #4: Fee list on mobile (case 17)\nSTEPS:\nStep 1 - Add a fee \"Special Packaging\".\nStep 2 - View the fee list at phone width.\nEXPECTED RESULT: The description sits above the price and wraps at word boundaries.\nEVIDENCE: tc17-additional-fees-mobile.png\nACTUAL RESULT: Price sits below the description, wrapping at word boundaries, no overflow. PASSED.\n\nTEST CASE #5: Add/Edit fee form on mobile (case 18)\nSTEPS:\nStep 1 - Open the Create Additional Fee form at phone width.\nEXPECTED RESULT: \"Set as Active\" sits above Cancel/Create, not overlapping; each button takes about half the row.\nEVIDENCE: tc18-additional-fee-form-mobile.png\nACTUAL RESULT: As expected. PASSED.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV-local\nStatus: PASSED\nURL: http://localhost:3000/home/settings/store?ref_key=additional_fee\n\nTEST CASE #1: Section title \"i\" tooltip - desktop (case 1)\nSTEPS:\nStep 1 - Open Settings > Store Settings at desktop width.\nStep 2 - Hover the \"i\" icon beside \"Additional Fees\".\nEXPECTED RESULT: Black icon aligned with the title; tooltip opens without covering the title or being cut off.\nEVIDENCE: tc01-additional_fee-tooltip-open.png\nACTUAL RESULT: As expected. PASSED.\n\nTEST CASE #2: Section title tooltip on mobile - tap (case 2)\nSTEPS:\nStep 1 - Open Settings > Store Settings on a phone.\nStep 2 - Tap the \"i\" icon beside \"Additional Fees\" and wait.\nEXPECTED RESULT: Opens on tap and does not close itself.\nEVIDENCE: tc02-additional_fee-after-tap.png\nACTUAL RESULT: Opens on tap and stays open. PASSED.\n\nTEST CASE #3: Mobile view - section layout\nSTEPS:\nStep 1 - Open Settings > Store Settings at 390px wide on a touch device.\nStep 2 - Scroll to the Additional Fees card.\nEXPECTED RESULT: The card fits the phone screen; nothing runs past the edge.\nEVIDENCE: mobile-additional_fee.png\nACTUAL RESULT: As expected. PASSED.\n\nTEST CASE #4: Fee list on mobile (case 17)\nSTEPS:\nStep 1 - Add a fee \"Special Packaging\".\nStep 2 - View the fee list at phone width.\nEXPECTED RESULT: The description sits above the price and wraps at word boundaries.\nEVIDENCE: tc17-additional-fees-mobile.png\nACTUAL RESULT: Price sits below the description, wrapping at word boundaries, no overflow. PASSED.\n\nTEST CASE #5: Add/Edit fee form on mobile (case 18)\nSTEPS:\nStep 1 - Open the Create Additional Fee form at phone width.\nEXPECTED RESULT: \"Set as Active\" sits above Cancel/Create, not overlapping; each button takes about half the row.\nEVIDENCE: tc18-additional-fee-form-mobile.png\nACTUAL RESULT: As expected. PASSED.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791273876586",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247769752",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "3e7747e2-401e-4d20-b719-95d1a43ab89a.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/3e7747e2-401e-4d20-b719-95d1a43ab89a/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/3e7747e2-401e-4d20-b719-95d1a43ab89a_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/3e7747e2-401e-4d20-b719-95d1a43ab89a_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/3e7747e2-401e-4d20-b719-95d1a43ab89a/image.png",
+          "uploaded": true,
+          "width": 345,
+          "height": 356
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "3e7747e2-401e-4d20-b719-95d1a43ab89a.png",
+          "data-attachment": "{\"id\":\"3e7747e2-401e-4d20-b719-95d1a43ab89a.png\",\"version\":\"0\",\"date\":1787035577016,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/3e7747e2-401e-4d20-b719-95d1a43ab89a_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/3e7747e2-401e-4d20-b719-95d1a43ab89a_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/3e7747e2-401e-4d20-b719-95d1a43ab89a/image.png\",\"width\":345,\"height\":356,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/3e7747e2-401e-4d20-b719-95d1a43ab89a/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/3e7747e2-401e-4d20-b719-95d1a43ab89a/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/3e7747e2-401e-4d20-b719-95d1a43ab89a/image.png\"}",
+          "data-natural-width": "345",
+          "data-natural-height": "356"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1OQutn9iRi"
+        }
+      },
+      {
+        "text": "same situation in creating fees",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-su_fsVGulY"
+        }
+      }
+    ],
+    "comment_text": "image.png\nsame situation in creating fees\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787035585597",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247769633",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "0a022ce1-4570-4c01-81a3-ec2d0cfd5573.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/0a022ce1-4570-4c01-81a3-ec2d0cfd5573/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/0a022ce1-4570-4c01-81a3-ec2d0cfd5573_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/0a022ce1-4570-4c01-81a3-ec2d0cfd5573_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/0a022ce1-4570-4c01-81a3-ec2d0cfd5573/image.png",
+          "uploaded": true,
+          "width": 416,
+          "height": 646
+        },
+        "attributes": {
+          "width": "160",
+          "data-id": "0a022ce1-4570-4c01-81a3-ec2d0cfd5573.png",
+          "data-attachment": "{\"id\":\"0a022ce1-4570-4c01-81a3-ec2d0cfd5573.png\",\"version\":\"0\",\"date\":1787035547511,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/0a022ce1-4570-4c01-81a3-ec2d0cfd5573_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/0a022ce1-4570-4c01-81a3-ec2d0cfd5573_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/0a022ce1-4570-4c01-81a3-ec2d0cfd5573/image.png\",\"width\":416,\"height\":646,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/0a022ce1-4570-4c01-81a3-ec2d0cfd5573/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/0a022ce1-4570-4c01-81a3-ec2d0cfd5573/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/0a022ce1-4570-4c01-81a3-ec2d0cfd5573/image.png\"}",
+          "data-natural-width": "416",
+          "data-natural-height": "646"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-VxsMuOdAoB"
+        }
+      },
+      {
+        "text": "revised mobile buttons",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5EAHhUgLCS"
+        }
+      }
+    ],
+    "comment_text": "image.png\nrevised mobile buttons\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787035556021",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247769276",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "a00608cb-67a2-4386-ace7-5f4b79e6accf.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/a00608cb-67a2-4386-ace7-5f4b79e6accf/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/a00608cb-67a2-4386-ace7-5f4b79e6accf_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/a00608cb-67a2-4386-ace7-5f4b79e6accf_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/a00608cb-67a2-4386-ace7-5f4b79e6accf/image.png",
+          "uploaded": true,
+          "width": 396,
+          "height": 554
+        },
+        "attributes": {
+          "width": "178",
+          "data-id": "a00608cb-67a2-4386-ace7-5f4b79e6accf.png",
+          "data-attachment": "{\"id\":\"a00608cb-67a2-4386-ace7-5f4b79e6accf.png\",\"version\":\"0\",\"date\":1787035450349,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/a00608cb-67a2-4386-ace7-5f4b79e6accf_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/a00608cb-67a2-4386-ace7-5f4b79e6accf_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/a00608cb-67a2-4386-ace7-5f4b79e6accf/image.png\",\"width\":396,\"height\":554,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/a00608cb-67a2-4386-ace7-5f4b79e6accf/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/a00608cb-67a2-4386-ace7-5f4b79e6accf/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/a00608cb-67a2-4386-ace7-5f4b79e6accf/image.png\"}",
+          "data-natural-width": "396",
+          "data-natural-height": "554"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-WD0DtEpl00"
+        }
+      },
+      {
+        "text": "revised mobile layouting of fees",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-rJG4NywnUM"
+        }
+      }
+    ],
+    "comment_text": "image.png\nrevised mobile layouting of fees\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787035463756",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247768476",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "9b9b786c-956d-498e-a27b-d0d9a707661e.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/9b9b786c-956d-498e-a27b-d0d9a707661e/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/9b9b786c-956d-498e-a27b-d0d9a707661e_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/9b9b786c-956d-498e-a27b-d0d9a707661e_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/9b9b786c-956d-498e-a27b-d0d9a707661e/image.png",
+          "uploaded": true,
+          "width": 352,
+          "height": 327
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "9b9b786c-956d-498e-a27b-d0d9a707661e.png",
+          "data-attachment": "{\"id\":\"9b9b786c-956d-498e-a27b-d0d9a707661e.png\",\"version\":\"0\",\"date\":1787035267688,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/9b9b786c-956d-498e-a27b-d0d9a707661e_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/9b9b786c-956d-498e-a27b-d0d9a707661e_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/9b9b786c-956d-498e-a27b-d0d9a707661e/image.png\",\"width\":352,\"height\":327,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/9b9b786c-956d-498e-a27b-d0d9a707661e/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/9b9b786c-956d-498e-a27b-d0d9a707661e/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/9b9b786c-956d-498e-a27b-d0d9a707661e/image.png\"}",
+          "data-natural-width": "352",
+          "data-natural-height": "327"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-pjXzvCq2gR"
+        }
+      },
+      {
+        "text": "tooltip fixed, I like the table inside the tooltip",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gRz_9Yy6qn"
+        }
+      }
+    ],
+    "comment_text": "image.png\ntooltip fixed, I like the table inside the tooltip\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1787035281110",
+    "reply_count": 0
+  },
+  {
+    "id": "90180234365251",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-UO4e4nifwN"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "FAILED",
+        "attributes": {
+          "badge-class": "red"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-A2pJAMOC8w"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-W0O4mgwKhX"
+        }
+      },
+      {
+        "text": "The following are the issues under Additional Fees:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-xuUQy4gH8s"
+        }
+      },
+      {
+        "type": "divider",
+        "text": "---",
+        "divider": true
+      },
+      {
+        "type": "divider",
+        "text": "---",
+        "divider": true
+      },
+      {
+        "text": "Tooltip Icon & Layout on both MOBILE and DESKTOP view:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-NKjvjXCwTx"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "de617b49-2796-4294-b190-39fbfc64582d.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/de617b49-2796-4294-b190-39fbfc64582d/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/de617b49-2796-4294-b190-39fbfc64582d_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/de617b49-2796-4294-b190-39fbfc64582d_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/de617b49-2796-4294-b190-39fbfc64582d/image.png",
+          "uploaded": true,
+          "width": 1536,
+          "height": 780
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "de617b49-2796-4294-b190-39fbfc64582d.png",
+          "data-attachment": "{\"id\":\"de617b49-2796-4294-b190-39fbfc64582d.png\",\"version\":\"0\",\"date\":1783079602670,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/de617b49-2796-4294-b190-39fbfc64582d_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/de617b49-2796-4294-b190-39fbfc64582d_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/de617b49-2796-4294-b190-39fbfc64582d/image.png\",\"width\":1536,\"height\":780,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/de617b49-2796-4294-b190-39fbfc64582d/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/de617b49-2796-4294-b190-39fbfc64582d/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/de617b49-2796-4294-b190-39fbfc64582d/image.png\"}",
+          "data-natural-width": "1536",
+          "data-natural-height": "780"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-PgEGUPvNbl"
+        }
+      },
+      {
+        "text": "Layout:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-KEFgqvNKlq"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "08746b9f-8cf1-4594-a965-9799e9aa6e35.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/08746b9f-8cf1-4594-a965-9799e9aa6e35_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/08746b9f-8cf1-4594-a965-9799e9aa6e35_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/08746b9f-8cf1-4594-a965-9799e9aa6e35_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/08746b9f-8cf1-4594-a965-9799e9aa6e35/image.png",
+          "uploaded": true,
+          "width": 944,
+          "height": 2046
+        },
+        "attributes": {
+          "width": "115",
+          "data-id": "08746b9f-8cf1-4594-a965-9799e9aa6e35.png",
+          "data-attachment": "{\"id\":\"08746b9f-8cf1-4594-a965-9799e9aa6e35.png\",\"version\":\"0\",\"date\":1783079858106,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/08746b9f-8cf1-4594-a965-9799e9aa6e35_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/08746b9f-8cf1-4594-a965-9799e9aa6e35_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/08746b9f-8cf1-4594-a965-9799e9aa6e35_large.png\",\"width\":944,\"height\":2046,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/08746b9f-8cf1-4594-a965-9799e9aa6e35/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/08746b9f-8cf1-4594-a965-9799e9aa6e35/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/08746b9f-8cf1-4594-a965-9799e9aa6e35/image.png\"}",
+          "data-natural-width": "944",
+          "data-natural-height": "2046"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-97y2wxeLEu"
+        }
+      },
+      {
+        "text": "Edit:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-oOUtPn6CNd"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "ca254d40-7ba8-4434-a88e-b9a9d4b26861.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/ca254d40-7ba8-4434-a88e-b9a9d4b26861_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/ca254d40-7ba8-4434-a88e-b9a9d4b26861_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/ca254d40-7ba8-4434-a88e-b9a9d4b26861_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/ca254d40-7ba8-4434-a88e-b9a9d4b26861/image.png",
+          "uploaded": true,
+          "width": 944,
+          "height": 2046
+        },
+        "attributes": {
+          "width": "115",
+          "data-id": "ca254d40-7ba8-4434-a88e-b9a9d4b26861.png",
+          "data-attachment": "{\"id\":\"ca254d40-7ba8-4434-a88e-b9a9d4b26861.png\",\"version\":\"0\",\"date\":1783079875854,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/ca254d40-7ba8-4434-a88e-b9a9d4b26861_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/ca254d40-7ba8-4434-a88e-b9a9d4b26861_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/ca254d40-7ba8-4434-a88e-b9a9d4b26861_large.png\",\"width\":944,\"height\":2046,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/ca254d40-7ba8-4434-a88e-b9a9d4b26861/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/ca254d40-7ba8-4434-a88e-b9a9d4b26861/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/ca254d40-7ba8-4434-a88e-b9a9d4b26861/image.png\"}",
+          "data-natural-width": "944",
+          "data-natural-height": "2046"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-HLMSEUvLXT"
+        }
+      },
+      {
+        "text": "Add Additional Fees:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Arh9QTFFMb"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "436f9baa-6b28-4d5d-bd3c-f4541e9bb990.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/436f9baa-6b28-4d5d-bd3c-f4541e9bb990_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/436f9baa-6b28-4d5d-bd3c-f4541e9bb990_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/436f9baa-6b28-4d5d-bd3c-f4541e9bb990_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/436f9baa-6b28-4d5d-bd3c-f4541e9bb990/image.png",
+          "uploaded": true,
+          "width": 944,
+          "height": 2046
+        },
+        "attributes": {
+          "width": "115",
+          "data-id": "436f9baa-6b28-4d5d-bd3c-f4541e9bb990.png",
+          "data-attachment": "{\"id\":\"436f9baa-6b28-4d5d-bd3c-f4541e9bb990.png\",\"version\":\"0\",\"date\":1783079895262,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/436f9baa-6b28-4d5d-bd3c-f4541e9bb990_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/436f9baa-6b28-4d5d-bd3c-f4541e9bb990_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/436f9baa-6b28-4d5d-bd3c-f4541e9bb990_large.png\",\"width\":944,\"height\":2046,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/436f9baa-6b28-4d5d-bd3c-f4541e9bb990/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/436f9baa-6b28-4d5d-bd3c-f4541e9bb990/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/436f9baa-6b28-4d5d-bd3c-f4541e9bb990/image.png\"}",
+          "data-natural-width": "944",
+          "data-natural-height": "2046"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5rClmTo5kT"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-CQEKE2qun5"
+        }
+      },
+      {
+        "text": "Kindly fix all the returns.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Zn8QoW4--4"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-QQGQ7Htzfb"
+        }
+      },
+      {
+        "text": "Moving this subtask to \"Ready Priority\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bnBLKR6Owg"
+        }
+      },
+      {
+        "text": "cc",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "env: DEV\nStatus: FAILED\n\nThe following are the issues under Additional Fees:\n------Tooltip Icon & Layout on both MOBILE and DESKTOP view:\nimage.png\nLayout:\nimage.png\nEdit:\nimage.png\nAdd Additional Fees:\nimage.png\n\nKindly fix all the returns.\n\nMoving this subtask to \"Ready Priority\"\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1783079944399",
+    "reply_count": 0
+  },
+  {
+    "id": "90180234358662",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Additional Fees"
+      },
+      {
+        "text": " has been created ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bf7e6b93-37f7-4ef1-9574-05993b503c8f"
+        }
+      },
+      {
+        "text": "Date: ",
+        "attributes": {}
+      },
+      {
+        "text": "Jul 3 2026, 7:29PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5acb7133-fc27-48ba-9a62-6a27fcef1ac4"
+        }
+      },
+      {
+        "text": "By ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2da5208f-53d3-4f34-b235-72f66cc916c1"
+        }
+      }
+    ],
+    "comment_text": "This task Additional Fees has been created \nDate: Jul 3 2026, 7:29PM (Asia/Shanghai)\nBy Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1783078154935",
+    "reply_count": 0
+  }
+]

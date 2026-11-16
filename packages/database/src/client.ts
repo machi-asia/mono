@@ -1,66 +1,76 @@
 import { createBrowserClient as createSupabaseBrowserClient } from "@supabase/ssr";
+import { createClient as createSupabaseJsClient } from "@supabase/supabase-js";
+import {
+  resolveSupabaseUrl,
+  resolveSupabasePublishableKey,
+  resolveSupabaseServerKey,
+} from "@mono/app-config";
 import type { Database } from "./types";
-
-const CANONICAL_SUPABASE_URL = "https://zyatzdkapdqngwyhiqqn.supabase.co";
-const CANONICAL_SUPABASE_KEY = "sb_publishable_xwwMB4HT0zXrWgEhPN63yA_xBNK00YR";
-
-function resolveSupabaseUrl(): string {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
-  if (url && (url.startsWith("http://") || url.startsWith("https://"))) {
-    try {
-      new URL(url);
-      return url;
-    } catch {
-      // invalid URL
-    }
-  }
-  return CANONICAL_SUPABASE_URL;
-}
-
-function resolveSupabaseKey(): string {
-  const key =
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
-    process.env.SUPABASE_PUBLISHABLE_KEY;
-  if (key && !key.startsWith("your-")) {
-    return key;
-  }
-  return CANONICAL_SUPABASE_KEY;
-}
 
 let client: ReturnType<typeof createSupabaseBrowserClient<Database>> | undefined;
 
+/**
+ * Throws a security error if a privileged server-only database helper is invoked
+ * inside a browser runtime (`typeof window !== "undefined"`), unless running in
+ * an explicit Vitest/test environment.
+ */
+export function assertServerOnlyExecution(functionName: string): void {
+  const isVitest =
+    typeof process !== "undefined" &&
+    (process.env?.NODE_ENV === "test" || Boolean(process.env?.VITEST));
+
+  if (typeof window !== "undefined" && (!isVitest || (globalThis as any).__FORCE_BROWSER_SECURITY_GUARD)) {
+    throw new Error(
+      `Security Violation: \`${functionName}\` is a privileged server-only database helper and cannot be executed in a browser environment.`
+    );
+  }
+}
+
 export function createClient() {
   const supabaseUrl = resolveSupabaseUrl();
-  const supabaseKey = resolveSupabaseKey();
+  const supabaseKey = resolveSupabasePublishableKey();
 
   if (typeof window === "undefined") {
-    return createSupabaseBrowserClient<Database>(
-      supabaseUrl,
-      supabaseKey,
-      {
-        auth: {
-          experimental: {
-            passkey: true,
-          },
+    return createSupabaseBrowserClient<Database>(supabaseUrl, supabaseKey, {
+      auth: {
+        experimental: {
+          passkey: true,
         },
-      }
-    );
+      },
+    });
   }
 
   if (!client) {
-    client = createSupabaseBrowserClient<Database>(
-      supabaseUrl,
-      supabaseKey,
-      {
-        auth: {
-          experimental: {
-            passkey: true,
-          },
+    client = createSupabaseBrowserClient<Database>(supabaseUrl, supabaseKey, {
+      auth: {
+        experimental: {
+          passkey: true,
         },
-      }
-    );
+      },
+    });
   }
 
   return client;
 }
 
+export function createTokenClient(token: string) {
+  assertServerOnlyExecution("createTokenClient");
+  const supabaseUrl = resolveSupabaseUrl();
+  const supabaseKey = resolveSupabaseServerKey();
+
+  return createSupabaseJsClient<Database>(supabaseUrl, supabaseKey, {
+    global: {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  });
+}
+
+export function createServiceClient() {
+  assertServerOnlyExecution("createServiceClient");
+  const supabaseUrl = resolveSupabaseUrl();
+  const supabaseKey = resolveSupabaseServerKey();
+
+  return createSupabaseJsClient<Database>(supabaseUrl, supabaseKey);
+}

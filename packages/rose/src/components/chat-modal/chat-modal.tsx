@@ -35,6 +35,7 @@ import { useAuth } from "@mono/auth";
 import { MarkdownRenderer, Button } from "@mono/components";
 import { runAgentChat, formatErrorCallout, type ChatMessage, type RunAgentResult } from "../../agent/agentRunner";
 import { ROSE_EMOTIONS, extractEmotion } from "../../agent/roseEmotions";
+import { getRoseApiBasePath } from "../../utils/endpoints";
 import { getAgentCommandCategories, type CommandCategory } from "../../agent/commandRegistry";
 import { RoseSettingsModal } from "./settings-modal";
 import { RoseVoiceOverlay } from "./voice-overlay";
@@ -174,11 +175,13 @@ export function RoseChatModalFloatingButton({
 /* ------------------------------------------------------------------ */
 
 export interface RoseChatProps {
+  variant?: "default" | "floating";
   apiBasePath?: string;
   title?: string;
   subtitle?: string;
   placeholder?: string;
   showUsage?: boolean;
+  showHeader?: boolean;
   initialMessage?: string;
   defaultSidebarOpen?: boolean;
   className?: string;
@@ -186,11 +189,13 @@ export interface RoseChatProps {
 }
 
 export function RoseChat({
-  apiBasePath = "/api/rose",
+  variant = "default",
+  apiBasePath = getRoseApiBasePath(),
   title = "Rose AI",
   subtitle = "General-purpose AI Companion",
   placeholder = "Message Rose… (type / for commands)",
   showUsage = true,
+  showHeader = true,
   initialMessage = DEFAULT_WELCOME_TEXT,
   defaultSidebarOpen = true,
   className = "",
@@ -451,9 +456,10 @@ export function RoseChat({
         let streamFlushTimer: ReturnType<typeof setTimeout> | null = null;
         const flushStreamText = () => {
           streamFlushTimer = null;
+          const sanitized = sanitizeStreamingMarkdown(accumulatedStreamText);
           setMessages((prev) =>
             prev.map((msg) =>
-              msg.id === modelMsgId ? { ...msg, text: accumulatedStreamText } : msg
+              msg.id === modelMsgId ? { ...msg, text: sanitized } : msg
             )
           );
         };
@@ -501,6 +507,18 @@ export function RoseChat({
                           ...msg,
                           emotion: newEmotion,
                           traces: [...accumulatedTraces],
+                        }
+                      : msg
+                  )
+                );
+              } else if (event.type === "thinking" && typeof event.text === "string") {
+                const thinkingChunk = event.text;
+                setMessages((prev) =>
+                  prev.map((msg) =>
+                    msg.id === modelMsgId
+                      ? {
+                          ...msg,
+                          thinkingText: `${(msg as { thinkingText?: string }).thinkingText || ""}${thinkingChunk}`,
                         }
                       : msg
                   )
@@ -730,6 +748,23 @@ export function RoseChat({
     handleSendMessageRef.current = handleSendMessage;
   });
 
+  // Support external navbar controls via window events
+  useEffect(() => {
+    const onToggleSidebar = () => setShowSidebar((prev) => !prev);
+    const onNewChat = () => handleNewConversation();
+    const onClearChat = () => handleClearCurrentConversation();
+
+    window.addEventListener("rose:toggle-sidebar", onToggleSidebar);
+    window.addEventListener("rose:new-conversation", onNewChat);
+    window.addEventListener("rose:clear-conversation", onClearChat);
+
+    return () => {
+      window.removeEventListener("rose:toggle-sidebar", onToggleSidebar);
+      window.removeEventListener("rose:new-conversation", onNewChat);
+      window.removeEventListener("rose:clear-conversation", onClearChat);
+    };
+  }, []);
+
   const handleKeyDown = (e: ReactKeyboardEvent<HTMLTextAreaElement>) => {
     if (showSlashMenu && filteredCommands.length > 0) {
       if (e.key === "ArrowDown") {
@@ -770,8 +805,9 @@ export function RoseChat({
   const currentAvatar = ROSE_EMOTIONS[currentEmotion] || "/rose/happy.png";
 
   return (
-    <div className={`m-rose-chat-container ${className}`} data-mono="rose-chat">
+    <div className={`m-rose-chat-container ${variant === "floating" ? "m-rose-chat-container--floating" : ""} ${className}`.trim()} data-mono="rose-chat">
       {/* Top Header */}
+      {showHeader && (
       <header className="m-rose-chat-header">
         <div className="m-rose-chat-header-left">
           <Button
@@ -842,6 +878,7 @@ export function RoseChat({
           )}
         </div>
       </header>
+      )}
 
       {/* Main Body with Side Panel */}
       <div className="m-rose-chat-body">
@@ -951,7 +988,7 @@ export function RoseChat({
 
           {/* Message Feed */}
           <div className="m-rose-messages-feed" role="log" aria-live="polite">
-            {messages.map((msg) => {
+            {messages.map((msg, idx) => {
               const isUser = msg.role === "user";
               const avatarSrc = isUser ? null : ROSE_EMOTIONS[msg.emotion || "happy"] || currentAvatar;
               const isError = msg.variant === "error" || msg.text?.includes("[!danger]") || msg.text?.includes("[!error]");
@@ -986,7 +1023,36 @@ export function RoseChat({
                       <p className="m-rose-msg-user-text">{msg.text}</p>
                     ) : (
                       <>
-                        {msg.text ? (
+                        {/* Traces / Thought indicators */}
+                        {((msg.traces && msg.traces.length > 0) || (isLoading && idx === messages.length - 1 && traces.length > 0)) && (
+                          <div className="m-rose-thinking-traces">
+                            {(msg as { thinkingText?: string }).thinkingText && (
+                              <details className="m-rose-thinking-stream" open>
+                                <summary>Thinking</summary>
+                                <pre className="m-rose-thinking-stream-body">
+                                  {(msg as { thinkingText?: string }).thinkingText}
+                                </pre>
+                              </details>
+                            )}
+                            {Array.from(new Set([...(msg.traces || []), ...(idx === messages.length - 1 ? traces : [])]))
+                              .filter((t) => t && t !== "thinking")
+                              .map((t, tIdx) => (
+                                <span
+                                  key={tIdx}
+                                  className={`m-rose-thinking-pill ${
+                                    isLoading && idx === messages.length - 1 && t === (traces[traces.length - 1] || msg.traces?.[msg.traces.length - 1])
+                                      ? "m-rose-thinking-pill--active"
+                                      : ""
+                                  }`.trim()}
+                                >
+                                  <Wrench size={10} />
+                                  <span>{t}</span>
+                                </span>
+                              ))}
+                          </div>
+                        )}
+
+                        {msg.text && msg.text.trim() && msg.text.trim() !== "''" && msg.text.trim() !== '""' ? (
                           <MarkdownRenderer content={msg.text} />
                         ) : (
                           <div className="m-rose-action-indicator">
@@ -1014,18 +1080,28 @@ export function RoseChat({
                               <span>Select an option:</span>
                             </div>
                             <div className="m-rose-options-buttons">
-                              {msg.optionsPayload.options.map((option, idx) => (
-                                 <Button
-                                   key={idx}
-                                   type="button"
-                                   variant="secondary"
-                                   size="sm"
-                                   className="m-rose-option-btn"
-                                   onClick={() => handleSendMessage(option)}
-                                 >
-                                   {option}
-                                 </Button>
-                              ))}
+                              {msg.optionsPayload.options.map((option: any, idx: number) => {
+                                const label =
+                                  typeof option === "string"
+                                    ? option
+                                    : option?.title ?? option?.label ?? option?.text ?? option?.name ?? option?.value ?? JSON.stringify(option);
+                                const sendVal =
+                                  typeof option === "string"
+                                    ? option
+                                    : option?.value ?? option?.title ?? option?.label ?? label;
+                                return (
+                                  <Button
+                                    key={idx}
+                                    type="button"
+                                    variant="secondary"
+                                    size="sm"
+                                    className="m-rose-option-btn"
+                                    onClick={() => handleSendMessage(String(sendVal))}
+                                  >
+                                    {String(label)}
+                                  </Button>
+                                );
+                              })}
                             </div>
                           </div>
                         )}
@@ -1154,6 +1230,36 @@ export function RoseChat({
 
 export interface RoseChatModalProps extends Omit<RoseChatProps, "onClose"> {
   className?: string;
+}
+
+
+function sanitizeStreamingMarkdown(rawText: string): string {
+  if (!rawText) return "";
+  let text = rawText;
+
+  // 1. Strip emotion tags (both complete and incomplete)
+  text = text.replace(/<emotion>[\s\S]*?<\/emotion>/gi, "");
+  text = text.replace(/<emotion[\s\S]*?$/gi, "");
+
+  // 2. Hide tool action JSON blocks (both markdown fenced and raw)
+  text = text.replace(/```(?:json)?[\s\S]*?(?:```|$)/gi, (block) => {
+    if (block.includes('"action":') || block.includes('"action_input":')) {
+      return "";
+    }
+    return block;
+  });
+
+  // 3. Prevent the whole response from being wrapped in a markdown code fence (```markdown ... or ```text ...)
+  // Strip leading code fence so headers, callouts, and tables render immediately in real time
+  text = text.replace(/^```(?:markdown|md|text)?\s*\n?/i, "");
+  // Strip matching trailing closing fence if present
+  text = text.replace(/\n?```\s*$/i, "");
+
+  // 4. Strip unfinished inline markers at the very end of streaming text:
+  // e.g. unfinished **bold, *italic, ==highlight, `inline code, ![alt, [!NOTE
+  text = text.replace(/(?:\*\*|\*|==|`|~~|!\[[^\]]*|>\s*\[!\w*)$/, "");
+
+  return text;
 }
 
 export function RoseChatModal({ className = "", ...chatProps }: RoseChatModalProps) {

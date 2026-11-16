@@ -42,7 +42,7 @@ import {
   Edit2,
   Check,
 } from "lucide-react";
-import { isAppUnderDevelopment } from "@mono/app-config";
+import { isAppUnderDevelopment, resolveHref } from "@mono/app-config";
 import { fetchCommunityOverrides, type CommunityOverride } from "../lib/supabase-client";
 
 interface GameCalculatorViewProps {
@@ -514,7 +514,8 @@ export function GameCalculatorView({ dataset }: GameCalculatorViewProps) {
     return Object.values(graphCalculation.totalBuildings).reduce((sum, count) => sum + count, 0);
   }, [graphCalculation.totalBuildings]);
 
-  const homeUrl = dataset.homeUrl || "/";
+  const rawHomeUrl = dataset.homeUrl || "/";
+  const homeUrl = hasHydrated ? resolveHref(rawHomeUrl) : rawHomeUrl;
 
   const underDev = isAppUnderDevelopment(dataset.id);
 
@@ -537,7 +538,7 @@ export function GameCalculatorView({ dataset }: GameCalculatorViewProps) {
         }
       >
         <div className="flex items-center gap-2 min-w-0">
-          <Link
+          <a
             href={homeUrl}
             className={`flex items-center gap-1.5 text-xs font-medium rounded-md px-2.5 py-1 shrink-0 transition-colors ${
               underDev
@@ -549,7 +550,7 @@ export function GameCalculatorView({ dataset }: GameCalculatorViewProps) {
             <ArrowLeft className="h-3 w-3" />
             <Home className="h-3 w-3" />
             <span className="hidden sm:inline">Home</span>
-          </Link>
+          </a>
           <div className={`h-3.5 w-px shrink-0 ${underDev ? "bg-black/40" : "bg-zinc-800/80"}`} />
           <div
             className={`flex items-center gap-2 min-w-0 ${

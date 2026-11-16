@@ -4,6 +4,7 @@ import type {
   SyncInputType,
 } from "../types";
 import { syncRegistry, registerSyncAction } from "./registry";
+import { getSyncEventsUrl } from "./endpoints";
 
 export interface SyncDispatchOptions {
   roomId: string;
@@ -14,7 +15,7 @@ export interface SyncDispatchOptions {
 }
 
 let defaultDispatchOptions: Partial<SyncDispatchOptions> = {
-  apiEndpoint: "/api/sync/events",
+  apiEndpoint: getSyncEventsUrl(),
   broadcastRemote: true,
   executeLocal: true,
 };
@@ -121,7 +122,7 @@ export async function sendSyncEvent(
   const merged: SyncDispatchOptions = {
     roomId: options?.roomId ?? defaultDispatchOptions.roomId ?? "default-room",
     userId: options?.userId ?? defaultDispatchOptions.userId ?? "anonymous-user",
-    apiEndpoint: options?.apiEndpoint ?? defaultDispatchOptions.apiEndpoint ?? "/api/sync/events",
+    apiEndpoint: options?.apiEndpoint ?? defaultDispatchOptions.apiEndpoint ?? getSyncEventsUrl(),
     broadcastRemote: options?.broadcastRemote ?? defaultDispatchOptions.broadcastRemote ?? true,
     executeLocal: options?.executeLocal ?? defaultDispatchOptions.executeLocal ?? true,
   };
@@ -171,7 +172,7 @@ export async function sendSyncEvent(
         trigger !== "player_move" &&
         trigger !== "player_input");
 
-    const endpoint = merged.apiEndpoint || "/api/sync/events";
+    const endpoint = merged.apiEndpoint || getSyncEventsUrl();
 
     if (isHighPriority) {
       // If we have pending buffered movements, flush them alongside this high-priority event

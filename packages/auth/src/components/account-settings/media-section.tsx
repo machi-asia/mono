@@ -2,14 +2,14 @@
 
 import type { User } from "@supabase/supabase-js";
 import { MediaLibrary } from "@mono/components";
+import { resolveSafeRoleFromUser } from "@mono/database";
 
 interface MediaSectionProps {
   user: User;
 }
 
 export function MediaSection({ user }: MediaSectionProps) {
-  const userRole = (user.app_metadata?.role || user.user_metadata?.role || (user.is_anonymous ? "guest" : "member")) as "guest" | "member" | "pro" | "admin";
-  const role = userRole;
+  const role = resolveSafeRoleFromUser(user);
 
   return (
     <section className="auth-settings-section auth-media-section">

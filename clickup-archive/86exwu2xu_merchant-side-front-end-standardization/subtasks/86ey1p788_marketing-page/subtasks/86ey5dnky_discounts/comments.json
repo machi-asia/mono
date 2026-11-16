@@ -1,0 +1,2408 @@
+[
+  {
+    "id": "1100740000249316",
+    "comment": [
+      {
+        "text": "This ",
+        "attributes": {}
+      },
+      {
+        "text": "Discounts"
+      },
+      {
+        "text": " has been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "DEPLOYED TO PROD"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-75d1b135-d5be-47d1-a9d2-501bdd8b8545"
+        }
+      },
+      {
+        "text": "Date updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Nov 6 2026, 1:10PM (Asia/Manila)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5a1b8ffc-2b89-4a11-b521-246fa8a6d99c"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Angelo Kamachi"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-78f34e8e-7c2a-451e-a19f-49c86ae1f9ae"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-472b9029-7982-493a-b4d7-1c2a195548e7"
+        }
+      }
+    ],
+    "comment_text": "This Discounts has been move to DEPLOYED TO PROD\nDate updated: Nov 6 2026, 1:10PM (Asia/Manila)\nTriggered by: Angelo Kamachi\n\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1793941810653",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000162876",
+    "comment": [
+      {
+        "text": "10/14 QA Return (Discounts): No Change in PR #8934",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 3
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Dev PR:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " https://github.com/Prosperna/prosperna1/pull/8934 ("
+      },
+      {
+        "text": "refactor/tw-marketing-standard-dev13",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": " to "
+      },
+      {
+        "text": "dev",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": ")"
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Reference:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " main. This task is a Bootstrap to Tailwind migration, so the goal is to look and behave like main."
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Scope:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Discounts PASSED on 10/14. PR #8934 only changes the Blogs editor's left menu, so nothing on Discounts changes."
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "QA retest after PR #8934 is merged",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 4
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "TC1: Regression",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Steps:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Spot-check the 10/14 PASSED cases (End Time rules, Edit from the \"...\" menu, Cancel hover)."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Expected:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Still pass as on 10/14."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      }
+    ],
+    "comment_text": "10/14 QA Return (Discounts): No Change in PR #8934\n\nDev PR: https://github.com/Prosperna/prosperna1/pull/8934 (refactor/tw-marketing-standard-dev13 to dev)\nReference: main. This task is a Bootstrap to Tailwind migration, so the goal is to look and behave like main.\nScope: Discounts PASSED on 10/14. PR #8934 only changes the Blogs editor's left menu, so nothing on Discounts changes.\n\nQA retest after PR #8934 is merged\n\nTC1: Regression\nSteps: Spot-check the 10/14 PASSED cases (End Time rules, Edit from the \"...\" menu, Cancel hover).\nExpected: Still pass as on 10/14.\n\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791963435343",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000162509",
+    "comment": [
+      {
+        "text": "Env: DEV-local\nStatus: PASSED\nURL: http://localhost:3000 (prosperna1 dev @ 6a7509965, includes PR #8921)\n\nTEST CASE #1: Cancel on Create discount\nSTEPS:\nStep 1 - Click Create Discount.\nStep 2 - Hover Cancel at the bottom of the page.\nEXPECTED RESULT: Black background, white text.\nEVIDENCE: r8-cancel-hover-create-page.png\nACTUAL RESULT: Cancel turns black with white text on hover. PASSED\n\nTEST CASE #2: Cancel on Edit Discount\nSTEPS:\nStep 1 - Open \"...\" > Edit on a Not Activated discount.\nStep 2 - Hover Cancel.\nEXPECTED RESULT: Black background, white text.\nEVIDENCE: r8-cancel-hover-edit-open.png, r8-cancel-hover-edit-modal.png\nACTUAL RESULT: Edit Discount opens and Cancel turns black with white text on hover. PASSED\n\nTEST CASE #3: Regression (#1 to #12 from 10/13)\nSTEPS:\nStep 1 - Re-run #1 to #12 from 10/13: End Time rules on Create and Edit, Edit opening and saving, View and Delete, Active/Expired menus.\nStep 2 - Repeat #1 to #6 at 390x844.\nEXPECTED RESULT: Still pass as on 10/13.\nEVIDENCE: r8-tc1-after-save.png, r8-tc2-after-save.png, r8-tc3-row.png, r8-tc4-list.png, r8-tc5-row.png, r8-tc6-row.png, r8-tc7-edit-open.png, r8-tc8-row-after-save.png, r8-tc9-automatic-edit-open.png, r8-tc10-after-save.png, r8-tc11-active-menu.png, r8-tc11-expired-menu.png, r8-tc12-view.png, r8-tc12-after-delete.png, r8-mobile-tc1-after-save.png, r8-mobile-tc2-after-save.png, r8-mobile-tc3-after-save.png, r8-mobile-tc4-after-save.png, r8-mobile-tc5-after-save.png, r8-mobile-tc6-after-save.png\nACTUAL RESULT: All 12 pass as on 10/13, and the same End Time rules hold at 390x844. PASSED\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV-local\nStatus: PASSED\nURL: http://localhost:3000 (prosperna1 dev @ 6a7509965, includes PR #8921)\n\nTEST CASE #1: Cancel on Create discount\nSTEPS:\nStep 1 - Click Create Discount.\nStep 2 - Hover Cancel at the bottom of the page.\nEXPECTED RESULT: Black background, white text.\nEVIDENCE: r8-cancel-hover-create-page.png\nACTUAL RESULT: Cancel turns black with white text on hover. PASSED\n\nTEST CASE #2: Cancel on Edit Discount\nSTEPS:\nStep 1 - Open \"...\" > Edit on a Not Activated discount.\nStep 2 - Hover Cancel.\nEXPECTED RESULT: Black background, white text.\nEVIDENCE: r8-cancel-hover-edit-open.png, r8-cancel-hover-edit-modal.png\nACTUAL RESULT: Edit Discount opens and Cancel turns black with white text on hover. PASSED\n\nTEST CASE #3: Regression (#1 to #12 from 10/13)\nSTEPS:\nStep 1 - Re-run #1 to #12 from 10/13: End Time rules on Create and Edit, Edit opening and saving, View and Delete, Active/Expired menus.\nStep 2 - Repeat #1 to #6 at 390x844.\nEXPECTED RESULT: Still pass as on 10/13.\nEVIDENCE: r8-tc1-after-save.png, r8-tc2-after-save.png, r8-tc3-row.png, r8-tc4-list.png, r8-tc5-row.png, r8-tc6-row.png, r8-tc7-edit-open.png, r8-tc8-row-after-save.png, r8-tc9-automatic-edit-open.png, r8-tc10-after-save.png, r8-tc11-active-menu.png, r8-tc11-expired-menu.png, r8-tc12-view.png, r8-tc12-after-delete.png, r8-mobile-tc1-after-save.png, r8-mobile-tc2-after-save.png, r8-mobile-tc3-after-save.png, r8-mobile-tc4-after-save.png, r8-mobile-tc5-after-save.png, r8-mobile-tc6-after-save.png\nACTUAL RESULT: All 12 pass as on 10/13, and the same End Time rules hold at 390x844. PASSED\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791959055518",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000161843",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Discounts"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 14 2026, 11:21AM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Discounts hss been move to IN TESTING \nUpdated: Oct 14 2026, 11:21AM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791948087314",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000161646",
+    "comment": [
+      {
+        "text": "10/13 QA Return (Discounts): Fixes in PR #8921",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 3
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Dev PR:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " https://github.com/Prosperna/prosperna1/pull/8921 ("
+      },
+      {
+        "text": "refactor/tw-marketing-standard-dev12",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": " to "
+      },
+      {
+        "text": "dev",
+        "attributes": {
+          "code": true
+        }
+      },
+      {
+        "text": ")"
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Reference:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " main. This task is a Bootstrap to Tailwind migration, so the goal is to look and behave like main."
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Scope:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Discounts only. 10/13 result: test cases #1 to #12 PASSED, #13 FAILED."
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Failed test cases",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 4
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "#13: Cancel hover (Create discount page and Edit Discount)",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "What failed:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Cancel only went from white to a near-white grey (#fbf9fa) with the text unchanged (#374151), so no hover was visible."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Why:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " The Tailwind Cancel buttons used a one-shade grey hover. On main, Cancel uses the cancel button style, which turns black with white text on hover."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "How it was fixed:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Cancel now turns black with white text on hover, matching main. Applied to the Cancel on the Create discount page, the Cancel in Edit Discount, and the shared button component's Cancel style."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "How it was tested",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 4
+        }
+      },
+      {
+        "text": "ESLint / Stylelint on the changed files:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " clean."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Discounts and button tests:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " passing."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Conflicts with current dev:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " none."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "QA retest after PR #8921 is merged",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "header": 4
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "TC1: Cancel on Create discount",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Steps:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Click Create Discount and hover Cancel at the bottom of the page."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Expected:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Black background, white text."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "TC2: Cancel on Edit Discount",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Steps:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Open \"...\" > Edit on a Not Activated discount and hover Cancel."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Expected:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Black background, white text."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "TC3: Regression",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "Steps:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Spot-check test cases #1 to #12 from 10/13 (End Time rules, Edit opening, View and Delete)."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "Expected:",
+        "attributes": {
+          "bold": true
+        }
+      },
+      {
+        "text": " Still pass as on 10/13."
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": {
+            "list": "bullet"
+          }
+        }
+      },
+      {
+        "text": "\n"
+      }
+    ],
+    "comment_text": "10/13 QA Return (Discounts): Fixes in PR #8921\n\nDev PR: https://github.com/Prosperna/prosperna1/pull/8921 (refactor/tw-marketing-standard-dev12 to dev)\nReference: main. This task is a Bootstrap to Tailwind migration, so the goal is to look and behave like main.\nScope: Discounts only. 10/13 result: test cases #1 to #12 PASSED, #13 FAILED.\n\nFailed test cases\n\n#13: Cancel hover (Create discount page and Edit Discount)\nWhat failed: Cancel only went from white to a near-white grey (#fbf9fa) with the text unchanged (#374151), so no hover was visible.\nWhy: The Tailwind Cancel buttons used a one-shade grey hover. On main, Cancel uses the cancel button style, which turns black with white text on hover.\nHow it was fixed: Cancel now turns black with white text on hover, matching main. Applied to the Cancel on the Create discount page, the Cancel in Edit Discount, and the shared button component's Cancel style.\n\nHow it was tested\nESLint / Stylelint on the changed files: clean.\nDiscounts and button tests: passing.\nConflicts with current dev: none.\n\nQA retest after PR #8921 is merged\n\nTC1: Cancel on Create discount\nSteps: Click Create Discount and hover Cancel at the bottom of the page.\nExpected: Black background, white text.\n\nTC2: Cancel on Edit Discount\nSteps: Open \"...\" > Edit on a Not Activated discount and hover Cancel.\nExpected: Black background, white text.\n\nTC3: Regression\nSteps: Spot-check test cases #1 to #12 from 10/13 (End Time rules, Edit opening, View and Delete).\nExpected: Still pass as on 10/13.\n\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791944656474",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000159518",
+    "comment": [
+      {
+        "text": "Env: DEV-local\nStatus: FAILED\nURL: http://localhost:3000 (prosperna1 dev @ 1839ffc2a, includes PR #8854)\n\nTEST CASE #1: Same-day End Time before Start Time is rejected\nSTEPS:\nStep 1 - Click Create Discount, choose Coupon code. Active Dates: a future day (Oct 16), Start Time 10:00.\nStep 2 - Tick \"Set End Date\", pick the same day, End Time 09:30, click Save.\nEXPECTED RESULT: \"End Date/Time must be after the Start Date/Time and the current time\" appears and nothing is saved.\nEVIDENCE: r8-tc1-after-save.png\nACTUAL RESULT: The error appears under End Date and End Time, and no discount is saved. PASSED\n\nTEST CASE #2: Same-day End Time equal to Start Time is rejected\nSTEPS:\nStep 1 - Same as #1 but End Time 10:00, click Save.\nEXPECTED RESULT: Same error; nothing is saved.\nEVIDENCE: r8-tc2-after-save.png\nACTUAL RESULT: The error appears and no discount is saved. PASSED\n\nTEST CASE #3: Same-day later End Time is accepted\nSTEPS:\nStep 1 - Same as #1 but End Time 10:30, click Save.\nEXPECTED RESULT: The discount saves and shows Start 10:00 AM, End 10:30 AM on that day.\nEVIDENCE: r8-tc3-after-save.png, r8-tc3-row.png\nACTUAL RESULT: It saves and the list shows Oct 16, 2026 | 10:00 AM to Oct 16, 2026 | 10:30 AM, Not Activated. PASSED\n\nTEST CASE #4: End Time already past today is rejected\nSTEPS:\nStep 1 - Active Dates: today, Start Time 00:00. Tick \"Set End Date\", End Date today, End Time 30 minutes ago. Click Save.\nStep 2 - Open the Discounts list.\nEXPECTED RESULT: Same error; nothing is saved, and no Expired discount appears in the list.\nEVIDENCE: r8-tc4-after-save.png, r8-tc4-list.png\nACTUAL RESULT: The error appears, nothing is saved, and no new Expired discount is listed. PASSED\n\nTEST CASE #5: End Time later today is accepted\nSTEPS:\nStep 1 - Same as #4 but End Time 30 minutes from now. Click Save.\nEXPECTED RESULT: The discount saves and shows as Active.\nEVIDENCE: r8-tc5-after-save.png, r8-tc5-row.png\nACTUAL RESULT: It saves and shows as Active. PASSED\n\nTEST CASE #6: Different days, any times\nSTEPS:\nStep 1 - Active Dates: a future day, Start Time 18:00. End Date: the next day, End Time 08:00. Click Save.\nEXPECTED RESULT: Saves normally.\nEVIDENCE: r8-tc6-after-save.png, r8-tc6-row.png\nACTUAL RESULT: It saves with End on the next day at 08:00 AM. PASSED\n\nTEST CASE #1-#6 at 390x844\nSTEPS:\nStep 1 - Repeat test cases 1 to 6 at 390x844.\nEXPECTED RESULT: Same results as desktop.\nEVIDENCE: r8-mobile-tc1-after-save.png, r8-mobile-tc3-after-save.png, r8-mobile-tc4-after-save.png\nACTUAL RESULT: All six behave the same as on desktop. PASSED\n\nTEST CASE #7: Edit opens from the \"...\" menu (Not Activated discount)\nSTEPS:\nStep 1 - On a Not Activated coupon, open \"...\" and click Edit.\nEXPECTED RESULT: The menu closes and the Edit Discount form opens with that discount's details.\nEVIDENCE: r8-tc7-edit-open.png\nACTUAL RESULT: The menu closes and Edit Discount opens showing that coupon's code and values. PASSED\n\nTEST CASE #8: Edit saves\nSTEPS:\nStep 1 - In the form from #7, change the discount value to 25 and click Save.\nEXPECTED RESULT: Saves, the form closes, and the list shows the new value.\nEVIDENCE: r8-tc8-row-after-save.png\nACTUAL RESULT: The form closes and the row shows 25%. PASSED\n\nTEST CASE #9: Edit opens on an Automatic discount\nSTEPS:\nStep 1 - Repeat #7 on a Not Activated Automatic discount.\nEXPECTED RESULT: The Edit Discount form opens.\nEVIDENCE: r8-tc9-automatic-edit-open.png\nACTUAL RESULT: Edit Discount opens with that discount's details. PASSED\n\nTEST CASE #10: Edit applies the same End Time rule\nSTEPS:\nStep 1 - In the Edit form, tick \"Set End Date\", set End Date to the same day as Active Dates and End Time 09:30 (Start 10:00). Click Save.\nEXPECTED RESULT: The End Date/Time error appears and nothing is saved.\nEVIDENCE: r8-tc10-after-save.png\nACTUAL RESULT: The error appears and the discount keeps no end date. PASSED\n\nTEST CASE #11: Active and Expired discounts\nSTEPS:\nStep 1 - Open \"...\" on an Active discount, then on an Expired one.\nEXPECTED RESULT: Only View and Delete are shown, same as main.\nEVIDENCE: r8-tc11-active-menu.png, r8-tc11-expired-menu.png\nACTUAL RESULT: Both menus show only View and Delete. PASSED\n\nTEST CASE #12: View and Delete still work\nSTEPS:\nStep 1 - From \"...\", click View, close it, then Delete the same discount and confirm.\nEXPECTED RESULT: View opens the right discount; Delete removes it.\nEVIDENCE: r8-tc12-view.png, r8-tc12-after-delete.png\nACTUAL RESULT: View opens that discount, and after Delete it is gone from the list. PASSED\n\nTEST CASE #13: Cancel hover (Create discount page and Edit Discount)\nSTEPS:\nStep 1 - Click Create Discount and hover Cancel at the bottom of the page.\nStep 2 - Open \"...\" > Edit on a Not Activated discount and hover Cancel in the Edit Discount form.\nEXPECTED RESULT: Cancel changes on hover the same way as on main: black background with white text.\nEVIDENCE: r8-cancel-hover-create-page.png, r8-cancel-hover-edit-modal.png\nACTUAL RESULT: FAILED. The background goes from white to #fbf9fa and the text stays grey (#374151), so there is no visible hover on either Cancel.\n\nDEFECT\nWHERE: Home > Discounts > Create discount page and Edit Discount form, Cancel button. CreateCouponForm.jsx:475 and EditCouponForm.jsx:453 (tw:bg-white ... tw:hover:bg-gray-50). Same classes as AppButton's \"cancel\" variant (components/AppButton/AppButton.jsx:10-11), used by every Cancel built on AppButton.\nSTEPS TO RECREATE:\nStep 1 - Click Create Discount.\nStep 2 - Hover Cancel.\nEXPECTED RESULT: Black background, white text, as on main (<Button variant=\"cancel\"> -> .btn-cancel, _buttons.scss:136-147).\nACTUAL RESULT: White turns #fbf9fa and the text stays grey; the change cannot be seen.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV-local\nStatus: FAILED\nURL: http://localhost:3000 (prosperna1 dev @ 1839ffc2a, includes PR #8854)\n\nTEST CASE #1: Same-day End Time before Start Time is rejected\nSTEPS:\nStep 1 - Click Create Discount, choose Coupon code. Active Dates: a future day (Oct 16), Start Time 10:00.\nStep 2 - Tick \"Set End Date\", pick the same day, End Time 09:30, click Save.\nEXPECTED RESULT: \"End Date/Time must be after the Start Date/Time and the current time\" appears and nothing is saved.\nEVIDENCE: r8-tc1-after-save.png\nACTUAL RESULT: The error appears under End Date and End Time, and no discount is saved. PASSED\n\nTEST CASE #2: Same-day End Time equal to Start Time is rejected\nSTEPS:\nStep 1 - Same as #1 but End Time 10:00, click Save.\nEXPECTED RESULT: Same error; nothing is saved.\nEVIDENCE: r8-tc2-after-save.png\nACTUAL RESULT: The error appears and no discount is saved. PASSED\n\nTEST CASE #3: Same-day later End Time is accepted\nSTEPS:\nStep 1 - Same as #1 but End Time 10:30, click Save.\nEXPECTED RESULT: The discount saves and shows Start 10:00 AM, End 10:30 AM on that day.\nEVIDENCE: r8-tc3-after-save.png, r8-tc3-row.png\nACTUAL RESULT: It saves and the list shows Oct 16, 2026 | 10:00 AM to Oct 16, 2026 | 10:30 AM, Not Activated. PASSED\n\nTEST CASE #4: End Time already past today is rejected\nSTEPS:\nStep 1 - Active Dates: today, Start Time 00:00. Tick \"Set End Date\", End Date today, End Time 30 minutes ago. Click Save.\nStep 2 - Open the Discounts list.\nEXPECTED RESULT: Same error; nothing is saved, and no Expired discount appears in the list.\nEVIDENCE: r8-tc4-after-save.png, r8-tc4-list.png\nACTUAL RESULT: The error appears, nothing is saved, and no new Expired discount is listed. PASSED\n\nTEST CASE #5: End Time later today is accepted\nSTEPS:\nStep 1 - Same as #4 but End Time 30 minutes from now. Click Save.\nEXPECTED RESULT: The discount saves and shows as Active.\nEVIDENCE: r8-tc5-after-save.png, r8-tc5-row.png\nACTUAL RESULT: It saves and shows as Active. PASSED\n\nTEST CASE #6: Different days, any times\nSTEPS:\nStep 1 - Active Dates: a future day, Start Time 18:00. End Date: the next day, End Time 08:00. Click Save.\nEXPECTED RESULT: Saves normally.\nEVIDENCE: r8-tc6-after-save.png, r8-tc6-row.png\nACTUAL RESULT: It saves with End on the next day at 08:00 AM. PASSED\n\nTEST CASE #1-#6 at 390x844\nSTEPS:\nStep 1 - Repeat test cases 1 to 6 at 390x844.\nEXPECTED RESULT: Same results as desktop.\nEVIDENCE: r8-mobile-tc1-after-save.png, r8-mobile-tc3-after-save.png, r8-mobile-tc4-after-save.png\nACTUAL RESULT: All six behave the same as on desktop. PASSED\n\nTEST CASE #7: Edit opens from the \"...\" menu (Not Activated discount)\nSTEPS:\nStep 1 - On a Not Activated coupon, open \"...\" and click Edit.\nEXPECTED RESULT: The menu closes and the Edit Discount form opens with that discount's details.\nEVIDENCE: r8-tc7-edit-open.png\nACTUAL RESULT: The menu closes and Edit Discount opens showing that coupon's code and values. PASSED\n\nTEST CASE #8: Edit saves\nSTEPS:\nStep 1 - In the form from #7, change the discount value to 25 and click Save.\nEXPECTED RESULT: Saves, the form closes, and the list shows the new value.\nEVIDENCE: r8-tc8-row-after-save.png\nACTUAL RESULT: The form closes and the row shows 25%. PASSED\n\nTEST CASE #9: Edit opens on an Automatic discount\nSTEPS:\nStep 1 - Repeat #7 on a Not Activated Automatic discount.\nEXPECTED RESULT: The Edit Discount form opens.\nEVIDENCE: r8-tc9-automatic-edit-open.png\nACTUAL RESULT: Edit Discount opens with that discount's details. PASSED\n\nTEST CASE #10: Edit applies the same End Time rule\nSTEPS:\nStep 1 - In the Edit form, tick \"Set End Date\", set End Date to the same day as Active Dates and End Time 09:30 (Start 10:00). Click Save.\nEXPECTED RESULT: The End Date/Time error appears and nothing is saved.\nEVIDENCE: r8-tc10-after-save.png\nACTUAL RESULT: The error appears and the discount keeps no end date. PASSED\n\nTEST CASE #11: Active and Expired discounts\nSTEPS:\nStep 1 - Open \"...\" on an Active discount, then on an Expired one.\nEXPECTED RESULT: Only View and Delete are shown, same as main.\nEVIDENCE: r8-tc11-active-menu.png, r8-tc11-expired-menu.png\nACTUAL RESULT: Both menus show only View and Delete. PASSED\n\nTEST CASE #12: View and Delete still work\nSTEPS:\nStep 1 - From \"...\", click View, close it, then Delete the same discount and confirm.\nEXPECTED RESULT: View opens the right discount; Delete removes it.\nEVIDENCE: r8-tc12-view.png, r8-tc12-after-delete.png\nACTUAL RESULT: View opens that discount, and after Delete it is gone from the list. PASSED\n\nTEST CASE #13: Cancel hover (Create discount page and Edit Discount)\nSTEPS:\nStep 1 - Click Create Discount and hover Cancel at the bottom of the page.\nStep 2 - Open \"...\" > Edit on a Not Activated discount and hover Cancel in the Edit Discount form.\nEXPECTED RESULT: Cancel changes on hover the same way as on main: black background with white text.\nEVIDENCE: r8-cancel-hover-create-page.png, r8-cancel-hover-edit-modal.png\nACTUAL RESULT: FAILED. The background goes from white to #fbf9fa and the text stays grey (#374151), so there is no visible hover on either Cancel.\n\nDEFECT\nWHERE: Home > Discounts > Create discount page and Edit Discount form, Cancel button. CreateCouponForm.jsx:475 and EditCouponForm.jsx:453 (tw:bg-white ... tw:hover:bg-gray-50). Same classes as AppButton's \"cancel\" variant (components/AppButton/AppButton.jsx:10-11), used by every Cancel built on AppButton.\nSTEPS TO RECREATE:\nStep 1 - Click Create Discount.\nStep 2 - Hover Cancel.\nEXPECTED RESULT: Black background, white text, as on main (<Button variant=\"cancel\"> -> .btn-cancel, _buttons.scss:136-147).\nACTUAL RESULT: White turns #fbf9fa and the text stays grey; the change cannot be seen.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791894730396",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000158435",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Discounts"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 13 2026, 4:34PM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Discounts hss been move to IN TESTING \nUpdated: Oct 13 2026, 4:34PM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791880461787",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000151817",
+    "comment": [
+      {
+        "text": "PULL REQUEST\nprosperna1 dev PR: https://github.com/Prosperna/prosperna1/pull/8854 (branch refactor/tw-marketing-standard-dev11)\n\nNEXT STEPS\nQA to retest on dev once merged, using the test cases in the comment above."
+      }
+    ],
+    "comment_text": "PULL REQUEST\nprosperna1 dev PR: https://github.com/Prosperna/prosperna1/pull/8854 (branch refactor/tw-marketing-standard-dev11)\n\nNEXT STEPS\nQA to retest on dev once merged, using the test cases in the comment above.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791765978998",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000151813",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\nAddressed the 10/06 and 10/08 QA returns. Reference for every decision: main. This task is a Bootstrap to Tailwind migration, so anything main does stays as main does it.\n\nDEFECT 1 - End Time before Start Time (or already past) still saved\n- Cause: the date fields are validated as text, so by the time the End Time check ran, Active Dates and End Date had already been turned into text instead of real dates. The check could not read them and let every value through. The same problem silently disabled the \"End Date before Active Date\" and \"Active Date after End Date\" checks.\n- Fix: the checks now read the dates correctly in either form. The tests were also changed to validate the whole form the way the real page does; the new tests fail on the old code and pass on the fix.\n- This applies to the new full-page Create discount as well, since it uses the same form.\n\nDEFECT 2 - Clicking Edit in the \"...\" menu did nothing\n- Cause: the Edit Discount form was placed inside the dropdown menu. Clicking Edit closes the menu, which removed the form before it could open. This worked on main and broke in the Tailwind migration.\n- Fix: the Edit form is now opened separately from the menu (the same way View already worked), so closing the menu no longer removes it.\n\nDEFECT 3 - No Edit option on Active discounts\n- No change. Main hides Edit for Active and Expired discounts, so this is existing behavior, not a regression. Test case #8 from my previous comment was wrong to expect Edit there and is withdrawn.\n\nHOW IT WAS TESTED\n- ESLint on the changed files: clean\n- Discounts tests on the dev branch: 273/273 passing, including new tests for the End Time rule and for Edit opening from the menu\n\nBRANCH\nrefactor/tw-marketing-standard-dev11 (dev PR link to follow in a separate comment)\n\nQA TEST CASES\nWHERE TO TEST: dev, Home > Discounts. Desktop 1280x720, repeat the form cases at 390x844.\n\nTEST CASE #1: Same-day End Time before Start Time is rejected\n1. Create Discount > Coupon code. Active Dates: a future day, Start Time 10:00.\n2. Tick \"Set End Date\", pick the same day, End Time 09:30, click Save.\nEXPECTED: \"End Date/Time must be after the Start Date/Time and the current time\" appears and nothing is saved.\n\nTEST CASE #2: Same-day End Time equal to Start Time is rejected\n1. Same as #1 but End Time 10:00, click Save.\nEXPECTED: Same error; nothing is saved.\n\nTEST CASE #3: Same-day later End Time is accepted\n1. Same as #1 but End Time 10:30, click Save.\nEXPECTED: The discount saves and shows Start 10:00 AM, End 10:30 AM on that day.\n\nTEST CASE #4: End Time already past today is rejected\n1. Active Dates: today, Start Time 00:00. Tick \"Set End Date\", End Date today, End Time 30 minutes ago. Click Save.\nEXPECTED: Same error; nothing is saved, and no Expired discount appears in the list.\n\nTEST CASE #5: End Time later today is accepted\n1. Same as #4 but End Time 30 minutes from now. Click Save.\nEXPECTED: The discount saves and shows as Active.\n\nTEST CASE #6: Different days, any times\n1. Active Dates: a future day, Start Time 18:00. End Date: the next day, End Time 08:00. Click Save.\nEXPECTED: Saves normally (End is the next day, so an earlier clock time is fine).\n\nTEST CASE #7: Edit opens from the \"...\" menu (Not Activated discount)\n1. On a discount whose start date is in the future (status Not Activated), open \"...\" and click Edit.\nEXPECTED: The menu closes and the Edit Discount form opens with that discount's details.\n\nTEST CASE #8: Edit saves\n1. In the form from #7, change the discount value and click Save.\nEXPECTED: Saves, the form closes, and the list shows the new value.\n\nTEST CASE #9: Edit opens on an Automatic discount\n1. Repeat #7 on a Not Activated Automatic discount.\nEXPECTED: The Edit Discount form opens.\n\nTEST CASE #10: Edit applies the same End Time rule\n1. In the Edit form, set End Date to the same day as Active Dates and End Time earlier than Start Time. Click Save.\nEXPECTED: The End Date/Time error appears and nothing is saved.\n\nTEST CASE #11: Active and Expired discounts (unchanged from main)\n1. Open \"...\" on an Active discount, then on an Expired one.\nEXPECTED: Only View and Delete are shown, same as main.\n\nTEST CASE #12: View and Delete still work\n1. From \"...\", click View, close it, then Delete on a test discount and confirm.\nEXPECTED: View opens the right discount; Delete removes it.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- No Edit on Active/Expired discounts is main's behavior (test case #8 of the 10/05 comment is withdrawn).\n- The End Time box is the browser's own time picker and cannot grey out earlier times; the error appears on change or save.\n- The calendar rules that already passed on 10/06 (End Date can be today, same day as Active Date, past days struck through) are unchanged.\n"
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\nAddressed the 10/06 and 10/08 QA returns. Reference for every decision: main. This task is a Bootstrap to Tailwind migration, so anything main does stays as main does it.\n\nDEFECT 1 - End Time before Start Time (or already past) still saved\n- Cause: the date fields are validated as text, so by the time the End Time check ran, Active Dates and End Date had already been turned into text instead of real dates. The check could not read them and let every value through. The same problem silently disabled the \"End Date before Active Date\" and \"Active Date after End Date\" checks.\n- Fix: the checks now read the dates correctly in either form. The tests were also changed to validate the whole form the way the real page does; the new tests fail on the old code and pass on the fix.\n- This applies to the new full-page Create discount as well, since it uses the same form.\n\nDEFECT 2 - Clicking Edit in the \"...\" menu did nothing\n- Cause: the Edit Discount form was placed inside the dropdown menu. Clicking Edit closes the menu, which removed the form before it could open. This worked on main and broke in the Tailwind migration.\n- Fix: the Edit form is now opened separately from the menu (the same way View already worked), so closing the menu no longer removes it.\n\nDEFECT 3 - No Edit option on Active discounts\n- No change. Main hides Edit for Active and Expired discounts, so this is existing behavior, not a regression. Test case #8 from my previous comment was wrong to expect Edit there and is withdrawn.\n\nHOW IT WAS TESTED\n- ESLint on the changed files: clean\n- Discounts tests on the dev branch: 273/273 passing, including new tests for the End Time rule and for Edit opening from the menu\n\nBRANCH\nrefactor/tw-marketing-standard-dev11 (dev PR link to follow in a separate comment)\n\nQA TEST CASES\nWHERE TO TEST: dev, Home > Discounts. Desktop 1280x720, repeat the form cases at 390x844.\n\nTEST CASE #1: Same-day End Time before Start Time is rejected\n1. Create Discount > Coupon code. Active Dates: a future day, Start Time 10:00.\n2. Tick \"Set End Date\", pick the same day, End Time 09:30, click Save.\nEXPECTED: \"End Date/Time must be after the Start Date/Time and the current time\" appears and nothing is saved.\n\nTEST CASE #2: Same-day End Time equal to Start Time is rejected\n1. Same as #1 but End Time 10:00, click Save.\nEXPECTED: Same error; nothing is saved.\n\nTEST CASE #3: Same-day later End Time is accepted\n1. Same as #1 but End Time 10:30, click Save.\nEXPECTED: The discount saves and shows Start 10:00 AM, End 10:30 AM on that day.\n\nTEST CASE #4: End Time already past today is rejected\n1. Active Dates: today, Start Time 00:00. Tick \"Set End Date\", End Date today, End Time 30 minutes ago. Click Save.\nEXPECTED: Same error; nothing is saved, and no Expired discount appears in the list.\n\nTEST CASE #5: End Time later today is accepted\n1. Same as #4 but End Time 30 minutes from now. Click Save.\nEXPECTED: The discount saves and shows as Active.\n\nTEST CASE #6: Different days, any times\n1. Active Dates: a future day, Start Time 18:00. End Date: the next day, End Time 08:00. Click Save.\nEXPECTED: Saves normally (End is the next day, so an earlier clock time is fine).\n\nTEST CASE #7: Edit opens from the \"...\" menu (Not Activated discount)\n1. On a discount whose start date is in the future (status Not Activated), open \"...\" and click Edit.\nEXPECTED: The menu closes and the Edit Discount form opens with that discount's details.\n\nTEST CASE #8: Edit saves\n1. In the form from #7, change the discount value and click Save.\nEXPECTED: Saves, the form closes, and the list shows the new value.\n\nTEST CASE #9: Edit opens on an Automatic discount\n1. Repeat #7 on a Not Activated Automatic discount.\nEXPECTED: The Edit Discount form opens.\n\nTEST CASE #10: Edit applies the same End Time rule\n1. In the Edit form, set End Date to the same day as Active Dates and End Time earlier than Start Time. Click Save.\nEXPECTED: The End Date/Time error appears and nothing is saved.\n\nTEST CASE #11: Active and Expired discounts (unchanged from main)\n1. Open \"...\" on an Active discount, then on an Expired one.\nEXPECTED: Only View and Delete are shown, same as main.\n\nTEST CASE #12: View and Delete still work\n1. From \"...\", click View, close it, then Delete on a test discount and confirm.\nEXPECTED: View opens the right discount; Delete removes it.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- No Edit on Active/Expired discounts is main's behavior (test case #8 of the 10/05 comment is withdrawn).\n- The End Time box is the browser's own time picker and cannot grey out earlier times; the error appears on change or save.\n- The calendar rules that already passed on 10/06 (End Date can be today, same day as Active Date, past days struck through) are unchanged.\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791765946547",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000141801",
+    "comment": [
+      {
+        "text": "Env: DEV-local\nStatus: FAILED\nURL: http://localhost:3000 (prosperna1 dev @ c8eb455e1, includes PR #8703 and the new full-page Create discount)\n\nTEST CASE #3: Same-day End Time must be later than Start Time\nSTEPS:\nClick Create Discount, choose Coupon code, set Active Dates to a future day (Nov 01) and Start Time 10:00.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Tick \"Set End Date\", pick the same day as the End Date, set End Time 09:30 and click Save.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: \"End Date/Time must be after the Start Date/Time and the current time\" appears and the discount cannot be saved. A later End Time (10:30) saves.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc3-end-0930-after-save.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: FAILED. No error appears; the discount saves with Start Nov 01, 10:00 AM and End Nov 01, 09:30 AM.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #4: End Time of today cannot be in the past\nSTEPS:\nClick Create Discount, choose Coupon code, set Active Dates to today with Start Time 00:00.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Tick \"Set End Date\", pick today, set End Time to 30 minutes ago (12:38 at 13:08) and click Save.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The same error appears and the discount cannot be saved.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc4-end-time-past-after-save.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: FAILED. No error appears; the discount saves with End Oct 08, 12:38 PM and shows as Expired in the list immediately.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #7: Active Dates on Edit, future discount\nSTEPS:\nCreate a coupon whose start date is in the future (status Not Activated).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Open its \"...\" menu and click Edit.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The Edit Discount form opens.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc7-after-clicking-edit.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: FAILED. The menu closes and the Edit Discount form never opens. View from the same menu opens normally.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nTEST CASE #8: Active Dates on Edit, discount already running\nSTEPS:\nCreate a coupon that starts today at 00:00 (status Active).",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Open its \"...\" menu.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Edit is available.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "EVIDENCE: tc8-active-discount-menu.png",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: FAILED. The menu shows only View and Delete.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nDEFECT 1\nWHERE: Home > Discounts > Create Discount (and Edit Discount) > End Time. src/pages/home/CouponCode/useCouponCode.js:491-497 (lines 491-494: 29071a40a, Machi, 2026-08-17; lines 495-496: c170bc2a4, Machi, 2026-10-05).\nSTEPS TO RECREATE:\nClick Create Discount, set Active Dates and End Date to the same future day, Start Time 10:00.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Set End Time to 09:30 and click Save.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The End Date/Time error appears and the discount cannot be saved.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: It saves. The end_time test reads this.parent.active_dates / end_date, but those fields use the string validator, so Yup hands the test strings instead of Dates. combineDateTime() then returns null and the test returns true at \"if (!endDateTime) return true\".",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nDEFECT 2\nWHERE: Home > Discounts > row \"...\" menu > Edit. src/pages/home/CouponCode/CouponCode.jsx:182-196 (Edit button onClick setShowMenu(false), line 191: 22662f575, Machi, 2026-06-23) and src/components/ui/Dropdown.jsx:308-309 (eb4156cd7, Machi, 2026-06-25).\nSTEPS TO RECREATE:\nOpen the \"...\" menu on a Not Activated discount.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "Click Edit.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: The Edit Discount form opens.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Nothing opens. EditCouponForm, which owns the modal, is rendered inside the portaled Dropdown.Menu; closing the menu makes Dropdown.jsx:309 return null, which unmounts the form before its modal can show.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "\nDEFECT 3\nWHERE: Home > Discounts > row \"...\" menu on an Active discount. src/pages/home/CouponCode/CouponCode.jsx:143-147 (41e4e6e33, mauroricardomarfil, 2025-03-12).\nSTEPS TO RECREATE:\nOpen the \"...\" menu on a discount with status Active.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "ordered"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT: Edit is available, per test case #8.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT: Only View and Delete are shown. hideEdit = isActive || isExpired hides Edit, so the running-discount handling added to EditCouponForm in PR #8703 cannot be reached.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "list": "none"
+        }
+      }
+    ],
+    "comment_text": "Env: DEV-local\nStatus: FAILED\nURL: http://localhost:3000 (prosperna1 dev @ c8eb455e1, includes PR #8703 and the new full-page Create discount)\n\nTEST CASE #3: Same-day End Time must be later than Start Time\nSTEPS:\nClick Create Discount, choose Coupon code, set Active Dates to a future day (Nov 01) and Start Time 10:00.\nTick \"Set End Date\", pick the same day as the End Date, set End Time 09:30 and click Save.\nEXPECTED RESULT: \"End Date/Time must be after the Start Date/Time and the current time\" appears and the discount cannot be saved. A later End Time (10:30) saves.\nEVIDENCE: tc3-end-0930-after-save.png\nACTUAL RESULT: FAILED. No error appears; the discount saves with Start Nov 01, 10:00 AM and End Nov 01, 09:30 AM.\n\nTEST CASE #4: End Time of today cannot be in the past\nSTEPS:\nClick Create Discount, choose Coupon code, set Active Dates to today with Start Time 00:00.\nTick \"Set End Date\", pick today, set End Time to 30 minutes ago (12:38 at 13:08) and click Save.\nEXPECTED RESULT: The same error appears and the discount cannot be saved.\nEVIDENCE: tc4-end-time-past-after-save.png\nACTUAL RESULT: FAILED. No error appears; the discount saves with End Oct 08, 12:38 PM and shows as Expired in the list immediately.\n\nTEST CASE #7: Active Dates on Edit, future discount\nSTEPS:\nCreate a coupon whose start date is in the future (status Not Activated).\nOpen its \"...\" menu and click Edit.\nEXPECTED RESULT: The Edit Discount form opens.\nEVIDENCE: tc7-after-clicking-edit.png\nACTUAL RESULT: FAILED. The menu closes and the Edit Discount form never opens. View from the same menu opens normally.\n\nTEST CASE #8: Active Dates on Edit, discount already running\nSTEPS:\nCreate a coupon that starts today at 00:00 (status Active).\nOpen its \"...\" menu.\nEXPECTED RESULT: Edit is available.\nEVIDENCE: tc8-active-discount-menu.png\nACTUAL RESULT: FAILED. The menu shows only View and Delete.\n\nDEFECT 1\nWHERE: Home > Discounts > Create Discount (and Edit Discount) > End Time. src/pages/home/CouponCode/useCouponCode.js:491-497 (lines 491-494: 29071a40a, Machi, 2026-08-17; lines 495-496: c170bc2a4, Machi, 2026-10-05).\nSTEPS TO RECREATE:\nClick Create Discount, set Active Dates and End Date to the same future day, Start Time 10:00.\nSet End Time to 09:30 and click Save.\nEXPECTED RESULT: The End Date/Time error appears and the discount cannot be saved.\nACTUAL RESULT: It saves. The end_time test reads this.parent.active_dates / end_date, but those fields use the string validator, so Yup hands the test strings instead of Dates. combineDateTime() then returns null and the test returns true at \"if (!endDateTime) return true\".\n\nDEFECT 2\nWHERE: Home > Discounts > row \"...\" menu > Edit. src/pages/home/CouponCode/CouponCode.jsx:182-196 (Edit button onClick setShowMenu(false), line 191: 22662f575, Machi, 2026-06-23) and src/components/ui/Dropdown.jsx:308-309 (eb4156cd7, Machi, 2026-06-25).\nSTEPS TO RECREATE:\nOpen the \"...\" menu on a Not Activated discount.\nClick Edit.\nEXPECTED RESULT: The Edit Discount form opens.\nACTUAL RESULT: Nothing opens. EditCouponForm, which owns the modal, is rendered inside the portaled Dropdown.Menu; closing the menu makes Dropdown.jsx:309 return null, which unmounts the form before its modal can show.\n\nDEFECT 3\nWHERE: Home > Discounts > row \"...\" menu on an Active discount. src/pages/home/CouponCode/CouponCode.jsx:143-147 (41e4e6e33, mauroricardomarfil, 2025-03-12).\nSTEPS TO RECREATE:\nOpen the \"...\" menu on a discount with status Active.\nEXPECTED RESULT: Edit is available, per test case #8.\nACTUAL RESULT: Only View and Delete are shown. hideEdit = isActive || isExpired hides Edit, so the running-discount handling added to EditCouponForm in PR #8703 cannot be reached.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791437303739",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000133570",
+    "comment": [
+      {
+        "text": "Env: DEV-local\nStatus: FAILED\nURL: http://localhost:3000 (prosperna1 dev, includes PR #8703)\n\nTEST CASE #1: End Date can be today\nSTEPS:\nStep 1 - Click Create Discount, set Active Dates to today, tick \"Set End Date\" and open the End Date calendar (1280x720, then 390x844).\nStep 2 - Click today.\nEXPECTED RESULT: Days before today are light grey and struck through. Today is normal and selectable, and clicking it fills the End Date.\nEVIDENCE: pr8703-tc1-end-date-calendar.png, pr8703-mobile-tc1-end-date-calendar.png\nACTUAL RESULT: Earlier days are light grey and struck through, today is normal, and clicking it fills the End Date at both widths. PASSED\n\nTEST CASE #2: End Date can be the same day as a future Active Date\nSTEPS:\nStep 1 - Set Active Dates to a day 3 days from now, then open the End Date calendar (1280x720, then 390x844).\nEXPECTED RESULT: Every day before that Active Date is greyed out and struck through. The Active Date's own day is selectable.\nEVIDENCE: pr8703-tc2-end-date-calendar.png, pr8703-mobile-tc2-end-date-calendar.png\nACTUAL RESULT: Every day before the Active Date is greyed out and struck through; the Active Date's own day is selectable at both widths. PASSED\n\nTEST CASE #3: Same-day End Time must be later than Start Time\nSTEPS:\nStep 1 - Set Active Dates and End Date to the same future day, Start Time 10:00.\nStep 2 - Set End Time to 09:30 and save.\nEXPECTED RESULT: 09:30 and 10:00 show \"End Date/Time must be after the Start Date/Time and the current time\" and the discount cannot be saved. 10:30 is accepted and the discount saves.\nEVIDENCE: pr8703-tc3-end-0930.png, pr8703-tc3-saved-end-before-start.png\nACTUAL RESULT: FAILED. No error appears for 09:30, and the discount saves with Start Oct 08, 10:00 AM and End Oct 08, 09:30 AM.\n\nTEST CASE #4: End Time of today cannot be in the past\nSTEPS:\nStep 1 - Set Active Dates to today with a Start Time earlier than now, and End Date to today.\nStep 2 - Set End Time to a time that has already passed today and save.\nEXPECTED RESULT: The past time shows the same error and cannot be saved. A later time is accepted.\nEVIDENCE: pr8703-tc4-end-time-past.png, pr8703-tc4-saved-past-end-time.png\nACTUAL RESULT: FAILED. No error appears, and the discount saves with an End Time already in the past, showing as Expired in the list straight away.\n\nTEST CASE #5: End Date before today or before the Active Date is still blocked\nSTEPS:\nStep 1 - Open the End Date calendar and click yesterday, then click a day before the chosen Active Date (1280x720, then 390x844).\nEXPECTED RESULT: Neither click sets an End Date.\nEVIDENCE: pr8703-tc5-end-date-calendar.png, pr8703-mobile-tc1-end-date-calendar.png\nACTUAL RESULT: Neither click sets an End Date at either width. PASSED\n\nTEST CASE #6: Active Dates cannot start in the past (Create)\nSTEPS:\nStep 1 - Click Create Discount and open the Active Dates calendar (1280x720, then 390x844).\nStep 2 - Look at the days before today, then click yesterday.\nEXPECTED RESULT: Days before today are light grey and struck through, and clicking yesterday sets nothing. Today and later days look normal and are selectable.\nEVIDENCE: active-dates-calendar-1280px.png, active-dates-calendar-390px.png, active-dates-after-clicking-yesterday-390px.png\nACTUAL RESULT: Days before today are light grey and struck through, clicking yesterday leaves Active Dates empty, and today and later days are normal at both widths. PASSED\n\nTEST CASE #7: Active Dates on Edit, future discount\nSTEPS:\nStep 1 - On a discount whose start date is in the future (status Not Activated), open the \"...\" menu and click Edit.\nEXPECTED RESULT: The Edit Discount form opens; days before today are greyed out and struck through, the saved start day stays selected, and saving works.\nEVIDENCE: pr8703-tc7-edit-does-not-open.png, pr8703-tc7-control-edit-does-not-open.png\nACTUAL RESULT: FAILED. Clicking Edit closes the menu and the Edit Discount form never opens, so the calendar cannot be reached. The same happens on an Automatic discount.\n\nTEST CASE #8: Active Dates on Edit, discount already running\nSTEPS:\nStep 1 - On a discount that started a few days ago (status Active), open the \"...\" menu.\nEXPECTED RESULT: Edit is available; the saved start day is still selectable, other past days are struck through, and saving after changing another field works.\nEVIDENCE: pr8703-tc8-running-discount-menu.png\nACTUAL RESULT: FAILED. The menu for an Active discount shows only View and Delete; there is no Edit, so the case cannot be performed.\n\nTEST CASE #9: Selected and selectable days keep their look\nSTEPS:\nStep 1 - Pick an Active Date and an End Date, then reopen both calendars.\nEXPECTED RESULT: The chosen days are dark with white text and no line through. Selectable days are normal text.\nEVIDENCE: tc4-active-date-reopened.png, tc4-end-date-reopened.png, tc2-in-app-end-date-calendar.png\nACTUAL RESULT: Both chosen days are dark with white text and no line through; selectable days are normal. PASSED\n\nDEFECT 1\nWHERE: Home > Discounts > Create Discount (and Edit Discount) > End Time.\nSTEPS TO RECREATE:\nStep 1 - Click Create Discount, set Active Dates and End Date to the same future day, Start Time 10:00.\nStep 2 - Set End Time to 09:30 and save.\nEXPECTED RESULT: \"End Date/Time must be after the Start Date/Time and the current time\" appears and the discount cannot be saved.\nACTUAL RESULT: No error; the discount saves with an End Time before its Start Time. An End Time already in the past today also saves. The end_time test in useCouponCode.js reads this.parent.active_dates/end_date, but those fields use the string validator, so Yup hands the test strings instead of Dates; combineDateTime() then returns null and the test returns true at \"if (!endDateTime) return true\".\n\nDEFECT 2\nWHERE: Home > Discounts > row \"...\" menu > Edit.\nSTEPS TO RECREATE:\nStep 1 - Open the \"...\" menu on a Not Activated discount.\nStep 2 - Click Edit.\nEXPECTED RESULT: The Edit Discount form opens.\nACTUAL RESULT: The menu closes and nothing opens. EditCouponForm (with its modal) is rendered inside the portaled Dropdown.Menu (CouponCode.jsx:179-193); the Edit button calls setShowMenu(false), and ui/Dropdown.jsx:309 returns null for a closed portal menu, unmounting the form before its modal can show.\n\nDEFECT 3\nWHERE: Home > Discounts > row \"...\" menu on an Active discount.\nSTEPS TO RECREATE:\nStep 1 - Open the \"...\" menu on a discount with status Active.\nEXPECTED RESULT: Edit is available, per test case #8.\nACTUAL RESULT: Only View and Delete are shown. CouponCode.jsx:144 hides Edit for Active and Expired discounts (hideEdit = isActive || isExpired), so the running-discount handling added to EditCouponForm in this PR cannot be reached.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV-local\nStatus: FAILED\nURL: http://localhost:3000 (prosperna1 dev, includes PR #8703)\n\nTEST CASE #1: End Date can be today\nSTEPS:\nStep 1 - Click Create Discount, set Active Dates to today, tick \"Set End Date\" and open the End Date calendar (1280x720, then 390x844).\nStep 2 - Click today.\nEXPECTED RESULT: Days before today are light grey and struck through. Today is normal and selectable, and clicking it fills the End Date.\nEVIDENCE: pr8703-tc1-end-date-calendar.png, pr8703-mobile-tc1-end-date-calendar.png\nACTUAL RESULT: Earlier days are light grey and struck through, today is normal, and clicking it fills the End Date at both widths. PASSED\n\nTEST CASE #2: End Date can be the same day as a future Active Date\nSTEPS:\nStep 1 - Set Active Dates to a day 3 days from now, then open the End Date calendar (1280x720, then 390x844).\nEXPECTED RESULT: Every day before that Active Date is greyed out and struck through. The Active Date's own day is selectable.\nEVIDENCE: pr8703-tc2-end-date-calendar.png, pr8703-mobile-tc2-end-date-calendar.png\nACTUAL RESULT: Every day before the Active Date is greyed out and struck through; the Active Date's own day is selectable at both widths. PASSED\n\nTEST CASE #3: Same-day End Time must be later than Start Time\nSTEPS:\nStep 1 - Set Active Dates and End Date to the same future day, Start Time 10:00.\nStep 2 - Set End Time to 09:30 and save.\nEXPECTED RESULT: 09:30 and 10:00 show \"End Date/Time must be after the Start Date/Time and the current time\" and the discount cannot be saved. 10:30 is accepted and the discount saves.\nEVIDENCE: pr8703-tc3-end-0930.png, pr8703-tc3-saved-end-before-start.png\nACTUAL RESULT: FAILED. No error appears for 09:30, and the discount saves with Start Oct 08, 10:00 AM and End Oct 08, 09:30 AM.\n\nTEST CASE #4: End Time of today cannot be in the past\nSTEPS:\nStep 1 - Set Active Dates to today with a Start Time earlier than now, and End Date to today.\nStep 2 - Set End Time to a time that has already passed today and save.\nEXPECTED RESULT: The past time shows the same error and cannot be saved. A later time is accepted.\nEVIDENCE: pr8703-tc4-end-time-past.png, pr8703-tc4-saved-past-end-time.png\nACTUAL RESULT: FAILED. No error appears, and the discount saves with an End Time already in the past, showing as Expired in the list straight away.\n\nTEST CASE #5: End Date before today or before the Active Date is still blocked\nSTEPS:\nStep 1 - Open the End Date calendar and click yesterday, then click a day before the chosen Active Date (1280x720, then 390x844).\nEXPECTED RESULT: Neither click sets an End Date.\nEVIDENCE: pr8703-tc5-end-date-calendar.png, pr8703-mobile-tc1-end-date-calendar.png\nACTUAL RESULT: Neither click sets an End Date at either width. PASSED\n\nTEST CASE #6: Active Dates cannot start in the past (Create)\nSTEPS:\nStep 1 - Click Create Discount and open the Active Dates calendar (1280x720, then 390x844).\nStep 2 - Look at the days before today, then click yesterday.\nEXPECTED RESULT: Days before today are light grey and struck through, and clicking yesterday sets nothing. Today and later days look normal and are selectable.\nEVIDENCE: active-dates-calendar-1280px.png, active-dates-calendar-390px.png, active-dates-after-clicking-yesterday-390px.png\nACTUAL RESULT: Days before today are light grey and struck through, clicking yesterday leaves Active Dates empty, and today and later days are normal at both widths. PASSED\n\nTEST CASE #7: Active Dates on Edit, future discount\nSTEPS:\nStep 1 - On a discount whose start date is in the future (status Not Activated), open the \"...\" menu and click Edit.\nEXPECTED RESULT: The Edit Discount form opens; days before today are greyed out and struck through, the saved start day stays selected, and saving works.\nEVIDENCE: pr8703-tc7-edit-does-not-open.png, pr8703-tc7-control-edit-does-not-open.png\nACTUAL RESULT: FAILED. Clicking Edit closes the menu and the Edit Discount form never opens, so the calendar cannot be reached. The same happens on an Automatic discount.\n\nTEST CASE #8: Active Dates on Edit, discount already running\nSTEPS:\nStep 1 - On a discount that started a few days ago (status Active), open the \"...\" menu.\nEXPECTED RESULT: Edit is available; the saved start day is still selectable, other past days are struck through, and saving after changing another field works.\nEVIDENCE: pr8703-tc8-running-discount-menu.png\nACTUAL RESULT: FAILED. The menu for an Active discount shows only View and Delete; there is no Edit, so the case cannot be performed.\n\nTEST CASE #9: Selected and selectable days keep their look\nSTEPS:\nStep 1 - Pick an Active Date and an End Date, then reopen both calendars.\nEXPECTED RESULT: The chosen days are dark with white text and no line through. Selectable days are normal text.\nEVIDENCE: tc4-active-date-reopened.png, tc4-end-date-reopened.png, tc2-in-app-end-date-calendar.png\nACTUAL RESULT: Both chosen days are dark with white text and no line through; selectable days are normal. PASSED\n\nDEFECT 1\nWHERE: Home > Discounts > Create Discount (and Edit Discount) > End Time.\nSTEPS TO RECREATE:\nStep 1 - Click Create Discount, set Active Dates and End Date to the same future day, Start Time 10:00.\nStep 2 - Set End Time to 09:30 and save.\nEXPECTED RESULT: \"End Date/Time must be after the Start Date/Time and the current time\" appears and the discount cannot be saved.\nACTUAL RESULT: No error; the discount saves with an End Time before its Start Time. An End Time already in the past today also saves. The end_time test in useCouponCode.js reads this.parent.active_dates/end_date, but those fields use the string validator, so Yup hands the test strings instead of Dates; combineDateTime() then returns null and the test returns true at \"if (!endDateTime) return true\".\n\nDEFECT 2\nWHERE: Home > Discounts > row \"...\" menu > Edit.\nSTEPS TO RECREATE:\nStep 1 - Open the \"...\" menu on a Not Activated discount.\nStep 2 - Click Edit.\nEXPECTED RESULT: The Edit Discount form opens.\nACTUAL RESULT: The menu closes and nothing opens. EditCouponForm (with its modal) is rendered inside the portaled Dropdown.Menu (CouponCode.jsx:179-193); the Edit button calls setShowMenu(false), and ui/Dropdown.jsx:309 returns null for a closed portal menu, unmounting the form before its modal can show.\n\nDEFECT 3\nWHERE: Home > Discounts > row \"...\" menu on an Active discount.\nSTEPS TO RECREATE:\nStep 1 - Open the \"...\" menu on a discount with status Active.\nEXPECTED RESULT: Edit is available, per test case #8.\nACTUAL RESULT: Only View and Delete are shown. CouponCode.jsx:144 hides Edit for Active and Expired discounts (hideEdit = isActive || isExpired), so the running-discount handling added to EditCouponForm in this PR cannot be reached.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791294819139",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000125520",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\nFixed both defects from the 10/05 QA return (dev @ 432c0725d).\n\nDEFECT 1 - End Date could not be today\nThe End Date calendar now starts at the Active Date or today, whichever is later, instead of tomorrow. A same-day discount only needs a later End Time.\n\nDEFECT 2 - Active Dates allowed past days\nThe Active Dates calendar now starts at today. Past days are light grey, struck through and cannot be picked, and saving with a past start date shows \"Active Dates cannot be earlier than today\". On Edit Discount, a discount that is already running keeps its own saved start day selectable, so it can still be edited and saved.\n\nPULL REQUEST\nprosperna1 dev PR: https://github.com/Prosperna/prosperna1/pull/8703 (branch refactor/tw-marketing-standard-dev10). QA's tested build did not include this PR, so retest once it is merged to dev.\n\nHOW IT WAS TESTED\n- ESLint on the changed files: clean\n- CouponCode tests: 262/262 passing, including new tests for the End Date/Time and Active Dates rules\n\nQA TEST CASES (for PR #8703)\nWHERE TO TEST: dev, Home > Discounts. Run at 1280x720 and repeat the calendar cases at 390x844.\n\nTEST CASE #1: End Date can be today\n1. Click Create Discount, set Active Dates to today, tick \"Set End Date\" and open the End Date calendar.\nEXPECTED: Days before today are light grey and struck through. Today is normal and selectable, and clicking it fills the End Date.\n\nTEST CASE #2: End Date can be the same day as a future Active Date\n1. Set Active Dates to a day 3 days from now, then open the End Date calendar.\nEXPECTED: Every day before that Active Date is greyed out and struck through. The Active Date's own day is selectable.\n\nTEST CASE #3: Same-day End Time must be later than Start Time\n1. Set Active Dates and End Date to the same future day, Start Time 10:00.\n2. Set End Time to 09:30, then 10:00, then 10:30.\nEXPECTED: 09:30 and 10:00 show \"End Date/Time must be after the Start Date/Time and the current time\" and the discount cannot be saved. 10:30 is accepted and the discount saves.\n\nTEST CASE #4: End Time of today cannot be in the past\n1. Set Active Dates to today with a Start Time earlier than now. Set End Date to today.\n2. Set End Time to a time that has already passed today, then to a time later than now.\nEXPECTED: The past time shows the same error and cannot be saved. The later time is accepted.\n\nTEST CASE #5: End Date before today or before the Active Date is still blocked\n1. Open the End Date calendar and click yesterday, then click a day before the chosen Active Date.\nEXPECTED: Neither click sets an End Date.\n\nTEST CASE #6: Active Dates cannot start in the past (Create)\n1. Click Create Discount and open the Active Dates calendar.\n2. Look at the days before today, then click yesterday.\nEXPECTED: Days before today are light grey and struck through, and clicking yesterday sets nothing. Today and later days look normal and are selectable.\n\nTEST CASE #7: Active Dates on Edit, future discount\n1. Edit a discount whose start date is in the future and open the Active Dates calendar.\nEXPECTED: Days before today are greyed out and struck through. The saved start day stays selected, and saving works.\n\nTEST CASE #8: Active Dates on Edit, discount already running\n1. Edit a discount that started a few days ago (status Active) and open the Active Dates calendar.\nEXPECTED: The saved start day is still shown as selected and can be kept. Other past days are greyed out and struck through, and clicking one sets nothing. Changing another field (e.g. the discount value) and saving works without a date error.\n\nTEST CASE #9: Selected and selectable days keep their look\n1. Pick an Active Date and an End Date, then reopen both calendars.\nEXPECTED: The chosen days are dark with white text and no line through. Selectable days are normal text.\n\nTEST DATA\n- Test case #8 needs a discount whose start date is already in the past. Create one before testing, or use any existing Active discount.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- The End Time box uses the browser's own time picker, which cannot grey out earlier times. An invalid time can still be typed or picked, and the error appears right away.\n- Pagination, calendar colours after Analytics, the three-dot menu and scrolling passed on 10/05 and are unchanged by this PR.\n"
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\nFixed both defects from the 10/05 QA return (dev @ 432c0725d).\n\nDEFECT 1 - End Date could not be today\nThe End Date calendar now starts at the Active Date or today, whichever is later, instead of tomorrow. A same-day discount only needs a later End Time.\n\nDEFECT 2 - Active Dates allowed past days\nThe Active Dates calendar now starts at today. Past days are light grey, struck through and cannot be picked, and saving with a past start date shows \"Active Dates cannot be earlier than today\". On Edit Discount, a discount that is already running keeps its own saved start day selectable, so it can still be edited and saved.\n\nPULL REQUEST\nprosperna1 dev PR: https://github.com/Prosperna/prosperna1/pull/8703 (branch refactor/tw-marketing-standard-dev10). QA's tested build did not include this PR, so retest once it is merged to dev.\n\nHOW IT WAS TESTED\n- ESLint on the changed files: clean\n- CouponCode tests: 262/262 passing, including new tests for the End Date/Time and Active Dates rules\n\nQA TEST CASES (for PR #8703)\nWHERE TO TEST: dev, Home > Discounts. Run at 1280x720 and repeat the calendar cases at 390x844.\n\nTEST CASE #1: End Date can be today\n1. Click Create Discount, set Active Dates to today, tick \"Set End Date\" and open the End Date calendar.\nEXPECTED: Days before today are light grey and struck through. Today is normal and selectable, and clicking it fills the End Date.\n\nTEST CASE #2: End Date can be the same day as a future Active Date\n1. Set Active Dates to a day 3 days from now, then open the End Date calendar.\nEXPECTED: Every day before that Active Date is greyed out and struck through. The Active Date's own day is selectable.\n\nTEST CASE #3: Same-day End Time must be later than Start Time\n1. Set Active Dates and End Date to the same future day, Start Time 10:00.\n2. Set End Time to 09:30, then 10:00, then 10:30.\nEXPECTED: 09:30 and 10:00 show \"End Date/Time must be after the Start Date/Time and the current time\" and the discount cannot be saved. 10:30 is accepted and the discount saves.\n\nTEST CASE #4: End Time of today cannot be in the past\n1. Set Active Dates to today with a Start Time earlier than now. Set End Date to today.\n2. Set End Time to a time that has already passed today, then to a time later than now.\nEXPECTED: The past time shows the same error and cannot be saved. The later time is accepted.\n\nTEST CASE #5: End Date before today or before the Active Date is still blocked\n1. Open the End Date calendar and click yesterday, then click a day before the chosen Active Date.\nEXPECTED: Neither click sets an End Date.\n\nTEST CASE #6: Active Dates cannot start in the past (Create)\n1. Click Create Discount and open the Active Dates calendar.\n2. Look at the days before today, then click yesterday.\nEXPECTED: Days before today are light grey and struck through, and clicking yesterday sets nothing. Today and later days look normal and are selectable.\n\nTEST CASE #7: Active Dates on Edit, future discount\n1. Edit a discount whose start date is in the future and open the Active Dates calendar.\nEXPECTED: Days before today are greyed out and struck through. The saved start day stays selected, and saving works.\n\nTEST CASE #8: Active Dates on Edit, discount already running\n1. Edit a discount that started a few days ago (status Active) and open the Active Dates calendar.\nEXPECTED: The saved start day is still shown as selected and can be kept. Other past days are greyed out and struck through, and clicking one sets nothing. Changing another field (e.g. the discount value) and saving works without a date error.\n\nTEST CASE #9: Selected and selectable days keep their look\n1. Pick an Active Date and an End Date, then reopen both calendars.\nEXPECTED: The chosen days are dark with white text and no line through. Selectable days are normal text.\n\nTEST DATA\n- Test case #8 needs a discount whose start date is already in the past. Create one before testing, or use any existing Active discount.\n\nOUT OF SCOPE / KNOWN BEHAVIOR\n- The End Time box uses the browser's own time picker, which cannot grey out earlier times. An invalid time can still be typed or picked, and the error appears right away.\n- Pagination, calendar colours after Analytics, the three-dot menu and scrolling passed on 10/05 and are unchanged by this PR.\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791174769238",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000125167",
+    "comment": [
+      {
+        "text": "Env: DEV-local\nStatus: FAILED\nURL: http://localhost:3000 (prosperna1 dev @ 432c0725d, includes PR #8676)\n\nTEST CASE #1: ISSUE 1 - Double scroll bar\nSTEPS:\nStep 1 - Open Home > Discounts at 1280x720, then at 390x560.\nStep 2 - Check which areas show a vertical scroll bar.\nEXPECTED RESULT: A single scroll bar; no nested scroll area inside the page.\nEVIDENCE: issue1-desktop.png, issue1-mobile.png\nACTUAL RESULT: One scroll region at both sizes. PASSED\n\nTEST CASE #2: ISSUE 2 - Three-dot menu (desktop | mobile)\nSTEPS:\nStep 1 - At 1280x720, open the \"...\" menu on the last row of the table.\nStep 2 - Repeat at 390x844, then choose View on that row.\nEXPECTED RESULT: The menu opens next to that row's \"...\" button, fully on screen, every option selectable, and acts on that row.\nEVIDENCE: issue2-1280px-menu-open.png, issue2-390px-menu-open.png, issue2-view-modal-correct-row.png\nACTUAL RESULT: The menu opened beside its own button, fully on screen at both widths, and View opened the correct discount. PASSED\n\nTEST CASE #3: ISSUE 3 - End Date allows today\nSTEPS:\nStep 1 - Click Create Discount, tick \"Set End Date\" and open the End Date calendar.\nStep 2 - Look at yesterday and today, then click today.\nEXPECTED RESULT: Days before today are unavailable. Today is selectable, since a same-day discount differs only in its End Time, and clicking it fills the End Date.\nEVIDENCE: issue3-end-date-calendar.png\nACTUAL RESULT: FAILED. Today is greyed out, struck through and cannot be picked; the earliest selectable End Date is tomorrow.\n\nTEST CASE #4: Active Dates - days before today\nSTEPS:\nStep 1 - Click Create Discount and open the Active Dates calendar (1280x720, then 390x844).\nStep 2 - Click yesterday.\nEXPECTED RESULT: Days before today are unavailable, light grey and struck through, and clicking one sets no Active Date.\nEVIDENCE: active-dates-calendar-1280px.png, active-dates-calendar-390px.png, active-dates-after-clicking-yesterday-390px.png\nACTUAL RESULT: FAILED. Past days look like any other day, with no grey and no line through, and clicking yesterday fills Active Dates with 10/04/2026.\n\nTEST CASE #5: ISSUE 4 - Visible line when the table does not fit\nSTEPS:\nStep 1 - At 820x720, scroll the table fully to the right.\nEXPECTED RESULT: No stray lines or cut-off column edges.\nEVIDENCE: issue4-scrolled-right.png\nACTUAL RESULT: The table scrolls on its own and the Action column sits whole inside it. PASSED\n\nTEST CASE #6: ISSUE 5 - Pagination at phone width\nSTEPS:\nStep 1 - Use a store with 61+ discounts (tested with 75, 8 pages).\nStep 2 - Open Home > Discounts at 390x844 and look at the pagination bar.\nEXPECTED RESULT: The page numbers and arrows stay inside the card and the screen.\nEVIDENCE: issue5-pagination-mobile.png\nACTUAL RESULT: \"< 1 2 3 4 5 ... 8 >\" fits fully inside the card and the screen. PASSED\n\nTEST CASE #7: Desktop pagination unchanged\nSTEPS:\nStep 1 - With the same 75 discounts, open Home > Discounts at 1280x720.\nEXPECTED RESULT: Page buttons keep their desktop size (34x34, 3px spacing) and stay inside the bar.\nEVIDENCE: pr8676-pagination-desktop.png\nACTUAL RESULT: Every page button is 34x34 with 3px spacing, all inside the bar. PASSED\n\nTEST CASE #8: Another paginated table on mobile (shared pager)\nSTEPS:\nStep 1 - At 390x844, open the Notification Center and scroll to its pagination bar.\nEXPECTED RESULT: The pager uses the smaller phone buttons and stays inside its bar and the screen.\nEVIDENCE: pr8676-notification-center-pager-390px.png, pr8676-notification-center-page-390px.png\nACTUAL RESULT: Page buttons are 30x30, all inside the bar, and the page does not scroll sideways. PASSED\n\nTEST CASE #9: Unavailable End Date days are distinguishable\nSTEPS:\nStep 1 - At 390x844, open Home > Discounts > Create Discount > tick \"Set End Date\" > open the End Date calendar.\nEXPECTED RESULT: Unavailable days look different from selectable days.\nEVIDENCE: strikethrough-end-date-calendar.png\nACTUAL RESULT: Unavailable days are light grey and struck through; selectable days are normal. PASSED\n\nTEST CASE #10: Unavailable End Date days after the Analytics dashboard loads\nSTEPS:\nStep 1 - Log in (lands on Dashboard > Analytics), then open Home > Discounts from the sidebar without reloading.\nStep 2 - Click Create Discount, tick \"Set End Date\" and open the End Date calendar.\nEXPECTED RESULT: Every day before today is light grey with a line through the number.\nEVIDENCE: tc1-in-app-end-date-calendar.png\nACTUAL RESULT: Days before today are light grey and struck through. PASSED\n\nTEST CASE #11: Same calendar on a freshly loaded page\nSTEPS:\nStep 1 - Open Home > Discounts directly, then repeat test case 10's calendar steps.\nEXPECTED RESULT: Same as test case 10.\nEVIDENCE: tc1-control-fresh-load-end-date-calendar.png\nACTUAL RESULT: Same light grey, struck-through days. PASSED\n\nTEST CASE #12: Selectable days look normal\nSTEPS:\nStep 1 - In the End Date calendar reached from the dashboard, look at the selectable days, then click one.\nEXPECTED RESULT: Normal text, no line through, clickable.\nEVIDENCE: tc2-in-app-end-date-calendar.png\nACTUAL RESULT: No line through, not greyed out, and clicking one fills the End Date. PASSED\n\nTEST CASE #13: Selected days keep their look\nSTEPS:\nStep 1 - Pick an Active Date and an End Date, then reopen both calendars.\nEXPECTED RESULT: The chosen days stay dark with white text and no line through.\nEVIDENCE: tc4-active-date-reopened.png, tc4-end-date-reopened.png\nACTUAL RESULT: Both chosen days are dark with white text and no line through. PASSED\n\nTEST CASE #14: Mobile\nSTEPS:\nStep 1 - At 390x844, repeat test cases 10 and 12, then click yesterday in the End Date calendar.\nEXPECTED RESULT: Same results as desktop; clicking yesterday sets nothing.\nEVIDENCE: tc5-mobile-in-app-end-date-calendar.png\nACTUAL RESULT: Days before today light grey and struck through, selectable days normal, clicking yesterday sets nothing. PASSED\n\nTEST CASE #15: Analytics date range calendar\nSTEPS:\nStep 1 - On Dashboard > Analytics, open the date range picker.\nEXPECTED RESULT: Future dates are grey and struck through; past dates look normal.\nEVIDENCE: tc6-analytics-calendar.png\nACTUAL RESULT: Future dates are light grey and struck through; past dates are normal. PASSED\n\nTEST CASE #16: Reports > Date: Custom > From calendar\nSTEPS:\nStep 1 - Log in, open Home > Reports from the sidebar, set Date to Custom and open the From calendar.\nEXPECTED RESULT: Blocked dates are grey and struck through; allowed dates look normal.\nEVIDENCE: tc6-reports-from-calendar.png\nACTUAL RESULT: Blocked dates are lighter and struck through; allowed dates are normal. PASSED\n\nTEST CASE #17: Analytics range selection looks as before\nSTEPS:\nStep 1 - On Dashboard > Analytics at 1280x720, open the date range picker.\nStep 2 - Click a start day and an end day.\nEXPECTED RESULT: Start and end days are dark navy with white text; the days between are light grey with dark text.\nEVIDENCE: pr8676-analytics-range-selected.png\nACTUAL RESULT: Start and end are dark navy with white text and the days in between are light grey. PASSED\n\nTEST CASE #18: Analytics date range on mobile\nSTEPS:\nStep 1 - At 390x844, open the Dashboard > Analytics date range picker.\nEXPECTED RESULT: One full-width month, seven days per row, future dates grey and struck through.\nEVIDENCE: pr8676-analytics-picker-390px.png\nACTUAL RESULT: One full-width month, seven days per row with none wrapping, future dates light grey and struck through. PASSED\n\nDEFECT 1\nWHERE: Home > Discounts > Create Discount (and Edit Discount) > End Date calendar.\nSTEPS TO RECREATE:\nStep 1 - Click Create Discount and tick \"Set End Date\".\nStep 2 - Open the End Date calendar and try to pick today.\nEXPECTED RESULT: Today is selectable as an End Date (a same-day discount differs only in its End Time); only days before today are unavailable.\nACTUAL RESULT: Today is greyed out and cannot be picked; the earliest End Date is tomorrow. The End Date minimum is getMinEndDate() = later of tomorrow and the Active Date (CreateCouponForm.jsx:941-948, passed at :310; same in EditCouponForm.jsx:335).\n\nDEFECT 2\nWHERE: Home > Discounts > Create Discount (and Edit Discount) > Active Dates calendar, desktop and mobile.\nSTEPS TO RECREATE:\nStep 1 - Click Create Discount and open the Active Dates calendar.\nStep 2 - Look at the days before today, then click yesterday.\nEXPECTED RESULT: Days before today are unavailable, light grey and struck through like the End Date calendar's, and cannot be picked.\nACTUAL RESULT: Past days look the same as future days and clicking yesterday fills Active Dates (10/04/2026). The Active Dates picker receives no minDate at all, only maxDate = End Date (CreateCouponForm.jsx:278-286; same in EditCouponForm.jsx), and nothing rejects a past start date.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV-local\nStatus: FAILED\nURL: http://localhost:3000 (prosperna1 dev @ 432c0725d, includes PR #8676)\n\nTEST CASE #1: ISSUE 1 - Double scroll bar\nSTEPS:\nStep 1 - Open Home > Discounts at 1280x720, then at 390x560.\nStep 2 - Check which areas show a vertical scroll bar.\nEXPECTED RESULT: A single scroll bar; no nested scroll area inside the page.\nEVIDENCE: issue1-desktop.png, issue1-mobile.png\nACTUAL RESULT: One scroll region at both sizes. PASSED\n\nTEST CASE #2: ISSUE 2 - Three-dot menu (desktop | mobile)\nSTEPS:\nStep 1 - At 1280x720, open the \"...\" menu on the last row of the table.\nStep 2 - Repeat at 390x844, then choose View on that row.\nEXPECTED RESULT: The menu opens next to that row's \"...\" button, fully on screen, every option selectable, and acts on that row.\nEVIDENCE: issue2-1280px-menu-open.png, issue2-390px-menu-open.png, issue2-view-modal-correct-row.png\nACTUAL RESULT: The menu opened beside its own button, fully on screen at both widths, and View opened the correct discount. PASSED\n\nTEST CASE #3: ISSUE 3 - End Date allows today\nSTEPS:\nStep 1 - Click Create Discount, tick \"Set End Date\" and open the End Date calendar.\nStep 2 - Look at yesterday and today, then click today.\nEXPECTED RESULT: Days before today are unavailable. Today is selectable, since a same-day discount differs only in its End Time, and clicking it fills the End Date.\nEVIDENCE: issue3-end-date-calendar.png\nACTUAL RESULT: FAILED. Today is greyed out, struck through and cannot be picked; the earliest selectable End Date is tomorrow.\n\nTEST CASE #4: Active Dates - days before today\nSTEPS:\nStep 1 - Click Create Discount and open the Active Dates calendar (1280x720, then 390x844).\nStep 2 - Click yesterday.\nEXPECTED RESULT: Days before today are unavailable, light grey and struck through, and clicking one sets no Active Date.\nEVIDENCE: active-dates-calendar-1280px.png, active-dates-calendar-390px.png, active-dates-after-clicking-yesterday-390px.png\nACTUAL RESULT: FAILED. Past days look like any other day, with no grey and no line through, and clicking yesterday fills Active Dates with 10/04/2026.\n\nTEST CASE #5: ISSUE 4 - Visible line when the table does not fit\nSTEPS:\nStep 1 - At 820x720, scroll the table fully to the right.\nEXPECTED RESULT: No stray lines or cut-off column edges.\nEVIDENCE: issue4-scrolled-right.png\nACTUAL RESULT: The table scrolls on its own and the Action column sits whole inside it. PASSED\n\nTEST CASE #6: ISSUE 5 - Pagination at phone width\nSTEPS:\nStep 1 - Use a store with 61+ discounts (tested with 75, 8 pages).\nStep 2 - Open Home > Discounts at 390x844 and look at the pagination bar.\nEXPECTED RESULT: The page numbers and arrows stay inside the card and the screen.\nEVIDENCE: issue5-pagination-mobile.png\nACTUAL RESULT: \"< 1 2 3 4 5 ... 8 >\" fits fully inside the card and the screen. PASSED\n\nTEST CASE #7: Desktop pagination unchanged\nSTEPS:\nStep 1 - With the same 75 discounts, open Home > Discounts at 1280x720.\nEXPECTED RESULT: Page buttons keep their desktop size (34x34, 3px spacing) and stay inside the bar.\nEVIDENCE: pr8676-pagination-desktop.png\nACTUAL RESULT: Every page button is 34x34 with 3px spacing, all inside the bar. PASSED\n\nTEST CASE #8: Another paginated table on mobile (shared pager)\nSTEPS:\nStep 1 - At 390x844, open the Notification Center and scroll to its pagination bar.\nEXPECTED RESULT: The pager uses the smaller phone buttons and stays inside its bar and the screen.\nEVIDENCE: pr8676-notification-center-pager-390px.png, pr8676-notification-center-page-390px.png\nACTUAL RESULT: Page buttons are 30x30, all inside the bar, and the page does not scroll sideways. PASSED\n\nTEST CASE #9: Unavailable End Date days are distinguishable\nSTEPS:\nStep 1 - At 390x844, open Home > Discounts > Create Discount > tick \"Set End Date\" > open the End Date calendar.\nEXPECTED RESULT: Unavailable days look different from selectable days.\nEVIDENCE: strikethrough-end-date-calendar.png\nACTUAL RESULT: Unavailable days are light grey and struck through; selectable days are normal. PASSED\n\nTEST CASE #10: Unavailable End Date days after the Analytics dashboard loads\nSTEPS:\nStep 1 - Log in (lands on Dashboard > Analytics), then open Home > Discounts from the sidebar without reloading.\nStep 2 - Click Create Discount, tick \"Set End Date\" and open the End Date calendar.\nEXPECTED RESULT: Every day before today is light grey with a line through the number.\nEVIDENCE: tc1-in-app-end-date-calendar.png\nACTUAL RESULT: Days before today are light grey and struck through. PASSED\n\nTEST CASE #11: Same calendar on a freshly loaded page\nSTEPS:\nStep 1 - Open Home > Discounts directly, then repeat test case 10's calendar steps.\nEXPECTED RESULT: Same as test case 10.\nEVIDENCE: tc1-control-fresh-load-end-date-calendar.png\nACTUAL RESULT: Same light grey, struck-through days. PASSED\n\nTEST CASE #12: Selectable days look normal\nSTEPS:\nStep 1 - In the End Date calendar reached from the dashboard, look at the selectable days, then click one.\nEXPECTED RESULT: Normal text, no line through, clickable.\nEVIDENCE: tc2-in-app-end-date-calendar.png\nACTUAL RESULT: No line through, not greyed out, and clicking one fills the End Date. PASSED\n\nTEST CASE #13: Selected days keep their look\nSTEPS:\nStep 1 - Pick an Active Date and an End Date, then reopen both calendars.\nEXPECTED RESULT: The chosen days stay dark with white text and no line through.\nEVIDENCE: tc4-active-date-reopened.png, tc4-end-date-reopened.png\nACTUAL RESULT: Both chosen days are dark with white text and no line through. PASSED\n\nTEST CASE #14: Mobile\nSTEPS:\nStep 1 - At 390x844, repeat test cases 10 and 12, then click yesterday in the End Date calendar.\nEXPECTED RESULT: Same results as desktop; clicking yesterday sets nothing.\nEVIDENCE: tc5-mobile-in-app-end-date-calendar.png\nACTUAL RESULT: Days before today light grey and struck through, selectable days normal, clicking yesterday sets nothing. PASSED\n\nTEST CASE #15: Analytics date range calendar\nSTEPS:\nStep 1 - On Dashboard > Analytics, open the date range picker.\nEXPECTED RESULT: Future dates are grey and struck through; past dates look normal.\nEVIDENCE: tc6-analytics-calendar.png\nACTUAL RESULT: Future dates are light grey and struck through; past dates are normal. PASSED\n\nTEST CASE #16: Reports > Date: Custom > From calendar\nSTEPS:\nStep 1 - Log in, open Home > Reports from the sidebar, set Date to Custom and open the From calendar.\nEXPECTED RESULT: Blocked dates are grey and struck through; allowed dates look normal.\nEVIDENCE: tc6-reports-from-calendar.png\nACTUAL RESULT: Blocked dates are lighter and struck through; allowed dates are normal. PASSED\n\nTEST CASE #17: Analytics range selection looks as before\nSTEPS:\nStep 1 - On Dashboard > Analytics at 1280x720, open the date range picker.\nStep 2 - Click a start day and an end day.\nEXPECTED RESULT: Start and end days are dark navy with white text; the days between are light grey with dark text.\nEVIDENCE: pr8676-analytics-range-selected.png\nACTUAL RESULT: Start and end are dark navy with white text and the days in between are light grey. PASSED\n\nTEST CASE #18: Analytics date range on mobile\nSTEPS:\nStep 1 - At 390x844, open the Dashboard > Analytics date range picker.\nEXPECTED RESULT: One full-width month, seven days per row, future dates grey and struck through.\nEVIDENCE: pr8676-analytics-picker-390px.png\nACTUAL RESULT: One full-width month, seven days per row with none wrapping, future dates light grey and struck through. PASSED\n\nDEFECT 1\nWHERE: Home > Discounts > Create Discount (and Edit Discount) > End Date calendar.\nSTEPS TO RECREATE:\nStep 1 - Click Create Discount and tick \"Set End Date\".\nStep 2 - Open the End Date calendar and try to pick today.\nEXPECTED RESULT: Today is selectable as an End Date (a same-day discount differs only in its End Time); only days before today are unavailable.\nACTUAL RESULT: Today is greyed out and cannot be picked; the earliest End Date is tomorrow. The End Date minimum is getMinEndDate() = later of tomorrow and the Active Date (CreateCouponForm.jsx:941-948, passed at :310; same in EditCouponForm.jsx:335).\n\nDEFECT 2\nWHERE: Home > Discounts > Create Discount (and Edit Discount) > Active Dates calendar, desktop and mobile.\nSTEPS TO RECREATE:\nStep 1 - Click Create Discount and open the Active Dates calendar.\nStep 2 - Look at the days before today, then click yesterday.\nEXPECTED RESULT: Days before today are unavailable, light grey and struck through like the End Date calendar's, and cannot be picked.\nACTUAL RESULT: Past days look the same as future days and clicking yesterday fills Active Dates (10/04/2026). The Active Dates picker receives no minDate at all, only maxDate = End Date (CreateCouponForm.jsx:278-286; same in EditCouponForm.jsx), and nothing rejects a past start date.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791169872088",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000124838",
+    "comment": [
+      {
+        "text": "This task ",
+        "attributes": {}
+      },
+      {
+        "text": "Discounts"
+      },
+      {
+        "text": " hss been move to ",
+        "attributes": {}
+      },
+      {
+        "text": "IN TESTING"
+      },
+      {
+        "text": " ",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-d59c2aa4-cd98-45c4-bcbe-82e046b57fb4"
+        }
+      },
+      {
+        "text": "Updated: ",
+        "attributes": {}
+      },
+      {
+        "text": "Oct 5 2026, 9:33AM (Asia/Shanghai)"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2b43ea53-9f60-461f-ae4d-63d824e492ee"
+        }
+      },
+      {
+        "text": "Triggered by: ",
+        "attributes": {}
+      },
+      {
+        "text": "Aira Pilor"
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0ac91b2e-de48-4901-b77f-1ff4fb5d5ac6"
+        }
+      }
+    ],
+    "comment_text": "This task Discounts hss been move to IN TESTING \nUpdated: Oct 5 2026, 9:33AM (Asia/Shanghai)\nTriggered by: Aira Pilor\n",
+    "user": {
+      "id": -1,
+      "username": "ClickBot",
+      "email": "clickbot@clickup.com",
+      "color": "#827718",
+      "initials": "C",
+      "profilePicture": "https://attachments.clickup.com/t1242830/995c776f-cdb7-4dc0-87ab-d65221824835/clickbot.svg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1791164007822",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000117122",
+    "comment": [
+      {
+        "text": "PULL REQUESTS\nprosperna1 dev PR: https://github.com/Prosperna/prosperna1/pull/8676 (branch refactor/tw-marketing-standard-dev9)\n\nNEXT STEPS\nQA to retest on dev once merged, using the retest notes in the comment above."
+      }
+    ],
+    "comment_text": "PULL REQUESTS\nprosperna1 dev PR: https://github.com/Prosperna/prosperna1/pull/8676 (branch refactor/tw-marketing-standard-dev9)\n\nNEXT STEPS\nQA to retest on dev once merged, using the retest notes in the comment above.",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1790901168573",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000117098",
+    "comment": [
+      {
+        "text": "ACCOMPLISHED\nAddressed the 2 defects from the 10/02 QA return (DEV-local @ f695bf1ed).\n\nDEFECT 1 - Pagination runs off the card/screen at phone width (7+ pages)\n- Cause: the \"< 1 2 3 4 5 ... N >\" layout is 9 buttons, each 34px wide with 6px of margin, so it needed ~360px plus card padding and overflowed at 390px.\n- Fix: on screens 575px and narrower, the shared pager buttons shrink to 30px with 2px spacing (~290px total), the row is centred, capped to its container width, and allowed to wrap as a last resort on very narrow screens. Desktop pagination is unchanged. File: src/assets/scss/custom/components/_pagination.scss\n\nDEFECT 2 - Unavailable calendar days lose their grey after the Analytics dashboard loads\n- Cause: DashboardDatePicker.css (Analytics date range) used unscoped .react-datepicker__day rules with color: #374151 !important. Once Analytics loaded, that stylesheet stayed on the page and repainted the disabled days in every calendar (Discounts, Reports, etc.) until a reload.\n- Fix: every .react-datepicker rule in that file is now scoped under .dashboard-datepicker-dropdown, so it only styles the Analytics picker and can no longer leak into other calendars. The Analytics picker also gets its own disabled-day rule (light grey + strikethrough, not clickable) so its blocked future dates match the rest of the app. Mobile overrides were re-scoped too so the mobile layout of the Analytics picker is unchanged.\n\nHOW IT WAS TESTED\n- Stylelint on the changed style files: passing\n- Targeted vitest: Pagination.test.jsx and DashboardDatePicker tests, 39/39 passing\n\nQA RETEST NOTES\n- Pagination: 61+ discounts, Home > Discounts at 390x844; pager should stay inside the card. Also spot-check another paginated table on mobile since the pager is shared.\n- Calendars: log in (lands on Analytics), then without reloading open Home > Discounts > Create Discount > Set End Date calendar, and Home > Reports > Custom > From. Today/earlier (or blocked) days should be light grey and struck through. Also check the Analytics date range itself: future dates grey and struck through, range selection looks as before.\n\nCOMMIT\nrefactor/tw-marketing-standard @ 4eee10064 (dev PR to follow)\n"
+      }
+    ],
+    "comment_text": "ACCOMPLISHED\nAddressed the 2 defects from the 10/02 QA return (DEV-local @ f695bf1ed).\n\nDEFECT 1 - Pagination runs off the card/screen at phone width (7+ pages)\n- Cause: the \"< 1 2 3 4 5 ... N >\" layout is 9 buttons, each 34px wide with 6px of margin, so it needed ~360px plus card padding and overflowed at 390px.\n- Fix: on screens 575px and narrower, the shared pager buttons shrink to 30px with 2px spacing (~290px total), the row is centred, capped to its container width, and allowed to wrap as a last resort on very narrow screens. Desktop pagination is unchanged. File: src/assets/scss/custom/components/_pagination.scss\n\nDEFECT 2 - Unavailable calendar days lose their grey after the Analytics dashboard loads\n- Cause: DashboardDatePicker.css (Analytics date range) used unscoped .react-datepicker__day rules with color: #374151 !important. Once Analytics loaded, that stylesheet stayed on the page and repainted the disabled days in every calendar (Discounts, Reports, etc.) until a reload.\n- Fix: every .react-datepicker rule in that file is now scoped under .dashboard-datepicker-dropdown, so it only styles the Analytics picker and can no longer leak into other calendars. The Analytics picker also gets its own disabled-day rule (light grey + strikethrough, not clickable) so its blocked future dates match the rest of the app. Mobile overrides were re-scoped too so the mobile layout of the Analytics picker is unchanged.\n\nHOW IT WAS TESTED\n- Stylelint on the changed style files: passing\n- Targeted vitest: Pagination.test.jsx and DashboardDatePicker tests, 39/39 passing\n\nQA RETEST NOTES\n- Pagination: 61+ discounts, Home > Discounts at 390x844; pager should stay inside the card. Also spot-check another paginated table on mobile since the pager is shared.\n- Calendars: log in (lands on Analytics), then without reloading open Home > Discounts > Create Discount > Set End Date calendar, and Home > Reports > Custom > From. Today/earlier (or blocked) days should be light grey and struck through. Also check the Analytics date range itself: future dates grey and struck through, range selection looks as before.\n\nCOMMIT\nrefactor/tw-marketing-standard @ 4eee10064 (dev PR to follow)\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1790900640368",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000099694",
+    "comment": [
+      {
+        "text": "Env: DEV-local\nStatus: FAILED\nURL: http://localhost:3000 (prosperna1 dev @ f695bf1ed, includes PR #8544)\n\nTEST CASE #1: ISSUE 1 - Double scroll bar\nSTEPS:\nStep 1 - Open Home > Discounts at 1280x720, then at 390x560.\nStep 2 - Check which areas show a vertical scroll bar.\nEXPECTED RESULT: A single scroll bar; no nested scroll area inside the page.\nEVIDENCE: issue1-desktop.png, issue1-mobile.png\nACTUAL RESULT: One scroll region at both sizes. PASSED\n\nTEST CASE #2: ISSUE 2 - Three-dot menu (desktop | mobile)\nSTEPS:\nStep 1 - At 1280x720, open the \"...\" menu on the last row of the table.\nStep 2 - Repeat at 390x844, then choose View on that row.\nEXPECTED RESULT: The menu opens next to that row's \"...\" button, fully on screen, with every option selectable, and acts on that row.\nEVIDENCE: issue2-1280px-menu-open.png, issue2-390px-menu-open.png, issue2-view-modal-correct-row.png\nACTUAL RESULT: The menu opened beside its own button, fully on screen at both widths, and View opened the correct discount. PASSED\n\nTEST CASE #3: ISSUE 3 - End Date cannot be earlier than tomorrow\nSTEPS:\nStep 1 - Click Create Discount, tick \"Set End Date\" and open the End Date calendar.\nStep 2 - Click today.\nEXPECTED RESULT: Every day before tomorrow is disabled, and clicking one sets no End Date.\nEVIDENCE: issue3-end-date-calendar.png\nACTUAL RESULT: Today is disabled, tomorrow is selectable, and clicking today leaves the field empty. PASSED\n\nTEST CASE #4: ISSUE 4 - Visible line when the table does not fit\nSTEPS:\nStep 1 - At 820x720, scroll the table fully to the right.\nEXPECTED RESULT: No stray lines or cut-off column edges.\nEVIDENCE: issue4-scrolled-right.png\nACTUAL RESULT: The table scrolls on its own, and the Action column sits whole inside it. PASSED\n\nTEST CASE #5: ISSUE 5 - Pagination\nSTEPS:\nStep 1 - Use a store with 61+ discounts (tested with 75, which makes 8 pages).\nStep 2 - Open Home > Discounts at 390x844 and look at the pagination bar.\nEXPECTED RESULT: The page numbers and arrows stay inside the card and the screen.\nEVIDENCE: issue5-pagination-mobile.png\nACTUAL RESULT: FAILED. The pager shows \"< 1 2 3 4 5 ... 8 >\"; the \"8\" runs past the card's edge and the \">\" arrow runs off the screen.\n\nTEST CASE #6: Unavailable End Date days are struck through\nSTEPS:\nStep 1 - Log in (lands on Dashboard > Analytics), then open Home > Discounts from the sidebar.\nStep 2 - Click Create Discount, tick \"Set End Date\" and open the End Date calendar.\nEXPECTED RESULT: Today and every earlier day are light grey with a line through the number.\nEVIDENCE: tc1-in-app-end-date-calendar.png, tc1-control-fresh-load-end-date-calendar.png\nACTUAL RESULT: FAILED. The days are struck through but painted #374151, the same colour as selectable days. After a page reload they show correctly in light grey.\n\nTEST CASE #7: Selectable days look normal\nSTEPS:\nStep 1 - In the same calendar, look at tomorrow and later days, then click one.\nEXPECTED RESULT: Normal text, no line through, clickable.\nEVIDENCE: tc2-in-app-end-date-calendar.png\nACTUAL RESULT: No line through, not greyed out, and clicking one fills the End Date. PASSED\n\nTEST CASE #8: Unavailable days still cannot be picked\nSTEPS:\nStep 1 - Click today in the End Date calendar.\nEXPECTED RESULT: Nothing is selected.\nEVIDENCE: issue3-end-date-calendar.png\nACTUAL RESULT: The End Date stays empty. PASSED\n\nTEST CASE #9: Selected days keep their look\nSTEPS:\nStep 1 - Pick an Active Date and an End Date, then reopen both calendars.\nEXPECTED RESULT: The chosen days stay dark with white text and no line through.\nEVIDENCE: tc4-active-date-reopened.png, tc4-end-date-reopened.png\nACTUAL RESULT: Both chosen days are dark with white text and no line through. PASSED\n\nTEST CASE #10: Mobile\nSTEPS:\nStep 1 - At 390x844, repeat test cases 6 to 8.\nEXPECTED RESULT: Same results as desktop.\nEVIDENCE: tc5-mobile-in-app-end-date-calendar.png\nACTUAL RESULT: FAILED. Same as test case 6; test cases 7 and 8 behave correctly.\n\nTEST CASE #11: Other calendars\nSTEPS:\nStep 1 - Open the Dashboard > Analytics date range, then Home > Reports > Date: Custom > From.\nEXPECTED RESULT: Blocked dates are grey and struck through; allowed dates look normal.\nEVIDENCE: tc6-analytics-calendar.png, tc6-reports-from-calendar.png\nACTUAL RESULT: FAILED. Blocked days are struck through but the same colour, rgb(55, 65, 81), as allowed days.\n\nDEFECT 1\nWHERE: Home > Discounts list, pagination bar, phone width.\nSTEPS TO RECREATE:\nStep 1 - Use a store with 61 or more discounts.\nStep 2 - Open Home > Discounts at 390x844.\nEXPECTED RESULT: The pagination stays inside the card and the screen.\nACTUAL RESULT: At 7 or more pages the pager switches to \"< 1 2 3 4 5 ... N >\", which is wider than the card: the last page number and the \">\" arrow overflow the card and the screen (components/Pagination.jsx).\n\nDEFECT 2\nWHERE: Every react-datepicker calendar in the app after the Analytics dashboard has loaded (Discounts, Analytics, Reports and others).\nSTEPS TO RECREATE:\nStep 1 - Log in; the app lands on Dashboard > Analytics.\nStep 2 - Open Home > Discounts from the sidebar > Create Discount > tick \"Set End Date\" > open the End Date calendar.\nEXPECTED RESULT: Unavailable days are light grey and struck through.\nACTUAL RESULT: They are struck through but the same colour as selectable days, until the page is reloaded. DashboardDatePicker.css:130-136 is loaded globally and sets .react-datepicker__day { color: #374151 !important }, which overrides the disabled-day grey from PR #8544 (_datepicker.scss:938-941) in every calendar for the rest of the session.\n",
+        "attributes": {}
+      }
+    ],
+    "comment_text": "Env: DEV-local\nStatus: FAILED\nURL: http://localhost:3000 (prosperna1 dev @ f695bf1ed, includes PR #8544)\n\nTEST CASE #1: ISSUE 1 - Double scroll bar\nSTEPS:\nStep 1 - Open Home > Discounts at 1280x720, then at 390x560.\nStep 2 - Check which areas show a vertical scroll bar.\nEXPECTED RESULT: A single scroll bar; no nested scroll area inside the page.\nEVIDENCE: issue1-desktop.png, issue1-mobile.png\nACTUAL RESULT: One scroll region at both sizes. PASSED\n\nTEST CASE #2: ISSUE 2 - Three-dot menu (desktop | mobile)\nSTEPS:\nStep 1 - At 1280x720, open the \"...\" menu on the last row of the table.\nStep 2 - Repeat at 390x844, then choose View on that row.\nEXPECTED RESULT: The menu opens next to that row's \"...\" button, fully on screen, with every option selectable, and acts on that row.\nEVIDENCE: issue2-1280px-menu-open.png, issue2-390px-menu-open.png, issue2-view-modal-correct-row.png\nACTUAL RESULT: The menu opened beside its own button, fully on screen at both widths, and View opened the correct discount. PASSED\n\nTEST CASE #3: ISSUE 3 - End Date cannot be earlier than tomorrow\nSTEPS:\nStep 1 - Click Create Discount, tick \"Set End Date\" and open the End Date calendar.\nStep 2 - Click today.\nEXPECTED RESULT: Every day before tomorrow is disabled, and clicking one sets no End Date.\nEVIDENCE: issue3-end-date-calendar.png\nACTUAL RESULT: Today is disabled, tomorrow is selectable, and clicking today leaves the field empty. PASSED\n\nTEST CASE #4: ISSUE 4 - Visible line when the table does not fit\nSTEPS:\nStep 1 - At 820x720, scroll the table fully to the right.\nEXPECTED RESULT: No stray lines or cut-off column edges.\nEVIDENCE: issue4-scrolled-right.png\nACTUAL RESULT: The table scrolls on its own, and the Action column sits whole inside it. PASSED\n\nTEST CASE #5: ISSUE 5 - Pagination\nSTEPS:\nStep 1 - Use a store with 61+ discounts (tested with 75, which makes 8 pages).\nStep 2 - Open Home > Discounts at 390x844 and look at the pagination bar.\nEXPECTED RESULT: The page numbers and arrows stay inside the card and the screen.\nEVIDENCE: issue5-pagination-mobile.png\nACTUAL RESULT: FAILED. The pager shows \"< 1 2 3 4 5 ... 8 >\"; the \"8\" runs past the card's edge and the \">\" arrow runs off the screen.\n\nTEST CASE #6: Unavailable End Date days are struck through\nSTEPS:\nStep 1 - Log in (lands on Dashboard > Analytics), then open Home > Discounts from the sidebar.\nStep 2 - Click Create Discount, tick \"Set End Date\" and open the End Date calendar.\nEXPECTED RESULT: Today and every earlier day are light grey with a line through the number.\nEVIDENCE: tc1-in-app-end-date-calendar.png, tc1-control-fresh-load-end-date-calendar.png\nACTUAL RESULT: FAILED. The days are struck through but painted #374151, the same colour as selectable days. After a page reload they show correctly in light grey.\n\nTEST CASE #7: Selectable days look normal\nSTEPS:\nStep 1 - In the same calendar, look at tomorrow and later days, then click one.\nEXPECTED RESULT: Normal text, no line through, clickable.\nEVIDENCE: tc2-in-app-end-date-calendar.png\nACTUAL RESULT: No line through, not greyed out, and clicking one fills the End Date. PASSED\n\nTEST CASE #8: Unavailable days still cannot be picked\nSTEPS:\nStep 1 - Click today in the End Date calendar.\nEXPECTED RESULT: Nothing is selected.\nEVIDENCE: issue3-end-date-calendar.png\nACTUAL RESULT: The End Date stays empty. PASSED\n\nTEST CASE #9: Selected days keep their look\nSTEPS:\nStep 1 - Pick an Active Date and an End Date, then reopen both calendars.\nEXPECTED RESULT: The chosen days stay dark with white text and no line through.\nEVIDENCE: tc4-active-date-reopened.png, tc4-end-date-reopened.png\nACTUAL RESULT: Both chosen days are dark with white text and no line through. PASSED\n\nTEST CASE #10: Mobile\nSTEPS:\nStep 1 - At 390x844, repeat test cases 6 to 8.\nEXPECTED RESULT: Same results as desktop.\nEVIDENCE: tc5-mobile-in-app-end-date-calendar.png\nACTUAL RESULT: FAILED. Same as test case 6; test cases 7 and 8 behave correctly.\n\nTEST CASE #11: Other calendars\nSTEPS:\nStep 1 - Open the Dashboard > Analytics date range, then Home > Reports > Date: Custom > From.\nEXPECTED RESULT: Blocked dates are grey and struck through; allowed dates look normal.\nEVIDENCE: tc6-analytics-calendar.png, tc6-reports-from-calendar.png\nACTUAL RESULT: FAILED. Blocked days are struck through but the same colour, rgb(55, 65, 81), as allowed days.\n\nDEFECT 1\nWHERE: Home > Discounts list, pagination bar, phone width.\nSTEPS TO RECREATE:\nStep 1 - Use a store with 61 or more discounts.\nStep 2 - Open Home > Discounts at 390x844.\nEXPECTED RESULT: The pagination stays inside the card and the screen.\nACTUAL RESULT: At 7 or more pages the pager switches to \"< 1 2 3 4 5 ... N >\", which is wider than the card: the last page number and the \">\" arrow overflow the card and the screen (components/Pagination.jsx).\n\nDEFECT 2\nWHERE: Every react-datepicker calendar in the app after the Analytics dashboard has loaded (Discounts, Analytics, Reports and others).\nSTEPS TO RECREATE:\nStep 1 - Log in; the app lands on Dashboard > Analytics.\nStep 2 - Open Home > Discounts from the sidebar > Create Discount > tick \"Set End Date\" > open the End Date calendar.\nEXPECTED RESULT: Unavailable days are light grey and struck through.\nACTUAL RESULT: They are struck through but the same colour as selectable days, until the page is reloaded. DashboardDatePicker.css:130-136 is loaded globally and sets .react-datepicker__day { color: #374151 !important }, which overrides the disabled-day grey from PR #8544 (_datepicker.scss:938-941) in every calendar for the rest of the session.\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1790601930041",
+    "reply_count": 0
+  },
+  {
+    "id": "1100740000032599",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2ac551c0-acc7-11f1-a6d9-c78ca7a851d9"
+        }
+      },
+      {
+        "text": "Status: FAILED",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2ac551c1-acc7-11f1-a6d9-c78ca7a851d9"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2ac551c2-acc7-11f1-a6d9-c78ca7a851d9"
+        }
+      },
+      {
+        "text": "Since we can’t use these dates, then we should display it as strikethrough dates.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2ac551c3-acc7-11f1-a6d9-c78ca7a851d9"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2ac551c4-acc7-11f1-a6d9-c78ca7a851d9"
+        }
+      },
+      {
+        "type": "attachment",
+        "text": "paste_272d142a-700c-4396-af00-c8ea74d797bc.jpg",
+        "attachment": {
+          "id": "770355c2-ca4f-4f9d-83aa-4ec7b66c8ccb.jpg",
+          "date": "1789010684566",
+          "title": "paste_272d142a-700c-4396-af00-c8ea74d797bc.jpg",
+          "type": 2,
+          "source": 1,
+          "version": 0,
+          "extension": "jpg",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/770355c2-ca4f-4f9d-83aa-4ec7b66c8ccb_small.jpg",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/770355c2-ca4f-4f9d-83aa-4ec7b66c8ccb_medium.jpg",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/770355c2-ca4f-4f9d-83aa-4ec7b66c8ccb_large.jpg",
+          "is_folder": null,
+          "mimetype": "image/jpeg",
+          "hidden": false,
+          "parent_id": "1100740000032599",
+          "size": 281209,
+          "total_comments": 0,
+          "resolved_comments": 0,
+          "user": {
+            "id": 95622662,
+            "username": "Aira Pilor",
+            "email": "aira@prosperna.com",
+            "initials": "AP",
+            "color": "#e93d82",
+            "profilePicture": null
+          },
+          "deleted": false,
+          "orientation": "1",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/770355c2-ca4f-4f9d-83aa-4ec7b66c8ccb/paste_272d142a-700c-4396-af00-c8ea74d797bc.jpg",
+          "parent_comment_type": 1,
+          "parent_comment_parent": "86ey5dnky",
+          "email_data": null,
+          "workspace_id": 7537039,
+          "width": 1179,
+          "height": 2556,
+          "url_w_query": "https://t7537039.p.clickup-attachments.com/t7537039/770355c2-ca4f-4f9d-83aa-4ec7b66c8ccb/paste_272d142a-700c-4396-af00-c8ea74d797bc.jpg?view=open",
+          "url_w_host": "https://t7537039.p.clickup-attachments.com/t7537039/770355c2-ca4f-4f9d-83aa-4ec7b66c8ccb/paste_272d142a-700c-4396-af00-c8ea74d797bc.jpg"
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "770355c2-ca4f-4f9d-83aa-4ec7b66c8ccb.jpg",
+          "data-attachment": null,
+          "data-natural-width": "1179",
+          "data-natural-height": "2556"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-2ac551c5-acc7-11f1-a6d9-c78ca7a851d9"
+        }
+      }
+    ],
+    "comment_text": "env: DEV\nStatus: FAILED\n\nSince we can’t use these dates, then we should display it as strikethrough dates.\n\npaste_272d142a-700c-4396-af00-c8ea74d797bc.jpg\n",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1789010685086",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247380606",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "13174817-7679-4c97-a662-7cdaf0db681c.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/13174817-7679-4c97-a662-7cdaf0db681c/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/13174817-7679-4c97-a662-7cdaf0db681c_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/13174817-7679-4c97-a662-7cdaf0db681c_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/13174817-7679-4c97-a662-7cdaf0db681c/image.png",
+          "uploaded": true,
+          "width": 421,
+          "height": 902
+        },
+        "attributes": {
+          "width": "116",
+          "data-id": "13174817-7679-4c97-a662-7cdaf0db681c.png",
+          "data-attachment": "{\"id\":\"13174817-7679-4c97-a662-7cdaf0db681c.png\",\"version\":\"0\",\"date\":1786935086290,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/13174817-7679-4c97-a662-7cdaf0db681c_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/13174817-7679-4c97-a662-7cdaf0db681c_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/13174817-7679-4c97-a662-7cdaf0db681c/image.png\",\"width\":421,\"height\":902,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/13174817-7679-4c97-a662-7cdaf0db681c/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/13174817-7679-4c97-a662-7cdaf0db681c/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/13174817-7679-4c97-a662-7cdaf0db681c/image.png\"}",
+          "data-natural-width": "421",
+          "data-natural-height": "902"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-jUax55R7Cq"
+        }
+      },
+      {
+        "text": "pagination is still properly switching to a compacted version",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-YzEP0gHQDF"
+        }
+      }
+    ],
+    "comment_text": "image.png\npagination is still properly switching to a compacted version\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786935121209",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247380442",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "646e1ced-ab9f-4537-b00f-0b7105a7eebc.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/646e1ced-ab9f-4537-b00f-0b7105a7eebc/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/646e1ced-ab9f-4537-b00f-0b7105a7eebc_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/646e1ced-ab9f-4537-b00f-0b7105a7eebc_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/646e1ced-ab9f-4537-b00f-0b7105a7eebc/image.png",
+          "uploaded": true,
+          "width": 370,
+          "height": 835
+        },
+        "attributes": {
+          "width": "110",
+          "data-id": "646e1ced-ab9f-4537-b00f-0b7105a7eebc.png",
+          "data-attachment": "{\"id\":\"646e1ced-ab9f-4537-b00f-0b7105a7eebc.png\",\"version\":\"0\",\"date\":1786935042465,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/646e1ced-ab9f-4537-b00f-0b7105a7eebc_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/646e1ced-ab9f-4537-b00f-0b7105a7eebc_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/646e1ced-ab9f-4537-b00f-0b7105a7eebc/image.png\",\"width\":370,\"height\":835,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/646e1ced-ab9f-4537-b00f-0b7105a7eebc/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/646e1ced-ab9f-4537-b00f-0b7105a7eebc/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/646e1ced-ab9f-4537-b00f-0b7105a7eebc/image.png\"}",
+          "data-natural-width": "370",
+          "data-natural-height": "835"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-hXhpyq9krD"
+        }
+      },
+      {
+        "text": "no more visible lines",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-I_LagBQPWq"
+        }
+      }
+    ],
+    "comment_text": "image.png\nno more visible lines\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786935048967",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247380393",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "be502737-f342-49fe-960f-cd677538019b.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/be502737-f342-49fe-960f-cd677538019b/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/be502737-f342-49fe-960f-cd677538019b_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/be502737-f342-49fe-960f-cd677538019b_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/be502737-f342-49fe-960f-cd677538019b/image.png",
+          "uploaded": true,
+          "width": 397,
+          "height": 878
+        },
+        "attributes": {
+          "width": "113",
+          "data-id": "be502737-f342-49fe-960f-cd677538019b.png",
+          "data-attachment": "{\"id\":\"be502737-f342-49fe-960f-cd677538019b.png\",\"version\":\"0\",\"date\":1786934966211,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/be502737-f342-49fe-960f-cd677538019b_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/be502737-f342-49fe-960f-cd677538019b_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/be502737-f342-49fe-960f-cd677538019b/image.png\",\"width\":397,\"height\":878,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/be502737-f342-49fe-960f-cd677538019b/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/be502737-f342-49fe-960f-cd677538019b/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/be502737-f342-49fe-960f-cd677538019b/image.png\"}",
+          "data-natural-width": "397",
+          "data-natural-height": "878"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-8m00vSzuIf"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "1d221bd2-e943-479d-854d-70b1a0d1fedd.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/1d221bd2-e943-479d-854d-70b1a0d1fedd/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/1d221bd2-e943-479d-854d-70b1a0d1fedd_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/1d221bd2-e943-479d-854d-70b1a0d1fedd_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/1d221bd2-e943-479d-854d-70b1a0d1fedd/image.png",
+          "uploaded": true,
+          "width": 241,
+          "height": 306
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "1d221bd2-e943-479d-854d-70b1a0d1fedd.png",
+          "data-attachment": "{\"id\":\"1d221bd2-e943-479d-854d-70b1a0d1fedd.png\",\"version\":\"0\",\"date\":1786934995644,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/1d221bd2-e943-479d-854d-70b1a0d1fedd_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/1d221bd2-e943-479d-854d-70b1a0d1fedd_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/1d221bd2-e943-479d-854d-70b1a0d1fedd/image.png\",\"width\":241,\"height\":306,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/1d221bd2-e943-479d-854d-70b1a0d1fedd/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/1d221bd2-e943-479d-854d-70b1a0d1fedd/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/1d221bd2-e943-479d-854d-70b1a0d1fedd/image.png\"}",
+          "data-natural-width": "241",
+          "data-natural-height": "306"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-SXlqII6vl9"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "31284862-2605-4267-ac00-c331756503b6.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/31284862-2605-4267-ac00-c331756503b6/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/31284862-2605-4267-ac00-c331756503b6/image.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/31284862-2605-4267-ac00-c331756503b6_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/31284862-2605-4267-ac00-c331756503b6/image.png",
+          "uploaded": true,
+          "width": 261,
+          "height": 279
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "31284862-2605-4267-ac00-c331756503b6.png",
+          "data-attachment": "{\"id\":\"31284862-2605-4267-ac00-c331756503b6.png\",\"version\":\"0\",\"date\":1786935021304,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/31284862-2605-4267-ac00-c331756503b6_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/31284862-2605-4267-ac00-c331756503b6/image.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/31284862-2605-4267-ac00-c331756503b6/image.png\",\"width\":261,\"height\":279,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/31284862-2605-4267-ac00-c331756503b6/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/31284862-2605-4267-ac00-c331756503b6/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/31284862-2605-4267-ac00-c331756503b6/image.png\"}",
+          "data-natural-width": "261",
+          "data-natural-height": "279"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fb9TntVp-G"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-n3jQ4-UajB"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-XlvVhVrvLl"
+        }
+      },
+      {
+        "text": "Start and End date Duration is now being validated before submission. Calendar also locks and grays out dates that are unavailable",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-P5Pc5HlF3n"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\nimage.png\n\n\nStart and End date Duration is now being validated before submission. Calendar also locks and grays out dates that are unavailable\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786935023851",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247366206",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "fca3cafd-d9f3-4778-9b01-17091e78fbac.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/fca3cafd-d9f3-4778-9b01-17091e78fbac/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/fca3cafd-d9f3-4778-9b01-17091e78fbac_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/fca3cafd-d9f3-4778-9b01-17091e78fbac_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/fca3cafd-d9f3-4778-9b01-17091e78fbac/image.png",
+          "uploaded": true,
+          "width": 406,
+          "height": 876
+        },
+        "attributes": {
+          "width": "115",
+          "data-id": "fca3cafd-d9f3-4778-9b01-17091e78fbac.png",
+          "data-attachment": "{\"id\":\"fca3cafd-d9f3-4778-9b01-17091e78fbac.png\",\"version\":\"0\",\"date\":1786929943424,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/fca3cafd-d9f3-4778-9b01-17091e78fbac_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/fca3cafd-d9f3-4778-9b01-17091e78fbac_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/fca3cafd-d9f3-4778-9b01-17091e78fbac/image.png\",\"width\":406,\"height\":876,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/fca3cafd-d9f3-4778-9b01-17091e78fbac/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/fca3cafd-d9f3-4778-9b01-17091e78fbac/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/fca3cafd-d9f3-4778-9b01-17091e78fbac/image.png\"}",
+          "data-natural-width": "406",
+          "data-natural-height": "876"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-EtL_0vYRRW"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "0fe6c3f7-142d-4b88-8530-bd6d3891947b.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/0fe6c3f7-142d-4b88-8530-bd6d3891947b/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/0fe6c3f7-142d-4b88-8530-bd6d3891947b_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/0fe6c3f7-142d-4b88-8530-bd6d3891947b_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/0fe6c3f7-142d-4b88-8530-bd6d3891947b/image.png",
+          "uploaded": true,
+          "width": 391,
+          "height": 872
+        },
+        "attributes": {
+          "width": "112",
+          "data-id": "0fe6c3f7-142d-4b88-8530-bd6d3891947b.png",
+          "data-attachment": "{\"id\":\"0fe6c3f7-142d-4b88-8530-bd6d3891947b.png\",\"version\":\"0\",\"date\":1786929960088,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/0fe6c3f7-142d-4b88-8530-bd6d3891947b_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/0fe6c3f7-142d-4b88-8530-bd6d3891947b_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/0fe6c3f7-142d-4b88-8530-bd6d3891947b/image.png\",\"width\":391,\"height\":872,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/0fe6c3f7-142d-4b88-8530-bd6d3891947b/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/0fe6c3f7-142d-4b88-8530-bd6d3891947b/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/0fe6c3f7-142d-4b88-8530-bd6d3891947b/image.png\"}",
+          "data-natural-width": "391",
+          "data-natural-height": "872"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Mfw3IhqTkU"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-uu5wrCv_ZL"
+        }
+      },
+      {
+        "text": "action button wiring issue fixed",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Ym_8JMEjLn"
+        }
+      }
+    ],
+    "comment_text": "image.png\nimage.png\n\naction button wiring issue fixed\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786929961143",
+    "reply_count": 0
+  },
+  {
+    "id": "90180247366118",
+    "comment": [
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "319b465c-9886-49dc-8578-32efce0d78f9.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/319b465c-9886-49dc-8578-32efce0d78f9/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/319b465c-9886-49dc-8578-32efce0d78f9_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/319b465c-9886-49dc-8578-32efce0d78f9_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/319b465c-9886-49dc-8578-32efce0d78f9/image.png",
+          "uploaded": true,
+          "width": 407,
+          "height": 887
+        },
+        "attributes": {
+          "width": "114",
+          "data-id": "319b465c-9886-49dc-8578-32efce0d78f9.png",
+          "data-attachment": "{\"id\":\"319b465c-9886-49dc-8578-32efce0d78f9.png\",\"version\":\"0\",\"date\":1786929871253,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/319b465c-9886-49dc-8578-32efce0d78f9_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/319b465c-9886-49dc-8578-32efce0d78f9_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/319b465c-9886-49dc-8578-32efce0d78f9/image.png\",\"width\":407,\"height\":887,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/319b465c-9886-49dc-8578-32efce0d78f9/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/319b465c-9886-49dc-8578-32efce0d78f9/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/319b465c-9886-49dc-8578-32efce0d78f9/image.png\"}",
+          "data-natural-width": "407",
+          "data-natural-height": "887"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-aIcpJpAbqq"
+        }
+      },
+      {
+        "text": "no more double scroll bar",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-ha08T1VuUr"
+        }
+      }
+    ],
+    "comment_text": "image.png\nno more double scroll bar\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786929876719",
+    "reply_count": 0
+  },
+  {
+    "id": "90180246508196",
+    "comment": [
+      {
+        "text": "env: DEV",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bN7kHxAvfv"
+        }
+      },
+      {
+        "text": "url: ",
+        "attributes": {}
+      },
+      {
+        "text": "https://prodev.prosperna.com/home/discounts",
+        "attributes": {
+          "link": "https://prodev.prosperna.com/home/discounts"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-grh9xXw-tu"
+        }
+      },
+      {
+        "text": "Status: ",
+        "attributes": {}
+      },
+      {
+        "text": "FAILED",
+        "attributes": {
+          "bold": true,
+          "badge-class": "red"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Eq05xX8U1H"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Qls4_Hl2gE"
+        }
+      },
+      {
+        "text": "ISSUE 1: DOUBLE SCROLL BAR",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-h-tTTi4ccg"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Dy3MBtMFMP"
+        }
+      },
+      {
+        "text": "The page renders with a single, unified scroll bar. Nesting or overlapping internal scroll bars within the main container or viewport is completely eliminated across all screen resolutions.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-r7UOm-uCfp"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-GL8lWkzHFs"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "45519b18-0ae5-4fb4-8b84-85cf4cf8912a.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/45519b18-0ae5-4fb4-8b84-85cf4cf8912a/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/45519b18-0ae5-4fb4-8b84-85cf4cf8912a_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/45519b18-0ae5-4fb4-8b84-85cf4cf8912a_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/45519b18-0ae5-4fb4-8b84-85cf4cf8912a/image.png",
+          "uploaded": true,
+          "width": 1011,
+          "height": 781
+        },
+        "attributes": {
+          "width": "258",
+          "data-id": "45519b18-0ae5-4fb4-8b84-85cf4cf8912a.png",
+          "data-attachment": "{\"id\":\"45519b18-0ae5-4fb4-8b84-85cf4cf8912a.png\",\"version\":\"0\",\"date\":1786542264253,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/45519b18-0ae5-4fb4-8b84-85cf4cf8912a_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/45519b18-0ae5-4fb4-8b84-85cf4cf8912a_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/45519b18-0ae5-4fb4-8b84-85cf4cf8912a/image.png\",\"width\":1011,\"height\":781,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/45519b18-0ae5-4fb4-8b84-85cf4cf8912a/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/45519b18-0ae5-4fb4-8b84-85cf4cf8912a/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/45519b18-0ae5-4fb4-8b84-85cf4cf8912a/image.png\"}",
+          "data-natural-width": "1011",
+          "data-natural-height": "781"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fkE7knx6LS"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-kDTra3GQM8"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-kY7lIlf59s"
+        }
+      },
+      {
+        "text": "ISSUE 2:  THREE DOT IS NOT FUNCTIONING AS INTENDED (DESKTOP | MOBILE)",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-dto89Z3d5H"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-olNsXd4wZK"
+        }
+      },
+      {
+        "text": "Clicking or tapping the three-dot action menu triggers the context menu consistently on both desktop and mobile platforms. All menu options are fully visible, selectable, and execute their corresponding actions without UI lag or non-responsive clicks.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-1zF8QFBLBY"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-QbhNA4Vkly"
+        }
+      },
+      {
+        "type": "frame",
+        "frame": {
+          "id": "59de0835-9a68-47a4-8c42-57bb6731ba75.mp4",
+          "service": "clickup_video",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/59de0835-9a68-47a4-8c42-57bb6731ba75/20260812-1341-06.7713581.mp4?view=open",
+          "src": "https://t7537039.p.clickup-attachments.com/t7537039/59de0835-9a68-47a4-8c42-57bb6731ba75/20260812-1341-06.7713581.mp4?view=open",
+          "source": 1
+        },
+        "text": "https://t7537039.p.clickup-attachments.com/t7537039/59de0835-9a68-47a4-8c42-57bb6731ba75/20260812-1341-06.7713581.mp4?view=open",
+        "attributes": {
+          "block-id": "block-hCRgdfkdCw",
+          "data-size": "large",
+          "data-origin": "attachment"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-0sm2Z5o2DB"
+        }
+      },
+      {
+        "text": "ISSUE 3: DO NOT ALLOW SELECTING DAY BEFORE TOMORROW AS END DATE",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-bbcBlhbx9F"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-cAyWsconNr"
+        }
+      },
+      {
+        "text": "In the date picker, all dates prior to tomorrow are disabled/grayed out and unselectable for the end date field. Attempting to manually enter or select an invalid past date displays a clear validation error preventing form submission.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-rcE-WASxMg"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Ai9MK46ZxV"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "67ca25ce-5962-492e-8e39-817d9fd8c1c4.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/67ca25ce-5962-492e-8e39-817d9fd8c1c4_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/67ca25ce-5962-492e-8e39-817d9fd8c1c4_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/67ca25ce-5962-492e-8e39-817d9fd8c1c4_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/67ca25ce-5962-492e-8e39-817d9fd8c1c4/image.png",
+          "uploaded": true,
+          "width": 1948,
+          "height": 954
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "67ca25ce-5962-492e-8e39-817d9fd8c1c4.png",
+          "data-attachment": "{\"id\":\"67ca25ce-5962-492e-8e39-817d9fd8c1c4.png\",\"version\":\"0\",\"date\":1786542048424,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/67ca25ce-5962-492e-8e39-817d9fd8c1c4_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/67ca25ce-5962-492e-8e39-817d9fd8c1c4_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/67ca25ce-5962-492e-8e39-817d9fd8c1c4_large.png\",\"width\":1948,\"height\":954,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/67ca25ce-5962-492e-8e39-817d9fd8c1c4/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/67ca25ce-5962-492e-8e39-817d9fd8c1c4/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/67ca25ce-5962-492e-8e39-817d9fd8c1c4/image.png\"}",
+          "data-natural-width": "1948",
+          "data-natural-height": "954"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-CXX68vQntS"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-gYPoW4o6yB"
+        }
+      },
+      {
+        "text": "ISSUE 4: VISIBLE LINE WHEN THE DISPLAY IS NOT FIT TO THE SCREEN",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-fq8Ve3t-BI"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-x5PVL6c4dU"
+        }
+      },
+      {
+        "text": "Elements, borders, and background containers resize and wrap fluidly without producing unexpected border artifacts, stray dividing lines, or pixel gaps when the browser window is resized or viewed on non-standard viewport dimensions.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-5hJwbABMSz"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-6d7_uYn6Te"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "db49987d-4c96-44be-80b1-f259abbb6904.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/db49987d-4c96-44be-80b1-f259abbb6904_large.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/db49987d-4c96-44be-80b1-f259abbb6904_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/db49987d-4c96-44be-80b1-f259abbb6904_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/db49987d-4c96-44be-80b1-f259abbb6904/image.png",
+          "uploaded": true,
+          "width": 1915,
+          "height": 955
+        },
+        "attributes": {
+          "width": "300",
+          "data-id": "db49987d-4c96-44be-80b1-f259abbb6904.png",
+          "data-attachment": "{\"id\":\"db49987d-4c96-44be-80b1-f259abbb6904.png\",\"version\":\"0\",\"date\":1786541480629,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/db49987d-4c96-44be-80b1-f259abbb6904_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/db49987d-4c96-44be-80b1-f259abbb6904_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/db49987d-4c96-44be-80b1-f259abbb6904_large.png\",\"width\":1915,\"height\":955,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/db49987d-4c96-44be-80b1-f259abbb6904/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/db49987d-4c96-44be-80b1-f259abbb6904/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/db49987d-4c96-44be-80b1-f259abbb6904/image.png\"}",
+          "data-natural-width": "1915",
+          "data-natural-height": "955"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-PNiu_3txBw"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-YvQGtPKZL8"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-qNH8KMsdrH"
+        }
+      },
+      {
+        "text": "ISSUE 5: PAGINATION",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-4ufCRBonOP"
+        }
+      },
+      {
+        "text": "EXPECTED RESULT:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-iMoTjwEnNV"
+        }
+      },
+      {
+        "text": "The pagination controls remain properly formatted within the designated container footer. Page numbers, previous/next buttons, and dropdowns scale or wrap gracefully without overflowing beyond the viewport or overlapping surrounding elements on smaller screen widths.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-t9VK4qndEE"
+        }
+      },
+      {
+        "text": "ACTUAL RESULT:",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-spaRrijbx3"
+        }
+      },
+      {
+        "type": "image",
+        "text": "image.png",
+        "image": {
+          "id": "53837a32-23c1-4b95-ac6c-2b16155fc3a3.png",
+          "name": "image.png",
+          "title": "image.png",
+          "type": "png",
+          "extension": "image/png",
+          "thumbnail_large": "https://t7537039.p.clickup-attachments.com/t7537039/53837a32-23c1-4b95-ac6c-2b16155fc3a3/image.png",
+          "thumbnail_medium": "https://t7537039.p.clickup-attachments.com/t7537039/53837a32-23c1-4b95-ac6c-2b16155fc3a3_medium.png",
+          "thumbnail_small": "https://t7537039.p.clickup-attachments.com/t7537039/53837a32-23c1-4b95-ac6c-2b16155fc3a3_small.png",
+          "url": "https://t7537039.p.clickup-attachments.com/t7537039/53837a32-23c1-4b95-ac6c-2b16155fc3a3/image.png",
+          "uploaded": true,
+          "width": 340,
+          "height": 734
+        },
+        "attributes": {
+          "width": "115",
+          "data-id": "53837a32-23c1-4b95-ac6c-2b16155fc3a3.png",
+          "data-attachment": "{\"id\":\"53837a32-23c1-4b95-ac6c-2b16155fc3a3.png\",\"version\":\"0\",\"date\":1786541961431,\"name\":\"image.png\",\"title\":\"image.png\",\"extension\":\"png\",\"source\":1,\"thumbnail_small\":\"https://t7537039.p.clickup-attachments.com/t7537039/53837a32-23c1-4b95-ac6c-2b16155fc3a3_small.png\",\"thumbnail_medium\":\"https://t7537039.p.clickup-attachments.com/t7537039/53837a32-23c1-4b95-ac6c-2b16155fc3a3_medium.png\",\"thumbnail_large\":\"https://t7537039.p.clickup-attachments.com/t7537039/53837a32-23c1-4b95-ac6c-2b16155fc3a3/image.png\",\"width\":340,\"height\":734,\"url\":\"https://t7537039.p.clickup-attachments.com/t7537039/53837a32-23c1-4b95-ac6c-2b16155fc3a3/image.png\",\"url_w_query\":\"https://t7537039.p.clickup-attachments.com/t7537039/53837a32-23c1-4b95-ac6c-2b16155fc3a3/image.png?view=open\",\"url_w_host\":\"https://t7537039.p.clickup-attachments.com/t7537039/53837a32-23c1-4b95-ac6c-2b16155fc3a3/image.png\"}",
+          "data-natural-width": "340",
+          "data-natural-height": "734"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-VMzzKHTLTF"
+        }
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-maLkUjlhtK"
+        }
+      },
+      {
+        "text": "Kindly fix all returns.",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-z2I_alelx7"
+        }
+      },
+      {
+        "text": "Moving this task to \"READY PRIORITY\"",
+        "attributes": {}
+      },
+      {
+        "text": "\n",
+        "attributes": {
+          "block-id": "block-Y2AYMS2P4e"
+        }
+      },
+      {
+        "text": "cc ",
+        "attributes": {}
+      },
+      {
+        "type": "tag",
+        "user": {
+          "id": 113539147,
+          "username": "Angelo Kamachi",
+          "email": "angelo.kamachi@prosperna.com",
+          "initials": "AK",
+          "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+        },
+        "text": "@Angelo Kamachi"
+      }
+    ],
+    "comment_text": "env: DEV\nurl: https://prodev.prosperna.com/home/discounts\nStatus: FAILED\n\nISSUE 1: DOUBLE SCROLL BAR\nEXPECTED RESULT:\nThe page renders with a single, unified scroll bar. Nesting or overlapping internal scroll bars within the main container or viewport is completely eliminated across all screen resolutions.\nACTUAL RESULT:\nimage.png\n\n\nISSUE 2:  THREE DOT IS NOT FUNCTIONING AS INTENDED (DESKTOP | MOBILE)\nEXPECTED RESULT:\nClicking or tapping the three-dot action menu triggers the context menu consistently on both desktop and mobile platforms. All menu options are fully visible, selectable, and execute their corresponding actions without UI lag or non-responsive clicks.\nACTUAL RESULT:\nhttps://t7537039.p.clickup-attachments.com/t7537039/59de0835-9a68-47a4-8c42-57bb6731ba75/20260812-1341-06.7713581.mp4?view=open\nISSUE 3: DO NOT ALLOW SELECTING DAY BEFORE TOMORROW AS END DATE\nEXPECTED RESULT:\nIn the date picker, all dates prior to tomorrow are disabled/grayed out and unselectable for the end date field. Attempting to manually enter or select an invalid past date displays a clear validation error preventing form submission.\nACTUAL RESULT:\nimage.png\n\nISSUE 4: VISIBLE LINE WHEN THE DISPLAY IS NOT FIT TO THE SCREEN\nEXPECTED RESULT:\nElements, borders, and background containers resize and wrap fluidly without producing unexpected border artifacts, stray dividing lines, or pixel gaps when the browser window is resized or viewed on non-standard viewport dimensions.\nACTUAL RESULT:\nimage.png\n\n\nISSUE 5: PAGINATION\nEXPECTED RESULT:\nThe pagination controls remain properly formatted within the designated container footer. Page numbers, previous/next buttons, and dropdowns scale or wrap gracefully without overflowing beyond the viewport or overlapping surrounding elements on smaller screen widths.\nACTUAL RESULT:\nimage.png\n\nKindly fix all returns.\nMoving this task to \"READY PRIORITY\"\ncc @Angelo Kamachi",
+    "user": {
+      "id": 95622662,
+      "username": "Aira Pilor",
+      "email": "aira@prosperna.com",
+      "color": "#e93d82",
+      "initials": "AP",
+      "profilePicture": null
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786580571949",
+    "reply_count": 0
+  },
+  {
+    "id": "90180245081792",
+    "comment": [
+      {
+        "text": "NOTE: PR updated\nThe dev PR for this fix was recreated: PR #7765 was closed (it had a single squashed commit) and replaced by PR #7767 (https://github.com/Prosperna/prosperna1/pull/7767), which carries the full commit history via cherry-pick from the source branch, per branch policy (no force-push on open PRs; a full history rebuild gets a new PR instead). Same fixes, no functional changes. Branch: refactor/tw-marketing-standard-dev4 -> dev.\n"
+      }
+    ],
+    "comment_text": "NOTE: PR updated\nThe dev PR for this fix was recreated: PR #7765 was closed (it had a single squashed commit) and replaced by PR #7767 (https://github.com/Prosperna/prosperna1/pull/7767), which carries the full commit history via cherry-pick from the source branch, per branch policy (no force-push on open PRs; a full history rebuild gets a new PR instead). Same fixes, no functional changes. Branch: refactor/tw-marketing-standard-dev4 -> dev.\n",
+    "user": {
+      "id": 113539147,
+      "username": "Angelo Kamachi",
+      "email": "angelo.kamachi@prosperna.com",
+      "color": "#595d66",
+      "initials": "AK",
+      "profilePicture": "https://attachments.clickup.com/profilePictures/113539147_VW3.jpg"
+    },
+    "assignee": null,
+    "group_assignee": null,
+    "reactions": [],
+    "date": "1786180457693",
+    "reply_count": 0
+  }
+]

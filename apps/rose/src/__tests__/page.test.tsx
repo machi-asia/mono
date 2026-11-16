@@ -6,13 +6,14 @@ import { MockAuthProvider } from "@mono/auth/mock";
 window.HTMLElement.prototype.scrollIntoView = vi.fn();
 
 describe("Home", () => {
-  it("renders the heading and Rose AI interface", () => {
-    render(
+  it("renders the Rose AI interface with input and conversation area", () => {
+    const { container } = render(
       <MockAuthProvider state="signed-in">
         <Home />
       </MockAuthProvider>
     );
-    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent("Rose");
-    expect(screen.getByText("Custom AI agent application")).toBeInTheDocument();
+    expect(container.querySelector(".m-rose-chat-container")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/Message Rose/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Send message/i })).toBeInTheDocument();
   });
 });

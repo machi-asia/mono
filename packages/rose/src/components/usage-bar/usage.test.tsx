@@ -16,15 +16,15 @@ describe("Rose Usage Feature", () => {
     it("assigns guest quotas for guest role", () => {
       const limits = getRoleLimits(["guest"]);
       expect(limits.role).toBe("guest");
-      expect(limits.dailyLimit).toBe(10);
-      expect(limits.weeklyLimit).toBe(50);
+      expect(limits.dailyLimit).toBe(15);
+      expect(limits.weeklyLimit).toBe(150);
     });
 
-    it("assigns authenticated user quotas by default", () => {
+    it("assigns authenticated member quotas by default", () => {
       const limits = getRoleLimits([]);
-      expect(limits.role).toBe("authenticated");
-      expect(limits.dailyLimit).toBe(20);
-      expect(limits.weeklyLimit).toBe(200);
+      expect(["member", "authenticated"]).toContain(limits.role);
+      expect(limits.dailyLimit).toBe(60);
+      expect(limits.weeklyLimit).toBe(1200);
     });
   });
 

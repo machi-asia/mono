@@ -1,14 +1,16 @@
-import Link from "next/link";
+"use client";
+
+import { useSyncExternalStore } from "react";
 import { ArrowRight, Layers, Sparkles, Cpu, Cog, AlertTriangle } from "lucide-react";
 import { GAMES_METADATA } from "@mono/game-calculator/data";
 import { RightAdSidebar } from "@mono/game-calculator";
-import { APPS_CONFIG } from "@mono/app-config";
+import { APPS_CONFIG, resolveHref } from "@mono/app-config";
 
 const GAMES = [
   {
     ...GAMES_METADATA.create,
     config: APPS_CONFIG.create,
-    appUrl: "https://create.itemlist.online",
+    appUrl: APPS_CONFIG.create.appUrl,
     icon: <Cog className="h-6 w-6 text-amber-400" />,
     gradient: "from-amber-500/20 via-orange-500/10 to-transparent",
     badge: "Minecraft Mod",
@@ -17,7 +19,7 @@ const GAMES = [
   {
     ...GAMES_METADATA.rimworld,
     config: APPS_CONFIG.rimworld,
-    appUrl: "https://rimworld.itemlist.online",
+    appUrl: APPS_CONFIG.rimworld.appUrl,
     icon: <Cpu className="h-6 w-6 text-cyan-400" />,
     gradient: "from-cyan-500/20 via-blue-500/10 to-transparent",
     badge: "Colony Sim",
@@ -25,7 +27,15 @@ const GAMES = [
   },
 ];
 
+const emptySubscribe = () => () => {};
+
 export default function HomePage() {
+  const clientMounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  );
+
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-row selection:bg-indigo-500 selection:text-white">
       <div className="flex-1 flex flex-col min-w-0">
@@ -66,10 +76,12 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {GAMES.map((game) => {
             const isDev = Boolean(game.config?.underDevelopment);
+            const targetHref = clientMounted ? resolveHref(game.appUrl) : game.appUrl;
+
             return (
               <a
                 key={game.id}
-                href={game.appUrl}
+                href={targetHref}
                 className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 transition-all hover:border-zinc-700 hover:bg-zinc-900/80 hover:shadow-xl hover:shadow-indigo-500/5"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${game.gradient} opacity-50 group-hover:opacity-100 transition-opacity`} />

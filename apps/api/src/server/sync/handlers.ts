@@ -1,15 +1,38 @@
 import type { SyncEventPayload } from "./types";
 import { getSyncStore } from "./redis";
 import { getAuthoritativeRoomSimulation } from "./authoritative";
+import { resolveRequestAuth, type RequestAuthContext } from "../security/guard";
+
+const MAX_BATCH_EVENTS = 100;
+const SERVER_ONLY_TRIGGERS = new Set(["server_player_state", "room_members_update"]);
+
+function resolveEffectiveSenderId(auth: RequestAuthContext, clientUserId?: string): string {
+  // When authenticated with a verified user session, strictly bind event sender to auth.userId
+  if (auth.isAuthenticated && auth.userId) {
+    return auth.userId;
+  }
+  // For anonymous/guest sessions, prefix or sanitize the client identifier so a guest
+  // can never impersonate a registered user UUID.
+  const raw = typeof clientUserId === "string" && clientUserId.trim() ? clientUserId.trim() : auth.userId;
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  if (uuidRegex.test(raw)) {
+    return `guest_${raw.slice(0, 8)}`;
+  }
+  return raw || auth.userId || "guest";
+}
 
 /**
  * Handle incoming SSE connections or POST event dispatch for /api/sync/events
  */
-export async function handleSyncEventsRoute(req: Request): Promise<Response> {
+export async function handleSyncEventsRoute(
+  req: Request,
+  authOverride?: RequestAuthContext
+): Promise<Response> {
   const store = await getSyncStore();
 
   if (req.method === "POST") {
     try {
+      const auth = authOverride || (await resolveRequestAuth(req));
       const body = await req.json();
       if (Array.isArray(body)) {
         if (!body.length) {
@@ -17,6 +40,17 @@ export async function handleSyncEventsRoute(req: Request): Promise<Response> {
             status: 200,
             headers: { "Content-Type": "application/json" },
           });
+        }
+        if (body.length > MAX_BATCH_EVENTS) {
+          return new Response(
+            JSON.stringify({
+              error: `Batch size exceeds maximum limit of ${MAX_BATCH_EVENTS} events`,
+            }),
+            {
+              status: 400,
+              headers: { "Content-Type": "application/json" },
+            }
+          );
         }
         const first = body[0] as SyncEventPayload;
         const roomId = first?.roomId;
@@ -27,15 +61,35 @@ export async function handleSyncEventsRoute(req: Request): Promise<Response> {
           });
         }
 
+        // Security: reject server-only broadcast triggers in batch payloads
+        for (const evt of body as SyncEventPayload[]) {
+          if (evt?.trigger && SERVER_ONLY_TRIGGERS.has(evt.trigger)) {
+            return new Response(
+              JSON.stringify({
+                error: `Forbidden trigger '${evt.trigger}': server-authoritative events cannot be published by clients`,
+              }),
+              {
+                status: 403,
+                headers: { "Content-Type": "application/json" },
+              }
+            );
+          }
+        }
+
         // Deduplicate batch: find the latest player_input for each userId in this batch
         const latestInputMap = new Map<string, SyncEventPayload>();
         const otherEvents: SyncEventPayload[] = [];
 
-        for (const evt of body as SyncEventPayload[]) {
+        for (const rawEvt of body as SyncEventPayload[]) {
+          const boundUserId = resolveEffectiveSenderId(auth, rawEvt.userId);
+          const evt: SyncEventPayload = { ...rawEvt, userId: boundUserId };
+
           if (evt.trigger === "player_input" && evt.payload) {
             const existing = latestInputMap.get(evt.userId);
             const evtTime = (evt.payload as any).timestamp ?? evt.timestamp ?? 0;
-            const existingTime = existing ? ((existing.payload as any).timestamp ?? existing.timestamp ?? 0) : -1;
+            const existingTime = existing
+              ? ((existing.payload as any).timestamp ?? existing.timestamp ?? 0)
+              : -1;
             if (evtTime >= existingTime) {
               latestInputMap.set(evt.userId, evt);
             }
@@ -94,19 +148,39 @@ export async function handleSyncEventsRoute(req: Request): Promise<Response> {
         if (eventsToPublish.length > 0) {
           await store.publishEvents(roomId, eventsToPublish);
         }
-        return new Response(JSON.stringify({ success: true, count: eventsToPublish.length }), {
-          status: 200,
-          headers: { "Content-Type": "application/json" },
-        });
+        return new Response(
+          JSON.stringify({ success: true, count: eventsToPublish.length }),
+          {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+          }
+        );
       }
 
-      const single = body as SyncEventPayload;
-      if (!single.roomId || !single.trigger) {
+      const rawSingle = body as SyncEventPayload;
+      if (!rawSingle.roomId || !rawSingle.trigger) {
         return new Response(JSON.stringify({ error: "Missing roomId or trigger" }), {
           status: 400,
           headers: { "Content-Type": "application/json" },
         });
       }
+
+      if (SERVER_ONLY_TRIGGERS.has(rawSingle.trigger)) {
+        return new Response(
+          JSON.stringify({
+            error: `Forbidden trigger '${rawSingle.trigger}': server-authoritative events cannot be published by clients`,
+          }),
+          {
+            status: 403,
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+      }
+
+      const single: SyncEventPayload = {
+        ...rawSingle,
+        userId: resolveEffectiveSenderId(auth, rawSingle.userId),
+      };
 
       // Check if event is a player input intent
       if (single.trigger === "player_input" && single.payload) {
@@ -158,10 +232,13 @@ export async function handleSyncEventsRoute(req: Request): Promise<Response> {
         };
 
         await store.publishEvent(single.roomId, authoritativeEvent);
-        return new Response(JSON.stringify({ success: true, eventId: authoritativeEvent.eventId }), {
-          status: 200,
-          headers: { "Content-Type": "application/json" },
-        });
+        return new Response(
+          JSON.stringify({ success: true, eventId: authoritativeEvent.eventId }),
+          {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+          }
+        );
       }
 
       await store.publishEvent(single.roomId, single);
@@ -170,10 +247,13 @@ export async function handleSyncEventsRoute(req: Request): Promise<Response> {
         headers: { "Content-Type": "application/json" },
       });
     } catch (err: any) {
-      return new Response(JSON.stringify({ error: err.message || "Invalid request body" }), {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      });
+      return new Response(
+        JSON.stringify({ error: err.message || "Invalid request body" }),
+        {
+          status: 500,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
     }
   }
 
@@ -185,18 +265,25 @@ export async function handleSyncEventsRoute(req: Request): Promise<Response> {
     const userName = url.searchParams.get("userName") || "Guest";
 
     if (!roomId) {
-      return new Response(JSON.stringify({ error: "Missing roomId query parameter" }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      });
+      return new Response(
+        JSON.stringify({ error: "Missing roomId query parameter" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
     }
 
     const encoder = new TextEncoder();
     let cleanup: (() => void) | null = null;
     let keepAliveTimer: ReturnType<typeof setInterval> | null = null;
+    let cleanedUp = false;
 
     const stream = new ReadableStream({
       async start(controller) {
+        (globalThis as any).__activeSseCount =
+          ((globalThis as any).__activeSseCount || 0) + 1;
+
         // Register member in room
         const members = await store.joinRoom(roomId, {
           userId,
@@ -234,10 +321,11 @@ export async function handleSyncEventsRoute(req: Request): Promise<Response> {
         // Subscribe to events
         const unsubscribe = await store.subscribeEvents(roomId, (event) => {
           try {
-            // Forward room members update as dedicated room-members event
             if (event.trigger === "room_members_update" && event.payload) {
               controller.enqueue(
-                encoder.encode(`event: room-members\ndata: ${JSON.stringify(event.payload)}\n\n`)
+                encoder.encode(
+                  `event: room-members\ndata: ${JSON.stringify(event.payload)}\n\n`
+                )
               );
               return;
             }
@@ -251,23 +339,30 @@ export async function handleSyncEventsRoute(req: Request): Promise<Response> {
         });
 
         cleanup = async () => {
+          if (cleanedUp) return;
+          cleanedUp = true;
+          (globalThis as any).__activeSseCount = Math.max(
+            0,
+            ((globalThis as any).__activeSseCount || 1) - 1
+          );
           if (keepAliveTimer) {
             clearInterval(keepAliveTimer);
             keepAliveTimer = null;
           }
           unsubscribe();
           const remainingMembers = await store.leaveRoom(roomId, userId);
-          // Broadcast member departure to room
-          await store.publishEvent(roomId, {
-            eventId: `mem_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
-            roomId,
-            userId,
-            phase: "release",
-            inputType: "custom",
-            trigger: "room_members_update",
-            payload: { members: remainingMembers },
-            timestamp: Date.now(),
-          }).catch(() => {});
+          await store
+            .publishEvent(roomId, {
+              eventId: `mem_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+              roomId,
+              userId,
+              phase: "release",
+              inputType: "custom",
+              trigger: "room_members_update",
+              payload: { members: remainingMembers },
+              timestamp: Date.now(),
+            })
+            .catch(() => {});
         };
       },
       cancel() {
@@ -279,7 +374,7 @@ export async function handleSyncEventsRoute(req: Request): Promise<Response> {
       headers: {
         "Content-Type": "text/event-stream",
         "Cache-Control": "no-cache, no-transform",
-        "Connection": "keep-alive",
+        Connection: "keep-alive",
         "X-Accel-Buffering": "no",
       },
     });

@@ -24,6 +24,7 @@
     "clean": "turbo clean"
   },
   "devDependencies": {
+    "playwright": "^1.65.0",
     "turbo": "^2.10.12"
   }
 }
