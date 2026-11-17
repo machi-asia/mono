@@ -37,11 +37,11 @@ interface MetricUsageSummary {
 }
 
 const CORE_LABEL_OVERRIDES: Record<string, { label: string; unit: string; formatDivisor?: number }> = {
-  requests: { label: "API Gateway Requests", unit: "reqs" },
-  turns: { label: "Rose AI Conversation Turns", unit: "turns" },
-  ai_tokens: { label: "AI Inference Tokens", unit: "tokens", formatDivisor: 1 },
+  turns: { label: "Rose AI Messages", unit: "msgs" },
   storage_bytes: { label: "Cloud Media Storage", unit: "KB", formatDivisor: 1024 },
 };
+
+const HIDDEN_DEFAULT_METRICS = new Set<string>(["requests", "ai_tokens"]);
 
 export function UsageSection({ user, metrics }: UsageSectionProps) {
   const usageCtx = useContext(UsageContext);
@@ -88,7 +88,9 @@ export function UsageSection({ user, metrics }: UsageSectionProps) {
   const metricKeys: UsageMetric[] =
     metrics && metrics.length > 0
       ? metrics
-      : listRegisteredMetrics().map((def) => def.metric);
+      : listRegisteredMetrics()
+          .map((def) => def.metric)
+          .filter((m) => !HIDDEN_DEFAULT_METRICS.has(m));
 
   const summaries: MetricUsageSummary[] = metricKeys.map((metricKey) => {
     const def = getMetricDefinition(metricKey);
@@ -144,7 +146,7 @@ export function UsageSection({ user, metrics }: UsageSectionProps) {
         <div>
           <h2 className="auth-settings-section-title">API Usage & Quotas</h2>
           <p className="auth-settings-section-desc" style={{ marginBottom: 0 }}>
-            Real-time rate limits, AI token budgets, and cloud storage quotas enforced for your account tier.
+            Message limits and account quotas enforced for your user tier.
           </p>
         </div>
         <button

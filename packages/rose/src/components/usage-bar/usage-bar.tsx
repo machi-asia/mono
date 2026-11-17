@@ -60,7 +60,7 @@ export function UsageBar({
   className = "",
   size = "sm",
 }: UsageBarProps) {
-  const { user, isGuest, session } = useAuth();
+  const { user, isGuest, session, role: authRole } = useAuth();
   const userId = user?.id || "guest";
 
   const [usage, setUsage] = useState<RoseUsage>(() => {
@@ -163,14 +163,16 @@ export function UsageBar({
     );
   }
 
-  const isAdmin = usage.role === "admin" || usage.limit === Infinity;
-  const roleLabel = isAdmin ? "Admin" : usage.role === "guest" ? "Guest" : "User";
+  const isAdmin =
+    authRole === "admin" || usage.role === "admin" || usage.limit === Infinity;
+  const effectiveRole = isAdmin ? "admin" : usage.role || (isGuest ? "guest" : "authenticated");
+  const roleLabel = isAdmin ? "Admin" : effectiveRole === "guest" ? "Guest" : "User";
 
   return (
     <div className={`m-rose-usage-bar ${className}`} data-mono="rose-usage-bar">
       <div className="m-rose-usage-meta">
         <div className="m-rose-usage-role-row">
-          <div className="m-rose-usage-role-pill" data-role={usage.role || "authenticated"}>
+          <div className="m-rose-usage-role-pill" data-role={effectiveRole}>
             <span className="m-rose-usage-role-dot" />
             <span>{roleLabel} Tier</span>
           </div>

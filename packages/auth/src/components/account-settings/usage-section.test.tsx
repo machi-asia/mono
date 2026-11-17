@@ -40,9 +40,9 @@ describe("UsageSection", () => {
 
     expect(screen.getByText("API Usage & Quotas")).toBeInTheDocument();
     expect(screen.getByText("MEMBER TIER")).toBeInTheDocument();
-    expect(screen.getByText("API Gateway Requests")).toBeInTheDocument();
-    expect(screen.getByText("Rose AI Conversation Turns")).toBeInTheDocument();
-    expect(screen.getByText("AI Inference Tokens")).toBeInTheDocument();
+    expect(screen.queryByText("API Gateway Requests")).not.toBeInTheDocument();
+    expect(screen.getByText("Rose AI Messages")).toBeInTheDocument();
+    expect(screen.queryByText("AI Inference Tokens")).not.toBeInTheDocument();
     expect(screen.getByText("Cloud Media Storage")).toBeInTheDocument();
 
     const refreshBtn = screen.getByRole("button", { name: "Refresh usage" });

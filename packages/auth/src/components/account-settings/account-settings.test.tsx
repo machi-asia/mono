@@ -130,7 +130,7 @@ describe("AccountSettings", () => {
 
     fireEvent.click(usageTab);
     expect(screen.getByText("API Usage & Quotas")).toBeInTheDocument();
-    expect(screen.getByText("API Gateway Requests")).toBeInTheDocument();
+    expect(screen.getByText("Rose AI Messages")).toBeInTheDocument();
   });
 
   it("shows all security sub-navigation items when switching to Security", () => {
