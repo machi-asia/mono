@@ -171,7 +171,7 @@ export const webSearchTool: Tool = {
 
       if (gatewayKey && gatewayKey !== "placeholder_key" && !gatewayKey.startsWith("your-")) {
         try {
-          const model = process.env.AI_GATEWAY_MODEL || "openai/gpt-6-astra";
+          const model = process.env.AI_GATEWAY_MODEL || "google/gemini-2.5-flash-lite";
           const url = process.env.AI_GATEWAY_URL || "https://ai-gateway.vercel.sh/v1/chat/completions";
           const res = await fetch(url, {
             method: "POST",

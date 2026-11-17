@@ -48,7 +48,7 @@ export type GeminiToolDeclaration = GatewayToolDeclaration;
 export type GeminiStreamChunk = GatewayStreamChunk;
 
 export const DEFAULT_GATEWAY_URL = "https://ai-gateway.vercel.sh/v1/chat/completions";
-export const DEFAULT_GATEWAY_MODEL = "openai/gpt-6-astra";
+export const DEFAULT_GATEWAY_MODEL = "google/gemini-2.5-flash-lite";
 
 export function getAiGatewayApiKey(): string | undefined {
   return (
