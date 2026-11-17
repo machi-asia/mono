@@ -77,6 +77,16 @@ body {
   flex-direction: column;
 }
 
+@media (width <= 768px) {
+  .m-rose-chat-container--floating {
+    padding: 0 0 68px;
+  }
+
+  .m-rose-chat-container--floating .m-rose-sidebar {
+    background: var(--color-surface, #111116);
+  }
+}
+
 .m-rose-chat-container--floating .m-rose-sidebar-header {
   background: transparent;
   border-bottom: 1px solid var(--color-border, #26262a);
@@ -225,4 +235,22 @@ body {
 
 .m-rose-chat-container--floating .m-rose-voice-btn {
   border-radius: var(--radius-pill, 999px);
+}
+
+@media (width <= 768px) {
+  .m-rose-chat-container--floating .m-rose-messages-feed {
+    padding: 0;
+  }
+
+  .m-rose-chat-container--floating .m-rose-msg-row--model .m-rose-msg-bubble {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    color: var(--color-text, #fff);
+    backdrop-filter: none;
+  }
 }

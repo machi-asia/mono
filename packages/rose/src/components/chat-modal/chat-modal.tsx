@@ -1169,8 +1169,24 @@ export function RoseChat({
                   </div>
 
                   {isUser && (
-                    <div className="m-rose-user-avatar">
-                      <UserIcon size={22} />
+                    <div className="m-rose-user-avatar" style={{ overflow: "hidden" }}>
+                      {user?.user_metadata?.avatar_url ||
+                      user?.user_metadata?.picture ||
+                      user?.user_metadata?.avatar ||
+                      user?.user_metadata?.photo_url ? (
+                        <img
+                          src={
+                            user.user_metadata.avatar_url ||
+                            user.user_metadata.picture ||
+                            user.user_metadata.avatar ||
+                            user.user_metadata.photo_url
+                          }
+                          alt={user?.user_metadata?.name || user?.email || "User"}
+                          className="m-rose-msg-avatar-img"
+                        />
+                      ) : (
+                        <UserIcon size={22} />
+                      )}
                     </div>
                   )}
                 </div>

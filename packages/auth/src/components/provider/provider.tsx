@@ -91,13 +91,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       .then(({ data: { session } }: { data: { session: Session | null } }) => {
         if (!mounted) return;
         const user = session?.user ?? null;
+        const initialRole = resolveUserRole(user);
         setState({
           user,
           session,
           isLoading: false,
           isGuest: user?.is_anonymous ?? false,
-          role: resolveUserRole(user),
+          role: initialRole,
         });
+        if (user && !user.is_anonymous && initialRole !== "admin") {
+          void supabase
+            .from("user_roles")
+            .select("role")
+            .eq("user_id", user.id)
+            .maybeSingle()
+            .then(
+              ({ data }: { data: { role?: string } | null }) => {
+                if (mounted && data?.role && isValidUserRole(data.role)) {
+                  setState((prev) =>
+                    prev.user?.id === user.id ? { ...prev, role: data.role as UserRole } : prev
+                  );
+                }
+              },
+              () => {}
+            );
+        }
       })
       .catch(() => {
         if (!mounted) return;
@@ -116,13 +134,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } = supabase.auth.onAuthStateChange((_event: AuthChangeEvent, session: Session | null) => {
       if (!mounted) return;
       const user = session?.user ?? null;
+      const initialRole = resolveUserRole(user);
       setState({
         user,
         session,
         isLoading: false,
         isGuest: user?.is_anonymous ?? false,
-        role: resolveUserRole(user),
+        role: initialRole,
       });
+      if (user && !user.is_anonymous && initialRole !== "admin") {
+        void supabase
+          .from("user_roles")
+          .select("role")
+          .eq("user_id", user.id)
+          .maybeSingle()
+          .then(
+            ({ data }: { data: { role?: string } | null }) => {
+              if (mounted && data?.role && isValidUserRole(data.role)) {
+                setState((prev) =>
+                  prev.user?.id === user.id ? { ...prev, role: data.role as UserRole } : prev
+                );
+              }
+            },
+            () => {}
+          );
+      }
 
       if (session) {
         const account = extractAccountInfo(session);
