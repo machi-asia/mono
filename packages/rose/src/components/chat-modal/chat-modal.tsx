@@ -201,7 +201,7 @@ export function RoseChat({
   showUsage = true,
   showHeader = true,
   initialMessage = DEFAULT_WELCOME_TEXT,
-  defaultSidebarOpen = true,
+  defaultSidebarOpen = false,
   className = "",
   onClose,
 }: RoseChatProps) {
@@ -226,6 +226,24 @@ export function RoseChat({
   const [currentUsage, setCurrentUsage] = useState<RoseUsage | undefined>(undefined);
   const [showSlashMenu, setShowSlashMenu] = useState(false);
   const [showSidebar, setShowSidebar] = useState(defaultSidebarOpen);
+  const sidebarRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!showSidebar) return;
+    const handleOutsideClick = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (!target) return;
+      if (sidebarRef.current?.contains(target)) return;
+      if (target.closest(".m-rose-sidebar-toggle")) return;
+      setShowSidebar(false);
+    };
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("touchstart", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("touchstart", handleOutsideClick);
+    };
+  }, [showSidebar]);
   const [showSettings, setShowSettings] = useState(false);
   const [activeSlashIndex, setActiveSlashIndex] = useState(0);
 
@@ -943,7 +961,7 @@ export function RoseChat({
       <div className="m-rose-chat-body">
         {/* Conversations Side Panel */}
         {showSidebar && (
-          <aside className="m-rose-sidebar" aria-label="Conversation history">
+          <aside ref={sidebarRef} className="m-rose-sidebar" aria-label="Conversation history">
             <div className="m-rose-sidebar-header">
               <div className="m-rose-sidebar-title-wrap">
                 <MessageSquare size={14} className="m-rose-sidebar-icon" />

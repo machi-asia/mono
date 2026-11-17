@@ -11,7 +11,9 @@ body {
 
 .m-rose-page-wrapper {
   height: 100vh;
+  height: 100dvh;
   max-height: 100vh;
+  max-height: 100dvh;
   width: 100vw;
   max-width: 100vw;
   display: flex;
@@ -238,6 +240,10 @@ body {
 }
 
 @media (width <= 768px) {
+  .m-rose-chat-container--floating {
+    padding: 0 0 calc(76px + env(safe-area-inset-bottom, 0px));
+  }
+
   .m-rose-chat-container--floating .m-rose-messages-feed {
     padding: 0;
   }
