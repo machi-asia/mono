@@ -40,7 +40,21 @@ export default function Avatar({
     return (
         <div
             className={`avatar-root avatar--${size} ${isGlitching ? "glitch-active" : ""} ${className}`.trim()}
-            style={{ width: dims.width, height: dims.height }}
+            style={{
+                width: dims.width,
+                height: dims.height,
+                minWidth: dims.width,
+                minHeight: dims.height,
+                overflow: "hidden",
+                position: "relative",
+                borderRadius: "6px",
+                flexShrink: 0,
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "var(--shade-charcoal, #111116)",
+                border: "1px solid var(--hairline-strong, rgb(255 255 255 / 14%))",
+            }}
         >
             {src && !hasError ? (
                 <img
@@ -48,6 +62,12 @@ export default function Avatar({
                     src={src}
                     alt={alt}
                     onError={() => setHasError(true)}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        display: "block",
+                    }}
                 />
             ) : (
                 <div className="avatar-fallback">{fallbackText}</div>

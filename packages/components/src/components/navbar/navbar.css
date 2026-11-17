@@ -247,7 +247,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--color-primary, #d4af37);
+  background: var(--color-primary, #fff);
   border-radius: 2px 2px 0 0;
   opacity: 0;
   transform: scaleX(0.4);
@@ -271,7 +271,7 @@
 }
 
 .m-navbar--tabs .m-navbar-link--active {
-  color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
   background: transparent;
 }
 

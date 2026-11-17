@@ -19,6 +19,7 @@ export type {
   SupportTicketRecord,
   IssueReportRecord,
   KeepaliveHeartbeatRecord,
+  VisitorSessionRecord,
 } from "./types";
 export {
   listUserMedia,
@@ -54,6 +55,10 @@ export type {
 export {
   createSupportTicket,
   listUserSupportTickets,
+  listAllSupportTickets,
+  updateSupportTicketStatus,
+  seedFallbackSupportTicket,
+  resetFallbackSupportTickets,
 } from "./support";
 export type {
   SupportTicketType,
@@ -63,10 +68,13 @@ export type {
 export {
   getUserRole,
   updateUserRole,
+  listAllUserRoles,
+  resetFallbackUserRoles,
   isValidUserRole,
   resolveSafeRoleFromUser,
   DEFAULT_USER_ROLE,
 } from "./roles";
+export type { AdminUserDirectoryEntry } from "./roles";
 export {
   ROLE_QUOTAS,
   ROLE_IMAGE_MAX_SIZE_KB,
@@ -81,12 +89,15 @@ export {
   recordAndCheckUsage,
   getUserUsageStatus,
   getUserUsageSummary,
+  listAllUserUsages,
+  adminManageUserUsage,
   getRoseUsage,
   checkAndIncrementRoseUsage,
   getRoleLimits,
   currentDay,
   currentMonth,
   currentWeek,
+  toDeterministicUuid,
   roseDailyLimitGuest,
   roseWeeklyLimitGuest,
   roseDailyLimitUser,
@@ -99,3 +110,14 @@ export type {
   CheckUsageResult,
   RoseUsage,
 } from "./usages";
+export {
+  parseUserAgent,
+  recordVisitorSession,
+  listVisitorSessions,
+  resetFallbackVisitorSessions,
+} from "./visitors";
+export type {
+  ParsedUserAgentInfo,
+  RecordVisitorSessionInput,
+  VisitorSessionWithStatus,
+} from "./visitors";

@@ -73,7 +73,7 @@ export const featuredWorks: FeaturedWork[] = [
 |---|---|---|
 | **Backend API** | Flask / Python | Price Inference Engine |
 | **Frontend UI** | JavaScript / HTML5 | Interactive Regional Map |`,
-        videoUrl: "/videos/TerraPrice.mp4",
+        videoUrl: "/videos/WebDev.mp4",
         tags: ["Python", "JavaScript", "Flask", "Machine Learning"],
         link: "https://github.com/kamachi-dev/TerraPrice",
     },

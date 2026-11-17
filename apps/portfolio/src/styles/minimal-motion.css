@@ -1,0 +1,215 @@
+/* Minimalist Motion-First Architectural System (8-Shade Black + Sleek Borderless Surfaces) */
+
+/* ===== Scroll-Linked Progress Rail ===== */
+.scroll-progress-rail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    z-index: 1100;
+    pointer-events: none;
+    background: transparent;
+}
+
+.scroll-progress-fill {
+    width: 100%;
+    height: 100%;
+    background: var(--shade-inversion, #f4f4f0);
+    transform-origin: 0% 50%;
+    will-change: transform;
+}
+
+/* ===== Real-Time Background Inversion Primitives ===== */
+.invert-blend-text {
+    mix-blend-mode: difference;
+    color: var(--shade-inversion, #f4f4f0);
+}
+
+.invert-blend-shape {
+    mix-blend-mode: difference;
+    background-color: var(--shade-inversion, #f4f4f0);
+    pointer-events: none;
+}
+
+.invert-backdrop-lens {
+    backdrop-filter: invert(1);
+    background-color: rgb(255 255 255 / 2%);
+    pointer-events: none;
+}
+
+/* ===== 8-Shade Black Borderless Chapter Surfaces ===== */
+.chapter-shade-void,
+.chapter-shade-obsidian,
+.chapter-shade-abyss,
+.chapter-shade-carbon,
+.chapter-shade-charcoal,
+.chapter-shade-graphite,
+.chapter-shade-inverted {
+    position: relative;
+    border-top: none;
+    transition: background-color 0.35s ease;
+}
+
+.chapter-shade-void {
+    --background: var(--shade-void, #020203);
+    --card-bg: var(--shade-carbon, #0c0c10);
+
+    background-color: var(--shade-void, #020203);
+}
+
+.chapter-shade-obsidian {
+    --background: var(--shade-obsidian, #050507);
+    --card-bg: var(--shade-charcoal, #111116);
+
+    background-color: var(--shade-obsidian, #050507);
+}
+
+.chapter-shade-abyss {
+    --background: var(--shade-abyss, #08080b);
+    --card-bg: var(--shade-graphite, #17171d);
+
+    background-color: var(--shade-abyss, #08080b);
+}
+
+.chapter-shade-carbon {
+    --background: var(--shade-carbon, #0c0c10);
+    --card-bg: var(--shade-graphite, #17171d);
+
+    background-color: var(--shade-carbon, #0c0c10);
+}
+
+.chapter-shade-charcoal {
+    --background: var(--shade-charcoal, #111116);
+    --card-bg: var(--shade-slate-dark, #1f1f27);
+
+    background-color: var(--shade-charcoal, #111116);
+}
+
+.chapter-shade-graphite {
+    --background: var(--shade-graphite, #17171d);
+    --card-bg: var(--shade-slate-dark, #1f1f27);
+
+    background-color: var(--shade-graphite, #17171d);
+}
+
+.chapter-shade-inverted {
+    --background: var(--shade-inversion, #f4f4f0);
+    --foreground: var(--shade-void, #020203);
+    --foreground-muted: var(--shade-gunmetal, #2a2a35);
+    --card-bg: #fff;
+
+    background-color: var(--shade-inversion, #f4f4f0);
+    color: var(--shade-void, #020203);
+}
+
+html.light-mode .chapter-shade-void,
+html.light-mode .chapter-shade-obsidian,
+html.light-mode .chapter-shade-abyss,
+html.light-mode .chapter-shade-carbon,
+html.light-mode .chapter-shade-charcoal,
+html.light-mode .chapter-shade-graphite {
+    --background: #fff;
+    --card-bg: #fbfbfb;
+
+    background-color: var(--background);
+}
+
+/* ===== Global Sleek Borderless Surface Overrides ===== */
+.page-container {
+    position: relative;
+    width: 100%;
+    overflow-x: clip;
+}
+
+.swiss-grid-shell {
+    position: relative;
+    width: 100%;
+}
+
+.card-comp,
+.certificate-card,
+.github-repo-card,
+.review-card,
+.faq-item,
+.skills-category-card,
+.experience-company,
+.education-card,
+.education-item,
+.btn-secondary,
+.badge,
+.tabs-list,
+.visitors-summary-card {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.separator,
+.section-bg-wrapper {
+    display: none;
+}
+
+/* ===== Avatar Constraints ===== */
+.avatar-root {
+    overflow: hidden;
+    position: relative;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--shade-charcoal, #111116);
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.avatar-fallback {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--shade-inversion, #f4f4f0);
+}
+
+/* ===== Portfolio Navbar Monochrome Multi-Shade Tuning ===== */
+.portfolio-navbar.m-navbar {
+    max-width: min(1360px, 100%);
+    z-index: 1050;
+}
+
+.portfolio-navbar.m-navbar .m-navbar-brand,
+.portfolio-navbar.m-navbar .m-navbar-links,
+.portfolio-navbar.m-navbar .m-navbar-actions {
+    background: rgb(12 12 16 / 84%);
+    border-color: rgb(255 255 255 / 8%);
+    backdrop-filter: blur(16px);
+}
+
+.portfolio-navbar.m-navbar .m-navbar-indicator {
+    background: var(--shade-graphite, #17171d);
+}
+
+@media (width >= 861px) {
+    .portfolio-navbar.m-navbar .m-navbar-link {
+        padding: 0 0.5625rem;
+        font-size: 0.8125rem;
+        color: var(--muted, #8e8e96);
+    }
+
+    .portfolio-navbar.m-navbar .m-navbar-link:hover {
+        color: var(--shade-inversion, #f4f4f0);
+        background: rgb(255 255 255 / 6%);
+    }
+}
+
+@media (width >= 1200px) {
+    .portfolio-navbar.m-navbar .m-navbar-link {
+        padding: 0 0.725rem;
+        font-size: 0.8438rem;
+    }
+}

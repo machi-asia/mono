@@ -57,12 +57,44 @@
       "root": "apps/itemlist-rimworld",
       "framework": "nextjs"
     },
-    "itemlist-admin": {
-      "root": "apps/itemlist-admin",
-      "framework": "nextjs"
+    "admin": {
+      "root": "apps/admin",
+      "framework": "nextjs",
+      "bindings": [
+        {
+          "type": "service",
+          "service": "api",
+          "format": "url",
+          "env": "API_SERVICE_URL"
+        }
+      ]
     }
   },
   "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "admin.machi.asia"
+        }
+      ],
+      "destination": {
+        "service": "admin"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "admin.machi-asia.com"
+        }
+      ],
+      "destination": {
+        "service": "admin"
+      }
+    },
     {
       "source": "/(.*)",
       "has": [
@@ -168,7 +200,7 @@
         }
       ],
       "destination": {
-        "service": "itemlist-admin"
+        "service": "admin"
       }
     },
     {
@@ -222,7 +254,7 @@
     {
       "source": "/admin(/.*)?",
       "destination": {
-        "service": "itemlist-admin"
+        "service": "admin"
       }
     },
     {

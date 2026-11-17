@@ -49,6 +49,7 @@ describe("@mono/app-config", () => {
     expect(resolveApiBaseUrl({ forceLocal: false })).toBe("https://api.machi.asia");
     expect(resolveApiBaseUrl({ forceLocal: true })).toBe("http://localhost:3005");
     expect(isAllowedOrigin("https://rose.machi.asia")).toBe(true);
+    expect(isAllowedOrigin("https://admin.machi.asia")).toBe(true);
     expect(isAllowedOrigin("https://create.itemlist.online")).toBe(true);
     expect(isAllowedOrigin("http://localhost:3004")).toBe(true);
     expect(isAllowedOrigin("https://evil.example.com")).toBe(false);
@@ -98,8 +99,14 @@ describe("@mono/app-config", () => {
     expect(resolveHref("https://rimworld.itemlist.online", { forceLocal: true })).toBe(
       "http://localhost:3012"
     );
+    expect(resolveHref("https://admin.machi.asia/rose", { forceLocal: true })).toBe(
+      "http://localhost:3013/rose"
+    );
     expect(resolveHref("https://admin.itemlist.online/login", { forceLocal: true })).toBe(
       "http://localhost:3013/login"
+    );
+    expect(resolveAppHref("admin", "/itemlist", { forceLocal: false })).toBe(
+      "https://admin.machi.asia/itemlist"
     );
 
     // Unrelated external links remain untouched

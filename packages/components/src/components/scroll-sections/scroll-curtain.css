@@ -27,7 +27,7 @@
   z-index: 1;
   display: grid;
   place-items: center;
-  background: var(--color-surface, #16140f);
+  background: var(--color-surface, #111116);
   box-shadow: 0 16px 36px -8px rgb(0 0 0 / 60%);
   will-change: transform;
 }

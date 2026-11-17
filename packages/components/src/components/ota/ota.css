@@ -10,23 +10,23 @@
   padding: 0.625rem 1rem;
   min-width: 280px;
   max-width: 90vw;
-  background-color: var(--color-surface-glass, rgb(22 20 15 / 85%));
+  background-color: var(--color-surface-glass, rgb(10 10 12 / 85%));
   backdrop-filter: blur(12px);
-  border: 1px solid var(--color-border, #2a271f);
+  border: 1px solid var(--color-border, #1f1f27);
   border-radius: var(--radius-pill, 999px);
-  box-shadow: var(--shadow-2, 0 8px 24px rgb(0 0 0 / 40%));
-  color: var(--color-text, #f6f1e6);
+  box-shadow: var(--shadow-2, 0 12px 32px rgb(0 0 0 / 60%));
+  color: var(--color-text, #fff);
   font-family: inherit;
   animation: m-ota-slide-down 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   pointer-events: auto;
 }
 
 .m-ota-notifier--complete {
-  border-color: var(--color-success, #22c55e);
+  border-color: var(--color-success, #24d480);
 }
 
 .m-ota-notifier--error {
-  border-color: var(--color-error, #ef4444);
+  border-color: var(--color-error, #f43f5e);
 }
 
 .m-ota-icon-wrap {
@@ -43,7 +43,7 @@
 .m-ota-icon {
   width: 1rem;
   height: 1rem;
-  color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
 }
 
 .m-ota-icon--spin {
@@ -51,11 +51,11 @@
 }
 
 .m-ota-icon--success {
-  color: var(--color-success, #22c55e);
+  color: var(--color-success, #24d480);
 }
 
 .m-ota-icon--error {
-  color: var(--color-error, #ef4444);
+  color: var(--color-error, #f43f5e);
 }
 
 .m-ota-body {
@@ -80,12 +80,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--color-text, #f6f1e6);
+  color: var(--color-text, #fff);
 }
 
 .m-ota-percent {
   font-variant-numeric: tabular-nums;
-  color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
 }
 
 .m-ota-track {
@@ -98,17 +98,17 @@
 
 .m-ota-bar {
   height: 100%;
-  background-color: var(--color-primary, #d4af37);
+  background-color: var(--color-primary, #fff);
   border-radius: var(--radius-pill, 999px);
   transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .m-ota-bar--complete {
-  background-color: var(--color-success, #22c55e);
+  background-color: var(--color-success, #24d480);
 }
 
 .m-ota-bar--error {
-  background-color: var(--color-error, #ef4444);
+  background-color: var(--color-error, #f43f5e);
 }
 
 @keyframes m-ota-slide-down {

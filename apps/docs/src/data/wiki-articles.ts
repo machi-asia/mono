@@ -879,6 +879,32 @@ All client applications in the Machi Asia ecosystem (\`calculator\`, \`docs\`, \
 - Hot OTA updates deployed instantly via OtaKit without app store review delays.
 - Clean visual progress indicators for users during live updates.`,
   },
+  {
+    slug: "adr-018-unified-admin-portal-and-redis-rose-chats",
+    title: "ADR-018: Unified Multi-Site Admin Portal, Visitor Origin Telemetry & Redis Rose Chats",
+    description: "Consolidation of per-site administration into admin.machi.asia, visitor origin tracking in Supabase, and Redis-backed Rose AI conversation persistence.",
+    category: "Architecture Decisions (ADR)",
+    updatedAt: "2026-11-17",
+    author: "Machi Asia Architecture Team",
+    readTime: "4 min read",
+    tags: ["adr", "admin", "redis", "rose", "visitor-tracking", "roles", "quotas"],
+    content: `# ADR-018: Unified Multi-Site Admin Portal, Visitor Origin Telemetry & Redis Rose Chats
+
+## Status
+**Accepted** (2026-11-17)
+
+## Context
+Machi Asia operates multiple applications across \`*.machi.asia\` and \`*.itemlist.online\`, plus an earlier standalone ItemList moderation portal (\`itemlist-admin\`). Administrators needed a single authenticated portal at \`admin.machi.asia\` to monitor live users and guests, inspect traffic origins, manage user roles (\`guest | member | pro | admin\`), reset or override usage quotas, inspect Rose AI chats across devices, and drill into per-site dashboards (including \`/itemlist\` and \`/rose\`).
+
+## Decision
+1. **Unified Admin Portal (\`apps/admin\` at \`admin.machi.asia\`)**: Replaces standalone \`apps/itemlist-admin\` and mounts ItemList moderation at \`/itemlist\`, Rose AI chat inspection at \`/rose\`, and dynamic per-site monitoring at \`/[siteId]\`.
+2. **Visitor Origin & Geo Telemetry (\`public.visitor_sessions\`)**: \`apps/api\` extracts geolocation (\`@vercel/functions\`) and parsed device/browser/OS (\`ua-parser-js\`) alongside app/pathname/referrer context and upserts live sessions into \`public.visitor_sessions\`.
+3. **Redis Rose AI Chat Persistence**: \`apps/api/src/server/rose/chat-store.ts\` persists all Rose AI conversations and turns in Redis (\`REDIS_URL\`) with an in-memory fallback, enabling fast cross-device sync via \`/rose/conversations\` and full admin inspection via \`/admin/rose-chats\`.
+
+## Consequences
+- Single authenticated admin workspace covering all Machi Asia and ItemList sites.
+- Cross-device Rose AI chat continuity and real-time visibility into guest and registered traffic.`,
+  },
 ];
 
 // Helper functions

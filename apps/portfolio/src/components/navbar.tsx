@@ -45,12 +45,13 @@ export function Navbar({ onContactOpen }: NavbarProps) {
   const [addAccountOpen, setAddAccountOpen] = useState(false);
 
   const links = [
-    { label: "About", href: "#about" },
-    { label: "Certificates", href: "#certificates" },
-    { label: "Skills", href: "#skills" },
     { label: "Works", href: "#featured" },
-    { label: "Projects", href: "#projects" },
+    { label: "About", href: "#about" },
+    { label: "3D Lab", href: "#3d-showcase" },
     { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
+    { label: "Skills", href: "#skills" },
+    { label: "Certificates", href: "#certificates" },
     { label: "Reviews", href: "#visitors" },
     { label: "FAQ", href: "#faq" },
   ];

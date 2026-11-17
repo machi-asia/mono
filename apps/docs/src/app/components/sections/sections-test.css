@@ -9,19 +9,19 @@
   margin: 0 0 12px;
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--color-text, #f6f1e6);
+  color: var(--color-text, #fff);
 }
 
 .pg-hero p {
   margin: 0 0 36px;
-  color: var(--color-text-muted, #a8a29e);
+  color: var(--color-text-muted, #8e8e96);
   font-size: 1.1rem;
   line-height: 1.7;
 }
 
 .pg-section {
   background: transparent;
-  border: 1px solid var(--color-border, #2a271f);
+  border: 1px solid var(--color-border, #1f1f27);
   border-radius: var(--radius-lg, 20px);
   padding: 28px;
   margin-bottom: 40px;
@@ -32,11 +32,11 @@
   margin: 0 0 6px;
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--color-text, #f6f1e6);
+  color: var(--color-text, #fff);
 }
 
 .pg-section > .pg-hint {
   margin: 0 0 24px;
   font-size: 0.95rem;
-  color: var(--color-text-muted, #a8a29e);
+  color: var(--color-text-muted, #8e8e96);
 }

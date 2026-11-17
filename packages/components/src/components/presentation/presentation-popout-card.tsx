@@ -8,6 +8,8 @@ import "./presentation.css";
 
 export function PresentationPopOutCard({
   imageSrc,
+  videoSrc,
+  media,
   imageAlt = "Pop-out presentation graphic",
   badge,
   title,
@@ -16,13 +18,15 @@ export function PresentationPopOutCard({
   maxTiltAngle = 14,
   cardBackground = "linear-gradient(155deg, #18181b 0%, #09090b 100%)",
   cardTextColor = "#f4f4f5",
-  topHalfHeight = 200,
+  topHalfHeight = 190,
   imageHeight,
-  imageWidth = "165%",
-  buriedPercent = 5,
+  imageWidth = "116%",
+  buriedPercent = 8,
   children,
   className,
   style,
+  onMouseMove,
+  onMouseLeave,
   ...rest
 }: PresentationPopOutCardProps) {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -32,17 +36,20 @@ export function PresentationPopOutCard({
   const rotateY = useSpring(0, { stiffness: 180, damping: 22 });
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!faceMouse) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const normX = (e.clientX - rect.left) / Math.max(rect.width, 1) - 0.5;
-    const normY = (e.clientY - rect.top) / Math.max(rect.height, 1) - 0.5;
-    rotateY.set(normX * maxTiltAngle * 2);
-    rotateX.set(-normY * maxTiltAngle * 1.5);
+    if (faceMouse) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const normX = (e.clientX - rect.left) / Math.max(rect.width, 1) - 0.5;
+      const normY = (e.clientY - rect.top) / Math.max(rect.height, 1) - 0.5;
+      rotateY.set(normX * maxTiltAngle * 2);
+      rotateX.set(-normY * maxTiltAngle * 1.5);
+    }
+    onMouseMove?.(e);
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (e: MouseEvent<HTMLDivElement>) => {
     rotateX.set(0);
     rotateY.set(0);
+    onMouseLeave?.(e);
   };
 
   return (
@@ -51,9 +58,9 @@ export function PresentationPopOutCard({
       data-mono="presentation-popout-card"
       className={cx("mono-pres-popout-stage", className)}
       style={style}
+      {...rest}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      {...rest}
     >
       <div className="mono-pres-popout-wrapper">
         <div
@@ -91,19 +98,41 @@ export function PresentationPopOutCard({
                   rotateY: faceMouse ? rotateY : 0,
                 }}
               >
-                <img
-                  src={imageSrc}
-                  alt={imageAlt}
-                  className="mono-pres-popout-img"
-                  style={{
-                    height:
-                      imageHeight != null
-                        ? typeof imageHeight === "number"
-                          ? `${imageHeight}px`
-                          : imageHeight
-                        : undefined,
-                  }}
-                />
+                {media ? (
+                  media
+                ) : videoSrc ? (
+                  <video
+                    src={videoSrc}
+                    className="mono-pres-popout-img mono-pres-popout-video"
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    style={{
+                      height:
+                        imageHeight != null
+                          ? typeof imageHeight === "number"
+                            ? `${imageHeight}px`
+                            : imageHeight
+                          : undefined,
+                    }}
+                  />
+                ) : imageSrc ? (
+                  <img
+                    src={imageSrc}
+                    alt={imageAlt}
+                    className="mono-pres-popout-img"
+                    style={{
+                      objectPosition: "center bottom",
+                      height:
+                        imageHeight != null
+                          ? typeof imageHeight === "number"
+                            ? `${imageHeight}px`
+                            : imageHeight
+                          : undefined,
+                    }}
+                  />
+                ) : null}
               </motion.div>
             </div>
           </div>

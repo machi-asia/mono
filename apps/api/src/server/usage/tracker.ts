@@ -1,9 +1,12 @@
 import { NextResponse } from "next/server";
+import { geolocation, ipAddress } from "@vercel/functions";
+import { DOMAIN_HOST_TO_APP_ID } from "@mono/app-config";
 import {
   ROLE_QUOTAS,
   getMetricDefinition,
   listRegisteredMetrics,
   recordAndCheckUsage,
+  recordVisitorSession,
   roseDailyLimitGuest,
   roseDailyLimitUser,
   roseWeeklyLimitGuest,
@@ -206,6 +209,127 @@ export async function buildUserUsageSnapshot(
   };
 }
 
+function resolveOriginAppFromHeaders(
+  explicitApp: string | null | undefined,
+  hostname: string | null | undefined,
+  originOrReferer: string | null | undefined
+): string {
+  if (explicitApp && explicitApp.trim() && explicitApp !== "global") {
+    return explicitApp.trim();
+  }
+  if (hostname) {
+    const mapped = DOMAIN_HOST_TO_APP_ID[hostname.toLowerCase()];
+    if (mapped) return mapped;
+  }
+  if (originOrReferer) {
+    try {
+      const parsed = new URL(originOrReferer);
+      const mapped = DOMAIN_HOST_TO_APP_ID[parsed.hostname.toLowerCase()];
+      if (mapped) return mapped;
+      if (parsed.port === "3000") return "machi-asia";
+      if (parsed.port === "3001") return "calculator";
+      if (parsed.port === "3002") return "docs";
+      if (parsed.port === "3003") return "hells-forge";
+      if (parsed.port === "3004") return "rose";
+      if (parsed.port === "3006") return "portfolio";
+      if (parsed.port === "3010") return "home";
+      if (parsed.port === "3011") return "create";
+      if (parsed.port === "3012") return "rimworld";
+      if (parsed.port === "3013") return "admin";
+    } catch {
+      // ignore invalid URL
+    }
+  }
+  return "machi-asia";
+}
+
+export async function recordVisitorPresenceFromRequest(
+  req: Request,
+  auth: RequestAuthContext,
+  extra?: {
+    app?: string | null;
+    hostname?: string | null;
+    pathname?: string | null;
+    referrer?: string | null;
+    utmSource?: string | null;
+  }
+): Promise<void> {
+  try {
+    const geo = geolocation(req);
+    const detectedIp =
+      ipAddress(req) ||
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip")?.trim() ||
+      null;
+
+    const originHeader = req.headers.get("origin");
+    const refererHeader = req.headers.get("referer");
+    let parsedHostname = extra?.hostname?.trim() || null;
+
+    if (!parsedHostname && originHeader) {
+      try {
+        parsedHostname = new URL(originHeader).hostname;
+      } catch {
+        // ignore
+      }
+    }
+    if (!parsedHostname && refererHeader) {
+      try {
+        parsedHostname = new URL(refererHeader).hostname;
+      } catch {
+        // ignore
+      }
+    }
+
+    const app = resolveOriginAppFromHeaders(
+      extra?.app,
+      parsedHostname,
+      originHeader || refererHeader
+    );
+
+    const country = geo.country || req.headers.get("x-vercel-ip-country") || null;
+    const region =
+      geo.countryRegion || geo.region || req.headers.get("x-vercel-ip-country-region") || null;
+    const rawCity = geo.city || req.headers.get("x-vercel-ip-city") || null;
+    let city = rawCity;
+    if (rawCity) {
+      try {
+        city = decodeURIComponent(rawCity);
+      } catch {
+        city = rawCity;
+      }
+    }
+
+    const meta = (auth.user?.user_metadata as Record<string, unknown> | undefined) ?? {};
+    const displayName =
+      (typeof meta.full_name === "string" && meta.full_name) ||
+      (typeof meta.name === "string" && meta.name) ||
+      (typeof meta.user_name === "string" && meta.user_name) ||
+      (auth.isAnonymous ? "Guest" : (auth.user?.email as string | undefined)?.split("@")[0] || null);
+
+    await recordVisitorSession({
+      userId: auth.user?.id ?? (auth.isAnonymous ? null : auth.userId),
+      visitorId: auth.userId,
+      isGuest: auth.isAnonymous,
+      email: (auth.user?.email as string | undefined) ?? null,
+      displayName,
+      role: auth.role,
+      app,
+      hostname: parsedHostname,
+      pathname: extra?.pathname ?? null,
+      referrer: extra?.referrer || refererHeader || originHeader || null,
+      utmSource: extra?.utmSource ?? null,
+      country,
+      region,
+      city,
+      ipAddress: detectedIp,
+      userAgent: req.headers.get("user-agent") || null,
+    });
+  } catch {
+    // Non-blocking telemetry
+  }
+}
+
 export async function handleUsageMetricsRoute(req: Request): Promise<Response> {
   try {
     const url = new URL(req.url);
@@ -220,6 +344,14 @@ export async function handleUsageMetricsRoute(req: Request): Promise<Response> {
             .map((m) => m.trim())
             .filter(Boolean)
         : undefined;
+
+      await recordVisitorPresenceFromRequest(req, auth, {
+        app: url.searchParams.get("app"),
+        hostname: url.searchParams.get("hostname"),
+        pathname: url.searchParams.get("pathname"),
+        referrer: url.searchParams.get("referrer"),
+        utmSource: url.searchParams.get("utmSource"),
+      });
 
       const snapshot = await buildUserUsageSnapshot(auth, requestedMetrics);
       return NextResponse.json(snapshot);
@@ -262,7 +394,19 @@ export async function handleUsageTrackRoute(
       checkOnly?: boolean;
       dailyLimitOverride?: number;
       monthlyLimitOverride?: number;
+      hostname?: string;
+      pathname?: string;
+      referrer?: string;
+      utmSource?: string;
     };
+
+    await recordVisitorPresenceFromRequest(req, auth, {
+      app: body.app,
+      hostname: body.hostname,
+      pathname: body.pathname,
+      referrer: body.referrer,
+      utmSource: body.utmSource,
+    });
 
     const metric = typeof body.metric === "string" && body.metric.trim() ? body.metric.trim() : "";
     if (!metric || !/^[a-z0-9_:-]{1,64}$/i.test(metric)) {

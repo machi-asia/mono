@@ -229,7 +229,7 @@ export function PresentationTestingView() {
                   height: "100%",
                   borderRadius: "16px",
                   background:
-                    "radial-gradient(circle at 20% 25%, rgb(212 175 55 / 18%), transparent 55%), radial-gradient(circle at 80% 75%, rgb(99 102 241 / 22%), #0f0e17)",
+                    "radial-gradient(circle at 20% 25%, var(--color-primary-tint, rgb(255 255 255 / 8%)), transparent 55%), radial-gradient(circle at 80% 75%, rgb(44 78 255 / 18%), var(--shade-obsidian, #050507))",
                 }}
               />
             }
@@ -250,7 +250,7 @@ export function PresentationTestingView() {
             smooth={smooth}
             length={runwayMultiplier}
             header={
-              <div style={{ color: "var(--color-primary, #d4af37)", fontWeight: 700 }}>
+              <div style={{ color: "var(--color-primary, #fff)", fontWeight: 700 }}>
                 Horizontal Showcase Track · Keep Scrolling Down
               </div>
             }
@@ -297,7 +297,7 @@ export function PresentationTestingView() {
                   padding: "24px 32px",
                   borderRadius: "16px",
                   background: "rgb(0 0 0 / 65%)",
-                  border: "1px solid rgb(212 175 55 / 45%)",
+                  border: "1px solid var(--color-primary-border, rgb(255 255 255 / 20%))",
                   color: "#fff",
                   textAlign: "center",
                   backdropFilter: "blur(8px)",
@@ -317,7 +317,7 @@ export function PresentationTestingView() {
               style={{
                 width: "min(560px, 80vw)",
                 minHeight: "44vh",
-                background: "linear-gradient(135deg, #d4af37, #9333ea)",
+                background: "linear-gradient(135deg, var(--sp-blue, #2c4eff), var(--sp-violet, #ab9bf2))",
               }}
             >
               <h3>Zoom Focal Frame</h3>
@@ -366,12 +366,12 @@ export function PresentationTestingView() {
             direction={splitDir}
             length={runwayMultiplier}
             panelA={
-              <div style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--color-primary, #d4af37)" }}>
+              <div style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--color-primary, #fff)" }}>
                 SHUTTER A
               </div>
             }
             panelB={
-              <div style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--color-text, #f6f1e6)" }}>
+              <div style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--color-text, #fff)" }}>
                 SHUTTER B
               </div>
             }
@@ -428,7 +428,7 @@ export function PresentationTestingView() {
                       width: "260px",
                       height: "260px",
                       borderRadius: "50%",
-                      background: "radial-gradient(circle, rgb(212 175 55 / 45%), transparent 70%)",
+                      background: "radial-gradient(circle, var(--color-primary-border, rgb(255 255 255 / 20%)), transparent 70%)",
                       filter: "blur(12px)",
                     }}
                   />
@@ -441,8 +441,8 @@ export function PresentationTestingView() {
               style={{
                 maxWidth: "560px",
                 minHeight: "32vh",
-                background: "rgb(22 20 15 / 78%)",
-                border: "1px solid var(--color-border, #2a271f)",
+                background: "var(--color-surface-glass, rgb(10 10 12 / 85%))",
+                border: "1px solid var(--color-border, #1f1f27)",
                 backdropFilter: "blur(10px)",
               }}
             >

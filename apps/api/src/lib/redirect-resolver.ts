@@ -54,6 +54,15 @@ export const APP_REGISTRY: Record<string, AppMetadata> = {
     defaultUrl: "https://rose.machi.asia",
     description: "Conversational AI companion & voice agent",
   },
+  admin: {
+    id: "admin",
+    name: "Machi Asia Admin",
+    subdomain: "admin.machi.asia",
+    packageId: "asia.machi.admin",
+    scheme: "machiadmin",
+    defaultUrl: "https://admin.machi.asia",
+    description: "Unified multi-site monitoring, user roles, and Rose AI administration portal",
+  },
   "itemlist-admin": {
     id: "itemlist-admin",
     name: "ItemList Admin",
@@ -137,8 +146,11 @@ export function resolveAppFromUrl(urlStr: string): AppMetadata {
     const hostname = parsed.hostname.toLowerCase();
     const port = parsed.port;
 
-    if (hostname.includes("admin.itemlist") || hostname.includes("itemlist-admin") || port === "3013") {
+    if (hostname.includes("admin.itemlist") || hostname.includes("itemlist-admin")) {
       return APP_REGISTRY["itemlist-admin"];
+    }
+    if (hostname.includes("admin.machi") || port === "3013") {
+      return APP_REGISTRY.admin;
     }
     if (hostname.includes("create.itemlist") || hostname.includes("itemlist-create") || port === "3011") {
       return APP_REGISTRY["itemlist-create"];

@@ -151,3 +151,178 @@ export interface TrackUsageResponse {
     message: string;
   };
 }
+
+export type AdminUserRole = "guest" | "member" | "pro" | "admin";
+
+export interface VisitorOriginContext {
+  app?: string;
+  hostname?: string;
+  pathname?: string;
+  referrer?: string;
+  utmSource?: string;
+}
+
+export interface AdminDirectoryUser {
+  userId: string;
+  email: string | null;
+  displayName: string | null;
+  avatarUrl: string | null;
+  role: AdminUserRole;
+  isGuest: boolean;
+  isOnline: boolean;
+  currentApp: string | null;
+  hostname: string | null;
+  pathname: string | null;
+  referrer: string | null;
+  utmSource: string | null;
+  country: string | null;
+  region: string | null;
+  city: string | null;
+  ipAddress: string | null;
+  deviceType: string | null;
+  browser: string | null;
+  os: string | null;
+  lastSeenAt: string | null;
+  createdAt: string | null;
+  totalDailyUsage: number;
+  totalMonthlyUsage: number;
+  roseChatCount: number;
+  providers: string[];
+  canChangeRole: boolean;
+}
+
+export interface AdminVisitorSession {
+  session_key: string;
+  user_id: string | null;
+  visitor_id: string;
+  is_guest: boolean;
+  email: string | null;
+  display_name: string | null;
+  role: AdminUserRole;
+  app: string;
+  hostname: string | null;
+  pathname: string | null;
+  referrer: string | null;
+  utm_source: string | null;
+  country: string | null;
+  region: string | null;
+  city: string | null;
+  ip_address: string | null;
+  device_type: string | null;
+  browser: string | null;
+  os: string | null;
+  user_agent: string | null;
+  started_at: string;
+  last_seen_at: string;
+  isOnline: boolean;
+}
+
+export interface AdminUsageRecord {
+  id: string;
+  user_id: string;
+  app: string;
+  metric: string;
+  period_type: "daily" | "monthly";
+  period_key: string;
+  count: number;
+  usage_limit: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface AdminRoseMessage {
+  id: string;
+  role: "user" | "model";
+  text: string;
+  emotion?: string;
+  traces?: string[];
+  variant?: "normal" | "error" | "warning";
+  createdAt?: string;
+}
+
+export interface AdminRoseConversation {
+  id: string;
+  userId: string;
+  userEmail?: string | null;
+  userName?: string | null;
+  isGuest: boolean;
+  role: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  messages: AdminRoseMessage[];
+  history: Array<{ role: string; parts: Array<Record<string, unknown>> }>;
+  lastEmotion?: string;
+  totalTurns: number;
+  estimatedTokens: number;
+  originApp?: string;
+}
+
+export interface AdminSupportTicket {
+  id: string;
+  user_id: string | null;
+  user_email: string | null;
+  type: "bug_report" | "recommendation" | "general_support";
+  app: string;
+  subject: string;
+  message: string;
+  status: "open" | "in_progress" | "resolved" | "closed";
+  metadata: Record<string, unknown>;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface AdminOverviewResponse {
+  ok: boolean;
+  siteId: string;
+  stats: {
+    totalUsers: number;
+    totalGuests: number;
+    onlineVisitors: number;
+    totalSessions: number;
+    totalApiRequests: number;
+    totalRoseChats: number;
+    openTickets: number;
+    pendingReports: number;
+  };
+  breakdowns: {
+    byApp: Record<string, number>;
+    byReferrer: Record<string, number>;
+    byCountry: Record<string, number>;
+    byDevice: Record<string, number>;
+  };
+  users: AdminDirectoryUser[];
+  visitors: AdminVisitorSession[];
+  usages: AdminUsageRecord[];
+  registeredMetrics: Array<{
+    metric: string;
+    label: string;
+    description?: string;
+    unit: string;
+    formatDivisor?: number;
+    formatDecimals?: number;
+    defaultApp?: string;
+  }>;
+  systemSummary: Record<string, unknown>;
+  roseChats: AdminRoseConversation[];
+  tickets: AdminSupportTicket[];
+  reports: ItemListReportItem[];
+}
+
+export interface AdminManageUsageRequest {
+  userId: string;
+  app?: string;
+  metric: string;
+  action: "reset" | "set_limits";
+  dailyLimit?: number;
+  monthlyLimit?: number;
+}
+
+export interface AdminManageUsageResponse {
+  ok: boolean;
+  success: boolean;
+  dailyCount: number;
+  dailyLimit: number;
+  monthlyCount: number;
+  monthlyLimit: number;
+}

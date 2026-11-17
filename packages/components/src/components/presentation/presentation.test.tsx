@@ -184,5 +184,32 @@ describe("Framer Motion Presentation Suite", () => {
     const img = screen.getByAltText("Triple Camera System");
     expect(img).toBeInTheDocument();
     expect(img).toHaveAttribute("src", "/images/popout-camera-sample.png");
+    expect(img).toHaveStyle({ objectPosition: "center bottom" });
+
+    const portalStage = card.querySelector(".mono-pres-popout-portal-stage");
+    expect(portalStage).toBeInTheDocument();
+    expect(portalStage).toHaveStyle({ marginBottom: "-8%" });
+  });
+
+  it("renders custom media node and preserves consumer mouse handlers in PresentationPopOutCard", () => {
+    const onMouseLeave = vi.fn();
+
+    render(
+      <PresentationPopOutCard
+        data-testid="popout-media"
+        media={<div data-testid="custom-media">Custom Video Stage</div>}
+        title="Custom Media Card"
+        description="Supports video and interactive media overlays"
+        onMouseLeave={onMouseLeave}
+      />
+    );
+
+    const card = screen.getByTestId("popout-media");
+    expect(screen.getByTestId("custom-media")).toBeInTheDocument();
+    expect(screen.getByText("Custom Video Stage")).toBeInTheDocument();
+
+    fireEvent.mouseMove(card, { clientX: 50, clientY: 50 });
+    fireEvent.mouseLeave(card);
+    expect(onMouseLeave).toHaveBeenCalledTimes(1);
   });
 });

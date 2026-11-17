@@ -92,17 +92,16 @@ export default function CinematicScrollShowcase({ featuredWorks }: CinematicScro
             <div className="sp-cinematic-sticky">
                 {/* Pinned Title on Left */}
                 <div className="sp-cinematic-pinned-title-holder">
-                    <p className="sp-cinematic-section-eyebrow">Creative Showcases</p>
+                    <p className="sp-cinematic-section-eyebrow">Featured Works</p>
                     <h2 className="sp-cinematic-brand-title">Angelo Kamachi</h2>
                     <h3 className="section-title sr-only">Featured Works</h3>
                 </div>
 
-                {/* Floating Counter on Right */}
+                {/* Minimal Right Label */}
                 <div className="sp-cinematic-floating-counter">
                     <div className="sp-cinematic-counter-label">
-                        Feature Work<br />({featuredWorks.length < 10 ? `0${featuredWorks.length}` : featuredWorks.length})
+                        Feature Work
                     </div>
-                    <span className="sp-cinematic-counter-sub">Curated Studio Ledger</span>
                 </div>
 
                 {/* Scattered Multi-Column Overlapping Grid */}

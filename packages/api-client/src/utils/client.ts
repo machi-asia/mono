@@ -1,5 +1,13 @@
 import { resolveApiBaseUrl } from "@mono/app-config";
 import type {
+  AdminDirectoryUser,
+  AdminManageUsageRequest,
+  AdminManageUsageResponse,
+  AdminOverviewResponse,
+  AdminRoseConversation,
+  AdminSupportTicket,
+  AdminUsageRecord,
+  AdminUserRole,
   ApiClientConfig,
   ApiQuotaStatus,
   ChatMessage,
@@ -10,6 +18,7 @@ import type {
   TrackUsageRequest,
   TrackUsageResponse,
   UserQuotaSummaryResponse,
+  VisitorOriginContext,
 } from "../types";
 
 export function getApiBaseUrl(): string {
@@ -171,6 +180,43 @@ export class ApiClient {
       this.inspectResponseQuota(res, data);
       return data;
     },
+
+    getConversations: async (): Promise<{ ok: boolean; userId: string; conversations: AdminRoseConversation[] }> => {
+      const headers = await this.getHeaders();
+      const res = await fetch(this.resolveUrl("/rose/conversations"), {
+        method: "GET",
+        headers,
+      });
+      const data = await res.json();
+      this.inspectResponseQuota(res, data);
+      return data;
+    },
+
+    saveConversations: async (
+      conversations: unknown[],
+      originApp?: string
+    ): Promise<{ ok: boolean; count: number; conversations: AdminRoseConversation[] }> => {
+      const headers = await this.getHeaders();
+      const res = await fetch(this.resolveUrl("/rose/conversations"), {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ conversations, originApp }),
+      });
+      const data = await res.json();
+      this.inspectResponseQuota(res, data);
+      return data;
+    },
+
+    deleteConversation: async (id: string): Promise<{ ok: boolean; deleted: boolean }> => {
+      const headers = await this.getHeaders();
+      const res = await fetch(this.resolveUrl(`/rose/conversations?id=${encodeURIComponent(id)}`), {
+        method: "DELETE",
+        headers,
+      });
+      const data = await res.json();
+      this.inspectResponseQuota(res, data);
+      return data;
+    },
   };
 
   // Realtime Sync Endpoints
@@ -212,10 +258,22 @@ export class ApiClient {
       return data;
     },
 
-    getUserQuotaSummary: async (metrics?: string[]): Promise<UserQuotaSummaryResponse> => {
+    getUserQuotaSummary: async (
+      metrics?: string[],
+      origin?: VisitorOriginContext
+    ): Promise<UserQuotaSummaryResponse> => {
       const headers = await this.getHeaders();
-      const query = metrics && metrics.length > 0 ? `&metrics=${encodeURIComponent(metrics.join(","))}` : "";
-      const res = await fetch(this.resolveUrl(`/usage/metrics?scope=user${query}`), {
+      const params = new URLSearchParams({ scope: "user" });
+      if (metrics && metrics.length > 0) {
+        params.set("metrics", metrics.join(","));
+      }
+      if (origin?.app) params.set("app", origin.app);
+      if (origin?.hostname) params.set("hostname", origin.hostname);
+      if (origin?.pathname) params.set("pathname", origin.pathname);
+      if (origin?.referrer) params.set("referrer", origin.referrer);
+      if (origin?.utmSource) params.set("utmSource", origin.utmSource);
+
+      const res = await fetch(this.resolveUrl(`/usage/metrics?${params.toString()}`), {
         method: "GET",
         headers,
       });
@@ -308,6 +366,179 @@ export class ApiClient {
         this.inspectResponseQuota(res, data);
         return data;
       },
+    },
+  };
+
+  // Unified Machi Asia Admin Portal Endpoints
+  public admin = {
+    getOverview: async (siteId?: string): Promise<AdminOverviewResponse> => {
+      const headers = await this.getHeaders();
+      const query = siteId && siteId !== "all" ? `?siteId=${encodeURIComponent(siteId)}` : "";
+      const res = await fetch(this.resolveUrl(`/admin/overview${query}`), {
+        method: "GET",
+        headers,
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        this.inspectResponseQuota(res, data);
+        throw new Error(data?.error?.message || `Failed to fetch admin overview: ${res.statusText}`);
+      }
+      return data;
+    },
+
+    getUsers: async (siteId?: string): Promise<{ ok: boolean; users: AdminDirectoryUser[] }> => {
+      const headers = await this.getHeaders();
+      const query = siteId && siteId !== "all" ? `?siteId=${encodeURIComponent(siteId)}` : "";
+      const res = await fetch(this.resolveUrl(`/admin/users${query}`), {
+        method: "GET",
+        headers,
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        this.inspectResponseQuota(res, data);
+        throw new Error(data?.error?.message || `Failed to fetch admin users: ${res.statusText}`);
+      }
+      return data;
+    },
+
+    updateUserRole: async (
+      userId: string,
+      role: AdminUserRole
+    ): Promise<{ ok: boolean; userId: string; role: AdminUserRole }> => {
+      const headers = await this.getHeaders();
+      const res = await fetch(this.resolveUrl("/admin/users"), {
+        method: "PATCH",
+        headers,
+        body: JSON.stringify({ userId, role }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        this.inspectResponseQuota(res, data);
+        throw new Error(data?.error?.message || `Failed to update user role: ${res.statusText}`);
+      }
+      return data;
+    },
+
+    getUsage: async (params?: {
+      userId?: string;
+      app?: string;
+      metric?: string;
+    }): Promise<{ ok: boolean; records: AdminUsageRecord[]; systemSummary: Record<string, unknown> }> => {
+      const headers = await this.getHeaders();
+      const sp = new URLSearchParams();
+      if (params?.userId) sp.set("userId", params.userId);
+      if (params?.app) sp.set("app", params.app);
+      if (params?.metric) sp.set("metric", params.metric);
+      const q = sp.toString();
+      const res = await fetch(this.resolveUrl(`/admin/usage${q ? `?${q}` : ""}`), {
+        method: "GET",
+        headers,
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        this.inspectResponseQuota(res, data);
+        throw new Error(data?.error?.message || `Failed to fetch admin usage: ${res.statusText}`);
+      }
+      return data;
+    },
+
+    manageUsage: async (payload: AdminManageUsageRequest): Promise<AdminManageUsageResponse> => {
+      const headers = await this.getHeaders();
+      const res = await fetch(this.resolveUrl("/admin/usage"), {
+        method: "POST",
+        headers,
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        this.inspectResponseQuota(res, data);
+        throw new Error(data?.error?.message || `Failed to update usage: ${res.statusText}`);
+      }
+      return data;
+    },
+
+    getRoseChats: async (params?: {
+      search?: string;
+      userId?: string;
+      limit?: number;
+    }): Promise<{ ok: boolean; conversations: AdminRoseConversation[] }> => {
+      const headers = await this.getHeaders();
+      const sp = new URLSearchParams();
+      if (params?.search) sp.set("search", params.search);
+      if (params?.userId) sp.set("userId", params.userId);
+      if (params?.limit) sp.set("limit", String(params.limit));
+      const q = sp.toString();
+      const res = await fetch(this.resolveUrl(`/admin/rose-chats${q ? `?${q}` : ""}`), {
+        method: "GET",
+        headers,
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        this.inspectResponseQuota(res, data);
+        throw new Error(data?.error?.message || `Failed to fetch Rose chats: ${res.statusText}`);
+      }
+      return data;
+    },
+
+    deleteRoseChat: async (
+      userId: string,
+      conversationId: string
+    ): Promise<{ ok: boolean; deleted: boolean }> => {
+      const headers = await this.getHeaders();
+      const res = await fetch(
+        this.resolveUrl(
+          `/admin/rose-chats?userId=${encodeURIComponent(userId)}&conversationId=${encodeURIComponent(conversationId)}`
+        ),
+        {
+          method: "DELETE",
+          headers,
+        }
+      );
+      const data = await res.json();
+      if (!res.ok) {
+        this.inspectResponseQuota(res, data);
+        throw new Error(data?.error?.message || `Failed to delete Rose chat: ${res.statusText}`);
+      }
+      return data;
+    },
+
+    getTickets: async (params?: {
+      app?: string;
+      status?: string;
+    }): Promise<{ ok: boolean; tickets: AdminSupportTicket[] }> => {
+      const headers = await this.getHeaders();
+      const sp = new URLSearchParams();
+      if (params?.app) sp.set("app", params.app);
+      if (params?.status) sp.set("status", params.status);
+      const q = sp.toString();
+      const res = await fetch(this.resolveUrl(`/admin/tickets${q ? `?${q}` : ""}`), {
+        method: "GET",
+        headers,
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        this.inspectResponseQuota(res, data);
+        throw new Error(data?.error?.message || `Failed to fetch tickets: ${res.statusText}`);
+      }
+      return data;
+    },
+
+    updateTicketStatus: async (
+      ticketId: string,
+      status: "open" | "in_progress" | "resolved" | "closed"
+    ): Promise<{ ok: boolean; ticket: AdminSupportTicket }> => {
+      const headers = await this.getHeaders();
+      const res = await fetch(this.resolveUrl("/admin/tickets"), {
+        method: "PATCH",
+        headers,
+        body: JSON.stringify({ ticketId, status }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        this.inspectResponseQuota(res, data);
+        throw new Error(data?.error?.message || `Failed to update ticket status: ${res.statusText}`);
+      }
+      return data;
     },
   };
 }

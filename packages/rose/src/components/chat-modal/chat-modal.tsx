@@ -51,6 +51,10 @@ import {
   saveConversations,
   createNewConversation,
   generateConversationTitle,
+  mergeConversations,
+  syncConversationsFromServer,
+  pushConversationsToServer,
+  deleteConversationOnServer,
 } from "../../utils/conversations";
 import "./chat-modal.css";
 
@@ -273,6 +277,50 @@ export function RoseChat({
     scrollToBottom();
   }, [messages, traces, scrollToBottom]);
 
+  // Cross-device Redis sync on mount or user change
+  useEffect(() => {
+    const isTestEnv =
+      typeof process !== "undefined" &&
+      (process.env?.NODE_ENV === "test" || Boolean(process.env?.VITEST));
+    if (isTestEnv) return;
+
+    let cancelled = false;
+    const localLoaded = loadConversations(userId, initialMessage);
+    setConversationState(localLoaded);
+    const localActive =
+      localLoaded.conversations.find((c) => c.id === localLoaded.activeId) ||
+      localLoaded.conversations[0];
+    if (localActive) {
+      setMessages(localActive.messages);
+      setHistory(localActive.history);
+      setCurrentEmotion(localActive.lastEmotion || "happy");
+    }
+
+    void syncConversationsFromServer(apiBasePath, userId, session?.access_token).then(
+      (remoteConvs) => {
+        if (cancelled || !remoteConvs || remoteConvs.length === 0) return;
+        setConversationState((prev) => {
+          const merged = mergeConversations(prev.conversations, remoteConvs);
+          const nextActiveId = merged.some((c) => c.id === prev.activeId)
+            ? prev.activeId
+            : merged[0].id;
+          saveConversations(userId, merged, nextActiveId);
+          const nextActive = merged.find((c) => c.id === nextActiveId) || merged[0];
+          if (nextActive) {
+            setMessages(nextActive.messages);
+            setHistory(nextActive.history);
+            setCurrentEmotion(nextActive.lastEmotion || "happy");
+          }
+          return { conversations: merged, activeId: nextActiveId };
+        });
+      }
+    );
+
+    return () => {
+      cancelled = true;
+    };
+  }, [apiBasePath, initialMessage, session?.access_token, userId]);
+
   // Helper to persist conversation updates
   const updateActiveConversation = useCallback(
     (updater: (prev: Conversation) => Conversation) => {
@@ -308,6 +356,7 @@ export function RoseChat({
     setConversationState((prev) => {
       const nextConvs = [newConv, ...prev.conversations];
       saveConversations(userId, nextConvs, newConv.id);
+      void pushConversationsToServer(apiBasePath, nextConvs, session?.access_token, userId);
       return { conversations: nextConvs, activeId: newConv.id };
     });
 
@@ -319,6 +368,7 @@ export function RoseChat({
 
   const handleDeleteConversation = (id: string, e: ReactMouseEvent) => {
     e.stopPropagation();
+    void deleteConversationOnServer(apiBasePath, id, session?.access_token, userId);
     setConversationState((prev) => {
       const filtered = prev.conversations.filter((c) => c.id !== id);
       const nextConvs = filtered.length > 0 ? filtered : [createNewConversation(initialMessage)];
@@ -408,7 +458,16 @@ export function RoseChat({
       const res = await fetch(`${apiBasePath}/chat`, {
         method: "POST",
         headers,
-        body: JSON.stringify({ message: text, history, stream: true }),
+        body: JSON.stringify({
+          message: text,
+          history,
+          stream: true,
+          conversationId: activeConv.id,
+          title:
+            activeConv.title === "New Conversation"
+              ? generateConversationTitle(text)
+              : activeConv.title,
+        }),
       });      if (!res.ok) {
         const errData = await res.json().catch(() => null);
         const isQuota = res.status === 429 || errData?.error?.code === "usage_limit_exceeded";

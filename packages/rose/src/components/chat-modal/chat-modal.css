@@ -19,10 +19,10 @@
   height: 90vh;
   max-height: 90vh;
   min-height: 540px;
-  background: var(--color-surface, #141416);
-  border: 1px solid var(--color-border, #26262a);
+  background: var(--color-surface, #111116);
+  border: 1px solid var(--color-border, #1f1f27);
   border-radius: var(--radius-xl, 16px);
-  box-shadow: 0 24px 64px rgb(0 0 0 / 60%), 0 0 0 1px rgb(212 175 55 / 15%);
+  box-shadow: 0 24px 64px rgb(0 0 0 / 60%), 0 0 0 1px var(--color-primary-tint, rgb(255 255 255 / 8%));
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -61,8 +61,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1.5px solid var(--color-primary, #d4af37);
-  background: #1e1e24;
+  border: 1.5px solid var(--color-primary, #fff);
+  background: var(--color-surface-2, #17171d);
   overflow: visible;
   display: flex;
   align-items: center;
@@ -119,9 +119,9 @@
 }
 
 .m-rose-sidebar-toggle.active {
-  color: var(--color-primary, #d4af37);
-  background: rgb(212 175 55 / 10%);
-  border-color: rgb(212 175 55 / 20%);
+  color: var(--color-primary, #fff);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  border-color: var(--color-primary-border, rgb(255 255 255 / 20%));
 }
 
 /* Chat Body Split: Sidebar + Main Area */
@@ -177,7 +177,7 @@
 }
 
 .m-rose-sidebar-icon {
-  color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
 }
 
 .m-rose-sidebar-count {
@@ -185,7 +185,7 @@
   padding: 1px 6px;
   border-radius: var(--radius-full, 9999px);
   background: rgb(255 255 255 / 10%);
-  color: var(--color-text-muted, #9ca3af);
+  color: var(--color-text-muted, #8e8e96);
 }
 
 .m-rose-sidebar-new-btn {
@@ -195,18 +195,18 @@
   padding: 4px 10px;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--color-primary, #d4af37);
-  background: rgb(212 175 55 / 12%);
-  border: 1px solid rgb(212 175 55 / 25%);
+  color: var(--color-primary, #fff);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  border: 1px solid var(--color-primary-border, rgb(255 255 255 / 20%));
   border-radius: var(--radius-md, 8px);
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .m-rose-sidebar-new-btn:hover {
-  background: rgb(212 175 55 / 22%);
-  border-color: var(--color-primary, #d4af37);
-  color: #fff;
+  background: var(--color-primary-glow, rgb(255 255 255 / 12%));
+  border-color: var(--color-primary, #fff);
+  color: var(--color-text, #fff);
 }
 
 .m-rose-sidebar-list {
@@ -236,8 +236,8 @@
 }
 
 .m-rose-sidebar-item.active {
-  background: rgb(212 175 55 / 12%);
-  border-color: rgb(212 175 55 / 30%);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  border-color: var(--color-primary-border, rgb(255 255 255 / 20%));
 }
 
 .m-rose-sidebar-item-content {
@@ -251,14 +251,14 @@
 .m-rose-sidebar-item-title {
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--color-text, #f3f4f6);
+  color: var(--color-text, #fff);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .m-rose-sidebar-item.active .m-rose-sidebar-item-title {
-  color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
 }
 
 .m-rose-sidebar-item-meta {
@@ -375,8 +375,8 @@
 }
 
 .m-rose-msg-avatar {
-  border: 1.5px solid var(--color-primary, #d4af37);
-  background: #1e1e24;
+  border: 1.5px solid var(--color-primary, #fff);
+  background: var(--color-surface-2, #17171d);
   overflow: hidden;
 }
 
@@ -387,9 +387,9 @@
 }
 
 .m-rose-user-avatar {
-  background: rgb(212 175 55 / 20%);
-  color: var(--color-primary, #d4af37);
-  border: 1px solid rgb(212 175 55 / 40%);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  color: var(--color-primary, #fff);
+  border: 1px solid var(--color-primary-border, rgb(255 255 255 / 20%));
 }
 
 .m-rose-msg-bubble {
@@ -426,8 +426,8 @@
 }
 
 .m-rose-msg-row--user .m-rose-msg-bubble {
-  background: var(--color-primary, #d4af37);
-  color: #0b0b0d;
+  background: var(--color-primary, #fff);
+  color: var(--color-primary-contrast, #050507);
   font-weight: 500;
   border-bottom-right-radius: 2px;
 }
@@ -472,7 +472,7 @@
   gap: 6px;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -486,9 +486,9 @@
 .m-rose-option-btn {
   padding: 6px 14px;
   border-radius: 9999px;
-  background: rgb(212 175 55 / 10%);
-  border: 1px solid rgb(212 175 55 / 35%);
-  color: var(--color-primary, #d4af37);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  border: 1px solid var(--color-primary-border, rgb(255 255 255 / 20%));
+  color: var(--color-primary, #fff);
   font-size: 0.82rem;
   font-weight: 500;
   cursor: pointer;
@@ -496,9 +496,9 @@
 }
 
 .m-rose-option-btn:hover {
-  background: var(--color-primary, #d4af37);
-  color: #0b0b0d;
-  border-color: var(--color-primary, #d4af37);
+  background: var(--color-primary, #fff);
+  color: var(--color-primary-contrast, #050507);
+  border-color: var(--color-primary, #fff);
   transform: translateY(-1px);
 }
 
@@ -513,22 +513,22 @@
   gap: 8px;
   padding: 6px 12px;
   min-height: 32px;
-  background: rgb(212 175 55 / 12%);
-  border: 1px solid rgb(212 175 55 / 30%);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  border: 1px solid var(--color-primary-border, rgb(255 255 255 / 20%));
   border-radius: var(--radius-md, 8px);
   font-size: 0.85rem;
-  color: var(--color-primary, #d4af37);
-  box-shadow: 0 0 12px rgb(212 175 55 / 10%);
+  color: var(--color-primary, #fff);
+  box-shadow: 0 0 12px var(--color-primary-glow, rgb(255 255 255 / 12%));
 }
 
 .m-rose-action-sparkle {
-  color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
   flex-shrink: 0;
   animation: m-rose-spin 2s linear infinite;
 }
 
 .m-rose-action-text {
-  color: var(--color-text, #f3f4f6);
+  color: var(--color-text, #fff);
   font-weight: 500;
   letter-spacing: 0.01em;
 }
@@ -553,13 +553,13 @@
   font-weight: 500;
   background: rgb(255 255 255 / 6%);
   border: 1px solid rgb(255 255 255 / 12%);
-  color: var(--color-text-muted, #a1a1aa);
+  color: var(--color-text-muted, #8e8e96);
 }
 
 .m-rose-thinking-pill--active {
-  background: rgb(212 175 55 / 14%);
-  border-color: rgb(212 175 55 / 35%);
-  color: var(--color-primary, #d4af37);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  border-color: var(--color-primary-border, rgb(255 255 255 / 20%));
+  color: var(--color-primary, #fff);
 }
 
 .m-rose-wave-dots {
@@ -569,7 +569,7 @@
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
 }
 
 .m-rose-wave-dot {
@@ -627,8 +627,8 @@
 
 .m-rose-input-bar:focus-within,
 .m-rose-input-form:focus-within {
-  border-color: var(--color-primary, #d4af37);
-  box-shadow: 0 0 0 2px rgb(212 175 55 / 20%);
+  border-color: var(--color-primary, #fff);
+  box-shadow: 0 0 0 2px var(--color-primary-border, rgb(255 255 255 / 20%));
 }
 
 .m-rose-input-textarea {
@@ -657,8 +657,8 @@
   width: 34px;
   height: 34px;
   border-radius: var(--radius-md, 8px);
-  background: var(--color-primary, #d4af37);
-  color: #0b0b0d;
+  background: var(--color-primary, #fff);
+  color: var(--color-primary-contrast, #050507);
   border: none;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -719,8 +719,8 @@
 
 .m-rose-slash-item.active,
 .m-rose-slash-item:hover {
-  background: rgb(212 175 55 / 12%);
-  color: var(--color-primary, #d4af37);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  color: var(--color-primary, #fff);
 }
 
 .m-rose-slash-item-left {
@@ -731,12 +731,12 @@
 
 .m-rose-slash-cmd {
   font-weight: 700;
-  color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
 }
 
 .m-rose-slash-subtitle {
   font-size: 0.75rem;
-  color: var(--color-text-muted, #9ca3af);
+  color: var(--color-text-muted, #8e8e96);
 }
 
 /* Floating Action Button (FAB) */
@@ -751,17 +751,17 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #f59e0b 0%, #d4af37 100%);
-  color: #0b0b0d;
-  border: 2px solid rgb(255 255 255 / 20%);
-  box-shadow: 0 8px 24px rgb(212 175 55 / 35%);
+  background: linear-gradient(135deg, var(--color-primary, #fff) 0%, var(--color-primary-soft, #e4e4e7) 100%);
+  color: var(--color-primary-contrast, #050507);
+  border: 2px solid var(--color-primary-border, rgb(255 255 255 / 20%));
+  box-shadow: 0 8px 24px var(--color-primary-glow, rgb(255 255 255 / 12%));
   cursor: pointer;
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
 }
 
 .m-rose-fab:hover {
   transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 12px 32px rgb(212 175 55 / 50%);
+  box-shadow: 0 12px 32px var(--color-primary-border, rgb(255 255 255 / 20%));
 }
 
 .m-rose-fab-icon {
@@ -812,9 +812,9 @@
 }
 
 .m-rose-sidebar-settings-btn:hover {
-  background: rgb(212 175 55 / 12%);
-  border-color: var(--color-primary, #d4af37);
-  color: var(--color-primary, #d4af37);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  border-color: var(--color-primary, #fff);
+  color: var(--color-primary, #fff);
 }
 
 /* Settings Modal & Backdrop */
@@ -885,7 +885,7 @@
 }
 
 .m-rose-settings-icon {
-  color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
 }
 
 /* Settings Tabs */
@@ -917,8 +917,8 @@
 }
 
 .m-rose-settings-tab.active {
-  color: var(--color-primary, #d4af37);
-  border-bottom-color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
+  border-bottom-color: var(--color-primary, #fff);
 }
 
 /* Settings Content */
@@ -1003,8 +1003,8 @@
 .m-rose-settings-input:focus,
 .m-rose-settings-select:focus,
 .m-rose-settings-textarea:focus {
-  border-color: var(--color-primary, #d4af37);
-  box-shadow: 0 0 0 1px rgb(212 175 55 / 20%);
+  border-color: var(--color-primary, #fff);
+  box-shadow: 0 0 0 1px var(--color-primary-border, rgb(255 255 255 / 20%));
 }
 
 .m-rose-settings-dropdown {
@@ -1017,18 +1017,18 @@
   padding: 9px 14px;
   border-radius: var(--radius-md, 8px);
   background: rgb(0 0 0 / 25%);
-  border: 1px solid var(--color-border, #26262a);
+  border: 1px solid var(--color-border, #1f1f27);
   font-size: 0.85rem;
-  color: var(--color-text, #f3f4f6);
+  color: var(--color-text, #fff);
 }
 
 .m-rose-settings-dropdown .m-dropdown-trigger:hover:not(:disabled) {
-  border-color: var(--color-primary, #d4af37);
+  border-color: var(--color-primary, #fff);
 }
 
 .m-rose-settings-dropdown .m-dropdown-trigger--open {
-  border-color: var(--color-primary, #d4af37);
-  box-shadow: 0 0 0 1px rgb(212 175 55 / 20%);
+  border-color: var(--color-primary, #fff);
+  box-shadow: 0 0 0 1px var(--color-primary-border, rgb(255 255 255 / 20%));
 }
 
 .m-rose-settings-dropdown .m-dropdown-menu {
@@ -1072,9 +1072,9 @@
   padding: 6px 12px;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--color-primary, #d4af37);
-  background: rgb(212 175 55 / 12%);
-  border: 1px solid rgb(212 175 55 / 25%);
+  color: var(--color-primary, #fff);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  border: 1px solid var(--color-primary-border, rgb(255 255 255 / 20%));
   border-radius: var(--radius-md, 8px);
   cursor: pointer;
   transition: all 0.15s ease;
@@ -1082,8 +1082,8 @@
 }
 
 .m-rose-add-memory-btn:hover {
-  background: rgb(212 175 55 / 20%);
-  border-color: var(--color-primary, #d4af37);
+  background: var(--color-primary-glow, rgb(255 255 255 / 12%));
+  border-color: var(--color-primary, #fff);
 }
 
 .m-rose-memory-form-card {
@@ -1128,8 +1128,8 @@
   font-size: 0.78rem;
   font-weight: 600;
   border-radius: var(--radius-md, 8px);
-  background: var(--color-primary, #d4af37);
-  color: #0b0b0d;
+  background: var(--color-primary, #fff);
+  color: var(--color-primary-contrast, #050507);
   border: none;
   cursor: pointer;
 }
@@ -1224,8 +1224,8 @@
 }
 
 .m-rose-memory-importance-tag.medium {
-  background: rgb(212 175 55 / 15%);
-  color: #d4af37;
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  color: var(--color-primary, #fff);
 }
 
 .m-rose-memory-importance-tag.high {
@@ -1293,17 +1293,17 @@
 }
 
 .m-rose-voice-btn:hover {
-  background: rgb(212 175 55 / 15%);
-  border-color: rgb(212 175 55 / 40%);
-  color: var(--color-primary, #d4af37);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  border-color: var(--color-primary-border, rgb(255 255 255 / 20%));
+  color: var(--color-primary, #fff);
   transform: translateY(-1px);
 }
 
 .m-rose-voice-btn.active {
-  background: linear-gradient(135deg, var(--color-primary, #d4af37) 0%, #b89628 100%);
-  border-color: #ffd700;
-  color: #0b0b0d;
-  box-shadow: 0 0 16px rgb(212 175 55 / 45%);
+  background: var(--color-primary, #fff);
+  border-color: var(--color-primary, #fff);
+  color: var(--color-primary-contrast, #050507);
+  box-shadow: 0 0 16px var(--color-primary-glow, rgb(255 255 255 / 12%));
 }
 
 .m-rose-voice-btn-label {
@@ -1346,9 +1346,9 @@
   gap: 8px;
   padding: 6px 14px;
   border-radius: var(--radius-full, 9999px);
-  background: rgb(212 175 55 / 12%);
-  border: 1px solid rgb(212 175 55 / 30%);
-  color: var(--color-primary, #d4af37);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  border: 1px solid var(--color-primary-border, rgb(255 255 255 / 20%));
+  color: var(--color-primary, #fff);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -1359,8 +1359,8 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--color-primary, #d4af37);
-  box-shadow: 0 0 10px var(--color-primary, #d4af37);
+  background: var(--color-primary, #fff);
+  box-shadow: 0 0 10px var(--color-primary-glow, rgb(255 255 255 / 12%));
   animation: m-rose-pulse-dot 1.5s infinite;
 }
 
@@ -1444,7 +1444,7 @@
   position: absolute;
   inset: -24px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgb(212 175 55 / 25%) 0%, rgb(212 175 55 / 0%) 70%);
+  background: radial-gradient(circle, var(--color-primary-glow, rgb(255 255 255 / 12%)) 0%, transparent 70%);
   opacity: 0.5;
   transition: all 0.5s ease;
   pointer-events: none;
@@ -1454,7 +1454,7 @@
   position: absolute;
   inset: -10px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgb(212 175 55 / 40%) 0%, transparent 75%);
+  background: radial-gradient(circle, var(--color-primary-border, rgb(255 255 255 / 20%)) 0%, transparent 75%);
   opacity: 0.6;
   transition: all 0.4s ease;
   pointer-events: none;
@@ -1504,8 +1504,8 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--color-primary, #d4af37);
-  box-shadow: 0 12px 40px rgb(0 0 0 / 60%), 0 0 30px rgb(212 175 55 / 25%);
+  border: 3px solid var(--color-primary, #fff);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 60%), 0 0 30px var(--color-primary-glow, rgb(255 255 255 / 12%));
   z-index: 2;
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
@@ -1513,8 +1513,8 @@
 /* Speaking Animation */
 .m-rose-voice-hero-wrap.speaking .m-rose-voice-hero-img {
   animation: m-rose-avatar-pulse 1.8s infinite ease-in-out;
-  border-color: #ffd700;
-  box-shadow: 0 0 45px rgb(212 175 55 / 65%);
+  border-color: var(--color-primary, #fff);
+  box-shadow: 0 0 45px var(--color-primary-border, rgb(255 255 255 / 20%));
 }
 
 .m-rose-voice-hero-wrap.speaking .m-rose-voice-aura-outer {
@@ -1579,7 +1579,7 @@
   width: 4px;
   height: 8px;
   border-radius: 2px;
-  background: var(--color-primary, #d4af37);
+  background: var(--color-primary, #fff);
 }
 
 .m-rose-voice-hero-wrap.speaking .m-rose-voice-wave-bar {
@@ -1622,7 +1622,7 @@
 }
 
 .m-rose-voice-emotion-val {
-  color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
   font-weight: 600;
   text-transform: capitalize;
 }

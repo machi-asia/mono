@@ -64,11 +64,11 @@ Colony production and fabrication bench bill calculator for RimWorld (`rimworld.
 
 **Stack:** Next.js App Router, React, `@mono/game-calculator`
 
-### itemlist-admin
+### admin
 
-Administrative oversight portal for community data consensus, user-submitted issue reports, and manual recipe verification (`admin.itemlist.online`).
+Unified multi-site administrative portal (`admin.machi.asia`). Provides real-time monitoring of authenticated users and guests, traffic origin analytics (referrer, UTM, geolocation via `@vercel/functions`, and device/browser/OS via `ua-parser-js` stored in `public.visitor_sessions`), per-user usage quota resets and limit overrides, live Redis-backed Rose AI chat inspection (`/rose`), migrated ItemList moderation & consensus triage (`/itemlist`), user role management (`guest | member | pro | admin`), and dynamic per-site dashboards (`/[siteId]`).
 
-**Stack:** Next.js App Router, React, `@mono/api-client`, Supabase Auth
+**Stack:** Next.js App Router, React, `@mono/auth`, `@mono/components`, `@mono/api-client`, `@mono/database`
 
 ## Packages
 
@@ -197,6 +197,8 @@ See `docs/adr/` for all Architecture Decision Records. Key decisions:
 - [ADR-014: Multi-Game Production Calculator App](./adr/014-multi-game-calculator-app.md)
 - [ADR-015: Skeleton Loading State Enforcement](./adr/015-skeleton-loading-state-enforcement.md)
 - [ADR-016: User Roles and Multi-Period Resource Usage Monitoring](./adr/016-user-roles-and-usage-monitoring.md)
+- [ADR-017: Capacitor & OtaKit Mobile Architecture](./adr/017-capacitor-and-otakit-mobile-architecture.md)
+- [ADR-018: Unified Multi-Site Admin Portal, Visitor Origin Telemetry & Redis Rose Chats](./adr/018-unified-admin-portal-and-redis-rose-chats.md)
 
 ## User Roles & Multi-Period Usage Monitoring
 

@@ -12,6 +12,8 @@ import {
   recordAndCheckUsage,
   getUserUsageStatus,
   getUserUsageSummary,
+  listAllUserUsages,
+  adminManageUserUsage,
   getRoseUsage,
   checkAndIncrementRoseUsage,
   resetFallbackUsageLedger,
@@ -165,5 +167,56 @@ describe("database usages module", () => {
         role: "member",
       })
     ).rejects.toThrow(/Invalid negative usage increment/);
+  });
+
+  it("allows admins to list, reset, and override quota limits for users", async () => {
+    await recordAndCheckUsage({
+      userId: "quota-target-user",
+      app: "rose",
+      metric: "turns",
+      amount: 5,
+      role: "member",
+    });
+
+    const records = await listAllUserUsages({ app: "rose" });
+    expect(records.length).toBeGreaterThanOrEqual(2);
+
+    const setRes = await adminManageUserUsage({
+      userId: "quota-target-user",
+      app: "rose",
+      metric: "turns",
+      action: "set_limits",
+      dailyLimit: 500,
+      monthlyLimit: 5000,
+    });
+    expect(setRes.success).toBe(true);
+    expect(setRes.dailyLimit).toBe(500);
+    expect(setRes.monthlyLimit).toBe(5000);
+
+    const checkAfterOverride = await getUserUsageStatus({
+      userId: "quota-target-user",
+      app: "rose",
+      metric: "turns",
+      role: "member",
+    });
+    expect(checkAfterOverride.dailyLimit).toBe(500);
+    expect(checkAfterOverride.dailyCount).toBe(5);
+
+    const resetRes = await adminManageUserUsage({
+      userId: "quota-target-user",
+      app: "rose",
+      metric: "turns",
+      action: "reset",
+    });
+    expect(resetRes.success).toBe(true);
+    expect(resetRes.dailyCount).toBe(0);
+
+    const checkAfterReset = await getUserUsageStatus({
+      userId: "quota-target-user",
+      app: "rose",
+      metric: "turns",
+      role: "member",
+    });
+    expect(checkAfterReset.dailyCount).toBe(0);
   });
 });

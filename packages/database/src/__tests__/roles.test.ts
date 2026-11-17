@@ -1,8 +1,20 @@
-import { describe, it, expect, vi } from "vitest";
-import { DEFAULT_USER_ROLE, getUserRole, resolveSafeRoleFromUser } from "../roles";
+import { describe, it, expect, vi, beforeEach } from "vitest";
+import {
+  DEFAULT_USER_ROLE,
+  getUserRole,
+  listAllUserRoles,
+  resetFallbackUserRoles,
+  resolveSafeRoleFromUser,
+  updateUserRole,
+} from "../roles";
 import * as clientModule from "../client";
 
 describe("database roles module", () => {
+  beforeEach(() => {
+    resetFallbackUserRoles();
+    vi.restoreAllMocks();
+  });
+
   it("exports DEFAULT_USER_ROLE as member", () => {
     expect(DEFAULT_USER_ROLE).toBe("member");
   });
@@ -47,5 +59,20 @@ describe("database roles module", () => {
       app_metadata: {},
     });
     expect(role).toBe("member");
+  });
+
+  it("updates and lists user roles via admin helpers", async () => {
+    const res = await updateUserRole("user-789", "admin");
+    expect(res.success).toBe(true);
+
+    const list = await listAllUserRoles();
+    expect(list).toHaveLength(1);
+    expect(list[0].userId).toBe("user-789");
+    expect(list[0].role).toBe("admin");
+
+    const demote = await updateUserRole("user-789", "member");
+    expect(demote.success).toBe(true);
+    const updated = await listAllUserRoles();
+    expect(updated[0].role).toBe("member");
   });
 });

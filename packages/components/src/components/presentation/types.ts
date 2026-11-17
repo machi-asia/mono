@@ -122,7 +122,11 @@ export interface PresentationDeckProps extends PresentationBaseProps {
 export interface PresentationPopOutCardProps
   extends Omit<PresentationBaseProps, "title"> {
   /** Image source URL for the pop-out subject (transparent PNG works best). */
-  imageSrc: string;
+  imageSrc?: string;
+  /** Optional video source URL for the pop-out subject. */
+  videoSrc?: string;
+  /** Optional custom media node (e.g. video with play overlay) rendered inside the 3D pop-out stage. */
+  media?: ReactNode;
   /** Accessible alt text for the pop-out image. */
   imageAlt?: string;
   /** Optional eyebrow badge rendered inside the card bottom half. */
@@ -139,12 +143,12 @@ export interface PresentationPopOutCardProps
   cardBackground?: string;
   /** Custom text color for the card body. */
   cardTextColor?: string;
-  /** Top half visual frame height in px or string. Default 200. */
+  /** Top half visual frame height in px or string. Default 190. */
   topHalfHeight?: number | string;
   /** Custom image max height or height in px or string. */
   imageHeight?: number | string;
-  /** Custom image width (e.g. '160%', '170%'). Default '165%'. */
+  /** Custom image width (e.g. '116%', '125%'). Default '116%'. */
   imageWidth?: string;
-  /** Percentage of bottom of the image to bury behind the bottom half card. Default 5. */
+  /** Percentage of bottom of the image to bury behind the bottom half card. Default 6. */
   buriedPercent?: number;
 }

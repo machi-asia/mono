@@ -85,7 +85,7 @@ function StepDot({
           transformOrigin: "0% 50%",
           height: "100%",
           width: "100%",
-          background: "var(--color-primary, #d4af37)",
+          background: "var(--color-primary, #fff)",
         }}
       />
     </div>

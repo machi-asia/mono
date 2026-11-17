@@ -3,7 +3,7 @@
 .sp-cinematic-stage {
     position: relative;
     width: 100%;
-    min-height: 280vh;
+    min-height: 160vh;
     background: var(--background);
 }
 
@@ -126,31 +126,31 @@ html.light-mode .sp-cinematic-brand-title {
 .sp-cinematic-item-1 {
     grid-column: 2;
     width: 90%;
-    margin-top: 15vh;
+    margin-top: 4vh;
 }
 
 .sp-cinematic-item-2 {
     grid-column: 4;
     width: 86%;
-    margin-top: -10vh;
+    margin-top: -6vh;
 }
 
 .sp-cinematic-item-3 {
     grid-column: 1;
     width: 95%;
-    margin-top: 45vh;
+    margin-top: 18vh;
 }
 
 .sp-cinematic-item-4 {
     grid-column: 3;
     width: 88%;
-    margin-top: 85vh;
+    margin-top: 32vh;
 }
 
 .sp-cinematic-item-5 {
     grid-column: 5;
     width: 92%;
-    margin-top: 55vh;
+    margin-top: 22vh;
 }
 
 /* Media Frame */

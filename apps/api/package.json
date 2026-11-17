@@ -22,6 +22,7 @@
     "@mono/rose": "*",
     "@supabase/ssr": "^0.12.5",
     "@supabase/supabase-js": "^2.113.0",
+    "@vercel/functions": "^3.11.3",
     "faster-whisper-ts": "^1.2.1",
     "ioredis": "^5.4.2",
     "lucide-react": "^1.40.0",

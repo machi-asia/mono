@@ -1,23 +1,24 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { ScrollReveal, ScrollStack, ScrollSplit } from "@mono/components";
+import { motion, useScroll, useSpring } from "framer-motion";
 import Navbar from "../components/navbar";
+import CustomCursor from "../components/CustomCursor";
+import ParallaxChapterReveal from "../components/ParallaxRevealPanels";
 import HeroSection from "../components/sections/HeroSection";
-import AboutSection from "../components/sections/AboutSection";
-import CertificatesSection from "../components/sections/CertificatesSection";
-import SkillsSection from "../components/sections/SkillsSection";
 import FeaturedWorksSection from "../components/sections/FeaturedWorksSection";
-import ProjectsSection from "../components/sections/ProjectsSection";
+import AboutSection from "../components/sections/AboutSection";
+import ThreeDShowcaseSection from "../components/sections/ThreeDShowcaseSection";
 import ExperienceSection from "../components/sections/ExperienceSection";
+import ProjectsSection from "../components/sections/ProjectsSection";
+import SkillsSection from "../components/sections/SkillsSection";
+import CertificatesSection from "../components/sections/CertificatesSection";
 import VisitorsSection from "../components/sections/VisitorsSection";
 import FaqSection from "../components/sections/FaqSection";
 import Footer from "../components/sections/Footer";
 import ContactDialog from "../components/sections/ContactDialog";
 
-// Local Data
+// Local Data & Supabase
 import type { GitHubRepo } from "../data/types";
 import { createClient } from "@mono/auth";
 import { faqItems, workCompanies, educationHistory } from "../data/experience";
@@ -118,119 +119,185 @@ const FALLBACK_REPOS: GitHubRepo[] = [
 ];
 
 export default function HomePage() {
-    const [contactOpen, setContactOpen] = useState(false);
-    const [repos, setRepos] = useState<GitHubRepo[]>(FALLBACK_REPOS);
-    const [reposLoading, setReposLoading] = useState(false);
-    const [reposError, setReposError] = useState<string | null>(null);
+  const [contactOpen, setContactOpen] = useState(false);
+  const [repos, setRepos] = useState<GitHubRepo[]>(FALLBACK_REPOS);
+  const [reposLoading] = useState(false);
+  const [reposError] = useState<string | null>(null);
 
-    // Fetch cached GitHub repos from Supabase (populated daily at 12:00 AM by cron)
-    useEffect(() => {
-        let isMounted = true;
-        const fetchRepos = async () => {
-            try {
-                const supabase = createClient();
-                const { data, error } = await supabase
-                    .from("portfolio_github_cache")
-                    .select("repos")
-                    .eq("id", "kamachi-dev")
-                    .maybeSingle();
+  const { scrollYProgress } = useScroll();
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 180,
+    damping: 28,
+    restDelta: 0.001,
+  });
 
-                const row = data as { repos?: unknown } | null;
-                if (error || !row || !Array.isArray(row.repos) || row.repos.length === 0) {
-                    if (isMounted) setRepos(FALLBACK_REPOS);
-                    return;
-                }
-                if (isMounted) {
-                    setRepos(row.repos as GitHubRepo[]);
-                }
-            } catch {
-                if (isMounted) setRepos(FALLBACK_REPOS);
-            }
-        };
+  // Fetch cached GitHub repos from Supabase (populated daily at 12:00 AM by cron)
+  useEffect(() => {
+    let isMounted = true;
+    const fetchRepos = async () => {
+      try {
+        const supabase = createClient();
+        const { data, error } = await supabase
+          .from("portfolio_github_cache")
+          .select("repos")
+          .eq("id", "kamachi-dev")
+          .maybeSingle();
 
-        fetchRepos();
-        return () => {
-            isMounted = false;
-        };
-    }, []);
+        const row = data as { repos?: unknown } | null;
+        if (error || !row || !Array.isArray(row.repos) || row.repos.length === 0) {
+          if (isMounted) setRepos(FALLBACK_REPOS);
+          return;
+        }
+        if (isMounted) {
+          setRepos(row.repos as GitHubRepo[]);
+        }
+      } catch {
+        if (isMounted) setRepos(FALLBACK_REPOS);
+      }
+    };
 
-    return (
-        <main className="page-container" style={{ position: "relative", width: "100%" }}>
-            <Navbar onContactOpen={() => setContactOpen(true)} />
+    fetchRepos();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
-            <div id="hero">
-                <HeroSection
-                    onContactOpen={() => setContactOpen(true)}
-                    repos={repos}
-                    certificates={certificatesData}
-                    workCompanies={workCompanies}
-                />
-            </div>
+  return (
+    <main className="page-container">
+      <CustomCursor />
 
-            <div id="about">
-                <AboutSection
-                    repos={repos}
-                    certificates={certificatesData}
-                    workCompanies={workCompanies}
-                    education={educationHistory}
-                />
-            </div>
+      {/* Scroll-linked progress hairline */}
+      <div
+        className="scroll-progress-rail"
+        data-testid="scroll-progress-rail"
+        aria-hidden="true"
+      >
+        <motion.div
+          className="scroll-progress-fill"
+          style={{ scaleX: smoothProgress }}
+        />
+      </div>
 
-            <div id="featured">
-                <FeaturedWorksSection featuredWorks={featuredWorks} />
-            </div>
+      <Navbar onContactOpen={() => setContactOpen(true)} />
 
-            <div id="skills">
-                <SkillsSection />
-            </div>
+      {/* HERO */}
+      <div className="chapter-shade-void">
+        <HeroSection
+          onContactOpen={() => setContactOpen(true)}
+          repos={repos}
+          certificates={certificatesData}
+          workCompanies={workCompanies}
+        />
+      </div>
 
-            <div id="certificates">
-                <CertificatesSection certificates={certificatesData} />
-            </div>
+      <ParallaxChapterReveal
+        variant="circle"
+        primaryShade="var(--shade-carbon)"
+        secondaryShade="var(--shade-graphite)"
+        align="right"
+        testId="reveal-hero-works"
+      />
 
-            <hr className="separator" />
+      {/* FEATURED WORKS */}
+      <div className="chapter-shade-obsidian">
+        <FeaturedWorksSection featuredWorks={featuredWorks} />
+      </div>
 
-            <ScrollReveal variant="fade-up">
-                <div id="projects">
-                    <ProjectsSection
-                        repos={repos}
-                        reposLoading={reposLoading}
-                        reposError={reposError}
-                    />
-                </div>
-            </ScrollReveal>
+      <ParallaxChapterReveal
+        variant="slab"
+        primaryShade="var(--shade-charcoal)"
+        secondaryShade="var(--shade-slate-dark)"
+        align="left"
+        testId="reveal-works-about"
+      />
 
-            <hr className="separator" />
+      {/* ABOUT */}
+      <div className="chapter-shade-abyss">
+        <AboutSection
+          repos={repos}
+          certificates={certificatesData}
+          workCompanies={workCompanies}
+          education={educationHistory}
+        />
+      </div>
 
-            <ScrollReveal variant="fade-up">
-                <div id="experience">
-                    <ExperienceSection workCompanies={workCompanies} />
-                </div>
-            </ScrollReveal>
+      <ParallaxChapterReveal
+        variant="pill"
+        primaryShade="var(--shade-carbon)"
+        secondaryShade="var(--shade-graphite)"
+        align="center"
+        testId="reveal-about-3d"
+      />
 
-            <hr className="separator" />
+      {/* 3D SHOWCASE */}
+      <div className="chapter-shade-carbon">
+        <ThreeDShowcaseSection />
+      </div>
 
-            <ScrollReveal variant="fade-up">
-                <div id="visitors">
-                    <VisitorsSection />
-                </div>
-            </ScrollReveal>
+      <ParallaxChapterReveal
+        variant="diagonal"
+        primaryShade="var(--shade-abyss)"
+        secondaryShade="var(--shade-charcoal)"
+        align="right"
+        testId="reveal-3d-experience"
+      />
 
-            <hr className="separator" />
+      {/* EXPERIENCE */}
+      <div className="chapter-shade-obsidian">
+        <ExperienceSection workCompanies={workCompanies} />
+      </div>
 
-            <ScrollReveal variant="fade-up">
-                <div id="faq">
-                    <FaqSection faqItems={faqItems} />
-                </div>
-            </ScrollReveal>
+      {/* PROJECTS */}
+      <div className="chapter-shade-carbon">
+        <ProjectsSection
+          repos={repos}
+          reposLoading={reposLoading}
+          reposError={reposError}
+        />
+      </div>
 
-            <hr className="separator" />
+      <ParallaxChapterReveal
+        variant="slab"
+        primaryShade="var(--shade-carbon)"
+        secondaryShade="var(--shade-slate-dark)"
+        align="left"
+        testId="reveal-projects-skills"
+      />
 
-            <ScrollReveal variant="fade-up">
-                <Footer onContactOpen={() => setContactOpen(true)} />
-            </ScrollReveal>
+      {/* SKILLS */}
+      <div className="chapter-shade-abyss">
+        <SkillsSection />
+      </div>
 
-            <ContactDialog open={contactOpen} onOpenChange={setContactOpen} />
-        </main>
-    );
+      {/* CERTIFICATES */}
+      <div className="chapter-shade-charcoal">
+        <CertificatesSection certificates={certificatesData} />
+      </div>
+
+      {/* VISITORS / REVIEWS */}
+      <div className="chapter-shade-obsidian">
+        <VisitorsSection />
+      </div>
+
+      {/* FAQ */}
+      <div className="chapter-shade-carbon">
+        <FaqSection faqItems={faqItems} />
+      </div>
+
+      <ParallaxChapterReveal
+        variant="circle"
+        primaryShade="var(--shade-abyss)"
+        secondaryShade="var(--shade-graphite)"
+        align="right"
+        testId="reveal-faq-footer"
+      />
+
+      {/* CONTACT FOOTER */}
+      <div id="contact" className="chapter-shade-void">
+        <Footer onContactOpen={() => setContactOpen(true)} />
+      </div>
+
+      <ContactDialog open={contactOpen} onOpenChange={setContactOpen} />
+    </main>
+  );
 }

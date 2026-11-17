@@ -16,7 +16,7 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 | `itemlist-home` | Centralized game production calculator directory and launch portal (`itemlist.online`) |
 | `itemlist-create` | Minecraft Create mod recipe tree planner and kinetic automation throughput calculator (`create.itemlist.online`) |
 | `itemlist-rimworld` | RimWorld colony manufacturing and fabrication bench bill throughput planner (`rimworld.itemlist.online`) |
-| `itemlist-admin` | Staff administrative moderation portal for community recipe data consensus and issue triage (`admin.itemlist.online`) |
+| `admin` | Unified multi-site Machi Asia administration portal (`admin.machi.asia`) for monitoring logged-in users, guests, traffic origins, usage quotas with reset/override controls, Redis-backed Rose AI chats, role management, and dedicated per-site admin pages (`/rose`, `/itemlist`, `/[siteId]`) |
 
 ## Packages
 
@@ -42,6 +42,7 @@ All API usage tracking, rate-limiting, and quota locking are consolidated in `@m
 - **Client SDK, Plug-and-Play Usage Components & Account Visibility**: `@mono/api-client` tracks locked metrics and surfaces quota lock callbacks (`onQuotaLocked`, `usage.track`, `usage.getSnapshot`), while `@mono/auth` provides plug-and-play modular building blocks (`UsageProvider`, `useUsage`, `<UsageTracker metric="..." />`, `<UsageGate metric="..." minRole="..." mode="overlay | banner | disable | render" />`, `<MonoAppShell />`, `<AuthNavbar />`, `useApiClient`, `getUserProfileInfo`, `registerPrivacyDisclosure`, and `usePrivacyConsent`) and a live **Usage & Quotas** dashboard inside Account Settings. Any component can track or gate a custom metric key on the fly via `@mono/database`'s `USAGE_METRICS_REGISTRY` and `registerUsageMetric()` without requiring database schema migrations.
 - **Localhost Link Resolution (`resolveHref` / `resolveAppHref` / `useResolvedHref`)**: All shared navigation and link primitives (`Link`, `Navbar`, `Footer`, `MarkdownRenderer` in `@mono/components`, `GameHeader` in `@mono/game-calculator`, and app hubs) use `@mono/app-config`'s `resolveHref()` wrapper to automatically rewrite Machi Asia (`*.machi.asia`, `*.machi-asia.com`) and ItemList (`*.itemlist.online`) domain links to their local `http://localhost:<devPort>` equivalents when running locally.
 - **Weekly Supabase Keep-Alive Cron Jobs**: Prevents Supabase free-tier inactivity pausing (`0 3 * * 1`, every Monday at 03:00 UTC) across three redundant layers: (1) Vercel Cron (`vercel.json` -> `GET /cron/supabase-keepalive` on `apps/api`), (2) GitHub Actions scheduled workflow (`.github/workflows/supabase-keepalive.yml`), and (3) Postgres `pg_cron` (`weekly-supabase-keepalive` job calling `public.record_keepalive_heartbeat` into `public.keepalive_heartbeats` in `packages/database/migrations/20261109010000_supabase_keepalive_cron.sql`).
+- **Visitor Origin Telemetry (`public.visitor_sessions`) & Redis Rose AI Chat Sync**: `apps/api` captures visitor origin metadata (`app`, `hostname`, `pathname`, `referrer`, `utm_source`), Vercel geolocation (`@vercel/functions`), and parsed browser/OS/device (`ua-parser-js`) into `public.visitor_sessions` (`packages/database/migrations/20261117000000_visitor_sessions_and_admin_controls.sql`), while Rose AI persists conversations across devices in Redis (`apps/api/src/server/rose/chat-store.ts`, `/rose/conversations`), all surfaced in `apps/admin` (`admin.machi.asia`).
 
 ## Conventions
 
@@ -138,6 +139,7 @@ npm run dev -w @mono/rose
 npm run dev -w @mono/calculator-app
 npm run dev -w @mono/docs
 npm run dev -w @mono/hells-forge
+npm run dev -w @mono/admin
 
 # Build all apps and packages
 npm run build
@@ -195,6 +197,7 @@ npm run cap:open:android -w @mono/calculator-app
 ```
 mono/
 ├── apps/
+│   ├── admin/          # Unified multi-site admin portal at admin.machi.asia (Next.js)
 │   ├── api/            # Centralized API service & Interactive Explorer (Next.js)
 │   ├── calculator/     # Multi-game production calculator (Next.js)
 │   ├── docs/           # Documentation site (Next.js)

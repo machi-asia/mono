@@ -151,7 +151,7 @@
 
 /* Obsidian Highlights: ==highlight== */
 .m-md-highlight {
-  background: rgb(212 175 55 / 28%);
+  background: var(--color-primary-border, rgb(255 255 255 / 20%));
   color: var(--color-text);
   border-radius: 3px;
   padding: 1px 4px;

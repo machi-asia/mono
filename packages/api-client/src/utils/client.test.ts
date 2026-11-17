@@ -229,4 +229,44 @@ describe("ApiClient", () => {
       }
     );
   });
+
+  it("calls admin endpoints and rose conversation sync endpoints with auth token", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve({ ok: true, stats: { totalUsers: 2 } }),
+    });
+    global.fetch = mockFetch;
+
+    const client = new ApiClient({
+      baseUrl: "http://localhost:3005",
+      getAuthToken: () => "super-admin-token",
+    });
+
+    const overview = await client.admin.getOverview("rose");
+    expect(overview.ok).toBe(true);
+    expect(mockFetch).toHaveBeenCalledWith("http://localhost:3005/admin/overview?siteId=rose", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer super-admin-token",
+      },
+    });
+
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve({ ok: true, userId: "u2", role: "admin" }),
+    });
+    const roleRes = await client.admin.updateUserRole("u2", "admin");
+    expect(roleRes.role).toBe("admin");
+
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve({ ok: true, userId: "u2", conversations: [] }),
+    });
+    const convsRes = await client.rose.getConversations();
+    expect(convsRes.ok).toBe(true);
+  });
 });

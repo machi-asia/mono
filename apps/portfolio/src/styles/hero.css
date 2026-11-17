@@ -504,3 +504,328 @@ html.light-mode .sp-hero-wireframe-box:hover {
     }
 }
 
+/* ===== Centra-Inspired Squeeze Header & Tall Vertical Multi-Plane Parallax Hero ===== */
+.centra-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 240vh;
+    background-color: var(--shade-void, #020203);
+    color: var(--shade-inversion, #f4f4f0);
+    overflow: clip visible;
+    padding-top: clamp(5.5rem, 8vw, 7.5rem);
+    padding-bottom: clamp(8rem, 14vw, 14rem);
+}
+
+.centra-squeeze-header {
+    position: relative;
+    z-index: 8;
+    width: 100%;
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 3rem) clamp(2.5rem, 5vw, 4.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.centra-squeeze-runway {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.centra-squeeze-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: visible;
+}
+
+.centra-squeeze-heading {
+    font-size: clamp(1.35rem, 5.3vw, 5.6rem);
+    line-height: 130px;
+    height: 130px;
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    user-select: none;
+    margin: 0;
+    transform-origin: 50% 0%;
+    will-change: transform;
+}
+
+.centra-eyebrow {
+    margin-top: clamp(1.25rem, 2.5vw, 2rem);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted, #8e8e96);
+}
+
+.centra-paragraph-massive {
+    margin: 0.85rem auto 0;
+    max-width: 780px;
+    font-size: clamp(1.4rem, 2.85vw, 2.5rem);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.028em;
+    text-align: center;
+    color: var(--shade-inversion, #f4f4f0);
+}
+
+.centra-parallax-stage {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    min-height: 1650px;
+    margin: 160px auto 0;
+    padding-top: 80px;
+    padding-bottom: 480px;
+    overflow: visible;
+}
+
+/* Deep Background Rectangular Editorial Frames (z-index: 1, vertical counter-scroll) */
+.centra-bg-frame {
+    position: absolute;
+    overflow: hidden;
+    background: var(--shade-carbon, #0c0c10);
+    pointer-events: none;
+    will-change: transform;
+    box-shadow: 0 28px 70px rgb(0 0 0 / 75%);
+}
+
+.centra-bg-frame-1 {
+    left: 3%;
+    top: 20px;
+    width: 250px;
+    height: 330px;
+}
+
+.centra-bg-frame-2 {
+    left: 20%;
+    top: 340px;
+    width: 245px;
+    height: 350px;
+}
+
+.centra-bg-frame-3 {
+    right: 10%;
+    top: 130px;
+    width: 260px;
+    height: 275px;
+}
+
+.centra-frame-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(35%) contrast(1.06);
+}
+
+/* Overlapping Foreground Depth Planes (vertical-only motion across frames) */
+.centra-depth-item {
+    position: absolute;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.centra-depth-cutout {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 28px 54px rgb(0 0 0 / 85%));
+}
+
+.centra-depth-card-media {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 26px 64px rgb(0 0 0 / 80%);
+    border: 1px solid rgb(255 255 255 / 12%);
+}
+
+.centra-depth-item-1 {
+    left: 13%;
+    top: 170px;
+    width: 210px;
+}
+
+.centra-depth-item-2 {
+    left: 2%;
+    top: 420px;
+    width: 215px;
+}
+
+.centra-depth-item-3 {
+    right: 13%;
+    top: -20px;
+    width: 165px;
+}
+
+.centra-depth-item-4 {
+    right: 12%;
+    top: 290px;
+    width: 195px;
+}
+
+.centra-depth-item-5 {
+    left: 36%;
+    top: 760px;
+    width: 220px;
+}
+
+.centra-depth-item-6 {
+    right: 5%;
+    top: 680px;
+    width: 210px;
+}
+
+/* Central Editorial Statement & CTAs */
+.centra-overlay-copy {
+    position: relative;
+    z-index: 3;
+    top: 90px;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.centra-overlay-statement {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2.625rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: var(--shade-inversion, #f4f4f0);
+    text-shadow: 0 12px 38px rgb(0 0 0 / 85%);
+}
+
+.centra-overlay-statement-muted {
+    margin-top: 1rem;
+    color: var(--foreground-muted, #d4d4d8);
+}
+
+.centra-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.875rem;
+    margin-top: 2rem;
+}
+
+@media (width <= 1024px) {
+    .centra-bg-frame-1,
+    .centra-bg-frame-2,
+    .centra-bg-frame-3 {
+        width: 200px;
+        height: 260px;
+    }
+
+    .centra-depth-item-1,
+    .centra-depth-item-2,
+    .centra-depth-item-4,
+    .centra-depth-item-5,
+    .centra-depth-item-6 {
+        width: 170px;
+    }
+
+    .centra-depth-item-3 {
+        width: 135px;
+    }
+}
+
+@media (width <= 640px) {
+    .centra-hero-section {
+        min-height: 175vh;
+        padding-top: 5.5rem;
+        padding-bottom: 5rem;
+    }
+
+    .centra-squeeze-heading {
+        line-height: 96px;
+        height: 96px;
+    }
+
+    .centra-parallax-stage {
+        min-height: 1120px;
+        margin-top: 80px;
+        padding-top: 40px;
+        padding-bottom: 240px;
+    }
+
+    .centra-bg-frame-1 {
+        left: 2%;
+        top: 10px;
+        width: 145px;
+        height: 195px;
+    }
+
+    .centra-bg-frame-2 {
+        left: 6%;
+        top: 390px;
+        width: 150px;
+        height: 210px;
+    }
+
+    .centra-bg-frame-3 {
+        right: 3%;
+        top: 240px;
+        width: 150px;
+        height: 175px;
+    }
+
+    .centra-depth-item-1 {
+        left: 16%;
+        top: 130px;
+        width: 120px;
+    }
+
+    .centra-depth-item-2 {
+        left: 3%;
+        top: 510px;
+        width: 135px;
+    }
+
+    .centra-depth-item-3 {
+        right: 6%;
+        top: -10px;
+        width: 110px;
+    }
+
+    .centra-depth-item-4 {
+        right: 4%;
+        top: 360px;
+        width: 130px;
+    }
+
+    .centra-depth-item-5 {
+        left: 28%;
+        top: 670px;
+        width: 135px;
+    }
+
+    .centra-depth-item-6 {
+        right: 4%;
+        top: 630px;
+        width: 135px;
+    }
+}
+
+

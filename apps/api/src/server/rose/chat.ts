@@ -19,6 +19,8 @@ import {
 } from "@mono/rose/agent";
 import { checkAndIncrementRoseUsage } from "./usage-calc";
 import { resolveRequestAuth } from "../security/guard";
+import { getRoseChatStore } from "./chat-store";
+import { recordVisitorPresenceFromRequest } from "../usage/tracker";
 
 export async function getAuthUser(
   req: Request
@@ -67,6 +69,21 @@ export async function handleRoseChat(req: Request): Promise<Response> {
     const userId = auth.userId;
     const userRoles = auth.roles;
     const clientOverride = auth.supabaseClient;
+    const conversationId =
+      typeof body.conversationId === "string" && body.conversationId.trim()
+        ? body.conversationId.trim()
+        : `conv_${userId.slice(0, 8)}_${Date.now()}`;
+    const userEmail = (auth.user?.email as string | undefined) ?? null;
+    const userName =
+      (auth.user?.user_metadata?.full_name as string | undefined) ||
+      (auth.user?.user_metadata?.name as string | undefined) ||
+      (auth.isAnonymous ? "Guest" : userEmail?.split("@")[0] || "User");
+    const originApp = typeof body.originApp === "string" && body.originApp.trim() ? body.originApp.trim() : "rose";
+
+    await recordVisitorPresenceFromRequest(req, auth, {
+      app: originApp,
+      pathname: "/chat",
+    });
 
     // 1. Check & increment Rose conversation turns quota
     const usage = await checkAndIncrementRoseUsage(userId, userRoles, clientOverride);
@@ -225,6 +242,26 @@ export async function handleRoseChat(req: Request): Promise<Response> {
                   clientOverride: dbClient,
                 }).catch(() => {});
 
+                const chatStore = await getRoseChatStore().catch(() => null);
+                await chatStore
+                  ?.appendTurnToConversation({
+                    userId,
+                    conversationId,
+                    title: typeof body.title === "string" ? body.title : undefined,
+                    userMessage: message,
+                    assistantMessage: event.text || "",
+                    emotion: event.emotion,
+                    traces: event.traces,
+                    history: event.history,
+                    estimatedTokens,
+                    userEmail,
+                    userName,
+                    isGuest: auth.isAnonymous,
+                    role: auth.role,
+                    originApp,
+                  })
+                  .catch(() => {});
+
                 await langfuseTrace.complete(event.text, {
                   emotion: event.emotion,
                   traces: event.traces,
@@ -280,6 +317,26 @@ export async function handleRoseChat(req: Request): Promise<Response> {
         role: auth.role,
         clientOverride: dbClient,
       }).catch(() => {});
+
+      const chatStore = await getRoseChatStore().catch(() => null);
+      await chatStore
+        ?.appendTurnToConversation({
+          userId,
+          conversationId,
+          title: typeof body.title === "string" ? body.title : undefined,
+          userMessage: message,
+          assistantMessage: result.text || "",
+          emotion: result.emotion,
+          traces: result.traces,
+          history: result.history,
+          estimatedTokens,
+          userEmail,
+          userName,
+          isGuest: auth.isAnonymous,
+          role: auth.role,
+          originApp,
+        })
+        .catch(() => {});
 
       await langfuseTrace.complete(result.text, {
         emotion: result.emotion,

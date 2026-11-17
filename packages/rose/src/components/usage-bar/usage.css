@@ -3,8 +3,8 @@
   flex-direction: column;
   gap: var(--space-2, 8px);
   padding: var(--space-3, 12px) var(--space-4, 16px);
-  background: var(--color-surface, #141416);
-  border: 1px solid var(--color-border, #26262a);
+  background: var(--color-surface, #111116);
+  border: 1px solid var(--color-border, #1f1f27);
   border-radius: var(--radius-md, 8px);
   font-family: inherit;
 }
@@ -27,26 +27,26 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   background: rgb(255 255 255 / 6%);
-  color: var(--color-text-muted, #9ca3af);
-  border: 1px solid var(--color-border, #26262a);
+  color: var(--color-text-muted, #8e8e96);
+  border: 1px solid var(--color-border, #1f1f27);
 }
 
 .m-rose-usage-role-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-primary, #d4af37);
+  background: var(--color-primary, #fff);
 }
 
 .m-rose-usage-role-pill[data-role="admin"] {
-  background: rgb(212 175 55 / 15%);
-  color: var(--color-primary, #d4af37);
-  border-color: rgb(212 175 55 / 40%);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  color: var(--color-primary, #fff);
+  border-color: var(--color-primary-border, rgb(255 255 255 / 20%));
 }
 
 .m-rose-usage-role-pill[data-role="admin"] .m-rose-usage-role-dot {
-  background: var(--color-primary, #d4af37);
-  box-shadow: 0 0 6px var(--color-primary, #d4af37);
+  background: var(--color-primary, #fff);
+  box-shadow: 0 0 6px var(--color-primary-glow, rgb(255 255 255 / 12%));
 }
 
 .m-rose-usage-role-pill[data-role="guest"] {
@@ -79,7 +79,7 @@
 
 .m-rose-tier-tooltip-title {
   font-weight: 700;
-  color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #fff);
   margin-bottom: 2px;
   border-bottom: 1px solid rgb(255 255 255 / 10%);
   padding-bottom: 2px;

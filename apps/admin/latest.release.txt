@@ -1,0 +1,12 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-11-17
+App: Machi Asia Admin (@mono/admin)
+Platforms: Web (Next.js 16 App Router)
+Package ID: asia.machi.admin
+Capgo Channel: N/A
+
+Updates:
+- Unified multi-site administration portal at admin.machi.asia with dedicated per-site admin pages (/rose, /itemlist, /[siteId]).
+- Real-time monitoring for authenticated users, guests, traffic origins, geolocation, and device/browser telemetry.
+- Interactive usage quota monitoring with counter resets and custom limit overrides, plus Redis-backed Rose AI chat inspection.
+- Role management across guest, member, pro, and admin tiers alongside ItemList consensus and support ticket triage.

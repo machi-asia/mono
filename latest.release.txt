@@ -123,12 +123,13 @@ Updates:
 
 ================================================================================
 Release Name: v1.0.0 - Genesis Release
-App: ItemList Admin (@mono/itemlist-admin)
+App: Machi Asia Admin (@mono/admin)
 Platforms: Web (Next.js 16 App Router)
-Package ID: online.itemlist.admin
+Package ID: asia.machi.admin
 --------------------------------------------------------------------------------
 Updates:
-- Staff administrative oversight portal for community data consensus and issue reports.
-- Authenticated status triage (pending, resolved, rejected) via api.machi.asia.
-- Supabase authentication with role-based access control.
+- Unified multi-site administration portal at admin.machi.asia with per-site routes (/rose, /itemlist, /[siteId]).
+- Real-time monitoring for authenticated users, guests, traffic origins, geolocation, and device/browser telemetry.
+- Interactive usage quota monitoring with counter resets and custom limit overrides, plus Redis-backed Rose AI chat inspection.
+- Role management across guest, member, pro, and admin tiers alongside ItemList consensus and support ticket triage.
 

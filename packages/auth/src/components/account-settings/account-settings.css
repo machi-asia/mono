@@ -1303,15 +1303,15 @@
 }
 
 .auth-display-preview--dark {
-  background: #0d0c0a;
+  background: var(--shade-obsidian, #050507);
 }
 
 .auth-display-preview--light {
-  background: #f7f5ef;
+  background: #fff;
 }
 
 .auth-display-preview--system {
-  background: linear-gradient(135deg, #0d0c0a 50%, #f7f5ef 50%);
+  background: linear-gradient(135deg, var(--shade-obsidian, #050507) 50%, #fff 50%);
 }
 
 .auth-display-mock-window {
@@ -1326,13 +1326,13 @@
 }
 
 .auth-display-preview--dark .auth-display-mock-window {
-  background: #16140f;
-  border: 1px solid #2a271f;
+  background: var(--shade-charcoal, #111116);
+  border: 1px solid var(--shade-slate-dark, #1f1f27);
 }
 
 .auth-display-preview--light .auth-display-mock-window {
-  background: #fff;
-  border: 1px solid #e8e2d4;
+  background: #fbfbfb;
+  border: 1px solid #e4e4e7;
 }
 
 .auth-display-preview--system .auth-display-mock-window {

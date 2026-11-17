@@ -12,6 +12,7 @@
 @import url("../../../../packages/components/src/components/scroll-sections/scroll-rotate.css");
 @import url("../../../../packages/components/src/components/scroll-sections/scroll-split.css");
 @import url("../../../../packages/components/src/components/scroll-sections/scroll-depth.css");
+@import url("../../../../packages/components/src/components/presentation/presentation.css");
 @import url("../styles/components.css");
 @import url("../styles/hero.css");
 @import url("../styles/about.css");
@@ -29,59 +30,24 @@
 @import url("../styles/footer.css");
 @import url("../styles/contact.css");
 @import url("../styles/section-backgrounds.css");
+@import url("../styles/minimal-motion.css");
 
 :root {
-    --background: #000;
-    --background-rgb: 0, 0, 0;
-    --foreground: #fff;
-    --foreground-muted: #d4d4d8;
-    --card-bg: #0c0c0e;
-    --card-bg-rgb: 12, 12, 14;
-    --card-border: rgb(255 255 255 / 3%);
-    --card-border-hover: rgb(255 255 255 / 12%);
-    --muted: #8e8e93;
-    --hairline: rgb(255 255 255 / 4%);
+    --background-rgb: 5, 5, 7;
+    --card-bg-rgb: 17, 17, 22;
     --accent-r: 255;
     --accent-g: 255;
     --accent-b: 255;
     --accent-rgb: var(--accent-r), var(--accent-g), var(--accent-b);
-    --accent: #fff;
-    --accent-light: #e4e4e7;
-    --accent-glow: rgb(255 255 255 / 12%);
-
-    /* Stewart & Partners Studio Categorical Accents */
-    --sp-blue: #2c4eff;
-    --sp-emerald: #24d480;
-    --sp-violet: #ab9bf2;
-    --sp-orange: #ff5c01;
-    --sp-yellow: #ffd92d;
-    --color-brand-cyan: #2c4eff;
-    --color-brand-purple: #ab9bf2;
-    --color-brand-emerald: #24d480;
-    --color-brand-amber: #ff5c01;
-    --glass-bg: rgb(10 10 12 / 85%);
-    --glass-border: rgb(255 255 255 / 10%);
-    --glass-hover: rgb(255 255 255 / 15%);
 }
 
 html.light-mode {
-    --background: #fff;
     --background-rgb: 255, 255, 255;
-    --foreground: #09090b;
-    --foreground-muted: #52525b;
-    --card-bg: #fbfbfb;
     --card-bg-rgb: 251, 251, 251;
-    --card-border: rgb(0 0 0 / 8%);
-    --card-border-hover: rgb(0 0 0 / 22%);
-    --muted: #71717a;
-    --hairline: rgb(0 0 0 / 6%);
     --accent-r: 0;
     --accent-g: 0;
     --accent-b: 0;
     --accent-rgb: 0, 0, 0;
-    --accent: #09090b;
-    --accent-light: #27272a;
-    --accent-glow: rgb(0 0 0 / 8%);
 }
 
 /* Optional themes with subtle typographic restraint */
@@ -179,13 +145,13 @@ html.lenis body {
 
 /* Swiss High-Contrast Gradient Text */
 .gradient-text {
-    background: linear-gradient(180deg, #fff 0%, #a1a1aa 100%);
+    background: linear-gradient(180deg, var(--color-text) 0%, var(--color-text-muted) 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 html.light-mode .gradient-text {
-    background: linear-gradient(180deg, #09090b 0%, #71717a 100%);
+    background: linear-gradient(180deg, var(--color-text) 0%, var(--color-text-muted) 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }

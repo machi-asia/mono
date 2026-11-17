@@ -47,30 +47,17 @@
 }
 
 .btn-primary {
-    background: #fff;
-    color: #050505;
-    border: 1px solid #fff;
-    box-shadow: 0 4px 20px rgb(255 255 255 / 12%);
+    background: var(--color-primary);
+    color: var(--color-primary-contrast);
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 4px 20px var(--color-primary-glow);
 }
 
 .btn-primary:hover {
-    background: #e4e4e7;
-    border-color: #e4e4e7;
+    background: var(--color-primary-soft);
+    border-color: var(--color-primary-soft);
     transform: translateY(-1px);
-    box-shadow: 0 6px 24px rgb(255 255 255 / 18%);
-}
-
-html.light-mode .btn-primary {
-    background: #09090b;
-    color: #fff;
-    border: 1px solid #09090b;
-    box-shadow: 0 4px 20px rgb(0 0 0 / 12%);
-}
-
-html.light-mode .btn-primary:hover {
-    background: #27272a;
-    border-color: #27272a;
-    box-shadow: 0 6px 24px rgb(0 0 0 / 18%);
+    box-shadow: 0 6px 24px var(--color-primary-glow);
 }
 
 .btn-secondary {
@@ -112,14 +99,14 @@ html.light-mode .btn-secondary:hover {
 
 .btn-danger {
     background: rgb(244 63 94 / 10%);
-    color: #fb7185;
+    color: var(--color-error-soft);
     border: 1px solid rgb(244 63 94 / 25%);
 }
 
 .btn-danger:hover {
     background: rgb(244 63 94 / 20%);
-    border-color: rgb(244 63 94 / 40%);
-    color: #fff;
+    border-color: var(--color-error);
+    color: var(--color-text);
 }
 
 .btn-icon {
@@ -297,25 +284,19 @@ html.light-mode .badge-default {
 .badge-negative {
     background: rgb(244 63 94 / 10%);
     border: 1px solid rgb(244 63 94 / 25%);
-    color: #fb7185;
+    color: var(--color-error-soft);
 }
 
 .badge-warning {
     background: rgb(245 158 11 / 10%);
     border: 1px solid rgb(245 158 11 / 25%);
-    color: #fbbf24;
+    color: var(--color-warning-soft);
 }
 
 .badge-accent {
-    background: #fff;
-    border: 1px solid #fff;
-    color: #050505;
-}
-
-html.light-mode .badge-accent {
-    background: #09090b;
-    border: 1px solid #09090b;
-    color: #fff;
+    background: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary-contrast);
 }
 
 /* ===== Input Component ===== */
@@ -341,12 +322,12 @@ html.light-mode .badge-accent {
 }
 
 .input-field:focus {
-    border-color: #fff;
+    border-color: var(--color-primary);
     background: rgb(255 255 255 / 5%);
 }
 
 html.light-mode .input-field:focus {
-    border-color: #09090b;
+    border-color: var(--color-primary);
     background: rgb(0 0 0 / 2%);
 }
 
@@ -355,7 +336,7 @@ html.light-mode .input-field:focus {
 }
 
 .input-field-error {
-    border-color: #f43f5e;
+    border-color: var(--color-error);
 }
 
 .input-field-textarea {

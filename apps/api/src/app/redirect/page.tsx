@@ -35,6 +35,7 @@ const APP_ICONS: Record<string, React.ComponentType<{ size?: number; className?:
   "hells-forge": Flame,
   portal: Globe,
   rose: Bot,
+  admin: ShieldCheck,
   "itemlist-admin": ShieldCheck,
   "itemlist-create": Wrench,
   "itemlist-rimworld": Boxes,

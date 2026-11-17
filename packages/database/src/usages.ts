@@ -407,6 +407,10 @@ interface LocalUsageLedgerEntry {
   monthlyCount: number;
   day: string;
   month: string;
+  dailyLimit?: number;
+  monthlyLimit?: number;
+  updatedAt?: string;
+  rawUserId?: string;
 }
 
 // Strict in-memory fallback ledger so that if Supabase RPC is unreachable,
@@ -438,32 +442,34 @@ function evaluateFallbackLedger(options: {
   const existing = FALLBACK_USAGE_LEDGER.get(key);
   let dailyCount = existing && existing.day === day ? existing.dailyCount : 0;
   let monthlyCount = existing && existing.month === month ? existing.monthlyCount : 0;
+  const effDailyLimit = existing?.dailyLimit ?? dailyLimit;
+  const effMonthlyLimit = existing?.monthlyLimit ?? monthlyLimit;
 
   if (amount > 0) {
-    if (dailyCount + amount > dailyLimit) {
+    if (dailyCount + amount > effDailyLimit) {
       return {
         allowed: false,
         role,
         metric,
         dailyCount,
-        dailyLimit,
+        dailyLimit: effDailyLimit,
         monthlyCount,
-        monthlyLimit,
+        monthlyLimit: effMonthlyLimit,
         exceededType: "daily",
         remaining: 0,
         day,
         month,
       };
     }
-    if (monthlyCount + amount > monthlyLimit) {
+    if (monthlyCount + amount > effMonthlyLimit) {
       return {
         allowed: false,
         role,
         metric,
         dailyCount,
-        dailyLimit,
+        dailyLimit: effDailyLimit,
         monthlyCount,
-        monthlyLimit,
+        monthlyLimit: effMonthlyLimit,
         exceededType: "monthly",
         remaining: 0,
         day,
@@ -478,23 +484,27 @@ function evaluateFallbackLedger(options: {
       monthlyCount,
       day,
       month,
+      dailyLimit: existing?.dailyLimit,
+      monthlyLimit: existing?.monthlyLimit,
+      updatedAt: new Date().toISOString(),
+      rawUserId: existing?.rawUserId ?? userId,
     });
   }
 
-  const dailyAllowed = dailyCount < dailyLimit;
-  const monthlyAllowed = monthlyCount < monthlyLimit;
+  const dailyAllowed = dailyCount < effDailyLimit;
+  const monthlyAllowed = monthlyCount < effMonthlyLimit;
   const allowed = amount > 0 ? true : dailyAllowed && monthlyAllowed;
-  const dailyRemaining = Math.max(0, dailyLimit - dailyCount);
-  const monthlyRemaining = Math.max(0, monthlyLimit - monthlyCount);
+  const dailyRemaining = Math.max(0, effDailyLimit - dailyCount);
+  const monthlyRemaining = Math.max(0, effMonthlyLimit - monthlyCount);
 
   return {
     allowed,
     role,
     metric,
     dailyCount,
-    dailyLimit,
+    dailyLimit: effDailyLimit,
     monthlyCount,
-    monthlyLimit,
+    monthlyLimit: effMonthlyLimit,
     exceededType: !dailyAllowed ? "daily" : !monthlyAllowed ? "monthly" : undefined,
     remaining: Math.min(dailyRemaining, monthlyRemaining),
     day,
@@ -502,7 +512,7 @@ function evaluateFallbackLedger(options: {
   };
 }
 
-function toDeterministicUuid(input: string): string {
+export function toDeterministicUuid(input: string): string {
   if (!input) return "00000000-0000-0000-0000-000000000001";
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
   if (uuidRegex.test(input)) return input;
@@ -553,8 +563,10 @@ export async function recordAndCheckUsage(options: {
 
   const role: UserRole = options.role ?? "member";
   const baseQuota = getRoleQuotaForMetric(role, metric);
-  const dailyLimit = options.dailyLimitOverride ?? baseQuota.daily;
-  const monthlyLimit = options.monthlyLimitOverride ?? baseQuota.monthly;
+  const existingLedgerEntry = FALLBACK_USAGE_LEDGER.get(getLedgerKey(validUserId, app, metric));
+  const dailyLimit = options.dailyLimitOverride ?? existingLedgerEntry?.dailyLimit ?? baseQuota.daily;
+  const monthlyLimit =
+    options.monthlyLimitOverride ?? existingLedgerEntry?.monthlyLimit ?? baseQuota.monthly;
 
   if (def.minRole && !isRoleAtLeast(role, def.minRole)) {
     return {
@@ -906,4 +918,304 @@ export async function getUserUsageSummary(
   } catch {
     return [];
   }
+}
+
+/**
+ * Lists all usage records across users and guests for the Admin Portal.
+ * Merges persisted Supabase `user_usages` rows with any in-memory fallback entries.
+ * Strictly server-only.
+ */
+export async function listAllUserUsages(
+  options: {
+    userId?: string;
+    app?: string;
+    metric?: string;
+    limit?: number;
+  } = {},
+  clientOverride?: SupabaseClient<Database>
+): Promise<UserUsageRecord[]> {
+  assertServerOnlyExecution("listAllUserUsages");
+
+  const merged = new Map<string, UserUsageRecord>();
+  const targetUserId = options.userId ? toDeterministicUuid(options.userId) : undefined;
+  const limit = Math.max(1, Math.min(options.limit ?? 1000, 2000));
+
+  const isOfflineTest =
+    !clientOverride &&
+    typeof process !== "undefined" &&
+    (process.env?.NODE_ENV === "test" || Boolean(process.env?.VITEST)) &&
+    !process.env?.SUPABASE_URL &&
+    !process.env?.NEXT_PUBLIC_SUPABASE_URL;
+
+  if (!isOfflineTest) {
+    try {
+      const supabase = clientOverride || createServiceClient();
+      let query = supabase
+        .from("user_usages")
+        .select("*")
+        .order("updated_at", { ascending: false })
+        .limit(limit);
+
+      if (targetUserId) {
+        query = query.eq("user_id", targetUserId);
+      }
+      if (options.app && options.app !== "all") {
+        query = query.eq("app", options.app);
+      }
+      if (options.metric && options.metric !== "all") {
+        query = query.eq("metric", options.metric);
+      }
+
+      const { data, error } = await query;
+      if (!error && Array.isArray(data)) {
+        for (const row of data as UserUsageRecord[]) {
+          const composite = `${row.user_id}::${row.app}::${row.metric}::${row.period_type}::${row.period_key}`;
+          merged.set(composite, row);
+        }
+      }
+    } catch {
+      // Fall back to in-memory ledger
+    }
+  }
+
+  for (const [key, entry] of FALLBACK_USAGE_LEDGER.entries()) {
+    const [uid, app, metric] = key.split("::");
+    if (!uid || !app || !metric) continue;
+    if (targetUserId && uid !== targetUserId && entry.rawUserId !== options.userId) continue;
+    if (options.app && options.app !== "all" && app !== options.app) continue;
+    if (options.metric && options.metric !== "all" && metric !== options.metric) continue;
+
+    const now = entry.updatedAt ?? new Date().toISOString();
+    const fallbackQuota = getRoleQuotaForMetric("member", metric);
+
+    const dailyKey = `${uid}::${app}::${metric}::daily::${entry.day}`;
+    if (!merged.has(dailyKey)) {
+      merged.set(dailyKey, {
+        id: `fb_daily_${uid}_${app}_${metric}`,
+        user_id: uid,
+        app,
+        metric,
+        period_type: "daily",
+        period_key: entry.day,
+        count: entry.dailyCount,
+        usage_limit: entry.dailyLimit ?? fallbackQuota.daily,
+        created_at: now,
+        updated_at: now,
+      });
+    }
+
+    const monthlyKey = `${uid}::${app}::${metric}::monthly::${entry.month}`;
+    if (!merged.has(monthlyKey)) {
+      merged.set(monthlyKey, {
+        id: `fb_monthly_${uid}_${app}_${metric}`,
+        user_id: uid,
+        app,
+        metric,
+        period_type: "monthly",
+        period_key: entry.month,
+        count: entry.monthlyCount,
+        usage_limit: entry.monthlyLimit ?? fallbackQuota.monthly,
+        created_at: now,
+        updated_at: now,
+      });
+    }
+  }
+
+  return Array.from(merged.values())
+    .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
+    .slice(0, limit);
+}
+
+/**
+ * Admin control to reset daily/monthly usage counters to 0 or override quota limits
+ * for a user or guest in both `public.user_usages` and the fallback ledger.
+ * Strictly server-only.
+ */
+export async function adminManageUserUsage(
+  options: {
+    userId: string;
+    app: string;
+    metric: UsageMetric;
+    action: "reset" | "set_limits";
+    dailyLimit?: number;
+    monthlyLimit?: number;
+  },
+  clientOverride?: SupabaseClient<Database>
+): Promise<{
+  success: boolean;
+  dailyCount: number;
+  dailyLimit: number;
+  monthlyCount: number;
+  monthlyLimit: number;
+  error?: string;
+}> {
+  assertServerOnlyExecution("adminManageUserUsage");
+
+  const validUserId = toDeterministicUuid(options.userId);
+  const app = options.app || getMetricDefinition(options.metric).defaultApp || "global";
+  const metric = options.metric;
+  const day = currentDay();
+  const month = currentMonth();
+  const key = getLedgerKey(validUserId, app, metric);
+  const now = new Date().toISOString();
+
+  const existing = FALLBACK_USAGE_LEDGER.get(key);
+  const defaultQuota = getRoleQuotaForMetric("member", metric);
+
+  const nextDailyLimit =
+    options.action === "set_limits" &&
+    typeof options.dailyLimit === "number" &&
+    Number.isFinite(options.dailyLimit) &&
+    options.dailyLimit >= 0
+      ? Math.floor(options.dailyLimit)
+      : (existing?.dailyLimit ?? defaultQuota.daily);
+
+  const nextMonthlyLimit =
+    options.action === "set_limits" &&
+    typeof options.monthlyLimit === "number" &&
+    Number.isFinite(options.monthlyLimit) &&
+    options.monthlyLimit >= 0
+      ? Math.floor(options.monthlyLimit)
+      : (existing?.monthlyLimit ?? defaultQuota.monthly);
+
+  let nextDailyCount = existing && existing.day === day ? existing.dailyCount : 0;
+  let nextMonthlyCount = existing && existing.month === month ? existing.monthlyCount : 0;
+
+  if (options.action === "reset") {
+    nextDailyCount = 0;
+    nextMonthlyCount = 0;
+  }
+
+  FALLBACK_USAGE_LEDGER.set(key, {
+    dailyCount: nextDailyCount,
+    monthlyCount: nextMonthlyCount,
+    day,
+    month,
+    dailyLimit: nextDailyLimit,
+    monthlyLimit: nextMonthlyLimit,
+    updatedAt: now,
+    rawUserId: options.userId,
+  });
+
+  const isOfflineTest =
+    !clientOverride &&
+    typeof process !== "undefined" &&
+    (process.env?.NODE_ENV === "test" || Boolean(process.env?.VITEST)) &&
+    !process.env?.SUPABASE_URL &&
+    !process.env?.NEXT_PUBLIC_SUPABASE_URL;
+
+  if (!isOfflineTest) {
+    try {
+      const supabase = clientOverride || createServiceClient();
+
+      if (options.action === "reset") {
+        await Promise.all([
+          supabase
+            .from("user_usages")
+            .upsert(
+              {
+                user_id: validUserId,
+                app,
+                metric,
+                period_type: "daily",
+                period_key: day,
+                count: 0,
+                usage_limit: nextDailyLimit,
+                updated_at: now,
+              } as never,
+              { onConflict: "user_id,app,metric,period_type,period_key" }
+            ),
+          supabase
+            .from("user_usages")
+            .upsert(
+              {
+                user_id: validUserId,
+                app,
+                metric,
+                period_type: "monthly",
+                period_key: month,
+                count: 0,
+                usage_limit: nextMonthlyLimit,
+                updated_at: now,
+              } as never,
+              { onConflict: "user_id,app,metric,period_type,period_key" }
+            ),
+        ]);
+      } else {
+        const [dailyExisting, monthlyExisting] = await Promise.all([
+          supabase
+            .from("user_usages")
+            .select("count")
+            .eq("user_id", validUserId)
+            .eq("app", app)
+            .eq("metric", metric)
+            .eq("period_type", "daily")
+            .eq("period_key", day)
+            .maybeSingle(),
+          supabase
+            .from("user_usages")
+            .select("count")
+            .eq("user_id", validUserId)
+            .eq("app", app)
+            .eq("metric", metric)
+            .eq("period_type", "monthly")
+            .eq("period_key", month)
+            .maybeSingle(),
+        ]);
+
+        nextDailyCount = Number((dailyExisting.data as { count?: number } | null)?.count ?? nextDailyCount);
+        nextMonthlyCount = Number((monthlyExisting.data as { count?: number } | null)?.count ?? nextMonthlyCount);
+
+        await Promise.all([
+          supabase
+            .from("user_usages")
+            .upsert(
+              {
+                user_id: validUserId,
+                app,
+                metric,
+                period_type: "daily",
+                period_key: day,
+                count: nextDailyCount,
+                usage_limit: nextDailyLimit,
+                updated_at: now,
+              } as never,
+              { onConflict: "user_id,app,metric,period_type,period_key" }
+            ),
+          supabase
+            .from("user_usages")
+            .upsert(
+              {
+                user_id: validUserId,
+                app,
+                metric,
+                period_type: "monthly",
+                period_key: month,
+                count: nextMonthlyCount,
+                usage_limit: nextMonthlyLimit,
+                updated_at: now,
+              } as never,
+              { onConflict: "user_id,app,metric,period_type,period_key" }
+            ),
+        ]);
+      }
+    } catch (err) {
+      return {
+        success: false,
+        dailyCount: nextDailyCount,
+        dailyLimit: nextDailyLimit,
+        monthlyCount: nextMonthlyCount,
+        monthlyLimit: nextMonthlyLimit,
+        error: err instanceof Error ? err.message : "Failed to update user usage",
+      };
+    }
+  }
+
+  return {
+    success: true,
+    dailyCount: nextDailyCount,
+    dailyLimit: nextDailyLimit,
+    monthlyCount: nextMonthlyCount,
+    monthlyLimit: nextMonthlyLimit,
+  };
 }

@@ -226,7 +226,7 @@ finalEdges.push({
       type: "recipeEdge",
       animated: true,
       label: `${belts} Belts • ${roundedRate}/m`,
-      style: { stroke: "var(--color-primary, #d4af37)", strokeWidth: 2 },
+      style: { stroke: "var(--color-primary, #fff)", strokeWidth: 2 },
     });
   }
 

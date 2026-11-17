@@ -75,9 +75,9 @@ export function RoseNavbar({ className = "" }: RoseNavbarProps) {
                 height: "28px",
                 borderRadius: "50%",
                 overflow: "hidden",
-                border: "1.5px solid var(--color-primary, #d4af37)",
-                background: "var(--color-surface, #141416)",
-                boxShadow: "0 0 10px rgb(212 175 55 / 30%)",
+                border: "1.5px solid var(--color-primary, #fff)",
+                background: "var(--color-surface, #111116)",
+                boxShadow: "0 0 10px var(--color-primary-glow, rgb(255 255 255 / 12%))",
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

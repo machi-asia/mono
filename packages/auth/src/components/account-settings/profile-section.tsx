@@ -142,7 +142,7 @@ export function ProfileSection({ user }: ProfileSectionProps) {
 
   // Add Default Initials Avatar
   const seed = encodeURIComponent(displayName || user.email || "User");
-  const defaultInitialsUrl = `https://api.dicebear.com/7.x/initials/svg?seed=${seed}&backgroundColor=d4af37&textColor=0b0f19`;
+  const defaultInitialsUrl = `https://api.dicebear.com/7.x/initials/svg?seed=${seed}&backgroundColor=111116&textColor=f4f4f0`;
   avatarOptions.push({
     id: "default-initials",
     source: "System",

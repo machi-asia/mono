@@ -1,5 +1,9 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { resetFallbackUsageLedger } from "@mono/database";
+import {
+  resetFallbackUsageLedger,
+  resetFallbackVisitorSessions,
+  listVisitorSessions,
+} from "@mono/database";
 import {
   recordApiCall,
   getSystemUsageSummary,
@@ -10,6 +14,7 @@ import {
 describe("API Usage Tracker & Quota Metrics Route", () => {
   beforeEach(() => {
     resetFallbackUsageLedger();
+    resetFallbackVisitorSessions();
   });
 
   it("records API telemetry and returns global system usage with quota matrix", async () => {
@@ -117,5 +122,35 @@ describe("API Usage Tracker & Quota Metrics Route", () => {
     expect(negRes.status).toBe(400);
     const negBody = await negRes.json();
     expect(negBody.error.code).toBe("bad_request");
+  });
+
+  it("records visitor origin, Vercel geo, and parsed UA when scope=user is requested", async () => {
+    const req = new Request(
+      "http://localhost:3005/usage/metrics?scope=user&app=calculator&pathname=%2Frecipes&referrer=https%3A%2F%2Fgoogle.com",
+      {
+        headers: {
+          "x-user-id": "visitor-geo-user",
+          "x-test-role": "guest",
+          "x-vercel-ip-country": "JP",
+          "x-vercel-ip-country-region": "13",
+          "x-vercel-ip-city": "Tokyo",
+          "x-forwarded-for": "198.51.100.77",
+          "user-agent":
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126.0.0.0 Safari/537.36",
+        },
+      }
+    );
+
+    const res = await handleUsageMetricsRoute(req);
+    expect(res.status).toBe(200);
+
+    const sessions = await listVisitorSessions({ app: "calculator" });
+    expect(sessions.length).toBe(1);
+    expect(sessions[0].visitor_id).toBe("visitor-geo-user");
+    expect(sessions[0].country).toBe("JP");
+    expect(sessions[0].city).toBe("Tokyo");
+    expect(sessions[0].referrer).toBe("https://google.com");
+    expect(sessions[0].device_type).toBe("desktop");
+    expect(sessions[0].browser).toContain("Chrome");
   });
 });

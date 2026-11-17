@@ -41,9 +41,9 @@ body {
 
 /* Glass Header floating at top */
 .m-rose-chat-container--floating .m-rose-chat-header {
-  background: var(--color-surface-glass, rgb(22 20 15 / 80%));
+  background: var(--color-surface-glass, rgb(10 10 12 / 85%));
   backdrop-filter: blur(16px);
-  border: 1px solid var(--color-border, #26262a);
+  border: 1px solid var(--color-border, #1f1f27);
   border-radius: var(--radius-pill, 999px);
   box-shadow: var(--shadow-2);
   margin: 0 var(--space-3, 12px) var(--space-2, 8px);
@@ -58,9 +58,9 @@ body {
   border-radius: 0;
   overflow: hidden;
   border: none;
-  border-top: 1px solid var(--color-border, #26262a);
+  border-top: 1px solid var(--color-border, #1f1f27);
   box-shadow: none;
-  background: var(--color-surface-glass, rgb(22 20 15 / 80%));
+  background: var(--color-surface-glass, rgb(10 10 12 / 85%));
   backdrop-filter: blur(20px);
   flex: 1;
   min-height: 0;
@@ -102,8 +102,8 @@ body {
   min-height: 48px;
   box-sizing: border-box;
   border-radius: var(--radius-pill, 999px);
-  border: 1px solid var(--color-border, #26262a);
-  background: var(--color-surface-glass, rgb(22 20 15 / 80%));
+  border: 1px solid var(--color-border, #1f1f27);
+  background: var(--color-surface-glass, rgb(10 10 12 / 85%));
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow-2);
   padding: 0 16px;
@@ -116,9 +116,9 @@ body {
 }
 
 .m-rose-chat-container--floating .m-rose-sidebar-settings-btn:hover {
-  border-color: var(--color-primary, #d4af37);
-  box-shadow: 0 0 0 2px rgb(212 175 55 / 20%), var(--shadow-2);
-  color: var(--color-primary, #d4af37);
+  border-color: var(--color-primary, #fff);
+  box-shadow: 0 0 0 2px var(--color-primary-border, rgb(255 255 255 / 20%)), var(--shadow-2);
+  color: var(--color-primary, #fff);
 }
 
 .m-rose-chat-container--floating .m-rose-sidebar-item {
@@ -128,12 +128,12 @@ body {
 }
 
 .m-rose-chat-container--floating .m-rose-sidebar-item.active {
-  border-color: rgb(212 175 55 / 30%);
+  border-color: var(--color-primary-border, rgb(255 255 255 / 20%));
 }
 
 .m-rose-chat-container--floating .m-rose-sidebar-new-btn {
   border-radius: var(--radius-pill, 999px);
-  border: 1px solid rgb(212 175 55 / 25%);
+  border: 1px solid var(--color-primary-border, rgb(255 255 255 / 20%));
 }
 
 .m-rose-chat-container--floating .m-rose-chat-main {
@@ -181,7 +181,7 @@ body {
 }
 
 .m-rose-chat-container--floating .m-rose-msg-row--user .m-rose-msg-bubble {
-  border: 1px solid rgb(212 175 55 / 35%);
+  border: 1px solid var(--color-primary-border, rgb(255 255 255 / 20%));
 }
 
 /* Input Container with matched height: borderless container, pill borders only */
@@ -199,9 +199,9 @@ body {
 
 /* Pill Input Bar with border */
 .m-rose-chat-container--floating .m-rose-input-bar {
-  background: var(--color-surface-glass, rgb(22 20 15 / 80%));
+  background: var(--color-surface-glass, rgb(10 10 12 / 85%));
   backdrop-filter: blur(16px);
-  border: 1px solid var(--color-border, #26262a);
+  border: 1px solid var(--color-border, #1f1f27);
   border-radius: var(--radius-pill, 999px);
   box-shadow: var(--shadow-2);
   min-height: 48px;
@@ -215,8 +215,8 @@ body {
 }
 
 .m-rose-chat-container--floating .m-rose-input-bar:focus-within {
-  border-color: var(--color-primary, #d4af37);
-  box-shadow: 0 0 0 2px rgb(212 175 55 / 35%), var(--shadow-2);
+  border-color: var(--color-primary, #fff);
+  box-shadow: 0 0 0 2px var(--color-primary-border, rgb(255 255 255 / 20%)), var(--shadow-2);
 }
 
 .m-rose-chat-container--floating .m-rose-send-btn {

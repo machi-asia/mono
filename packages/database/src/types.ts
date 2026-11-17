@@ -102,6 +102,31 @@ export interface KeepaliveHeartbeatRecord {
   pinged_at: string;
 }
 
+export interface VisitorSessionRecord {
+  session_key: string;
+  user_id: string | null;
+  visitor_id: string;
+  is_guest: boolean;
+  email: string | null;
+  display_name: string | null;
+  role: UserRole;
+  app: string;
+  hostname: string | null;
+  pathname: string | null;
+  referrer: string | null;
+  utm_source: string | null;
+  country: string | null;
+  region: string | null;
+  city: string | null;
+  ip_address: string | null;
+  device_type: string | null;
+  browser: string | null;
+  os: string | null;
+  user_agent: string | null;
+  started_at: string;
+  last_seen_at: string;
+}
+
 export interface Database {
   public: {
     Tables: {
@@ -168,6 +193,14 @@ export interface Database {
           pinged_at?: string;
         };
         Update: Partial<Omit<KeepaliveHeartbeatRecord, "id">>;
+      };
+      visitor_sessions: {
+        Row: VisitorSessionRecord;
+        Insert: Omit<VisitorSessionRecord, "started_at" | "last_seen_at"> & {
+          started_at?: string;
+          last_seen_at?: string;
+        };
+        Update: Partial<Omit<VisitorSessionRecord, "session_key">>;
       };
     };
     Views: Record<string, never>;

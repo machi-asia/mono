@@ -15,9 +15,9 @@
   gap: 8px;
   padding: 5px 14px;
   border-radius: var(--radius-pill, 999px);
-  background: rgb(212 175 55 / 15%);
-  border: 1px solid rgb(212 175 55 / 40%);
-  color: var(--color-primary, #d4af37);
+  background: var(--color-primary-tint, rgb(255 255 255 / 8%));
+  border: 1px solid var(--color-primary-border, rgb(255 255 255 / 20%));
+  color: var(--color-primary, #fff);
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -29,13 +29,13 @@
   margin: 0 0 12px;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-  color: var(--color-text, #f6f1e6);
+  color: var(--color-text, #fff);
 }
 
 .pres-hero p {
   margin: 0;
   max-width: 780px;
-  color: var(--color-text-muted, #a8a29e);
+  color: var(--color-text-muted, #8e8e96);
   font-size: 1.08rem;
   line-height: 1.7;
 }
@@ -52,10 +52,10 @@
   padding: 14px 20px;
   margin-bottom: 40px;
   border-radius: var(--radius-md, 12px);
-  background: var(--color-surface-glass, rgb(22 20 15 / 85%));
-  border: 1px solid var(--color-border, #2a271f);
+  background: var(--color-surface-glass, rgb(10 10 12 / 85%));
+  border: 1px solid var(--color-border, #1f1f27);
   backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-2, 0 8px 24px rgb(0 0 0 / 50%));
+  box-shadow: var(--shadow-2, 0 12px 32px rgb(0 0 0 / 60%));
 }
 
 .pres-control-group {
@@ -63,39 +63,39 @@
   align-items: center;
   gap: 8px;
   font-size: 0.88rem;
-  color: var(--color-text, #f6f1e6);
+  color: var(--color-text, #fff);
 }
 
 .pres-control-label {
   font-weight: 600;
-  color: var(--color-text-muted, #a8a29e);
+  color: var(--color-text-muted, #8e8e96);
 }
 
 .pres-select,
 .pres-btn {
   padding: 6px 12px;
   border-radius: var(--radius-sm, 6px);
-  background: var(--color-surface-2, #1d1a14);
-  border: 1px solid var(--color-border, #2a271f);
-  color: var(--color-text, #f6f1e6);
+  background: var(--color-surface-2, #17171d);
+  border: 1px solid var(--color-border, #1f1f27);
+  color: var(--color-text, #fff);
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
 }
 
 .pres-btn[data-active="true"] {
-  background: var(--color-primary, #d4af37);
-  color: var(--color-primary-contrast, #14110a);
-  border-color: var(--color-primary, #d4af37);
+  background: var(--color-primary, #fff);
+  color: var(--color-primary-contrast, #050507);
+  border-color: var(--color-primary, #fff);
 }
 
 /* Showcase Section Block */
 .pres-section {
-  border: 1px solid var(--color-border, #2a271f);
+  border: 1px solid var(--color-border, #1f1f27);
   border-radius: var(--radius-lg, 20px);
   padding: 28px;
   margin-bottom: 48px;
-  background: var(--color-surface, #16140f);
+  background: var(--color-surface, #111116);
   box-sizing: border-box;
 }
 
@@ -107,13 +107,13 @@
   margin: 0 0 6px;
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--color-text, #f6f1e6);
+  color: var(--color-text, #fff);
 }
 
 .pres-section-header p {
   margin: 0;
   font-size: 0.95rem;
-  color: var(--color-text-muted, #a8a29e);
+  color: var(--color-text-muted, #8e8e96);
 }
 
 .pres-stage-card {

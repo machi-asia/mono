@@ -1,307 +1,343 @@
 "use client";
 
-import React, { useState, useEffect, useMemo, useRef } from "react";
-import { motion } from "framer-motion";
-import {
-    ArrowUpRight,
-    Download,
-    Terminal,
-} from "lucide-react";
+import React, { useRef } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Button from "../Button";
-import Badge from "../Badge";
-import Avatar from "../Avatar";
-import { heroTitles } from "../../data/tech-stack";
 import type { Certificate, GitHubRepo, WorkCompany } from "../../data/types";
-import { calculateTotalExperience, formatExperience } from "../../utils/experienceCalculator";
 
-interface HeroSectionProps {
+export interface HeroSectionProps {
     onContactOpen: () => void;
     repos?: GitHubRepo[];
     certificates?: Certificate[];
     workCompanies?: WorkCompany[];
 }
 
-const TECH_PILLS = [
-    { name: "TypeScript", icon: "/icons/typescript.svg" },
-    { name: "Next.js", icon: "/icons/next.svg" },
-    { name: "React", icon: "/icons/react.svg" },
-    { name: "Node.js", icon: "/icons/node.webp" },
-    { name: "Python", icon: "/icons/python.svg" },
-    { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
-    { name: "Docker", icon: "/icons/docker.svg" },
-    { name: "Supabase", icon: "/icons/supabase.svg" },
-];
+export default function HeroSection({ onContactOpen }: HeroSectionProps) {
+    const heroRef = useRef<HTMLElement | null>(null);
 
-export default function HeroSection({
-    onContactOpen,
-    repos = [],
-    certificates = [],
-    workCompanies = [],
-}: HeroSectionProps) {
-    const heroRef = useRef<HTMLDivElement | null>(null);
+    const { scrollYProgress } = useScroll({
+        target: heroRef,
+        offset: ["start start", "end start"],
+    });
 
-    // Live ticking clock for Stewart & Partners architectural header
-    const [currentTime, setCurrentTime] = useState("12:00:00");
+    const smoothScroll = useSpring(scrollYProgress, {
+        stiffness: 110,
+        damping: 24,
+        restDelta: 0.001,
+    });
 
-    useEffect(() => {
-        const updateTime = () => {
-            const now = new Date();
-            const h = String(now.getHours()).padStart(2, "0");
-            const m = String(now.getMinutes()).padStart(2, "0");
-            const s = String(now.getSeconds()).padStart(2, "0");
-            setCurrentTime(`${h}:${m}:${s}`);
-        };
-        updateTime();
-        const interval = setInterval(updateTime, 1000);
-        return () => clearInterval(interval);
-    }, []);
+    // Part 1: Centra Squeeze Display Typography (top 18% of tall hero scroll)
+    const squeezeScaleY = useTransform(smoothScroll, [0, 0.18], [4.23, 1.0], {
+        clamp: true,
+    });
+    const squeezeWrapperHeight = useTransform(
+        squeezeScaleY,
+        (s) => `${Math.round(s * 130)}px`
+    );
 
-    // Scroll-driven curtain spacer calculation
-    useEffect(() => {
-        const el = heroRef.current;
-        if (!el || typeof window === "undefined") return;
+    // Part 2: Pure Upward-Only Multi-Speed Vertical Parallax Tracks (x = 0, every element travels strictly up at different speeds)
+    const bgFrame1Y = useTransform(smoothScroll, [0, 1], [40, -90]);
+    const bgFrame2Y = useTransform(smoothScroll, [0, 1], [60, -130]);
+    const bgFrame3Y = useTransform(smoothScroll, [0, 1], [50, -110]);
+    const midLayerY = useTransform(smoothScroll, [0, 1], [110, -210]);
+    const nearLayerY = useTransform(smoothScroll, [0, 1], [170, -310]);
+    const frontLayerY = useTransform(smoothScroll, [0, 1], [240, -420]);
 
-        let rafId: number;
-        const updateCurtainProgress = () => {
-            const rect = el.getBoundingClientRect();
-            const vh = window.innerHeight || document.documentElement.clientHeight || 1;
-            const scrollDistance = Math.max(rect.height - vh, 1);
-            const rawProgress = -rect.top / scrollDistance;
-            const progress = Math.min(Math.max(rawProgress, 0), 1);
-            el.style.setProperty("--sp-hero-progress", progress.toFixed(4));
-        };
-
-        const onScroll = () => {
-            if (rafId) cancelAnimationFrame(rafId);
-            rafId = requestAnimationFrame(updateCurtainProgress);
-        };
-
-        window.addEventListener("scroll", onScroll, { passive: true });
-        window.addEventListener("resize", onScroll, { passive: true });
-        updateCurtainProgress();
-
-        return () => {
-            if (rafId) cancelAnimationFrame(rafId);
-            window.removeEventListener("scroll", onScroll);
-            window.removeEventListener("resize", onScroll);
-        };
-    }, []);
-
-    // Typing animation state
-    const [titleIndex, setTitleIndex] = useState(0);
-    const [displayedText, setDisplayedText] = useState("");
-    const [isDeleting, setIsDeleting] = useState(false);
-
-    // Calculate years and months of experience from work history
-    const formattedExperience = useMemo(() => {
-        if (!workCompanies || workCompanies.length === 0) return "0 mos";
-        const periods = workCompanies.map((company) => company.period);
-        const { years, months } = calculateTotalExperience(periods);
-        return formatExperience(years, months);
-    }, [workCompanies]);
-
-    // Find ongoing company experience
-    const ongoingCompany = useMemo(() => {
-        if (!workCompanies || workCompanies.length === 0) return null;
-        return workCompanies.find((company) => {
-            if (!company.period) return false;
-            const parts = company.period.split(/[-–—]| to /i).map((s) => s.trim());
-            const endDate = parts[1] || parts[0];
-            return /^present$/i.test(endDate);
-        });
-    }, [workCompanies]);
-
-    const totalCertificates = useMemo(() => {
-        return certificates.reduce((total, cert) => total + 1 + (cert.subCertificates?.length || 0), 0);
-    }, [certificates]);
-
-    // Typing animation effect
-    useEffect(() => {
-        const currentTitle = heroTitles[titleIndex] || "Full Stack Developer";
-        const typingSpeed = isDeleting ? 15 : 45;
-        const pauseTime = 2500;
-
-        const timeout = setTimeout(() => {
-            if (!isDeleting) {
-                if (displayedText.length < currentTitle.length) {
-                    setDisplayedText(currentTitle.slice(0, displayedText.length + 1));
-                } else {
-                    setTimeout(() => setIsDeleting(true), pauseTime);
-                }
-            } else {
-                if (displayedText.length > 0) {
-                    setDisplayedText(displayedText.slice(0, -1));
-                } else {
-                    setIsDeleting(false);
-                    setTitleIndex((prev) => (prev + 1) % heroTitles.length);
-                }
-            }
-        }, typingSpeed);
-
-        return () => clearTimeout(timeout);
-    }, [displayedText, isDeleting, titleIndex]);
+    const topPanelY = useTransform(smoothScroll, [0, 1], [0, -100]);
+    const bottomPanelY = useTransform(smoothScroll, [0, 1], [40, -140]);
+    const invertShapeY = useTransform(smoothScroll, [0, 1], [90, -200]);
 
     return (
         <section
             ref={heroRef}
             id="hero"
-            className="sp-hero-container"
-            style={{ position: "relative" }}
+            data-testid="hero-section"
+            className="centra-hero-section"
         >
-            <div className="sp-hero-sticky-frame">
-                {/* S&P Architectural Top Info Bar */}
-                <div className="sp-hero-top-info">
-                    <div>Software & Architecture</div>
-                    <div>Full-Stack Systems</div>
-                    <div className="sp-hero-top-coords">
-                        14° 35&apos; 52.8&quot; N 121° 01&apos; 08.4&quot; E<br />
-                        <span>{currentTime}</span>
-                    </div>
-                </div>
-
-                {/* Main Interactive Stage */}
-                <div className="sp-hero-main-layout">
-                    {/* Left Typography Box */}
-                    <div className="sp-hero-left-title-box">
-                        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-                            <Avatar
-                                src="/images/standard-cut-hero.webp"
-                                alt="Profile"
-                                fallback="AJ"
-                                size="md"
-                                className="hero-avatar"
-                            />
-                            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                                <span
-                                    style={{
-                                        width: "7px",
-                                        height: "7px",
-                                        borderRadius: "50%",
-                                        background: "#10b981",
-                                        display: "inline-block",
-                                    }}
-                                />
-                                <Badge variant="default" size="sm">
-                                    {ongoingCompany ? `At ${ongoingCompany.company}` : "Available for select projects"}
-                                </Badge>
-                            </div>
-                        </div>
-
-                        <h1 className="sp-hero-huge-title">
+            {/* PART 1: Centra Squeeze Display Header */}
+            <header className="centra-squeeze-header">
+                <div
+                    data-testid="hero-squeeze-runway"
+                    className="centra-squeeze-runway"
+                >
+                    <motion.div
+                        data-testid="hero-squeeze-wrapper"
+                        className="centra-squeeze-wrapper"
+                        style={{ height: squeezeWrapperHeight }}
+                    >
+                        <motion.h1
+                            data-testid="hero-squeeze-heading"
+                            className="centra-squeeze-heading invert-blend-text"
+                            style={{
+                                scaleY: squeezeScaleY,
+                                transformOrigin: "50% 0%",
+                                mixBlendMode: "difference",
+                                color: "var(--shade-inversion, #f4f4f0)",
+                            }}
+                        >
                             Angelo Justine D. Kamachi
-                        </h1>
+                        </motion.h1>
+                    </motion.div>
+                </div>
 
-                        <div className="sp-hero-sub-meta">
-                            <p className="hero-subtitle" style={{ margin: 0 }}>
-                                <Terminal
-                                    size={18}
-                                    style={{ marginRight: "0.75rem", color: "var(--muted)", flexShrink: 0 }}
-                                />
-                                <span>
-                                    <span className="typing-text">{displayedText}</span>
-                                    <span className="typing-cursor">_</span>
+                <motion.p
+                    initial={{ opacity: 0.05, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                    className="centra-eyebrow"
+                >
+                    Full-Stack Software Engineer
+                </motion.p>
+
+                <motion.h2
+                    initial={{ opacity: 0.05, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.65, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+                    className="centra-paragraph-massive"
+                >
+                    Yes, it’s me. Kamachi. Engineering high-craft web platforms, AI agents, and interactive systems.
+                </motion.h2>
+            </header>
+
+            {/* PART 2: Centra Tall Vertical Multi-Plane Parallax Canvas */}
+            <div
+                data-testid="hero-perspective-stage"
+                className="centra-parallax-stage"
+            >
+                {/* Vertical-Only Obsidian Architectural Panels */}
+                <motion.div
+                    aria-hidden="true"
+                    data-testid="hero-parallax-panel-top"
+                    style={{
+                        position: "absolute",
+                        top: 0,
+                        right: 0,
+                        width: "34vw",
+                        height: "24vh",
+                        backgroundColor: "var(--shade-abyss)",
+                        opacity: 0.72,
+                        y: topPanelY,
+                        pointerEvents: "none",
+                        willChange: "transform",
+                        zIndex: 0,
+                    }}
+                />
+
+                <motion.div
+                    aria-hidden="true"
+                    data-testid="hero-parallax-panel-bottom"
+                    style={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: 0,
+                        width: "40vw",
+                        height: "22vh",
+                        backgroundColor: "var(--shade-charcoal)",
+                        opacity: 0.68,
+                        y: bottomPanelY,
+                        pointerEvents: "none",
+                        willChange: "transform",
+                        zIndex: 0,
+                    }}
+                />
+
+                {/* Deep Background Plane (zIndex: 1, slower upward travel speeds) */}
+                <motion.div
+                    data-testid="hero-bg-frame-1"
+                    className="centra-bg-frame centra-bg-frame-1"
+                    style={{ y: bgFrame1Y, zIndex: 1 }}
+                >
+                    <Image
+                        src="/images/standard-hero.webp"
+                        alt="Angelo Justine D. Kamachi portrait"
+                        fill
+                        priority
+                        sizes="280px"
+                        style={{
+                            objectFit: "cover",
+                            objectPosition: "center 28%",
+                            filter: "grayscale(100%) contrast(1.08) brightness(0.88)",
+                        }}
+                    />
+                </motion.div>
+
+                <motion.div
+                    data-testid="hero-bg-frame-2"
+                    className="centra-bg-frame centra-bg-frame-2"
+                    style={{ y: bgFrame2Y, zIndex: 1 }}
+                >
+                    <img
+                        src="/images/tilt-hero.webp"
+                        alt="Editorial portrait frame"
+                        draggable={false}
+                        className="centra-frame-media"
+                    />
+                </motion.div>
+
+                <motion.div
+                    data-testid="hero-bg-frame-3"
+                    className="centra-bg-frame centra-bg-frame-3"
+                    style={{ y: bgFrame3Y, zIndex: 1 }}
+                >
+                    <video
+                        src="/videos/WebDev.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="centra-frame-media"
+                    />
+                </motion.div>
+
+                {/* Central Editorial Statement & CTAs (zIndex: 3) */}
+                <div
+                    data-testid="hero-perspective-foreground"
+                    className="centra-overlay-copy"
+                >
+                    <p className="centra-overlay-statement">
+                        Crafted beyond conventional static templates.
+                    </p>
+                    <p className="centra-overlay-statement centra-overlay-statement-muted">
+                        An interactive operating system built for high-contrast software craftsmanship.
+                    </p>
+
+                    <div className="centra-cta-row">
+                        <Button
+                            variant="primary"
+                            onClick={onContactOpen}
+                            rightIcon={<ArrowUpRight size={16} />}
+                            data-cursor="CONTACT"
+                        >
+                            <span className="flip-text-holder">
+                                <span className="flip-text-1">Get in Touch</span>
+                                <span className="flip-text-2" aria-hidden="true">
+                                    Get in Touch
                                 </span>
-                            </p>
+                            </span>
+                        </Button>
 
-                            <div className="hero-cta" style={{ marginBottom: "1rem" }}>
-                                <Button
-                                    variant="primary"
-                                    onClick={onContactOpen}
-                                    rightIcon={<ArrowUpRight size={16} />}
-                                >
-                                    <span className="flip-text-holder">
-                                        <span className="flip-text-1">Get in Touch</span>
-                                        <span className="flip-text-2" aria-hidden="true">
-                                            Get in Touch
-                                        </span>
-                                    </span>
-                                </Button>
-                                <a href="#featured" className="btn btn-secondary">
-                                    <span className="flip-text-holder">
-                                        <span className="flip-text-1">View Work</span>
-                                        <span className="flip-text-2" aria-hidden="true">
-                                            View Work
-                                        </span>
-                                    </span>
-                                </a>
-                                <a
-                                    href="/documents/prosperna_report.pdf"
-                                    download
-                                    className="btn btn-secondary"
-                                >
-                                    <Download size={16} />
-                                    <span className="flip-text-holder">
-                                        <span className="flip-text-1">Resume</span>
-                                        <span className="flip-text-2" aria-hidden="true">
-                                            Resume
-                                        </span>
-                                    </span>
-                                </a>
-                            </div>
-
-                            {/* Tech ribbon */}
-                            <div className="hero-tech-ribbon" style={{ marginBottom: "1rem" }}>
-                                {TECH_PILLS.map((tech) => (
-                                    <div key={tech.name} className="hero-tech-chip">
-                                        <Image
-                                            src={tech.icon}
-                                            alt={tech.name}
-                                            width={18}
-                                            height={18}
-                                            className="hero-tech-icon"
-                                        />
-                                        <span>{tech.name}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Stats */}
-                            <div className="hero-stats">
-                                <div>
-                                    <div className="hero-stat-value">{formattedExperience}</div>
-                                    <div className="hero-stat-label">Experience</div>
-                                </div>
-                                <div>
-                                    <div className="hero-stat-value">
-                                        {repos.length > 0 ? `${repos.length}+` : "0"}
-                                    </div>
-                                    <div className="hero-stat-label">Projects</div>
-                                </div>
-                                <div>
-                                    <div className="hero-stat-value">
-                                        {totalCertificates > 0 ? `${totalCertificates}+` : "0"}
-                                    </div>
-                                    <div className="hero-stat-label">Certificates</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right Wireframe Architectural Showreel Card */}
-                    <a href="#featured" className="sp-hero-wireframe-box" aria-label="Watch Showreel">
-                        <div className="sp-wireframe-diagonal" />
-                        <div className="sp-wireframe-cross-v" />
-                        <div className="sp-wireframe-cross-h" />
-                        <div className="sp-wireframe-label">Showreel ©2026</div>
-                    </a>
-                </div>
-
-                {/* S&P Curtain Spacer Collapse: Rises On Scroll & Slices Across Title */}
-                <div className="sp-hero-curtain-overlay-wrap">
-                    <div className="sp-hero-curtain-spacer" />
-                    <div className="sp-hero-curtain-image-holder">
-                        <Image
-                            src="/images/preview.webp"
-                            alt="Architectural Backdrop"
-                            fill
-                            className="sp-hero-curtain-img"
-                            sizes="100vw"
-                            priority
-                        />
-                        <div className="sp-hero-curtain-darken" />
+                        <a
+                            href="#featured"
+                            className="btn btn-secondary"
+                            data-cursor="WORKS"
+                            style={{ border: "none", backgroundColor: "rgb(255 255 255 / 12%)" }}
+                        >
+                            <span className="flip-text-holder">
+                                <span className="flip-text-1">Explore Works</span>
+                                <span className="flip-text-2" aria-hidden="true">
+                                    Explore Works
+                                </span>
+                            </span>
+                            <ArrowDownRight size={15} />
+                        </a>
                     </div>
                 </div>
+
+                {/* Vertical-Only Difference Lens (zIndex: 4) */}
+                <motion.div
+                    aria-hidden="true"
+                    data-testid="hero-parallax-invert-shape"
+                    className="invert-blend-shape"
+                    style={{
+                        position: "absolute",
+                        top: "520px",
+                        right: "18%",
+                        width: "clamp(120px, 14vw, 200px)",
+                        height: "clamp(120px, 14vw, 200px)",
+                        borderRadius: "9999px",
+                        backgroundColor: "var(--shade-inversion, #f4f4f0)",
+                        mixBlendMode: "difference",
+                        y: invertShapeY,
+                        pointerEvents: "none",
+                        willChange: "transform",
+                        zIndex: 4,
+                    }}
+                />
+
+                {/* Overlapping Foreground Depth Items (zIndex: 4-5, pure vertical parallax across frames) */}
+                <motion.div
+                    data-testid="hero-perspective-subject"
+                    className="centra-depth-item centra-depth-item-1"
+                    style={{ y: nearLayerY, zIndex: 4 }}
+                >
+                    <img
+                        src="/images/tilt-cut-hero.webp"
+                        alt="Angelo Kamachi foreground cutout portrait"
+                        draggable={false}
+                        className="centra-depth-cutout"
+                    />
+                </motion.div>
+
+                <motion.div
+                    data-testid="hero-depth-item-2"
+                    className="centra-depth-item centra-depth-item-2"
+                    style={{ y: midLayerY, zIndex: 4 }}
+                >
+                    <video
+                        src="/videos/GameDev.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="centra-depth-card-media"
+                    />
+                </motion.div>
+
+                <motion.div
+                    data-testid="hero-depth-item-3"
+                    className="centra-depth-item centra-depth-item-3"
+                    style={{ y: frontLayerY, zIndex: 5 }}
+                >
+                    <img
+                        src="/rose/happy.png"
+                        alt="Rose AI Companion"
+                        draggable={false}
+                        className="centra-depth-cutout"
+                    />
+                </motion.div>
+
+                <motion.div
+                    data-testid="hero-depth-item-4"
+                    className="centra-depth-item centra-depth-item-4"
+                    style={{ y: nearLayerY, zIndex: 5 }}
+                >
+                    <video
+                        src="/videos/Blender.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="centra-depth-card-media"
+                    />
+                </motion.div>
+
+                <motion.div
+                    data-testid="hero-depth-item-5"
+                    className="centra-depth-item centra-depth-item-5"
+                    style={{ y: frontLayerY, zIndex: 5 }}
+                >
+                    <img
+                        src="/images/standard-cut-hero.webp"
+                        alt="Full-stack systems cutout"
+                        draggable={false}
+                        className="centra-depth-cutout"
+                    />
+                </motion.div>
+
+                <motion.div
+                    data-testid="hero-depth-item-6"
+                    className="centra-depth-item centra-depth-item-6"
+                    style={{ y: nearLayerY, zIndex: 4 }}
+                >
+                    <img
+                        src="/images/preview.webp"
+                        alt="Interactive portfolio preview card"
+                        draggable={false}
+                        className="centra-depth-card-media"
+                    />
+                </motion.div>
             </div>
         </section>
     );

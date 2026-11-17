@@ -14,6 +14,8 @@ describe("redirect-resolver", () => {
       expect(isAllowedRedirectUrl("https://hellsforge.machi.asia/game")).toBe(true);
       expect(isAllowedRedirectUrl("https://docs.machi.asia/docs/intro")).toBe(true);
       expect(isAllowedRedirectUrl("https://rose.machi.asia")).toBe(true);
+      expect(isAllowedRedirectUrl("https://admin.machi.asia")).toBe(true);
+      expect(isAllowedRedirectUrl("https://admin.machi.asia/itemlist")).toBe(true);
     });
 
     it("allows *.itemlist.online subdomains and apex domain", () => {
@@ -59,6 +61,11 @@ describe("redirect-resolver", () => {
     it("resolves rose from hostname or port 3004", () => {
       expect(resolveAppFromUrl("https://rose.machi.asia").id).toBe("rose");
       expect(resolveAppFromUrl("http://localhost:3004").id).toBe("rose");
+    });
+
+    it("resolves admin from hostname or port 3013", () => {
+      expect(resolveAppFromUrl("https://admin.machi.asia").id).toBe("admin");
+      expect(resolveAppFromUrl("http://localhost:3013").id).toBe("admin");
     });
 
     it("resolves itemlist apps accurately", () => {

@@ -43,7 +43,7 @@ body {
 .machi-hero {
   text-align: center;
   padding: var(--space-8) var(--space-4);
-  background: radial-gradient(circle at 50% 20%, rgb(212 175 55 / 12%) 0%, transparent 60%);
+  background: radial-gradient(circle at 50% 20%, var(--color-primary-tint) 0%, transparent 60%);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
 }

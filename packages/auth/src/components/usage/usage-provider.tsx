@@ -231,7 +231,20 @@ export function UsageProvider({
 
       try {
         // Fetch authoritative usage snapshot strictly from apps/api (/usage/metrics?scope=user)
-        const snapshot = await apiClient.usage.getUserQuotaSummary(metricKeys);
+        // and pass browser origin context for visitor telemetry
+        const originContext =
+          typeof window !== "undefined"
+            ? {
+                hostname: window.location?.hostname,
+                pathname: window.location?.pathname,
+                referrer: typeof document !== "undefined" ? document.referrer || undefined : undefined,
+                utmSource:
+                  typeof window.location?.search === "string"
+                    ? new URLSearchParams(window.location.search).get("utm_source") || undefined
+                    : undefined,
+              }
+            : undefined;
+        const snapshot = await apiClient.usage.getUserQuotaSummary(metricKeys, originContext);
         if (snapshot?.metrics) {
           setCountsMap((prev) => {
             const next = { ...prev };

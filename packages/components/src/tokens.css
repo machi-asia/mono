@@ -3,20 +3,37 @@
 [data-theme="dark"] {
   color-scheme: dark;
 
-  --color-bg: #0d0c0a;
-  --color-surface: #16140f;
-  --color-surface-2: #1d1a14;
-  --color-text: #f6f1e6;
-  --color-text-muted: #a8a29e;
-  --color-primary: #d4af37;
-  --color-primary-soft: #e6c96a;
-  --color-primary-contrast: #14110a;
-  --color-border: #2a271f;
-  --color-border-soft: #1f1d16;
-  --color-surface-glass: rgb(22 20 15 / 80%);
-  --color-overlay: rgb(0 0 0 / 60%);
-  --shadow-1: 0 1px 3px rgb(0 0 0 / 45%);
-  --shadow-2: 0 8px 24px rgb(0 0 0 / 50%);
+  /* Architectural Monochrome Shade Scale (portfolio.machi.asia standard) */
+  --shade-void: #020203;
+  --shade-obsidian: #050507;
+  --shade-abyss: #08080b;
+  --shade-carbon: #0c0c10;
+  --shade-charcoal: #111116;
+  --shade-graphite: #17171d;
+  --shade-slate-dark: #1f1f27;
+  --shade-gunmetal: #2a2a35;
+  --shade-inversion: #f4f4f0;
+
+  /* Core Surface & Text Tokens */
+  --color-bg: var(--shade-obsidian);
+  --color-surface: var(--shade-charcoal);
+  --color-surface-2: var(--shade-graphite);
+  --color-text: #fff;
+  --color-text-secondary: #d4d4d8;
+  --color-text-muted: #8e8e96;
+  --color-primary: #fff;
+  --color-primary-soft: #e4e4e7;
+  --color-primary-contrast: var(--shade-obsidian);
+  --color-primary-tint: rgb(255 255 255 / 8%);
+  --color-primary-border: rgb(255 255 255 / 20%);
+  --color-primary-glow: rgb(255 255 255 / 12%);
+  --color-border: var(--shade-slate-dark);
+  --color-border-soft: var(--shade-graphite);
+  --color-border-hover: rgb(255 255 255 / 14%);
+  --color-surface-glass: rgb(10 10 12 / 85%);
+  --color-overlay: rgb(2 2 3 / 68%);
+  --shadow-1: 0 1px 3px rgb(0 0 0 / 50%);
+  --shadow-2: 0 12px 32px rgb(0 0 0 / 60%);
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
@@ -29,38 +46,72 @@
   --space-6: 2rem;
   --space-8: 3rem;
   --space-12: 4.5rem;
-  --color-error: #ef4444;
-  --color-error-soft: #fca5a5;
-  --color-success: #22c55e;
+
+  /* Semantic Status & Studio Categorical Accents */
+  --sp-blue: #2c4eff;
+  --sp-emerald: #24d480;
+  --sp-violet: #ab9bf2;
+  --sp-orange: #ff5c01;
+  --sp-yellow: #ffd92d;
+  --color-brand-cyan: var(--sp-blue);
+  --color-brand-purple: var(--sp-violet);
+  --color-brand-emerald: var(--sp-emerald);
+  --color-brand-amber: var(--sp-orange);
+  --color-error: #f43f5e;
+  --color-error-soft: #fb7185;
+  --color-success: #24d480;
   --color-success-soft: #86efac;
   --color-success-contrast: #052e16;
   --color-warning: #f59e0b;
-  --color-warning-soft: #fcd34d;
-  --color-info: #3b82f6;
+  --color-warning-soft: #fbbf24;
+  --color-info: #2c4eff;
   --color-info-soft: #93c5fd;
   --duration-fast: 150ms;
   --duration-base: 260ms;
   --duration-slow: 420ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Standardized Portfolio Semantic Token Aliases */
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
+  --foreground-muted: var(--color-text-secondary);
+  --card-bg: var(--color-surface);
+  --card-border: rgb(255 255 255 / 6%);
+  --card-border-hover: var(--color-border-hover);
+  --muted: var(--color-text-muted);
+  --hairline: rgb(255 255 255 / 6%);
+  --hairline-strong: rgb(255 255 255 / 14%);
+  --accent: var(--color-primary);
+  --accent-light: var(--color-primary-soft);
+  --accent-glow: var(--color-primary-glow);
+  --glass-bg: var(--color-surface-glass);
+  --glass-border: rgb(255 255 255 / 10%);
+  --glass-hover: rgb(255 255 255 / 15%);
 }
 
 .light,
+html.light-mode,
 [data-theme="light"] {
   color-scheme: light;
 
-  --color-bg: #f7f5ef;
-  --color-surface: #fff;
-  --color-surface-2: #f2eee4;
-  --color-text: #1c1917;
-  --color-text-muted: #6f6a63;
-  --color-primary: #a8842c;
-  --color-primary-soft: #c9a24a;
+  --color-bg: #fff;
+  --color-surface: #fbfbfb;
+  --color-surface-2: #f4f4f5;
+  --color-text: #09090b;
+  --color-text-secondary: #52525b;
+  --color-text-muted: #71717a;
+  --color-primary: #09090b;
+  --color-primary-soft: #27272a;
   --color-primary-contrast: #fff;
-  --color-border: #e8e2d4;
-  --color-border-soft: #efe9dc;
-  --color-surface-glass: rgb(255 255 255 / 80%);
-  --color-overlay: rgb(0 0 0 / 35%);
+  --color-primary-tint: rgb(9 9 11 / 6%);
+  --color-primary-border: rgb(9 9 11 / 18%);
+  --color-primary-glow: rgb(9 9 11 / 8%);
+  --color-border: #e4e4e7;
+  --color-border-soft: #f4f4f5;
+  --color-border-hover: rgb(0 0 0 / 22%);
+  --color-surface-glass: rgb(255 255 255 / 85%);
+  --color-overlay: rgb(9 9 11 / 40%);
   --color-error: #dc2626;
   --color-error-soft: #fecaca;
   --color-success: #16a34a;
@@ -70,6 +121,23 @@
   --color-warning-soft: #fde68a;
   --color-info: #2563eb;
   --color-info-soft: #bfdbfe;
-  --shadow-1: 0 1px 3px rgb(0 0 0 / 10%);
-  --shadow-2: 0 8px 24px rgb(0 0 0 / 12%);
+  --shadow-1: 0 1px 3px rgb(0 0 0 / 8%);
+  --shadow-2: 0 12px 28px rgb(0 0 0 / 12%);
+
+  /* Standardized Portfolio Semantic Token Aliases (Light) */
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
+  --foreground-muted: var(--color-text-secondary);
+  --card-bg: var(--color-surface);
+  --card-border: rgb(0 0 0 / 8%);
+  --card-border-hover: var(--color-border-hover);
+  --muted: var(--color-text-muted);
+  --hairline: rgb(0 0 0 / 6%);
+  --hairline-strong: rgb(0 0 0 / 14%);
+  --accent: var(--color-primary);
+  --accent-light: var(--color-primary-soft);
+  --accent-glow: var(--color-primary-glow);
+  --glass-bg: var(--color-surface-glass);
+  --glass-border: rgb(0 0 0 / 10%);
+  --glass-hover: rgb(0 0 0 / 15%);
 }
