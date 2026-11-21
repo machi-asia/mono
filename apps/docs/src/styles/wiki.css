@@ -955,6 +955,7 @@
   position: sticky;
   top: 5.5rem;
   max-height: calc(100vh - 7rem);
+  overflow-y: auto;
 }
 
 .wiki-sidebar-card {
@@ -1286,4 +1287,33 @@
 
 .wiki-footer-a:hover {
   color: var(--color-primary);
+}
+
+/* Enhanced Article Section Headers */
+.wiki-markdown-wrapper h2 {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  margin-top: 3.5rem !important;
+  margin-bottom: 1.25rem !important;
+  padding-top: 1.75rem !important;
+  padding-bottom: 0.65rem !important;
+  border-top: 1px solid rgb(255 255 255 / 14%) !important;
+  border-bottom: 1px solid rgb(255 255 255 / 8%) !important;
+  color: #fff !important;
+  letter-spacing: 0.02em;
+  text-transform: uppercase !important;
+}
+
+.wiki-markdown-wrapper h3 {
+  font-size: 1.35rem !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  margin-top: 2.75rem !important;
+  margin-bottom: 0.9rem !important;
+  padding-top: 1.25rem !important;
+  padding-bottom: 0.45rem !important;
+  border-top: 1px dashed rgb(255 255 255 / 10%) !important;
+  color: #f4f4f5 !important;
+  text-transform: uppercase !important;
 }

@@ -187,9 +187,15 @@ body {
 
 /* Keep borders on chat messages */
 .m-rose-chat-container--floating .m-rose-msg-row--model .m-rose-msg-bubble {
-  background: rgb(24 24 27 / 70%);
-  border: 1px solid var(--color-border, #26262a);
-  backdrop-filter: blur(8px);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  color: var(--color-text, #fff);
+  backdrop-filter: none;
 }
 
 .m-rose-chat-container--floating .m-rose-msg-row--user .m-rose-msg-bubble {
@@ -246,17 +252,5 @@ body {
 
   .m-rose-chat-container--floating .m-rose-messages-feed {
     padding: 0;
-  }
-
-  .m-rose-chat-container--floating .m-rose-msg-row--model .m-rose-msg-bubble {
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    max-width: 100%;
-    color: var(--color-text, #fff);
-    backdrop-filter: none;
   }
 }

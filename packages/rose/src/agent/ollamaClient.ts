@@ -14,7 +14,7 @@ const OLLAMA_STREAM_IDLE_TIMEOUT_MS = 120_000;
 
 const TOOL_EMIT_HINT = `
 Tool Calling Format (CRITICAL):
-When you need to use one of the tools listed above (webSearch, askQuestion, learn, recall, remember, forget), do NOT describe it in prose. Instead, output the tool call as a standalone JSON block using the "action"/"action_input" pair, without surrounding explanation:
+When you need to use one of the tools listed above (webSearch, searchDocs, askQuestion, learn, recall, remember, forget), do NOT describe it in prose. Instead, output the tool call as a standalone JSON block using the "action"/"action_input" pair, without surrounding explanation:
 
 \`\`\`json
 {"action": "webSearch", "action_input": {"query": "latest Next.js release"}}

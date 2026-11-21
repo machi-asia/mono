@@ -147,6 +147,7 @@ export function formatErrorCallout(
 
 const TOOL_LABEL_MAP: Record<string, string> = {
   webSearch: "searching the web",
+  searchDocs: "searching /docs",
   askQuestion: "prompting choices",
   learn: "learning a new memory",
   recall: "recalling from memory",
@@ -977,6 +978,7 @@ Your Objectives:
 2. Maintain a friendly, empathetic, and professional persona.
 3. Use your tools when appropriate:
    - 'webSearch': Use to look up real-time information, latest news, live documentation, or verified facts.
+   - 'searchDocs': Use to search and read articles, ADRs, dates, architecture docs, and education/experience records from the /docs site.
    - 'askQuestion': MANDATORY — use whenever you want to offer the user a list of choices, follow-up topics, or clarifying options. ALWAYS call 'askQuestion' instead of listing choices in plain markdown, so that interactive clickable buttons render directly in the chat UI.
    - 'learn': MANDATORY — use to WRITE a brand-new long-term memory under a unique index (e.g. 'portfolio', 'preferences', 'projects'). Each index stores ONE full description. Call when the user shares new personal preferences, instructions to recall later, project background, or facts with no existing index yet.
    - 'recall': MANDATORY — use to READ the full description behind any memory index listed in the injected Memory Index context. Before you reference details about the user (portfolio, goals, allergies, preferences, projects), FIRST call 'recall' with the matching index and use its returned description. Never guess index contents from the excerpt alone.

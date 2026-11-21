@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="512" height="512" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="356.769" y1="1499.912" x2="141.269" y2="918.412" gradientTransform="translate(0 -972)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="1" stop-color="#333"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="111.596" y1="256" x2="400.404" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f16755"/>
+      <stop offset="1" stop-color="#e52f76"/>
+    </linearGradient>
+  </defs>
+  <g id="Lucide">
+    <g id="Font_Awesome_6.0" data-name="Font Awesome 6.0">
+      <g id="Overflow_Controller_Icon" data-name="Overflow Controller Icon">
+        <g id="Layer_2-2" data-name="Layer 2-2">
+          <g id="Style_Searchbox_Results_Icon" data-name="Style Searchbox Results Icon">
+            <g id="Layer_3" data-name="Layer 3">
+              <circle class="cls-1" cx="256" cy="256" r="256"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path id="Lucide-2" data-name="Lucide" class="cls-2" d="M282.255,373.783c-65.145,0-118.149-52.998-118.149-118.149,0-36.191,29.447-65.638,65.638-65.638s65.638,29.447,65.638,65.638c0,7.25-5.872,13.128-13.128,13.128s-13.128-5.878-13.128-13.128c0-21.717-17.666-39.383-39.383-39.383s-39.383,17.666-39.383,39.383c0,50.664,41.223,91.893,91.893,91.893s91.893-41.229,91.893-91.893c0-41.024-17.551-80.259-48.139-107.636-5.397-4.833-5.859-13.134-1.026-18.538s13.115-5.859,18.538-1.026c36.152,32.351,56.882,78.715,56.882,127.2,0,65.151-52.998,118.149-118.149,118.149ZM187.894,382.475c4.801-5.436,4.282-13.73-1.154-18.538-31.069-27.422-48.889-66.907-48.889-108.303,0-50.671,41.223-91.893,91.893-91.893s91.893,41.223,91.893,91.893c0,21.717-17.666,39.383-39.383,39.383s-39.383-17.666-39.383-39.383c0-7.25-5.878-13.128-13.128-13.128s-13.128,5.878-13.128,13.128c0,36.191,29.447,65.638,65.638,65.638s65.638-29.447,65.638-65.638c0-65.145-52.998-118.149-118.149-118.149s-118.149,53.004-118.149,118.149c0,48.934,21.057,95.586,57.773,127.994,2.493,2.205,5.596,3.282,8.679,3.282,3.634,0,7.256-1.5,9.846-4.436Z"/>
+  </g>
+</svg>

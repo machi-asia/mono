@@ -63,17 +63,20 @@ export function UsageBar({
   const { user, isGuest, session, role: authRole } = useAuth();
   const userId = user?.id || "guest";
 
-  const [usage, setUsage] = useState<RoseUsage>(() => {
-    if (initialUsage) return initialUsage;
-    const cached = getCachedUsage(userId);
-    return cached ?? DEFAULT_USAGE;
-  });
-  const [loading, setLoading] = useState(!initialUsage && !getCachedUsage(userId));
+  const [usage, setUsage] = useState<RoseUsage>(() => initialUsage ?? DEFAULT_USAGE);
+  const [loading, setLoading] = useState(!initialUsage);
 
   useEffect(() => {
     if (initialUsage) {
       setUsage(initialUsage);
       setCachedUsage(userId, initialUsage);
+      setLoading(false);
+      return;
+    }
+
+    const cached = getCachedUsage(userId);
+    if (cached) {
+      setUsage(cached);
       setLoading(false);
     }
   }, [initialUsage, userId]);

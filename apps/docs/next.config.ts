@@ -4,6 +4,7 @@ import type { NextConfig } from "next";
 const isStaticExport = process.env.STATIC_EXPORT === "true" || process.env.CAPACITOR_BUILD === "true";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["26.244.155.226", "localhost", "127.0.0.1"],
   outputFileTracingRoot: path.join(__dirname, "..", ".."),
   transpilePackages: [
     "@mono/components",

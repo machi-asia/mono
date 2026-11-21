@@ -15,7 +15,49 @@ import {
 import { Card, MarkdownRenderer, Button } from "@mono/components";
 import type { WikiArticle } from "../../data/wiki-types";
 import { WikiToc } from "./wiki-toc";
+import { WikiGallery, type WikiGalleryItem } from "./wiki-gallery";
 import { parseTocFromMarkdown } from "../../utils/wiki-utils";
+
+type ContentSegment =
+  | { type: "markdown"; content: string }
+  | { type: "gallery"; title?: string; items: WikiGalleryItem[] };
+
+function parseArticleContentSegments(content: string): ContentSegment[] {
+  const regex = /:::gallery(?:\s+([^\n]+))?\n([\s\S]*?)\n:::/g;
+  const segments: ContentSegment[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(content)) !== null) {
+    if (match.index > lastIndex) {
+      const md = content.slice(lastIndex, match.index).trim();
+      if (md) segments.push({ type: "markdown", content: md });
+    }
+    const title = match[1]?.trim() || undefined;
+    const lines = match[2]
+      .split("\n")
+      .map((l) => l.trim())
+      .filter(Boolean);
+    const items: WikiGalleryItem[] = lines.map((line) => {
+      const [src, ...captionParts] = line.split("|").map((s) => s.trim());
+      return {
+        src,
+        caption: captionParts.length > 0 ? captionParts.join(" | ") : undefined,
+      };
+    });
+    if (items.length > 0) {
+      segments.push({ type: "gallery", title, items });
+    }
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < content.length) {
+    const md = content.slice(lastIndex).trim();
+    if (md) segments.push({ type: "markdown", content: md });
+  }
+
+  return segments.length > 0 ? segments : [{ type: "markdown", content }];
+}
 
 export interface WikiArticleViewProps {
   article: WikiArticle;
@@ -103,7 +145,13 @@ export function WikiArticleView({
         <main className="wiki-main-content">
           <Card className="wiki-content-card">
             <div className="wiki-markdown-wrapper">
-              <MarkdownRenderer content={article.content} />
+              {parseArticleContentSegments(article.content).map((seg, idx) =>
+                seg.type === "gallery" ? (
+                  <WikiGallery key={`gallery-${idx}`} title={seg.title} items={seg.items} />
+                ) : (
+                  <MarkdownRenderer key={`md-${idx}`} content={seg.content} />
+                )
+              )}
             </div>
 
             {/* Article Tags & Category Footer */}

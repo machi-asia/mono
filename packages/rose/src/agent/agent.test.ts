@@ -39,8 +39,9 @@ describe("Rose Agent Core", () => {
 
   describe("Tools", () => {
     it("registers webSearch, askQuestion, and the learn/recall/remember/forget memory tools", () => {
-      expect(TOOLS.length).toBe(6);
+      expect(TOOLS.length).toBe(7);
       expect(getToolByName("webSearch")).toBeDefined();
+      expect(getToolByName("searchDocs")).toBeDefined();
       expect(getToolByName("askQuestion")).toBeDefined();
       expect(getToolByName("learn")).toBeDefined();
       expect(getToolByName("recall")).toBeDefined();

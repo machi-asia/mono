@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { MotionConfig } from "framer-motion";
 import { MonoAppShell } from "@mono/auth";
+import { RoseChatModalFloatingButton, RoseChatModal, RoseChatModalProvider } from "@mono/rose";
 import SmoothScroll from "../components/SmoothScroll";
 import "lenis/dist/lenis.css";
 import "./globals.css";
@@ -37,8 +38,12 @@ export default function RootLayout({
       <body className="portfolio-app">
         <MotionConfig reducedMotion="never">
           <MonoAppShell>
-            <SmoothScroll />
-            {children}
+            <RoseChatModalProvider>
+              <SmoothScroll />
+              {children}
+              <RoseChatModalFloatingButton ariaLabel="Open Rose AI Agent" />
+              <RoseChatModal />
+            </RoseChatModalProvider>
           </MonoAppShell>
         </MotionConfig>
       </body>

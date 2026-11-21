@@ -4,6 +4,7 @@ import { recallTool } from "./recall";
 import { rememberTool } from "./remember";
 import { forgetTool } from "./forget";
 import { webSearchTool } from "./webSearch";
+import { searchDocsTool } from "./searchDocs";
 import {
   setMemoryToolContext,
   clearMemoryToolContext,
@@ -26,6 +27,7 @@ export interface Tool {
 
 export const TOOLS: Tool[] = [
   webSearchTool,
+  searchDocsTool,
   askQuestionTool,
   learnTool,
   recallTool,

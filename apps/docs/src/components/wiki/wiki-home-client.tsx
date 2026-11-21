@@ -37,6 +37,7 @@ const CATEGORY_ICONS: Record<WikiCategory, React.ReactNode> = {
   "Packages & Libraries": <Boxes size={15} />,
   "Standards & Guidelines": <Shield size={15} />,
   "Applications & Services": <Layers size={15} />,
+  "Biography": <BookOpen size={15} />,
 };
 
 export function WikiHomeClient({
@@ -92,6 +93,7 @@ export function WikiHomeClient({
       "Packages & Libraries": [],
       "Standards & Guidelines": [],
       "Applications & Services": [],
+      "Biography": [],
     };
     for (const article of initialArticles) {
       if (map[article.category]) {
@@ -235,7 +237,39 @@ export function WikiHomeClient({
                         <Link
                           href={`/docs/${article.slug}`}
                           className="wiki-article-card-link"
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "stretch",
+                            padding: 0,
+                            overflow: "hidden",
+                            gap: 0,
+                          }}
                         >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={article.image || "/icon.png"}
+                            alt={article.title}
+                            style={{
+                              width: "150px",
+                              minHeight: "100%",
+                              objectFit: "cover",
+                              flexShrink: 0,
+                              margin: 0,
+                              borderRadius: 0,
+                              display: "block",
+                            }}
+                          />
+                          <div
+                            style={{
+                              flex: 1,
+                              minWidth: 0,
+                              padding: "1.15rem 1.25rem",
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: "0.5rem",
+                            }}
+                          >
                           <div className="wiki-article-card-header">
                             <h3 className="wiki-article-card-title">
                               {article.title}
@@ -259,6 +293,7 @@ export function WikiHomeClient({
                                 </span>
                               ))}
                             </div>
+                          </div>
                           </div>
                         </Link>
                       </li>
@@ -356,7 +391,39 @@ export function WikiHomeClient({
                         <Link
                           href={`/docs/${article.slug}`}
                           className="wiki-article-card-link"
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "stretch",
+                            padding: 0,
+                            overflow: "hidden",
+                            gap: 0,
+                          }}
                         >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={article.image || "/icon.png"}
+                            alt={article.title}
+                            style={{
+                              width: "150px",
+                              minHeight: "100%",
+                              objectFit: "cover",
+                              flexShrink: 0,
+                              margin: 0,
+                              borderRadius: 0,
+                              display: "block",
+                            }}
+                          />
+                          <div
+                            style={{
+                              flex: 1,
+                              minWidth: 0,
+                              padding: "1.15rem 1.25rem",
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: "0.5rem",
+                            }}
+                          >
                           <div className="wiki-article-card-header">
                             <h3 className="wiki-article-card-title">
                               {article.title}
@@ -380,6 +447,7 @@ export function WikiHomeClient({
                                 </span>
                               ))}
                             </div>
+                          </div>
                           </div>
                         </Link>
                       </li>

@@ -1,7 +1,9 @@
 import type { WikiArticle, WikiCategory } from "./wiki-types";
+import { MIGRATED_MACHI_ARTICLES } from "./migrated-machi-articles";
 
 const WIKI_REPORTING_STANDARD: WikiArticle = {
   slug: "standard-wiki-reporting",
+    image: "/rose/researching.png",
   title: "Standard: Mandatory Wiki Reporting",
   description: "Every significant change must be documented in the /docs wiki before it ships.",
   category: "Standards & Guidelines",
@@ -39,6 +41,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
   "Packages & Libraries",
   "Standards & Guidelines",
   "Applications & Services",
+  "Biography",
 ];
 
 export const CATEGORY_DESCRIPTIONS: Record<WikiCategory, string> = {
@@ -47,12 +50,14 @@ export const CATEGORY_DESCRIPTIONS: Record<WikiCategory, string> = {
   "Packages & Libraries": "In-depth developer guides for shared packages across authentication, UI, database, and AI",
   "Standards & Guidelines": "Mandatory organization policies for icons, skeleton loading, privacy disclosures, and code style",
   "Applications & Services": "Operational manuals, runtime workflows, and service architectures for deployable apps",
+  "Biography": "Personal profile, education timeline, work experience, and featured works",
 };
 
 export const wikiArticles: WikiArticle[] = [
   WIKI_REPORTING_STANDARD,
   {
     slug: "account-roles-and-usage-monitoring",
+    image: "/images/avatar_alex.webp",
     title: "Architecture & Auth: User Roles & Multi-Period Usage Monitoring",
     description: "Organization-wide account roles (guest, member, pro, admin) and multi-period (daily/monthly) usage quota tracking across apps.",
     category: "Architecture & Core",
@@ -117,6 +122,7 @@ All API microservice routes (\`apps/api\`) check daily and monthly limits via \`
   },
   {
     slug: "personal-media-library-integration",
+    image: "/images/popout-camera-sample.png",
     title: "Packages & Auth: Personal Media Library & Account Integration",
     description: "Cloud-connected personal media repository integrated into Account Settings with upload, rename, and delete capabilities.",
     category: "Packages & Libraries",
@@ -144,6 +150,7 @@ The **Media Library** tab in the organization-wide **Account Settings** modal (\
   },
   {
     slug: "centralized-api-and-package-architecture",
+    image: "/icons/rest.webp",
     title: "Architecture: Centralized API Service & Standardized Package Structure",
     description: "Centralization of all HTTP API routes and usage tracking into apps/api, with uniform component/hook package conventions.",
     category: "Architecture & Core",
@@ -189,6 +196,7 @@ Packages no longer carry server route handlers. Instead:
   },
   {
     slug: "api-endpoints",
+    image: "/icons/node.webp",
     title: "API Endpoint Reference",
     description: "Every HTTP endpoint in the monorepo: Rose chat, settings, transcription, usage, and Sync events and rooms, with request and response shapes.",
     category: "Architecture & Core",
@@ -272,6 +280,7 @@ curl -N "http://localhost:3000/api/sync/events?roomId=lobby&userId=u1"
   // ── Architecture & Core ──
   {
     slug: "architecture",
+    image: "/icons/cloud.svg",
     title: "System Architecture & Monorepo Layout",
     description: "Comprehensive blueprint of the Machi Asia monorepo layout, workspace boundaries, application runtimes, and package dependencies.",
     category: "Architecture & Core",
@@ -334,6 +343,7 @@ All apps in the monorepo follow strict architectural rules:
   },
   {
     slug: "api-specs",
+    image: "/icons/typescript.svg",
     title: "API Standards & Response Format",
     description: "Guidelines and conventions for App Router API routes, JSON response structures, error handling, and authentication validation.",
     category: "Architecture & Core",
@@ -385,6 +395,7 @@ Every API endpoint returns a standardized payload shape with predictable top-lev
   // ── Packages & Libraries ──
   {
     slug: "package-auth",
+    image: "/images/avatar_sarah.webp",
     title: "@mono/auth: Centralized Authentication",
     description: "Architecture, session management, multi-account switching, RLS helpers, and the Data & Privacy Collection Registry.",
     category: "Packages & Libraries",
@@ -433,6 +444,7 @@ In accordance with organization privacy compliance rules, any app collecting tel
   },
   {
     slug: "package-components",
+    image: "/icons/radix.svg",
     title: "@mono/components: Shared Design System",
     description: "Design system primitives, color tokens, layout containers, accessible controls, skeleton states, and Obsidian Markdown renderer.",
     category: "Packages & Libraries",
@@ -470,6 +482,7 @@ In accordance with organization privacy compliance rules, any app collecting tel
   },
   {
     slug: "package-database",
+    image: "/icons/supabase.svg",
     title: "@mono/database: Supabase Data Store",
     description: "Server-side Supabase clients, schema definitions, typed query builders, and database migrations.",
     category: "Packages & Libraries",
@@ -509,6 +522,7 @@ All tables in the Postgres database must have Row Level Security enabled. Every 
   },
   {
     slug: "package-rose",
+    image: "/rose/happy.png",
     title: "@mono/rose: AI Agent & Companion Library",
     description: "Multimodal conversational agent engine, vector memory retrieval, emotion tagging, Groq tool processing, and voice transcription.",
     category: "Packages & Libraries",
@@ -536,6 +550,7 @@ All tables in the Postgres database must have Row Level Security enabled. Every 
   },
   {
     slug: "package-sync",
+    image: "/icons/postgresql.svg",
     title: "@mono/sync: Realtime State Coordination",
     description: "Cross-tab messaging, Supabase Realtime broadcast channels, and collaborative event synchronizers.",
     category: "Packages & Libraries",
@@ -558,6 +573,7 @@ All tables in the Postgres database must have Row Level Security enabled. Every 
   // ── Applications ──
   {
     slug: "app-calculator",
+    image: "/images/preview.webp",
     title: "Multi-Game Production Calculator",
     description: "Architecture and feature set of the production and crafting recipe calculator supporting Satisfactory, Factorio, Minecraft, and Dyson Sphere Program.",
     category: "Applications & Services",
@@ -586,6 +602,7 @@ The \`calculator\` application (\`apps/calculator\`) is a specialized web tool b
   // ── Standards & Guidelines ──
   {
     slug: "standard-lucide-icons",
+    image: "/icons/lucide.svg",
     title: "Standard: Unified Icon Library (lucide-react)",
     description: "Organization-wide mandate requiring lucide-react as the sole icon package across all applications and packages.",
     category: "Standards & Guidelines",
@@ -609,6 +626,7 @@ All applications under \`apps/\` and packages under \`packages/\` **MUST** stand
   },
   {
     slug: "standard-skeleton-loading",
+    image: "/icons/tailwind.svg",
     title: "Standard: Mandatory Skeleton Loading",
     description: "Guidelines and requirements for skeleton placeholders during asynchronous fetches and database loading states.",
     category: "Standards & Guidelines",
@@ -634,6 +652,7 @@ All components and pages that load data asynchronously from an API fetch or data
   },
   {
     slug: "standard-privacy-registry",
+    image: "/icons/git.svg",
     title: "Standard: Data & Privacy Collection Registry",
     description: "Enforcement guidelines for user data collection disclosures, purpose statements, and user opt-in/opt-out controls.",
     category: "Standards & Guidelines",
@@ -657,6 +676,7 @@ Every application or package that collects, processes, transmits, or stores user
   // ── ADRs ──
   {
     slug: "adr-001-nextjs-framework",
+    image: "/icons/next.svg",
     title: "ADR-001: Next.js as the Universal Framework",
     description: "Decision to standardize all deployable web applications and shared packages on Next.js and the React ecosystem.",
     category: "Architecture Decisions (ADR)",
@@ -682,6 +702,7 @@ All web applications (\`machi-asia\`, \`rose\`, \`docs\`, \`calculator\`, \`port
   },
   {
     slug: "adr-002-monorepo-structure",
+    image: "/icons/vercel.svg",
     title: "ADR-002: Monorepo Architecture with Turborepo",
     description: "Architectural rationale for unifying all organization codebases into a single Turborepo with npm workspaces.",
     category: "Architecture Decisions (ADR)",
@@ -707,6 +728,7 @@ Consolidate all repositories into a unified Turborepo monorepo with \`apps/\` an
   },
   {
     slug: "adr-003-centralized-auth-and-database",
+    image: "/icons/supabase.svg",
     title: "ADR-003: Centralized Auth and Database Layer",
     description: "Decoupling authentication state and database clients into dedicated packages with strict boundary rules.",
     category: "Architecture Decisions (ADR)",
@@ -731,6 +753,7 @@ Create \`@mono/auth\` and \`@mono/database\` as the centralized packages. All ap
   },
   {
     slug: "adr-004-component-showcase-pages",
+    image: "/icons/figma.svg",
     title: "ADR-004: Interactive Component Showcase Pages",
     description: "Mandating live interactive showcase pages for all exported UI components in the documentation app.",
     category: "Architecture Decisions (ADR)",
@@ -755,6 +778,7 @@ Every package exporting UI components must provide a live showcase page in \`app
   },
   {
     slug: "adr-005-design-system-theming",
+    image: "/icons/css.svg",
     title: "ADR-005: Design System and Theming Tokens",
     description: "Standardizing on slate-dark surfaces with warm gold accents and CSS custom property token cascades.",
     category: "Architecture Decisions (ADR)",
@@ -779,6 +803,7 @@ Declare canonical design tokens in \`@mono/components\` using standard CSS varia
   },
   {
     slug: "adr-007-obsidian-markdown-renderer",
+    image: "/icons/vscode.svg",
     title: "ADR-007: Obsidian-Flavored Markdown Renderer",
     description: "Custom lightweight Markdown rendering engine supporting Obsidian callouts, code syntax highlighting, and checklists.",
     category: "Architecture Decisions (ADR)",
@@ -803,6 +828,7 @@ Implement a custom, highly performant \`<MarkdownRenderer />\` in \`@mono/compon
   },
   {
     slug: "adr-008-rose-agent-package",
+    image: "/rose/coding.png",
     title: "ADR-008: Rose AI Agent Package Architecture",
     description: "Separation of AI orchestration, tool execution, emotion analysis, and chat UI into @mono/rose.",
     category: "Architecture Decisions (ADR)",
@@ -827,6 +853,7 @@ Package Rose into \`@mono/rose\`, combining Vercel AI Gateway for unified model 
   },
   {
     slug: "adr-015-skeleton-loading-state-enforcement",
+    image: "/icons/react.svg",
     title: "ADR-015: Skeleton Loading State Enforcement",
     description: "Mandatory implementation of skeleton placeholder components for all asynchronous operations.",
     category: "Architecture Decisions (ADR)",
@@ -851,6 +878,7 @@ Mandate the use of \`<Skeleton>\` components from \`@mono/components\` across al
   },
   {
     slug: "adr-017-capacitor-and-otakit-mobile-architecture",
+    image: "/icons/docker.svg",
     title: "ADR-017: Capacitor & OtaKit Mobile Architecture (Web + Android)",
     description: "Integration of Capacitor and OtaKit across client apps for Google Play Store Android distribution and real-time OTA live update progress notifications.",
     category: "Architecture Decisions (ADR)",
@@ -881,6 +909,7 @@ All client applications in the Machi Asia ecosystem (\`calculator\`, \`docs\`, \
   },
   {
     slug: "adr-018-unified-admin-portal-and-redis-rose-chats",
+    image: "/rose/bright.png",
     title: "ADR-018: Unified Multi-Site Admin Portal, Visitor Origin Telemetry & Redis Rose Chats",
     description: "Consolidation of per-site administration into admin.machi.asia, visitor origin tracking in Supabase, and Redis-backed Rose AI conversation persistence.",
     category: "Architecture Decisions (ADR)",
@@ -905,6 +934,37 @@ Machi Asia operates multiple applications across \`*.machi.asia\` and \`*.itemli
 - Single authenticated admin workspace covering all Machi Asia and ItemList sites.
 - Cross-device Rose AI chat continuity and real-time visibility into guest and registered traffic.`,
   },
+  {
+    slug: "portfolio-profile-and-history",
+    image: "/images/standard-hero.webp",
+    title: "Portfolio: Profile, Education & Experience History",
+    description:
+      "Migrated profile, education timeline, work experience, and certificates from the standalone machi repository.",
+    category: "Biography",
+    updatedAt: "2026-11-18",
+    author: "Angelo Justine D. Kamachi",
+    readTime: "4 min read",
+    tags: ["portfolio", "education", "experience", "certificates", "profile"],
+    content: `# Portfolio: Profile, Education & Experience History
+
+## Profile
+- **Name**: Angelo Justine D. Kamachi
+- **Role**: Full-Stack Software Engineer
+- **Focus**: Next.js, React, TypeScript, Python, Machine Learning, and interactive 3D/AI web systems.
+
+## Education History
+- **2022 - 2026 — B.S. Computer Science** at **Mapua Malayan Colleges Laguna**: Specializing in Software Engineering, Machine Learning, and Game Development (Graduating 2026). Dean's List (1st Year 2nd Term, 3rd Year 2nd Term, 3rd Year 3rd Term).
+- **2020 - 2022 — Senior High School (STEM Strand)** at **Mapua Malayan Colleges Laguna**: Graduated with Academic High Distinction honors.
+- **2016 - 2020 — Junior High School** at **Dominican Colleges of Sta Rosa, Laguna**: Moving Up Honors, academic awards, and science fair recognitions.
+- **2010 - 2016 — Elementary School** at **Dominican Colleges of Sta Rosa, Laguna**: Elementary Education Graduate with active participation in campus organizations.
+
+## Certificates & Credentials
+- Google & Coursera technical certifications, Wadhwani Foundation entrepreneurship/employability credentials, and TOEIC Listening/Speaking/Writing awards.
+
+## Media Assets
+- Migrated Rose emotion avatars (\`/rose/*.png\`), certificates, experience screenshots, and showcase videos into \`apps/portfolio/public/\`.`,
+  },
+  ...MIGRATED_MACHI_ARTICLES,
 ];
 
 // Helper functions

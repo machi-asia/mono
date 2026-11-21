@@ -1,10 +1,18 @@
-import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { describe, it, expect, vi, afterEach } from "vitest";
+import { act, render, screen, waitFor } from "@testing-library/react";
+import { renderToString } from "react-dom/server";
+import { hydrateRoot } from "react-dom/client";
 import { getRoleLimits } from "../../utils/usage";
-import { UsageBar } from "./usage-bar";
+import { UsageBar, setCachedUsage } from "./usage-bar";
 import { MockAuthProvider } from "@mono/auth/mock";
 
 describe("Rose Usage Feature", () => {
+  afterEach(() => {
+    localStorage.clear();
+    vi.restoreAllMocks();
+    vi.unstubAllGlobals();
+  });
+
   describe("Role Limits", () => {
     it("assigns unlimited quotas for admin", () => {
       const limits = getRoleLimits(["admin"]);
@@ -74,6 +82,59 @@ describe("Rose Usage Feature", () => {
 
       expect(screen.getByText(/Admin Tier/i)).toBeInTheDocument();
       expect(screen.getByText(/Unlimited Messages/i)).toBeInTheDocument();
+    });
+
+    it("hydrates without mismatch when localStorage has cached guest usage and transitions to cached quota", async () => {
+      vi.stubGlobal(
+        "fetch",
+        vi.fn().mockResolvedValue({ ok: false } as Response)
+      );
+
+      const element = (
+        <MockAuthProvider state="signed-out">
+          <UsageBar />
+        </MockAuthProvider>
+      );
+
+      // Simulate SSR where localStorage is unavailable during server render
+      const ssrHtml = renderToString(element);
+
+      setCachedUsage("guest", {
+        allowed: true,
+        count: 12,
+        limit: 50,
+        week: "2026-W47",
+        dailyCount: 3,
+        dailyLimit: 10,
+        day: "2026-11-21",
+        remaining: 7,
+        role: "guest",
+      });
+
+      const container = document.createElement("div");
+      container.innerHTML = ssrHtml;
+      document.body.appendChild(container);
+
+      const recoverableErrors: unknown[] = [];
+      let root: ReturnType<typeof hydrateRoot> | null = null;
+
+      await act(async () => {
+        root = hydrateRoot(container, element, {
+          onRecoverableError: (err) => recoverableErrors.push(err),
+        });
+      });
+
+      expect(recoverableErrors).toHaveLength(0);
+
+      await waitFor(() => {
+        expect(container.textContent).toMatch(/Guest Tier/i);
+        expect(container.textContent).toMatch(/7 remaining today/i);
+      });
+
+      act(() => {
+        root?.unmount();
+      });
+      container.remove();
     });
   });
 });

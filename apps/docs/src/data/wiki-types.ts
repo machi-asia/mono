@@ -3,7 +3,8 @@ export type WikiCategory =
   | "Architecture Decisions (ADR)"
   | "Packages & Libraries"
   | "Standards & Guidelines"
-  | "Applications & Services";
+  | "Applications & Services"
+  | "Biography";
 
 export interface WikiArticle {
   slug: string;
@@ -14,6 +15,7 @@ export interface WikiArticle {
   author: string;
   readTime: string;
   tags: string[];
+  image?: string;
   content: string;
 }
 

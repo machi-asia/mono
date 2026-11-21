@@ -48,8 +48,8 @@
     flex-direction: column;
     overflow: hidden;
     background: var(--card-bg);
-    border-radius: 6px;
-    cursor: pointer;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 16px 36px rgb(0 0 0 / 50%);
 }
@@ -114,7 +114,6 @@
     aspect-ratio: 16 / 9;
     background: #000;
     overflow: hidden;
-    cursor: pointer;
 }
 
 .featured-popout-media.featured-video-container {
@@ -128,6 +127,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     transition: transform 0.3s ease;
 }
 
@@ -201,6 +201,7 @@
 .featured-content {
     padding: 1.75rem 2rem;
     display: flex;
+    flex: 1;
     flex-direction: column;
     border-top: 1px solid var(--hairline);
 }

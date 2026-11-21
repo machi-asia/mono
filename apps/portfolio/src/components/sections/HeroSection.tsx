@@ -5,6 +5,7 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Button from "../Button";
+import HeroInkSplash from "../HeroInkSplash";
 import type { Certificate, GitHubRepo, WorkCompany } from "../../data/types";
 
 export interface HeroSectionProps {
@@ -38,16 +39,17 @@ export default function HeroSection({ onContactOpen }: HeroSectionProps) {
     );
 
     // Part 2: Pure Upward-Only Multi-Speed Vertical Parallax Tracks (x = 0, every element travels strictly up at different speeds)
-    const bgFrame1Y = useTransform(smoothScroll, [0, 1], [40, -90]);
-    const bgFrame2Y = useTransform(smoothScroll, [0, 1], [60, -130]);
-    const bgFrame3Y = useTransform(smoothScroll, [0, 1], [50, -110]);
-    const midLayerY = useTransform(smoothScroll, [0, 1], [110, -210]);
-    const nearLayerY = useTransform(smoothScroll, [0, 1], [170, -310]);
-    const frontLayerY = useTransform(smoothScroll, [0, 1], [240, -420]);
+    const bgFrame1Y = useTransform(smoothScroll, [0, 1], [30, -80]);
+    const bgFrame2Y = useTransform(smoothScroll, [0, 1], [50, -110]);
+    const bgFrame3Y = useTransform(smoothScroll, [0, 1], [40, -95]);
+    const midLayerY = useTransform(smoothScroll, [0, 1], [80, -160]);
+    const nearLayerY = useTransform(smoothScroll, [0, 1], [110, -210]);
+    const frontLayerY = useTransform(smoothScroll, [0, 1], [140, -260]);
 
     const topPanelY = useTransform(smoothScroll, [0, 1], [0, -100]);
     const bottomPanelY = useTransform(smoothScroll, [0, 1], [40, -140]);
     const invertShapeY = useTransform(smoothScroll, [0, 1], [90, -200]);
+    const inkSplashY = useTransform(smoothScroll, [0, 1], [0, -180]);
 
     return (
         <section
@@ -56,6 +58,9 @@ export default function HeroSection({ onContactOpen }: HeroSectionProps) {
             data-testid="hero-section"
             className="centra-hero-section"
         >
+            {/* Animated Ink Splash on the right (behind invert-masked hero typography) */}
+            <HeroInkSplash parallaxY={inkSplashY} />
+
             {/* PART 1: Centra Squeeze Display Header */}
             <header className="centra-squeeze-header">
                 <div
@@ -83,19 +88,29 @@ export default function HeroSection({ onContactOpen }: HeroSectionProps) {
                 </div>
 
                 <motion.p
+                    data-testid="hero-eyebrow"
                     initial={{ opacity: 0.05, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                    className="centra-eyebrow"
+                    className="centra-eyebrow invert-blend-text"
+                    style={{
+                        mixBlendMode: "difference",
+                        color: "var(--shade-inversion, #f4f4f0)",
+                    }}
                 >
                     Full-Stack Software Engineer
                 </motion.p>
 
                 <motion.h2
+                    data-testid="hero-statement"
                     initial={{ opacity: 0.05, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.65, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-                    className="centra-paragraph-massive"
+                    className="centra-paragraph-massive invert-blend-text"
+                    style={{
+                        mixBlendMode: "difference",
+                        color: "var(--shade-inversion, #f4f4f0)",
+                    }}
                 >
                     Yes, it’s me. Kamachi. Engineering high-craft web platforms, AI agents, and interactive systems.
                 </motion.h2>
@@ -154,7 +169,7 @@ export default function HeroSection({ onContactOpen }: HeroSectionProps) {
                         alt="Angelo Justine D. Kamachi portrait"
                         fill
                         priority
-                        sizes="280px"
+                        sizes="(max-width: 640px) 180px, (max-width: 1024px) 260px, 340px"
                         style={{
                             objectFit: "cover",
                             objectPosition: "center 28%",
@@ -191,15 +206,55 @@ export default function HeroSection({ onContactOpen }: HeroSectionProps) {
                     />
                 </motion.div>
 
-                {/* Central Editorial Statement & CTAs (zIndex: 3) */}
+                <motion.div
+                    data-testid="hero-bg-frame-4"
+                    className="centra-bg-frame centra-bg-frame-4"
+                    style={{ y: bgFrame1Y, zIndex: 1 }}
+                >
+                    <img
+                        src="/experience/proj1a-system-architecture.webp"
+                        alt="System architecture overview frame"
+                        draggable={false}
+                        className="centra-frame-media"
+                    />
+                </motion.div>
+
+                <motion.div
+                    data-testid="hero-bg-frame-5"
+                    className="centra-bg-frame centra-bg-frame-5"
+                    style={{ y: bgFrame3Y, zIndex: 1 }}
+                >
+                    <img
+                        src="/experience/proj1j-marketplace-1.webp"
+                        alt="Marketplace platform showcase frame"
+                        draggable={false}
+                        className="centra-frame-media"
+                    />
+                </motion.div>
+
+                {/* Central Editorial Statement & CTAs */}
                 <div
                     data-testid="hero-perspective-foreground"
                     className="centra-overlay-copy"
                 >
-                    <p className="centra-overlay-statement">
+                    <p
+                        data-testid="hero-overlay-statement-primary"
+                        className="centra-overlay-statement invert-blend-text"
+                        style={{
+                            mixBlendMode: "difference",
+                            color: "var(--shade-inversion, #f4f4f0)",
+                        }}
+                    >
                         Crafted beyond conventional static templates.
                     </p>
-                    <p className="centra-overlay-statement centra-overlay-statement-muted">
+                    <p
+                        data-testid="hero-overlay-statement-secondary"
+                        className="centra-overlay-statement centra-overlay-statement-muted invert-blend-text"
+                        style={{
+                            mixBlendMode: "difference",
+                            color: "var(--shade-inversion, #f4f4f0)",
+                        }}
+                    >
                         An interactive operating system built for high-contrast software craftsmanship.
                     </p>
 
@@ -242,10 +297,10 @@ export default function HeroSection({ onContactOpen }: HeroSectionProps) {
                     className="invert-blend-shape"
                     style={{
                         position: "absolute",
-                        top: "520px",
-                        right: "18%",
-                        width: "clamp(120px, 14vw, 200px)",
-                        height: "clamp(120px, 14vw, 200px)",
+                        top: "640px",
+                        right: "26%",
+                        width: "clamp(140px, 15vw, 220px)",
+                        height: "clamp(140px, 15vw, 220px)",
                         borderRadius: "9999px",
                         backgroundColor: "var(--shade-inversion, #f4f4f0)",
                         mixBlendMode: "difference",
@@ -334,6 +389,60 @@ export default function HeroSection({ onContactOpen }: HeroSectionProps) {
                     <img
                         src="/images/preview.webp"
                         alt="Interactive portfolio preview card"
+                        draggable={false}
+                        className="centra-depth-card-media"
+                    />
+                </motion.div>
+
+                <motion.div
+                    data-testid="hero-depth-item-7"
+                    className="centra-depth-item centra-depth-item-7"
+                    style={{ y: midLayerY, zIndex: 4 }}
+                >
+                    <video
+                        src="/videos/Drawings.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="centra-depth-card-media"
+                    />
+                </motion.div>
+
+                <motion.div
+                    data-testid="hero-depth-item-8"
+                    className="centra-depth-item centra-depth-item-8"
+                    style={{ y: nearLayerY, zIndex: 5 }}
+                >
+                    <img
+                        src="/experience/proj1d-finance.webp"
+                        alt="Financial analytics dashboard card"
+                        draggable={false}
+                        className="centra-depth-card-media"
+                    />
+                </motion.div>
+
+                <motion.div
+                    data-testid="hero-depth-item-9"
+                    className="centra-depth-item centra-depth-item-9"
+                    style={{ y: frontLayerY, zIndex: 5 }}
+                >
+                    <img
+                        src="/rose/coding.png"
+                        alt="Rose AI coding assistant"
+                        draggable={false}
+                        className="centra-depth-cutout"
+                    />
+                </motion.div>
+
+                <motion.div
+                    data-testid="hero-depth-item-10"
+                    className="centra-depth-item centra-depth-item-10"
+                    style={{ y: midLayerY, zIndex: 4 }}
+                >
+                    <img
+                        src="/experience/proj1a-croia-migration-1.webp"
+                        alt="Enterprise migration showcase card"
                         draggable={false}
                         className="centra-depth-card-media"
                     />

@@ -22,8 +22,9 @@ describe("apps/api Rose Agent Integration (delegated to @mono/rose/agent)", () =
     expect(res.emotion).toBe("bright");
     expect(ROSE_EMOTIONS.bright).toBeDefined();
 
-    expect(TOOLS.length).toBe(6);
+    expect(TOOLS.length).toBe(7);
     expect(getToolByName("webSearch")).toBeDefined();
+    expect(getToolByName("searchDocs")).toBeDefined();
     expect(getAgentCommandCategories().some((c) => c.command === "/web")).toBe(true);
 
     const trace = createLangfuseTrace({ userId: "u1", input: "hi" }, { publicKey: "", secretKey: "" });

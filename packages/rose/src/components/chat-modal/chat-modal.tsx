@@ -68,12 +68,16 @@ export interface RoseChatModalContextType {
   isOpen: boolean;
   open: () => void;
   close: () => void;
+  streamingPreview: string | null;
+  setStreamingPreview: (text: string | null) => void;
 }
 
 const RoseChatModalContext = createContext<RoseChatModalContextType>({
   isOpen: false,
   open: () => {},
   close: () => {},
+  streamingPreview: null,
+  setStreamingPreview: () => {},
 });
 
 export function useRoseChatModal() {
@@ -90,11 +94,14 @@ export function RoseChatModalProvider({
   defaultOpen = false,
 }: RoseChatModalProviderProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
+  const [streamingPreview, setStreamingPreview] = useState<string | null>(null);
   const open = useCallback(() => setIsOpen(true), []);
   const close = useCallback(() => setIsOpen(false), []);
 
   return (
-    <RoseChatModalContext.Provider value={{ isOpen, open, close }}>
+    <RoseChatModalContext.Provider
+      value={{ isOpen, open, close, streamingPreview, setStreamingPreview }}
+    >
       {children}
     </RoseChatModalContext.Provider>
   );
@@ -145,6 +152,20 @@ export interface RoseChatModalFloatingButtonProps {
   onClick?: () => void;
 }
 
+function formatStreamingMarquee(raw: string, maxChars = 60): string {
+  const plain = raw
+    .replace(/\[!([a-zA-Z0-9_-]+)\]/g, "")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/^[ \t]*#{1,6}[ \t]+/gm, "")
+    .replace(/^[ \t]*>[ \t]?/gm, "")
+    .replace(/^[ \t]*[-*+][ \t]+/gm, "")
+    .replace(/[*_`~]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!plain) return "";
+  return plain.length > maxChars ? plain.slice(-maxChars) : plain;
+}
+
 export function RoseChatModalFloatingButton({
   icon,
   badgeText,
@@ -152,7 +173,7 @@ export function RoseChatModalFloatingButton({
   ariaLabel = "Open Rose AI Chat",
   onClick,
 }: RoseChatModalFloatingButtonProps) {
-  const { open } = useRoseChatModal();
+  const { open, isOpen, streamingPreview } = useRoseChatModal();
 
   const handleClick = () => {
     onClick?.();
@@ -166,8 +187,39 @@ export function RoseChatModalFloatingButton({
       onClick={handleClick}
       aria-label={ariaLabel}
     >
-      <div className="m-rose-fab-icon">
-        {icon || <Sparkles size={24} />}
+      {streamingPreview && !isOpen ? (
+        <div
+          style={{
+            position: "absolute",
+            bottom: "calc(100% + 10px)",
+            right: 0,
+            maxWidth: "280px",
+            width: "max-content",
+            padding: "8px 14px",
+            borderRadius: "16px 16px 4px 16px",
+            background: "var(--color-surface, #111116)",
+            color: "var(--color-text, #fff)",
+            border: "1px solid var(--color-border, #1f1f27)",
+            boxShadow: "0 8px 24px rgb(0 0 0 / 45%)",
+            fontSize: "0.82rem",
+            lineHeight: 1.35,
+            textAlign: "left",
+            pointerEvents: "none",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+          }}
+        >
+          {formatStreamingMarquee(streamingPreview)}
+        </div>
+      ) : null}
+      <div className="m-rose-fab-icon" style={{ width: "100%", height: "100%", overflow: "hidden", borderRadius: "50%" }}>
+        {icon || (
+          <img
+            src="/rose/happy.png"
+            alt="Rose"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        )}
       </div>
       {badgeText ? <span className="m-rose-fab-badge">{badgeText}</span> : null}
     </button>
@@ -206,6 +258,7 @@ export function RoseChat({
   onClose,
 }: RoseChatProps) {
   const { user, session } = useAuth();
+  const { setStreamingPreview } = useRoseChatModal();
   const userId = user?.id || "guest";
 
   const [conversationState, setConversationState] = useState<{
@@ -227,6 +280,19 @@ export function RoseChat({
   const [showSlashMenu, setShowSlashMenu] = useState(false);
   const [showSidebar, setShowSidebar] = useState(defaultSidebarOpen);
   const sidebarRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!isLoading) {
+      setStreamingPreview(null);
+      return;
+    }
+    const lastMsg = messages[messages.length - 1];
+    if (lastMsg?.role === "model" && lastMsg.text?.trim()) {
+      setStreamingPreview(lastMsg.text.trim());
+    } else {
+      setStreamingPreview("Thinking…");
+    }
+  }, [isLoading, messages, setStreamingPreview]);
 
   useEffect(() => {
     if (!showSidebar) return;
@@ -288,7 +354,7 @@ export function RoseChat({
     : [];
 
   const scrollToBottom = useCallback(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current?.scrollIntoView?.({ behavior: "smooth" });
   }, []);
 
   useEffect(() => {
@@ -534,6 +600,7 @@ export function RoseChat({
         const flushStreamText = () => {
           streamFlushTimer = null;
           const sanitized = sanitizeStreamingMarkdown(accumulatedStreamText);
+          setStreamingPreview(sanitized || "Thinking…");
           setMessages((prev) =>
             prev.map((msg) =>
               msg.id === modelMsgId ? { ...msg, text: sanitized } : msg
@@ -1375,17 +1442,17 @@ export function RoseChatModal({ className = "", ...chatProps }: RoseChatModalPro
     };
   }, [isOpen, close]);
 
-  if (!isOpen) return null;
-
   return (
     <div
       className={`m-rose-modal-backdrop ${className}`}
       role="dialog"
       aria-modal="true"
       aria-label="Rose AI Chat Modal"
+      style={isOpen ? undefined : { display: "none" }}
+      aria-hidden={!isOpen}
     >
       <div className="m-rose-modal-card">
-        <RoseChat {...chatProps} onClose={close} />
+        <RoseChat variant="floating" {...chatProps} onClose={close} />
       </div>
     </div>
   );

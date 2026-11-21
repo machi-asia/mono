@@ -15,12 +15,14 @@
   "dependencies": {
     "@mono/auth": "*",
     "@mono/components": "*",
+    "@mono/rose": "*",
     "framer-motion": "^14.0.0",
     "lenis": "^1.3.26",
     "lucide-react": "^1.40.0",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "webgl-fluid-enhanced": "^0.8.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^7.0.1",
