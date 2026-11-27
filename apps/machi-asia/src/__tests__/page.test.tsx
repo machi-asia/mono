@@ -44,6 +44,15 @@ describe("Machi Asia Landing Page", () => {
     ).toBeInTheDocument();
   });
 
+  it("renders the under-development modal on initial load", () => {
+    render(<Home />);
+    expect(screen.getByRole("dialog", { name: /Under Development/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /portfolio\.machi\.asia/i })).toHaveAttribute(
+      "href",
+      "https://portfolio.machi.asia"
+    );
+  });
+
   it("renders subscription pricing options", () => {
     render(<Home />);
     expect(

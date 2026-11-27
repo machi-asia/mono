@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Row, Col, Card, Button, Tooltip, Accordion, Usage, Link as MonoLink, resolveHref } from "@mono/components";
 import { ArrowRight, Bot, Boxes, Calculator, Check, Landmark, Sparkles, Sprout, StickyNote, Zap, Shield, Code2, Globe } from "lucide-react";
+import { UnderDevelopmentModal } from "../components/under-development-modal";
 
 const PRODUCTS = [
   {
@@ -239,6 +240,7 @@ export function HomeClient() {
 
   return (
     <main className="machi-main">
+      <UnderDevelopmentModal />
       {/* Hero Section */}
       <section className="machi-hero">
         <div className="machi-hero-badge">
