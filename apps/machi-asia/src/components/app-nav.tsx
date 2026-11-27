@@ -15,6 +15,10 @@ export function AppNavbar({ currentPath = "/" }: AppNavbarProps) {
     { label: "Home", href: "/", active: currentPath === "/" },
     { label: "Portfolio", href: "/portfolio", active: currentPath === "/portfolio" },
     { label: "Calculator", href: resolveHref("https://calculator.machi-asia.com") },
+    { label: "TerraPrice", href: resolveHref("https://terraprice.machi.asia") },
+    { label: "MMM", href: resolveHref("https://mmm.machi.asia") },
+    { label: "Notes", href: resolveHref("https://notes.machi.asia") },
+    { label: "UOweMe", href: resolveHref("https://uoweme.machi.asia") },
     { label: "Rose AI", href: resolveHref("https://rose.machi-asia.com") },
     { label: "Docs", href: docsHref },
   ];
@@ -52,6 +56,10 @@ export function AppFooter() {
         { label: "Portfolio", href: "/portfolio" },
         { label: "Documentation", href: docsHref },
         { label: "Calculator", href: resolveHref("https://calculator.machi-asia.com") },
+        { label: "TerraPrice", href: resolveHref("https://terraprice.machi.asia") },
+        { label: "MMM", href: resolveHref("https://mmm.machi.asia") },
+        { label: "Notes", href: resolveHref("https://notes.machi.asia") },
+        { label: "UOweMe", href: resolveHref("https://uoweme.machi.asia") },
         { label: "Rose AI", href: resolveHref("https://rose.machi-asia.com") },
       ]}
       copyright="© 2026 Machi Asia. All rights reserved."

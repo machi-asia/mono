@@ -26,5 +26,7 @@ describe("@mono/database public API exports", () => {
     expect(db.ROLE_QUOTAS).toBeDefined();
     expect(db.recordAndCheckUsage).toBeDefined();
     expect(db.getUserUsageSummary).toBeDefined();
+    expect(db.createTokenClient).toBeDefined();
+    expect(db.createServiceClient).toBeDefined();
   });
 });

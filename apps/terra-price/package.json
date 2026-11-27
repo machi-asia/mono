@@ -1,0 +1,42 @@
+{
+  "name": "@mono/terra-price",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3007",
+    "build": "next build",
+    "start": "next start -p 3007",
+    "lint": "eslint .",
+    "lint:style": "stylelint --allow-empty-input \"src/**/*.css\"",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@mono/api-client": "*",
+    "@mono/app-config": "*",
+    "@mono/auth": "*",
+    "@mono/components": "*",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^1.40.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/leaflet": "^1.9.20",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "^6.1.1",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.4",
+    "jsdom": "^30.0.1",
+    "stylelint": "^17.14.1",
+    "stylelint-config-standard": "^40.0.0",
+    "typescript": "latest",
+    "vitest": "^4.1.11"
+  }
+}

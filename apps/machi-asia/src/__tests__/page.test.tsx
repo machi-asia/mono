@@ -30,6 +30,18 @@ describe("Machi Asia Landing Page", () => {
     expect(
       screen.getByRole("heading", { level: 3, name: "Rose AI" })
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 3, name: "TerraPrice" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 3, name: "Minecraft Mod Manager (MMM)" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 3, name: "Machi Notes" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 3, name: "U Owe Me" })
+    ).toBeInTheDocument();
   });
 
   it("renders subscription pricing options", () => {

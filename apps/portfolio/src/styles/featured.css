@@ -50,6 +50,7 @@
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 12px;
+    cursor: pointer;
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 16px 36px rgb(0 0 0 / 50%);
 }

@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SITE_ADMIN_REGISTRY } from "../lib/site-registry";
 
+export const dynamic = "force-static";
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://admin.machi.asia";
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -1,0 +1,10 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-11-21
+App: Machi Notes (@mono/notes)
+Platforms: Web (Next.js 16 App Router)
+Package ID: asia.machi.notes
+
+Updates:
+- Launched Machi Notes (notes.machi.asia) with tabbed hierarchical markdown editing, wikilinks, and interactive knowledge graph visualization.
+- Integrated Supabase-backed quicknote_notes & quicknote_note_relations with guest/demo localStorage sandbox support.
+- Added AI note drafting modal, workspace split resizer, and keyboard command shortcuts.

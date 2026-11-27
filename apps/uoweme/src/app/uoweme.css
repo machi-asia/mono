@@ -1,0 +1,282 @@
+@import url("../../../../packages/components/src/tokens.css");
+@import url("tailwindcss");
+
+:root {
+  --uow-bg: #0b0c12;
+  --uow-bg-rgb: 11 12 18;
+  --uow-surface: #141621;
+  --uow-surface-rgb: 20 22 33;
+  --uow-border: #272b3d;
+  --uow-text: #f8fafc;
+  --uow-text-rgb: 248 250 252;
+  --uow-muted: #94a3b8;
+  --uow-accent: #8b5cf6;
+  --uow-accent-light: #a78bfa;
+  --uow-accent-rgb: 139 92 246;
+  --uow-positive: #10b981;
+  --uow-negative: #f43f5e;
+}
+
+.light-mode {
+  --uow-bg: #f8fafc;
+  --uow-bg-rgb: 248 250 252;
+  --uow-surface: #fff;
+  --uow-surface-rgb: 255 255 255;
+  --uow-border: #e2e8f0;
+  --uow-text: #0f172a;
+  --uow-text-rgb: 15 23 42;
+  --uow-muted: #64748b;
+  --uow-accent: #7c3aed;
+  --uow-accent-light: #8b5cf6;
+  --uow-accent-rgb: 124 58 237;
+  --uow-positive: #059669;
+  --uow-negative: #e11d48;
+}
+
+.uow-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--uow-bg);
+  color: var(--uow-text);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+.uow-main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 5.25rem 1.25rem 4rem;
+}
+
+.uow-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.uow-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  background: rgb(var(--uow-accent-rgb) / 10%);
+  border: 1px solid rgb(var(--uow-accent-rgb) / 30%);
+  font-size: 0.85rem;
+}
+
+.uow-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.4rem;
+  border-radius: 16px;
+  background: var(--uow-surface);
+  border: 1px solid var(--uow-border);
+}
+
+.uow-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.uow-stat-card {
+  padding: 1.25rem;
+  border-radius: 14px;
+  background: var(--uow-surface);
+  border: 1px solid var(--uow-border);
+}
+
+.uow-stat-card.positive {
+  border-color: rgb(16 185 129 / 35%);
+  background: linear-gradient(145deg, rgb(16 185 129 / 10%), var(--uow-surface));
+}
+
+.uow-stat-card.negative {
+  border-color: rgb(244 63 94 / 35%);
+  background: linear-gradient(145deg, rgb(244 63 94 / 10%), var(--uow-surface));
+}
+
+.uow-stat-card.net {
+  border-color: rgb(var(--uow-accent-rgb) / 40%);
+  background: linear-gradient(145deg, rgb(var(--uow-accent-rgb) / 12%), var(--uow-surface));
+}
+
+.uow-stat-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--uow-muted);
+}
+
+.uow-stat-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-top: 0.35rem;
+}
+
+.uow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.uow-input {
+  width: 100%;
+  padding: 0.55rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid var(--uow-border);
+  background: rgb(var(--uow-text-rgb) / 4%);
+  color: var(--uow-text);
+  font-size: 0.88rem;
+  outline: none;
+}
+
+.uow-input:focus {
+  border-color: var(--uow-accent);
+  box-shadow: 0 0 0 2px rgb(var(--uow-accent-rgb) / 22%);
+}
+
+.uow-pill-tabs {
+  display: inline-flex;
+  border: 1px solid var(--uow-border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--uow-surface);
+}
+
+.uow-pill-tab {
+  padding: 0.5rem 0.9rem;
+  border: none;
+  background: transparent;
+  color: var(--uow-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.uow-pill-tab.active {
+  background: var(--uow-accent);
+  color: #fff;
+}
+
+.uow-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.uow-contact-card {
+  border-radius: 14px;
+  border: 1px solid var(--uow-border);
+  background: var(--uow-surface);
+  overflow: hidden;
+}
+
+.uow-contact-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--uow-text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.uow-contact-trigger:hover {
+  background: rgb(var(--uow-text-rgb) / 3%);
+}
+
+.uow-contact-items {
+  border-top: 1px solid var(--uow-border);
+  padding: 0.85rem 1.25rem 1.15rem;
+  background: rgb(var(--uow-text-rgb) / 2%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.uow-debt-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid var(--uow-border);
+  background: var(--uow-surface);
+}
+
+.uow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.uow-badge.positive {
+  background: rgb(16 185 129 / 15%);
+  color: var(--uow-positive);
+}
+
+.uow-badge.negative {
+  background: rgb(244 63 94 / 15%);
+  color: var(--uow-negative);
+}
+
+.uow-badge.settled {
+  background: rgb(var(--uow-text-rgb) / 10%);
+  color: var(--uow-muted);
+}
+
+.uow-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgb(0 0 0 / 65%);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.uow-modal-panel {
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--uow-surface);
+  border: 1px solid var(--uow-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 55%);
+}
+
+@media (width <= 768px) {
+  .uow-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}

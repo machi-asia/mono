@@ -1,0 +1,11 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-11-21
+App: TerraPrice (@mono/terra-price)
+Platforms: Web (Next.js 16 App Router)
+Package ID: asia.machi.terraprice
+
+Updates:
+- Migrated TerraPrice agricultural food price predictor from Python/Flask to Next.js 16 + TypeScript.
+- Ported the 4-layer ReLU neural network (76-256-128-64-1) and StandardScaler inference & retraining into pure TypeScript.
+- Added interactive Philippines Leaflet map with regional market presets alongside Supabase dataset curation.
+- Unified user prediction, dataset submission, and admin dataset inspection & model retraining under @mono/auth.

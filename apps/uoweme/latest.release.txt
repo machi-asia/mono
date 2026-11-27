@@ -1,0 +1,10 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-11-21
+App: U Owe Me (@mono/uoweme)
+Platforms: Web (Next.js 16 App Router)
+Package ID: asia.machi.uoweme
+
+Updates:
+- Migrated U Owe Me (uoweme.machi.asia) to the Machi monorepo with net contact balances, itemized IOUs, and checkout workflows.
+- Added shareable settlement links (/share and /share/uoweme) backed by Supabase debts storage.
+- Integrated interactive sample ledger mode and @mono/auth navigation for seamless onboarding.

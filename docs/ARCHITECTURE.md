@@ -18,7 +18,7 @@ mono/
 
 ### api
 
-The centralized API gateway and microservice. Hosts all HTTP route handlers for Rose AI agent companion, realtime event streaming (SSE), room coordination, and organization usage tracking. Provides an interactive root playground and documentation explorer at `/`.
+The centralized API gateway and microservice. Hosts all HTTP route handlers via a consolidated `[...slug]` dispatcher (covering `/rose/*`, `/admin/*`, `/itemlist/*`, `/sync/*`, `/usage/*`, `/mmm/*`, `/quicknote/*`, `/uoweme/*`, `/health`, and `/api/*`-prefixed aliases) plus scheduled cron routes (`/cron/github-repos`, `/cron/supabase-keepalive`), while all 14 frontend services compile to static exports (`output: "export"`, `0` serverless functions) in production. Provides an interactive root playground and documentation explorer at `/`.
 
 **Stack:** Next.js App Router, React, TypeScript, `@mono/database`, `@mono/components`
 

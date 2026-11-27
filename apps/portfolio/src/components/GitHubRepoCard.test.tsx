@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import GitHubRepoCard from "./GitHubRepoCard";
 import type { GitHubRepo } from "../data/types";
@@ -26,5 +26,26 @@ describe("GitHubRepoCard", () => {
     expect(screen.getByText("Monorepo for apps")).toBeInTheDocument();
     expect(screen.getByText("TypeScript")).toBeInTheDocument();
     expect(screen.getByText("42")).toBeInTheDocument();
+  });
+
+  it("shows and hides the styled hover popup with dates and live demo link", () => {
+    const { container } = render(<GitHubRepoCard repo={mockRepo} />);
+    const wrapper = container.querySelector(".repo-card-wrapper");
+    expect(wrapper).not.toBeNull();
+
+    expect(screen.queryByTestId("repo-hover-card")).not.toBeInTheDocument();
+
+    fireEvent.mouseEnter(wrapper!);
+    const popup = screen.getByTestId("repo-hover-card");
+    expect(popup).toHaveClass("hover-card-content");
+    expect(popup).toHaveTextContent(/Created:/);
+    expect(popup).toHaveTextContent(/Updated:/);
+    expect(screen.getByRole("link", { name: /Live Demo/i })).toHaveAttribute(
+      "href",
+      "https://machi.asia"
+    );
+
+    fireEvent.mouseLeave(wrapper!);
+    expect(screen.queryByTestId("repo-hover-card")).not.toBeInTheDocument();
   });
 });

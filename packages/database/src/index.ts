@@ -20,6 +20,17 @@ export type {
   IssueReportRecord,
   KeepaliveHeartbeatRecord,
   VisitorSessionRecord,
+  TerraPriceDatasetRecord,
+  MinecraftModLoader,
+  MmmOrganizationRecord,
+  MmmOrganizationMemberRecord,
+  MmmModListRecord,
+  MmmModRecord,
+  MmmModHistoryRecord,
+  QuickNoteRecord,
+  QuickNoteRelationRecord,
+  DebtDirection,
+  DebtRecord,
 } from "./types";
 export {
   listUserMedia,

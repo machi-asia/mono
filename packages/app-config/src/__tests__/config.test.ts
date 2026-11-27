@@ -33,10 +33,14 @@ describe("@mono/app-config", () => {
     expect(getAppConfig("rose")?.devPort).toBe(3004);
     expect(getAppConfig("api")?.devPort).toBe(3005);
     expect(getAppConfig("portfolio")?.devPort).toBe(3006);
+    expect(getAppConfig("terra-price")?.devPort).toBe(3007);
+    expect(getAppConfig("mmm")?.devPort).toBe(3008);
+    expect(getAppConfig("notes")?.devPort).toBe(3009);
     expect(getAppConfig("home")?.devPort).toBe(3010);
     expect(getAppConfig("create")?.devPort).toBe(3011);
     expect(getAppConfig("rimworld")?.devPort).toBe(3012);
     expect(getAppConfig("admin")?.devPort).toBe(3013);
+    expect(getAppConfig("uoweme")?.devPort).toBe(3015);
   });
 
   it("resolves canonical Supabase URL and keys", () => {
@@ -49,6 +53,10 @@ describe("@mono/app-config", () => {
     expect(resolveApiBaseUrl({ forceLocal: false })).toBe("https://api.machi.asia");
     expect(resolveApiBaseUrl({ forceLocal: true })).toBe("http://localhost:3005");
     expect(isAllowedOrigin("https://rose.machi.asia")).toBe(true);
+    expect(isAllowedOrigin("https://terraprice.machi.asia")).toBe(true);
+    expect(isAllowedOrigin("https://mmm.machi.asia")).toBe(true);
+    expect(isAllowedOrigin("https://notes.machi.asia")).toBe(true);
+    expect(isAllowedOrigin("https://uoweme.machi.asia")).toBe(true);
     expect(isAllowedOrigin("https://admin.machi.asia")).toBe(true);
     expect(isAllowedOrigin("https://create.itemlist.online")).toBe(true);
     expect(isAllowedOrigin("http://localhost:3004")).toBe(true);
@@ -89,6 +97,18 @@ describe("@mono/app-config", () => {
     );
     expect(resolveHref("https://portfolio.machi.asia", { forceLocal: true })).toBe(
       "http://localhost:3006"
+    );
+    expect(resolveHref("https://terraprice.machi.asia", { forceLocal: true })).toBe(
+      "http://localhost:3007"
+    );
+    expect(resolveHref("https://mmm.machi.asia", { forceLocal: true })).toBe(
+      "http://localhost:3008"
+    );
+    expect(resolveHref("https://notes.machi.asia", { forceLocal: true })).toBe(
+      "http://localhost:3009"
+    );
+    expect(resolveHref("https://uoweme.machi.asia", { forceLocal: true })).toBe(
+      "http://localhost:3015"
     );
     expect(resolveHref("https://itemlist.online", { forceLocal: true })).toBe(
       "http://localhost:3010"

@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { Row, Col, Card, Button, Tooltip, Accordion, Usage, Link as MonoLink, resolveHref } from "@mono/components";
-import { ArrowRight, Bot, Calculator, Check, Sparkles, Zap, Shield, Code2, Globe } from "lucide-react";
+import { ArrowRight, Bot, Boxes, Calculator, Check, Landmark, Sparkles, Sprout, StickyNote, Zap, Shield, Code2, Globe } from "lucide-react";
 
 const PRODUCTS = [
   {
@@ -55,6 +55,74 @@ const PRODUCTS = [
       "Minimal latency redis room orchestration",
     ],
     tierInfo: "Currently in open access community preview.",
+  },
+  {
+    id: "terra-price",
+    name: "TerraPrice",
+    category: "Agricultural Price Predictor",
+    badge: "ML Forecaster",
+    url: "https://terraprice.machi.asia",
+    icon: <Sprout size={22} />,
+    description:
+      "Forecast retail and wholesale agricultural food prices across the Philippines using geographic coordinates and a 4-layer neural network.",
+    features: [
+      "Interactive Philippines Leaflet map with regional presets",
+      "TypeScript 4-layer ReLU MLP trained on 132,902 market records",
+      "Community Supabase market dataset curation",
+      "Admin dataset audit and neural network retraining",
+    ],
+    tierInfo: "Price predictions open to everyone; dataset submissions for members.",
+  },
+  {
+    id: "mmm",
+    name: "Minecraft Mod Manager (MMM)",
+    category: "Modpack Collaboration",
+    badge: "Modrinth Sync",
+    url: "https://mmm.machi.asia",
+    icon: <Boxes size={22} />,
+    description:
+      "Organization-based Minecraft modpack management with Modrinth v2 search, local .jar SHA-1 matching, version history logs, and sequential downloads.",
+    features: [
+      "Team organizations with invite links and loader presets",
+      "Direct Modrinth browser with automatic dependency resolution",
+      "Orphaned dependency cleanup and version control audit timeline",
+      "Sequential bulk mod downloader for local mods folders",
+    ],
+    tierInfo: "Free modpack collaboration and bulk downloads for all members.",
+  },
+  {
+    id: "notes",
+    name: "Machi Notes",
+    category: "Markdown & Knowledge Graph",
+    badge: "AI Workspace",
+    url: "https://notes.machi.asia",
+    icon: <StickyNote size={22} />,
+    description:
+      "Split-pane Markdown workspace with VS Code explorer tree, bidirectional note relations, interactive SVG knowledge graph, and AI note synthesis.",
+    features: [
+      "Tabbed split-pane Markdown editor with live GFM preview",
+      "Interactive cluster graph across folders, tags, and backlinks",
+      "Drag-and-drop folder hierarchy and keyboard hotkeys",
+      "Gemini AI note generator with automatic tag and relation linking",
+    ],
+    tierInfo: "Private workspace synced to Supabase with guest preview mode.",
+  },
+  {
+    id: "uoweme",
+    name: "U Owe Me",
+    category: "Peer Ledger & Settlements",
+    badge: "PayMongo Ready",
+    url: "https://uoweme.machi.asia",
+    icon: <Landmark size={22} />,
+    description:
+      "Real-time PHP peer debt tracker with per-contact balance accordions, PayMongo settlement checkouts, and shareable balance cards.",
+    features: [
+      "Live metrics for receivables, payables, and net balance",
+      "Per-contact accordion drilldowns with settled watermark stamps",
+      "PayMongo checkout links and shareable OpenGraph cards",
+      "Role-scoped views for ledgers and peer transaction history",
+    ],
+    tierInfo: "Track balances with friends and settle via online checkout.",
   },
   {
     id: "portfolio",

@@ -45,6 +45,22 @@
       "root": "apps/portfolio",
       "framework": "nextjs"
     },
+    "terra-price": {
+      "root": "apps/terra-price",
+      "framework": "nextjs"
+    },
+    "mmm": {
+      "root": "apps/mmm",
+      "framework": "nextjs"
+    },
+    "notes": {
+      "root": "apps/notes",
+      "framework": "nextjs"
+    },
+    "uoweme": {
+      "root": "apps/uoweme",
+      "framework": "nextjs"
+    },
     "itemlist-home": {
       "root": "apps/itemlist-home",
       "framework": "nextjs"
@@ -70,7 +86,48 @@
       ]
     }
   },
+  "redirects": [
+    {
+      "source": "/auth",
+      "has": [
+        {
+          "type": "host",
+          "value": "docs.machi.asia"
+        }
+      ],
+      "destination": "/components/auth",
+      "permanent": false
+    },
+    {
+      "source": "/wiki",
+      "has": [
+        {
+          "type": "host",
+          "value": "docs.machi.asia"
+        }
+      ],
+      "destination": "/docs",
+      "permanent": false
+    },
+    {
+      "source": "/wiki/:slug",
+      "has": [
+        {
+          "type": "host",
+          "value": "docs.machi.asia"
+        }
+      ],
+      "destination": "/docs/:slug",
+      "permanent": false
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/api/(mmm|quicknote|uoweme|rose|admin|itemlist|sync|usage|health)(/.*)?",
+      "destination": {
+        "service": "api"
+      }
+    },
     {
       "source": "/(.*)",
       "has": [
@@ -165,6 +222,102 @@
       ],
       "destination": {
         "service": "portfolio"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "terraprice.machi.asia"
+        }
+      ],
+      "destination": {
+        "service": "terra-price"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "terraprice.machi-asia.com"
+        }
+      ],
+      "destination": {
+        "service": "terra-price"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "mmm.machi.asia"
+        }
+      ],
+      "destination": {
+        "service": "mmm"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "mmm.machi-asia.com"
+        }
+      ],
+      "destination": {
+        "service": "mmm"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "notes.machi.asia"
+        }
+      ],
+      "destination": {
+        "service": "notes"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "notes.machi-asia.com"
+        }
+      ],
+      "destination": {
+        "service": "notes"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "uoweme.machi.asia"
+        }
+      ],
+      "destination": {
+        "service": "uoweme"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "uoweme.machi-asia.com"
+        }
+      ],
+      "destination": {
+        "service": "uoweme"
       }
     },
     {
@@ -291,6 +444,30 @@
       "source": "/portfolio(/.*)?",
       "destination": {
         "service": "portfolio"
+      }
+    },
+    {
+      "source": "/terra-price(/.*)?",
+      "destination": {
+        "service": "terra-price"
+      }
+    },
+    {
+      "source": "/mmm(/.*)?",
+      "destination": {
+        "service": "mmm"
+      }
+    },
+    {
+      "source": "/notes(/.*)?",
+      "destination": {
+        "service": "notes"
+      }
+    },
+    {
+      "source": "/uoweme(/.*)?",
+      "destination": {
+        "service": "uoweme"
       }
     },
     {

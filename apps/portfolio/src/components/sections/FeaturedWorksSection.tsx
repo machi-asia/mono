@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Sparkles } from "lucide-react";
+import { MarkdownRenderer } from "@mono/components";
 import Carousel from "../Carousel";
 import Badge from "../Badge";
+import Dialog from "../Dialog";
 import type { FeaturedWork } from "../../data/types";
 
 interface FeaturedWorksSectionProps {
@@ -14,6 +16,9 @@ interface FeaturedWorksSectionProps {
 export default function FeaturedWorksSection({
   featuredWorks,
 }: FeaturedWorksSectionProps) {
+  const [selectedFeaturedWork, setSelectedFeaturedWork] =
+    useState<FeaturedWork | null>(null);
+
   return (
     <motion.section
       id="featured"
@@ -37,6 +42,16 @@ export default function FeaturedWorksSection({
             key={work.id}
             className="featured-card"
             data-testid={`featured-card-${work.id}`}
+            role="button"
+            tabIndex={0}
+            onClick={() => setSelectedFeaturedWork(work)}
+            onKeyDown={(e) => {
+              if (e.target !== e.currentTarget) return;
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setSelectedFeaturedWork(work);
+              }
+            }}
           >
             <div className="featured-video-container">
               <video
@@ -66,6 +81,7 @@ export default function FeaturedWorksSection({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="featured-link"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   View Project <ExternalLink size={14} />
                 </a>
@@ -74,6 +90,51 @@ export default function FeaturedWorksSection({
           </div>
         ))}
       </Carousel>
+
+      {/* Featured Work Video Dialog */}
+      <Dialog
+        open={selectedFeaturedWork !== null}
+        onOpenChange={(open) => !open && setSelectedFeaturedWork(null)}
+        variant="featured"
+        title={selectedFeaturedWork?.title}
+      >
+        <div className="featured-video-dialog-content">
+          {selectedFeaturedWork && (
+            <video
+              className="featured-video-expanded"
+              src={selectedFeaturedWork.videoUrl}
+              controls
+              autoPlay
+              loop
+              playsInline
+            />
+          )}
+        </div>
+        {selectedFeaturedWork && (
+          <div className="featured-video-dialog-footer">
+            <div className="featured-video-dialog-description markdown-content">
+              <MarkdownRenderer content={selectedFeaturedWork.description} />
+            </div>
+            <div className="featured-tags">
+              {selectedFeaturedWork.tags.map((tag) => (
+                <Badge key={tag} variant="default">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+            {selectedFeaturedWork.link && (
+              <a
+                href={selectedFeaturedWork.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="featured-link"
+              >
+                View Project <ExternalLink size={14} />
+              </a>
+            )}
+          </div>
+        )}
+      </Dialog>
     </motion.section>
   );
 }

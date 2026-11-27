@@ -12,6 +12,10 @@ describe("site-registry", () => {
     expect(getSiteAdminMeta("itemlist")?.adminPath).toBe("/itemlist");
     expect(getSiteAdminMeta("calculator")?.adminPath).toBe("/calculator");
     expect(getSiteAdminMeta("hells-forge")?.adminPath).toBe("/hells-forge");
+    expect(getSiteAdminMeta("terra-price")?.adminPath).toBe("/terra-price");
+    expect(getSiteAdminMeta("mmm")?.adminPath).toBe("/mmm");
+    expect(getSiteAdminMeta("notes")?.adminPath).toBe("/notes");
+    expect(getSiteAdminMeta("uoweme")?.adminPath).toBe("/uoweme");
     expect(getSiteAdminMeta("non-existent")).toBeUndefined();
   });
 

@@ -6,13 +6,17 @@ Turborepo-based monorepo for all Machi Asia applications and shared packages.
 
 | App | Description |
 |-----|-------------|
-| `api` | Centralized API microservice, interactive API Explorer playground (`/`), realtime SSE sync hub, `withApiGuard` security & rate-limit wrapper, and organizational usage tracking |
+| `api` | Centralized API microservice, unified `[...slug]` API dispatcher (covering Rose AI, admin, itemlist, sync, usage, MMM, QuickNote, and UOweMe endpoints), interactive API Explorer playground (`/`), and scheduled cron routes (`/cron/*`) |
 | `machi-asia` | Home site — showcase and subscription billing hub for all Machi Asia products |
 | `rose` | Custom AI companion application |
 | `calculator` | Multi-game production calculator with interactive recipe tree graph (styled throughput edge labels) and factory rate planner, a sortable item catalog (name/category carets) in gallery or list view, and per-item last-updated tracking |
 | `docs` | Documentation site — developer knowledge base, wiki articles, ADRs, component library showcases, and user manuals |
 | `hells-forge` | High-performance 2D multiplayer exploration space powered by Pixi.js, spatial circle collisions, WASD movement, and `@mono/sync` |
 | `portfolio` | Personal portfolio landing page utilizing @mono/components transparent scroll sections and showcase galleries |
+| `terra-price` | Philippines agricultural food price predictor powered by a pure TypeScript 4-layer ReLU neural network, interactive Leaflet map, and Supabase datasets (`terraprice.machi.asia`) |
+| `mmm` | Collaborative Minecraft Mod Manager with Modrinth v2 integration, local JAR SHA-1 matching, orphaned dependency cleanup, and version control logs (`mmm.machi.asia`) |
+| `notes` | Tabbed split-pane Markdown workspace with interactive SVG knowledge graph, folder tree, bidirectional relations, and AI note generation (`notes.machi.asia`) |
+| `uoweme` | Real-time PHP peer debt ledger with contact balance accordions, PayMongo settlement checkout links, and shareable balance cards (`uoweme.machi.asia`) |
 | `itemlist-home` | Centralized game production calculator directory and launch portal (`itemlist.online`) |
 | `itemlist-create` | Minecraft Create mod recipe tree planner and kinetic automation throughput calculator (`create.itemlist.online`) |
 | `itemlist-rimworld` | RimWorld colony manufacturing and fabrication bench bill throughput planner (`rimworld.itemlist.online`) |
@@ -46,7 +50,7 @@ All API usage tracking, rate-limiting, and quota locking are consolidated in `@m
 
 ## Conventions
 
-- **All apps and packages are Next.js-based.**
+- **All apps and packages are Next.js-based.** All 14 frontend services build as static exports (`output: "export"`) in production with zero serverless functions, while `apps/api` hosts all backend API routes through its consolidated `[...slug]` dispatcher plus scheduled cron endpoints (`/cron/*`).
 - **Packages export components, functions, and more** — no page routes, no business logic outside packages.
 - **`/packages/auth`** owns all authentication (Supabase Auth).
 - **`/packages/database`** owns all data access, migrations, RLS policies, and API quota state (Supabase Database/Storage).
@@ -139,6 +143,10 @@ npm run dev -w @mono/rose
 npm run dev -w @mono/calculator-app
 npm run dev -w @mono/docs
 npm run dev -w @mono/hells-forge
+npm run dev -w @mono/terra-price
+npm run dev -w @mono/mmm
+npm run dev -w @mono/notes
+npm run dev -w @mono/uoweme
 npm run dev -w @mono/admin
 
 # Build all apps and packages
@@ -203,7 +211,12 @@ mono/
 │   ├── docs/           # Documentation site (Next.js)
 │   ├── hells-forge/    # Multiplayer 2D sandbox (Next.js)
 │   ├── machi-asia/     # Showcase + billing hub (Next.js)
-│   └── rose/           # Custom AI agent companion (Next.js)
+│   ├── mmm/            # Collaborative Minecraft Mod Manager (Next.js)
+│   ├── notes/          # Markdown & Knowledge Graph workspace (Next.js)
+│   ├── portfolio/      # Personal portfolio landing page (Next.js)
+│   ├── rose/           # Custom AI agent companion (Next.js)
+│   ├── terra-price/    # Agricultural commodity price predictor (Next.js)
+│   └── uoweme/         # Peer debt tracker & settlement ledger (Next.js)
 ├── packages/
 │   ├── api-client/     # Standardized typed API client
 │   ├── app-config/     # Shared app/route/env/CORS configuration

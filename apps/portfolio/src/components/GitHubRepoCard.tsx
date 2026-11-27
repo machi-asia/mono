@@ -119,7 +119,7 @@ export default function GitHubRepoCard({ repo }: { repo: GitHubRepo }) {
             </Card>
 
             {isHovered && (
-                <div className="hover-card-content" style={{ position: "absolute", bottom: "105%", left: "50%", transform: "translateX(-50%)", zIndex: 100 }}>
+                <div className="hover-card-content" data-testid="repo-hover-card">
                     <div className="repo-hover-header">
                         <GithubIcon size={24} />
                         <div>

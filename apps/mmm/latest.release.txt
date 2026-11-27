@@ -1,0 +1,10 @@
+Release Name: v1.0.0 - Genesis Release
+Date: 2026-11-21
+App: Minecraft Mod Manager (@mono/mmm)
+Platforms: Web (Next.js 16 App Router)
+Package ID: asia.machi.mmm
+
+Updates:
+- Migrated MMM to mmm.machi.asia with Supabase-backed organizations, mod lists, and git-style version history.
+- Added Modrinth v2 mod search, SHA-1 local .jar scanner, orphaned dependency cleanup, and sequential downloader.
+- Added multi-criteria mod sorting and gallery/list workspace toggles with @mono/auth navigation.

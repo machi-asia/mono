@@ -16,6 +16,10 @@ export function AdminNavbar() {
     { label: "ItemList", href: "/itemlist", active: pathname.startsWith("/itemlist") },
     { label: "Calculator", href: "/calculator", active: pathname.startsWith("/calculator") },
     { label: "Hell's Forge", href: "/hells-forge", active: pathname.startsWith("/hells-forge") },
+    { label: "TerraPrice", href: "/terra-price", active: pathname.startsWith("/terra-price") },
+    { label: "MMM", href: "/mmm", active: pathname.startsWith("/mmm") },
+    { label: "Notes", href: "/notes", active: pathname.startsWith("/notes") },
+    { label: "UOweMe", href: "/uoweme", active: pathname.startsWith("/uoweme") },
     { label: "Machi Hub", href: "/machi-asia", active: pathname.startsWith("/machi-asia") },
     { label: "Docs", href: "/docs", active: pathname.startsWith("/docs") },
   ];

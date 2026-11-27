@@ -17,6 +17,10 @@ export type AppId =
   | "hells-forge"
   | "rose"
   | "portfolio"
+  | "terra-price"
+  | "mmm"
+  | "notes"
+  | "uoweme"
   | "api";
 
 export const APPS_CONFIG: Record<AppId, AppConfig> = {
@@ -97,6 +101,34 @@ export const APPS_CONFIG: Record<AppId, AppConfig> = {
     appUrl: "https://portfolio.machi.asia",
     devPort: 3006,
   },
+  "terra-price": {
+    id: "terra-price",
+    name: "TerraPrice",
+    underDevelopment: false,
+    appUrl: "https://terraprice.machi.asia",
+    devPort: 3007,
+  },
+  mmm: {
+    id: "mmm",
+    name: "Minecraft Mod Manager",
+    underDevelopment: false,
+    appUrl: "https://mmm.machi.asia",
+    devPort: 3008,
+  },
+  notes: {
+    id: "notes",
+    name: "Machi Notes",
+    underDevelopment: false,
+    appUrl: "https://notes.machi.asia",
+    devPort: 3009,
+  },
+  uoweme: {
+    id: "uoweme",
+    name: "U Owe Me",
+    underDevelopment: false,
+    appUrl: "https://uoweme.machi.asia",
+    devPort: 3015,
+  },
 };
 
 export const DOMAIN_HOST_TO_APP_ID: Record<string, AppId> = {
@@ -118,6 +150,14 @@ export const DOMAIN_HOST_TO_APP_ID: Record<string, AppId> = {
   "api.machi-asia.com": "api",
   "portfolio.machi.asia": "portfolio",
   "portfolio.machi-asia.com": "portfolio",
+  "terraprice.machi.asia": "terra-price",
+  "terraprice.machi-asia.com": "terra-price",
+  "mmm.machi.asia": "mmm",
+  "mmm.machi-asia.com": "mmm",
+  "notes.machi.asia": "notes",
+  "notes.machi-asia.com": "notes",
+  "uoweme.machi.asia": "uoweme",
+  "uoweme.machi-asia.com": "uoweme",
   "admin.machi.asia": "admin",
   "admin.machi-asia.com": "admin",
   "itemlist.online": "home",
@@ -143,6 +183,14 @@ export const ALLOWED_CORS_ORIGINS = [
   "https://calculator.machi.asia",
   "https://hellsforge.machi.asia",
   "https://portfolio.machi.asia",
+  "https://terraprice.machi.asia",
+  "https://terraprice.machi-asia.com",
+  "https://mmm.machi.asia",
+  "https://mmm.machi-asia.com",
+  "https://notes.machi.asia",
+  "https://notes.machi-asia.com",
+  "https://uoweme.machi.asia",
+  "https://uoweme.machi-asia.com",
   "https://api.machi.asia",
   "https://api.machi-asia.com",
   "https://admin.machi.asia",
